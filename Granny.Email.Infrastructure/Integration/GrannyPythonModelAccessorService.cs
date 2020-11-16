@@ -8,9 +8,9 @@ namespace Granny.Email.Infrastructure.Integration
 {
     public class GrannyPythonModelAccessorService : IGrannyModelAccessorService
     {
-        private const string BodyModelBaseUrl = "http://127.0.0.1:5000";
-        private const string HeaderModelBaseUrl = "http://127.0.0.1:5000";
-        private const string SubjectModelBaseUrl = "http://127.0.0.1:5000";
+        private const string BodyModelBaseUrl = "http://127.0.0.1:8082";
+        private const string HeaderModelBaseUrl = "http://127.0.0.1:8082";
+        private const string SubjectModelBaseUrl = "http://127.0.0.1:8082";
 
         public async Task GenerateBodyModel(
             IEnumerable<string> trainingSentences,

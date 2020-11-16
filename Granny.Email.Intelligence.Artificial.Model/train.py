@@ -9,7 +9,7 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 app = Flask(__name__)
 
 
-@app.route('/api/model/generate', methods=['POST'])
+@app.route('/api/model/generate_body', methods=['POST'])
 def generate_model():
     data = request.get_json(force=True)
 
