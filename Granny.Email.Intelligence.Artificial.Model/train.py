@@ -1,31 +1,32 @@
-import tensorflow as tf
-from tensorflow import keras
-import numpy as np
 import io
-from flask import Flask, request, jsonify
 import pickle
-from tensorflow.keras.preprocessing.text import Tokenizer
+import numpy as np
+import tensorflow as tf
+from flask import Flask, jsonify, request
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.text import Tokenizer
 
 app = Flask(__name__)
 
 
 @app.route('/api/model/generate', methods=['POST'])
 def generate_model():
-    # load data from post body data = request.get_json(force=True)
+    data = request.get_json(force=True)
 
-    training_sentences = ["hola soy bueno", "hola soy mejor", "hola soy positivo", "hola soy malo"]
-    training_labels = [0, 0, 0, 10]
+    training_sentences = data["training_sentences"]
+    training_labels = data["training_labels"]
 
-    testing_sentences = ["hola soy bueno", "hola soy malo"]
-    testing_labels = [0, 10]
+    testing_sentences = data["test_sentences"]
+    testing_labels = data["test_labels"]
+
+    total_words = data["total_words"]
+    max_length = data["sentence_max_lenght"]
 
     training_labels_final = np.array(training_labels)
     testing_labels_final = np.array(testing_labels)
 
-    vocab_size = 6 + 2
+    vocab_size = total_words + 2
     embedding_dim = 16
-    max_length = 10
     trunc_type = 'post'
     oov_tok = "<OOV>"
 
@@ -78,32 +79,9 @@ def generate_model():
     return jsonify('ok')
 
 
-@app.route('/api/model/predict', methods=['POST'])
-def predict_vector():
-    # load data from post body data = request.get_json(force=True)
-
-    trunc_type = 'post'
-
-    example = ["hola soy malo"]
-    # loading
-    with open('tokenizer.pickle', 'rb') as handle:
-        tokenizer = pickle.load(handle)
-
-    with open('max_length.pickle', 'rb') as handle:
-        max_length = pickle.load(handle)
-
-    sequences = tokenizer.texts_to_sequences(example)
-    padded = pad_sequences(sequences, maxlen=max_length, truncating=trunc_type)
-
-    model = keras.models.load_model('granny_ia_model.h5')
-    model.summary()
-    prediction = model.predict(padded)
-
-    return str(prediction[0])
-
-
 if __name__ == '__main__':
     try:
-        app.run(port=5000, debug=True)
+        app.run(port=8082, debug=True)
     except:
         print("Server is exited unexpectedly. Please contact server admin.")
+
