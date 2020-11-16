@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Granny.Email.Application.Classification;
 using Granny.Email.Application.EmailInformationExtractor;
+using Granny.Email.Application.Integration;
 using Granny.Email.Application.Preparation;
 using Granny.Email.Application.Repository;
 using Granny.Email.WebApp.Models.Train;
@@ -23,19 +24,22 @@ namespace Granny.Email.WebApp.Controllers
         private readonly IInformationExtractorService _informationExtractorService;
         private readonly ITextPreparerService _textPreparerService;
         private readonly IGrannyRepository _grannyRepository;
+        private readonly IGrannyModelAccessorService _grannyModelAccessorService;
 
         public AnalyzerController(
             IMailRepository mailKitRepository,
             IClassificationService classificationService,
             IInformationExtractorService informationExtractorService,
             ITextPreparerService textPreparerService,
-            IGrannyRepository grannyRepository)
+            IGrannyRepository grannyRepository,
+            IGrannyModelAccessorService grannyModelAccessorService)
         {
             _mailKitRepository = mailKitRepository;
             _classificationService = classificationService;
             _informationExtractorService = informationExtractorService;
             _textPreparerService = textPreparerService;
             _grannyRepository = grannyRepository;
+            _grannyModelAccessorService = grannyModelAccessorService;
         }
 
         public async Task<IActionResult> Analyze(string messageId)
@@ -148,6 +152,68 @@ namespace Granny.Email.WebApp.Controllers
             };
 
             return View(trainedEmailAddedResultViewModel);
+        }
+
+        public async Task<IActionResult> GenerateModel()
+        {
+            var (bodySentences, bodyLabels) = await _grannyRepository.GetBodyTrainData().ConfigureAwait(false);
+            var (headerSentences, headerLabels) = await _grannyRepository.GetHeaderTrainData().ConfigureAwait(false);
+            var (subjectSentences, subjectLabels) = await _grannyRepository.GetSubjectTrainData().ConfigureAwait(false);
+
+            var bodyTotalWords = bodySentences
+                .SelectMany(sentence => sentence.Words)
+                .Distinct()
+                .Count();
+            var headerTotalWords = headerSentences
+                .SelectMany(sentence => sentence.Words)
+                .Distinct()
+                .Count();
+            var subjectTotalWords = subjectSentences
+                .SelectMany(sentence => sentence.Words)
+                .Distinct()
+                .Count();
+
+            var bodyMaxLengthSize = bodySentences
+                .Select(sentence => sentence.Words.Count())
+                .Max();
+            var headerMaxLengthSize = headerSentences
+                .Select(sentence => sentence.Words.Count())
+                .Max();
+            var subjectMaxLengthSize = subjectSentences
+                .Select(sentence => sentence.Words.Count())
+                .Max();
+
+            var bodyFullSentences = bodySentences.Select(sentence => string.Join(" ", sentence.Words));
+            var headerFullSentences = headerSentences.Select(sentence => string.Join(" ", sentence.Words));
+            var subjectFullSentences = subjectSentences.Select(sentence => string.Join(" ", sentence.Words));
+
+            var bodyFullLabels = bodyLabels.Select(label => label.Value);
+            var headerFullLabels = headerLabels.Select(label => label.Value);
+            var subjectFullLabels = subjectLabels.Select(label => label.Value);
+
+            await _grannyModelAccessorService.GenerateBodyModel(
+                bodyFullSentences,
+                bodyFullLabels,
+                bodyFullSentences,
+                bodyFullLabels,
+                bodyTotalWords,
+                bodyMaxLengthSize).ConfigureAwait(false);
+            await _grannyModelAccessorService.GenerateHeaderModel(
+                headerFullSentences,
+                headerFullLabels,
+                headerFullSentences,
+                headerFullLabels,
+                headerTotalWords,
+                headerMaxLengthSize).ConfigureAwait(false);
+            await _grannyModelAccessorService.GenerateSubjectModel(
+                subjectFullSentences,
+                subjectFullLabels,
+                subjectFullSentences,
+                subjectFullLabels,
+                subjectTotalWords,
+                subjectMaxLengthSize).ConfigureAwait(false);
+
+            return View();
         }
 
         private string GetBodyText(string html)
