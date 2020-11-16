@@ -35,7 +35,7 @@ namespace Granny.Email.Application.Preparation
 
         private string RemoveSpecialCharacters(string text)
         {
-            var onlyAlphanumericCharactersRegex = new Regex("[^a-z0-9 ]");
+            var onlyAlphanumericCharactersRegex = new Regex("[^a-z0-9 áéíóúüñ]");
 
             return onlyAlphanumericCharactersRegex.Replace(text, string.Empty);
         }
