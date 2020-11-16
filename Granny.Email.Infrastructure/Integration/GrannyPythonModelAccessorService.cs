@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
@@ -11,6 +14,10 @@ namespace Granny.Email.Infrastructure.Integration
         private const string BodyModelBaseUrl = "http://127.0.0.1:8082";
         private const string HeaderModelBaseUrl = "http://127.0.0.1:8082";
         private const string SubjectModelBaseUrl = "http://127.0.0.1:8082";
+
+        private const string BodyPredictBaseUrl = "";
+        private const string HeaderPredictBaseUrl = "";
+        private const string SubjectPredictBaseUrl = "";
 
         public async Task GenerateBodyModel(
             IEnumerable<string> trainingSentences,
@@ -82,6 +89,51 @@ namespace Granny.Email.Infrastructure.Integration
                 .AppendPathSegment("api/model/generate")
                 .PostJsonAsync(body)
                 .ConfigureAwait(false);
+        }
+
+        public async Task<IEnumerable<double>> PredictBody(string sentence)
+        {
+            var body = new { sentence };
+            var result = await BodyPredictBaseUrl
+                 .AppendPathSegment("api/model/predict")
+                 .PostJsonAsync(body)
+                 .ConfigureAwait(false);
+
+            if (result.StatusCode != (int) HttpStatusCode.OK) throw new Exception("Response is not ok.");
+
+            var json = await result.GetJsonAsync().ConfigureAwait(false);
+
+            return JsonSerializer.Deserialize<IEnumerable<double>>(json);
+        }
+
+        public async Task<IEnumerable<double>> PredictHeader(string sentence)
+        {
+            var body = new { sentence };
+            var result = await HeaderPredictBaseUrl
+                .AppendPathSegment("api/model/predict")
+                .PostJsonAsync(body)
+                .ConfigureAwait(false);
+
+            if (result.StatusCode != (int)HttpStatusCode.OK) throw new Exception("Response is not ok.");
+
+            var json = await result.GetJsonAsync().ConfigureAwait(false);
+
+            return JsonSerializer.Deserialize<IEnumerable<double>>(json);
+        }
+
+        public async Task<IEnumerable<double>> PredictSubject(string sentence)
+        {
+            var body = new { sentence };
+            var result = await SubjectPredictBaseUrl
+                .AppendPathSegment("api/model/predict")
+                .PostJsonAsync(body)
+                .ConfigureAwait(false);
+
+            if (result.StatusCode != (int)HttpStatusCode.OK) throw new Exception("Response is not ok.");
+
+            var json = await result.GetJsonAsync().ConfigureAwait(false);
+
+            return JsonSerializer.Deserialize<IEnumerable<double>>(json);
         }
     }
 }

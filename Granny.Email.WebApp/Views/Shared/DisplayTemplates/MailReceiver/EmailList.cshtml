@@ -25,7 +25,9 @@
                 <td>
                     @Html.ActionLink("Clean", "GenerateEmailSentence", "Analyzer", new { item.MessageId, isSpam = false })
                     <br />
-                    @Html.ActionLink("Spam", "GenerateEmailSentence", "Analyzer", new { item.MessageId, isSpam = false })
+                    @Html.ActionLink("Spam", "GenerateEmailSentence", "Analyzer", new { item.MessageId, isSpam = true })
+                    <br />
+                    @Html.ActionLink("Predict", "PredictEmail", "Analyzer", new { item.MessageId })
                 </td>
             </tr>
         }

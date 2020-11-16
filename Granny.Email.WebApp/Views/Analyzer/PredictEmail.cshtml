@@ -1,0 +1,32 @@
+﻿@model Granny.Email.WebApp.Models.Predict.PredictionResultViewModel
+
+@{
+    ViewData["Title"] = "PredictEmail";
+}
+
+<h1>PredictEmail</h1>
+
+<div>
+    <h4>PredictionResultViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BodyPredictionResult)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BodyPredictionResult)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HeaderPredictionResult)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HeaderPredictionResult)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SubjectPredictionResult)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SubjectPredictionResult)
+        </dd>
+    </dl>
+</div>

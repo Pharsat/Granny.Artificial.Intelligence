@@ -10,6 +10,7 @@ using Granny.Email.Application.EmailInformationExtractor;
 using Granny.Email.Application.Integration;
 using Granny.Email.Application.Preparation;
 using Granny.Email.Application.Repository;
+using Granny.Email.WebApp.Models.Predict;
 using Granny.Email.WebApp.Models.Train;
 using HtmlAgilityPack;
 using Microsoft.AspNetCore.Mvc;
@@ -214,6 +215,72 @@ namespace Granny.Email.WebApp.Controllers
                 subjectMaxLengthSize).ConfigureAwait(false);
 
             return View();
+        }
+
+        public async Task<IActionResult> PredictEmail(string messageId)
+        {
+            var (mail, uniqueId) = await _mailKitRepository.GetUnreadEmailByIdAsync(messageId).ConfigureAwait(false);
+
+            var headerEmailSentence = new StringBuilder();
+
+            var authorizationResultsHeaders = mail.Headers.Where(header => header.Field == "Authentication-Results");
+            var authorizationResultsHeadersValues = authorizationResultsHeaders.Select(authorizationResultsHeader => authorizationResultsHeader.Value).ToList();
+
+            var senderPolicyFrameworkProtocolsResults = _informationExtractorService.GetSenderPolicyFrameworkResults(authorizationResultsHeadersValues);
+            var domainKeysIdentifiedMailProtocolsResults = _informationExtractorService.GetDomainKeysIdentifiedMailResults(authorizationResultsHeadersValues);
+            var domainBasedMessageAuthenticationReportingConformanceProtocolsResults = _informationExtractorService.GetDomainBasedMessageAuthenticationReportingConformanceResults(authorizationResultsHeadersValues);
+
+            //Add attachments info
+            foreach (var attachment in mail.Attachments)
+            {
+                var file = attachment.ContentDisposition.FileName;
+                var fileSize = attachment.ContentDisposition.Size;
+                var fileName = Path.GetFileName(file).ToLower();
+                var fileExtension = Path.GetExtension(file).ToLower();
+                headerEmailSentence.Append($"attachment filename {fileName} extension {fileExtension} size {fileSize} ");
+            }
+
+            //Add protocol result info
+            foreach (var protocolResult in senderPolicyFrameworkProtocolsResults)
+            {
+                headerEmailSentence.Append($"spfProtocol result {protocolResult} ");
+            }
+
+            foreach (var protocolResult in domainKeysIdentifiedMailProtocolsResults)
+            {
+                headerEmailSentence.Append($"dkimProtocol result {protocolResult} ");
+            }
+
+            foreach (var protocolResult in domainBasedMessageAuthenticationReportingConformanceProtocolsResults)
+            {
+                headerEmailSentence.Append($"dmarcProtocol result {protocolResult} ");
+            }
+
+            //Add body info
+            var bodyHtmlText = mail.HtmlBody;
+
+            var subjectSentence = _textPreparerService.Prepare(mail.Subject).ToList();
+            var headerSentence = _textPreparerService.Prepare(headerEmailSentence.ToString()).ToList();
+            var bodySentence = _textPreparerService.Prepare(GetBodyText(bodyHtmlText)).ToList();
+
+            var bodyFullSentence = string.Join(" ", subjectSentence);
+            var headerFullSentence =  string.Join(" ", headerSentence);
+            var subjectFullSentence = string.Join(" ", bodySentence);
+
+            var bodyPrediction = await _grannyModelAccessorService.PredictBody(bodyFullSentence).ConfigureAwait(false);
+            var headerPrediction = await _grannyModelAccessorService.PredictHeader(headerFullSentence).ConfigureAwait(false);
+            var subjectPrediction = await _grannyModelAccessorService.PredictSubject(subjectFullSentence).ConfigureAwait(false);
+
+            var predictionResultViewModel = new PredictionResultViewModel()
+            {
+                BodyPredictionResult = bodyPrediction.First(),
+                HeaderPredictionResult = headerPrediction.First(),
+                SubjectPredictionResult = subjectPrediction.First()
+            };
+
+            await _mailKitRepository.MarkEmailAsSeen(uniqueId).ConfigureAwait(false);
+
+            return View(predictionResultViewModel);
         }
 
         private string GetBodyText(string html)
