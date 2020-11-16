@@ -1,0 +1,528 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:1511:0:0:0:0:0 with SMTP id v17csp6713320ilk;
+        Thu, 5 Mar 2020 13:14:45 -0800 (PST)
+X-Google-Smtp-Source: ADFU+vtQpGp1OrDEblwWp1nD22cd3Ifca95iAYg/QQEXtQQ2GkLk5zFzLCGZxgSIW7lJfMIwxZ6V
+X-Received: by 2002:a9d:6b98:: with SMTP id b24mr392182otq.200.1583442885403;
+        Thu, 05 Mar 2020 13:14:45 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1583442885; cv=none;
+        d=google.com; s=arc-20160816;
+        b=hgzrFHWpgBisD1BNDySahyOCob2tH4jKCWXfblJXOKS7zijH3LsHhCLHR0OWinFp7J
+         QAGNDWVVd4Rell+ZW/frUCmkfRgxBZw9T33e6PS/a80j+V600KDHgTfHE84gTRkJsMhk
+         QgXJ4wSGDYJiQ7BzJIMVNy6l1jzXp0V4FMuVPtL3QM8dAmDiq6+57E1IOUbLRfe6qost
+         L3jh843HgRAHN/KB5i9zX0eW1tAKEzzuNzeo1JgGBvHyZCeZF8iQfzdKULHljm497KeP
+         oj13QzuMhlYX3ZkkF7MKffqcOCs4q+bVS7j/vvYzdyhuoQVARDVaxHlXVkt4RjITKdpx
+         RHVA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from;
+        bh=n3fTI/1QfphcOlOaJx4UUyGF4rFWI9XgkxpEU6tnmoU=;
+        b=IOnvxl7vyYXAafyV2TpolI8iUhSirhufFC2BUQWM1MzrU0sKJj6tIRuQsCsYKVSiyc
+         OS+SZ9Yf8wB4+aeqvSnJDxLoyEyafmslR/JS5mb+Ww4X/OCbYKriOrowSOeyO+xhvtdN
+         oGCWGZf/HVzHTahY7MIc7BjXzX7RMdC/62zI6ZyH+lQCPNjfFMz1asf/p/hyMfoEW/nP
+         J0/J3MQoZJBEDeV9wUd0kvNHnYpRiA5eTmF3IpjfHhxVfDfhWyQ3B10J2SMoWdQR803N
+         VDIKujXDoWfmSq9zf3OdbWJvbf8l9VwX7opB8PdzgSmhrwrYxBVXqjSpEMMklTTphZqL
+         2c8w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of servicliente-tarjeta@colpatria.com designates 168.165.208.24 as permitted sender) smtp.mailfrom=servicliente-tarjeta@colpatria.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=colpatria.com
+Return-Path: <servicliente-tarjeta@colpatria.com>
+Received: from smexstsipgdl11.scotiabank.com.mx (smexstsipgdl11.scotiabank.com.mx. [168.165.208.24])
+        by mx.google.com with ESMTPS id o9si75032otp.222.2020.03.05.13.14.44
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 05 Mar 2020 13:14:45 -0800 (PST)
+Received-SPF: pass (google.com: domain of servicliente-tarjeta@colpatria.com designates 168.165.208.24 as permitted sender) client-ip=168.165.208.24;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of servicliente-tarjeta@colpatria.com designates 168.165.208.24 as permitted sender) smtp.mailfrom=servicliente-tarjeta@colpatria.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=colpatria.com
+X-IronPort-AV: E=Sophos;i="5.70,519,1574143200"; 
+   d="jpg'145?scan'145,208,217,145";a="69993103"
+Received: from unknown (HELO smexstsipgdl380b2o1.mx) ([172.19.27.147])
+  by smexstsipgdl680b1i1.mx with ESMTP; 05 Mar 2020 15:14:30 -0600
+X-IronPort-AV: E=Sophos;i="5.70,519,1574143200"; 
+   d="jpg'145?scan'145,208,217,145";a="63365444"
+Received: from unknown (HELO appliancehostname.parentdomain.com) ([172.18.243.2])
+  by smexstsipgdl380b2i1.mx with ESMTP; 05 Mar 2020 15:14:29 -0600
+Received: from sdpaplmt010.mex.tag.bns (unknown [172.19.117.88])
+	by Forcepoint Email with ESMTPS id 7755A1F6E1832634A625
+	for <pharsat@gmail.com>; Thu,  5 Mar 2020 15:14:29 -0600 (CST)
+Received: from MSPBOGTC470.colpatria.com ([10.236.1.82])
+	by sdpaplmt010.mex.tag.bns (Sentrion-MTA-4.3.2/Sentrion-MTA-4.3.2) with ESMTP id 025LBOdT026311
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=FAIL)
+	for <pharsat@gmail.com>; Thu, 5 Mar 2020 15:14:28 -0600
+Received: from MSPBOGCA459.colpatria.com ([fe80::c6f:3c1a:ea9e:44bf]) by
+ MSPBOGTC470.colpatria.com ([::1]) with mapi id 14.03.0399.000; Thu, 5 Mar
+ 2020 16:13:39 -0500
+From: Tu respuesta Colpatria <servicliente-tarjeta@colpatria.com>
+To: "pharsat@gmail.com" <pharsat@gmail.com>
+Subject: Respuesta Banco Scotiabank Colpatria RQ 7321782
+Thread-Topic: Respuesta Banco Scotiabank Colpatria RQ 7321782
+Thread-Index: AdXzMuT6O48LV9v0TbWw7SJrlJl2+A==
+Date: Thu, 5 Mar 2020 21:13:37 +0000
+Message-ID: <C6EAC847F746F6439D5159D5E08A6F9010FEB9A2@MSPBOGCA459.colpatria.com>
+Accept-Language: en-US
+Content-Language: es-ES
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+x-originating-ip: [10.236.1.162]
+Content-Type: multipart/related;
+	boundary="_004_C6EAC847F746F6439D5159D5E08A6F9010FEB9A2MSPBOGCA459colp_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+
+--_004_C6EAC847F746F6439D5159D5E08A6F9010FEB9A2MSPBOGCA459colp_
+Content-Type: multipart/alternative;
+	boundary="_000_C6EAC847F746F6439D5159D5E08A6F9010FEB9A2MSPBOGCA459colp_"
+
+--_000_C6EAC847F746F6439D5159D5E08A6F9010FEB9A2MSPBOGCA459colp_
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+
+Se=F1or
+CRISTIAN FELIPE GALLEGO RAMIREZ
+
+Ref.  Tarjeta de cr=E9dito No. ****7593
+
+
+Respetado Se=F1or Gallego
+
+
+En atenci=F3n a su comunicaci=F3n radicada ante nuestra entidad, relacionad=
+a con el cobro de cuota de manejo, le informamos lo siguiente:
+
+Inicialmente en nombre de Scotiabank Colpatria S.A., ofrecemos disculpas po=
+r los inconvenientes causados.
+
+Ahora bien, teniendo en cuenta la situaci=F3n presentada, nuestra entidad p=
+rocedi=F3 a reversar el cargo de cuota de manejo generado el 14 de febrero =
+de 2020 por un valor de $33.290. Dicho ajuste lo puede verificar en su pr=
+=F3ximo extracto con el concepto de DEVOLUCION COMISION COBRADA.
+
+Agradecemos la atenci=F3n prestada y esperamos haber atendido su solicitud =
+de manera clara y completa.
+
+Gerencia Customer Service Unit
+Elaborado por: BOGTORR002.
+_______________________________________________________
+Scotiabank Colpatria S.A.
+Cra. 9 # 24 - 59, Bogot=E1, Colombia
+www.scotiabankcolpatria.com<http://www.scotiabankcolpatria.com/>
+[cid:image001.jpg@01D59EE9.DAC4B230]
+
+Pensando en su comodidad le ofrecemos nuestras L=EDneas de Atenci=F3n en: *=
+ Bogot=E1: 7561616  * Cali: 4891616 * Ibagu=E9: 2771616 * Medell=EDn: 60416=
+16 * Neiva: 8631616 * Pereira: 3401616 * Bucaramanga: 6971616 * Barranquill=
+a: 3851616 * Cartagena: 6931616 * C=FAcuta: 5955195 * Santa Marta: 4365966*=
+ Villavicencio: 6836126 * Valledupar: 5898480* Popay=E1n: 8353735 * Resto d=
+el Pa=EDs: 018000 522222 y el servicio virtual Chat accediendo a la ruta ww=
+w.scotiabankcolpatria.com<http://www.scotiabankcolpatria.com/>, opci=F3n "C=
+ont=E1ctanos" opciones "Chat" o "Preguntas Frecuentes". Si prefiere atenci=
+=F3n presencial lo invitamos a consultar en nuestra p=E1gina las direccione=
+s y horarios de atenci=F3n de nuestros Centros de Servicio al Cliente en la=
+s diferentes ciudades.
+
+La Defensor=EDa del Consumidor Financiero para la compa=F1=EDa Scotiabank C=
+olpatria S.A, est=E1 ubicada en la Avenida 19 No. 114-09 Oficina 502, Bogot=
+=E1 D.C., Tel: 213-1322 y 213-1370 en Bogot=E1 D.C, atenci=F3n de lunes a v=
+iernes de 8:00 a.m. a 5:00 p.m. Correo electr=F3nico: defensoriasc@pgabogad=
+os.com<mailto:defensoriasc@pgabogados.com>; Defensor del consumidor financi=
+ero Principal: Jos=E9 Guillermo Pe=F1a Gonz=E1lez, Defensor Suplente: Carlo=
+s Alfonso Cifuentes Neira.
+
+CONFIDENCIAL. La informaci=F3n contenida en este e-mail es confidencial y s=
+=F3lo puede ser utilizada por el individuo o la compa=F1=EDa a la cual est=
+=E1 dirigido. Si no es usted el destinatario autorizado, cualquier retenci=
+=F3n, difusi=F3n, distribuci=F3n o copia de este mensaje est=E1 prohibida y=
+ es sancionada por la ley. Si por error recibe este mensaje, favor renviar =
+y borrar el mensaje recibido inmediatamente. CONFIDENTIAL. The information =
+contained in this message is intended only for the recipient, may be privil=
+eged and confidential and protected from disclosure. If the reader of this =
+message is not the intended recipient, or an employee or agent responsible =
+for delivering this message to the intended recipient, please be aware that=
+ any dissemination or copying of this communication is strictly prohibited.=
+ If you have received this communication by mistake, please immediately not=
+ify the sender by replying to the message and deleting it from your compute=
+r.
+
+NOTA: La presente direcci=F3n de correo electr=F3nico es =FAnicamente un bu=
+z=F3n de respuesta, por tal motivo no permite la recepci=F3n de solicitudes=
+, cualquier inquietud adicional no dude en informarla a trav=E9s de nuestro=
+s canales de servicio, los cuales podr=E1 consultar a trav=E9s de nuestra p=
+=E1gina web www.scotiabankcolpatria.com<http://www.scotiabankcolpatria.com/=
+> / Personas - Canales de Atenci=F3n.
+This e-mail and any attachments may contain confidential or privileged info=
+rmation. If you are not an intended recipient, do not re-send, copy or use =
+this e-mail. Please also contact the sender immediately and delete this e-m=
+ail in its entirety. Privilege is not waived by reason of mistaken delivery=
+ to you. The Bank of Nova Scotia (Scotiabank) and its affiliates accept no =
+liability whatsoever for loss or damage in relation to this e-mail and may =
+monitor, retain and/or review email. Opinions expressed in this e-mail are =
+those of the author and may not represent the opinions of The Bank of Nova =
+Scotia (Scotiabank) and its affiliates. Trading instructions received by e-=
+mail or voicemail will not be acted upon. Pour obtenir la traduction en fra=
+n=E7ais: http://www.gbm.scotiabank.com/EmailDisclaimer/French.htm Traducci=
+=F3n en espa=F1ol: http://www.gbm.scotiabank.com/EmailDisclaimer/Spanish.ht=
+m
+--_000_C6EAC847F746F6439D5159D5E08A6F9010FEB9A2MSPBOGCA459colp_
+Content-Type: text/html; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel" xmlns:m=3D"http://schema=
+s.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html=
+40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+=09{font-family:"Cambria Math";
+=09panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+=09{font-family:Calibri;
+=09panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+=09{margin:0cm;
+=09margin-bottom:.0001pt;
+=09font-size:11.0pt;
+=09font-family:"Calibri",sans-serif;
+=09mso-fareast-language:EN-US;}
+a:link, span.MsoHyperlink
+=09{mso-style-priority:99;
+=09color:#0563C1;
+=09text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+=09{mso-style-priority:99;
+=09color:#954F72;
+=09text-decoration:underline;}
+span.EstiloCorreo17
+=09{mso-style-type:personal-compose;
+=09font-family:"Calibri",sans-serif;
+=09color:windowtext;}
+.MsoChpDefault
+=09{mso-style-type:export-only;
+=09font-family:"Calibri",sans-serif;
+=09mso-fareast-language:EN-US;}
+@page WordSection1
+=09{size:612.0pt 792.0pt;
+=09margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+=09{page:WordSection1;}
+/* List Definitions */
+@list l0
+=09{mso-list-id:414672239;
+=09mso-list-type:hybrid;
+=09mso-list-template-ids:-852865104 604635151 604635161 604635163 604635151=
+ 604635161 604635163 604635151 604635161 604635163;}
+@list l0:level1
+=09{mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-18.0pt;}
+@list l0:level2
+=09{mso-level-number-format:alpha-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-18.0pt;}
+@list l0:level3
+=09{mso-level-number-format:roman-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:right;
+=09text-indent:-9.0pt;}
+@list l0:level4
+=09{mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-18.0pt;}
+@list l0:level5
+=09{mso-level-number-format:alpha-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-18.0pt;}
+@list l0:level6
+=09{mso-level-number-format:roman-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:right;
+=09text-indent:-9.0pt;}
+@list l0:level7
+=09{mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-18.0pt;}
+@list l0:level8
+=09{mso-level-number-format:alpha-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:left;
+=09text-indent:-18.0pt;}
+@list l0:level9
+=09{mso-level-number-format:roman-lower;
+=09mso-level-tab-stop:none;
+=09mso-level-number-position:right;
+=09text-indent:-9.0pt;}
+ol
+=09{margin-bottom:0cm;}
+ul
+=09{margin-bottom:0cm;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"ES-MX" link=3D"#0563C1" vlink=3D"#954F72">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX">Se=F1or<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX">CRISTIAN FELIPE GALLEGO RAMIREZ&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX">Ref.&nbsp; Tarjeta de cr=E9dito No. ****759=
+3<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX">Respetado Se=F1or Gallego<o:p></o:p></span>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX">En atenci=F3n a su comunicaci=F3n radicada =
+ante nuestra entidad, relacionada con el cobro de cuota de manejo, le infor=
+mamos lo siguiente:<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX">Inicialmente en nombre de Scotiabank Colpat=
+ria S.A., ofrecemos disculpas por los inconvenientes causados.<o:p></o:p></=
+span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX">Ahora bien, teniendo en cuenta la situaci=
+=F3n presentada, nuestra entidad procedi=F3 a reversar el cargo de cuota de=
+ manejo generado el 14 de febrero de 2020 por un valor
+ de $33.290. Dicho ajuste lo puede verificar en su pr=F3ximo extracto con e=
+l concepto de DEVOLUCION COMISION COBRADA.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,sans-se=
+rif;mso-fareast-language:ES-MX">Agradecemos la atenci=F3n prestada y espera=
+mos haber atendido su solicitud de manera clara y completa.<o:p></o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:ES-MX"><o:p>&nbs=
+p;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"line-height:12.0pt;mso-line-height-rule:exa=
+ctly"><b><span lang=3D"ES-CO" style=3D"font-family:&quot;Arial&quot;,sans-s=
+erif;color:#595959;mso-fareast-language:ES-CO">Gerencia Customer Service Un=
+it</span></b><b><span lang=3D"ES-CO" style=3D"mso-fareast-language:ES-CO"><=
+o:p></o:p></span></b></p>
+<p class=3D"MsoNormal"><span lang=3D"ES-CO" style=3D"font-family:&quot;Aria=
+l&quot;,sans-serif;color:#595959;mso-fareast-language:ES-CO">Elaborado por:=
+ BOGTORR002.</span><span lang=3D"ES-CO" style=3D"mso-fareast-language:ES-CO=
+"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:ES-CO">_________=
+______________________________________________<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"color:red;mso-fareast-language:ES-=
+CO">Scotiabank Colpatria S.A.</span></b><span style=3D"font-size:10.0pt;fon=
+t-family:&quot;Times New Roman&quot;,serif;color:red;mso-fareast-language:E=
+S-CO"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"ES-CO" style=3D"mso-fareast-language:E=
+S-CO">Cra. 9 # 24 - 59, Bogot=E1, Colombia</span><span lang=3D"ES-CO" style=
+=3D"mso-fareast-language:ES-CO"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:ES-MX"><a href=
+=3D"http://www.scotiabankcolpatria.com/"><span lang=3D"ES-CO" style=3D"colo=
+r:#0563C1;mso-fareast-language:ES-CO">www.scotiabankcolpatria.com</span></a=
+></span><span style=3D"mso-fareast-language:ES-CO">
+</span><span lang=3D"ES-CO" style=3D"mso-fareast-language:ES-CO"><o:p></o:p=
+></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:ES-MX"><img bord=
+er=3D"0" width=3D"188" height=3D"26" id=3D"Imagen_x0020_2" src=3D"cid:image=
+001.jpg@01D5F309.06622C10" alt=3D"cid:image001.jpg@01D59EE9.DAC4B230"></spa=
+n><span lang=3D"ES-CO" style=3D"mso-fareast-language:ES-CO"><o:p></o:p></sp=
+an></p>
+<p class=3D"MsoNormal"><span lang=3D"ES-CO" style=3D"mso-fareast-language:E=
+S-CO"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"ES-CO" style=3D"font-size:7.0pt;font-f=
+amily:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO">P=
+ensando en su comodidad le ofrecemos nuestras L=EDneas de Atenci=F3n en: &#=
+8226; Bogot=E1: 7561616&nbsp; &#8226; Cali: 4891616 &#8226; Ibagu=E9: 27716=
+16 &#8226;
+ Medell=EDn: 6041616 &#8226; Neiva: 8631616 &#8226; Pereira: 3401616 &#8226=
+; Bucaramanga: 6971616 &#8226; Barranquilla: 3851616 &#8226; Cartagena: 693=
+1616&nbsp;&#8226; C=FAcuta: 5955195 &#8226; Santa Marta: 4365966&#8226; Vil=
+lavicencio: 6836126 &#8226; Valledupar: 5898480&#8226; Popay=E1n: 8353735 &=
+#8226; Resto del Pa=EDs: 018000 522222
+ y el servicio virtual Chat accediendo a la ruta </span><span style=3D"mso-=
+fareast-language:ES-MX"><a href=3D"http://www.scotiabankcolpatria.com/"><sp=
+an lang=3D"ES-CO" style=3D"font-size:7.0pt;font-family:&quot;Arial&quot;,sa=
+ns-serif;color:gray;mso-fareast-language:ES-CO">www.scotiabankcolpatria.com=
+</span></a></span><span lang=3D"ES-CO" style=3D"font-size:7.0pt;font-family=
+:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO">,
+ opci=F3n &#8220;Cont=E1ctanos&#8221; opciones &#8220;Chat&#8220; o &#8220;=
+Preguntas Frecuentes&#8221;. Si prefiere atenci=F3n presencial lo invitamos=
+ a consultar en nuestra p=E1gina las direcciones y horarios de atenci=F3n d=
+e nuestros Centros de Servicio al Cliente en las diferentes ciudades.<o:p><=
+/o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"ES-CO" style=3D"font-size:7.0pt;font-f=
+amily:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO">&=
+nbsp;<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"ES" style=3D"font-size:7.0pt;font-fami=
+ly:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO">La D=
+efensor=EDa del Consumidor Financiero para la compa=F1=EDa Scotiabank Colpa=
+tria S.A, est=E1 ubicada en la Avenida 19 No. 114-09 Oficina
+ 502, Bogot=E1 D.C., Tel: 213-1322 y 213-1370 en Bogot=E1 D.C, atenci=F3n d=
+e lunes a viernes de 8:00 a.m. a 5:00 p.m. Correo electr=F3nico:
+</span><span style=3D"mso-fareast-language:ES-MX"><a href=3D"mailto:defenso=
+riasc@pgabogados.com"><span lang=3D"ES" style=3D"font-size:7.0pt;font-famil=
+y:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO">defen=
+soriasc@pgabogados.com</span></a></span><span lang=3D"ES" style=3D"font-siz=
+e:7.0pt;font-family:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-lan=
+guage:ES-CO">;
+ Defensor del consumidor financiero Principal: Jos=E9 Guillermo Pe=F1a Gonz=
+=E1lez, Defensor Suplente: Carlos Alfonso Cifuentes Neira.<o:p></o:p></span=
+></p>
+<p class=3D"MsoNormal"><span lang=3D"ES-CO" style=3D"font-size:7.0pt;font-f=
+amily:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO"><=
+o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span lang=3D"ES-CO" style=3D"font-size:7.0pt;fon=
+t-family:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO=
+">CONFIDENCIAL</span></b><span lang=3D"ES-CO" style=3D"font-size:7.0pt;font=
+-family:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO"=
+>.
+ La informaci=F3n contenida en este e-mail es confidencial y s=F3lo puede s=
+er utilizada por el individuo o la compa=F1=EDa a la cual est=E1 dirigido. =
+Si no es usted el destinatario autorizado, cualquier retenci=F3n, difusi=F3=
+n, distribuci=F3n o copia de este mensaje est=E1 prohibida
+ y es sancionada por la ley. Si por error recibe este mensaje, favor renvia=
+r y borrar el mensaje recibido inmediatamente.
+</span><span lang=3D"EN-US" style=3D"font-size:7.0pt;font-family:&quot;Aria=
+l&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO">CONFIDENTIAL. The=
+ information contained in this message is intended only for the recipient, =
+may be privileged and confidential and protected
+ from disclosure. If the reader of this message is not the intended recipie=
+nt, or an employee or agent responsible for delivering this message to the =
+intended recipient, please be aware that any dissemination or copying of th=
+is communication is strictly prohibited.
+ If you have received this communication by mistake, please immediately not=
+ify the sender by replying to the message and deleting it from your compute=
+r.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-US" style=3D"font-size:7.0pt;font-f=
+amily:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO"><=
+o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span lang=3D"ES-CO" style=3D"font-size:7.0pt;fon=
+t-family:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO=
+">NOTA:</span></b><span lang=3D"ES-CO" style=3D"font-size:7.0pt;font-family=
+:&quot;Arial&quot;,sans-serif;color:gray;mso-fareast-language:ES-CO">
+ La presente direcci=F3n de correo electr=F3nico es =FAnicamente un buz=F3n=
+ de respuesta, por tal motivo no permite la recepci=F3n de solicitudes, cua=
+lquier inquietud adicional no dude en informarla a trav=E9s de nuestros can=
+ales de servicio, los cuales podr=E1 consultar
+ a trav=E9s de nuestra p=E1gina web </span><span style=3D"mso-fareast-langu=
+age:ES-MX"><a href=3D"http://www.scotiabankcolpatria.com/"><span lang=3D"ES=
+-CO" style=3D"font-size:7.0pt;font-family:&quot;Arial&quot;,sans-serif;colo=
+r:gray;mso-fareast-language:ES-CO">www.scotiabankcolpatria.com</span></a></=
+span><span lang=3D"ES-CO" style=3D"font-size:7.0pt;font-family:&quot;Arial&=
+quot;,sans-serif;color:gray;mso-fareast-language:ES-CO">
+ / Personas - Canales de Atenci=F3n. <o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:ES-MX"><o:p>&nbs=
+p;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"mso-fareast-language:ES-MX"><o:p>&nbs=
+p;</o:p></span></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+ <br>
+This e-mail and any attachments may contain confidential or privileged info=
+rmation. If you are not an intended recipient, do not re-send, copy or use =
+this e-mail. Please also contact the sender immediately and delete this e-m=
+ail in its entirety. Privilege is not waived by reason of mistaken delivery=
+ to you. The Bank of Nova Scotia (Scotiabank) and its affiliates accept no =
+liability whatsoever for loss or damage in relation to this e-mail and may =
+monitor, retain and/or review email. Opinions expressed in this e-mail are =
+those of the author and may not represent the opinions of The Bank of Nova =
+Scotia (Scotiabank) and its affiliates. Trading instructions received by e-=
+mail or voicemail will not be acted upon. Pour obtenir la traduction en fra=
+n&ccedil;ais: http://www.gbm.scotiabank.com/EmailDisclaimer/French.htm Trad=
+ucci&oacute;n en espa&ntilde;ol: http://www.gbm.scotiabank.com/EmailDisclai=
+mer/Spanish.htm</body>
+</html>
+--_000_C6EAC847F746F6439D5159D5E08A6F9010FEB9A2MSPBOGCA459colp_--
+
+--_004_C6EAC847F746F6439D5159D5E08A6F9010FEB9A2MSPBOGCA459colp_
+Content-Type: image/jpeg; name="image001.jpg"
+Content-Description: image001.jpg
+Content-Disposition: inline; filename="image001.jpg"; size=2228;
+	creation-date="Thu, 05 Mar 2020 21:13:37 GMT";
+	modification-date="Thu, 05 Mar 2020 21:13:37 GMT"
+Content-ID: <image001.jpg@01D5F309.06622C10>
+Content-Transfer-Encoding: base64
+
+/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIf
+IiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7
+Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAaALwDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD16+vr
+bTbOS7vJlhgiGWdu1cwPid4eLbV+1sScDEPX9a0fGNkLvQZJWj84WZNx5JGRKVU4B9skH8K4Dwj4
+m1Ea/BHdTrNaOGMqsihYlCk7hgfKBj6Vz1KkozUT3MDgaVbDTqtXcel7foz1mCXzoEl8t496htkg
+wy+xHrUlYPjCzv7/AEQQ6dJ85mQvGJfLMyd0DdieKxNM8Rra2FrpeiWEn22W5liaG+nJELKMtlu4
+5GAK0dTldmcNPBurS9pB6327Le7d/wBPmdzRXI3firWIHuI49LtWfTrdJr8NcYxuGcJxzwOv4fXG
+1bXdRuDrryAPp4s4JY4vNZSocqVIxyCcnP0qXWijSlltab1aW3VPdr/NNdz0eiuKvvGOp21vfXVj
+p1vJZacywyPLMQ5fjkD05+pqnb6/qmlXOvXsVpFc2UF7vnLzkOoIHCCh1o3COWVpRvp5ary030eq
+PQaK4zUvGeoxJqN3p+nQS2OnsI5HmlKuWOOQvpyKJ/GeqQy3Mw023aytLtIJX80hyGxjA/Gn7WBK
+y3ENJ2X3ry09dVodnRXC+FtcuDrFxotugldr64mnkmY/JGGAAX1Pt2ruqqE1NXRhicNLDz5ZDXdU
+Uu7BVAySTgCsw+J9E8wxrqUMjDqIiXx/3zmsTUbm01HxwdI1mUJZwwLJb28jbY53PUt/ex0APoay
+vGXiPV9F1IafYWYtbBFUoyIVEuRzhlxj0wOazlVsmztw+X+1lGD3avvZW9dbs9At7mG6j8yCQOvq
+KlrgNR0CT/hHl8R297fabfwwfaDFNctIoOM7fm55/rgitXVvEN/b+GdKuF2Wl3qTRRNNIvyQFhks
+R/Q1SqW+JGUsCpNeyle7a16NffdeaOqorh7i61C01G00SPxIXW9LSPfSKhKBRzGvbJPPtkVRm13V
+YkutOh1ZrtF1CC3gvgFBO7Jdcjg4x1pOsl0Ljls5/DJd+u17X279Nz0aiuC8S6rqs3iW4stLn1Ar
+DZqUSyRWBlJOC5PRcd6oR+MtQk13TvM1GMQwSxWtzChH75iMPJ/uhuKTrRTsVDKq04KUWtr26+X3
+nplFec3N5qtrH4iuhrl48emuIYFbbh3YYOeOxIxVeLXNbGiajcRaldMheG2hNxsEqTlhvwB0GM9a
+PbpdBrKpyV1NdF1628uzR6dRXnWv+MJ4NfjhtNRVLbTZY4548/NcsT8/4KBj6mvRAcjI5FaRmpNp
+dDjxGEqUIQlP7X9fqjK18a89ukehfZklY5eWc/dHoBg5zXKWvgnXbu626lNp9taSMGuFsogjTAHO
+04Ucf5xXoNFKVNSd2XQx1ShDlppLztr/AF2KOq6NYa1aLa38JkjVg6gMVKkdCCKpv4R0N9Mj077C
+FgjfzE2uwYN3bdnOfxraoqnGL3RzxxFaCUYyaS136mFN4M0C4FuJLHIt0Ea/vG+ZQcgNz8w+tWbr
+w3pV4bvzrbP2yNI5gHYAqn3QMHjHtWpRRyR7FfWa+nvvTzfr+Zh33g3QdRuHuLmy3SSKA+2RlDY4
+BIB6+9JL4M0Ge8a7lsi8ryeY+ZWw57ZGcEe1btFLkj2GsXiErKb+9mJqHg/QtUu5Lq7st0soAkKy
+MobHQkA4z71M/hvSpILiBrcmO6mWaUeY3zOuMHrx0FatFPkj2J+s17Jc7sttWZKeGdJjnjnjtyks
+U73CSLIwYO33uc9D6dK1qKKaSWxnOpOfxu5max4d0vXljGo2olMf3GBKsPbI7e1ULfwxJp2Bpkln
+CB0aW3eVl+mZMV0VFS4RbvY1hiq0Icil7vbp9xhjw2bqZJdZ1GbUgjblgZRHCCOhKDr+JNat3ZWt
+/bNbXcEc8LdUdcip6KaikRKtUk029traW9LGY/hvRXsUsW0y3a2jYskZThSepFE/hzRrmzis5dOg
+NvCS0cYXCqT1OBWnRRyx7D9vW/mffd7lC00TTLASi0s44fOjEb7cjKgYApp0DSTp6WH2CH7NGQyx
+7eAc5z69a0aKOVdhe2q3vzO/qZ76DpckE8D2UbR3MvnTKc/O/XJpsnh7SJbiS4exjMssiyu3PzOv
+RvqMmtKijlj2BV6q2k/v/rsjOGgaSNPew+wQ/ZpDuaPHU5znPXrV9EWNFRBhVGAPQU6imklsTKpO
+XxO5/9k=
+--_004_C6EAC847F746F6439D5159D5E08A6F9010FEB9A2MSPBOGCA459colp_--

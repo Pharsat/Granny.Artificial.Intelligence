@@ -1,0 +1,158 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:b605:0:0:0:0:0 with SMTP id s5csp790699ili;
+        Thu, 3 Sep 2020 11:48:47 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxYbVav/3R45Xbq9TK8v5dNj7qY26p771JdLPjJtN8hoWNFoJ9wqfi/rTOsz5Na19+4PiKq
+X-Received: by 2002:aed:364a:: with SMTP id e68mr4831458qtb.260.1599158927422;
+        Thu, 03 Sep 2020 11:48:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1599158927; cv=none;
+        d=google.com; s=arc-20160816;
+        b=VH796TlPSYdP3NVryauJnhZuwqZmdXY/TkCw6djHjbu8nfZjWEAOycxVJfOvKnwvEF
+         22MccnXkOU1nypUlW3AJ325mvBsQd/Gf4/ZXN4pu+qqneqwCRXOOZQceAlSC+Ki34Xv6
+         kpLw6ul/ohA44WW329yq67n0h6lec2l/DaJJ6ew6OubJw7m6d8vlq3AAjzp+s0lStVcV
+         3YLp2wCSpxgI9VcfhV8hFzb/efI6FVmAu9GyH7nyQ0F5wVlIFcpeeLO4+IK0fs6NwQ80
+         yVLKrWT+0iHSonBLKL91+jHXevRrk2MDHGgPWCnJ4iV9Q2hLwUJcHdEejl7qs+7kFE8K
+         YeMQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:message-id:to:sender:from:date;
+        bh=fMh8FSzNOoW8DqQGboAetJnXIRuPI1jzLv24rR8caZE=;
+        b=cqoXlJ1RCVvbr4+TpJyqvujSV7iDSevCB1wKce3u3YYf1+SLeX74j05IkUZQquyjcn
+         1pJg8Ezvb9mWKTMJcIHumdfKAqKS3YwUwpFL056AuMZcj02bqrlnG2/1wm8FvxmE7SHy
+         dyJ4LOQoT9qnSysoxC5n8mLgeJ90g+Tsw2RLoX47h0KJ1IFoqBQvHVY/SuinhkwP2HAZ
+         VV8p+dIlIFrrrFgC1ufLpG8EcezIlExQxJeMH9N6azUOyJRjN55e2HnQ4qDHqCode4TQ
+         n245CdmOqfFxcToP+NbMRyqnu/2oikL3mxbwYOJAZh+135Uuof4eIHRr4bLdvH04qYzE
+         3MwA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of sac.co=smartfit.com.co__0-81fi22supqqqh5@8ehrd7dckdxfwb.6g-7qxy6eag.na174.bnc.salesforce.com designates 13.110.78.230 as permitted sender) smtp.mailfrom="sac.co=smartfit.com.co__0-81fi22supqqqh5@8ehrd7dckdxfwb.6g-7qxy6eag.na174.bnc.salesforce.com"
+Return-Path: <sac.co=smartfit.com.co__0-81fi22supqqqh5@8ehrd7dckdxfwb.6g-7qxy6eag.na174.bnc.salesforce.com>
+Received: from smtp07-ia5-sp1.mta.salesforce.com (smtp07-ia5-sp1.mta.salesforce.com. [13.110.78.230])
+        by mx.google.com with ESMTPS id m8si2470513qtg.119.2020.09.03.11.48.47
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 03 Sep 2020 11:48:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of sac.co=smartfit.com.co__0-81fi22supqqqh5@8ehrd7dckdxfwb.6g-7qxy6eag.na174.bnc.salesforce.com designates 13.110.78.230 as permitted sender) client-ip=13.110.78.230;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of sac.co=smartfit.com.co__0-81fi22supqqqh5@8ehrd7dckdxfwb.6g-7qxy6eag.na174.bnc.salesforce.com designates 13.110.78.230 as permitted sender) smtp.mailfrom="sac.co=smartfit.com.co__0-81fi22supqqqh5@8ehrd7dckdxfwb.6g-7qxy6eag.na174.bnc.salesforce.com"
+Return-Path: <sac.co=smartfit.com.co__0-81fi22supqqqh5@8ehrd7dckdxfwb.6g-7qxy6eag.na174.bnc.salesforce.com>
+Authentication-Results:  mx4-ia5-sp1.mta.salesforce.com x-tls.subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia5;2:ia5-sp1;3:na174;4:prod/CN=na174-app1-11-ia5.ops.sfdc.net"; auth=pass (cipher=ECDHE-RSA-AES256-GCM-SHA384)
+Received: from [10.182.146.2] ([10.182.146.2:41868] helo=na174-app1-11-ia5.ops.sfdc.net)
+	by mx4-ia5-sp1.mta.salesforce.com (envelope-from <sac.co=smartfit.com.co__0-81fi22supqqqh5@8ehrd7dckdxfwb.6g-7qxy6eag.na174.bnc.salesforce.com>)
+	(ecelerity 4.2.38.62368 r(Core:release/4.2.38.0)) with ESMTPS (cipher=ECDHE-RSA-AES256-GCM-SHA384
+	subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia5;2:ia5-sp1;3:na174;4:prod/CN=na174-app1-11-ia5.ops.sfdc.net") 
+	id F2/83-34879-E8A315F5; Thu, 03 Sep 2020 18:48:46 +0000
+Date: Thu, 3 Sep 2020 18:48:46 +0000 (GMT)
+From: Registro de caso por correo SmartFit 2 <sac.co@smartfit.com.co>
+Sender: noreply@salesforce.com
+To: "pharsat@gmail.com" <pharsat@gmail.com>
+Message-ID: <JYtCL000000000000000000000000000000000000000000000QG3IXA00UY7hkU9SS223VuhRPxgjkA@sfdc.net>
+Subject: =?ISO-8859-1?Q?Cancelaci=F3n_plan____[_ref:=5F?=
+ =?ISO-8859-1?Q?00D6g7QXy6.=5F5006gGqvOQ:ref_]?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_4400_1331614207.1599158926789"
+X-SFDC-LK: 00D6g000007QXy6
+X-SFDC-User: 0056g000005Stz5
+X-Sender: postmaster@salesforce.com
+X-mail_abuse_inquiries: http://www.salesforce.com/company/abuse.jsp
+X-SFDC-TLS-NoRelay: 1
+X-SFDC-Binding: 1WrIRBV94myi25uB
+X-SFDC-EmailCategory: quickActionEmail
+X-SFDC-EntityId: 5006g00000GqvOQ
+X-SFDC-Interface: internal
+
+------=_Part_4400_1331614207.1599158926789
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Hola Cristian.
+
+Recibe un cordial saludo.
+
+Como sabes la vida nos ha cambiado a todos. Como empresa no somos la excepc=
+i=F3n y debemos acoplarnos a los nuevos retos que nos plantea el mundo. Es =
+por ello que se han implementado nuevas maneras para poder retomar el entre=
+namiento.
+
+Desde que tuvimos que cerrar nuestras sedes hemos trabajo fuertemente para =
+apoyarnos y buscar alternativas de entrenamiento que permitan fortalecer la=
+ salud f=EDsica y mental de los colombianos. Precisamente por eso definimos=
+ congelar los cobros hasta que se presente la reapertura de las sedes.
+
+Hemos enviado un correo electr=F3nico a cada usuario explicando el proceso =
+y resolviendo todas las dudas posibles. Igualmente, tenemos habilitada la w=
+eb: https://www.smartfit.com.co/landing
+
+Si a pesar de la apertura de la sede consideras que no quieres regresar, te=
+ ofrecemos alternativas como:
+- La posibilidad de congelaci=F3n desde 15 y hasta 60 d=EDas, contando desd=
+e la fecha de apertura de la sede
+- Si decides no cancelar el plan ni congelarlo, te adicionamos el servicio =
+de Smart Fit  Go!
+
+SMART FIT GO es una plataforma digital que re=FAne la mejor capacitaci=F3n =
+en l=EDnea para que puedas hacer ejercicio cuando y donde quieras. Ofrecemo=
+s programas completos para bajar de peso, fortalecimiento muscular, yoga y =
+mucho m=E1s. Con una sola suscripci=F3n mensual, el acceso es ilimitado a t=
+odos los programas de ejercicios para hacer en casa.
+
+De cualquier lugar puedes entrenar, tener asesor=EDas con especialistas y c=
+ontenidos en vivo exclusivos con nuestros mejores profesores.
+
+Clases en vivo
+con una programaci=F3n diaria
+Rutinas dise=F1adas
+para que actives todo tu cuerpo
+Asesor=EDas con especialistas
+
+Si a=FAn as=ED deseas cancelar haznoslo saber.
+
+Ten presente que cuando abramos nuestras puertas y  regreses podr=E1s tener=
+ la confianza que siempre te hemos brindado como Centro de Acondicionamient=
+o y Preparaci=F3n F=EDsica. Todas las medidas de bioseguridad estar=E1n imp=
+lementadas para que entrenes con seguridad.
+
+Quedamos atentos.
+
+Feliz d=EDa.
+ref:_00D6g7QXy6._5006gGqvOQ:ref
+------=_Part_4400_1331614207.1599158926789
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+<html>
+<head>
+	<title></title>
+</head>
+<body>Hola Cristian.<br />
+<br />
+Recibe un cordial saludo.<br />
+<br />
+Como sabes la vida nos ha cambiado a todos. Como empresa no somos la excepci&oacute;n y debemos acoplarnos a los nuevos retos que nos plantea el mundo. Es por ello que se han implementado nuevas maneras para poder retomar el entrenamiento.<br />
+<br />
+Desde que tuvimos que cerrar nuestras sedes hemos trabajo fuertemente para apoyarnos y buscar alternativas de entrenamiento que permitan fortalecer la salud f&iacute;sica y mental de los colombianos. Precisamente por eso definimos congelar los cobros hasta que se presente la reapertura de las sedes.&nbsp;<br />
+<br />
+Hemos enviado un correo electr&oacute;nico a cada usuario explicando el proceso y resolviendo todas las dudas posibles. Igualmente, tenemos habilitada la web: https://www.smartfit.com.co/landing<br />
+<br />
+Si a pesar de la apertura de la sede consideras que no quieres regresar, te ofrecemos alternativas como:<br />
+- La posibilidad de congelaci&oacute;n desde 15 y hasta 60 d&iacute;as, contando desde la fecha de apertura de la sede&nbsp;<br />
+- Si decides no cancelar el plan ni congelarlo, te adicionamos el servicio de Smart Fit &nbsp;Go!<br />
+<br />
+SMART FIT GO es una plataforma digital que re&uacute;ne la mejor capacitaci&oacute;n en l&iacute;nea para que puedas hacer ejercicio cuando y donde quieras. Ofrecemos programas completos para bajar de peso, fortalecimiento muscular, yoga y mucho m&aacute;s. Con una sola suscripci&oacute;n mensual, el acceso es ilimitado a todos los programas de ejercicios para hacer en casa.<br />
+<br />
+De cualquier lugar puedes entrenar, tener asesor&iacute;as con especialistas y contenidos en vivo exclusivos con nuestros mejores profesores.<br />
+<br />
+Clases en vivo<br />
+con una programaci&oacute;n diaria<br />
+Rutinas dise&ntilde;adas<br />
+para que actives todo tu cuerpo<br />
+Asesor&iacute;as con especialistas<br />
+<br />
+Si a&uacute;n as&iacute; deseas cancelar haznoslo saber.<br />
+<br />
+Ten presente que cuando abramos nuestras puertas y &nbsp;regreses podr&aacute;s tener la confianza que siempre te hemos brindado como Centro de Acondicionamiento y Preparaci&oacute;n F&iacute;sica. Todas las medidas de bioseguridad estar&aacute;n implementadas para que entrenes con seguridad.&nbsp;<br />
+<br />
+Quedamos atentos.&nbsp;<br />
+<br />
+Feliz d&iacute;a.<br />
+&nbsp;<img src="https://smartfitco.my.salesforce.com/servlet/servlet.ImageServer?oid=00D6g000007QXy6&esid=0186g000002Dnpi"><br><br>ref:_00D6g7QXy6._5006gGqvOQ:ref</body>
+</html>
+------=_Part_4400_1331614207.1599158926789--

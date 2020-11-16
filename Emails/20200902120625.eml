@@ -1,0 +1,377 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:b605:0:0:0:0:0 with SMTP id s5csp646349ili;
+        Wed, 2 Sep 2020 09:06:27 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJyDpUcO4VmkmB/wEpbj/EuRRox8yxVT1vpf1s4dhA6rAy+KZyhcl7Y8KRpsDXll4fS+EI+L
+X-Received: by 2002:aca:4901:: with SMTP id w1mr2343291oia.160.1599062787626;
+        Wed, 02 Sep 2020 09:06:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1599062787; cv=none;
+        d=google.com; s=arc-20160816;
+        b=wcCzA1idusSSwcuvd6Ot5D4aybvOpOfB8idhU0J01yIDMkbJQzniGAZyPZGx24ovCo
+         gyqIbKpgReNY4LvakUFUT5fGM513RLml6CMrpeaZ8Rn4Oidvb440mpnp0sKxTfdfLiYI
+         7Yai6KrPS7COLuCMJPdUnecsfC3yt4bwyQIFcT9tLEDL7CDVWCKigYW6p7ItAtq/hS38
+         TJD3XUo5nCBDNX+3liEm/E7xlZIr4QV5Kg+z2VqvtAKQiphFhP1Vce8X4ClFbJtdDRoO
+         FK636Yy5FzBhxw4+ui6Q+Y6lwLXThtRBFr9hFKzhs3wz28qRZUwjvudUzsaIUHanfN0U
+         n3/w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:user-agent:message-id
+         :subject:to:from:date:dkim-signature:dkim-filter;
+        bh=b6EvtYN/Yl26ma6Lg/nMbHK8p6FcpiYRSem+wwU2UMU=;
+        b=suAtCn/pUEqfXTedyf5fnMB+0Wo3Ejv+Yd3ArUtsmiSNDyJA3yocwrF516xIRCoe1d
+         Ez3MUpErPZi44ta5YJxFBDcY7TmC4W/DXxPMp24WPIJj3bVvRdhvkFDUv/gzangD6MjA
+         gQKwZiw+ic6fZTkiV1RBqoaWd9DHwg71ZNR17f7IFIn1fYOLc5uzTz39VI7nDTl0xNaE
+         +c2Hqc9RHClepmb74Hhrl/rJAeqlIRIVho/x8Xrq9y0HaFh+xuaXrOEcVe/6fIziSaXV
+         F4pcdngGamxFJtNL/qOr4UnEnDrx8Lz5pTWXs6W8/aQHUpkmL5KuteGNbont3i8gUoj0
+         D7Eg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@american-cse.org header.s=default header.b=VRBgq2qV;
+       spf=pass (google.com: domain of schuster@american-cse.org designates 162.144.120.240 as permitted sender) smtp.mailfrom=Schuster@american-cse.org
+Return-Path: <Schuster@american-cse.org>
+Received: from american-cse.org (american-cse.org. [162.144.120.240])
+        by mx.google.com with ESMTP id f18si3234680otc.79.2020.09.02.09.06.27
+        for <pharsat@gmail.com>;
+        Wed, 02 Sep 2020 09:06:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of schuster@american-cse.org designates 162.144.120.240 as permitted sender) client-ip=162.144.120.240;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@american-cse.org header.s=default header.b=VRBgq2qV;
+       spf=pass (google.com: domain of schuster@american-cse.org designates 162.144.120.240 as permitted sender) smtp.mailfrom=Schuster@american-cse.org
+Received: by american-cse.org (Postfix, from userid 1002)
+	id 9BFEA1442BB; Wed,  2 Sep 2020 12:06:25 -0400 (EDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 american-cse.org 9BFEA1442BB
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=american-cse.org;
+	s=default; t=1599062785;
+	bh=b6EvtYN/Yl26ma6Lg/nMbHK8p6FcpiYRSem+wwU2UMU=;
+	h=Date:From:To:Subject:From;
+	b=VRBgq2qVzpFnW/am7jj0mVo+TeRlyUXKLLkL6ZODwWAQ2xIZdBxged2WVVG/3qxrm
+	 PHekKai3Im3ybZDN41jAcQcTnrho8sw0HTIJO02riLPxTcPb3bMBKOY+KCPYUc7k3u
+	 Uupg4WUjYvaEknTBgAT8MZEFbzNTmPOrZHftw6Ak=
+Date: Wed, 02 Sep 2020 12:06:25 -0400
+From: R. Schuster [IEEE CPS]<Schuster@american-cse.org>
+To: pharsat@gmail.com
+Subject: CFP: IEEE CPS; Xplore, Scopus, Ei Compendex; Computational
+ Science and Intelligence (CSCI'20: Dec. 16-18, 2020; USA); Deadline: Sept
+ 17 
+Content-Type: text/html
+Message-ID: <5f4fc301.P6VSEN0vYUnOwZce%Schuster@american-cse.org>
+User-Agent: Heirloom mailx 12.4 7/29/08
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<PRE>
+
+                          <B>CALL  FOR  PAPERS</B>
+            Paper Submission Deadline: September 17, 2020
+
+                 The 2020 International Conference on
+     Computational Science and Computational Intelligence (CSCI)
+                 December 16-18, 2020, Las Vegas, USA
+
+                https://www.american-cse.org/csci2020/ 
+
+           IEEE Xplore entry of prior years published papers:
+   https://ieeexplore.ieee.org/xpl/conhome/1803739/all-proceedings 
+
+          Also available via Scopus, Ei Compendex, and others.
+
+The CSCI conference is composed of the following research symposiums;
+all accepted papers will be included in the proceedings of The 2020
+International Conference on Computational Science and Computational
+Intelligence (CSCI), to be published by IEEE CPS (indexation: IEEE Xplore,
+Scopus, Ei Compendex, and others.)
+
+   - CSCI-ISNA: Social Network Analysis, Social Media, & Mining
+
+   - CSCI-ISBD: Big Data and Data Science
+
+   - CSCI-ISAI: Artificial Intelligence
+
+   - CSCI-ISHI: Health Informatics and Medical Systems
+
+   - CSCI-ISCW: Cyber Warfare, Cyber Defense, & Cyber Security
+
+   - CSCI-ISED: Education - STEM, CS & CE
+                (Includes accreditation topics, such as ABET)
+
+   - CSCI-ISOT: Internet of Things & Internet of Everything
+
+   - CSCI-ISCC: Cloud Computing and Data Centers
+
+   - CSCI-ISPC: Signal & Image Processing, Computer Vision &
+                Pattern Recognition
+
+   - CSCI-ISSC: Smart Cities and Smart Mobility
+
+   - CSCI-ISMC: Mobile Computing, Wireless Networks, & Security
+
+   - CSCI-ISSE: Software Engineering
+
+   - CSCI-ISPD: Parallel & Distributed Computing
+
+   - CSCI-ISCS: Computational Science
+
+   - CSCI-ISCI: Computational Intelligence
+
+   - CSCI-ISCB: Computational Biology
+
+
+<B>PUBLISHER:</B>
+
+   IEEE CPS: https://www.computer.org/conferences/cps 
+
+   Past conference proceedings can be accessed via IEEE Xplore Digital
+   Library at (as well as via Scopus, Ei Compendex, and others):
+
+   https://www.american-cse.org/csci2020/publisher 
+
+   Since its inception, all CSCI proceedings have always been approved
+   and included into IEEE Xplore indexation/digital-library citation
+   databases. The proceedings of CSCI have also been included in other
+   major citation index systems (including, Ei Compendex, Scopus,
+   scopus.com, and others). We anticipate the same level of indexation
+   in all future offering of CSCI.
+
+
+<B>INVITATION:</B>
+
+   You are invited to submit a paper for consideration. All accepted papers
+   will be published by IEEE CPS in the proceedings of The 2020
+   International Conference on Computational Science and Computational
+   Intelligence (CSCI). Extended versions of selected papers of the
+   conference will also appear in journals and edited research books
+   (Springer, Elsevier, BMC, ...) The published proceedings can be accessed
+   via web portals, IEEE CPS, other Digital libraries.
+
+   CSCI'20 International Conference is composed of a number of symposiums,
+   sessions, workshops, posters and panel discussions; all will be held
+   simultaneously, same location and dates: December 16-18, 2020.
+
+
+<B>PRESENTATION MODES:</B>
+
+   In case of hesitation by some authors/speakers to travel during Year 2020
+   (due to COVIC-19 or other pandemics), the CSCI Steering Committee has
+   developed a policy in regards to presentation modes - please refer to:
+   https://www.american-cse.org/csci2020/presentation_modes 
+   In summary: the policy allows remote presentaions (interactive and also
+   non-interactive) as well as on site presentation.
+
+
+<B>SCOPE AND LIST OF TOPICS:</B>
+
+   The 2020 CSCI International Conference invites paper submissions from
+   diverse communities, including researchers from: universities,
+   corporations, government agencies, and standardization bodies. Papers
+   are sought that address solutions to problems in all areas of
+   computational science and computational intelligence.
+
+   Computational Science is the study of addressing problems that are
+   impossible to solve (or difficult to solve) without computers. The
+   field is interdisciplinary by nature and includes the use of advanced
+   computing capabilities to understand and solve complex problems. In
+   short, Computational Science is the science of using computers to do
+   science. Computational Intelligence is the study of computational
+   methods in ways that exhibit intelligence. These methods adapt to
+   changing environments and changing goals.
+
+   Considering the above broad outline, the International Conference on
+   Computational Science and Computational Intelligence (CSCI'20) is
+   composed of the following research and technical tracks:
+
+   - Computational Science (CSCI-ISCS)
+   - Computational Intelligence (CSCI-ISCI)
+   - Cyber Warfare, Cyber Defense, & Cyber Security (CSCI-ISCW)
+   - Signal & Image Processing, Computer Vision & Pattern
+     Recognition (CSCI-ISPC)
+   - Smart Cities and Smart Mobility (CSCI-ISSC)
+   - Education (CSCI-ISED) - STEM, CS & CE; includes accreditation,
+     such as ABET
+   - Health Informatics and Medical Systems (CSCI-ISHI)
+   - Mobile Computing, Wireless Networks, & Security (CSCI-ISMC)
+   - Software Engineering (CSCI-ISSE)
+   - Internet of Things & Internet of Everything (CSCI-ISOT)
+   - Big Data and Data Science (CSCI-ISBD)
+   - Artificial Intelligence (CSCI-ISAI)
+   - Social Network Analysis, Social Media, & Mining (CSCI-ISNA)
+   - Cloud Computing and Data Centers (CSCI-ISCC)
+   - Computational Biology (CSCI-ISCB)
+   - Parallel & Distributed Computing (CSCI-ISPD)
+
+   For detailed topical list for each track, refer to:
+     https://www.american-cse.org/csci2020/topics 
+
+
+<B>INSTRUCTIONS FOR SUBMISSION OF PAPERS FOR EVALUATION:</B>
+
+   All accepted papers will be published by IEEE CPS:
+   https://www.computer.org/conferences/cps 
+   in the proceedings of The 2020 International Conference on Computational
+   Science and Computational Intelligence (CSCI'20).
+
+   Past conference proceedings can be accessed via IEEE Xplore Digital
+   Library at:
+   https://ieeexplore.ieee.org/xpl/conhome/1803739/all-proceedings 
+
+   Since its inception, all CSCI proceedings have always been approved
+   and included into IEEE Xplore indexation/digital-library citation
+   databases. The proceedings of CSCI have also been included in other
+   major citation index systems (including, Ei Compendex, Scopus,
+   scopus.com, and others). We anticipate the same level of indexation in
+   all future offering of CSCI.
+
+   Papers should be typeset by using the general typesetting instructions
+   available at (select "US letter" option for accessing templates):
+   https://www.ieee.org/conferences_events/conferences/publishing/templates.html 
+   (i.e., single line spacing, 2-column format). All submissions must be
+   original (papers must not have been previously published or currently
+   being considered by others for publication). 221125
+
+   Submissions must be in either MS doc or pdf formats (6 pages for Regular
+   Research Papers; 4 pages for Short Papers; 2 pages for Poster Papers - the
+   number of pages includes all figures, tables, and references - if the
+   authors need extra pages, then the editors would permit one extra page
+   above and beyond the maximum number of pages stated here at no extra
+   charge). The first page should include:
+
+   - Title of the paper.
+   - Name, affiliation, city, country, and email address of each author
+     (identify the name of the Contact Author).
+   - Abstract (about 100 words).
+   - A maximum of 5 topical keywords that would best represent the work
+     described in the paper.
+   - Write the type of the submission as "Full/Regular Research Papers",
+     "Short Papers", or "Poster Papers".
+   - Write the acronym of the most relevant symposium that this paper is
+     being submitted to - the acronyms are:
+
+     CSCI-ISCS: Computational Science
+     CSCI-ISCI: Computational Intelligence
+     CSCI-ISCW: Cyber Warfare, Cyber Defense, & Cyber Security
+     CSCI-ISPC: Signal & Image Processing, Computer Vision &
+                Pattern Recognition
+     CSCI-ISSC: Smart Cities and Smart Mobility
+     CSCI-ISED: Education - STEM, CS & CE
+                (Includes accreditation topics, such as ABET)
+     CSCI-ISHI: Health Informatics and Medical Systems
+     CSCI-ISMC: Mobile Computing, Wireless Networks, & Security
+     CSCI-ISSE: Software Engineering
+     CSCI-ISOT: Internet of Things & Internet of Everything
+     CSCI-ISBD: Big Data and Data Science
+     CSCI-ISAI: Artificial Intelligence
+     CSCI-ISNA: Social Network Analysis, Social Media, & Mining
+     CSCI-ISCC: Cloud Computing and Data Centers
+     CSCI-ISCB: Computational Biology
+     CSCI-ISPD: Parallel & Distributed Computing
+
+     For more details refer to:
+     https://www.american-cse.org/csci2020/topics 
+
+   The actual paper can start from the first page (space permitting).
+   Submissions are to be uploaded to the submission/evaluation web
+   site portal at: https://american-cse.org/ 
+
+
+TYPE OF SUBMISSIONS/PAPERS:
+
+  Please note that the number of pages stated below includes all figures,
+  tables, and references - if the authors need extra pages, then the
+  editors would permit one extra page above and beyond the maximum number
+  of pages stated here at no extra charge.
+
+  - Full/Regular Research Papers (maximum of 6 pages):
+    Regular Research Papers should provide detail original research
+    contributions. They must report new research results that represent a
+    contribution to the field; sufficient details and support for the
+    results and conclusions should also be provided. The work presented
+    in regular papers are expected to be at a stage of maturity that with
+    some additional work can be published as journal papers.
+
+  - Short Papers (maximum of 4 pages):
+    Short papers report on ongoing research projects. They should provide
+    overall research methodologies with some results. The work presented
+    in short papers are expected to be at a stage of maturity that with
+    some additional work can be published as regular papers.
+
+  - Poster Papers (maximum of 2 pages):
+    Poster papers report on ongoing research projects that are still in
+    their infancy (i.e., at very early stages). Such papers tend to
+    provide research methodologies without yet concrete results.
+
+
+<B>REVIEW PROCESS:</B>
+
+   Each paper will be peer-reviewed by 2 to 4 peers (except for papers
+   that are philosophical in nature - such papers would be considered for
+   panel discussions.) Confidentiality of submitted material will be
+   maintained.  Papers will be evaluated on the basis of originality,
+   impact, significance, quality of research, quality of writing, and
+   contribution to conference program and diversity. Papers whose authors
+   include one or more members of the program committee will be evaluated
+   using the double-blinded review process. Authors whose papers are not
+   selected for publication can submit a rebuttal letter; rebuttals will
+   be evaluated by 4 members of the Program Committee.
+
+
+<B>DEADLINES - DATES:</B>
+
+   September 17, 2020:   Submission of Papers (https://american-cse.org/ )
+   September 30, 2020:   Notification of acceptance (+/- 2 days)
+   October 15, 2020:     Final papers & Author Registrations
+   December 16-18, 2020: The 2020 International Conference on Computational
+                         Science and Computational Intelligence
+                         (CSCI'20: Las Vegas, USA)
+                         https://www.american-cse.org/csci2020/ 
+
+<B>CAREER, JOB, CAREER, JOB, & EDUCATION FAIR: EDUCATION FAIR:</B>
+
+   Please refer to: https://www.american-cse.org/csci2020/career_fair 
+
+
+DEMOGRAPHY HISTORY (based on 2014 through 2019 participation data):
+
+   In the past, about 40% of the attendees have been from outside USA;
+   from 61 nations. 58% of registrants have been from academia, 29% from
+   industry; 12% from government agencies and research labs; and 1%
+   unknown. The conference has had participants, speakers, authors
+   affiliated with over 178 different universities; including many from
+   the top 40 ranked institutions; major IT corporations, including,
+   Microsoft, Accenture, Google, Apple, Facebook, Oracle, Amazon,
+   Samsung Electronics, IBM, GE, BAE Systems, Hitachi, NTT, Intel Corp,
+   BTS Software Solutions, NetApp, Algorkorea Co., Paris Saclay,
+   ElderSafe Technologies Inc., METRON (France), Fraunhofer IKTS
+   (Germany), Wipro Technologies, VNIIEF (Russia), BTU Cottbus-Senftenberg
+   (Germany), Synchrone Technologies (France), Bosch Software Systems
+   (Germany), Tata Consultancy Services, ...; major corporations,
+   including, Exxon Mobil, JPMorgan Chase, Raytheon, PetroChina,
+   GlaxoSmithKline, BCL Technologies, CERENA Petroleum Group, Aerospace
+   Electronic Technology (China), Max Planck - Genetics (Germany), Tigard
+   Research Institute, ENGIE (France), Forschungszentrum Juelich
+   (Germany), Secured Smart Electric Vehicle (Korea), ...; government
+   research agencies and national laboratories, including, NSF, NIH
+   National Institutes of Health, US Air Force (multiple research labs),
+   NSA National Security Agency, Pacific Northwest National Lab, NASA,
+   LLNL, Lawrence Berkeley National Lab, Los Alamos National Lab, Cold
+   Spring Harbor Lab, US National Cancer Institute, Swedish Defence
+   Research Agency, NIST US National Institute of Standards and
+   Technology, U.S. Geological Survey, US National Library of Medicine,
+   US Air Force (multiple research labs), SPAWAR Systems Center Pacific,
+   China NSF, Russian Academy of Sciences, US Navy, Hasso Plattner
+   Institute, US Army, Korea Internet & Security Agency, Suez Canal
+   Research Center, Okinawa Bureau (Japan), Canadian Medical Protective
+   Association, Osong Medical Innovation Foundation (Korea), National
+   Institute of Informatics (Japan), ...; and three Venture Capitalists
+   and nine Intellectual Property attorneys.
+
+
+<B>CONTACT:</B>
+
+   Questions and inquiries should be sent to:
+   CSCI 2020 Conference Secretariat: cs@american-cse.org 
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+This email was sent to:  pharsat@gmail.com 
+
+To opt out of this email list: (Please allow up to 24 hours for any changes to be reflected) 
+https://american-cse.org/cgi-bin/rm/zacse.cgi?3ca49c16-3f7d-11e5-8e5f-1b7c02bc60aa 
+
+</PRE>

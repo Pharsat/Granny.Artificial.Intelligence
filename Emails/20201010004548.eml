@@ -1,0 +1,808 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp2540008ild;
+        Fri, 9 Oct 2020 15:52:09 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwr/O7Me8EfH3AH73Plz7lrPfyg6/ThPL4jpGJaFZ5grIXEfe1BaxzT0BY4ikMaBk6G52BD
+X-Received: by 2002:a5d:6cae:: with SMTP id a14mr17931275wra.187.1602283929581;
+        Fri, 09 Oct 2020 15:52:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1602283929; cv=none;
+        d=google.com; s=arc-20160816;
+        b=N2zII1a0RAh1AMTyxm71dEzQXM2PlI6IY1oZNPibX9Aw//4QZdSBzBnOtDetVDaTUl
+         51bYjwcMhM1SYHjJdo3TToXWQRkzxNN0GX8X2L1oEJgWtdeDKvJMbT5yJ/KThdBo94PQ
+         leqzQeVsFC49UgJi7aeuzkLxjgQyP9wR7KZEjvADEQOiOgM8jWcHhXLfUy0K099MRJZk
+         CDlMgSYG0bh3HT2HC1ofGhHvXBwM2B0O/3/BqcMpQ0bFbLMPDSWWUCb+r1hq+IBVKgHx
+         j+GAzzITekAig4E8sO2cpE1gs9+myHEfwY5UtAuqx0g/FmzYGjcR4Yr6HO2CryyLm21v
+         wI2A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:message-id:list-unsubscribe-post:list-unsubscribe:list-id
+         :mime-version:from:subject:to:dkim-signature:dkim-signature;
+        bh=GS68Xs/gOx0qukV+vHJwc20eyksmtjaqxOhGNXR3LN8=;
+        b=lI9O3DFGsn0ceUtbG95IQvRTSeShY5ch8aMUu6N52sIVu4+/kl+lZgjLXW7Tzbj4x6
+         tEEjNlac4+DKOKoffghgUWDUbAewO0cR9tne4uzyOT1fZLTQHtU86ihD/lH8XHSLdke2
+         0S2UkBheAIRzlHpXOQa8YJW3XN/czf+qREzCBX3K37b1xhgaWPPgM3LA5ofaE8jSjl/6
+         5w/3i3OU+urstefL13ftSMXuK/aAJUupQRT/DefCT9o7pTXFFbvvcTBw4WbP47DKm/JS
+         5ua+OLzJwxPqIGPqDXEAL5jmHCiuOUkk7Emfzo1G+rEqmumC2zW8MSmKvG6RvDrVzDD0
+         Jr9A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.vivaair.com header.s=key4 header.b=fMDdXlG2;
+       dkim=pass header.i=@emarsys.net header.s=key2 header.b=ndW6Hko7;
+       spf=pass (google.com: domain of suite16@email.vivaair.com designates 185.90.21.93 as permitted sender) smtp.mailfrom=suite16@email.vivaair.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.vivaair.com
+Return-Path: <suite16@email.vivaair.com>
+Received: from suitepmta021093.emarsys.us (suitepmta021093.emarsys.us. [185.90.21.93])
+        by mx.google.com with ESMTPS id n18si8951888wro.344.2020.10.09.15.52.09
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 09 Oct 2020 15:52:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of suite16@email.vivaair.com designates 185.90.21.93 as permitted sender) client-ip=185.90.21.93;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.vivaair.com header.s=key4 header.b=fMDdXlG2;
+       dkim=pass header.i=@emarsys.net header.s=key2 header.b=ndW6Hko7;
+       spf=pass (google.com: domain of suite16@email.vivaair.com designates 185.90.21.93 as permitted sender) smtp.mailfrom=suite16@email.vivaair.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.vivaair.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=key4; d=email.vivaair.com;
+ h=To:Subject:From:MIME-Version:List-Id:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:Message-ID:Date; i=ofertas@email.vivaair.com;
+ bh=GS68Xs/gOx0qukV+vHJwc20eyksmtjaqxOhGNXR3LN8=;
+ b=fMDdXlG2z7fgR1Lebl7Rlc28n05LEJRa5LOtgToUrfSveBBGQZUZ+1YQfnKlQbf6M4+KsPUHplOH
+   CLWKDbdg2XZX7zPMQaTEoFJ5iH5SmJpnaa5UX8Mf6cvY8ZKmznuTtkVef4VJ5OMeTn6/3VouWu+m
+   1NXJIsQ0E7BpH9KWLrg=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=key2; d=emarsys.net;
+ h=To:Subject:From:MIME-Version:List-Id:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:Message-ID:Date;
+ bh=GS68Xs/gOx0qukV+vHJwc20eyksmtjaqxOhGNXR3LN8=;
+ b=ndW6Hko7YYdgF9uQdEZuR056Pb6aVpDMXAWhv4yBM+Uq3+iYx0Gdddm4zPXvblIaDrKMOB+/TT1W
+   8bopHfU4bIrMb2lEFu+c6wn2OekiqugLYRQzFwkuIiIsDXf8zvadPTlxJneaSC2nHe4dEmnYXkAX
+   XFUlVc/EYXqA6wDIiHY=
+To: pharsat@gmail.com
+Subject: =?UTF-8?Q?=5B=C3=9Altimos=20d=C3=ADas=5D=20=C2=A1Alista=20el=20pasaporte?=
+ =?UTF-8?Q?=2C=20ya=20puedes=20viajar=20a=20Per=C3=BA=20con=20Viva!!?=
+ =?UTF-8?Q?=F0=9F=9B=A9=EF=B8=8F?=
+X-Mailer: class SMTPMail
+From: "Viva Air" <ofertas@email.vivaair.com>
+MIME-Version: 1.0
+List-Id: 765916760 <Viva Air>
+X-EMarSys-Identify: 765916760_4982173_124825
+X-EMarSys-Environment: suite16
+X-Report-Abuse: Please report abuse here: abuse-report@emarsys.com
+List-Unsubscribe: <mailto:list-unsubscribe+765916760_4982173_124825_Rwt7Botihq@emarsys.net>, <https://list-unsubscribe.eservice.emarsys.net/api/unsubscribe/765916760_4982173_124825_Rwt7Botihq>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative;
+ boundary="--=_---NextPart--=_-wtGpWcdng0"
+Message-ID: <0.0.24.75D.1D69E8DEEBAA80E.0@suitepmta021093.emarsys.us>
+Date: Sat, 10 Oct 2020 00:45:48 +0200
+
+
+----=_---NextPart--=_-wtGpWcdng0
+Content-Type: text/plain; charset=utf-8
+Content-transfer-encoding: quoted-printable
+
+!Ha llegado la hora de cruzar las fronteras!
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_2&ems_l=
+=3D6298230&i=3D1&d=3DMzQxOTA4MTcx%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgx=
+YmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_4&ems_l=
+=3D6298230&i=3D1&d=3DMzQxOTA4MTcz%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgx=
+YmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_6&ems_l=
+=3D6298230&i=3D1&d=3DMzQxOTA4MTc1%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgx=
+YmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_8&ems_l=
+=3D6298230&i=3D1&d=3DMzQxOTA4MTc3%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgx=
+YmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_10&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTc5%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_12&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTgx%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_14&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTgz%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_16&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTg1%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_18&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTg3%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+ Este correo es enviado por FAST COLOMBIA S.A.S
+Al hacer la compra a trav=C3=A9s de nuestra p=C3=A1gina web has seleccionad=
+o la
+opci=C3=B3n de
+recibir nuestras ofertas, as=C3=AD has quedado registrado en nuestro
+sistema. Si no
+deseas recibir m=C3=A1s informaci=C3=B3n de Viva Air y perderte las mejores
+promociones
+para viajar haz clic aqu=C3=AD
+https://links.vivaair.com/u/un.php?par=3D40ymfJnrVN_3483783_889949_1=20
+ o escr=C3=ADbenos a aqu=C3=AD
+mailto:cuentanos@vivaair.com=20
+. Si necesitas informaci=C3=B3n adicional o tienes alguna pregunta haz clic
+aqu=C3=AD
+https://links.vivaair.com/u/nrd.php?p=3D40ymfJnrVN_889949_3483783_1_33&ems_=
+l=3D4065244&i=3D1&d=3DMzQxOTA4MjAy%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+. Con la nueva ley de Habeas Data, estamos en la obligaci=C3=B3n de
+informarte porque
+est=C3=A1s en nuestra base de datos y porque est=C3=A1s recibiendo nuestras
+ofertas.
+Conoce nuestra pol=C3=ADtica de privacidad haciendo clic aqu=C3=AD
+https://links.vivaair.com/u/nrd.php?p=3D40ymfJnrVN_889949_3483783_1_34&ems_=
+l=3D4065244&i=3D1&d=3DMzQxOTA4MjAz%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+. Este correo no debe ser respondido.
+ Unsubscribe
+https://links.vivaair.com/u/un.php?par=3DRwt7Botihq_4982173_124825_$sid$=20
+
+ *T=C3=A9rminos y condiciones
+ Vuelos operados por FAST COLOMBIA SAS o VIVA AIRLINES PER=C3=9A SAC.
+=E2=80=A2 Aplica solo para vuelos directos =E2=80=A2 Fecha para iniciar via=
+je el 14
+de octubre
+(dependiendo de la ruta), fecha l=C3=ADmite para finalizar viaje el 25 de
+marzo 2021
+=E2=80=A2 Aplica para compras hechas entre el 5 de octubrede 2020 desde las
+00:01 a.m
+hasta el 11 de octubre de 2020, hasta las 11:59 p.m. hora local de
+Colombia.
+=E2=80=A2Aplica =C3=BAnicamente para las rutas seleccionadas =E2=80=A2 Incl=
+uye el
+derecho de llevar
+un art=C3=ADculo personal de 10 kg. =E2=80=A2 Servicios adicionales y equip=
+ajes=C2=A0
+dicionales
+tendr=C3=A1n costo adicional =E2=80=A2 Estos valores aplican =C3=BAnicament=
+e para esta
+promoci=C3=B3n.
+=E2=80=A2 Tarifas promocionales no reembolsables. =E2=80=A2 Esta promoci=C3=
+=B3n solo
+aplica para tipo
+de tarifa A La Carta =E2=80=A2 No aplica para grupos. =E2=80=A2 No es acumu=
+lable con
+ninguna
+otra promoci=C3=B3n. =E2=80=A2 Las sillas ofrecidas son limitadas y no est=
+=C3=A1n
+disponibles en
+todos los vuelos. =E2=80=A2 No aplica para vuelos en las siguientes fechas:=
+ 15
+diciembre
+2020 a 17 enero 2021 - 19 marzo 2021 a 23 marzo 2021 - 26 marzo 2021 a 5
+abril
+2021 - 14 mayo 2021 a 18 mayo 2021 - 4 junio 2021 a 8 junio 2021 - 11
+junio=C2=A0 -
+021 a 15 junio 2021 =E2=80=A2 Los valores incluyen tarifa base, tarifa
+administrativa,
+tasa de inspecci=C3=B3n plantas y animales, tasa de servicio de
+inmigraci=C3=B3n, tasa de
+uso de aduanas, tasa de salida y llegada internacional, impuesto de
+timbre, tasa
+aeroportuaria, tasa de seguridad 11 septiembre, cargo de facilidad y
+seguridad,
+IVA. (La tasa aeroportuaria var=C3=ADa de acuerdo a los aeropuertos de la
+ruta). El
+valor final del tiquete en USD var=C3=ADa dependiendo de la TRM del d=C3=AD=
+a con
+que se
+liquida el impuesto de timbre (DG) =E2=80=A2Se permiten cambios de nombre,
+fecha y/o
+ruta pagando penalidad m=C3=A1s diferencia tarifaria por trayecto y aplica
+para todas
+las personas de toda la reserva.=C2=A0Para conocer nuestros precios y
+especificaciones en servicios adicionalesingresa aqu=C3=AD
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_20&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTg5%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+.Para ver nuestros precios de equipajeingresa aqu=C3=AD.
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_22&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTkx%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+Para conocer nuestros t=C3=A9rminos y condicionesingresa aqu=C3=AD
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_24&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTkz%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+.En desarrollo de lo dispuesto en la ley 679 de 2001 y la ley 1336 de
+2009 de
+Colombia, se advierte que la explotaci=C3=B3n, la pornograf=C3=ADa, el turi=
+smo
+sexual y
+dem=C3=A1s formas de abuso sexual de menores de edad en Colombia son
+sancionados
+penal y administrativamente, conforme a las leyes vigentes.
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_26&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTk1%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_28&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTk3%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_30&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MTk5%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_32&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MjAx%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_34&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MjAz%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_36&ems_=
+l=3D6298230&i=3D1&d=3DMzQxOTA4MjA1%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzg=
+xYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C
+
+
+----=_---NextPart--=_-wtGpWcdng0
+Content-Type: text/html; charset=utf-8
+Content-transfer-encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd"><html xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office">
+<head>
+<title>Title goes here</title>
+<meta charset=3D"UTF-8">
+<meta name=3D"viewport" content=3D"initial-scale=3D1, user-scalable=3Dyes">
+<!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedg=
+e"><!--<![endif]-->
+<!--[if (gte mso 9)]>
+<style type=3D"text/css">
+li {text-indent: -1em;}
+table {border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt=
+; border:0;}
+table td, table th {border-collapse:collapse; font-size:1px; line-height:1p=
+x;}
+.lh, .lh font {line-height:120% !important;}
+</style>
+<![endif]-->
+<!--[if (gte mso 9)|(IE)]>
+<style type=3D"text/css">
+font {font-family: Arial, Helvetica, sans-serif !important;}
+.ol620 {width:620px;}
+.ol630 {width:630px;}
+.oltd1 {padding:7px 15px; line-height:normal !important;}
+.inpl-not-mailing .oltd1 {padding:0 !important; line-height:normal !importa=
+nt;}
+.olbg1 {background-color:#f4d733;}
+.inpl-not-mailing .olbg1 {background-color:transparent !important;}
+</style>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<style>@font-face {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.co=
+m/s/roboto/v16/zN7GBFwfMP4uA6AR0HCoLQ.ttf) format('truetype'), url(https://=
+fonts.gstatic.com/s/roboto/v16/uYECMKoHcO9x1wdmbyHIm3-_kf6ByYO6CLYdB4HQE-Y.=
+woff2) format('woff2');
+}
+.ff-copy {font-family:'Roboto', Arial, Helvetica, sans-serif;}
+.ff-hl {font-family:'Roboto', Arial, Helvetica, sans-serif;}
+.ff-sub {font-family:'Roboto', Arial, Helvetica, sans-serif;}
+.ff-price {font-family:'Roboto', Arial, Helvetica, sans-serif;}
+.ff-strike {font-family:'Roboto', Arial, Helvetica, sans-serif;}
+.ff-cta {font-family:'Roboto', Arial, Helvetica, sans-serif;}
+.ff-link {font-family:'Roboto', Arial, Helvetica, sans-serif;}
+.ff-footer {font-family:'Roboto', Arial, Helvetica, sans-serif;}
+.ff-ph {font-family:'Roboto', Arial, Helvetica, sans-serif;}
+.ff-nav {font-family: 'Roboto', Arial, Helvetica, sans-serif;}
+.fs-nav {font-size:14px;}
+.fs-copy {font-size:16px;}
+.fs-sub {font-size:14px;}
+.fs-hl {font-size:22px;}
+.fs-cta {font-size:22px;}
+.fs-strike {font-size:12px;}
+.fs-price {font-size:14px;}
+.fs-link {font-size:14px;}
+.fs-ph {font-size:12px;}
+.fs-footer {font-size:12px;}
+.fs30 {font-size:30px;}
+.fc-nav {color: #ffffff;}
+.fc-copy {color:#8c8c8c;}
+.fc-hl {color:#d89d6e;}
+.fc-sub {color:#8c8c8c;}
+.fc-price {color:#8c8c8c;}
+.fc-strike {color:#8c8c8c;}
+.fc-link {color:#bee2e1;}
+.fc-cta {color:#04107f;}
+.fc-footer {color:#8c8c8c;}
+.fc-ph {color:#8c8c8c;}
+.tdn {text-decoration:none;}
+.tdu {text-decoration:underline;}
+.fwn {font-weight:normal;}
+.fwb {font-weight:bold;}
+.vab {vertical-align:bottom;}
+.vat {vertical-align:top;}
+.vam {vertical-align:middle;}
+.db {display:block;}
+.ladv-copy font a {font-weight:normal; text-decoration:underline; color:#8c=
+8c8c;}
+.ladv-hl font a {font-weight:normal; text-decoration:none; color:#d89d6e;}
+.ladv-sub font a {font-weight:normal; text-decoration:none; color:#8c8c8c;}
+.ladv-price font a {font-weight:normal; text-decoration:none; color:#8c8c8c=
+;}
+.ladv-strike font a {font-weight:normal; text-decoration:none; color:#8c8c8=
+c;}
+.ladv-footer font a {font-weight:normal; text-decoration:none; color:#8c8c8=
+c;}
+.ladv-ph font a {font-weight:normal; text-decoration:none; color:#8c8c8c;}
+.dpr5 {padding:0 5px 0 0;}
+.dptb20 {padding:20px 0;}
+.dptb10 {padding:10px 0;}
+.dplr10 {padding:0 10px;}
+.dp10 {padding:10px;}
+.dpb20lr10 {padding:0 10px 20px 10px;}
+.dpt20lr10 {padding:20px 10px 0 10px;}
+.dpb20 {padding:0 0 20px 0;}
+.dpb10 {padding:0 0 10px 0;}
+.dpt2r10b5 {padding:2px 10px 5px 0;}
+.dpb10lr10 {padding:0 10px 10px 10px;}
+.dptb10lr5 {padding:10px 5px;}
+.dpr25 {padding: 0 25px 0 0;}
+.tlf {table-layout:fixed;}
+.ctacr1 {color:#04107f; font-weight:normal; text-decoration:none; display:b=
+lock; padding:7px 15px; background-color:#f4d733; -moz-border-radius:20px; =
+-webkit-border-radius:20px; border-radius:20px;}
+.ctaf {font-family:'Roboto', Arial, Helvetica, sans-serif; font-size:22px; =
+color:#04107f; font-weight:normal;}
+@media only screen and (max-width:414px) {
+.fl {display:block !important; width:100% !important;}
+.fw {width:100% !important; min-width:0 !important;}
+.fw99 {width:99.9% !important; min-width:0 !important;}
+.rw50p {width:50% !important;}
+.rw33p {width:33.3% !important;}
+.sec {width:100% !important; float:none !important; }
+.image {width:100% !important; height:auto !important;}
+.mh, .mobile_hidden { display:none !important; }
+.xsmall {font-size:11px !important; font-size:3.06vw !important;}
+.small {font-size:13px !important; font-size:3.8vw !important;}
+.gf {font-size:15px !important; font-size:4.2vw !important;}
+.h3 {font-size:17px !important; font-size:4.72vw !important;}
+.h2 {font-size:19px !important; font-size:5.26vw !important;}
+.h1 {font-size:21px !important; font-size:5.84vw !important;}
+.s1, .s1 img, .s1 div {height:20px !important; height:5.54vw !important;}
+.s4, .s4 img, .s4 div {height:40px !important; height:11.10vw !important;}
+.rh10, .rh10 div {height:10px !important; height:2.778vw !important;}
+.rh20, .rh20 div {height:20px !important; height:5.56vw !important;}
+.rw20, .rw20 div {width:20px !important;}
+.pl5 {padding-left:5px !important;}
+.pr5 {padding-right:5px !important;}
+.plr5 {padding:0 5px !important;}
+u + .body .gwfw {width:100% !important; width:100vw !important;}
+}
+@media only screen and (width:375px) {
+.iph { padding:0 8px 0 7px !important; }
+}
+<!--
+body {margin:0; padding:0; background:#f2eded; -webkit-text-size-adjust:non=
+e; -ms-text-size-adjust:none; line-height: 1.44;}
+a, a:active, a:visited, .yshortcuts, .yshortcuts a span {text-decoration:no=
+ne; font-weight:normal; color: #000000;}
+a[x-apple-data-detectors] {color:inherit !important; text-decoration:none !=
+important; font-size:inherit !important; font-family:inherit !important; fo=
+nt-weight:inherit !important; line-height:inherit !important;}
+[office365] td div, [office365] button {display:block !important;}
+table th {padding:0; Margin:0; border:0; font-weight:normal; vertical-align=
+:top;}
+--></style>
+</head>
+<body class=3D"body"><div ems:preheader style=3D"display:none!important;fon=
+t-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opaci=
+ty:0;overflow:hidden;mso-hide:all">!Ha llegado la hora de cruzar las fronte=
+ras!</div>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" heig=
+ht=3D"100%" style=3D"min-width:100%;" bgcolor=3D"#f2eded" class=3D"gwfw">
+<tr>
+<td width=3D"100%" align=3D"center" valign=3D"top">
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"630" class=
+=3D"ol630 fw">
+<tr>
+<td style=3D"padding:0 4px;" class=3D"iph">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"620" bgcol=
+or=3D"#ffffff" class=3D"ol620 fw">
+<tr class=3D"mh">
+<td height=3D"10"></td>
+</tr>
+<tr e-block-id=3D"5e712319afbd05d896000001">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.vivaair.com/u/nrd.php?p=
+=3DRwt7Botihq_124825_4982173_1_1&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTcw%7CU=
+nd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv=
+%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" style=3D"text-decoration: none; font-=
+weight: normal; color: #000000;" target=3D"_blank"><img e-editable=3D"Image=
+" src=3D"https://links.vivaair.com/custloads/765916760/md_989457.jpg" width=
+=3D"620" border=3D"0" style=3D"display:block;" alt=3D"VIVAFEST" class=3D"im=
+age"></a></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5f4ecd0bc1f7f377ce000002">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.vivaair.com/u/nrd.php?p=
+=3DRwt7Botihq_124825_4982173_1_3&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTcy%7CU=
+nd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv=
+%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" style=3D"text-decoration: none; font-=
+weight: normal; color: #000000;" target=3D"_blank"><img e-editable=3D"Image=
+" src=3D"https://links.vivaair.com/custloads/765916760/md_987164.jpg" width=
+=3D"620" border=3D"0" style=3D"display:block;" alt=3D"FLEXIBILIDAD" class=
+=3D"image"></a></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5f4ecd20c1f7f377ce000003">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.vivaair.com/u/nrd.php?p=
+=3DRwt7Botihq_124825_4982173_1_5&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTc0%7CU=
+nd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv=
+%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" style=3D"text-decoration: none; font-=
+weight: normal; color: #000000;" target=3D"_blank"><img e-editable=3D"Image=
+" src=3D"https://links.vivaair.com/custloads/765916760/md_987165.jpg" width=
+=3D"620" border=3D"0" style=3D"display:block;" alt=3D"FLEXIBILIDAD" class=
+=3D"image"></a></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5f4ecd62c1f7f377ce000004">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.vivaair.com/u/nrd.php?p=
+=3DRwt7Botihq_124825_4982173_1_7&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTc2%7CU=
+nd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv=
+%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" style=3D"text-decoration: none; font-=
+weight: normal; color: #000000;" target=3D"_blank"><img e-editable=3D"Image=
+" src=3D"https://links.vivaair.com/custloads/765916760/md_987167.jpg" width=
+=3D"620" border=3D"0" style=3D"display:block;" alt=3D"FLEXIBILIDAD" class=
+=3D"image"></a></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5f74db41d5bd6734d4000001">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.vivaair.com/u/nrd.php?p=
+=3DRwt7Botihq_124825_4982173_1_9&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTc4%7CU=
+nd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv=
+%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" style=3D"text-decoration: none; font-=
+weight: normal; color: #000000;" target=3D"_blank"><img e-editable=3D"Image=
+" src=3D"https://links.vivaair.com/custloads/765916760/md_987166.jpg" width=
+=3D"620" border=3D"0" style=3D"display:block;" alt=3D"FLEXIBILIDAD" class=
+=3D"image"></a></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5f74db70d5bd6734d4000004">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.vivaair.com/u/nrd.php?p=
+=3DRwt7Botihq_124825_4982173_1_11&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTgw%7C=
+Und0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnp=
+v%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" style=3D"text-decoration: none; font=
+-weight: normal; color: #000000;" target=3D"_blank"><img e-editable=3D"Imag=
+e" src=3D"https://links.vivaair.com/custloads/765916760/md_987168.jpg" widt=
+h=3D"620" border=3D"0" style=3D"display:block;" alt=3D"FLEXIBILIDAD" class=
+=3D"image"></a></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5f74db81d5bd6734d4000005">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.vivaair.com/u/nrd.php?p=
+=3DRwt7Botihq_124825_4982173_1_13&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTgy%7C=
+Und0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnp=
+v%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" style=3D"text-decoration: none; font=
+-weight: normal; color: #000000;" target=3D"_blank"><img e-editable=3D"Imag=
+e" src=3D"https://links.vivaair.com/custloads/765916760/md_987169.jpg" widt=
+h=3D"620" border=3D"0" style=3D"display:block;" alt=3D"FLEXIBILIDAD" class=
+=3D"image"></a></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5f74db8cd5bd6734d4000006">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.vivaair.com/u/nrd.php?p=
+=3DRwt7Botihq_124825_4982173_1_15&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTg0%7C=
+Und0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnp=
+v%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" style=3D"text-decoration: none; font=
+-weight: normal; color: #000000;" target=3D"_blank"><img e-editable=3D"Imag=
+e" src=3D"https://links.vivaair.com/custloads/765916760/md_987170.jpg" widt=
+h=3D"620" border=3D"0" style=3D"display:block;" alt=3D"FLEXIBILIDAD" class=
+=3D"image"></a></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5f7ce5c590192ce634000002">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center"><a title href=3D"https://links.vivaair.com/u/nrd.php?p=
+=3DRwt7Botihq_124825_4982173_1_17&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTg2%7C=
+Und0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnp=
+v%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" style=3D"text-decoration: none; font=
+-weight: normal; color: #000000;" target=3D"_blank"><img e-editable=3D"Imag=
+e" src=3D"https://links.vivaair.com/custloads/765916760/md_987171.jpg" widt=
+h=3D"620" border=3D"0" style=3D"display:block;" alt=3D"FLEXIBILIDAD" class=
+=3D"image"></a></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5ed6c6ea3d8398255200000c">
+<td height=3D"20" width=3D"1" bgcolor=3D"#ffffff"></td>
+</tr><tr e-block-id=3D"5f7ce5c090192ce634000001">
+<td height=3D"20" width=3D"1" bgcolor=3D"#ffffff"></td>
+</tr><tr e-block-id=3D"5f74db4dd5bd6734d4000002">
+<td height=3D"20" width=3D"1" bgcolor=3D"#ffffff"></td>
+</tr><tr e-block-id=3D"5ed6c6ec3d8398255200000d">
+<td height=3D"20" width=3D"1" bgcolor=3D"#ffffff"></td>
+</tr><tr e-block-id=3D"5ed6e6133d8398255200000e">
+<td height=3D"20" width=3D"1" bgcolor=3D"#ffffff"></td>
+</tr><tr e-block-id=3D"5ed6c5273d8398255200000b">
+<td height=3D"20" width=3D"1" bgcolor=3D"#ffffff"></td>
+</tr><tr e-block-id=3D"5be05e6aa437b9a5dd00000b">
+<td class=3D"dp10" bgcolor=3D"#ffffff" style=3D"padding: 10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" class=3D"lh dpb10" style=3D"padding: 0 0 10px 0;"><fon=
+t class=3D"ff-footer fs-footer fc-footer" style=3D"font-family: 'Roboto', A=
+rial, Helvetica, sans-serif; font-size: 8px; color: #000656;"><span class=
+=3D"ladv-footer xsmall">Este correo es enviado por FAST COLOMBIA S.A.S</spa=
+n><br><span> Al hacer la compra a trav=C3=A9s de nuestra p=C3=A1gina web ha=
+s seleccionado la opci=C3=B3n de recibir nuestras ofertas, as=C3=AD has que=
+dado registrado en nuestro sistema. Si no deseas recibir m=C3=A1s informaci=
+=C3=B3n de Viva Air y perderte las mejores promociones para viajar haz <a h=
+ref=3D"https://links.vivaair.com/u/un.php?par=3D40ymfJnrVN_3483783_889949_1=
+" target=3D"_blank" style=3D"color: #000000; -webkit-text-size-adjust: 100%=
+; -ms-text-size-adjust: 100%; text-decoration: none; font-weight: normal; o=
+utline: none;" noopener">clic aqu=C3=AD</a> o escr=C3=ADbenos a <a href=3D"=
+mailto:cuentanos@vivaair.com" target=3D"_blank" style=3D"-webkit-text-size-=
+adjust: 100%; -ms-text-size-adjust: 100%; text-decoration: none; font-weigh=
+t: normal; outline: none; color: #000656;" rel=3D"noopener">aqu=C3=AD</a>. =
+Si necesitas informaci=C3=B3n adicional o tienes alguna pregunta haz <a hre=
+f=3D"https://links.vivaair.com/u/nrd.php?p=3D40ymfJnrVN_889949_3483783_1_33=
+&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MjAy%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5Mj=
+FkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3=
+D%7C" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%; -ms-text-s=
+ize-adjust: 100%; text-decoration: none; font-weight: normal; outline: none=
+; color: #000656;" rel=3D"noopener">clic aqu=C3=AD</a>. Con la nueva ley de=
+ Habeas Data, estamos en la obligaci=C3=B3n de informarte porque est=C3=A1s=
+ en nuestra base de datos y porque est=C3=A1s recibiendo nuestras ofertas. =
+Conoce nuestra pol=C3=ADtica de privacidad haciendo <a href=3D"https://link=
+s.vivaair.com/u/nrd.php?p=3D40ymfJnrVN_889949_3483783_1_34&ems_l=3D6298230&=
+i=3D1&d=3DMzQxOTA4MjAz%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%=
+7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" target=3D"_=
+blank" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;=
+ text-decoration: none; font-weight: normal; outline: none; color: #000656;=
+" rel=3D"noopener">clic aqu=C3=AD</a>. Este correo no debe ser respondido.<=
+/span></font></td>
+</tr></table></td>
+</tr>
+<tr e-block-id=3D"5be05e6aa437b9a5dd00000b">
+<td align=3D"center" class=3D"lh dpb10" style=3D"padding: 0 0 10px 0;"><a h=
+ref=3D"https://links.vivaair.com/u/un.php?par=3DRwt7Botihq_4982173_124825_$=
+sid$" title=3D"Unsubscribe" target=3D"_blank" class=3D"fc-footer fwn tdn" s=
+tyle=3D"color: #000656; text-decoration: none; font-weight: normal;"><font =
+class=3D"ff-footer fs-footer fc-footer tdu" style=3D"font-family: 'Roboto',=
+ Arial, Helvetica, sans-serif; font-size: 8px; color: #000656; text-decorat=
+ion: underline;"><span class=3D"xsmall">Unsubscribe</span></font></a></td>
+</tr>
+<tr e-block-id=3D"5e664f63bd6c5b0cce000001">
+<td bgcolor=3D"#ffffff">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"left" class=3D"lh dplr10" style=3D"padding: 0 10px;"><font cla=
+ss=3D"ff-sub fs-sub fc-sub" style=3D"font-family: 'Roboto', Arial, Helvetic=
+a, sans-serif; font-size: 14px; color: #8c8c8c;"><span e-editable=3D"Subhea=
+dline" class=3D"ladv-sub small"></span></font></td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"lh dpb20lr10" style=3D"padding: 0 10px 20px 10p=
+x;"><font class=3D"ff-hl fs-hl fc-hl" style=3D"font-family: 'Roboto', Arial=
+, Helvetica, sans-serif; font-size: 19px; color: #d89d6e;"><span e-editable=
+=3D"Headline" class=3D"ladv-hl h3"><span style=3D"font-family: Roboto; colo=
+r: #0016aa;"><strong><span style=3D"font-size: 8px;">*T=C3=A9rminos y condi=
+ciones</span></strong></span></span></font></td>
+</tr>
+<tr>
+<td align=3D"left" class=3D"lh dplr10" style=3D"padding: 0 10px;"><font cla=
+ss=3D"ff-copy fs-copy fc-copy" style=3D"font-family: 'Roboto', Arial, Helve=
+tica, sans-serif; font-size: 11px; color: #8c8c8c;"><span e-editable=3D"Bod=
+ycopy" class=3D"ladv-copy gf"><span style=3D"font-size: 8px;"><span style=
+=3D"color: #333333;">Vuelos operados por FAST COLOMBIA SAS o VIVA AIRLINES =
+PER=C3=9A SAC.<br>=E2=80=A2 Aplica solo para vuelos directos =E2=80=A2 Fech=
+a para iniciar viaje el 14 de octubre (dependiendo de la ruta), fecha l=C3=
+=ADmite para finalizar viaje el 25 de marzo 2021 =E2=80=A2 Aplica para comp=
+ras hechas entre el 5 de octubrede 2020 desde las 00:01 a.m hasta el 11 de =
+octubre de 2020, hasta las 11:59 p.m. hora local de Colombia. =E2=80=A2Apli=
+ca =C3=BAnicamente para las rutas seleccionadas =E2=80=A2 Incluye el derech=
+o de llevar un art=C3=ADculo personal de 10 kg. =E2=80=A2 Servicios adicion=
+ales y equipajes&nbsp; dicionales tendr=C3=A1n costo adicional =E2=80=A2 Es=
+tos valores aplican =C3=BAnicamente para esta promoci=C3=B3n. =E2=80=A2 Tar=
+ifas promocionales no reembolsables. =E2=80=A2 Esta promoci=C3=B3n solo apl=
+ica para tipo de tarifa A La Carta =E2=80=A2 No aplica para grupos. =E2=80=
+=A2 No es acumulable con ninguna otra promoci=C3=B3n. =E2=80=A2 Las sillas =
+ofrecidas son limitadas y no est=C3=A1n disponibles en todos los vuelos. =
+=E2=80=A2 No aplica para vuelos en las siguientes fechas: 15 diciembre 2020=
+ a 17 enero 2021 - 19 marzo 2021 a 23 marzo 2021 - 26 marzo 2021 a 5 abril =
+2021 - 14 mayo 2021 a 18 mayo 2021 - 4 junio 2021 a 8 junio 2021 - 11 junio=
+&nbsp; - 021 a 15 junio 2021 =E2=80=A2 Los valores incluyen tarifa base, ta=
+rifa administrativa, tasa de inspecci=C3=B3n plantas y animales, tasa de se=
+rvicio de inmigraci=C3=B3n, tasa de uso de aduanas, tasa de salida y llegad=
+a internacional, impuesto de timbre, tasa aeroportuaria, tasa de seguridad =
+11 septiembre, cargo de facilidad y seguridad, IVA. (La tasa aeroportuaria =
+var=C3=ADa de acuerdo a los aeropuertos de la ruta). El valor final del tiq=
+uete en USD var=C3=ADa dependiendo de la TRM del d=C3=ADa con que se liquid=
+a el impuesto de timbre (DG) =E2=80=A2Se permiten cambios de nombre, fecha =
+y/o ruta pagando penalidad m=C3=A1s diferencia tarifaria por trayecto y apl=
+ica para todas las personas de toda la reserva.</span><a href=3D"https://li=
+nks.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_19&ems_l=3D629823=
+0&i=3D1&d=3DMzQxOTA4MTg4%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3=
+D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" target=3D=
+"_blank" rel=3D"noopener" style=3D"text-decoration: none; font-weight: norm=
+al; color: #000000;"><span style=3D"font-family: Roboto;"><span style=3D"co=
+lor: #333333;">&nbsp;Para conocer nuestros precios y especificaciones en se=
+rvicios adicionales</span>&nbsp;<span style=3D"color: #0016aa;"><strong>ing=
+resa aqu=C3=AD</strong></span></span></a>.&nbsp;</span><span style=3D"font-=
+size: 8px;"><a href=3D"https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_1=
+24825_4982173_1_21&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTkw%7CUnd0N0JvdGlocQ%=
+3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3=
+D%7CMTA%3D%7CMTA%3D%7C" target=3D"_blank" rel=3D"noopener" style=3D"text-de=
+coration: none; font-weight: normal; color: #000000;"><span style=3D"font-f=
+amily: Roboto;"><span style=3D"color: #333333;">Para ver nuestros precios d=
+e equipaje</span>&nbsp;<strong><span style=3D"color: #0016aa;">ingresa aqu=
+=C3=AD.</span></strong></span></a>&nbsp;<a href=3D"https://links.vivaair.co=
+m/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_23&ems_l=3D6298230&i=3D1&d=3DMz=
+QxOTA4MTky%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLT=
+QxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" target=3D"_blank" rel=
+=3D"noopener" style=3D"text-decoration: none; font-weight: normal; color: #=
+000000;"><span style=3D"font-family: Roboto;"><span style=3D"color: #333333=
+;">Para conocer nuestros t=C3=A9rminos y condiciones</span>&nbsp;<strong><s=
+pan style=3D"color: #0016aa;">ingresa aqu=C3=AD</span></strong></span></a>.=
+&nbsp;<span style=3D"color: #333333;"><a href=3D"https://links.vivaair.com/=
+u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_25&ems_l=3D6298230&i=3D1&d=3DMzQx=
+OTA4MTk0%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQx=
+LXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" style=3D"text-decoration:=
+ none; font-weight: normal; color: #333333;" target=3D"_blank" rel=3D"noope=
+ner"><span style=3D"font-family: Roboto;">En desarrollo de lo dispuesto en =
+la ley 679 de 2001 y la ley 1336 de 2009 de Colombia, se advierte que la ex=
+plotaci=C3=B3n, la pornograf=C3=ADa, el turismo sexual y dem=C3=A1s formas =
+de abuso sexual de menores de edad en Colombia son sancionados penal y admi=
+nistrativamente, conforme a las leyes vigentes</span><span style=3D"font-fa=
+mily: Roboto;">.</span></a></span></span></span></font></td>
+</tr>
+<tr>
+<td height=3D"20" class=3D"rh20"><div></div></td>
+</tr>
+</table>
+</td>
+</tr><tr e-block-id=3D"5d823b5300bb77a286000003">
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" bgcolor=3D"#ffffff"><a href=3D"https://links.vivaair.c=
+om/u/nrd.php?p=3DRwt7Botihq_124825_4982173_1_27&ems_l=3D6298230&i=3D1&d=3DM=
+zQxOTA4MTk2%7CUnd0N0JvdGlocQ%3D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hL=
+TQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7CMTA%3D%7CMTA%3D%7C" target=3D"_blank" titl=
+e=3D"Viva Air" e-editable=3D"logourl" style=3D"text-decoration: none; font-=
+weight: normal; color: #000000;"><img src=3D"https://links.vivacolombia.co/=
+custloads/765916760/md_750002.png" width=3D"620" alt=3D"logo" border=3D"0" =
+style=3D"display:block;" e-editable=3D"logoimage" height=3D"50"></a></td>
+</tr> </table>
+</td>
+</tr><tr e-block-id=3D"5be16d21d6a2549aac000003">
+<td bgcolor=3D"#ffffff">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+<tr>
+<td height=3D"20" class=3D"rh20"><div></div></td>
+</tr> <tr>
+<td align=3D"center" class=3D"dplr10" style=3D"padding: 0 10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<th align=3D"center" valign=3D"top" class=3D"vat" style=3D"padding: 0; Marg=
+in: 0; border: 0; font-weight: normal; vertical-align: top;"><a title=3D"Fa=
+cebook icon" href=3D"https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_124=
+825_4982173_1_29&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MTk4%7CUnd0N0JvdGlocQ%3D=
+%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%=
+7CMTA%3D%7CMTA%3D%7C" target=3D"_blank" style=3D"text-decoration: none; fon=
+t-weight: normal; color: #000000;"><img src=3D"http://demo.emarsys.net/cust=
+loads/214501574/lifestylelabels/social-fb.jpg" border=3D"0" style=3D"displa=
+y:block;" alt=3D"Facebook icon"></a></th>
+<th width=3D"20" style=3D"padding: 0; Margin: 0; border: 0; font-weight: no=
+rmal; vertical-align: top;" valign=3D"top"></th>
+<th align=3D"center" valign=3D"top" class=3D"vat" style=3D"padding: 0; Marg=
+in: 0; border: 0; font-weight: normal; vertical-align: top;"><a title=3D"In=
+stagram icon" href=3D"https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_12=
+4825_4982173_1_31&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MjAw%7CUnd0N0JvdGlocQ%3=
+D%3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D=
+%7CMTA%3D%7CMTA%3D%7C" target=3D"_blank" style=3D"text-decoration: none; fo=
+nt-weight: normal; color: #000000;"><img src=3D"http://demo.emarsys.net/cus=
+tloads/214501574/lifestylelabels/social-insta.jpg" border=3D"0" style=3D"di=
+splay:block;" alt=3D"Instagram icon"></a></th>
+<th width=3D"20" style=3D"padding: 0; Margin: 0; border: 0; font-weight: no=
+rmal; vertical-align: top;" valign=3D"top"></th>
+<th align=3D"center" valign=3D"top" class=3D"vat" style=3D"padding: 0; Marg=
+in: 0; border: 0; font-weight: normal; vertical-align: top;"><a title=3D"Yo=
+uTube icon" href=3D"https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_1248=
+25_4982173_1_33&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MjAy%7CUnd0N0JvdGlocQ%3D%=
+3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7=
+CMTA%3D%7CMTA%3D%7C" target=3D"_blank" style=3D"text-decoration: none; font=
+-weight: normal; color: #000000;"><img src=3D"http://demo.emarsys.net/custl=
+oads/214501574/lifestylelabels/social-youtube.jpg" border=3D"0" style=3D"di=
+splay:block;" alt=3D"YouTube icon"></a></th>
+<th width=3D"20" style=3D"padding: 0; Margin: 0; border: 0; font-weight: no=
+rmal; vertical-align: top;" valign=3D"top"></th>
+<th align=3D"center" valign=3D"top" class=3D"vat" style=3D"padding: 0; Marg=
+in: 0; border: 0; font-weight: normal; vertical-align: top;"><a title=3D"Tw=
+itter icon" href=3D"https://links.vivaair.com/u/nrd.php?p=3DRwt7Botihq_1248=
+25_4982173_1_35&ems_l=3D6298230&i=3D1&d=3DMzQxOTA4MjA0%7CUnd0N0JvdGlocQ%3D%=
+3D%7CN2RiMWI5MjFkMzgxYmU2MzE%3D%7CU2VtYW5hLTQxLXJlZnVlcnpv%7CMjAyMA%3D%3D%7=
+CMTA%3D%7CMTA%3D%7C" target=3D"_blank" style=3D"text-decoration: none; font=
+-weight: normal; color: #000000;"><img src=3D"http://demo.emarsys.net/custl=
+oads/214501574/lifestylelabels/social-twitter.jpg" border=3D"0" style=3D"di=
+splay:block;" alt=3D"Twitter icon"></a></th>
+</tr></table>
+</td>
+</tr>
+<tr>
+<td height=3D"20" class=3D"s4"><div></div></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<img src=3D"https://links.vivaair.com/mo/Rwt7Botihq_765916760_4982173_12482=
+5_6298230.gif" height=3D"2" width=3D"2" border=3D"0"></body>
+</html>
+----=_---NextPart--=_-wtGpWcdng0--

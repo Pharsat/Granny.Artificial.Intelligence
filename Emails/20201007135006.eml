@@ -1,0 +1,1217 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp536133ild;
+        Wed, 7 Oct 2020 06:50:10 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJz/0/LMYaaZhd+by/VREiiKmxd9S8ocLQfOP9gnBzfjDAiVFmkC0QqxZdRvy7OwgnrdoH/j
+X-Received: by 2002:a17:906:52c6:: with SMTP id w6mr3257657ejn.199.1602078609980;
+        Wed, 07 Oct 2020 06:50:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1602078609; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KuVbELBHbD7qcL5gizi32c1fN7l6ChEKxFAVuaIROAJk/TzLZKNcQz40jD0cbPf2W0
+         eYFd8YNF9LXorxwn0DhRQH7a8/cUd+W7puQaFg8nc46Sqoi39gYyxqRuO+ZLnsQlkRa2
+         Q9XjF2lV5o4BoE0mLreDt8ISRI2+npfRquDuC/1sQi2JrZMv96lVszhkHmlkz9KtJ7wU
+         grPq5DNZKfxIuQ4NJsOyMutXADKZ5PTqPWWcwtOIcfU8VBbSKy0M7eS1bnnKsFTrxygM
+         agx7udtwo9+9qOd79S5dQT5l6XQ1VH2YGY2pPCqNpKNjaMT8l0Uq3EunSRFKEwbNTFMj
+         PEAw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:message-id:to:reply-to:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=2wFz0W4apvqXlZF0pGZWg0AZ20JabMA4gO2u0fhXVhY=;
+        b=saHx1ltojAOzujUQpnCFSqBQC0RDWBvefffdMFqGxSyjoJz1+SF4mtz0+iblio4NoG
+         9Du8sDgmjq4VxU/KqO/hfhEy9/OCBewGW7L0LrF9uGZp6JsWUpCSnBUPvJPi+Fz2Zn73
+         /QNd1TcjXRE1mfAYwCbMPa9l3mPjvL6ofdD8lt0uPSRyZ+5KOOXTVZwZUI9OL89Ow0zj
+         +Ik82+QahBGdZjc7w6nwNyubOUytEigooTw2a0AWeXlVM+GnsiyjesHmesQtoohG6j82
+         fXaC1RrDVuCeYiCC4fSl0Csr4Qxrq1tIvImlRb2tkxnd32hhQKLemBKtHntY/0QMmLiN
+         OP8w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@factura.tigo.com.co header.s=s1 header.b=F6jeUUHn;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=GvjQi8IW;
+       spf=pass (google.com: domain of bounces+8418715-34ee-pharsat=gmail.com@abmail.factura.tigo.com.co designates 168.245.108.65 as permitted sender) smtp.mailfrom="bounces+8418715-34ee-pharsat=gmail.com@abmail.factura.tigo.com.co";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=tigo.com.co
+Return-Path: <bounces+8418715-34ee-pharsat=gmail.com@abmail.factura.tigo.com.co>
+Received: from o1423.abmail.factura.tigo.com.co (o1423.abmail.factura.tigo.com.co. [168.245.108.65])
+        by mx.google.com with ESMTPS id i20si1471738ejx.686.2020.10.07.06.50.08
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 07 Oct 2020 06:50:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+8418715-34ee-pharsat=gmail.com@abmail.factura.tigo.com.co designates 168.245.108.65 as permitted sender) client-ip=168.245.108.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@factura.tigo.com.co header.s=s1 header.b=F6jeUUHn;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=GvjQi8IW;
+       spf=pass (google.com: domain of bounces+8418715-34ee-pharsat=gmail.com@abmail.factura.tigo.com.co designates 168.245.108.65 as permitted sender) smtp.mailfrom="bounces+8418715-34ee-pharsat=gmail.com@abmail.factura.tigo.com.co";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=tigo.com.co
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=factura.tigo.com.co; 
+	h=content-type:from:mime-version:reply-to:to:subject; s=s1; 
+	bh=2wFz0W4apvqXlZF0pGZWg0AZ20JabMA4gO2u0fhXVhY=; b=F6jeUUHnf/Df2
+	fm84xVLLxFnWPrO2WiGFW18J+ozTmajnfhAIA+JrRjCzGNsFYzcsrOdncm1RCN6n
+	P6kMd+rbJn0R6VAFxTrggaNzmOQzxfWXHv1rzkoQBxQz9u1dmSeGwLlc9jKn21jy
+	lcNX4y78C2/jImunRwqubM0DEFPqhM=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-type:from:mime-version:reply-to:to:subject:x-feedback-id; 
+	s=smtpapi; bh=2wFz0W4apvqXlZF0pGZWg0AZ20JabMA4gO2u0fhXVhY=; b=Gv
+	jQi8IWQFRCpJntYjaFAfkpwGH11ShrGCgEqX42Qon8kTtGUT2455oERK+ryIqLP/
+	mYt1x20aZBWJdWpiEDm1MfAxDzkSTNfaCBrI4RwbU/Qn0q/Q7sShdRBsAPyP1AEh
+	OUdPis86LikDuwTW/qC3uRlVW+n3bi9A8z4olB2TA=
+Received: by filter2288p1mdw1.sendgrid.net with SMTP id filter2288p1mdw1-24302-5F7DC78E-1C
+        2020-10-07 13:50:06.777475572 +0000 UTC m=+1184181.991847200
+Received: from ODQxODcxNQ (unknown)
+	by ismtpd0136p1mdw1.sendgrid.net (SG) with HTTP id bWj4ufEiQxiCKM15zYJjDg
+	Wed, 07 Oct 2020 13:50:06.707 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=353df36181c20acc4cebcaaf0cc5601cba5bde682b045fce1f58e879a813
+Date: Wed, 07 Oct 2020 13:50:06 +0000 (UTC)
+From: "Tigo" <facturas@factura.tigo.com.co>
+Mime-Version: 1.0
+Reply-to: ComunicacionesClientes@tigo.com.co
+To: pharsat@gmail.com
+Message-ID: <bWj4ufEiQxiCKM15zYJjDg@ismtpd0136p1mdw1.sendgrid.net>
+Subject: =?UTF-8?B?RXN0w6EgbGlzdGEgbGEgZmFjdHVyYSBkZSB0dXMgc2VydmljaW9zIE3Ds3ZpbGVzIFRpZ28gwqFQw6FnYWxhIGFob3JhIQ==?=
+X-SG-EID: sqIrrLMbLsIyP9sBRWWxUF78JT7ZpfEH7TvBjG5fTpaYboL1ic/MmUAUCf4JfPDTkB0w8OLjjBMzH7
+ jc7+MY0R/bnqqApXx5yYnCAdBhqutyCwtrnmonGEvU+cOOOGszrj7SX0vW8alEBPEH2AOuzUiDVdiG
+ pXSFSl9plMwjfU+cXoUv1PowL1NjQ8T45BEfc85iFBC3tuf4RxZSNWtpKEKNQ2t0/Pbzqg5GKFRYcw
+ Q=
+X-SG-ID: dXNuuxiaeVPHPf1dZH02eNo4F57qQiDHAM7qwDdFKlmm8b/gvhUZeyCFvk5N4N91VGe+y1uLQ/lcBr
+ PN9WXxfHXymrN+6F31iwcVTtSczZeLQOxrKUxwshE7r6Xu7IzCAi2U1y0w/Esdlp564CozcVlIhR6Q
+ qTEK/zUMOaxtWw/xg9bg6ZQcxTQlC6jt0hugxDH+5tWl0qsRA8RDsVmzT+bWpfNQQv4sc8VcuEr16b
+ Ym5/gLA1aDQLu8BROfA0uOG06G/vPadjLfJgFr2FMeT0CB86jtNtYt3CtJGYtORSxlSR0xHfg2VJsi
+ LoimFcwGWMU5bNdN03WDrIUywqAja76QHlNkoV3LKPqkkvOzHAXCa/aADBvlnRdY6dkqDSj+ZDywMK
+ Zy0awdW9McRzTLG+tznQ34CpirnRh8c0hjYXtwX6RyGzxFUtFqUItyif7xIlraKJG3GLEa2o3eOO5z
+ Vpb4eyINItGWdLn572Y/72IEv8pRyaJrB4fpdv3NrZd17CgycNm/VLCDApV2w82YU+tm/eKCZd4HlT
+ aWb0VafOQ=
+X-Feedback-ID: 8418715:E6iyiFcAyds0RCzfFe4+vASM9P0Kj8D7PN94IDUNCl8=:E6iyiFcAyds0RCzfFe4+vASM9P0Kj8D7PN94IDUNCl8=:SG
+
+--353df36181c20acc4cebcaaf0cc5601cba5bde682b045fce1f58e879a813
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+Hola,
+
+CRISTIAN
+---------------------------------
+
+Tu l=C3=ADnea TIGO:
+
+3004068554
+
+Tigo
+L=C3=ADnea M=C3=B3vil
+
+Ya est=C3=A1 disponible la factura de
+Octubre por tus servicios M=C3=B3viles
+-----------------------------------------------------------------
+
+Fecha l=C3=ADmite de pago
+
+28/10/2020
+
+Valor a pagar
+-------------
+
+$ 75.000
+
+PAGAR MI FACTURA  PAGAR MI FACTURA=20
+( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5mxV=
+tXhPkfyQJfOJ0-2FwHliP7Wk4NLcpTXKZ75ml4IEuQt2LKadxjI3iWDxANtCFSWGO3LSn4zj6eO=
+-2BQJgmYUmNGdctBMr3xopD6tR3eLWtXPQZc-2Fr3EP36YZQBsYuuR9ASx-2BjqNoPCS-2FiekN=
+qQa4nJvQWhiA8ghlGl-2Be3fKtdok6LU-2Bx0ESdAaaPvzonaJEc0A8UTXBE9nID3FYcStCjjgR=
+ePqr0CeOyldqYDO0uCWqwAmAVrdEOpgnG-2BNfyzblM9RWVaxINqseQR-2FPOrBUDvVfYZPacu7=
+Oj4CQ73yNKg33VjtEzO7qry27-2BKhYuxuYk71xqCaXRloILzzQ1mKrhhefYxkMfrq58x98ubeP=
+9DqX-2FWkWb_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxA=
+ZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq=
+6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2=
+V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0La=
+gDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWP=
+AjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfd=
+qkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPa=
+gM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTso=
+V3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHg6Uv-2FmT1jCAhR9jogSyA36IpfdkIB0FDrocMNcqP=
+WJy3h-2BwdeVxXGW1FStQHGvQu7X8yUYpi5eEkPZHENDz1O1i6DY3BhKxuWVcWS0nJjaWCqcV2W=
+1hK-2BZ1-2BuOPR-2B2PcV-2BhAFuA7krlnW2O-2Fja-2BBP7sJr6aeFsHDH3sVDpJX9gz )
+
+Conoce el detalle de tu factura
+
+DESCARGAR=20
+( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5mxV=
+tXhPkfyQJfOJ0-2FwHliP7Wk4NLcpTXKZ75ml4IEuQesFRM1Y5I3FlQBgRJPPR-2BMKkGgt0-2F=
+I4mZtsrVi9uIYdZC-2BN91DQXiT-2FCTB5x3TkWsmHINgt2U16zAdXBDFMcOplC89CiTvocaEJP=
+NI-2BAcKsehCjF069htGcjRec1UMxbzvG0QEncLC5p4D9LqOQ3cBKQ1v41n3h04DXaWqDHjeoaJ=
+hkxSuJzoxp21MpGlpoMgdOMLHR8zLmjdz2IPkAU8OnRvMhOA1aMQE0894AFkWhIwjyeytpMpDUP=
+ZY8hvPODTf9bldvmcrgM3Y5B12L66wUhDOUzN3iaKzhoxtPSrRw-3DGuEL_7bK8TPj8l3VJBogt=
+iigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHb=
+YfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njP=
+GVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUlo=
+VLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtY=
+uUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-=
+2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iA=
+B1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUg=
+VAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWK=
+yHvzHgQSKKGIphFnPKafATvzcXb8dicmhsSsDeLaukeQNPj6dSW9C7XPoQL2f0pOGg4-2B4jaL0=
+ofVVcrUAC5JvacONwA1WXmdCEN7UV4kfzpEBFGCyqA30NQXYKzA0EIQ8CE1ZX4S8sy-2FfxBXFQ=
+Dol-2FTx0IZEyct8EaWfAuvbxCh2ZnRe )
+
+* Para conservar tu factura, desc=C3=A1rgala y gu=C3=A1rdala en tu
+computador o celular
+
+Consulta tus =C3=BAltimas dos facturas
+
+CONSULTAR=20
+( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5t9w=
+WnZ-2BU3TWdoSnyLDI1LHGlWuVk0tvA8AvGBuwNGDWoDVMSHj-2BJdp2aXyymQN26J1BXWgqB4-=
+2Fesy9m8XCF5t5zhiLzGNzzi80yPYZFMAXD1cMefyNHUwvlSmIM5KdMN2ay2wkgSp2xVo9mlrLi=
+55FFzx1fa7lihud5iDQiy1e6llp601q-2FT1vk48OpLu9sTX0nxUbcm-2F7JPvRmwzpMqyU-3Dv=
+N5k_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3=
+GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJ=
+AFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B=
+3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8lo=
+OYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAw=
+wlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EU=
+akt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuM=
+iCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sf=
+b-2F7Io8OH9euE6cDPWKyHvzHldCd0CrwSDRVyRlcnq0-2Bx4VA-2B3W0rVGgg6eLsFrKridznc=
+108q53unHNciK2C96ZfDvg6K-2FLFcz1cmyvZs05rVYvsvE-2FLefTiknimy83KNwfFnRUgcsFt=
+QmLxd9DHNm6pNPTM2Np3anQ4xbrLZbjzHlwSC-2FvGCDlj0TrzcEauhW )
+
+=C2=BFQuieres ahorrar tiempo en tus pagos?
+
+Activa el Pago automatico=20
+( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5t9w=
+WnZ-2BU3TWdoSnyLDI1LG-2F0Qts8cSeX3uYQbkb0oSVc0QpFBGyxn07Ux5lc1WmT9lY3SkZK50=
+Xw8dCospF0p1Cqz49sSABvuzDYxno9V4id1BDGrnn1lRhJFGe5fUrj9zt5EoTMqClBD8FYHW5Q4=
+XbajZIPP5sAlycNkMpqFvhHR48469m4Wdlc6FD2JUgv4ugZG-2BUA3GlJTfNkr0Zeb21l8J5VuP=
+FJn-2Bj-2BKh1ZXpuI7aV_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW=
+3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZ=
+TaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZ=
+B5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHi=
+Y6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWj=
+op1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp0=
+9iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAn=
+KaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUql=
+wnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHnGGr69afwMsPPJiW8Hej4RmEPBn6OG8p=
+SQzQv50LxWO7n6Q-2FZs-2B1Pi3yaOXm1sLLQXbQtcFowan0LtlkJBIKRvGlsDE-2FJh50b9oCO=
+BZHUxKCwOid35-2B-2BBNWdZOsMiuEwfipNgj2ifYRHCL8aPi3TdJelqPo2jqZPz1YRuqwqu7R )
+ de tu l=C3=ADnea Tigo
+-----------------------------------------------------------------
+
+Disfruta de series, pel=C3=ADculas y porducciones
+originales de Amazon Prime Video
+--------------------------------------------
+
+
+( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5t9w=
+WnZ-2BU3TWdoSnyLDI1LEWHq7o1-2Bieh34TAZaU0YCH0TZeRXD7wwBPAO9mZJ-2FbG4pj-2BY3=
+x3Z9G9B2cx0-2FXLCIMAdf5i7BwgNFEXv9M-2BfghoXTisIl3cLbFNfDVWs519Yvn-2BCZk0rdn=
+wUo7T6SlRFsMzLqvkQndPjrB9McidnxIvZPMtH3t6b2ccwIwNaCLSdeLcghuB1d2RYJ3ePp0sB4=
+-3Dy7uO_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIc=
+lzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQ=
+qHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GG=
+Q-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFR=
+K8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYx=
+cRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL=
+45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-=
+2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3ig=
+H1Sfb-2F7Io8OH9euE6cDPWKyHvzHrZgNOhiw1AX9qvklbmOOBmxXZoSn7ME2O2M-2F1LqxSYtR=
+me-2BO1-2Fv7vNE4rQgFWl8yuteSrwhe6-2FZzFL7gV-2F8OGzyih6ewwtEdcqEitoZNL0iYmBQ=
+fNlG4jaEn-2FoFEwZk8DmgbMK40h4PLJh7-2B18-2FFc6Y42w7T5148CBXhrStmSXo )
+       Con=C3=A9ctate con nosotros en:
+
+Mi Tigo=20
+( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5ucv=
+bhzLPkeWaf7QDjQFG3y3-2BmJp4kKlaAiJsR00t6RCrDdstxFTheqPEupjmhX6JwMcl6srHInsw=
+u6CgMRLBFA-3Dza0A_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUj=
+j9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeC=
+Ml2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-=
+2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JD=
+D2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1P=
+DOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYa=
+bzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGS=
+z8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK=
+-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHuDHYTIHNtLBcAJnYqrXptVsXNyVK0Hz54eau=
+65OjVcPIE2hXwrpjgdgGA4pCGXSA-2FxSwYNIcjWPeMddCeUnz5vdzUjboQjqp-2BbVDw9IGvKZ=
+9iYKcSqe6ZWd05XngCzluy5gSw2Xe3kxYqLJdHaI2-2BlZkVCXJLDKIKP-2F4-2BE334MV )
+ Mi Tigo App
+
+Mi Tigo Web=20
+( http://ablink.factura.tigo.com.co/ls/click?upn=3DqI1N7VoDnkEdxwaJ7xoAJxn9=
+lMVQ0r7hP6c8vpEody2PspC3VCNoUxeQQj2Sd9ncEEk9vPqRW9SsD3qyxTMiEHnZ1wipMZ6hvf2=
+r8uWBKEZY0bkTuwSHL31fpNrFy3UG484rD7I3J4YggQ3S2dZJiCCaOsMZaCtQp72Zh22cUsM-3D=
+eKrR_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq=
+3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHq=
+JAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2=
+B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8l=
+oOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRA=
+wwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45E=
+Uakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2Bu=
+MiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1S=
+fb-2F7Io8OH9euE6cDPWKyHvzHpISPGUaAXePHVqBt8g9VO9rQGOflbSlFRUqXoTKgXbdphm8jU=
+kraVT5TmelSDB6L0OpRlXHD2pcv5hGWyOqzP7jvCWrRrFODihndr1Y7QC0jiMJn1jadxMOQ5-2B=
+5Hj7BdSqfkoC4yv8iTP6W3gWoTZF-2F1qDh53AhXJ7FI1XGv57K )
+ Mi Tigo Web
+
+Centro de ayuda=20
+( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5ptG=
+EooflZKegobXYIwkpH3ONtnMyb3vkpNs2dVpz7Lf6DagTqG9GKQTi6e47YKHSarD4aRooa9Wr1-=
+2FEAzDAklREvJxJoXyVgyKQVklDBeF2d5ZDKoWeX2plzuyJw557SKDNRhFcOsVL-2Fo9ZvmQdWq=
+nEHwlCbz2M6wDVbe3Ff7gXxy242Ra7Qps5SAcp2huH4g-3D-3DmG7V_7bK8TPj8l3VJBogtiigt=
+LJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBh=
+LOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0=
+wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLht=
+TUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMH=
+cE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9u=
+yw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd=
+6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS=
+20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvz=
+HtO3Z6KQzPO-2BjnO9ZpeyiQsbOrQE5g5IMAE9kQ-2BW1BoD-2Fqb45L0rcZ0m3NbterMKjb0Fb=
+IIUIUCiYAu6ksuzetqJC94VTyz9W2wECCi-2F9KDIKKcQS8xbi1jQ9AaeGz4JNBz5byDhGa43N2=
+Jogyo2taVGrZ47eyYoU14X3NPem6sp )
+ Centro de ayuda
+
+Tigo Copyright =C2=A9. Colombia M=C3=B3vil S.A.E.S.P.
+Todos los derechos reservados
+
+Si prefieres no recibir correos electr=C3=B3nicos de Tigo. Haz clic
+aqu=C3=AD ( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3=
+ZmlPDj5mrXKsuGV8V2pKKRda1TSBGOWaG6OvCMXdE9rU8n-2BJjdA18HKww0r-2FWHAIoqq8bPH=
+gR9QCDykLkINK0fm3n5D2n7BfLN-2BMF0860-2BGVMLOdx-2B71qVLdPRU3tsEqFusvXz4ui7YU=
+dQ9TesNEKfH-2BwssLf8sAhs-2Be6pzZtGhfeZ36Sf5Xt7qNWvTd0sEWXcidKcsNpgD5zdIhgQz=
+ZtwjQsiJhw8CWv-2BGefsx8RjaQ29s4F2pnMng276ZdZd1P2-2BxDadUx9fNAYmlFQmBxMKIm-2=
+FZjx6Ndk4Sayy1P-2FH3A6vm4L6i1KdXvAmQwFRWNDm4LtI7X4JAuu4Jbo1gW3pPUXtEvRpYvuB=
+XGpSuoAdpPx6rVt-2BuuYG-2FSzShj42SQauQLpcENI2aF4sDsHlPqL7MhA98KSLtJ9NyBovaJ-=
+2FELQB0oo9HH-2BxkNt2rt0t-2BkuhpjkFMkuB5rvPn1bK4-2B9aJTNMGkpwMZV1iAc5ZJRl5mG=
+p6t4kGxnhyEjb-2Bs6WUq0HNcJ8EIFmYFlsTikaDlvX4QDOrR1EQLZvBwFpFdcu8ZMPkErHuvQr=
+HcOe7SQiRdUfFiKPQAuodPUkiLzEJR1rxVffN6Nhy5fgIHm-2BYtOFBOOWze4AfYhQeZoWjs5tY=
+j5NpHDgGePUwRavIO-2FK3F3r-2B3lvH2DKI-3DnfqW_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQ=
+pX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXR=
+MddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libL=
+DebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjr=
+lWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6T=
+JvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0=
+PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInM=
+BV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmB=
+hcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHt2fWTsqStk=
+AMAMnMcdZWngkKGeJMLD9eSn59fuu-2BsI6CpXgxlK-2FW5tGCwylzR-2F5snan3T6-2B4HURfY=
+RPf-2BSh20dFXxRnuoulAZ1O4-2FHcbPJy7Y1MEtHIpr7M8SQriFEKIiiNvgFcgGxPfuNRfDjve=
+fBTVuJgiRKag-2BHuQK2bloe9 )
+
+Facebook ( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3Z=
+mlPDj5jiKUmeo61UUPxfZpfn4awu6zN3kLqj650QcY97qGn7VwpSn_7bK8TPj8l3VJBogtiigtL=
+JRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhL=
+OiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0w=
+CNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtT=
+UuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHc=
+E5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uy=
+w6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6=
+c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS2=
+0ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzH=
+hCkWy5kclNE2K0u32RaIV1JprZyY8XZQri-2FnDte80KuVM6IB-2FCjCkvlP0IU6zOFH2E7466e=
+2YWANcs-2FWiFEtaiO91pgihAryymJ8rfpXYkxURZ38kzH4Y4vUVrj9xcXgJnqHKPylfdSSw1Ol=
+ekHccEt19XTwD1pwqIOLvBZuWeS ) Twitter
+( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5vEi=
+XGOO9t-2BNKttJLsBnx59bMLJx-2Bq2JXKcsjag-2BVFFs9K25_7bK8TPj8l3VJBogtiigtLJRa=
+2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiT=
+BWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNt=
+um0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuw=
+HjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d=
+9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6y=
+AY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5r=
+Ea6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20IS=
+FDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHq0m=
+iz2-2F-2FSXjMEaPUUip0sDZIdbHYyJYq3aqPvVlY919wmgWx79W7ahj9YX0f4t94cJoVtTwmTJ=
+te-2Bj1vfPq9MgrnOTOhiLflFH23LY2bpE26nLJ6-2BVZDhDgLHdg5nNJoKMAScsKi1-2FYMhHd=
+lVFnUaWZUOkwwpB6Oac-2FbqFnoFhJ ) Youtube=20
+( http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5kC-=
+2FZ-2BoRJfALlKngIWe-2B2L6NKXb956YT9hbkfsUtrQpeNuvlXAzilvcoN86aztRY3g-3D-3DA=
+inD_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3=
+GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJ=
+AFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B=
+3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8lo=
+OYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAw=
+wlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EU=
+akt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuM=
+iCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sf=
+b-2F7Io8OH9euE6cDPWKyHvzHneRk5dd2aqeyrgTyaxwvY-2BxjlbifYt6P2o-2BtJ0dP-2Bpb-=
+2Bj3ZwIn8t5TCMLnpO4kPUg4y0tee7CV9n9LBOdiTfir-2FgPE548idn5c-2F3z3TtzbvnDZmKX=
+iRyeMgFFIJWp15YJBeDyjFYbbJ8B0-2FMMwxGlhKdGfU7DvRgGWhGNLNEhLW )=
+
+--353df36181c20acc4cebcaaf0cc5601cba5bde682b045fce1f58e879a813
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:sch=
+emas-microsoft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml"=
+ style=3D"font-family: 'Roboto', Arial, Helvetica, Sans-Serif; height: 100%=
+ !important; width: 100% !important; color: #787878; font-size: 16px; text-=
+align: center; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+margin: 0 auto; padding: 0;">
+<head>
+<meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Type">
+<!-- utf-8 works for most cases --><meta name=3D"viewport" content=3D"width=
+=3Ddevice-width">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"x-apple-disable-message-reformatting">
+=09
+	<title></title>
+	<!-- The title tag shows in email notifications, like Android 4.4. --><!--=
+ Web Font / @font-face : BEGIN --><!-- NOTE: If web fonts are not required,=
+ lines 10 - 27 can be safely removed. --><!-- Desktop Outlook chokes on web=
+ font references and defaults to Times New Roman, so we force a safe fallba=
+ck font. --><!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]--><!-- All other clients get the webfont reference; some will=
+ render the font and others will silently fail to the fallbacks. More on th=
+at here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ --=
+><!--[if !mso]><!--><!-- insert web font reference, eg: <link href=3D'https=
+://fonts.googleapis.com/css?family=3DRoboto:400,700' rel=3D'stylesheet' typ=
+e=3D'text/css'> --><!--<![endif]--><!-- Web Font / @font-face : END --><!--=
+ CSS Reset : BEGIN -->
+=09
+	<!-- What it does: Makes background images in 72ppi Outlook render at corr=
+ect size. --><!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]--><!-- CSS Reset : END --><!-- Progressive Enhancements : BEG=
+IN -->
+=09
+	<!-- Progressive Enhancements : END -->
+<style>@font-face {
+font-family: 'Roboto'; font-style: normal; font-weight: 400; src: local('Ro=
+boto'), local('Roboto-Regular'), url('https://fonts.gstatic.com/s/roboto/v2=
+0/KFOmCnqEu92Fr1Mu4mxP.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Roboto'; font-style: normal; font-weight: 700; src: local('Ro=
+boto Bold'), local('Roboto-Bold'), url('https://fonts.gstatic.com/s/roboto/=
+v20/KFOlCnqEu92Fr1MmWUlfBBc9.ttf') format('truetype');
+}
+body {
+font-family: 'Roboto', Arial, Helvetica, Sans-Serif; margin: 0 auto !import=
+ant; padding: 0 !important; height: 100% !important; width: 100% !important=
+; color: #787878; font-size: 16px; text-align: center;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 374=
+px) {
+  u~div .email-container {
+    min-width: 320px !important;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 413=
+px) {
+  u~div .email-container {
+    min-width: 375px !important;
+  }
+}
+@media only screen and (min-device-width: 414px) {
+  u~div .email-container {
+    min-width: 414px !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .button_container td {
+    display: block !important; width: 100% !important; text-align: center !=
+important;
+  }
+}
+@media screen and (max-width: 425px) {
+  .responsive-container {
+    display: initial !important;
+  }
+  .responsive-block {
+    border: none !important; direction: ltr !important; display: block !imp=
+ortant; max-width: 100% !important; padding-left: 0 !important; width: 100%=
+ !important;
+  }
+  .responsive-block a {
+    margin: 0 auto; max-width: 30ch; width: 100% !important; padding-top: 1=
+2px; padding-left: 0 !important; padding-right: 0 !important; padding-botto=
+m: 12px;
+  }
+  .mitigo_block {
+    display: block !important; max-width: 100% !important; width: 100% !imp=
+ortant;
+  }
+  .mitigo_block h2 {
+    text-align: center; padding-top: 24px !important;
+  }
+  .footer_btn {
+    display: block !important; width: 100% !important; text-align: center; =
+padding-bottom: 12px !important; padding-left: 0 !important; padding-right:=
+ 0 !important;
+  }
+  .btn-cta {
+    padding: 0 !important;
+  }
+  .responsive-block-border {
+    border-top: 1px solid #d8d8d8 !important;
+  }
+  .fix {
+    width: 150px !important;
+  }
+}
+</style>
+</head>
+<!-- The email background color (#222222) is defined in three places:
+1. body tag: for most email clients
+2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, G=
+Suite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
+3. mso conditional: For Windows 10 Mail -->
+<body style=3D"mso-line-height-rule: exactly; font-family: 'Roboto', Arial,=
+ Helvetica, Sans-Serif; height: 100% !important; width: 100% !important; co=
+lor: #787878; font-size: 16px; text-align: center; -ms-text-size-adjust: 10=
+0%; -webkit-text-size-adjust: 100%; margin: 0 auto; padding: 0;" width=3D"1=
+00%" bgcolor=3D"#FAFCFF">
+<center style=3D"background-color: #FAFCFF; width: 100%; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%;">
+<!--[if mso | IE]>
+            <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"100%" style=3D"background-color: #FAFCFF;">
+                <tr>
+                    <td>
+        <![endif]--><!-- Visually Hidden Preheader Text : BEGIN -->
+<div style=3D"display: none; font-size: 1px; line-height: 1px; max-height: =
+0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-fami=
+ly: Roboto, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%;"></div>
+<!-- Visually Hidden Preheader Text : END --><!-- Create white space after =
+the desired preview text so email clients don=E2=80=99t pull other distract=
+ing text into the inbox preview. Extend as necessary. --><!-- Preview Text =
+Spacing Hack : BEGIN -->
+
+<div style=3D"display: none; font-size: 1px; line-height: 1px; max-height: =
+0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-fami=
+ly: Roboto, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%;"></div>
+<!-- Preview Text Spacing Hack : END --><!-- Set the email width. Defined i=
+n two places:
+        1. max-width for all clients except Desktop Windows Outlook, allowi=
+ng the email to squish on narrow but never go wider than 600px.
+        2. MSO tags for Desktop Windows Outlook enforce a 600px width. -->
+
+<div class=3D"email-container" style=3D"max-width: 520px; -ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; margin: 0 auto;">
+<!--[if mso]>
+                <table align=3D"center" role=3D"presentation" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600">
+                    <tr>
+                        <td>
+            <![endif]--><!-- Email Body : BEGIN -->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"font-family: Roboto, Arial, Helvetica, Sans-Se=
+rif; color: white; border-radius: 0px; text-align: center; -ms-text-size-ad=
+just: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !importan=
+t; mso-table-rspace: 0pt !important; border-spacing: 0 !important; border-c=
+ollapse: collapse !important; table-layout: fixed !important; margin: 0 aut=
+o;" width=3D"100%" bgcolor=3D"#FAFCFF">
+	<tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+ mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;" bgcol=
+or=3D"#00377d">
+<!-- Email Header : BEGIN -->
+			<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"max-width: 520px; -ms-text-size-adjust: 100=
+%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-ta=
+ble-rspace: 0pt !important; border-spacing: 0 !important; border-collapse: =
+collapse !important; table-layout: fixed !important; margin: 0 auto;" width=
+=3D"100%">
+				<tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+					<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">
+<!-- Saludo : INICIO -->
+						<td bgcolor=3D"#00377b" style=3D"border-right-width: 2px; border-righ=
+t-color: #00377b; border-right-style: solid; width: 45%; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important; padding: 20px 0 20px 2%;" width=3D"45%" =
+align=3D"left">
+						<p style=3D"font-family: 'Roboto', Helvetica, sans-serif; color: #fff=
+fff; font-size: 12px; font-weight: 400; -ms-text-size-adjust: 100%; -webkit=
+-text-size-adjust: 100%; margin: 0;">Hola,</p>
+
+						<h3 style=3D"font-size: 18px; font-family: Roboto, Helvetica, sans-se=
+rif; color: #ffffff; font-weight: 300; letter-spacing: -0.39px; -ms-text-si=
+ze-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 5px 0;">CRISTIAN</=
+h3>
+
+						<p style=3D"font-family: 'Roboto', Helvetica, sans-serif; color: #fff=
+fff; font-size: 14px; font-weight: 400; display: inline-block; -ms-text-siz=
+e-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0;">Tu l=C3=ADnea T=
+IGO:</p>
+
+						<p style=3D"font-size: 14px; font-family: Roboto, Helvetica, sans-ser=
+if; color: #ffffff; font-weight: 300; letter-spacing: -0.39px; display: inl=
+ine-block; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; marg=
+in: 0;">3004068554</p>
+						</td>
+						<!-- Saludo : FIN --><!-- Logo TigoUne : INICIO -->
+						<td bgcolor=3D"#00377b" style=3D"width: 55%; -ms-text-size-adjust: 10=
+0%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-t=
+able-rspace: 0pt !important; padding: 20px 2% 20px 0;" width=3D"30%" align=
+=3D"right"><img alt=3D"Tigo" border=3D"0" class=3D"fix" src=3D"https://appb=
+oy-images.com/appboy/communication/assets/image_assets/images/5e94bc9a0f5a7=
+f725ceb088f/original.png?1586805914" width=3D"240" style=3D"-ms-text-size-a=
+djust: 100%; -webkit-text-size-adjust: 100%; -ms-interpolation-mode: bicubi=
+c;"></td>
+						<!-- Logo TigoUne : FIN -->
+					</tr>
+				</tbody>
+			</table>
+			<!-- Email Header : End -->
+</td>
+		</tr>
+		<!-- Card info factura: Begin -->
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td bgcolor=3D"#ffffff" style=3D"color: #707682; font-family: 'Roboto', =
+Helvetica, sans-serif; font-size: 14px; -ms-text-size-adjust: 100%; -webkit=
+-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace=
+: 0pt !important; padding: 0 5%;">
+			<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"max-width: 100%; -ms-text-size-adjust: 100%=
+; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-tab=
+le-rspace: 0pt !important; border-spacing: 0 !important; border-collapse: c=
+ollapse !important; table-layout: fixed !important; margin: 0 auto;" width=
+=3D"100%">
+				<tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+					<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">
+						<td class=3D"responsive-block" style=3D"border-right-width: 1px; bord=
+er-right-color: #d8d8d8; border-right-style: solid; width: 50%; -ms-text-si=
+ze-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !imp=
+ortant; mso-table-rspace: 0pt !important; padding: 24px 0;" width=3D"50%" a=
+lign=3D"center">
+						<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"max-width: 100%; -ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-=
+table-rspace: 0pt !important; border-spacing: 0 !important; border-collapse=
+: collapse !important; table-layout: fixed !important; margin: 0 auto;" wid=
+th=3D"100%">
+							<tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td style=3D"padding-top: 5px; width: 20%; -ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-=
+table-rspace: 0pt !important;" width=3D"20%" valign=3D"top"><img alt=3D"L=
+=C3=ADnea M=C3=B3vil" height=3D"48" src=3D"https://appboy-images.com/appboy=
+/communication/assets/image_assets/images/5c7f0f1f7dea0d29bd0a22ae/original=
+.png?1551830815" style=3D"height: auto; max-width: 48px; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%; -ms-interpolation-mode: bicubic;"=
+ width=3D"48"></td>
+									<td style=3D"width: 80%; -ms-text-size-adjust: 100%; -webkit-text-=
+size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; padding: 0 10px;" width=3D"80%" align=3D"left">
+									<h3 style=3D"display: inline; font-weight: 300; font-size: 14px; p=
+adding-bottom: 12px; mso-line-height-rule: exactly; -ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; margin: 0 auto;" align=3D"left">Ya est=
+=C3=A1 disponible la factura de <span style=3D"color: #00377b; font-weight:=
+ 600; word-break: break-all; -ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%;">Octubre</span> por tus <span style=3D"color: #00377b; font-w=
+eight: 600; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">se=
+rvicios M=C3=B3viles</span>
+</h3>
+									</td>
+								</tr>
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td colspan=3D"2" style=3D"width: 100%; padding-right: 5%; -ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt =
+!important; mso-table-rspace: 0pt !important;" width=3D"100%" align=3D"cent=
+er">
+									<p style=3D"color: #00377b; font-size: 12px; font-weight: 600; pad=
+ding-top: 12px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+ margin: 0 auto;">Fecha l=C3=ADmite de pago</p>
+
+									<p style=3D"font-size: 12px; padding-bottom: 6px; -ms-text-size-ad=
+just: 100%; -webkit-text-size-adjust: 100%; margin: 0 auto;">28/10/2020</p>
+
+
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+						<td class=3D"responsive-block responsive-block-border" style=3D"paddi=
+ng-top: 24px; padding-bottom: 24px; padding-left: 5%; width: 50%; -ms-text-=
+size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !i=
+mportant; mso-table-rspace: 0pt !important;" width=3D"50%" align=3D"center">
+						<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"max-width: 100%; -ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-=
+table-rspace: 0pt !important; border-spacing: 0 !important; border-collapse=
+: collapse !important; table-layout: fixed !important; margin: 0 auto;" wid=
+th=3D"100%">
+							<tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;"=
+ align=3D"center">
+									<h3 style=3D"color: #00377b; font-size: 14px; mso-line-height-rule=
+: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; marg=
+in: 0 auto;">Valor a pagar</h3>
+
+									<p style=3D"color: #00377b; font-size: 24px !important; font-weigh=
+t: 600; word-break: break-all; -ms-text-size-adjust: 100%; -webkit-text-siz=
+e-adjust: 100%; margin: 0 auto;">$ 75.000</p>
+									</td>
+								</tr>
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td aria-hidden=3D"true" height=3D"12" style=3D"height: 12px; -ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0=
+pt !important; mso-table-rspace: 0pt !important;"></td>
+								</tr>
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;"=
+ align=3D"center">
+									<div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+<!--[if mso]>
+                                                                    <v:roun=
+drect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-micr=
+osoft-com:office:word" href=3D"https://transacciones.tigo.com.co/servicios/=
+facturas/cGF5ZjFqMDN4cHIzc3M6OjpUMUcwVW4zRjFKMDN4cHIzc3M6Ojp0MWcwbTB2MWw6Oj=
+pleHByZXNzcGF5bWVudDo6OjE6Ojow?msisdn=3D3004068554&amp;email=3Dpharsat@gmai=
+l.com&amp;utm_source=3Dbraze&amp;utm_medium=3Demail&amp;utm_campaign=3Dbyc-=
+movil-m1" style=3D"height:36px;v-text-anchor:middle; width:178px;" arcsize=
+=3D"50%" strokecolor=3D"#00c8ff" fillcolor=3D"#00c8ff">
+                                                                    <w:anch=
+orlock/>
+                                                                        <ce=
+nter style=3D"color:#ffffff;font-family:Helvetica, Arial,sans-serif; font-s=
+ize:14px;">PAGAR MI FACTURA</center>
+                                                                    </v:rou=
+ndrect>
+                                                                <![endif]--=
+><a class=3D"btn-cta" href=3D"http://ablink.factura.tigo.com.co/ls/click?up=
+n=3DqDkwP3VxH2n0Z3ZmlPDj5mxVtXhPkfyQJfOJ0-2FwHliP7Wk4NLcpTXKZ75ml4IEuQt2LKa=
+dxjI3iWDxANtCFSWGO3LSn4zj6eO-2BQJgmYUmNGdctBMr3xopD6tR3eLWtXPQZc-2Fr3EP36YZ=
+QBsYuuR9ASx-2BjqNoPCS-2FiekNqQa4nJvQWhiA8ghlGl-2Be3fKtdok6LU-2Bx0ESdAaaPvzo=
+naJEc0A8UTXBE9nID3FYcStCjjgRePqr0CeOyldqYDO0uCWqwAmAVrdEOpgnG-2BNfyzblM9RWV=
+axINqseQR-2FPOrBUDvVfYZPacu7Oj4CQ73yNKg33VjtEzO7qry27-2BKhYuxuYk71xqCaXRloI=
+LzzQ1mKrhhefYxkMfrq58x98ubeP9DqX-2F92L0_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97=
+k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddO=
+syHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebx=
+DLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLe=
+SYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0=
+bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa=
+7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3X=
+YicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6=
+qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHgcLV3pAEDywQCt=
+ZzrGfykDY-2B1kHlPW4rU3goRW8BkVLpkWZLpzEXyUVfqlVoq6XJnDdZVySdq7HAW3kHERM9x7B=
+z1RnhTJGmQqo8I9eGdOZxDcJabAlGwXIOmGXOZz7QwUaR-2BoaVGO-2F0zgyuQ3w9tya5IrSNWv=
+RriREfM7Tl9R6" style=3D"background-color: #00c8ff; border-radius: 20px; col=
+or: #ffffff; display: inline-block; font-family: sans-serif; font-size: 14p=
+x; font-weight: 700; line-height: 36px; text-align: center; text-decoration=
+: none; width: 178px; -webkit-text-size-adjust: none; mso-hide: all; -ms-te=
+xt-size-adjust: 100%; border: 1px solid #00c8ff;">PAGAR MI FACTURA</a>
+</div>
+									</td>
+								</tr>
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td aria-hidden=3D"true" height=3D"12" style=3D"height: 12px; -ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0=
+pt !important; mso-table-rspace: 0pt !important;"></td>
+								</tr>
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;"=
+ align=3D"center">
+									<p style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%; margin: 0 auto;">Conoce el detalle de tu factura</p>
+									<a href=3D"http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3=
+VxH2n0Z3ZmlPDj5mxVtXhPkfyQJfOJ0-2FwHliP7Wk4NLcpTXKZ75ml4IEuQesFRM1Y5I3FlQBg=
+RJPPR-2BMKkGgt0-2FI4mZtsrVi9uIYdZC-2BN91DQXiT-2FCTB5x3TkWsmHINgt2U16zAdXBDF=
+McOplC89CiTvocaEJPNI-2BAcKsehCjF069htGcjRec1UMxbzvG0QEncLC5p4D9LqOQ3cBKQ1v4=
+1n3h04DXaWqDHjeoaJhkxSuJzoxp21MpGlpoMgdOMLHR8zLmjdz2IPkAU8OnRvMhOA1aMQE0894=
+AFkWhIwjyeytpMpDUPZY8hvPODTf9bldvmcrgM3Y5B12L66wUhDOUzN3iaKzhoxtPSrRw-3Dbt2=
+K_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3Gb=
+iCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAF=
+U-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3z=
+jEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOY=
+LMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwl=
+INOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUak=
+t87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiC=
+AjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-=
+2F7Io8OH9euE6cDPWKyHvzHmwrcvn6kFKHkvjlCxrPgIWDPLj3GnLFZCvwLIo9HyhPp9gAJGQTa=
+nPWNxTlbd4HC4RFOoJq-2FUnX3NZ-2BBTOQPHvT8t3BqaaWEu6cwOGh8K5aADy-2BUebEuSWX3X=
+atipWAmyVIeF1h0Gf9MaX-2Fpw6HEyrHTh-2B6QEGnIU5lIWq-2BHGo4" style=3D"color: #=
+00c8ff; display: block; text-decoration: none; font-weight: 600; -ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%;">DESCARGAR</a>
+</td>
+								</tr>
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td aria-hidden=3D"true" height=3D"6" style=3D"height: 6px; -ms-te=
+xt-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt=
+ !important; mso-table-rspace: 0pt !important;"></td>
+								</tr>
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;"=
+ align=3D"center">
+									<p style=3D"line-height: 14px; font-size: 12px; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%; margin: 0 auto;">* Para conservar=
+ tu factura, desc=C3=A1rgala y gu=C3=A1rdala en tu computador o celular</p>
+									</td>
+								</tr>
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td aria-hidden=3D"true" height=3D"12" style=3D"height: 12px; -ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0=
+pt !important; mso-table-rspace: 0pt !important;"></td>
+								</tr>
+								<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+									<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;"=
+ align=3D"center">
+									<p style=3D"line-height: 14px; font-size: 12px; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%; margin: 0 auto;">Consulta tus =C3=
+=BAltimas dos facturas</p>
+									<a href=3D"http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3=
+VxH2n0Z3ZmlPDj5t9wWnZ-2BU3TWdoSnyLDI1LHGlWuVk0tvA8AvGBuwNGDWoDVMSHj-2BJdp2a=
+XyymQN26J1BXWgqB4-2Fesy9m8XCF5t5zhiLzGNzzi80yPYZFMAXD1cMefyNHUwvlSmIM5KdMN2=
+ay2wkgSp2xVo9mlrLi55FFzx1fa7lihud5iDQiy1e6llp601q-2FT1vk48OpLu9sTX0nxUbcm-2=
+F7JPvRmwzpMqyU-3Dcdsf_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW=
+3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZ=
+TaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZ=
+B5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHi=
+Y6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWj=
+op1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp0=
+9iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAn=
+KaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUql=
+wnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHnjYKE95xvPlrFY7elLGs6OERnmiVuvBI=
+tJYHpVP2bzL87tOtuEexlEpROc2XzhZUq3AlyuPKsWo7mW8MGrEN2dUKDbauTgJEPYXlp-2FXqD=
+pPqVEj5XirTcEJPhj-2FQSHT0ba0hYrasmFsLCwQahLavvYJsWfBOj4sXFV9D2YeIxqz" style=
+=3D"color: #00c8ff; text-decoration: none; font-size: 14px; font-weight: 60=
+0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">CONSULTAR</=
+a>
+</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<!-- Card info factura: end --><!-- Card info: begin -->
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-text-s=
+ize-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !=
+important;"><img src=3D"https://appboy-images.com/appboy/communication/asse=
+ts/image_assets/images/5eb31ffc4c72032fa599d7ff/original.jpg?1588797436" st=
+yle=3D"max-width: 100%; width: 520px; -ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%; -ms-interpolation-mode: bicubic;" width=3D"520"></td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-text-s=
+ize-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !=
+important; padding: 12px 0;" bgcolor=3D"#FFFFFF">
+			<p style=3D"color: #00377D; font-size: 16px; font-weight: 600; -ms-text-=
+size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0 0 6px;" align=
+=3D"center">=C2=BFQuieres ahorrar tiempo en tus pagos?</p>
+
+			<h3 style=3D"font-size: 16px; font-weight: 400; color: #00377D; -ms-text=
+-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0 0 6px;">Activ=
+a el <a href=3D"http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2=
+n0Z3ZmlPDj5t9wWnZ-2BU3TWdoSnyLDI1LG-2F0Qts8cSeX3uYQbkb0oSVc0QpFBGyxn07Ux5lc=
+1WmT9lY3SkZK50Xw8dCospF0p1Cqz49sSABvuzDYxno9V4id1BDGrnn1lRhJFGe5fUrj9zt5EoT=
+MqClBD8FYHW5Q4XbajZIPP5sAlycNkMpqFvhHR48469m4Wdlc6FD2JUgv4ugZG-2BUA3GlJTfNk=
+r0Zeb21l8J5VuPFJn-2Bj-2BKh1ZXpuraaY_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01G=
+gD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHs=
+C7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOO=
+lRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrj=
+klJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedD=
+dJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsK=
+DtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicv=
+Kbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic5=
+7l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHkriJ3D8ul2ulk9M1fG=
+TSw6I03k-2B5dbE4CHB8SpGeqox4x-2FOagZvSE-2Fxv0FnDAW42zCx6xwy2omjMrNovQfTBTHm=
+Swqm3jNyjn-2BqunV08mNIKe-2FN8Y6UwcgeMLIQrzPj7iyLOOE9RVskU2Kmr1eTQL4MqXQSHdz=
+GYjUjay6YOnVS" style=3D"color: #00C8FF; font-weight: 400; -ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; text-decoration: none;">Pago aut=
+omatico</a> de tu=C2=A0l=C3=ADnea Tigo</h3>
+			<img alt=3D"" src=3D"https://appboy-images.com/appboy/communication/asse=
+ts/image_assets/images/5e6789107dea0d35bfa0fdf8/original.png?1583843600" st=
+yle=3D"width: 150px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%; -ms-interpolation-mode: bicubic;" width=3D"150">
+</td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td aria-hidden=3D"true" height=3D"8" style=3D"height: 8px; -ms-text-siz=
+e-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !impo=
+rtant; mso-table-rspace: 0pt !important;" bgcolor=3D"#f0f1f5"></td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+ mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; paddin=
+g: 12px 0 0;" bgcolor=3D"#FFFFFF">
+			<h3 style=3D"color: #00377d; font-size: 18px; -ms-text-size-adjust: 100%=
+; -webkit-text-size-adjust: 100%; margin: 0;" align=3D"center">Disfruta de =
+series, pel=C3=ADculas y porducciones<br style=3D"-ms-text-size-adjust: 100=
+%; -webkit-text-size-adjust: 100%;">
+			originales de Amazon Prime Video</h3>
+			</td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td align=3D"center" style=3D"padding-bottom: 12px; -ms-text-size-adjust=
+: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; m=
+so-table-rspace: 0pt !important;" bgcolor=3D"#FFFFFF"><a href=3D"http://abl=
+ink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5t9wWnZ-2BU3TWdo=
+SnyLDI1LEWHq7o1-2Bieh34TAZaU0YCH0TZeRXD7wwBPAO9mZJ-2FbG4pj-2BY3x3Z9G9B2cx0-=
+2FXLCIMAdf5i7BwgNFEXv9M-2BfghoXTisIl3cLbFNfDVWs519Yvn-2BCZk0rdnwUo7T6SlRFsM=
+zLqvkQndPjrB9McidnxIvZPMtH3t6b2ccwIwNaCLSdeLcghuB1d2RYJ3ePp0sB4-3D6nuY_7bK8=
+TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0Bf=
+DM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1t=
+lSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98j=
+HyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOg=
+lX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLt=
+iFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75=
+kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx=
+-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8=
+OH9euE6cDPWKyHvzHsJnK0DvlDMt7LPQyNqV5Skoug1bjraP6bVo8rRqopBtd9Y3p3-2Bx7HB7r=
+HZC2rRNjyfHfW6jg-2FWy2xS9BSvSkzpUGZkPbBI7V3LHX00UB8Xu-2B5LFXAw-2FTDigPMp0jL=
+a4xhdPdZxWyFjm-2FjPdLZjsdjSWkwvkdtDsNY-2BjA-2BspdL3V" style=3D"-ms-text-siz=
+e-adjust: 100%; -webkit-text-size-adjust: 100%; color: #00377B; text-decora=
+tion: none; font-weight: 300;"><img alt=3D"" src=3D"https://appboy-images.c=
+om/appboy/communication/assets/image_assets/images/5cf138517dea0d7068e7f64f=
+/original.png?1559312465" style=3D"max-width: 100%; width: 300px; -ms-text-=
+size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-interpolation-mode: =
+bicubic; margin: 0px;" width=3D"300"> </a></td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td aria-hidden=3D"true" height=3D"8" style=3D"height: 8px; -ms-text-siz=
+e-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !impo=
+rtant; mso-table-rspace: 0pt !important;" bgcolor=3D"#f0f1f5"></td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-text-s=
+ize-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !=
+important;" bgcolor=3D"#FFFFFF">
+			<p style=3D"color: #787878; font-size: 16px; font-weight: 600; -ms-text-=
+size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 24px 0 0;" align=
+=3D"center">Con=C3=A9ctate con nosotros en:</p>
+			</td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td aria-hidden=3D"true" height=3D"24" style=3D"height: 24px; -ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !im=
+portant; mso-table-rspace: 0pt !important;" bgcolor=3D"#FFFFFF"></td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+ mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; paddin=
+g: 0 0 24px;" bgcolor=3D"#FFFFFF">
+			<table align=3D"center" bgcolor=3D"#FFFFFF" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" class=3D"tbl-nuevoremate" role=3D"presentation" width=
+=3D"70%" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; bord=
+er-spacing: 0 !important; border-collapse: collapse !important; table-layou=
+t: fixed !important; margin: 0 auto;">
+				<tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+					<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">
+						<td align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0p=
+t !important;">
+<a href=3D"http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3Z=
+mlPDj5ucvbhzLPkeWaf7QDjQFG3y3-2BmJp4kKlaAiJsR00t6RCrDdstxFTheqPEupjmhX6JwMc=
+l6srHInswu6CgMRLBFA-3DkWZn_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlS=
+SjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1=
+ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6=
+HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf=
+3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0f=
+y1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2=
+Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGA=
+DGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5=
+kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHu4-2Bw1lW42oKLUmTnSD6j2vWah=
+gp-2BZhst3bPG9F04q09gpusjkBlteWsfvFqfTAYemKiVBXsNpK8cD17Nz9NyhO9iavxTtKRLCq=
+St6f1bj50Maydf0jJIBPmgf3X9SqZVetqQ7cvD9ML10PO69n5qL7Q2yjB1IjwJeWElNResdv1" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color:=
+ #00377B; text-decoration: none; font-weight: 300;"><img alt=3D"Mi Tigo" sr=
+c=3D"https://appboy-images.com/appboy/communication/assets/image_assets/ima=
+ges/5c82c6847dea0d6c72a03bcb/original.png?1552074372" style=3D"width: 40px;=
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-interpolat=
+ion-mode: bicubic;" width=3D"40"> </a>
+						<p style=3D"color: #00C8FF; font-size: 14px; -ms-text-size-adjust: 10=
+0%; -webkit-text-size-adjust: 100%; margin: 0;">Mi Tigo App</p>
+						</td>
+						<td align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0p=
+t !important;">
+<a href=3D"http://ablink.factura.tigo.com.co/ls/click?upn=3DqI1N7VoDnkEdxwa=
+J7xoAJxn9lMVQ0r7hP6c8vpEody2PspC3VCNoUxeQQj2Sd9ncEEk9vPqRW9SsD3qyxTMiEHnZ1w=
+ipMZ6hvf2r8uWBKEZY0bkTuwSHL31fpNrFy3UG484rD7I3J4YggQ3S2dZJiCCaOsMZaCtQp72Zh=
+22cUsM-3Dt3Wb_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9Qu=
+xAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2k=
+Jq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8=
+O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0=
+LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsA=
+WPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDI=
+fdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8OR=
+PagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BT=
+soV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHm-2BS6564dH83HM936IDXASJ40E4DQtu3nTkS-2B=
+kjryKonDUetaHaeWbxtiWcDze5foxD9sZP6hM-2BKWIOwQBlRc3JJPS81jM2K587uU1Tgvl7rub=
+4qGByhfRRxKHEyZWpiP9qUMnBd4xMdLdLdQx-2FpRdoULuD6dbOF0EjnvwCCSdFD" style=3D"=
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #00377B;=
+ text-decoration: none; font-weight: 300;"><img alt=3D"Mi Tigo Web" src=3D"=
+https://appboy-images.com/appboy/communication/assets/image_assets/images/5=
+e7baffc7bdadd77199f795d/original.png?1585164284" style=3D"width: 58px; -ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-interpolation-m=
+ode: bicubic;" width=3D"58"> </a>
+						<p style=3D"color: #00C8FF; font-size: 14px; -ms-text-size-adjust: 10=
+0%; -webkit-text-size-adjust: 100%; margin: 0;">Mi Tigo Web</p>
+						</td>
+						<td align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0p=
+t !important;">
+<a href=3D"http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3Z=
+mlPDj5ptGEooflZKegobXYIwkpH3ONtnMyb3vkpNs2dVpz7Lf6DagTqG9GKQTi6e47YKHSarD4a=
+Rooa9Wr1-2FEAzDAklREvJxJoXyVgyKQVklDBeF2d5ZDKoWeX2plzuyJw557SKDNRhFcOsVL-2F=
+o9ZvmQdWqnEHwlCbz2M6wDVbe3Ff7gXxy242Ra7Qps5SAcp2huH4g-3D-3Dx_bs_7bK8TPj8l3V=
+JBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2Fsy=
+GsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO=
+44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuReh=
+iLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8z=
+c2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B=
+1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec=
+0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNB=
+pHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6=
+cDPWKyHvzHhRDTUet5IRR5686h7ZPWvpcuFLt-2FqXd2lq1TZiztJY76CUQYwExzOMcjN8-2B8j=
+y0Hz4RbfwKgT5paboGXAtPkPMDlTrzy2wTp1tL08pyVEyIjQWpnoMi4q-2Fj3EcxRIboEirRbhJ=
+DE0bYt00CmW9ZwBJQzbQw-2BShcuVHk3dnvQvjs" style=3D"-ms-text-size-adjust: 100=
+%; -webkit-text-size-adjust: 100%; color: #00377B; text-decoration: none; f=
+ont-weight: 300;"><img alt=3D"Centro de ayuda" src=3D"https://appboy-images=
+.com/appboy/communication/assets/image_assets/images/5e7baffd125ebf4164c0d8=
+29/original.png?1585164285" style=3D"width: 40px; -ms-text-size-adjust: 100=
+%; -webkit-text-size-adjust: 100%; -ms-interpolation-mode: bicubic;" width=
+=3D"40"> </a> =C2=A0
+						<p style=3D"color: #00C8FF; font-size: 14px; -ms-text-size-adjust: 10=
+0%; -webkit-text-size-adjust: 100%; margin: 0;">Centro de ayuda</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-text-s=
+ize-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !=
+important;"><img alt=3D"" src=3D"https://appboy-images.com/appboy/communica=
+tion/assets/image_assets/images/5eed03419d7fd548cc569eb6/original.png?15925=
+91169" style=3D"width: 520px; max-width: 100%; -ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; -ms-interpolation-mode: bicubic;" width=3D"=
+520"></td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-text-s=
+ize-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !=
+important; padding: 12px 0;" bgcolor=3D"#f2f2f2"><img alt=3D"" src=3D"https=
+://appboy-images.com/appboy/communication/assets/image_assets/images/5c1bc2=
+d2d5b6827f98bc94be/original.png?1545323218" style=3D"width: 70px; -ms-text-=
+size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-interpolation-mode: =
+bicubic;" width=3D"70"></td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td aria-hidden=3D"true" height=3D"12" style=3D"height: 12px; -ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !im=
+portant; mso-table-rspace: 0pt !important;" bgcolor=3D"#FFFFFF"></td>
+		</tr>
+		<!--ESTE ES EL FOOTER DEL MAIL PARA TODOS-->
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td aria-hidden=3D"true" height=3D"24" style=3D"height: 24px; -ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !im=
+portant; mso-table-rspace: 0pt !important;"></td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td align=3D"center" style=3D"font-family: Roboto, sans-serif; font-size=
+: 10px; font-weight: 300; line-height: 1.2em; -ms-text-size-adjust: 100%; -=
+webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-=
+rspace: 0pt !important;">
+			<p style=3D"color: #565656; -ms-text-size-adjust: 100%; -webkit-text-siz=
+e-adjust: 100%; margin: 0 auto;">Tigo Copyright =C2=A9. Colombia M=C3=B3vil=
+ S.A.E.S.P. Todos los derechos reservados</p>
+
+			<p style=3D"color: #565656; -ms-text-size-adjust: 100%; -webkit-text-siz=
+e-adjust: 100%; margin: 6px auto 0;">Si prefieres no recibir correos electr=
+=C3=B3nicos de Tigo. <a href=3D"http://ablink.factura.tigo.com.co/ls/click?=
+upn=3DqDkwP3VxH2n0Z3ZmlPDj5mrXKsuGV8V2pKKRda1TSBGOWaG6OvCMXdE9rU8n-2BJjdA18=
+HKww0r-2FWHAIoqq8bPHgR9QCDykLkINK0fm3n5D2n7BfLN-2BMF0860-2BGVMLOdx-2B71qVLd=
+PRU3tsEqFusvXz4ui7YUdQ9TesNEKfH-2BwssLf8sAhs-2Be6pzZtGhfeZ36Sf5Xt7qNWvTd0sE=
+WXcidKcsNpgD5zdIhgQzZtwjQsiJhw8CWv-2BGefsx8RjaQ29s4F2pnMng276ZdZd1P2-2BxDad=
+Ux9fNAYmlFQmBxMKIm-2FZjx6Ndk4Sayy1P-2FH3A6vm4L6i1KdXvAmQwFRWNDm4LtI7X4JAuu4=
+Jbo1gW3pPUXtEvRpYvuBXGpSuoAdpPx6rVt-2BuuYG-2FSzShj42SQauQLpcENI2aF4sDsHlPqL=
+7MhA98KSLtJ9NyBovaJ-2FELQB0oo9HH-2BxkNt2rt0t-2BkuhpjkFMkuB5rvPn1bK4-2B9aJTN=
+MGkpwMZV1iAc5ZJRl5mGp6t4kGxnhyEjb-2Bs6WUq0HNcJ8EIFmYFlsTikaDlvX4QDOrR1EQLZv=
+BwFpFdcu8ZMPkErHuvQrHcOe7SQiRdUfFiKPQAuodPUkiLzEJR1rxVffN6Nhy5fgIHm-2BYtOFB=
+OOWze4AfYhQeZoWjs5tYj5NpHDgGePUwRavIO-2FK3F3r-2B3lvH2DKI-3DSPmF_7bK8TPj8l3V=
+JBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2Fsy=
+GsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO=
+44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuReh=
+iLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8z=
+c2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B=
+1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec=
+0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNB=
+pHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6=
+cDPWKyHvzHpufYsqd4WM7VXGnNhEUzk7ibPJ2x4P6nrEgPeze6kXVI4VmzL-2Bl5pCS4DL8zzHT=
+-2Ft-2FTPuwqf1nUxR6eN3JFgoprNUxHtKzJG3RnGbiZnNqFJUDwTBURXvzRIgbiuHyTnswBNEn=
+o1WpqUhgNEpPBspLCKKEoKOFDpYbqHnWDsQ5S" style=3D"-ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; color: #00377B; text-decoration: none; fon=
+t-weight: 300;">Haz clic aqu=C3=AD</a></p>
+			</td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td aria-hidden=3D"true" height=3D"12" style=3D"height: 12px; -ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !im=
+portant; mso-table-rspace: 0pt !important;"></td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+ mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;" align=
+=3D"center">
+			<table style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; bor=
+der-spacing: 0 !important; border-collapse: collapse !important; table-layo=
+ut: fixed !important; margin: 0 auto;">
+				<tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+					<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">
+						<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;"><a=
+ href=3D"http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3Zml=
+PDj5jiKUmeo61UUPxfZpfn4awu6zN3kLqj650QcY97qGn7VkEmK_7bK8TPj8l3VJBogtiigtLJR=
+a2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOi=
+TBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCN=
+tum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUu=
+wHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5=
+d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6=
+yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5=
+rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20I=
+SFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHpm=
+4a-2FH1iRdi5gTfge93ko88-2Bh6vSKJ3-2FR5O3xBx9PPYKHqFazsfpEJrJBVVFNcUesv-2BgG=
+MoPg9RtaioQoMmUkUpOsfWA6-2B819rUuKzlboEGB1ycvz5JURUopPrZVjNgs4kFdR9Dtp8pwPh=
+UdrNufgAeXlh9aU4bCW-2Fmdihkp-2BhA" style=3D"text-decoration: none; -ms-text=
+-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #00377B; font-we=
+ight: 300;" target=3D"_blank"><img alt=3D"Facebook" height=3D"24" src=3D"ht=
+tps://appboy-images.com/appboy/communication/assets/image_assets/images/5ca=
+f562d7dea0d55d78e9a10/original.png?1554994733" style=3D"display: inline-blo=
+ck; max-width: 24px; width: 100%; height: 24px; -ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; -ms-interpolation-mode: bicubic;" width=3D=
+"24"> </a></td>
+						<td style=3D"padding-left: 5px; padding-right: 5px; -ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important=
+; mso-table-rspace: 0pt !important;"><a href=3D"http://ablink.factura.tigo.=
+com.co/ls/click?upn=3DqDkwP3VxH2n0Z3ZmlPDj5vEiXGOO9t-2BNKttJLsBnx59bMLJx-2B=
+q2JXKcsjag-2BVFFsJG6q_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW=
+3nUjj9QuxAZcIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZ=
+TaeCMl2kJq6fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZ=
+B5V-2BE8O2V7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHi=
+Y6JDD2q0LagDFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWj=
+op1PDOsAWPAjYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp0=
+9iYabzDIfdqkNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAn=
+KaGSz8ORPagM8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUql=
+wnWK-2BTsoV3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHstdZblvvcNxKDW2VmNCPXQY8wVHpqzeZ=
+bfVs6Xd9TfGT9AvgDRkr7Bv27qzRuYNriOtKVTLreRRq7ydaTA9YS3F1WvwyR-2BRpm6Yz4HNFS=
+EvCRfw970hUvfW521MRUFY7Rv6t3Nno2n0kOmnnRIGDG1AJ-2Fhf-2BbrtGjvdWt3RSCE9" sty=
+le=3D"text-decoration: none; -ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%; color: #00377B; font-weight: 300;" target=3D"_blank"><img alt=
+=3D"Twitter" height=3D"24" src=3D"https://appboy-images.com/appboy/communic=
+ation/assets/image_assets/images/5caf562da12f74725456205c/original.png?1554=
+994733" style=3D"display: inline-block; max-width: 24px; width: 100%; heigh=
+t: 24px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-in=
+terpolation-mode: bicubic;" width=3D"24"> </a></td>
+						<td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;"><a=
+ href=3D"http://ablink.factura.tigo.com.co/ls/click?upn=3DqDkwP3VxH2n0Z3Zml=
+PDj5kC-2FZ-2BoRJfALlKngIWe-2B2L6NKXb956YT9hbkfsUtrQpeNuvlXAzilvcoN86aztRY3g=
+-3D-3DsUzo_7bK8TPj8l3VJBogtiigtLJRa2kSaDzQpX97k01GgD1SU0QlSSjcjW3nUjj9QuxAZ=
+cIclzq3GbiCT0BfDM-2FsyGsPHbYfBhLOiTBWvocXRMddOsyHsC7ECgD4s1ftahZTaeCMl2kJq6=
+fQQqHqJAFU-2B1tlSY7FyO44njPGVb0wCNtum0libLDebxDLOOlRkAtjar6HJ9NZB5V-2BE8O2V=
+7GGQ-2B3zjEH98jHyZuRehiLUloVLhtTUuwHjAMyjrlWLeSYrjklJ427Pjf3FTHiY6JDD2q0Lag=
+DFRK8loOYLMoVOglX1Dw8zc2AtYuUMHcE5d9pIBe6TJvX0bedDdJewTmv0fy1sWjop1PDOsAWPA=
+jYxcRAwwlINOLLtiFDx-2B1uDD-2B9uyw6yAY-2FI0PIIa7AsKDtqdNnC-2Fdrp09iYabzDIfdq=
+kNL45EUakt87K75kHR4Pec0b1iAB1hd6c5rEa6DInMBV3XYicvKbm1ftsGADGtAnKaGSz8ORPag=
+M8-2BuMiCAjpOjx-2BgNNBpHPUgVAQS20ISFDQcWmBhcY6qic57l1UmF4G5kSUqlwnWK-2BTsoV=
+3igH1Sfb-2F7Io8OH9euE6cDPWKyHvzHjUshSH7i2-2BvB-2BAVXR8Lef48hrWvILLTTJQIXEFk=
+hCzphI0ots7q3mp7plHW9O8IVlAGt9ewpPfgVcSEjuqNt6JWs8lLMM7icpbYp2Yinn6jm7AS0NY=
+L-2FpnwtE85mJnY6t3dgFoVpcjCUqZOt7RAWRpRSrHnPjWHtQM6hYb-2BPr0Z" target=3D"_b=
+lank" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+color: #00377B; text-decoration: none; font-weight: 300;"><img alt=3D"Youtu=
+be" height=3D"24" src=3D"https://appboy-images.com/appboy/communication/ass=
+ets/image_assets/images/5caf562d7dea0d2fdf8eaa6f/original.png?1554994733" s=
+tyle=3D"text-decoration: none; -ms-text-size-adjust: 100%; -webkit-text-siz=
+e-adjust: 100%; -ms-interpolation-mode: bicubic;" width=3D"24"> </a></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+			<td aria-hidden=3D"true" height=3D"24" style=3D"height: 24px; -ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !im=
+portant; mso-table-rspace: 0pt !important;"></td>
+		</tr>
+		<!--ACA TERMINA EL FOOTER DEL MAIL PARA TODOS-->
+	</tbody>
+</table>
+<!-- Hero Image, Flush : END --><!-- 1 Column Text + Button : BEGIN --><!--=
+ Email Footer : END --><!--[if mso]>
+                            </td>
+                        </tr>
+                    </table>
+                <![endif]-->
+</div>
+<!--[if mso | IE]>
+                    </td>
+                </tr>
+            </table>
+        <![endif]-->
+</center>
+
+<img src=3D"http://ablink.factura.tigo.com.co/wf/open?upn=3Dn-2BXHQCy63kpAQ=
+5vlgxDj9INL-2BRhVxrLbJegHCev16xvAdfMLoVsMtSQoBzxvieG-2BQaxpKU4qY7idbSxjeYrS=
+WNkOCl8jyH8sXZ-2BMqFSwD1Tfac0QYkM23nAmSy4FXJ6S2skMI8DVhHzsFqHiuuCnlC9pDLoNt=
+GZ6vK2Xg1cr1Q357VwJ2JNM5ASj8vVOVKjiT-2FHCnza3eme4yGpTsFRF-2FWkcrHKh8sejZQmR=
+kHTN-2BWpf5fFTCJRg9qQnaqYtRCZ8eIKSfpMcspTLc1jsIUrYx7bw981o9LlH8uW6Up6T7TiKg=
+JJKsWTiK5Ve5T6YFkm-2F0s2oxY5h6-2BUms8kdL0-2BT8Azjp-2FsctSbutcNl9n3mvLACo7mO=
+q0Osj2zYqA0BgQ0PvQ7HliqSoCVZHJLXx4KymVgqQF0uAXCafkwjfutVuc4jn1b-2FpVg1sKLoP=
+yx4Be43z8QRliQyVW1HcIOENYD2L1egSgtHOsYPhiRvOtA1SLJ-2F1ZOLb-2F0ihlxWVnpdS52Y=
+SRbh-2Fav7rI1ALhhZDkJaDi2fZpoHMEQ0PRLYEyz-2Fp-2B1FUMi3B6dPU8EEmMfM6zglI8kac=
+rAgfiFn8ChGfPVE9DxMeBDLfa8hhc7p8JIx1tT5fkJqxd1qtMgYy7d8jxEtKf2EZuzuisgyXtXF=
+fdBi9w5paWSKw5x6ubxn8O5yQfjTDpGRg7BIQMJoRu-2BlYuTAG0tc4r45KCjOB-2FEmGI3q5qi=
+Hh2ihxgWRDBybUyW8JQRB0LNMegJ-2FJB6ORyyp5mfZ" alt=3D"" width=3D"1" height=3D=
+"1" border=3D"0" style=3D"height:1px !important;width:1px !important;border=
+-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;marg=
+in-right:0 !important;margin-left:0 !important;padding-top:0 !important;pad=
+ding-bottom:0 !important;padding-right:0 !important;padding-left:0 !importa=
+nt;"/>
+</body>
+</html>
+
+
+--353df36181c20acc4cebcaaf0cc5601cba5bde682b045fce1f58e879a813--

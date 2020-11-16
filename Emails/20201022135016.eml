@@ -1,0 +1,326 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp5980008ild;
+        Thu, 22 Oct 2020 06:50:18 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxQG+fZP+w7QlVdUjbyQKENzLab/5/FviC99dMvIogIfxDLVixImOkJHNuiXqD4E+cFRxOu
+X-Received: by 2002:a17:906:8053:: with SMTP id x19mr2277482ejw.139.1603374618302;
+        Thu, 22 Oct 2020 06:50:18 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1603374618; cv=none;
+        d=google.com; s=arc-20160816;
+        b=IqiwKuQdP/cBLCeQO8rlBbEvkIhFrBnkfNdGFHvfzf8YM3krVaJoV7WbUM17mb3P4w
+         cApTcgT0UBgDZE8Vt9I1f2A0GHP5bukNmswvTMVkg2lJSe3F1v9VEE7L2g+EGD+KjjwM
+         UKnVlcoxudHNAafZwL8QZJqQ5O2UHvd7WUoRBryZ/fDx24JiI11H6GM38EOt5pX2vQtJ
+         e7jPPLggIv63IE3UymtVoyTzAGF3pofxCfJzlFgMzAgLaNCiJCtHxMryREa+Fjrf5iMi
+         s3b5Oz/ZWv4mXyibTlH7f7ECeLVaUApxrGIyGNzhLavy4nWUCz+V86jknh5DXvaF/Wjy
+         oaoQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:message-id:to:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=3ilkdtKoQQ8W4cKcCms60hposcdh4ke78HGnmnmrTnA=;
+        b=U+AjSkPwOPS5gg8gi8OnZt2+O7MeUXsJ1lAe15mVZf8+4IgsJT5dwaiHHZIUhHybnJ
+         pbO7fDWKH4yGzkGxxMnl66dAcM6AYqKVptJYMK4It+d00BJm15fa24HOPwNUQRpQvgCU
+         xuoofK92KSTPgtN66TP6KZmuQzUkxKnDJV3l0zKw5TP1w1ZUGYeFmJZWtaDBUhft6kbi
+         TJAx9VpzVAfAZ09J+DYtNORR50k6Vj/symr9ZEj385bjFEAKZNBdWTo9XTzX6Q1jCP75
+         TiG3Ivnvfm8xEaAnmgi2iral8tRXkVzY9+jhg/V/yp3QjN0goyID8CZoWhxJYNTtq2ms
+         m9xQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b="mzfA3uD/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=krXazJAY;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+Return-Path: <bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com>
+Received: from o11.ptr1968.sg.mercadolibre.com (o11.ptr1968.sg.mercadolibre.com. [149.72.129.250])
+        by mx.google.com with ESMTPS id t1si892886ejb.712.2020.10.22.06.50.17
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 22 Oct 2020 06:50:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) client-ip=149.72.129.250;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b="mzfA3uD/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=krXazJAY;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=mercadolibre.com; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject; 
+	s=s1; bh=3ilkdtKoQQ8W4cKcCms60hposcdh4ke78HGnmnmrTnA=; b=mzfA3uD
+	/sI0IvtALY6+2Trr+SwA3xgXFTgpOCitZXwZo6kp/iNeOUG3w4hblk3c5ByGDv8+
+	0gs0c3wPaPGA1eKopFgAZk7jHfADyeTsD20d7uNeGKy2v9Nj2fzLk6k3Da67ZsjP
+	zUIpqZdnkaQ6a2zgnt9uqOsizZymyry727c8=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:x-feedback-id; 
+	s=smtpapi; bh=3ilkdtKoQQ8W4cKcCms60hposcdh4ke78HGnmnmrTnA=; b=kr
+	XazJAYNM4nJyckvgT6BA+bcnNfLybe5pP5iWCRiO5Q1VWiE63rO0UJkM6vp0SSSn
+	WOCGVGuc1UF9FAzap4DQ19djR81vEXvExCfeK0jukipFB9+V5V4P1ABL+zKdRsTF
+	VthDGaxPkuiXuVuRkqNTNxqGYWbrZSQZRgrR6fPPA=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Date: Thu, 22 Oct 2020 13:50:16 +0000 (UTC)
+From: "Mercado Libre" <no-responder@mercadolibre.com>
+Mime-Version: 1.0
+To: pharsat@gmail.com
+Message-ID: <nr24HIXXQ7aCYZ9Mhu7qEA@ismtpd0118p1mdw1.sendgrid.net>
+Subject: Opina sobre tu producto: Auriculares Razer Kraken Gaming Diadema Cancel Ruido Pc Xbox 
+X-SG-EID: sqIrrLMbLsIyP9sBRWWxUF78JT7ZpfEH7TvBjG5fTpaEaIJxox7cdrVXp0h+mr6s5EfKgQEGAlLvXu
+ MHc/rsjwgROkUfXPtv+ELEg7gKBZvOGDYVl8r/ZpL5orZ41mdfAPzfcW/TviOP0bfG5GINmucIoNUF
+ D0VLwKteM0Nq+qPCVzCu2mzWmEzhbJuCCewd8D21iUaPVjPx39jaoBG4iNbEczYAqus3H604EP57+G
+ M=
+X-SG-ID: YDTqBOjidbCUo/ar1oAtZkkTNhcCxgWIKCRgbpoaiQTKEXTESH0MQedstwSST1QLvMfY8Jte0SFUoM
+ 40JkgFjSyJlbz0lktxzr7bC+xzGf7Et6vKmbYkLZ8cp5ZbF4PT1HHAwBGnXLnHJYDWDO7mABOOG3Bu
+ ZurM/UmSFjeTDafTcyhHckXCTu+ehtBncVDSR0VrTBcErxM68Am5vICECvI8KQoXrbLHTpd+HpS7YI
+ NPsHa7ZKvpEJfzV2G3V5i2fRjJg69zTERx1xuTFBjYbJF6uFNLktebVR5WD53IQoEkAbAH05/opI+5
+ ko8ZLd8vlQejMdieRu0VfW/lXlcgc8iUigvT+2s5GNBwc9cxLCvwM4bUjQDkf9IJLMdwrxtcO6LEvh
+ 21VTW8BaYfvMcXJK9IlYVonkBXIHX3rERx7hBQNf1z2e+8qfy9zM9tJ+bs0WJeM5+eZ9VKdtFFMFPd
+ uoNwJ+WhEfovFqYYOb4zslzAQT8C4IoYfXUDay0Qy56JqxZlTHLuf9KNJ4luMg4L3WJsxOdhTZ/IDX
+ u4y/RYGZU=
+X-Entity-ID: ZBN47b/6UaYOpi8LSj3/fQ==
+X-Feedback-ID: 9647731:O1uIaeJcLGiMqc34AnjtHEL1fX9OufqyqcerW4Ul12s=:a8ycujShxZ5z3gGodwbKlQ==:SG
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml"><head><meta http-equiv=3D"Content-Type" content=3D"text/htm=
+l; charset=3Dutf-8"><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Ded=
+ge"><meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0"><title></title><link rel=3D"stylesheet" href=3D"https://static.mlst=
+atic.com/org-img/ui/font/lato/300.400.700.css"><style type=3D"text/css" sty=
+le=3D"font-family: Lato, Arial, sans-serif;"> @media screen and (max-width:=
+ 401px) { .two-column .column { max-width: 100% !important; } .three-column=
+ .column { max-width: 150px !important; } .inner2 { padding: 20px 10px !imp=
+ortant; } .three-column img {} .header-content .hashtag { font-size: 11px !=
+important; } .banner-col-3 .three-column .column { max-width: 100% !importa=
+nt; } .banner-beneficios .three-column .column * { max-width: 100% !importa=
+nt; display: block; text-align: center; } .btn_detalles, .bt_explorar_cat {=
+ width: 100% !important; } .header-logo { content: url(http://static.mlstat=
+ic.com/org-img/mkt/email-mkt-assets/2x/isologoml.png) !important; height: 3=
+6px !important; width: auto !important; } [class^=3D"banner-vertical-text-"=
+] { max-width: 280px !important; } } @media (max-width: 401px) { .template-=
+itemPrincipal { padding: 0 20px 20px 20px !important;} }</style></head><bod=
+y style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; back=
+ground-color: #FFFFFF; font-family: Lato, Arial, sans-serif; margin: 0; max=
+-width: 600px; min-width: 100%; padding: 0;"><img src=3D"https://api.mercad=
+olibre.com/reviews/emails/pixel.gif?reviewer=3D171558912&item_id=3DMCO57722=
+3497&review_type=3DdefaultReview"/><img src=3D"http://data.mercadolibre.com=
+/pixel.gif?q=3D%7B%22tracks%22%3A%5B%7B%22path%22%3A%22%2Freviews%2Femail%2=
+2%2C%22user%22%3A%7B%22uid%22%3Anull%2C%22user_id%22%3A171558912%7D%2C%22ty=
+pe%22%3A%22View%22%2C%22user_time_zone%22%3A%220%22%2C%22server_id%22%3A%22=
+36b37b52-98b1-40d1-b737-3c0771c922ee%22%2C%22id%22%3A%22ffdfd831-1c12-4177-=
+abf2-2f3e27ae820c%22%2C%22event_data%22%3A%7B%22cookies%22%3A%5B%5D%2C%22he=
+aders%22%3A%5B%5D%2C%22http_url%22%3Anull%2C%22item_id%22%3A%22MCO577223497=
+%22%2C%22reviewer_id%22%3A171558912%2C%22requested_type%22%3A%22defaultRevi=
+ew%22%7D%2C%22application%22%3A%7B%22version%22%3A%22unkown%22%2C%22server_=
+hostname%22%3A%22i-0c010611128eee745-10.50.11.179%22%2C%22server_poolname%2=
+2%3A%22unkown%22%2C%22business%22%3A%22mercadolibre%22%2C%22site_id%22%3A%2=
+2MCO%22%7D%2C%22device%22%3A%7B%22resolution_height%22%3Anull%2C%22resoluti=
+on_width%22%3Anull%2C%22platform%22%3A%22%2Femail%22%2C%22user_agent%22%3An=
+ull%7D%2C%22experiments%22%3A%5B%5D%2C%22created_hidden%22%3Afalse%7D%5D%7D=
+"/><center class=3D"wrapper" style=3D"-ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%; font-family: Lato, Arial, sans-serif; table-layout: =
+fixed; width: 100%;"><div class=3D"webkit" style=3D"font-family: Lato, Aria=
+l, sans-serif; max-width: 600px;"><!--[if (gte mso 9)|(IE)]><table width=3D=
+"600" align=3D"center"><tr><td><![endif]--><table class=3D"outer" align=3D"=
+center" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+; Margin: 0 auto; border-spacing: 0; font-family: Arial, Helvetica, sans-se=
+rif; max-width: 600px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width:=
+ 100%;"><tr><td class=3D" preheader-content headerLink align-left  header_f=
+irst_line" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%; color: #FFFFFF; font-family: Lato, Arial, sans-serif; font-size: 1px; =
+margin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; text-a=
+lign: center;"><span class=3D"align-left  " style=3D"font-family: Lato, Ari=
+al, sans-serif; text-align: left;">=C2=A1Comparte tu opini=C3=B3n!</span></=
+td></tr><tr style=3D"font-family: Lato, Arial, sans-serif;"><td style=3D"-m=
+s-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: Lato=
+, Arial, sans-serif; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:=
+ 0;"><table class=3D"outer" align=3D"center" style=3D"-ms-text-size-adjust:=
+ 100%; -webkit-text-size-adjust: 100%; Margin: 0 auto; border-spacing: 0; f=
+ont-family: Arial, Helvetica, sans-serif; max-width: 600px; mso-table-lspac=
+e: 0pt; mso-table-rspace: 0pt; width: 100%;"><tr style=3D"font-family: Lato=
+, Arial, sans-serif;"><td style=3D"-ms-text-size-adjust: 100%; -webkit-text=
+-size-adjust: 100%; font-family: Lato, Arial, sans-serif; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt; padding: 0;"><!-- Begin Header --><table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templat=
+e-mainHeader" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%; background: #FFE600; border-spacing: 0; font-family: Lato, Arial, s=
+ans-serif; height: 55px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr=
+ style=3D"font-family: Lato, Arial, sans-serif;"><td valign=3D"top" class=
+=3D"header-content" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%; float: left; font-family: Lato, Arial, sans-serif; height: 36=
+px; line-height: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 9px 20px 8px 20px; vertical-align: middle;"><a class=3D"logo" href=3D"ht=
+tp://www.mercadolibre.com/" target=3D"_blank" style=3D"-ms-text-size-adjust=
+: 100%; -webkit-text-size-adjust: 100%; color: #3483FA; font-family: Lato, =
+Arial, sans-serif; font-weight: normal; margin: 0; padding: 0; text-decorat=
+ion: none; word-break: normal;"><img class=3D"header-logo" width=3D"139" he=
+ight=3D"37" alt=3D"Ir a Mercado Libre" src=3D"http://static.mlstatic.com/or=
+g-img/mkt/email-mkt-assets/2x/logoml.png" style=3D"-ms-interpolation-mode: =
+bicubic; border: 0; font-family: Lato, Arial, sans-serif; height: 36px; mar=
+gin: 0; padding: 1px 0 0 0; text-align: left; vertical-align: middle; width=
+: 139px;"></a></td></tr></table><!-- End Header --><div style=3D"font-famil=
+y: Lato, Arial, sans-serif; padding-top: 40px;"></div><!--[if gte mso 9]><t=
+able cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"table-layout=
+: fixed;" align=3D"center"><tr><td><![endif]--><!-- Start Headline --><tabl=
+e cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"box headline-co=
+ntainer" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%; border-spacing: 0; display: table; font-family: Lato, Arial, sans-serif;=
+ mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 10px; text-align:=
+ center; width: 100%;"><tbody style=3D"font-family: Lato, Arial, sans-serif=
+;"><tr style=3D"border: none; font-family: Lato, Arial, sans-serif; margin:=
+ 0; padding: 0;"><td class=3D"headline-main-table-td" style=3D"-ms-text-siz=
+e-adjust: 100%; -webkit-text-size-adjust: 100%; border: none; box-sizing: b=
+order-box; font-family: Lato, Arial, sans-serif; margin: 0; mso-table-lspac=
+e: 0pt; mso-table-rspace: 0pt; padding: 0 10px;"><h1 class=3D"headline-titl=
+e" style=3D"border: none; color: #333333; display: block; font-family: Lato=
+, Arial, sans-serif; font-size: 28px; font-weight: 400; letter-spacing: nor=
+mal; line-height: normal; margin: 0; padding: 0; text-align: center; word-b=
+reak: normal; word-spacing: normal;">=C2=BFQu=C3=A9 te pareci=C3=B3 el prod=
+ucto?</h1></td></tr></tbody></table><!-- End Headline --><!--[if gte mso 9]=
+></td></tr></table><![endif]--><div style=3D"font-family: Lato, Arial, sans=
+-serif; padding-top: 35px;"></div><!-- BEGIN item Principal --><table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"template-itemPrincipal=
+" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; back=
+ground-color: #FFFFFF; border-spacing: 0; font-family: Lato, Arial, sans-se=
+rif; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 20px; wi=
+dth: 100%;"><tr style=3D"font-family: Lato, Arial, sans-serif;"><td style=
+=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family=
+: Lato, Arial, sans-serif; margin: 0 auto; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; padding: 0; text-align: center;"><a href=3D"https://www.merca=
+dolibre.com/jms/mco/lgz/login/otp?otp=3DIAN-zekEmaiyHh8L30n98Dbzbxz8nT0DGNz=
+_5gCc6ZyAIUXk6vQ09u-7kcdNGOeyxJahPZJcNKdS5GTf9vig-qWYHaMdZPlaAcFyHghEvHV9kA=
+P49mUMpu_yAZBac6Mwf-mZIbIezmBxkd1vY8xw8WdvyV-SWv46BJ1uuI7uaPk4Xh670IcqJWDYX=
+FhqWDS04m3dyjbWTU8HYC-DKj-MUA93_GUoZTm5qiq5r4ozJS7DZS9WsQJ1hb_w=3D#entry=3D=
+email-1"><img height=3D"280" width=3D"280"  src=3D"http://mco-s2-p.mlstatic=
+.com/636812-MCO43258471612_082020-P.jpg" alt=3D"Auriculares Razer Kraken Ga=
+ming Diadema Cancel Ruido Pc Xbox" style=3D"-ms-interpolation-mode: bicubic=
+; border: solid 1px #cccccc; font-family: Lato, Arial, sans-serif;"></a></t=
+d></tr><tr style=3D"font-family: Lato, Arial, sans-serif;"><td style=3D"-ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: Lato,=
+ Arial, sans-serif; margin: 0 auto; mso-table-lspace: 0pt; mso-table-rspace=
+: 0pt; padding: 0; text-align: center;"><h2 class=3D"itemPrincipal-title" s=
+tyle=3D"color: #333333; font-family: Lato, Arial, sans-serif; font-size: 24=
+px; font-weight: normal; line-height: 20px; margin: 0 auto; max-width: 280p=
+x; padding: 20px 0 0 0; text-align: left; text-indent: 0; word-break: norma=
+l;"><a href=3D"https://www.mercadolibre.com/jms/mco/lgz/login/otp?otp=3DIAN=
+-zekEmaiyHh8L30n98Dbzbxz8nT0DGNz_5gCc6ZyAIUXk6vQ09u-7kcdNGOeyxJahPZJcNKdS5G=
+Tf9vig-qWYHaMdZPlaAcFyHghEvHV9kAP49mUMpu_yAZBac6Mwf-mZIbIezmBxkd1vY8xw8Wdvy=
+V-SWv46BJ1uuI7uaPk4Xh670IcqJWDYXFhqWDS04m3dyjbWTU8HYC-DKj-MUA93_GUoZTm5qiq5=
+r4ozJS7DZS9WsQJ1hb_w=3D#entry=3Demail-1" style=3D"-ms-text-size-adjust: 100=
+%; -webkit-text-size-adjust: 100%; color: #999999; font-family: Lato, Arial=
+, sans-serif; font-size: 16px; font-weight: 300; line-height: 1.4; margin-b=
+ottom: 5px; margin-top: 0; padding: 0; text-align: left; text-decoration: n=
+one; text-indent: 0; word-break: normal;">Auriculares Razer Kraken Gaming D=
+iadema Cancel Ruido Pc Xbox</a></h2></td></tr></table><!-- END item Princip=
+al --><!-- Button center --><table cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" class=3D"row row-grey" style=3D"-ms-text-size-adjust: 100%; -webki=
+t-text-size-adjust: 100%; background-color: #FFFFFF; border-spacing: 0; fon=
+t-family: Lato, Arial, sans-serif; margin: 0 auto; max-width: 600px; mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; text-align: center; width: auto;"><=
+tr style=3D"font-family: Lato, Arial, sans-serif;"><td class=3D"" style=3D"=
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: La=
+to, Arial, sans-serif; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0;"><a href=3D"https://www.mercadolibre.com/jms/mco/lgz/login/otp?otp=3D=
+IAN-zekEmaiyHh8L30n98Dbzbxz8nT0DGNz_5gCc6ZyAIUXk6vQ09u-7kcdNGOeyxJahPZJcNKd=
+S5GTf9vig-qWYHaMdZPlaAcFyHghEvHV9kAP49mUMpu_yAZBac6Mwf-mZIbIezmBxkd1vY8xw8W=
+dvyV-SWv46BJ1uuI7uaPk4Xh670IcqJWDYXFhqWDS04m3dyjbWTU8HYC-DKj-MUA93_GUoZTm5q=
+iq5r4ozJS7DZS9WsQJ1hb_w=3D#entry=3Demail-1" target=3D"_blank" class=3D"butt=
+on-container button-itemPpl" style=3D"-ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%; color: #3483FA; display: block; font-family: Lato, A=
+rial, sans-serif; font-weight: normal; margin: 0; padding: 0; padding-left:=
+ 0; position: relative; text-decoration: none; width: 100%; word-break: nor=
+mal;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"btn_=
+center" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+; border-spacing: 0; display: table !important; font-family: Lato, Arial, s=
+ans-serif; height: 48px; margin: 0 auto; max-height: 48px; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt; width: 280px;"><tr style=3D"font-family: Lato=
+, Arial, sans-serif;"><td align=3D"center" class=3D"button-normal button bu=
+tton-primary " style=3D"-moz-border-radius: 4px; -ms-text-size-adjust: 100%=
+; -webkit-border-radius: 4px; -webkit-text-size-adjust: 100%; background-co=
+lor: #3483FA; border: 0; border-radius: 4px; color: #FFFFFF; font-family: L=
+ato, Arial, sans-serif; font-size: 18px; font-weight: 400; height: 48px; ma=
+rgin: 5px 0; max-height: 48px; max-width: 280px; mso-table-lspace: 0pt; mso=
+-table-rspace: 0pt; outline: 0; padding: 0 30px; text-align: center; text-d=
+ecoration: none; width: 100%;">Dar mi opini=C3=B3n</td></tr></table></a></t=
+d></tr></table><!-- Ends Button center --><div style=3D"font-family: Lato, =
+Arial, sans-serif; padding-top: 50px;"></div><!-- Begin footer --><table wi=
+dth=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"-ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #eee; b=
+order-spacing: 0; font-family: Lato, Arial, sans-serif; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; padding: 0;"><tr style=3D"font-family: Lato, Ari=
+al, sans-serif;"><td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%; font-family: Lato, Arial, sans-serif; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; padding: 0; text-align: center;"><div class=3D"foot=
+er-download-app" style=3D"display: inline-block; font-family: Lato, Arial, =
+sans-serif; font-size: 17px; max-width: 230px; min-width: 90px; padding: 20=
+px 40px; vertical-align: middle;"><span class=3D"footer-download-app-text" =
+style=3D"color: #666666; display: block; font-family: Lato, Arial, sans-ser=
+if; font-size: 14px; font-weight: 300; text-align: center; width: auto; wor=
+d-break: normal;">=C2=A1Descarga gratis la aplicaci=C3=B3n!</span><table ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"-ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%; border-spacing: 0; font-family: La=
+to, Arial, sans-serif; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g-top: 10px;" class=3D"ecxicon-app"><tbody style=3D"font-family: Lato, Aria=
+l, sans-serif;"><tr style=3D"font-family: Lato, Arial, sans-serif;"><td cla=
+ss=3D"ecxlogo-left" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%; font-family: Lato, Arial, sans-serif; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt; padding: 0;"><a href=3D"https://itunes.apple.com/es/=
+app/mercadolibre/id463624852" target=3D"_blank" title=3D"Descargar para iOS=
+" class=3D"ecxlogo-left-a" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; color: #3483FA; font-family: Lato, Arial, sans-serif; =
+font-weight: normal; padding: 0 !important; text-decoration: none; word-bre=
+ak: normal;"><img src=3D"http://static.mlstatic.com/org-img/mkt/email-mkt-a=
+ssets/2x/appleStore.png" border=3D"0" width=3D"104" height=3D"32" alt=3D"De=
+scargar para iOS" style=3D"-ms-interpolation-mode: bicubic; border: 0; font=
+-family: Lato, Arial, sans-serif;"></a></td><td width=3D"20" style=3D"-ms-t=
+ext-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: Lato, A=
+rial, sans-serif; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0;=
+">&nbsp;</td><td class=3D"ecxlogo-right" style=3D"-ms-text-size-adjust: 100=
+%; -webkit-text-size-adjust: 100%; font-family: Lato, Arial, sans-serif; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; padding-left: 0px;"=
+><a href=3D"https://play.google.com/store/apps/details?id=3Dcom.mercadolibr=
+e&hl=3Des_419" target=3D"_blank" title=3D"Descargar para Android" class=3D"=
+ecxlogo-right-a" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%; color: #3483FA; font-family: Lato, Arial, sans-serif; font-weigh=
+t: normal; padding: 0 !important; text-decoration: none; word-break: normal=
+;"><img src=3D"http://static.mlstatic.com/org-img/mkt/email-mkt-assets/2x/g=
+ooglePlay.png" border=3D"0" width=3D"104" height=3D"32" alt=3D"Descargar pa=
+ra Android" style=3D"-ms-interpolation-mode: bicubic; border: 0; font-famil=
+y: Lato, Arial, sans-serif;"></a></td></tr></tbody></table></div></td></tr>=
+</table><!-- End Footer --></td></tr></table></td></tr></table><!--[if (gte=
+ mso 9)|(IE)]></td></tr></table><![endif]--></div></center>
+<img src=3D"http://url8202.mercadolibre.com/wf/open?upn=3Dn-2BXHQCy63kpAQ5v=
+lgxDj9INL-2BRhVxrLbJegHCev16xucv08I0raT0JEV0tdZ9oJBHMm7wgnuajTqyM8OD3oQvj3y=
+IfkfqcAWRXDfAnsKBfn92bbezLXfZiTlVH-2FTwYPISLMgWkWSCXKpBa2CSRmB5x2AM1yvs9aHa=
+iUDsUi5MhDaGWPEOXV-2F2ybi5b-2BG6pxNF9IsJQCc2vezn5h-2BNyXZ9uOIE6pJrBdrF00oSx=
+FDaIUT-2F4y9FETw3dzTaUa0XUplNQyMHALBt61J-2BFij-2FEL99S6bRs029ur0o1D-2FTxG0j=
+xP-2Fb1Fbh8oK-2BJHnbv-2BbL-2FvOvlHhYCGpXuTm-2BpGOwC7LrdDcowIbSMZLL1YGetgqyw=
+as1VlkBDWQkiszpeGsmxOk9aavVrOLVKZtkgw60vXpzQHfhhfhk1tWjuynfpqF9fYDsPiFcUQOH=
+V0F-2F-2BCRYXCXisJZPNuOkFGJbPybYHlf6SYjrq78P88LtTDz8gRer5c4MO55XXXcbinyx8mR=
+Yx5T7bDm1zvNV4bI6AG0BEYazyZXWikTL5vt7BuJ5f3HAYCJ8gNJp7BZ8cpsA6-2FQ9FOvDL0vG=
+Mqfvtya8MRaIN0Ox3cqQmPb3p5vIG9ChF-2BOYLvaec9X1kpyvD2-2FSUkfoxLZ91q9QAS5hRkD=
+a84JcPPMH-2BTnMXLwIa1bxWtLyRVjFdwBmVzRX3H4WHPFy8V-2BbYYwlEL74lRd266TpZzhvq0=
+LgHzMjWQpAkmV7ERCflOd-2Fh6pHXy5mlTU-2FuOSMsSGT6dp" alt=3D"" width=3D"1" hei=
+ght=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !important;=
+border-width:0 !important;margin-top:0 !important;margin-bottom:0 !importan=
+t;margin-right:0 !important;margin-left:0 !important;padding-top:0 !importa=
+nt;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !i=
+mportant;"/>
+</body></html><table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" ali=
+gn=3D"center" style=3D"background: rgb(255, 255, 255);"> <tr> <td align=3D"=
+center"> <!--[if mso]><table border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" align=3D"center" width=3D"600"><tr><td align=3D"center" valign=3D"top" w=
+idth=3D"600"><![endif]--> <table role=3D"presentation" cellspacing=3D"0" ce=
+llpadding=3D"0" width=3D"100%" align=3D"center" style=3D"max-width: 600px; =
+background: rgb(255, 255, 255);"> <tr> <td align=3D"center" style=3D"font-w=
+eight: 400; font-family: 'Proxima Nova', _apple_system, 'Helvetica Neue', H=
+elvetica, Roboto, Arial, sans-serif; font-size: 11px; line-height: 1.45; co=
+lor: rgb(140, 140, 140); padding: 20px 25px; text-align: center;"> Te envia=
+mos este e-mail a <a target=3D"_blank" href=3D"mailto:pharsat@gmail.com" st=
+yle=3D"color: rgb(52, 131, 250); text-decoration: none;">pharsat@gmail.com<=
+/a> porque elegiste recibir informaci=C3=B3n.<br><a target=3D"_blank" href=
+=3D"https://myaccount.mercadolibre.com.co/preferences/emails" style=3D"colo=
+r: rgb(52, 131, 250); text-decoration: none;">Administrar preferencias de e=
+-mails</a>.<br>Conoce <a target=3D"_blank" href=3D"https://www.mercadolibre=
+.com.co/privacidad" style=3D"color: rgb(52, 131, 250); text-decoration: non=
+e;">c=C3=B3mo cuidamos tu Privacidad</a> y visita los <a target=3D"_blank" =
+href=3D"https://www.mercadolibre.com.co/ayuda/991" style=3D"color: rgb(52, =
+131, 250); text-decoration: none;">T=C3=A9rminos y Condiciones de Mercado L=
+ibre</a>. </td> </tr> </table> <!--[if mso]></td></tr></table><![endif]--> =
+</td> </tr></table>

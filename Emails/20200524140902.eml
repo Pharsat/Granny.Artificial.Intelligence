@@ -1,0 +1,461 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a19:4283:0:0:0:0:0 with SMTP id p125csp3714970lfa;
+        Sat, 23 May 2020 23:09:04 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzKDrYMHp6BukH//rubwr7lAz6VXEzpVWsnVyAswlUiIMRTo+IW9HmOnaqu/q/ZwP3q2rHQ
+X-Received: by 2002:a17:90b:1082:: with SMTP id gj2mr14591981pjb.225.1590300544266;
+        Sat, 23 May 2020 23:09:04 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1590300544; cv=none;
+        d=google.com; s=arc-20160816;
+        b=hUDEXjmWNc7Jx6icYMTX5JkLI7myqCGig5Q3X/KLo6tHmeHMpPv2qnpEjUaje3+Xo8
+         K3dkMtAB7dj62xsulEE5Ta3pZynDHMCdra2j4CWVkkQ3CYoXU3wdJp1D2pZiV8yB064c
+         CQZxgGittv18Mgy8LdiCf4vr1TE593VxJQ50HneI+Nd49AeaCxmksl8dpQuZ2PC0rnyb
+         aKn0jfEzjg0oBPfHvtGN90czymmXT4zC2KYkWdOf76IlCNIC1rr7/h8oQrrdZF09fFUF
+         2tjZSsDGT9gWuxzQMnnE1xrBlaj4jQj90zdcb5y1sJ5AE1L+JbBdYdDW3CwYhINJIFuW
+         /MTQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:to:from
+         :dkim-signature:dkim-filter:date:message-id;
+        bh=W5MWeDLiXsKZ5KOTNsoiuOy691gKpaama8+dSmSdqSI=;
+        b=QoTyh5wwNBozQiX34HXtNwk4vebaNB0Mfgii7Fz/VS+jLv/hzje22wQhR+7oG4XGO3
+         +RuAIMvwDFofdaoJDBybPf3rZkzK6REA5sbTGpQFqtuN3/qOMA6TAEsIeQfddC2QxXys
+         UkVriQ1j+0F2YFkCrAuNYVhSP2pFIKsTUalt6ZnDniv+nQGL/W6YN1bnDTbqx1B97FD1
+         n8xKGdFJs0BjltbsuVLF6NCo0MGdTbVx5Ysqt9oHQGkNO99h519r3cgamCtgOqcQDC50
+         BCn1lWk+i4Jq1pkYjar/BNM8BLKUwHibRVH5HhuBAT6+FORKufmkKzPeSNbU9ooSbgmA
+         ftgw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@asuswebstorage.com header.s=default header.b=g9z9wcC3;
+       spf=pass (google.com: domain of work-from-home@asuswebstorage.com designates 210.65.113.216 as permitted sender) smtp.mailfrom=work-from-home@asuswebstorage.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=asuswebstorage.com
+Return-Path: <work-from-home@asuswebstorage.com>
+Received: from L106.asuswebstorage.com (s216.asuswebstorage.com. [210.65.113.216])
+        by mx.google.com with ESMTP id hg21si9034879pjb.138.2020.05.23.23.09.03
+        for <pharsat@gmail.com>;
+        Sat, 23 May 2020 23:09:04 -0700 (PDT)
+Received-SPF: pass (google.com: domain of work-from-home@asuswebstorage.com designates 210.65.113.216 as permitted sender) client-ip=210.65.113.216;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@asuswebstorage.com header.s=default header.b=g9z9wcC3;
+       spf=pass (google.com: domain of work-from-home@asuswebstorage.com designates 210.65.113.216 as permitted sender) smtp.mailfrom=work-from-home@asuswebstorage.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=asuswebstorage.com
+Message-ID: <5eca0f80.1c69fb81.5c3b1.f13bSMTPIN_ADDED_BROKEN@mx.google.com>
+X-Google-Original-Message-ID: <20200523.3044797.165.EmailDelivery.SMTPL04>
+Date: Sun, 24 May 2020 14:09:02 +0800 (CST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 L106.asuswebstorage.com B64DD84EC741
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=asuswebstorage.com;
+	s=default; t=1590300542;
+	bh=W5MWeDLiXsKZ5KOTNsoiuOy691gKpaama8+dSmSdqSI=;
+	h=From:To:Subject:From;
+	b=g9z9wcC3B7wEImcpLIv73+VLC9hAEsiRE0aBQU0kH7QQbu4/xH4KkM8jPOXY3KLIG
+	 CJ//EghiH5d5kEsM2IJlbQdgVB255vpi5fTut27h7zeZiAPvvyzusZeNyiigKzhdE3
+	 2DRNuUFlwEVg6W6w2j72SLNOZ0rx4WRzhQQ5PC4U=
+From: ASUS WebStorage <work-from-home@asuswebstorage.com>
+To: pharsat@gmail.com
+Subject: The easy way to transfer data from office to home computer during
+ the public health emergency?
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3DUTF-8">=09=09        <meta name=3D"viewport" content=3D"w=
+idth=3Ddevice-width, initial-scale=3D1">=09=09<title>The easy way to transf=
+er data from office to home computer during the public health emergency?</t=
+itle>            <style type=3D"text/css">=09=09@media only screen and (max=
+-width: 480px){=09=09=09/*=E6=9B=B4=E6=8F=9B=E6=A8=99=E9=A1=8C=E5=AD=97=E7=
+=B4=9A*/=09=09=09=09h1{=09=09=09=09=09/*@editable*/font-size:20px !importan=
+t;=09=09=09=09=09/*@editable*/line-height:150% !important;=09=09=09=09}=09=
+=09}=09=09*{=09=09=09font-family: 'Helvetica Neue', 'Helvetica', 'PingFang =
+TC', "=E5=BE=AE=E8=BB=9F=E6=AD=A3=E9=BB=91=E9=AB=94", 'Microsoft JhengHei',=
+ 'Heiti TC', 'Arial', 'sans-serif'!important;=09=09=09letter-spacing: 0.25p=
+x!important;=09=09}=09=09p{=09=09=09margin:10px 0;=09=09=09padding:0;=09=09=
+}=09=09table{=09=09=09border-collapse:collapse;=09=09}=09=09h1,h2,h3,h4,h5,=
+h6{=09=09=09display:block;=09=09=09margin:0;=09=09=09padding:0;=09=09}=09=
+=09h6 {=09=09=09font-weight: 400;    =09=09font-size: 15px;    =09=09color:=
+ #3b3b3b;    =09=09margin: 5px 0px;    =09=09line-height: 1.5;    =09=09let=
+ter-spacing: 1.2px;=09=09}=09=09body,#bodyTable,#bodyCell{=09=09=09height:1=
+00%;=09=09=09margin:0;=09=09=09padding:0;=09=09=09width:100%;=09=09}=09=09#=
+outlook a{=09=09=09padding:0;=09=09}=09=09table{=09=09=09mso-table-lspace:0=
+pt;=09=09=09mso-table-rspace:0pt;=09=09}=09=09.ReadMsgBody{=09=09=09width:1=
+00%;=09=09}=09=09.ExternalClass{=09=09=09width:100%;=09=09}=09=09p,a,li,td,=
+blockquote{=09=09=09mso-line-height-rule:exactly;=09=09}=09=09p,a,li,td,bod=
+y,table,blockquote{=09=09=09-ms-text-size-adjust:100%;=09=09=09-webkit-text=
+-size-adjust:100%;=09=09}=09=09.ExternalClass,.ExternalClass p,.ExternalCla=
+ss td,.ExternalClass div,.ExternalClass span,.ExternalClass font{=09=09=09l=
+ine-height:100%;=09=09}=09=09a[x-apple-data-detectors]{=09=09=09color:inher=
+it !important;=09=09=09text-decoration:none !important;=09=09=09font-size:i=
+nherit !important;=09=09=09font-family:inherit !important;=09=09=09font-wei=
+ght:inherit !important;=09=09=09line-height:inherit !important;=09=09}=09=
+=09.templateContainer{=09=09=09max-width:700px !important;=09=09}=09=09a.mc=
+nButton{=09=09=09display:block;=09=09}=09=09.mcnImage{=09=09=09vertical-ali=
+gn:middle;=09=09=09max-width: 700px;=09=09}=09=09.mcnTextContent{=09=09=09w=
+ord-break:break-word;=09=09}=09=09.mcnTextContent img{=09=09=09height:auto =
+!important;=09=09}=09=09.mcnDividerBlock{=09=09=09table-layout:fixed !impor=
+tant;=09=09}=09=09.style-hr2 {=09=09=09border: 0;            height: 2px;  =
+          background: #222222;            box-shadow: none;            disp=
+lay: block;=09=09}=09/*=09@tab Page=09@section Background Style=09@tip Set =
+the background color and top border for your email. You may want to choose =
+colors that match your company's branding.=09*/=09=09body,#bodyTable{=09=09=
+=09/*@editable*/background-color:#F6f6f6;=09=09}=09/*=09@tab Page=09@sectio=
+n Background Style=09@tip Set the background color and top border for your =
+email. You may want to choose colors that match your company's branding.=09=
+*/=09=09#bodyCell{=09=09=09/*@editable*/border-top:0;=09=09}=09/*=09@tab Pa=
+ge=09@section Heading 1=09@tip Set the styling for all first-level headings=
+ in your emails. These should be the largest of your headings.=09@style hea=
+ding 1=09*/=09=09h1{=09=09=09/*@editable*/color:#2a2a2a;=09=09=09/*@editabl=
+e*/font-size:24px;=09=09=09/*@editable*/font-style:normal;=09=09=09/*@edita=
+ble*/font-weight:normal;=09=09=09/*@editable*/line-height:125%;=09=09=09/*@=
+editable*/letter-spacing:normal;=09=09=09/*@editable*/text-align:center;=09=
+=09}=09/*=09@tab Page=09@section Heading 2=09@tip Set the styling for all s=
+econd-level headings in your emails.=09@style heading 2=09*/=09=09h2{=09=09=
+=09/*@editable*/color:#202020;=09=09=09/*@editable*/font-size:22px;=09=09=
+=09/*@editable*/font-style:normal;=09=09=09/*@editable*/font-weight:bold;=
+=09=09=09/*@editable*/line-height:125%;=09=09=09/*@editable*/letter-spacing=
+:normal;=09=09=09/*@editable*/text-align:center;=09=09}=09/*=09@tab Page=09=
+@section Heading 3=09@tip Set the styling for all third-level headings in y=
+our emails.=09@style heading 3=09*/=09=09h3{=09=09=09/*@editable*/color:#ff=
+ffff;=09=09=09/*@editable*/font-size:14px;=09=09=09/*@editable*/font-style:=
+normal;=09=09=09/*@editable*/font-weight:normal;=09=09=09/*@editable*/line-=
+height:150%;=09=09=09/*@editable*/letter-spacing:normal;=09=09=09/*@editabl=
+e*/text-align:center;=09=09=09=09=09=09padding: 5px 0px; =09=09}=09/*=09@ta=
+b Page=09@section Heading 4=09@tip Set the styling for all fourth-level hea=
+dings in your emails. These should be the smallest of your headings.=09@sty=
+le heading 4=09*/=09=09h4{=09=09=09/*@editable*/color:#202020;=09=09=09/*@e=
+ditable*/font-size:18px;=09=09=09/*@editable*/font-style:normal;=09=09=09/*=
+@editable*/font-weight:bold;=09=09=09/*@editable*/line-height:125%;=09=09=
+=09/*@editable*/letter-spacing:normal;=09=09=09/*@editable*/text-align:left=
+;=09=09}=09/*=09@tab Preheader=09@section Preheader Style=09@tip Set the ba=
+ckground color and borders for your email's preheader area.=09*/=09=09#temp=
+latePreheader{=09=09=09/*@editable*/background-color:#F6f6f6;=09=09=09/*@ed=
+itable*/border-top:0;=09=09=09/*@editable*/border-bottom:0;=09=09=09/*@edit=
+able*/padding-top:9px;=09=09=09/*@editable*/padding-bottom:9px;=09=09}=09/*=
+=09@tab Preheader=09@section Preheader Text=09@tip Set the styling for your=
+ email's preheader text. Choose a size and color that is easy to read.=09*/=
+=09=09#templatePreheader .mcnTextContent,#templatePreheader .mcnTextContent=
+ p{=09=09=09/*@editable*/color:#656565;=09=09=09/*@editable*/font-size:13px=
+;=09=09=09/*@editable*/line-height:150%;=09=09=09/*@editable*/text-align:le=
+ft;=09=09}=09/*=09@tab Preheader=09@section Preheader Link=09@tip Set the s=
+tyling for your email's preheader links. Choose a color that helps them sta=
+nd out from your text.=09*/=09=09#templatePreheader .mcnTextContent a,#temp=
+latePreheader .mcnTextContent p a{=09=09=09/*@editable*/color:#656565;=09=
+=09=09/*@editable*/font-weight:normal;=09=09=09/*@editable*/text-decoration=
+:underline;=09=09}=09/*=09@tab Header=09@section Header Style=09@tip Set th=
+e background color and borders for your email's header area.=09*/=09=09#tem=
+plateHeader{=09=09=09/*@editable*/background-color:#f6f6f6;=09=09=09/*@edit=
+able*/border-top:0;=09=09=09/*@editable*/border-bottom:0;=09=09=09/*@editab=
+le*/padding-top:9px;=09=09=09/*@editable*/padding-bottom:0;=09=09}=09/*=09@=
+tab Header=09@section Header Text=09@tip Set the styling for your email's h=
+eader text. Choose a size and color that is easy to read.=09*/=09=09#templa=
+teHeader .mcnTextContent,#templateHeader .mcnTextContent p{=09=09=09/*@edit=
+able*/color:#2a2a2a;=09=09=09/*@editable*/font-size:18px;=09=09=09/*@editab=
+le*/line-height:150%;=09=09=09/*@editable*/text-align:left;=09=09}=09/*=09@=
+tab Header=09@section Header Link=09@tip Set the styling for your email's h=
+eader links. Choose a color that helps them stand out from your text.=09*/=
+=09=09#templateHeader .mcnTextContent a,#templateHeader .mcnTextContent p a=
+{=09=09=09/*@editable*/color:#2BAADF;=09=09=09/*@editable*/font-weight:norm=
+al;=09=09=09/*@editable*/text-decoration:underline;=09=09}=09/*=09@tab Body=
+=09@section Body Style=09@tip Set the background color and borders for your=
+ email's body area.=09*/=09=09#templateBody{=09=09=09/*@editable*/backgroun=
+d-color:#F6f6f6;=09=09=09/*@editable*/border-top:0;=09=09=09/*@editable*/bo=
+rder-bottom:0;=09=09=09/*@editable*/padding-top:9px;=09=09=09/*@editable*/p=
+adding-bottom:9px;=09=09}=09/*=09@tab Body=09@section Body Text=09@tip Set =
+the styling for your email's body text. Choose a size and color that is eas=
+y to read.=09*/=09=09#templateBody .mcnTextContent,#templateBody .mcnTextCo=
+ntent p{=09=09=09/*@editable*/color:#2a2a2a;=09=09=09/*@editable*/font-size=
+:18px;=09=09=09/*@editable*/line-height:150%;=09=09=09/*@editable*/text-ali=
+gn:center;=09=09}=09/*=09@tab Body=09@section Body Link=09@tip Set the styl=
+ing for your email's body links. Choose a color that helps them stand out f=
+rom your text.=09*/=09=09#templateBody .mcnTextContent a,#templateBody .mcn=
+TextContent p a{=09=09=09/*@editable*/color:#2BAADF;=09=09=09/*@editable*/f=
+ont-weight:normal;=09=09=09/*@editable*/text-decoration:underline;=09=09}=
+=09/*=09@tab Footer=09@section Footer Style=09@tip Set the background color=
+ and borders for your email's footer area.=09*/=09=09#templateFooter{=09=09=
+=09/*@editable*/background-color:#f6f6f6;=09=09=09/*@editable*/border-top:0=
+;=09=09=09/*@editable*/border-bottom:0;=09=09=09/*@editable*/padding-top:9p=
+x;=09=09=09/*@editable*/padding-bottom:9px;=09=09}=09/*=09@tab Footer=09@se=
+ction Footer Text=09@tip Set the styling for your email's footer text. Choo=
+se a size and color that is easy to read.=09*/=09=09#templateFooter .mcnTex=
+tContent,#templateFooter .mcnTextContent p{=09=09=09/*@editable*/color:#656=
+565;=09=09=09/*@editable*/font-size:13px;=09=09=09/*@editable*/line-height:=
+150%;=09=09=09/*@editable*/text-align:center;=09=09}=09/*=09@tab Footer=09@=
+section Footer Link=09@tip Set the styling for your email's footer links. C=
+hoose a color that helps them stand out from your text.=09*/=09=09#template=
+Footer .mcnTextContent a,#templateFooter .mcnTextContent p a{=09=09=09/*@ed=
+itable*/color:#656565;=09=09=09/*@editable*/font-weight:normal;=09=09=09/*@=
+editable*/text-decoration:underline;=09=09}=09@media only screen and (min-w=
+idth:768px){=09=09.templateContainer{=09=09=09width:700px !important;=09=09=
+}}=09@media only screen and (max-width: 480px){=09=09body,table,td,p,a,li,b=
+lockquote{=09=09=09-webkit-text-size-adjust:none !important;=09=09}}=09@med=
+ia only screen and (max-width: 480px){=09=09body{=09=09=09width:100% !impor=
+tant;=09=09=09min-width:100% !important;=09=09}}=09@media only screen and (=
+max-width: 480px){=09=09#bodyCell{=09=09=09padding-top:1px !important;=09=
+=09}}=09@media only screen and (max-width: 480px){=09=09.mcnImage{=09=09=09=
+width:100% !important;=09=09}}=09@media only screen and (max-width: 480px){=
+=09=09.mcnCartContainer,.mcnCaptionTopContent,.mcnRecContentContainer,.mcnC=
+aptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,=
+.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCapt=
+ionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCapti=
+onRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImag=
+eCardRightTextContentContainer{=09=09=09max-width:100% !important;=09=09=09=
+width:100% !important;=09=09}}=09@media only screen and (max-width: 480px){=
+=09=09.mcnBoxedTextContentContainer{=09=09=09min-width:100% !important;=09=
+=09}}=09@media only screen and (max-width: 480px){=09=09.mcnImageGroupConte=
+nt{=09=09=09padding:9px !important;=09=09}}=09@media only screen and (max-w=
+idth: 480px){=09=09.mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionR=
+ightContentOuter .mcnTextContent{=09=09=09padding-top:9px !important;=09=09=
+}}=09@media only screen and (max-width: 480px){=09=09.mcnImageCardTopImageC=
+ontent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextConte=
+nt{=09=09=09padding-top:18px !important;=09=09}}=09@media only screen and (=
+max-width: 480px){=09=09.mcnImageCardBottomImageContent{=09=09=09padding-bo=
+ttom:9px !important;=09=09}}=09@media only screen and (max-width: 480px){=
+=09=09.mcnImageGroupBlockInner{=09=09=09padding-top:0 !important;=09=09=09p=
+adding-bottom:0 !important;=09=09}}=09@media only screen and (max-width: 48=
+0px){=09=09.mcnImageGroupBlockOuter{=09=09=09padding-top:9px !important;=09=
+=09=09padding-bottom:9px !important;=09=09}}=09@media only screen and (max-=
+width: 480px){=09=09.mcnTextContent,.mcnBoxedTextContentColumn{=09=09=09pad=
+ding-right:18px !important;=09=09=09padding-left:18px !important;=09=09}}=
+=09@media only screen and (max-width: 480px){=09=09.mcnImageCardLeftImageCo=
+ntent,.mcnImageCardRightImageContent{=09=09=09padding-right:18px !important=
+;=09=09=09padding-bottom:0 !important;=09=09=09padding-left:18px !important=
+;=09=09}}=09@media only screen and (max-width: 480px){=09=09.mcpreview-imag=
+e-uploader{=09=09=09display:none !important;=09=09=09width:100% !important;=
+=09=09}=09=09.special-page {=09=09=09padding: 15px 50px !important;=09=09} =
+}=09@media only screen and (max-width: 480px){=09/*=09@tab Mobile Styles=09=
+@section Heading 2=09@tip Make the second-level headings larger in size for=
+ better readability on small screens.=09*/=09=09h2{=09=09=09/*@editable*/fo=
+nt-size:26px !important;=09=09=09/*@editable*/line-height:125% !important;=
+=09=09}}=09@media only screen and (max-width: 480px){=09/*=09@tab Mobile St=
+yles=09@section Heading 3=09@tip Make the third-level headings larger in si=
+ze for better readability on small screens.=09*/=09=09h3{=09=09=09/*@editab=
+le*/font-size:14px !important;=09=09=09/*@editable*/line-height:125% !impor=
+tant;=09=09}}=09@media only screen and (max-width: 480px){=09/*=09@tab Mobi=
+le Styles=09@section Heading 4=09@tip Make the fourth-level headings larger=
+ in size for better readability on small screens.=09*/=09=09h4{=09=09=09/*@=
+editable*/font-size:15px !important;=09=09=09/*@editable*/line-height:150% =
+!important;=09=09}}=09@media only screen and (max-width: 480px){=09/*=09@ta=
+b Mobile Styles=09@section Boxed Text=09@tip Make the boxed text larger in =
+size for better readability on small screens. We recommend a font size of a=
+t least 16px.=09*/=09=09.mcnBoxedTextContentContainer .mcnTextContent,.mcnB=
+oxedTextContentContainer .mcnTextContent p{=09=09=09/*@editable*/font-size:=
+13px !important;=09=09=09/*@editable*/line-height:150% !important;=09=09}=
+=09=09.mcnTextContent2 {=09=09=09font-size: 15px !important;    =09=09line-=
+height: 180% !important;    =09=09padding-right: 110px !important;    =09=
+=09padding-left: 110px !important; =09=09}}=09@media only screen and (max-w=
+idth: 480px){=09/*=09@tab Mobile Styles=09@section Preheader Visibility=09@=
+tip Set the visibility of the email's preheader on small screens. You can h=
+ide it to save space.=09*/=09=09#templatePreheader{=09=09=09/*@editable*/di=
+splay:block !important;=09=09}}=09@media only screen and (max-width: 480px)=
+{=09/*=09@tab Mobile Styles=09@section Preheader Text=09@tip Make the prehe=
+ader text larger in size for better readability on small screens.=09*/=09=
+=09#templatePreheader .mcnTextContent,#templatePreheader .mcnTextContent p{=
+=09=09=09/*@editable*/font-size:13px !important;=09=09=09/*@editable*/line-=
+height:150% !important;=09=09}}=09@media only screen and (max-width: 480px)=
+{=09/*=09@tab Mobile Styles=09@section Header Text=09@tip Make the header t=
+ext larger in size for better readability on small screens.=09*/=09=09#temp=
+lateHeader .mcnTextContent,#templateHeader .mcnTextContent p{=09=09=09/*@ed=
+itable*/font-size:15px !important;=09=09=09/*@editable*/line-height:180% !i=
+mportant;=09=09}}=09@media only screen and (max-width: 480px){=09/*=09@tab =
+Mobile Styles=09@section Body Text=09@tip Make the body text larger in size=
+ for better readability on small screens. We recommend a font size of at le=
+ast 16px.=09*/=09=09#templateBody .mcnTextContent,#templateBody .mcnTextCon=
+tent p{=09=09=09/*@editable*/font-size:15px !important;=09=09=09/*@editable=
+*/line-height:180% !important;=09=09}}=09@media only screen and (max-width:=
+ 480px){=09/*=09@tab Mobile Styles=09@section Footer Text=09@tip Make the f=
+ooter content text larger in size for better readability on small screens.=
+=09*/=09=09#templateFooter .mcnTextContent,#templateFooter .mcnTextContent =
+p{=09=09=09/*@editable*/font-size:13px !important;=09=09=09/*@editable*/lin=
+e-height:150% !important;=09=09}=09=09.download-cta {=09=09=09width: 60% !i=
+mportant;=09=09}}</style></head>    <body style=3D"background-color: #eaece=
+d;">        <center>            <table align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTabl=
+e" bgcolor=3D"#Fff">                <tbody><tr>                    <td alig=
+n=3D"center" valign=3D"top" id=3D"bodyCell">=09=09=09=09=09<!-- =E4=BF=A1=
+=E4=BB=B6=E4=B8=BB=E6=97=A8=E5=89=AF=E6=A8=99=E6=96=87=E5=AD=97 -->=09     =
+           <div style=3D"display:none;font-size:1px;line-height:1px;max-hei=
+ght:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: s=
+ans-serif;">500=C2=A0GB storage space, 30-day free trial!</div>=09         =
+       <!-- =E4=BF=A1=E4=BB=B6=E4=B8=BB=E6=97=A8=E5=89=AF=E6=A8=99=E6=96=87=
+=E5=AD=97 -->=09=09=09=09=09                        <!-- BEGIN TEMPLATE // =
+-->                        <table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%">=09=09=09=09=09=09=09<tbody><tr>=09=09=09=09=09=09=
+=09=09<td align=3D"center" valign=3D"top" id=3D"templateBody" style=3D"padd=
+ing-top: 15px;padding-bottom: 9px;background-color: #eaeced">=09=09=09=09=
+=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D"" cellsp=
+acing=3D"" width=3D"100%" class=3D"templateContainer" style=3D"max-width: 7=
+00px;">=09=09=09=09=09=09=09=09=09=09<tbody><tr>                           =
+     =09=09=09<td valign=3D"top" class=3D"bodyContainer" style=3D"backgroun=
+d: #fff">=09=09=09=09=09=09=09=09=09=09=09   =09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" class=3D"mcnTextBlock" style=3D"min-width:100%;">=09=09=09=09=09=
+=09=09=09=09=09=09<tbody class=3D"mcnTextBlockOuter">=09=09=09=09=09=09=09=
+=09=09=09=09=09<tr>=09=09=09=09=09=09=09=09=09=09=09=09=09<td valign=3D"top=
+" class=3D"mcnTextBlockInner">=09=09=09=09=09=09=09=09=09=09=09=09<!-- Logo=
+ -->=09=09=09=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" width=3D"100%" class=3D"mcnTextBlock" style=3D"min-wid=
+th:100%">=09=09=09=09=09=09=09=09=09=09=09=09=09<p class=3D"mcnImageContent=
+" align=3D"center" valign=3D"top" style=3D"padding-right: 9px; padding-left=
+: 9px; padding-top: 20px; padding-bottom: 0px; margin: 0">=09=09=09=09=09=
+=09=09=09=09=09=09=09=09<img align=3D"center" alt=3D"ASUS WebStorage" src=
+=3D"https://emailtemplate2.asuswebstorage.com/EmailContentService/images/lo=
+go_line.png" style=3D"max-width:560px; padding-bottom: 0; display: inline !=
+important; vertical-align: bottom;" class=3D"mcnImage">=09=09=09=09=09=09=
+=09=09=09=09=09=09=09</p>=09=09=09=09=09=09=09=09=09=09=09=09</table>=09=09=
+=09=09=09=09=09=09=09=09=09=09<!-- //Logo -->=09=09=09=09=09=09=09=09=09=09=
+=09=09<!-- Banner -->=09=09=09=09=09=09=09=09=09=09=09=09<table bgcolor=3D"=
+#ffffff" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" cl=
+ass=3D"mcnImageBlock" style=3D"min-width:100%;">=09=09=09=09=09=09=09=09=09=
+=09=09=09<a href=3D"https://www.asuswebstorage.com/navigate/a/#/index/featu=
+res?utm_source=3D165&utm_medium=3Dbutton&utm_campaign=3DSystemMail" target=
+=3D"_blank" style=3D"text-decoration: none;">=09=09=09=09=09=09=09=09=09=09=
+=09=09<img align=3D"center" alt=3D"500GB/30Day/FREE" title=3D"500GB/30Day/F=
+REE" src=3D"https://emailtemplate2.asuswebstorage.com/EmailContentService/i=
+mages/165/banner_en.gif" width=3D"700" style=3D"max-width: 700px;padding-bo=
+ttom: 0;display: inline !important;vertical-align: bottom;" class=3D"mcnIma=
+ge">=09=09=09=09=09=09=09=09=09=09=09=09</a>=09=09=09=09=09=09=09=09=09=09=
+=09   </table>=09=09=09=09=09=09=09=09=09=09=09   <!--// Banner -->=09=09=
+=09=09=09=09=09=09=09=09=09=09=09</td>=09=09=09=09=09=09=09=09=09=09=09=09<=
+/tr>=09=09=09=09=09=09=09=09=09=09=09</tbody>=09=09=09=09=09=09=09=09=09=09=
+</table><!-- // BEGIN COLUMNS -->=09=09=09=09=09=09=09=09=09=09=09=09<table=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"m=
+cnTextBlock" style=3D"min-width:100%;">    <tbody class=3D"mcnTextBlockOute=
+r">        <tr>            <td valign=3D"top" class=3D"mcnTextBlockInner"> =
+             <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D"max-width:100%; min-width:100%;" width=3D"100%" class=
+=3D"mcnTextContentContainer">                    <tbody>                   =
+ <tr>                        <td valign=3D"top" class=3D"mcnTextContent" st=
+yle=3D"padding: 25px 35px 0px 35px;color: #000000">                        =
+=09<h2>Hi, pharsat</h2>=09=09=09=09=09=09=09<p style=3D"text-align: center;=
+ line-height: 200%; font-size: 15px;">I am Lucy, your ASUS WebStorage assis=
+tant.=F0=9F=98=8A Thank you for trying our cloud storage service! <br>Did y=
+ou know that you can synchronize data across different devices? What's more=
+, there is no limit to the number of devices!</p><br>                      =
+                  <p style=3D"text-align:center; color:#ff5c5c; font-size: =
+25px; font-weight: 900;">[Work-From-Home 500 GB]</p>=09=09=09=09=09=09=09  =
+          <p style=3D"text-align: center; line-height: 200%; font-size: 15p=
+x;">=09=09=09=09=09=09=09            Sign up for ASUS WebStorage during the=
+ public health emergency to begin your 30-day free trial of the 500=C2=A0GB=
+ storage space package.<br>Tell your family and friends about this good new=
+s and save them the hassle of transferring data! <br>=09=09=09=09=09=09=09 =
+           <p style=3D"font-size: 20px;">=09=09=09=09=09=09=09=09=09=09<a h=
+ref=3D"https://www.asuswebstorage.com/navigate/a/#/reg/?utm_source=3D165&ut=
+m_medium=3Dbutton&utm_campaign=3DSystemMail">=F0=9F=91=89Sign up to receive=
+ 500=C2=A0GB free</a><br>=09=09=09=09=09=09=09=09=09=09<a href=3D"https://s=
+tore.asuswebstorage.com/special-offer/?utm_source=3D165&utm_medium=3Dbanner=
+&utm_campaign=3DSystemMail&coupon1=3DM165500G599&coupon2=3DM165200G524">=F0=
+=9F=91=89500GB Buy Now</p></a><br><br>=09=09=09=09=09=09=09=09=09=09=09=09=
+=09                        </td>                    </tr>      =09=09=09=09=
+=09</tbody>                </table>                <!-- // END COLUMNS --> =
+               <!-- BEGIN COLUMNS // -->                =09=09=09=09=09=09<=
+table bgcolor=3D"" class=3D"social" width=3D"100%" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0">=09=09=09=09=09=09<tbody>=09=09=09=09=09=09<p styl=
+e=3D"text-align: center; font-weight: 900; font-size: 25px">=F0=9F=91=87Syn=
+cing Files Has Never Been Easier=F0=9F=91=87</p><br>=09=09=09=09=09=09<p st=
+yle=3D"text-align: center; line-height: 200%; font-size: 15px;">=09=09=09=
+=09=09=09=09<tr>=09=09=09=09=09=09=09=09<td align=3D"center" style=3D"paddi=
+ng: 30px 30px 0px 30px;">=09=09=09=09=09=09=09=09<img src=3D"https://emailt=
+emplate2.asuswebstorage.com/EmailContentService/images/165/step01_en.png" t=
+itle=3D"Step 1. Download our program and setup to your PC." alt=3D"Step 1. =
+Download our program and setup to your PC." style=3D"width: 440px;margin: 2=
+0px auto 0px; border: 1px solid #d6d6d6;">=09=09=09=09=09=09=09=09<p style=
+=3D"color: #3b3b3b;">Step 1. Download our program and setup to your PC.</p>=
+=09=09=09=09=09=09=09=09</td>=09=09=09=09=09=09=09</tr>=09=09=09=09=09=09=
+=09<tr>=09=09=09=09=09=09=09=09<td align=3D"center" style=3D"padding: 30px =
+30px 0px 30px;">=09=09=09=09=09=09=09=09<img src=3D"https://emailtemplate2.=
+asuswebstorage.com/EmailContentService/images/165/step02.png" title=3D"Step=
+ 2. Login to ASUS WebStorage" alt=3D"Step 2. Login to ASUS WebStorage" styl=
+e=3D"width: 440px;margin: 20px auto 0px; border: 1px solid #d6d6d6;">=09=09=
+=09=09=09=09=09=09<p style=3D"color: #3b3b3b;">Step 2. Login to ASUS WebSto=
+rage</p>=09=09=09=09=09=09=09=09</td>=09=09=09=09=09=09=09</tr>=09=09=09=09=
+=09=09=09<tr>=09=09=09=09=09=09=09=09<td align=3D"center" style=3D"padding:=
+ 30px 30px 0px 30px;">=09=09=09=09=09=09=09=09<img src=3D"https://emailtemp=
+late2.asuswebstorage.com/EmailContentService/images/165/step03.gif" title=
+=3D"Step 3. Drag your file to MySyncFolder=E2=86=92Done!" alt=3D"Step 3. Dr=
+ag your file to MySyncFolder=E2=86=92Done!" style=3D"width: 440px;margin: 2=
+0px auto 0px; border: 1px solid #d6d6d6;">=09=09=09=09=09=09=09=09<p style=
+=3D"color: #3b3b3b;">Step 3. Drag your file to MySyncFolder=E2=86=92Done!</=
+p>=09=09=09=09=09=09=09=09</td>=09=09=09=09=09=09=09</tr>=09=09=09=09=09=09=
+=09<tr>=09=09=09=09=09=09=09=09<td align=3D"center" style=3D"padding: 30px =
+30px 0px 30px;">=09=09=09=09=09=09=09=09<img src=3D"https://emailtemplate2.=
+asuswebstorage.com/EmailContentService/images/165/step04.png" title=3D"Step=
+ 4. File would appear in each device!" alt=3D"Step 4. File would appear in =
+each device!" style=3D"width: 440px;margin: 20px auto 0px; border: 1px soli=
+d #d6d6d6;">=09=09=09=09=09=09=09=09<p style=3D"color: #3b3b3b;">Step 4. Fi=
+le would appear in each device!</p>=09=09=09=09=09=09=09=09</td>=09=09=09=
+=09=09=09=09</tr>=09=09=09=09=09=09=09<tr>=09=09=09=09=09=09=09=09  <td ali=
+gn=3D"center" style=3D"padding: 35px 35px;">=09=09=09=09=09=09=09=09=09<a h=
+ref=3D"https://www.asuswebstorage.com/navigate/a/#/index/downloads/?utm_sou=
+rce=3D165&utm_medium=3Dbutton&utm_campaign=3DSystemMail" target=3D"_blank" =
+class=3D"download-cta" style=3D"background: #02C874;border: 15px solid #02C=
+874;padding: 0 10px;color: #ffffff;font-family: sans-serif;font-size: 22px;=
+line-height: 1.1;text-align: center;text-decoration: none;display: block;bo=
+rder-radius: 5px;cursor: pointer;letter-spacing: 1.5px;width: 40%;margin: 0=
+ auto;">Download Now and Activate File Sync</a>=09=09=09=09=09=09=09=09 </t=
+d>=09=09=09=09=09=09</p>=09</tr>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09</tbody>=09=09=09=09=09</table>=09=09=09=09=09<!-- // END COLUMNS =
+-->=09=09=09=09=09<!-- BEGIN COLUMNS // -->=09=09=09=09=09<table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0">=09=09=09=09=09=09<tbody>=09=09=09=
+=09=09=09=09<tr>=09=09=09=09=09=09=09<td height=3D"0" border=3D"5px" cellsp=
+acing=3D"0" cellpadding=3D"0" align=3D"center" style=3D"padding: 40px 20px;=
+">=09=09=09=09=09=09=09<table cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" style=3D"">=09=09=09=09=09=09=09=09<tbody>=09=09=09=09=09=09=09=09=09<t=
+r>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td height=3D"0"=
+ border=3D"5px" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" style=
+=3D"padding:12px 15px;background-color: #ffffff;width: 700px;">=09=09=09=09=
+=09=09                ASUS WebStorage Team<br><br>=09=09=09=09=09=09=09=09=
+=09=09<p style=3D"font-size: 10;color: #6C6C6C;">Your ASUS Cloud ID: pharsa=
+t@gmail.com. We have expanded your 500 GB Cloud storage space 3 day ago. Tr=
+y it for free for the following 27 days. Log onto the service now to enjoy =
+your extra Cloud storage space!<br> <a href=3D"https://service.asuswebstora=
+ge.com/recovery/?fid=3D1&page=3Dnull" target=3D"_blank" style=3D"color: #1f=
+a6e2; text-decoration: underline">forget password=EF=BC=9F</a></p>=09=09=09=
+=09=09=09=09=09=09=09</td>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09</tr>=09=09=09=09=09=09=09=09</tbody>=09=09=09=09=09=09=09</table>=09=
+=09=09=09=09=09=09</td>=09=09=09=09=09=09=09</tr>=09=09=09=09=09=09</tbody>=
+=09=09=09=09=09</table>              =09=09=09=09=09=09=09=09            </=
+td>        </tr>    </tbody></table>=09=09=09=09=09=09=09=09=09=09=09   =09=
+=09=09=09=09=09=09=09   </td>=09=09=09=09=09=09=09=09=09=09</tr>=09=09=09=
+=09=09=09=09=09=09</tbody>=09=09=09=09=09=09=09=09=09</table>=09=09=09=09=
+=09=09=09=09</td>                            </tr>                         =
+   <tr>=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" id=3D"te=
+mplateFooter" style=3D"padding-top: 9px;padding-bottom: 9px;background-colo=
+r: #eaeced">=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContai=
+ner" style=3D"max-width: 700px;background-color: #eaeced">=09=09=09=09=09=
+=09=09=09=09=09<tbody>=09=09=09=09=09=09=09=09=09=09<tr>                   =
+             =09=09=09<td valign=3D"top" class=3D"footerContainer">=09=09=
+=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%" class=3D"mcnTextBlock" style=3D"min-width:100%;">=09=
+=09=09=09=09=09=09=09=09=09=09<tbody class=3D"mcnTextBlockOuter">=09=09=09=
+=09=09=09=09=09=09=09=09=09<tr>=09=09=09=09=09=09=09=09=09=09=09=09=09<td v=
+align=3D"top" class=3D"mcnTextBlockInner" style=3D"padding-top:0px;">=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"max-width:100%; min-width:100%;"=
+ width=3D"100%" class=3D"mcnTextContentContainer">=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09<tbody>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<t=
+r>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td valign=3D"top" style=
+=3D"padding:5px 18px 9px 18px;color: #999;font-size: 13px!important;line-he=
+ight: 150%" align=3D"center">=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09If you view this E-mail as a commercial email and unwilling to receive i=
+t again, please <a href=3D"https://service.asuswebstorage.com/s/cancelEmail=
+Subscribe/?UID=3Dpharsat%40gmail.com&etype=3D165&ch=3DB317E387&utm_source=
+=3D165&utm_medium=3DOpt-out&utm_campaign=3DPromoteSystemMail" target=3D"_bl=
+ank" style=3D"color: #1fa6e2; text-decoration: underline">unsubscribe</a>.<=
+br>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Please do not reply this=
+ E-mail directly or we will not receive your letter. If you have any furthe=
+r questions, please tell us without hesitation: <a href=3D"mailto:contact@a=
+suswebstorage.com" target=3D"_blank" style=3D"color: #1fa6e2">contact@asusw=
+ebstorage.com</a><br>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09Copyri=
+ght =C2=A9 2020 ASUS Cloud Corporation. All rights reserved.=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09</td>=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09</tr>=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</tbody>=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09</table>=09=09=09=09=09=09=09=09=09=09=
+=09=09=09</td>=09=09=09=09=09=09=09=09=09=09=09=09</tr>=09=09=09=09=09=09=
+=09=09=09=09=09</tbody>=09=09=09=09=09=09=09=09=09=09=09</table>=09=09=09=
+=09=09=09=09=09=09=09=09</td>=09=09=09=09=09=09=09=09=09=09</tr>=09=09=09=
+=09=09=09=09=09=09=09</tbody>=09=09=09=09=09=09=09=09=09</table>=09=09=09=
+=09=09=09=09=09</td>                            </tr>                      =
+  </tbody>=09=09=09=09=09=09</table>                        <!-- // END TEM=
+PLATE -->                    </td>                </tr>            </tbody>=
+</table>        </center>=09=09<div style=3D"visibility: hidden"> <img src=
+=3D"https://www.google-analytics.com/collect?v=3D1&tid=3DUA-2816554-125&cid=
+=3Db787d92e-c9f1-44fd-9f76-4e57e65e26f8&t=3Devent&ec=3DSystemMail&ea=3Dopen=
+&el=3DMail_165&cs=3DMail_165&cm=3Demail&cn=3DWebStorage%20For%20System%20Ma=
+il" /> </div>    <IMG src=3D"#004"></IMG></body></html>

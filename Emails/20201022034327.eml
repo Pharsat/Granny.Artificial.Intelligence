@@ -1,0 +1,163 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp5658620ild;
+        Wed, 21 Oct 2020 20:43:27 -0700 (PDT)
+X-Received: by 2002:a05:6102:3113:: with SMTP id e19mr345193vsh.59.1603338207822;
+        Wed, 21 Oct 2020 20:43:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1603338207; cv=none;
+        d=google.com; s=arc-20160816;
+        b=mkWw3Oz2vRm+JotDNeDfvtCQPoD8RYz7bw6wekssyYIYvohcq7zTKXuPIsVGUimPp1
+         Oht0eb/S1Y/Jg5f0/AGkpUFEnX1JHISMNrVSe/wVT95+Z4N2mAlxGrPJwhs/oX3xpfS9
+         sGBF3tClKTAQTqgsmGBAZmPMBUL/+3Tp2r0JF0aNkfsZ95N2urB/p1See1907KbsG3HY
+         kZVuiaxvQYnR3vunSPnRcFpEMTwjf0VRpHjvDOkASkybJYM/NA4vLmfc1MLsY9W6Zt6y
+         3p2ut0z2lHu0HOEueUoe7W6yXmWZVBFRfyv8QxIexAwrmN1ufC01d1S7Vahz2EhI1/Bi
+         0jlw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:references:reply-to:mime-version
+         :dkim-signature;
+        bh=vViFTL1PYIgJP7V/BAkiwpJ1oerlWgVFWFTdDRwCS0k=;
+        b=HuerxYi/SABk0R22+zFeVcuO+mibB7oB93XBoEqCK5E07Eee4nLkB0LiPYAQGqyCyK
+         Aq4vbAp8oktDYh9SXZ/6t/+5dBWxp42m8JBV/rcCBSMUWCVn6HAwdBYuBtn6I1LeNwu1
+         0+qzs4kOJXh+cYD4+Aa2RbUk2xKdsHacEeqeWcAb36gFEem27ZOzuM/ER/LHnBiNRvP8
+         jxQ6Ib1hY4euvkUG34HpNUkEku6Z5gHJGzNvURhso8XorioHmJqGIOnt6qGLDwKMCSGR
+         nP/KU0gI8dL++kCBeRZdkBOISthO7GJBNmvmZR18l82TbITGndUu7XC4APTnI3cg5FI5
+         OwLw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=fhs9E88Q;
+       spf=pass (google.com: domain of 33_-qxw0jbyylwcpug.lwugeciockn.eqorjctucviockn.eqo@doclist.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=33_-QXw0JByYLWCPUG.LWUGECIOCKN.EQORJCTUCVIOCKN.EQO@doclist.bounces.google.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <33_-QXw0JByYLWCPUG.LWUGECIOCKN.EQORJCTUCVIOCKN.EQO@doclist.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id q75sor110157vkb.61.2020.10.21.20.43.27
+        for <pharsat@gmail.com>
+        (Google Transport Security);
+        Wed, 21 Oct 2020 20:43:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 33_-qxw0jbyylwcpug.lwugeciockn.eqorjctucviockn.eqo@doclist.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=fhs9E88Q;
+       spf=pass (google.com: domain of 33_-qxw0jbyylwcpug.lwugeciockn.eqorjctucviockn.eqo@doclist.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=33_-QXw0JByYLWCPUG.LWUGECIOCKN.EQORJCTUCVIOCKN.EQO@doclist.bounces.google.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:reply-to:references:message-id:date:subject:from:to;
+        bh=vViFTL1PYIgJP7V/BAkiwpJ1oerlWgVFWFTdDRwCS0k=;
+        b=fhs9E88QvmvHM9denH5VRfqZInGDeV5RV4gyDCswPzL7RI9mpWBPy3Hph98kpQLH4U
+         2fowy3YqKoyiGEeCvAwED+Vfm9+f2pvm55XzXOirPVa7G7wiSnYdYBAHo3wqyCemfJU8
+         hkiImjYNw332WM7lb4Vx2waY1mS0LXFgQvpZNANmtrx4deBL1g443nkZrBSdZKLGgOuu
+         hWZhgFwhD6EIj6Scw3k5RbvoALPS1NzxBzBNtBmeDexcKC7mJn9uVHlxz4ZKR7448I32
+         JpBAZJFDFKPYg6BSy3Pv/qfF8t52iiBAdhwAljI4F8gHJWcIG+U+P2WUpyUgjxAIeQLn
+         v09Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:reply-to:references:message-id:date
+         :subject:from:to;
+        bh=vViFTL1PYIgJP7V/BAkiwpJ1oerlWgVFWFTdDRwCS0k=;
+        b=Hn+DBiuLgKcPDm1wIyAT0KuGgS3b/SPp+YXFMWFETRoLpfrFVK4pIMQh0y+bEMMyzg
+         mbnY23GRpLRDdHpfPyTU7N8+u/190PgESczypxZXYJdN0h1OabA93NfItDiQ9u4D9lR3
+         k2llAYhK+m8IyT+u0cF7OTzP5OQRvKgR2gdhnk4G85GayuTnmEgDf9qo98CoTmIOXxJi
+         G1hGRas3DOpsSVKhRrrjs+a+Jt7d+JIIimSkzWBA8dvwNmDcDpHHI3SKUUbz7hU7Xnw5
+         bzz4unb35h71aYgoi4UsNY13AG0gjYL+PXiaaN4MxH62bMEiTJvjEB34Y/jv9vosm207
+         hXMw==
+X-Gm-Message-State: AOAM530gQlaoGLdTug/d97DTOd3ODyknurpDXmzbdZPYWAtqgxLa+NdO
+	qi/CZW17JGNTVdnHDQf7/0t8jKPunOc=
+X-Google-Smtp-Source: ABdhPJzL4BtD+0xg5hDbJPF/J2gCHRQ2o1HDkKmuk90j2IbVOnlU+f8r6zgOfIy7EhIgJ4AWHPIMo5EtIPI=
+MIME-Version: 1.0
+X-Received: by 2002:a1f:bdcb:: with SMTP id n194mr368280vkf.18.1603338207367;
+ Wed, 21 Oct 2020 20:43:27 -0700 (PDT)
+Reply-To: =?UTF-8?B?anVhbiBzZWJhc3RpYW4gY2FzdGHDsW8uLi4=?= <juanse.juseca@gmail.com>
+X-No-Auto-Attachment: 1
+References: <131f7569-7ac3-47b4-92c6-37542b3a19fb@docs-share.google.com>
+Message-ID: <0000000000004e19cd05b23a446e@google.com>
+Date: Thu, 22 Oct 2020 03:43:27 +0000
+Subject: =?UTF-8?Q?Control_de_horas_de_trabajo_Grow_Tree_=2D_Invitaci=C3=B3n_?=
+	=?UTF-8?Q?para_editar?=
+From: =?UTF-8?Q?juan_sebastian_casta=C3=B1o=2E=2E=2E_=28mediante_Hojas_de_c=C3=A1lculo_?=
+	=?UTF-8?Q?de_Google=29?= <juanse.juseca@gmail.com>
+To: pharsat@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000004e19b305b23a446b"
+
+--0000000000004e19b305b23a446b
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+SGUgY29tcGFydGlkbyB1biBlbGVtZW50byBjb250aWdvOg0KDQpDb250cm9sIGRlIGhvcmFzIGRl
+IHRyYWJham8gR3JvdyBUcmVlDQpodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9zcHJlYWRzaGVldHMv
+ZC8xQnhRY0VsNGRqSEZNMExjV2hWX2JNbkdscEZRcXQ5Z2ZlVEtISkZEVHJXWS9lZGl0P3VzcD1z
+aGFyaW5nJnRzPTVmOTBmZmRmDQoNCk5vIGVzIHVuIGFyY2hpdm8gYWRqdW50bzsgZXN0w6EgYWxt
+YWNlbmFkbyBlbiBsw61uZWEuIFBhcmEgYWJyaXIgZXN0ZSAgDQplbGVtZW50bywgaGF6IGNsaWMg
+ZW4gZWwgdsOtbmN1bG8gZGUgYXJyaWJhLg0KDQo=
+--0000000000004e19b305b23a446b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><div style=3D"width: 100%; padding: 24px 0 16px 0;=
+ background-color: #f5f5f5; text-align: center;"><div style=3D"display: inl=
+ine-block; width: 90%; max-width: 680px;min-width: 280px; text-align: left;=
+ font-family: Roboto,Arial,Helvetica,sans-serif;"><div style=3D"height: 0px=
+;" dir=3D"ltr"></div><div style=3D"display: block; padding: 0 2px;"><div st=
+yle=3D"display: block; background: #fff; height: 2px;"></div></div><div sty=
+le=3D"border-left: 1px solid #f0f0f0; border-right: 1px solid #f0f0f0;"><di=
+v style=3D"padding: 24px 32px 24px 32px; background:#fff; border-right: 1px=
+ solid #eaeaea; border-left: 1px solid #eaeaea;" dir=3D"ltr"><div style=3D"=
+font-size: 14px; line-height: 18px; color: #444;"><a href=3D"mailto:juanse.=
+juseca@gmail.com" style=3D"color:inherit;text-decoration:none">juanse.jusec=
+a@gmail.com</a> te invit=C3=B3 a <b>editar</b> la siguiente hoja de c=C3=A1=
+lculo:</div><div style=3D"height: 10px;"></div><div style=3D"font-size: 18p=
+x; display: table;"><div style=3D"display: table-row; border-bottom: 4px so=
+lid #fff;"><span style=3D"display: table-cell;"><div style=3D"height: 32px;=
+"><img src=3D"https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_=
+spreadsheet_x64.png" aria-label=3D"Hoja de c=C3=A1lculo" style=3D"vertical-=
+align: middle; max-width: 24px;"/></div></span><span style=3D"display: tabl=
+e-cell; padding-left: 12px; word-break: break-word;"><a href=3D"https://doc=
+s.google.com/spreadsheets/d/1BxQcEl4djHFM0LcWhV_bMnGlpFQqt9gfeTKHJFDTrWY/ed=
+it?usp=3Dsharing_eil&amp;ts=3D5f90ffdf" style=3D"color: #3367d6; text-decor=
+ation: none; vertical-align: middle;">Control de horas de trabajo Grow Tree=
+</a><div itemprop=3D"action" itemscope itemtype=3D"http://schema.org/ViewAc=
+tion"><meta itemprop=3D"url" content=3D"https://docs.google.com/spreadsheet=
+s/d/1BxQcEl4djHFM0LcWhV_bMnGlpFQqt9gfeTKHJFDTrWY/edit?usp=3Dsharing_eil&amp=
+;ts=3D5f90ffdf"></div></span></div></div><div style=3D"height: 32px;"></div=
+><div><a href=3D"https://docs.google.com/spreadsheets/d/1BxQcEl4djHFM0LcWhV=
+_bMnGlpFQqt9gfeTKHJFDTrWY/edit?usp=3Dsharing_eip&amp;ts=3D5f90ffdf" target=
+=3D"_blank" style=3D"background-color: #4d90fe; border: 1px solid #3079ed; =
+border-radius: 2px; color: white; display: inline-block; font: bold 11px Ro=
+boto,Arial,Helvetica,sans-serif; height: 29px; line-height: 29px; min-width=
+: 54px; outline: 0px; padding: 0 8px; text-align: center; text-decoration: =
+none">Abrir en Hojas de c=C3=A1lculo</a></div></div></div><table style=3D"w=
+idth: 100%; border-collapse: collapse;" role=3D"presentation"><tr><td style=
+=3D"padding: 0px;"><table style=3D"border-collapse: collapse; width: 3px;" =
+role=3D"presentation"><tr height=3D"1"><td width=3D"1" bgcolor=3D"#f0f0f0" =
+style=3D"padding: 0px;"></td><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"p=
+adding: 0px;"></td><td width=3D"1" bgcolor=3D"#e5e5e5" style=3D"padding: 0p=
+x;"></td></tr><tr height=3D"1"><td width=3D"1" bgcolor=3D"#f0f0f0" style=3D=
+"padding: 0px;"></td><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: =
+0px;"></td><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td=
+></tr><tr height=3D"1"><td width=3D"1" bgcolor=3D"#f5f5f5" style=3D"padding=
+: 0px;"></td><td width=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></=
+td><td width=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td></tr></=
+table></td><td style=3D"width: 100%; padding: 0px;"><div style=3D"height: 1=
+px; width: auto; border-top: 1px solid #ddd; background:#eaeaea; border-bot=
+tom: 1px solid #f0f0f0;"></div></td><td style=3D"padding: 0px;"><table styl=
+e=3D"border-collapse: collapse; width: 3px;" role=3D"presentation"><tr heig=
+ht=3D"1"><td width=3D"1" bgcolor=3D"#e5e5e5" style=3D"padding: 0px;"></td><=
+td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td><td width=
+=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td></tr><tr height=3D"=
+1"><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td><td wid=
+th=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td><td width=3D"1" b=
+gcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td></tr><tr height=3D"1"><td w=
+idth=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td><td width=3D"1"=
+ bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td><td width=3D"1" bgcolor=
+=3D"#f5f5f5" style=3D"padding: 0px;"></td></tr></table></td></tr></table><t=
+able style=3D"padding: 14px 10px 0 10px;" role=3D"presentation" dir=3D"ltr"=
+><tr><td style=3D"width: 100%; font:11px Roboto,Arial,Helvetica,sans-serif;=
+ color:#646464; line-height: 20px; min-height: 40px; vertical-align: middle=
+;">Hojas de c=C3=A1lculo de Google: crea y edita hojas de c=C3=A1lculo en l=
+=C3=ADnea. <br/>Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94=
+043, USA<br/> Recibiste este correo electr=C3=B3nico porque <a href=3D"mail=
+to:juanse.juseca@gmail.com" style=3D"color:inherit;text-decoration:none">ju=
+anse.juseca@gmail.com</a> comparti=C3=B3 un archivo de Hojas=C2=A0de=C2=A0c=
+=C3=A1lculo=C2=A0de=C2=A0Google contigo.</td><td style=3D"padding-left: 20p=
+x; vertical-align: middle;"><a href=3D"http://drive.google.com" target=3D"_=
+blank"><img src=3D"https://www.gstatic.com/images/branding/googlelogo/2x/go=
+oglelogo_tm_black54_color_96x40dp.png" width=3D"96" alt=3D"Logotipo de Hoja=
+s de c=C3=A1lculo de Google" border=3D"0"></a></td></tr></table></div></div=
+></body></html>
+--0000000000004e19b305b23a446b--

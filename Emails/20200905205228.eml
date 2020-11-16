@@ -1,0 +1,415 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:b605:0:0:0:0:0 with SMTP id s5csp2481810ili;
+        Sat, 5 Sep 2020 20:52:28 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwS8BVjYJloLtNcRjQPbg/Eddy8lvcOF7g40OeTBDXTXntkE4wfwCe+KcBM5WztOf4wC9kA
+X-Received: by 2002:a17:90a:e609:: with SMTP id j9mr13990747pjy.129.1599364348690;
+        Sat, 05 Sep 2020 20:52:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1599364348; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ylQWZSUoI2x6OwXt03dUzzvoWypA3I4ewBc8cdet2njfMRoBhTm70q4MS1O1uSD2mm
+         F0sLK4+QcPYFP8LUEbvtLvvMUTsWTRHrkkx3+touXVvXManD8FmACmMWjgP1o0oZAo7n
+         rGnY9Viw0Vg8ZMxSr+8qTwnA55rV4i+Nw+NMLNhpjSiXEVijPdQaZ97X9q8sMkf2h0gu
+         hqtk+eWMtLWvBemHZW3sdMRsMO9Bs3GtNNSIBHlDd5zvAJJecH2ElL1AlIidEP7UXA9k
+         HljXo8Cm97UebmsAG7O+8+E2upYtuV3YBtxZRBVQoR3IKos5dTohL95vZpzaenR3FrGe
+         rp2g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:message-id:subject:mime-version:errors-to:reply-to:from:to
+         :dkim-signature;
+        bh=naI0hm4RDK8peAm6688JlzTNM5w1Iv0AIDge1kYLa50=;
+        b=jvI0kaJOpJ3ZQ/E9HVu5wePpa7p7+aMMDy0Pwetf/YXpmhy6SI9eHICXaHKjrLbuUc
+         pUTP++bLI0Eru2RN6mo8LE25rrAWpi0OmLFW1eryBZtCteC11YxOnGxgYkRuIGOwVd5S
+         tei6YHLGcX+5yphsM9gXqX3pfD6EHa17La5tFCddgDAQ2XlZ2U9Ks+Tvucd0dBONlFVJ
+         pRyOOzjJrRHpK8BEjT5Sn00XcUi8oHZ9/7YzmL9TCH/m9YPHVHL0DdEa1Dkpqmd4/xaU
+         9xoobW6BDGKLLLT9Zm6GmiQ+xXm+gp0sNZMjFg31QS7WHUrRhAzYFCqLqrW73LA1Hiik
+         1ooQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@steampowered.com header.s=smtp header.b=sv1QPNDu;
+       spf=pass (google.com: domain of noreply@steampowered.com designates 208.64.202.62 as permitted sender) smtp.mailfrom=noreply@steampowered.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=steampowered.com
+Return-Path: <noreply@steampowered.com>
+Received: from smtp-62.steampowered.com (smtp-62.steampowered.com. [208.64.202.62])
+        by mx.google.com with ESMTPS id s9si1134872pfu.225.2020.09.05.20.52.28
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Sat, 05 Sep 2020 20:52:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@steampowered.com designates 208.64.202.62 as permitted sender) client-ip=208.64.202.62;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@steampowered.com header.s=smtp header.b=sv1QPNDu;
+       spf=pass (google.com: domain of noreply@steampowered.com designates 208.64.202.62 as permitted sender) smtp.mailfrom=noreply@steampowered.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=steampowered.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=steampowered.com; s=smtp; h=Date:Message-Id:Content-Type:Subject:
+	MIME-Version:Reply-To:From:To:Sender:Cc:Content-Transfer-Encoding:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=naI0hm4RDK8peAm6688JlzTNM5w1Iv0AIDge1kYLa50=; b=sv1QPNDuvA7Hh8nbYJe/bMiOJ4
+	9XR8aTKzxH5oqEA/QQz/J/c88f5LA6xdc5EH1Rtjv7907QTX53Or0xJAJ6AvezRw1Y2v53p8fHbBt
+	RHrGmKYLYf4TeOZOCQE2DnpFOniDD+nqh07PibeV9ATLHWUoCBSkDIn9dogfh11iwNmM=;
+Received: from [208.64.200.132] (helo=valvesoftware.com)
+	by smtp-03-tuk1.steampowered.com with smtp (Exim 4.90_1)
+	(envelope-from <noreply@steampowered.com>)
+	id 1kEljA-0006va-1I
+	for pharsat@gmail.com; Sat, 05 Sep 2020 20:52:28 -0700
+To: pharsat@gmail.com
+From: "Steam Support" <noreply@steampowered.com>
+Reply-To: <noreply@steampowered.com>
+Errors-To: <noreply@steampowered.com>
+X-Steam-Message-Type: CVATPurchaseReceipt
+MIME-Version: 1.0
+Subject: =?UTF-8?B?wqFHcmFjaWFzIHBvciBjb21wcmFyIGVuIFN0ZWFtIQ==?=
+Content-Type: multipart/alternative;
+ boundary="np5f545cfc03349"
+Message-Id: <E1kEljA-0006va-1I@smtp-03-tuk1.steampowered.com>
+Date: Sat, 05 Sep 2020 20:52:28 -0700
+
+This is a multi-part message in MIME format.
+--np5f545cfc03349
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Hola, pharsat_games:
+
+Gracias por tu transacción reciente en Steam. Para ver los detalles, por favor,
+visita
+https://store.steampowered.com/email/VATPurchaseReceipt?sparams=eJx9VMtu2zAQ_BVBvRaBnrbUU4OkLQqkSNAcjYDYkGubqEQxJGXXKPrvJSnJetgNoIt2htzdmV3-CStoBd2jMieJ4acwCj-GUjWspUZA7SLPBqG2Ud1K2SiDNfDKhvvfz9rBsjmiQnZDG8fsSRqFaQ213Dgvy3SVpdnaoq-8qrjYES4JbVph1Mky7h4tAtQH-rxyD0qDITv7qy1qFAjNmUWSIo-Tch3Fq3VWlEkW-Xs9DtTwRhAGBid5k3LA-y5j-4-2zQNnqIiEU21rJTWafeMTOJiCYmTC51ohbZWytfcHerlcEAV1bSSukCNUFRoCtWtmlLTLdY7GWVmWSeRA0xioCLeqWUW0B5NVlGVL8ADVAQnjmk5unuAGfrsa0jIrJkf1nkvpBO_vvoJ0Bye31c5askWchYfixsr3oK169BfsBpUO1jHOiG625gjKRW-fnh6-f7kPvj7-HHHrLfsvPo6Fu9EPGFF4dH7IhgujyStUIKg7nefrwpLsROGgYK_vLNr5uAmHYl-moBuqTZit3TTNka7jzejHDF36sQkXBK_r5uzIEiPKj6m9fpF2MObKlXPPLuCpc--ePedecBhqqrh0W-TQOfhmTr7cy046CadWzijDzsNOIfpdGwxZqsJrJK3g19TcKnxru0W7wM6reV6wdyjjwvakobzFezSEtemek0mof6PuFNeGgwi-uZ3fNRMGMKZQa0-CIF_dBR-K9P4-eG5VkETxJTOZZ6DciR0-QIDaKKwqmIDSzqVfSOY3NI_8No4vq5v_Ir6J0_TGfnFezN_doaFbYX1-aznM4T71D2ToYuHff3mBDKc.
+
+
+© Valve Corporation<br>PO Box 1688 Bellevue, WA 98009, USA
+Todos los derechos reservados. Todas las marcas registradas pertenecen a sus
+respectivos dueños en EE. UU. y otros países.
+View this message on the web:
+<https://store.steampowered.com/email/VATPurchaseReceipt?sparams=eJx9VMtu2zAQ_BVBvRaBnrbUU4OkLQqkSNAcjYDYkGubqEQxJGXXKPrvJSnJetgNoIt2htzdmV3-CStoBd2jMieJ4acwCj-GUjWspUZA7SLPBqG2Ud1K2SiDNfDKhvvfz9rBsjmiQnZDG8fsSRqFaQ213Dgvy3SVpdnaoq-8qrjYES4JbVph1Mky7h4tAtQH-rxyD0qDITv7qy1qFAjNmUWSIo-Tch3Fq3VWlEkW-Xs9DtTwRhAGBid5k3LA-y5j-4-2zQNnqIiEU21rJTWafeMTOJiCYmTC51ohbZWytfcHerlcEAV1bSSukCNUFRoCtWtmlLTLdY7GWVmWSeRA0xioCLeqWUW0B5NVlGVL8ADVAQnjmk5unuAGfrsa0jIrJkf1nkvpBO_vvoJ0Bye31c5askWchYfixsr3oK169BfsBpUO1jHOiG625gjKRW-fnh6-f7kPvj7-HHHrLfsvPo6Fu9EPGFF4dH7IhgujyStUIKg7nefrwpLsROGgYK_vLNr5uAmHYl-moBuqTZit3TTNka7jzejHDF36sQkXBK_r5uzIEiPKj6m9fpF2MObKlXPPLuCpc--ePedecBhqqrh0W-TQOfhmTr7cy046CadWzijDzsNOIfpdGwxZqsJrJK3g19TcKnxru0W7wM6reV6wdyjjwvakobzFezSEtemek0mof6PuFNeGgwi-uZ3fNRMGMKZQa0-CIF_dBR-K9P4-eG5VkETxJTOZZ6DciR0-QIDaKKwqmIDSzqVfSOY3NI_8No4vq5v_Ir6J0_TGfnFezN_doaFbYX1-aznM4T71D2ToYuHff3mBDKc>
+
+
+--np5f545cfc03349
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>¡Gracias por comprar en Steam!</title>
+		<style media="all" type="text/css">
+		td, p, h1, h3, a {
+			font-family: Helvetica, Arial, sans-serif;
+		}
+		
+		tr { 
+			padding: 0px;
+			margin: 0px;
+		}
+		
+		
+		a.bodylink {
+			color: #8f98a0;
+		}
+		a.bodylink:hover {
+			color: #ffffff;
+		}
+		
+		.Salutation {
+			font-size: 24px;
+			color: #66c0f4;
+			font-weight: bold;
+		}
+		
+		.BodyText {
+			font-size: 14px;
+			color: #c6d4df; 
+		}
+		
+		.BodyTextTotalsValue {
+			font-size: 14px;
+			color: #c6d4df; 
+			padding-right: 15px;
+			text-align: right;
+		}
+		
+		.BodyText a {
+			color: #c6d4df; 
+		}
+		
+		.SubText {
+			font-size: 12px;
+			color: #61696d; 
+		}
+		
+		.SubText a {
+			color: #8f98a0;
+		}
+
+		.SubTextWhite {
+			font-size: 12px;
+			color: #c6d4df; 
+		}
+
+		.SubTextWhiteTotalsTitle {
+			font-size: 12px;
+			color: #c6d4df; 
+			text-align: right;
+			width: 120px;
+			padding-right: 5px;		
+		}
+		
+		.SubTextWhiteTotalsValue {
+			font-size: 12px;
+			color: #c6d4df; 
+			padding-right: 15px;
+			text-align: right;
+		}
+		
+		.SubTextBlue {
+			font-size: 12px;
+			color: #66c0f4; 
+		}
+
+		.SubTextBlueTotalsTitle {
+			font-size: 12px;
+			color: #66c0f4; 
+			width: 120px;
+			text-align: right;
+			padding-right: 5px;			
+		}
+
+		.SubTextBlueTotalsValue {
+			font-size: 12px;
+			color: #66c0f4; 
+			padding-right: 15px;
+			text-align: right;
+		}
+		
+		.LineItemTitle {
+			font-size: 12px;
+			color: #c6d4df;	
+		}
+		
+		h3 {
+			color: #c6d4df;
+			font-size: 15px;
+		}
+		
+		.DetailsBox
+		{
+			background-color: #111822;	
+		}
+		
+		.BundleHeader
+		{
+			background-color: #2d353f;
+		}
+	</style>
+			
+	
+</head>
+<body bgcolor="" LINK="#59a8d6" ALINK="#59a8d6" VLINK="#59a8d6" TEXT="#d7d7d7" style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; color: #d7d7d7;">
+<table style="width: 538px; background-color: #393836;" align="center" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td style=" height: 65px; background-color: #000000; border-bottom: 1px solid #4d4b48;">
+			<img src="https://store.cloudflare.steamstatic.com/public/images/email/email_header_logo.png?v=1" width="538" height="65" alt="Steam">
+		</td>
+	</tr>
+	<tr>
+	<td bgcolor="#17212e">
+		<table width="470" border="0" align="center" cellpadding="0" cellspacing="0" border="0" style="padding-left: 5px; padding-right: 5px; padding-bottom: 10px;">
+			<tr bgcolor="#17212e">
+				<td style="padding-top: 32px;">
+					<span class="Salutation">
+						Hola, pharsat_games:					</span><br>
+				</td>
+			</tr>
+			<tr>
+			   <td class="BodyText" style="padding-top: 16px;">
+				  <h3 style="margin-bottom: 0px; color: #c6d4df; font-size: 15px;">Gracias por tu transacción reciente en Steam.</h3>
+				 	<span>Los artículos a continuación se han añadido a tu biblioteca de Steam.</span>
+			   </td>
+			</tr>
+			<tr>
+			   <td class="BodyText" style="padding-top: 16px;">
+				  Si eres nuevo en Steam, puedes obtener la aplicación de Steam gratuita <a href="http://www.steampowered.com/getsteam">aquí</a>.			   </td>
+			</tr>
+
+
+
+
+			<tr><td style="padding-top: 10px;"></td></tr>
+			<tr>
+				<td>
+					<table width="470" border="0" align="center" cellpadding="0" cellspacing="0" border="0" style="padding-bottom: 10px;">
+						<thead>
+							<tr>
+								<td style="width: 140px;"></td>
+								<td style="width: 310px;"></td>
+								<td style="width: 320px;"></td>
+							</tr>
+						</thead>
+						<tbody>
+				   										<tr><td style="padding-top: 5px;" colspan="3"></td></tr>
+					   													<tr class="DetailsBox">
+									  <td style="padding: 10px;">
+											<div>
+												<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1190460/capsule_sm_120.jpg?t=1598952356"/>
+											</div>
+										</td>
+										<td class="LineItemTitle" style="padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
+											DEATH STRANDING																					
+										</td>
+										<td class="BodyTextTotalsValue" style="padding-top: 10px; padding-bottom: 10px;">
+																						<div class="SubText">
+												Subtotal (IVA no incluido): COL$ 126.044											</div>
+																						
+																						<div class="SubText">
+												IVA (19 %): COL$ 23.948											</div>
+																						<div>
+												Total: COL$ 149.992											</div>
+										</td>
+					   							   				</tr>
+				   					   	
+							<tr><td style="padding-top: 10px;" colspan="3"></td></tr>
+							<tr><td class="DetailsBox" style="padding-top: 10px;" colspan="3"></td></tr>
+														<tr class="DetailsBox" style="vertical-align: top;" >
+								<td style="padding-left: 10px;" colspan="3">
+									<table style="width: 100%;" border="0" align="center" cellpadding="0" cellspacing="0" border="0">
+										<tr>
+											<td class="SubText" style="width: 250px;">
+																							Nombre de la cuenta: phars&#8203;at_ga&#8203;mes&#8203;																									</td>											
+											<td class="SubTextWhiteTotalsTitle">Subtotal (IVA no incluido):</td>
+					   					<td class="SubTextWhiteTotalsValue">COL$ 126.044</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+														<tr class="DetailsBox" style="vertical-align: top;" >
+								<td style="padding-left: 10px;" colspan="3">
+									<table style="width: 100%;" border="0" align="center" cellpadding="0" cellspacing="0" border="0">
+										<tr>
+											<td class="SubText" style="width: 250px;">
+																							Factura: 2851297016748924047																									</td>											
+											<td class="SubTextWhiteTotalsTitle">IVA (19 %):</td>
+					   					<td class="SubTextWhiteTotalsValue">COL$ 23.948</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+														<tr class="DetailsBox" style="vertical-align: top;" >
+								<td style="padding-left: 10px;" colspan="3">
+									<table style="width: 100%;" border="0" align="center" cellpadding="0" cellspacing="0" border="0">
+										<tr>
+											<td class="SubText" style="width: 250px;">
+																							Fecha de emisión: 5 SEP 2020 a las 22:52 -05																									</td>											
+											<td class="SubTextBlueTotalsTitle">Total:</td>
+					   					<td class="SubTextBlueTotalsValue">COL$ 149.992</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+														<tr><td class="DetailsBox" style="padding-top: 10px;" colspan="3"></td></tr>
+							<tr><td style="padding-top: 10px;" colspan="3"></td></tr>
+							<tr><td class="DetailsBox" style="padding-top: 10px;" colspan="3"></td></tr>
+							<tr class="DetailsBox" style="vertical-align: top;" >
+								<td colspan="3" class="SubTextWhite" style="padding-bottom: 12px; padding-left: 8px; padding-right: 8px;">
+									<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" border="0">
+										<tr>
+											<td class="SubText" style="text-align: left; vertical-align: top;">
+												
+												
+																								<div>Dirección de facturación:</div>
+												<div>Cristian Gallego</div>
+												<div>Cra 56C #83DD Sur 201</div>
+																								<div>La estrella,  05000</div>
+												<div>Colombia</div>
+																							</td>
+											<td class="SubText" style="vertical-align: top;">
+																							</td>
+										</tr>
+																			</table>
+								</td>
+							</tr>
+							<tr><td style="padding-top: 10px;" colspan="3"></td></tr>
+							<tr><td class="DetailsBox" style="padding-top: 10px;" colspan="3"></td></tr>
+							<tr class="DetailsBox" style="vertical-align: top;" >
+								<td colspan="3" class="SubText" style="padding-bottom: 12px; padding-left: 8px; padding-right: 8px;">
+									Valve Corporation<br/>PO Box 1688<br/>Bellevue, WA 98009<br/>United States<br/>									Id. de IVA: APPLIED FOR									<br/>
+																		<br/>
+									Por favor, ten en cuenta que esto no es una dirección de devolución.</br>
+								</td>
+							</tr>										
+						</tbody>
+					</table>				</td>
+			</tr>
+			<tr bgcolor="#557c9d">
+				<td style="padding-top: 2px;">
+				</td>
+			</tr>
+							<tr><td style="padding-top: 10px;" colspan="3"></td></tr>
+							<tr><td class="DetailsBox" style="padding-top: 10px;" colspan="3"></td></tr>
+														<tr class="DetailsBox" style="vertical-align: top;" >
+								<td style="padding-left: 10px;" colspan="3">
+									<table style="width: 100%;" border="0" align="center" cellpadding="0" cellspacing="0" border="0">
+										<tr>
+											<td class="SubText" style="width: 200px;">
+																							Nombre de la cuenta: phars&#8203;at_ga&#8203;mes&#8203;																									</td>											
+											<td class="SubTextBlueTotalsTitle" style="width: 170px;">Total de esta transacción:</td>
+					   					<td class="SubTextBlueTotalsValue">COL$ 149.992</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+														<tr class="DetailsBox" style="vertical-align: top;" >
+								<td style="padding-left: 10px;" colspan="3">
+									<table style="width: 100%;" border="0" align="center" cellpadding="0" cellspacing="0" border="0">
+										<tr>
+											<td class="SubText" style="width: 200px;">
+																							Método de pago: Visa																									</td>											
+											<td class="SubTextWhiteTotalsTitle" style="width: 170px;"></td>
+					   					<td class="SubTextWhiteTotalsValue"></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+														<tr><td class="DetailsBox" style="padding-top: 10px;" colspan="3"></td></tr>
+																
+							<tr><td style="padding-top: 10px;" colspan="3"></td></tr>
+			<tr>
+			   <td class="SubText" style="padding-top: 10px;">
+				  Este email te servirá como recibo. También puedes <a href="https://store.steampowered.com/account">ver tu historial de compras</a> en cualquier momento.			   </td>
+			</tr>
+			<tr>
+			   <td class="SubText" style="padding-top: 16px;">
+				  Los reembolsos o devoluciones son posibles para muchos productos de Steam. Haz clic <a href="https://store.steampowered.com/steam_refunds/">aquí</a> para obtener más información sobre los reembolsos en Steam, o dirígete <a href="https://help.steampowered.com/">aquí</a> para solicitar uno.			   </td>
+			</tr>
+			<tr>
+			   <td class="SubText" style="padding-top: 20px;">
+				  El equipo de Soporte de Steam<br/>
+				  <a href="http://help.steampowered.com">http://help.steampowered.com</a>
+			   </td>
+			</tr>
+		</table>
+	</td>
+	</tr>
+	<tr style="background-color: #17212e;">
+	   <td style="padding-top: 50px;">
+	   </td>
+	</tr>			
+	<tr style="background-color: #000000;">
+		<td style="padding: 12px 24px;">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="92">
+						<img src="https://store.cloudflare.steamstatic.com/public/images/logo_valve_footer.jpg" width="92" height="26" alt="Valve&reg;">
+					</td>
+					<td style=" font-size: 11px; color: #595959; padding-left: 12px;">
+						© Valve Corporation<br>PO Box 1688 Bellevue, WA 98009, USA<br>
+						Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en EE. UU. y otros países.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+	<center style="color: #000000; font-size: 11px; margin-bottom: 4px;">¿Tienes problemas para ver este mensaje? <a href="https://store.steampowered.com//account/receipt/2851297016748924047">Haz clic aquí</a></center>
+</body>
+</html>
+
+
+--np5f545cfc03349--

@@ -1,0 +1,212 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:1511:0:0:0:0:0 with SMTP id v17csp1782711ilk;
+        Sun, 1 Mar 2020 14:13:41 -0800 (PST)
+X-Received: by 2002:ac5:c15a:: with SMTP id e26mr7595060vkk.62.1583100821591;
+        Sun, 01 Mar 2020 14:13:41 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1583100821; cv=none;
+        d=google.com; s=arc-20160816;
+        b=fuCC+tgysliM5TSCMlx0FL4x+R3nC/C2AwzvjdsWwftp9SHKKOAPdXGrEliLrKOtyK
+         EqYkj4f+1roL7zZ5nxPgnW+oIJCuIA+uNfmGGUCL4wuXqiSJwBxRyM5CXunFIVI9avtf
+         FMpnEQTb7D1RiYgq2er7oN3aYaT3S1j98oJ5sKMPBeXQsPUTwGghgpmZDeZ/Ck63eu+5
+         Ipc/PCqAFXWYRrf7x23P5IxQW74qW+ZQiWA/F7rJOTOfYOzjX0J4wkOeeTJXTRjqqlOv
+         PiK9M+2YfPKImJozlVNE3O+8NgKNYcODImz21+jMaHESudTmBQOHFlAEqBJZ79cegNrL
+         lkQg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:references:reply-to:mime-version
+         :dkim-signature;
+        bh=QkXBCu/6aChzzSEkJeq5F9C348HD8qZfGtIJrR5mEy0=;
+        b=GSdmcoPngY9uA6MTo5VZSMdjSXIyWRFrEIYity1Clp0vUNp5yTGCqdOwNb2PGo1COm
+         jICwlQjsNvLTpUchSLrDKdnCs8UQnZHKA5WDiuxzX6jwGOMKhz4IjBkb27PbsYR9skZB
+         FEXNOMAlyKwCOcC/ju0c6WmGzrit30mf52mJwuq9iLKrhvVXkE4yihkXrxrL1FhzF5Tg
+         qZsAzLOVqd262kwWVWoCHxlzDzh8ygfeUfBExeBvpLU8xec+FSu543CtZASOWb83V/hu
+         sbKIG7EN7eWG7vByLVbMvyaJSlgu7dXeOQ6t4AC7YCx1jLIqkFw8d/WyvscMANtyHHhy
+         jNFw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=pdaSknmT;
+       spf=pass (google.com: domain of 3ldncxhqkb2ugulyh-vkduhv-qruhsobjrrjoh.frpskduvdwjpdlo.frp@doclist.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3lDNcXhQKB2UGULYH-VKDUHV-QRUHSObJRRJOH.FRPSKDUVDWJPDLO.FRP@doclist.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3lDNcXhQKB2UGULYH-VKDUHV-QRUHSObJRRJOH.FRPSKDUVDWJPDLO.FRP@doclist.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id m14sor5036900ual.42.2020.03.01.14.13.41
+        for <pharsat@gmail.com>
+        (Google Transport Security);
+        Sun, 01 Mar 2020 14:13:41 -0800 (PST)
+Received-SPF: pass (google.com: domain of 3ldncxhqkb2ugulyh-vkduhv-qruhsobjrrjoh.frpskduvdwjpdlo.frp@doclist.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=pdaSknmT;
+       spf=pass (google.com: domain of 3ldncxhqkb2ugulyh-vkduhv-qruhsobjrrjoh.frpskduvdwjpdlo.frp@doclist.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3lDNcXhQKB2UGULYH-VKDUHV-QRUHSObJRRJOH.FRPSKDUVDWJPDLO.FRP@doclist.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:reply-to:references:message-id:date:subject:from:to;
+        bh=QkXBCu/6aChzzSEkJeq5F9C348HD8qZfGtIJrR5mEy0=;
+        b=pdaSknmTJGoOG1ScCPBJGqXu5qw/uOKiBaUCQvfzU73X2lQt8efocDn584Xm1G2Dhy
+         DpVhLOT5TNCXWz28Z0twLVHsNbAOw6Nw+t+x5SHGxaDyF1c6y+Y1BiIyW2rPhO4kRQei
+         QVUOMuAgncXlcNOA++vny2GyRVRAk0BAUAgNf7ZJeKefk+086LHw38PEGLYI4/LTVCeI
+         LiYE4cuHyOn9CEfNyR03KtRhCRwmVlioNbrpCKNMCqQNHu1QbqgVJBcQnY6acEzSd4yl
+         uhemPEX4cOL2QccE+0vpaSXmoQ7oVWsVS1YYjR6i39zp/siu8EdWRhjDVMpZECam0r4C
+         gnsw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:reply-to:references:message-id:date
+         :subject:from:to;
+        bh=QkXBCu/6aChzzSEkJeq5F9C348HD8qZfGtIJrR5mEy0=;
+        b=mol8j57wItGzvOUhs/WxudJ+6UAjuKDxCGfd2ct24JVfm1lbVdkC//ByMW1T8YFq9e
+         uDpB9j+MGG3ww91ZJKCHRIUt9fM9JImd14j0DteTUwtPevaXZttwkye4QXmOARyyfd4E
+         WfQ56rQQcOZF23LhynCIoamSnBNXAIk2oZ+qjvKssOohfExNOlWL13+9FVV2DgFmg03u
+         iCcCyk22Pp8grmf1hIvG2NLN0mTfif+b8DZfbNUNJN+QCbasC2T/APDDu6DQUFSIs8TL
+         l2kKyDWpDAVywZ/OyKB7ry5ahtgd1Jy7zALr6Au+FOMgAtl61v2Jx5XwcqSWsuN1FrvK
+         hBRg==
+X-Gm-Message-State: ANhLgQ0dNTfVgaGqMSb1r6E4ckYzUZ7Nz2GvEiLX0y8cxw+kPBzya5hl
+	gMkaWmi9s9RzQXTvOTq6FuVH/XKcCJVdvO3Tv7LmmGFL9eJ6Ov+OLHSLM4iKfg3GMvtOTz7NgxD
+	UOThuLy820Z353SrbneR/uuvZpnMb5imMJx5Yn01pV0RdFKny1XpB0h0yzCRbMD6pXMDQNJVSHj
+	m+FBM=
+X-Google-Smtp-Source: ADFU+vvM1Fj38LK5VpbmqnfMMVg7WKcLMAMevMb21zqqeqS9dwqRy0ZB4+C95bwlmHbz+FpdsJDZVyP8YtQ=
+MIME-Version: 1.0
+X-Received: by 2002:ab0:6597:: with SMTP id v23mr2487557uam.81.1583100820927;
+ Sun, 01 Mar 2020 14:13:40 -0800 (PST)
+Reply-To: "ALEXANDRA CASTRILLON V..." <alexandra.castrillonv@udea.edu.co>
+X-No-Auto-Attachment: 1
+References: <fa09f1db-34ac-4966-85cf-467d7f3612e9@docs-share.google.com>
+Message-ID: <000000000000135b62059fd262e3@google.com>
+Date: Sun, 01 Mar 2020 22:13:40 +0000
+Subject: =?UTF-8?Q?UNIT_OF_WORK_=2D_Invitaci=C3=B3n_para_editar?=
+From: "ALEXANDRA CASTRILLON V... (mediante Presentaciones de Google)" <drive-shares-noreply@google.com>
+To: pharsat@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000135b4a059fd262e0"
+
+--000000000000135b4a059fd262e0
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: quoted-printable
+
+He compartido un elemento contigo:
+
+UNIT OF WORK
+https://docs.google.com/presentation/d/1TOPPK44CJhlG8EJVv-lJWbEAeeV5Gvxk79D=
+uQLC2bJU/edit?usp=3Dsharing&ts=3D5e5c3394
+
+No es un archivo adjunto; est=C3=A1 almacenado en l=C3=ADnea. Para abrir es=
+te =20
+elemento, haz clic en el v=C3=ADnculo de arriba.
+
+--=20
+_La informaci=C3=B3n aqu=C3=AD contenida es para uso exclusivo de la person=
+a o=20
+entidad de destino. Est=C3=A1 estrictamente prohibida su utilizaci=C3=B3n, =
+copia,=20
+descarga, distribuci=C3=B3n, modificaci=C3=B3n y/o reproducci=C3=B3n total =
+o parcial, sin=20
+el permiso expreso de la Universidad de Antioquia, pues su contenido puede=
+=20
+ser de car=C3=A1cter confidencial y/o contener material privilegiado.=C2=A0=
+*La=20
+Universidad de Antioquia no se hace responsable por la informaci=C3=B3n=20
+contenida en esta comunicaci=C3=B3n, el directo responsable es el egresado(=
+a)=20
+que la firma como autor de la misma.*=C2=A0_
+
+
+--000000000000135b4a059fd262e0
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><script type=3D"application/json" data-scope=3D"in=
+boxmarkup" nonce=3D"Ogh7i668p5KYgQiQ2p2USQ">{"publisher":{"api_key":"1e6ef4=
+c2b3e67680225868caeb59b7ad","name":"Presentaciones de Google"},"api_version=
+":"1.0","updates":{"snippets":[{"icon":"PERSON","message":"ALEXANDRA CASTRI=
+LLON VALENCIA te invit=C3=B3 a editar esta presentaci=C3=B3n"}],"action":{"=
+name":"Abrir","url":"https://docs.google.com/presentation/d/1TOPPK44CJhlG8E=
+JVv-lJWbEAeeV5Gvxk79DuQLC2bJU/edit?usp\u003dsharing_eid\u0026ts\u003d5e5c33=
+94"}},"entity":{"main_image_url":"https://ssl.gstatic.com/bt/C3341AA7A1A076=
+756462EE2E5CD71C11/smartmail/bt_google_slides_1600dp_r2.png","external_key"=
+:"1TOPPK44CJhlG8EJVv-lJWbEAeeV5Gvxk79DuQLC2bJU","avatar_image_url":"https:/=
+/www.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/smartmail/bt_google_sl=
+ides_avatar_224dp_r1.png","subtitle":"compartido por ALEXANDRA CASTRILLON V=
+ALENCIA","action":{"name":"Abrir en Presentaciones","url":"https://docs.goo=
+gle.com/presentation/d/1TOPPK44CJhlG8EJVv-lJWbEAeeV5Gvxk79DuQLC2bJU/edit"},=
+"title":"UNIT OF WORK"}}</script><div style=3D"width: 100%; padding: 24px 0=
+ 16px 0; background-color: #f5f5f5; text-align: center;"><div style=3D"disp=
+lay: inline-block; width: 90%; max-width: 680px;min-width: 280px; text-alig=
+n: left; font-family: Roboto,Arial,Helvetica,sans-serif;"><div style=3D"hei=
+ght: 0px;" dir=3D"ltr"></div><div style=3D"display: block; padding: 0 2px;"=
+><div style=3D"display: block; background: #fff; height: 2px;"></div></div>=
+<div style=3D"border-left: 1px solid #f0f0f0; border-right: 1px solid #f0f0=
+f0;"><div style=3D"padding: 24px 32px 24px 32px; background:#fff; border-ri=
+ght: 1px solid #eaeaea; border-left: 1px solid #eaeaea;" dir=3D"ltr"><div s=
+tyle=3D"font-size: 14px; line-height: 18px; color: #444;"><a href=3D"mailto=
+:alexandra.castrillonv@udea.edu.co" style=3D"color:inherit;text-decoration:=
+none">ALEXANDRA CASTRILLON VALENCIA</a> te invit=C3=B3 a <b>editar</b> la s=
+iguiente presentaci=C3=B3n:</div><div style=3D"height: 10px;"></div><div st=
+yle=3D"font-size: 18px; display: table;"><div style=3D"display: table-row; =
+border-bottom: 4px solid #fff;"><span style=3D"display: table-cell;"><div s=
+tyle=3D"height: 32px;"><img src=3D"https://ssl.gstatic.com/docs/documents/s=
+hare/images/services/presentation-4.png" aria-label=3D"Presentaci=C3=B3n" s=
+tyle=3D"vertical-align: middle; max-width: 24px;"/></div></span><span style=
+=3D"display: table-cell; padding-left: 12px; word-break: break-word;"><a hr=
+ef=3D"https://docs.google.com/presentation/d/1TOPPK44CJhlG8EJVv-lJWbEAeeV5G=
+vxk79DuQLC2bJU/edit?usp=3Dsharing_eil&amp;ts=3D5e5c3394" style=3D"color: #3=
+367d6; text-decoration: none; vertical-align: middle;">UNIT OF WORK</a><div=
+ itemprop=3D"action" itemscope itemtype=3D"http://schema.org/ViewAction"><m=
+eta itemprop=3D"url" content=3D"https://docs.google.com/presentation/d/1TOP=
+PK44CJhlG8EJVv-lJWbEAeeV5Gvxk79DuQLC2bJU/edit?usp=3Dsharing_eil&amp;ts=3D5e=
+5c3394"></div></span></div></div><div style=3D"height: 32px;"></div><div><a=
+ href=3D"https://docs.google.com/presentation/d/1TOPPK44CJhlG8EJVv-lJWbEAee=
+V5Gvxk79DuQLC2bJU/edit?usp=3Dsharing_eip&amp;ts=3D5e5c3394" target=3D"_blan=
+k" style=3D"background-color: #4d90fe; border: 1px solid #3079ed; border-ra=
+dius: 2px; color: white; display: inline-block; font: bold 11px Roboto,Aria=
+l,Helvetica,sans-serif; height: 29px; line-height: 29px; min-width: 54px; o=
+utline: 0px; padding: 0 8px; text-align: center; text-decoration: none">Abr=
+ir en Presentaciones</a></div></div></div><table style=3D"width: 100%; bord=
+er-collapse: collapse;" role=3D"presentation"><tr><td style=3D"padding: 0px=
+;"><table style=3D"border-collapse: collapse; width: 3px;" role=3D"presenta=
+tion"><tr height=3D"1"><td width=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding=
+: 0px;"></td><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></=
+td><td width=3D"1" bgcolor=3D"#e5e5e5" style=3D"padding: 0px;"></td></tr><t=
+r height=3D"1"><td width=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;">=
+</td><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td><td w=
+idth=3D"1" bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td></tr><tr height=
+=3D"1"><td width=3D"1" bgcolor=3D"#f5f5f5" style=3D"padding: 0px;"></td><td=
+ width=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td><td width=3D"=
+1" bgcolor=3D"#f0f0f0" style=3D"padding: 0px;"></td></tr></table></td><td s=
+tyle=3D"width: 100%; padding: 0px;"><div style=3D"height: 1px; width: auto;=
+ border-top: 1px solid #ddd; background:#eaeaea; border-bottom: 1px solid #=
+f0f0f0;"></div></td><td style=3D"padding: 0px;"><table style=3D"border-coll=
+apse: collapse; width: 3px;" role=3D"presentation"><tr height=3D"1"><td wid=
+th=3D"1" bgcolor=3D"#e5e5e5" style=3D"padding: 0px;"></td><td width=3D"1" b=
+gcolor=3D"#eaeaea" style=3D"padding: 0px;"></td><td width=3D"1" bgcolor=3D"=
+#f0f0f0" style=3D"padding: 0px;"></td></tr><tr height=3D"1"><td width=3D"1"=
+ bgcolor=3D"#eaeaea" style=3D"padding: 0px;"></td><td width=3D"1" bgcolor=
+=3D"#eaeaea" style=3D"padding: 0px;"></td><td width=3D"1" bgcolor=3D"#f0f0f=
+0" style=3D"padding: 0px;"></td></tr><tr height=3D"1"><td width=3D"1" bgcol=
+or=3D"#f0f0f0" style=3D"padding: 0px;"></td><td width=3D"1" bgcolor=3D"#f0f=
+0f0" style=3D"padding: 0px;"></td><td width=3D"1" bgcolor=3D"#f5f5f5" style=
+=3D"padding: 0px;"></td></tr></table></td></tr></table><table style=3D"padd=
+ing: 14px 10px 0 10px;" role=3D"presentation" dir=3D"ltr"><tr><td style=3D"=
+width: 100%; font:11px Roboto,Arial,Helvetica,sans-serif; color:#646464; li=
+ne-height: 20px; min-height: 40px; vertical-align: middle;">Presentaciones =
+de Google: crea y edita presentaciones en l=C3=ADnea. <br/>Google LLC, 1600=
+ Amphitheatre Parkway, Mountain View, CA 94043, USA<br/> Recibiste este cor=
+reo electr=C3=B3nico porque alguien comparti=C3=B3 contigo una presentaci=
+=C3=B3n desde Presentaciones de Google.</td><td style=3D"padding-left: 20px=
+; vertical-align: middle;"><a href=3D"https://drive.google.com" target=3D"_=
+blank"><img src=3D"https://www.gstatic.com/images/branding/googlelogo/1x/go=
+oglelogo_tm_black54_color_96x40dp.png" width=3D"96" alt=3D"Logotipo de Pres=
+entaciones de Google" border=3D"0"></a></td></tr></table></div></div></body=
+></html>
+<br>
+<table style=3D"margin:0px;color:rgb(97,97,97);font-size:14px;line-height:2=
+1px;background-color:rgb(255,255,255);font-family:&quot;Times New Roman&quo=
+t;"><tbody><tr><td style=3D"font-family:arial;margin:0px;vertical-align:top=
+;line-height:13px;min-height:78px;width:458px;height:91px"><font size=3D"1"=
+><i style=3D"color:rgb(34,34,34);font-family:Arial,Helvetica,sans-serif">La=
+ informaci=C3=B3n aqu=C3=AD contenida es para uso exclusivo de la persona o=
+ entidad de destino. Est=C3=A1 estrictamente prohibida su utilizaci=C3=B3n,=
+ copia, descarga, distribuci=C3=B3n, modificaci=C3=B3n y/o reproducci=C3=B3=
+n total o parcial, sin el permiso expreso de la Universidad de Antioquia, p=
+ues su contenido puede ser de car=C3=A1cter confidencial y/o contener mater=
+ial privilegiado.=C2=A0<b>La Universidad de Antioquia no se hace responsabl=
+e por la informaci=C3=B3n contenida en esta comunicaci=C3=B3n, el directo r=
+esponsable es el egresado(a) que la firma como autor de la misma.</b></i><s=
+pan style=3D"color:rgb(34,34,34);font-family:Arial,Helvetica,sans-serif">=
+=C2=A0</span></font></td></tr></tbody></table>
+--000000000000135b4a059fd262e0--

@@ -1,0 +1,283 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:6a02:0:0:0:0:0 with SMTP id f2csp3023527ilc;
+        Mon, 29 Jun 2020 09:24:15 -0700 (PDT)
+X-Received: by 2002:ad4:4086:: with SMTP id l6mr15989750qvp.143.1593447855140;
+        Mon, 29 Jun 2020 09:24:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1593447855; cv=none;
+        d=google.com; s=arc-20160816;
+        b=kduejicdvYOJ1VF7NMuwhxkTNZTIMPNPtogWTQQ/N69b9deu/DUPHJR7n4gRO7S+bh
+         lIXtoIz2d83u4zTpIR5+/K9mHgywHo29CUMDgBPgC/Ja+AvcxR2bgD29OqoLzwzQ3yUp
+         tbukAqKwhsGRdIRcoD3zqGIIGgAwpmctc4aQyTBAqQiy5Opdjt6crzIrX/UgqNVbxYo9
+         7jD5m/+o6l5WrV0x5BjdzUGOBbx4VmksQ+Uc4tRhEWaTWYaiaRm3miclU6UmsCDIIC+s
+         1qKmAPVshxt/cFmJCjkFSu2+rJy9uPsUUbGWhXvCJY6IJlxO/FXn2xRwsSDgBL00NCTp
+         f7pQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=lQKMZN4ys1crXp/YCsUugMRJXgvtz8nSJhcK2AAF8X4=;
+        b=eJqY3JuXJ8t6ww49m+Aw2N5iIbYMk2e9yIVFE1WDhWuYFt/h1DtPY7qB/WG1dLk421
+         UIePGCVTfSBLwhEY+2ShYV2yiKLzD/TQjih1Hb5gPBG7zJIBQJddVKjsmZU3HiPPf/bU
+         8Q5ZnB1dhn5Wp9sJZqJqeD1OznJvzEdtCacZwqAV+kz2hPIXQi/hrq1Mkfg8iVaR6BU2
+         R0ZQqw1f7Yh/Nqzagqpgjq7CGZxOdu+TYDs3QqBT4GJlGnzuHbsc7ycmwF7Ym5f8eq1z
+         +Z5OXns2OzPYOebcvdAhwrSTLHZQWlUuTT5SDhK3HFx/LZhSimIZsBQEi3LCalTBWFkD
+         1Vng==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@globant.com header.s=google header.b=g0znBdnV;
+       spf=pass (google.com: domain of daniel.castaneda@globant.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=daniel.castaneda@globant.com
+Return-Path: <daniel.castaneda@globant.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id b10sor359968qtq.41.2020.06.29.09.24.14
+        for <pharsat@gmail.com>
+        (Google Transport Security);
+        Mon, 29 Jun 2020 09:24:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of daniel.castaneda@globant.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@globant.com header.s=google header.b=g0znBdnV;
+       spf=pass (google.com: domain of daniel.castaneda@globant.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=daniel.castaneda@globant.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=globant.com; s=google;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=lQKMZN4ys1crXp/YCsUugMRJXgvtz8nSJhcK2AAF8X4=;
+        b=g0znBdnVY3WTz5gcsHq0lhTdR8YRYpRSCPLOCxAWY3G5XowDRGR3j2oAdCnA3p/jlT
+         mir7icnDbdqzTLFbnGUEW9yN9MdtqmGH0lRI8MaSrWlf72eyWvBm+Se/53EkAcHtsBty
+         psdRFX42DwDa+6ecvIgjCuIs+aDrsVZPoX8YU=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=lQKMZN4ys1crXp/YCsUugMRJXgvtz8nSJhcK2AAF8X4=;
+        b=JzxFMwJ0PjbocH6Dme7o07eARhfSmHKE8zQQkr97FmjHZ+J2S6zPuW2WA+4733Fetn
+         FOb6vHOk6zUmdHvtRo8FhNTzthZi1p4WzwIHDlYtJTMoOSwquBrkQwrpErfn4nko+xSU
+         Vvw8nzUe4x+TrF9GxYvjVCOCCC8eAGJV5q6lncVKEu3epvUX/USveH4iHbvxaP5p7L3e
+         8OHTNlum4oubUdz69kYXgtPszFS8QZmmvZW4atB+JssM5rcsgZkz5thHnSMtVXpXGYIR
+         QFiu0fsNCYlVawXo0R21Bb7fLm/0dAZ7jebRe/u+I78amMvCyqGylldgNNlk9RTkoJip
+         fuEQ==
+X-Gm-Message-State: AOAM5308EyQIw6ubn07QY6L/RcIacdjljKeIp9yU2M8JvhDOj/EBGafv
+	/taTjSIXcYmwFiBqtnlLlOSBr1reYVL7iWnYqgimdQUkWIezICbcf/CEMk2qsUSKqopeFjYqhbs
+	k2ALvmdyBq4Si2bUx4qt/
+X-Google-Smtp-Source: ABdhPJy3WU/OuU5ueQuFZDZr97kZq31TMgkpkSrdIws5JAhjSIrfKk5Pk/I8+jQ+GDSzUVbCFLjdm2qVlrxAf+cpTRs=
+X-Received: by 2002:ac8:66d1:: with SMTP id m17mr16660330qtp.88.1593447854398;
+ Mon, 29 Jun 2020 09:24:14 -0700 (PDT)
+MIME-Version: 1.0
+References: <8b540931-94eb-4c67-a833-dc94cc42aa02@docs-share.google.com> <00000000000094d2a205a93a31cc@google.com>
+In-Reply-To: <00000000000094d2a205a93a31cc@google.com>
+From: Daniel Antonio Castaneda Forero <daniel.castaneda@globant.com>
+Date: Mon, 29 Jun 2020 11:24:05 -0500
+Message-ID: <CAPy6gJ1iNcP4WLB0Oso5iMtrNjpjTLP9S-Y2LoyNPiG_LqGGBA@mail.gmail.com>
+Subject: Re: GoSystem - Thomson Reuters - Request for access
+To: "Cristian Felipe Galleg..." <pharsat@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000547a2305a93b7d50"
+
+--000000000000547a2305a93b7d50
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Cristian,
+
+Solo con cuentas de Globant.
+
+br
+Daniel Castaneda | *Project Manager | PMP | CSM | EY - Operations*
+GLOBANT CO: +57 1 489 1340 ext. 45926 | US: +1 877 215 5230 ext. 45926
+Mobile CO: +57 310 574 3817
+<https://www.facebook.com/Globant> <http://www.twitter.com/globant>
+<http://www.linkedin.com/company/globant> <http://www.globant.com/>
+
+
+On Mon, Jun 29, 2020 at 9:51 AM Cristian Felipe Galleg... (via Google
+Drive) <pharsat@gmail.com> wrote:
+
+> pharsat@gmail.com is *requesting access* to the following folder:
+> GoSystem - Thomson Reuters
+> <https://drive.google.com/drive/folders/1GwXyRRt0RKySsBrMxczh46sV9iJLo_LD=
+?usp=3Dsharing_erl&userstoinvite=3Dpharsat@gmail.com&ts=3D5ef9fff0>
+> [image: Foto de perfil desconocida]Hola Ernesto me das acceso porfa?
+> Open sharing settings
+> <https://drive.google.com/drive/folders/1GwXyRRt0RKySsBrMxczh46sV9iJLo_LD=
+?usp=3Dsharing_erp&userstoinvite=3Dpharsat@gmail.com&ts=3D5ef9fff0&actionBu=
+tton=3D1>
+> pharsat@gmail.com is outside your organization.
+> Google Drive: Have all your files within reach from any device.
+> Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA [imag=
+e:
+> Logo for Google Drive] <https://drive.google.com>
+>
+
+--=20
+
+
+The information contained in this e-mail may be=C2=A0confidential. It has b=
+een=20
+sent for the sole use of the intended recipient(s). If the reader of this=
+=20
+message is not an intended recipient, you are hereby notified that any=20
+unauthorized review, use, disclosure, dissemination, distribution or=20
+copying of this communication, or any of its contents, is=C2=A0strictly=C2=
+=A0
+prohibited.=C2=A0If you have received it by mistake please let us know by e=
+-mail=20
+immediately and delete it from your system.=C2=A0Many thanks.
+
+=C2=A0
+
+La informaci=C3=B3n=20
+contenida en este mensaje puede ser confidencial. Ha sido enviada para el=
+=20
+uso exclusivo del destinatario(s) previsto. Si el lector de este mensaje no=
+=20
+fuera el destinatario previsto, por el presente queda Ud. notificado que=20
+cualquier lectura, uso, publicaci=C3=B3n, diseminaci=C3=B3n, distribuci=C3=
+=B3n o copiado=20
+de esta comunicaci=C3=B3n o su contenido est=C3=A1 estrictamente prohibido.=
+ En caso=20
+de que Ud. hubiera recibido este mensaje por error le agradeceremos=20
+notificarnos por e-mail inmediatamente y eliminarlo de su sistema.=C2=A0Muc=
+has=20
+gracias.
+
+
+--000000000000547a2305a93b7d50
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Cristian,=C2=A0<div><br></div><div>Solo con cuentas de Glo=
+bant.</div><div><br></div><div>br<br clear=3D"all"><div><div dir=3D"ltr" cl=
+ass=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"=
+><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><di=
+v dir=3D"ltr"><div><div><table align=3D"left" width=3D"482" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" style=3D"font-size:13px;color:rgb(131,131=
+,131);font-family:avenir,&quot;avenir next&quot;,helvetica,arial,sans-serif=
+"><tbody><tr><td width=3D"21"><img src=3D"http://communications.globant.com=
+//Comm/Corporate/signature/2017/New/Images/ArrowSignature.png" width=3D"15"=
+ height=3D"15" alt=3D"" style=3D"display:block"></td><td width=3D"461" styl=
+e=3D"color:rgb(0,0,0);vertical-align:text-top">Daniel Castaneda |=C2=A0<spa=
+n style=3D"color:rgb(200,213,30)"><b>Project Manager | PMP | CSM | EY - Ope=
+rations</b></span></td></tr><tr><td height=3D"20"></td><td style=3D"font-si=
+ze:11px">GLOBANT CO: +57 1 489 1340 ext. 45926 | US: +1 877 215 5230 ext. 4=
+5926<br>Mobile CO: +57 310 574 3817</td></tr><tr><td height=3D"9px;"></td><=
+td height=3D"9px;"></td></tr><tr><td></td><td style=3D"font-size:11px"><tab=
+le width=3D"250" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody><t=
+r><td width=3D"24"><a href=3D"https://www.facebook.com/Globant" target=3D"_=
+blank"><img src=3D"http://communications.globant.com//Comm/Corporate/signat=
+ure/2017/New/Images/FacebookHtml.png" width=3D"16" height=3D"17" alt=3D"" s=
+tyle=3D"display:block"></a></td><td width=3D"26"><a href=3D"http://www.twit=
+ter.com/globant" target=3D"_blank"><img src=3D"http://communications.globan=
+t.com//Comm/Corporate/signature/2017/New/Images/TwitterHtml.png" width=3D"1=
+6" height=3D"16" alt=3D"" style=3D"display:block"></a></td><td width=3D"25"=
+><a href=3D"http://www.linkedin.com/company/globant" target=3D"_blank"><img=
+ src=3D"http://communications.globant.com//Comm/Corporate/signature/2017/Ne=
+w/Images/LinkedinHtml.png" width=3D"16" height=3D"15" alt=3D"" style=3D"dis=
+play:block"></a></td><td width=3D"175"><a href=3D"http://www.globant.com/" =
+target=3D"_blank"><img src=3D"http://communications.globant.com//Comm/Corpo=
+rate/signature/2017/New/Images/GlbHtml.png" width=3D"16" height=3D"15" alt=
+=3D"" style=3D"display:block"></a></td></tr></tbody></table></td></tr></tbo=
+dy></table></div></div></div></div></div></div></div></div></div></div></di=
+v></div></div><br></div></div><br><div class=3D"gmail_quote"><div dir=3D"lt=
+r" class=3D"gmail_attr">On Mon, Jun 29, 2020 at 9:51 AM Cristian Felipe Gal=
+leg... (via Google Drive) &lt;<a href=3D"mailto:pharsat@gmail.com">pharsat@=
+gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=
+=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding=
+-left:1ex"><div><div style=3D"width:100%;padding:24px 0px 16px;background-c=
+olor:rgb(245,245,245);text-align:center"><div style=3D"display:inline-block=
+;width:90%;max-width:680px;min-width:280px;text-align:left;font-family:Robo=
+to,Arial,Helvetica,sans-serif"><div style=3D"height:0px" dir=3D"ltr"></div>=
+<div style=3D"display:block;padding:0px 2px"><div style=3D"display:block;ba=
+ckground:rgb(255,255,255);height:2px"></div></div><div style=3D"border-left=
+:1px solid rgb(240,240,240);border-right:1px solid rgb(240,240,240)"><div s=
+tyle=3D"padding:24px 32px;background:rgb(255,255,255);border-right:1px soli=
+d rgb(234,234,234);border-left:1px solid rgb(234,234,234)" dir=3D"ltr"><div=
+ style=3D"font-size:14px;line-height:18px;color:rgb(68,68,68)"><a href=3D"m=
+ailto:pharsat@gmail.com" style=3D"color:inherit;text-decoration:none" targe=
+t=3D"_blank">pharsat@gmail.com</a> is <b>requesting access</b> to the follo=
+wing folder:</div><div style=3D"height:10px"></div><div style=3D"font-size:=
+18px;display:table"><div style=3D"display:table-row;border-bottom:4px solid=
+ rgb(255,255,255)"><span style=3D"display:table-cell"><div style=3D"height:=
+32px"><img src=3D"https://ssl.gstatic.com/docs/documents/share/images/servi=
+ces/folder-3.png" style=3D"vertical-align: middle; max-width: 24px;"></div>=
+</span><span style=3D"display:table-cell;padding-left:12px;word-break:break=
+-word"><a href=3D"https://drive.google.com/drive/folders/1GwXyRRt0RKySsBrMx=
+czh46sV9iJLo_LD?usp=3Dsharing_erl&amp;userstoinvite=3Dpharsat@gmail.com&amp=
+;ts=3D5ef9fff0" style=3D"color:rgb(51,103,214);text-decoration:none;vertica=
+l-align:middle" target=3D"_blank">GoSystem - Thomson Reuters</a><div></div>=
+</span></div></div><div style=3D"height:16px"></div><div style=3D"height:1p=
+x;background-color:rgb(238,238,238)"></div><div style=3D"height:24px"></div=
+><div style=3D"display:table-row"><img style=3D"display: table-cell;" width=
+=3D"50" src=3D"https://ssl.gstatic.com/s2/profiles/images/silhouette64.png"=
+ alt=3D"Foto de perfil desconocida"><span style=3D"display:table-cell;verti=
+cal-align:top;padding-left:16px;font-size:13px;line-height:18px;max-width:4=
+96px;color:rgb(38,38,38)">Hola Ernesto me das acceso porfa?</span></div><di=
+v style=3D"height:32px"></div><div><a href=3D"https://drive.google.com/driv=
+e/folders/1GwXyRRt0RKySsBrMxczh46sV9iJLo_LD?usp=3Dsharing_erp&amp;userstoin=
+vite=3Dpharsat@gmail.com&amp;ts=3D5ef9fff0&amp;actionButton=3D1" style=3D"b=
+ackground-color:rgb(77,144,254);border:1px solid rgb(48,121,237);border-rad=
+ius:2px;color:white;display:inline-block;font:bold 11px/29px Roboto,Arial,H=
+elvetica,sans-serif;height:29px;min-width:54px;outline:0px;padding:0px 8px;=
+text-align:center;text-decoration:none" target=3D"_blank">Open sharing sett=
+ings</a></div><div style=3D"height:24px"></div><div style=3D"background:rgb=
+(252,232,178);font-size:13px;color:rgb(68,68,68);border-radius:2px;padding:=
+5px 10px"><a href=3D"mailto:pharsat@gmail.com" style=3D"color:inherit;text-=
+decoration:none" target=3D"_blank">pharsat@gmail.com</a> is outside your or=
+ganization.</div></div></div><table style=3D"width:100%;border-collapse:col=
+lapse"><tbody><tr><td style=3D"padding:0px"><table style=3D"border-collapse=
+:collapse;width:3px"><tbody><tr height=3D"1"><td width=3D"1" bgcolor=3D"#f0=
+f0f0" style=3D"padding:0px"></td><td width=3D"1" bgcolor=3D"#eaeaea" style=
+=3D"padding:0px"></td><td width=3D"1" bgcolor=3D"#e5e5e5" style=3D"padding:=
+0px"></td></tr><tr height=3D"1"><td width=3D"1" bgcolor=3D"#f0f0f0" style=
+=3D"padding:0px"></td><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding:=
+0px"></td><td width=3D"1" bgcolor=3D"#eaeaea" style=3D"padding:0px"></td></=
+tr><tr height=3D"1"><td width=3D"1" bgcolor=3D"#f5f5f5" style=3D"padding:0p=
+x"></td><td width=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding:0px"></td><td =
+width=3D"1" bgcolor=3D"#f0f0f0" style=3D"padding:0px"></td></tr></tbody></t=
+able></td><td style=3D"width:100%;padding:0px"><div style=3D"height:1px;wid=
+th:auto;border-top:1px solid rgb(221,221,221);background:rgb(234,234,234);b=
+order-bottom:1px solid rgb(240,240,240)"></div></td><td style=3D"padding:0p=
+x"><table style=3D"border-collapse:collapse;width:3px"><tbody><tr height=3D=
+"1"><td width=3D"1" bgcolor=3D"#e5e5e5" style=3D"padding:0px"></td><td widt=
+h=3D"1" bgcolor=3D"#eaeaea" style=3D"padding:0px"></td><td width=3D"1" bgco=
+lor=3D"#f0f0f0" style=3D"padding:0px"></td></tr><tr height=3D"1"><td width=
+=3D"1" bgcolor=3D"#eaeaea" style=3D"padding:0px"></td><td width=3D"1" bgcol=
+or=3D"#eaeaea" style=3D"padding:0px"></td><td width=3D"1" bgcolor=3D"#f0f0f=
+0" style=3D"padding:0px"></td></tr><tr height=3D"1"><td width=3D"1" bgcolor=
+=3D"#f0f0f0" style=3D"padding:0px"></td><td width=3D"1" bgcolor=3D"#f0f0f0"=
+ style=3D"padding:0px"></td><td width=3D"1" bgcolor=3D"#f5f5f5" style=3D"pa=
+dding:0px"></td></tr></tbody></table></td></tr></tbody></table><table style=
+=3D"padding:14px 10px 0px" dir=3D"ltr"><tbody><tr><td style=3D"width:100%;f=
+ont:11px/20px Roboto,Arial,Helvetica,sans-serif;color:rgb(100,100,100);min-=
+height:40px;vertical-align:middle">Google Drive: Have all your files within=
+ reach from any device. <br>Google LLC, 1600 Amphitheatre Parkway, Mountain=
+ View, CA 94043, USA</td><td style=3D"padding-left:20px;vertical-align:midd=
+le"><a href=3D"https://drive.google.com" target=3D"_blank"><img src=3D"http=
+s://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_tm_black54_col=
+or_96x40dp.png" width=3D"96" alt=3D"Logo for Google Drive" border=3D"0"></a=
+></td></tr></tbody></table></div></div></div></blockquote></div>
+
+<br>
+<p style=3D"margin:0px;color:rgb(34,34,34);font-family:arial,sans-serif;lin=
+e-height:12pt;background-color:rgb(255,255,255)"><font size=3D"1"><span sty=
+le=3D"font-family:Arial,sans-serif;color:rgb(38,38,38)">The information con=
+tained in this e-mail may be=C2=A0confidential. It has been sent for the so=
+le use of the intended recipient(s). If the reader of this message is not a=
+n intended recipient, you are hereby notified that any unauthorized review,=
+ use, disclosure, dissemination, distribution or copying of this communicat=
+ion, or any of its contents, is=C2=A0strictly=C2=A0prohibited.=C2=A0</span>=
+<span style=3D"font-family:Arial,sans-serif">If you have received it by mis=
+take please let us know by e-mail immediately and delete it from your syste=
+m.=C2=A0</span><span lang=3D"ES-MX" style=3D"font-family:Arial,sans-serif">=
+Many thanks.<span style=3D"color:rgb(38,38,38)"></span></span></font></p><p=
+ style=3D"margin:0px;color:rgb(34,34,34);font-family:arial,sans-serif;backg=
+round-color:rgb(255,255,255)"><span lang=3D"ES-MX" style=3D"font-family:Cal=
+ibri,sans-serif;color:rgb(31,73,125)"><font size=3D"1">=C2=A0</font></span>=
+</p><p style=3D"margin:0px;color:rgb(34,34,34);font-family:arial,sans-serif=
+;background-color:rgb(255,255,255)"><font size=3D"1"><span lang=3D"ES-AR" s=
+tyle=3D"font-family:Arial,sans-serif">La informaci=C3=B3n contenida en este=
+ mensaje puede ser confidencial. Ha sido enviada para el uso exclusivo del =
+destinatario(s) previsto. Si el lector de este mensaje no fuera el destinat=
+ario previsto, por el presente queda Ud. notificado que cualquier lectura, =
+uso, publicaci=C3=B3n, diseminaci=C3=B3n, distribuci=C3=B3n o copiado de es=
+ta comunicaci=C3=B3n o su contenido est=C3=A1 estrictamente prohibido. En c=
+aso de que Ud. hubiera recibido este mensaje por error le agradeceremos not=
+ificarnos por e-mail inmediatamente y eliminarlo de su sistema.=C2=A0</span=
+><span style=3D"font-family:Arial,sans-serif">Muchas gracias.</span></font>=
+</p><div style=3D"font-size:1.3em"><span style=3D"font-size:10pt;font-famil=
+y:Arial,sans-serif"><br></span></div>
+--000000000000547a2305a93b7d50--

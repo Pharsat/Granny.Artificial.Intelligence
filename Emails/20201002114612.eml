@@ -1,0 +1,151 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp1354284ild;
+        Fri, 2 Oct 2020 04:46:13 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwQeemofGCDZRvvZMv4ssjFXj3HE7Qzvs5ON5udOAXgrGYCOMpMAekYKiz7lhaO4wg8N15i
+X-Received: by 2002:a17:907:4276:: with SMTP id nq6mr1755489ejb.246.1601639173806;
+        Fri, 02 Oct 2020 04:46:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1601639173; cv=none;
+        d=google.com; s=arc-20160816;
+        b=VW1GolMZdJX6UjFgjX72mWlJQfcQL1MzVjOCF7TvCyhkx0rpD7TvSUJXGF9qmxlZCV
+         3cTXR+zjN+rhql4e7b/YfESDXD5D5b4RyyO/kXgnxhY9AiNAIc+UhfiIuYaj9kqE5mIX
+         BidOXhLuwJw07GWqr0cVsZKb4OMSjk5Bhk58c82XXljAFCU1ant9I66UYblQDzZXgbFG
+         xE4wSPTsKpV44qo9pQa7vZZE76av1kzvEbdVuYSHbdcLB0SqEyzDAV6w8+sbPS8j8s1A
+         L0QH/l259lRTPdBbME0V92CiF6x7IYKM+NenQ4TEC5sR/f1/fauLt0NTFm2TVIoPMhJ9
+         GvJQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:message-id:to:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=F4TnWyN2xIVNkinMpEhzJHJs1WXoYr0cYR5syLr1m50=;
+        b=gxGJAAPss5it8teR1QBjaRpiFgXgJZ8P3i5rKns8BRS2YZ1f2pFAwR7tm4eNhpBUKh
+         b40uTcuxAoxX/WEXw+v5Qk+255gke6/QkFdSlrGsT+LdSou+OCS7z5OVdMcuCYX4hwPk
+         cyvZ9H6MHplRB8OKcWb3M8EY2NlxNBZAb2i5pr4aASNoQgOooabU0/HIkW0Dbotyxa3G
+         Jrfp1joimygdRH83GqP99PRMUYPqEPpTeoSR6AwKdHRXzYJQH9PKWs1HOsX5uHiH/X3e
+         XaVwZ0Igwv/ih5PLY1a5XB6p/AZIRWcB3Dpne6G69A4p+Dhc+r+iwaqDS9hY46A5zei2
+         NH3A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=bYgPDop3;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=h46lkmlZ;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 167.89.0.1 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+Return-Path: <bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com>
+Received: from xtrwhhhk.outbound-mail.sendgrid.net (xtrwhhhk.outbound-mail.sendgrid.net. [167.89.0.1])
+        by mx.google.com with ESMTPS id qo19si959473ejb.524.2020.10.02.04.46.13
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 02 Oct 2020 04:46:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 167.89.0.1 as permitted sender) client-ip=167.89.0.1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=bYgPDop3;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=h46lkmlZ;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 167.89.0.1 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=mercadolibre.com; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject; 
+	s=s1; bh=F4TnWyN2xIVNkinMpEhzJHJs1WXoYr0cYR5syLr1m50=; b=bYgPDop
+	3xXFp3aM1y4vNWRf4FB8FgVrKVHpc2as/Q9qZDLcuwI9kRalP5Ga2Za/iIQ4lx04
+	oF/6yVQDm6mhnegptGukCx5qEXrMIkGSjtKJOGFDhrWjg/taPLciSluMIDWOT9B5
+	UGnv9fezjzdJAomh3EHauWrZHkgn1fovFgW4=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:x-feedback-id; 
+	s=smtpapi; bh=F4TnWyN2xIVNkinMpEhzJHJs1WXoYr0cYR5syLr1m50=; b=h4
+	6lkmlZGScAz2xUDX2F7TSohwbjCG/A5vfFOesR4hpLbo8nLEWsQgu7O8t4WpZmKF
+	tgPlEEZJ3Wejbz4hYpSx0m0a+lA/1UimNdys5GNsgEXCCANDOewrhXnVjTGhMBoR
+	GTeXCHSs16xcTPU7JbNVk6VTK1qKn5f+Ll7BzBsS4=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Date: Fri, 02 Oct 2020 11:46:12 +0000 (UTC)
+From: "Mercado Libre" <no-responder@mercadolibre.com>
+Mime-Version: 1.0
+To: pharsat@gmail.com
+Message-ID: <gAiJ2AgKRsWZ_5MCqK45Qg@ismtpd0025p1iad2.sendgrid.net>
+Subject: =?UTF-8?B?VGUgZGV2b2x2aW1vcyBlbCBwYWdvIGRlIEF1ZGlmb25vcyBLcmFrZW4gMjAxOSBSYXplciBDb2xvciBWZXJkZSBDb24gTWlj?= =?UTF-8?B?csOzZm9ubyAgICAgICAgICA=?=
+X-SG-EID: sqIrrLMbLsIyP9sBRWWxUF78JT7ZpfEH7TvBjG5fTpZxqi0bg+3vQQeHROGaLslV0uENfwwC0hKdB0
+ gqUVUEGc+kuacM+WHdAReRWj+nyDRNoK1ArpmK+GXkE/IsASD1A87brr71DVmjVwU0KDB8xELG3GCf
+ Dw5TQxt7izUZW8J6FAeLE57mQG+vhveCVlDduA7wniK/3XliIGvTAQKQBYZBH5rRESDU32Ivpm77oY
+ 4=
+X-SG-ID: YDTqBOjidbCUo/ar1oAtZgECxwxYThixq1nETHu11HQSbFF9gVC+pkqGXIBLst0eC99x2A3tLTOZpa
+ kxeYDCv05U+rELf5tPRUvQrdap5zlA7sSU+fPKv1L53v9SWK2uF0RnL+uSoKD4jCOVneoMnBLFQV8G
+ sZ6DuPWzIxU9XIPWiSk4j5x2dtpiIZjQP8WSQ51Hm4adl6Idv8xC0wOu8SLlL2zPRaws15GcRN4fuW
+ NR9/EsS+Fs30W1O9um9pdVclJXVBu9qLoOuQI54DlNzO+nqH1DWAb6SwmzYqyx9Qtf9jEu3euZkGgO
+ 7bwFsTtjoz0GvdGkzTHlMEnwJjU4AaevHReo++laAQCLrAO+Piad+On8FpMY8VgQcmRxUA8Lh7Kt9n
+ 7NHMGAp8oolnFCkqQpgl/k8NRGSe91ui2Dj9rwJzOWMa1zbJr5bJeuqx5/vC66uvHyv1JpI6wk6mnn
+ jXq/YY1hbmJU3lDwoooZ3LEmtwlZizZsrkXNGiM0Akn4FBMEyTXu/SK1L+pTFX9ySJI7FtLtgd+Tk1
+ iFJVj8YVY=
+X-Feedback-ID: 9647731:O1uIaeJcLGiMqc34AnjtHEL1fX9OufqyqcerW4Ul12s=:a8ycujShxZ5z3gGodwbKlQ==:SG
+
+<!doctype html><head> <meta http-equiv=3D"Content-Type" content=3D"text/htm=
+l; charset=3DUTF-8"/> <meta name=3D"viewport" content=3D"width=3Ddevice-wid=
+th, initial-scale=3D1.0, minimum-scale=3D1.0, maximum-scale=3D1.0"/> <meta =
+name=3D"format-detection" content=3D"telephone=3Dno"/> <meta charset=3D"utf=
+-8"/> <style type=3D'text/css'> table, tr, td, span, a{-webkit-text-size-ad=
+just: none;}@media only screen and (max-width: 480px){td[class=3D'logo']{te=
+xt-align: center !important;}.mobile-btn{display: block; width: 85%; text-a=
+lign: center; margin: 0 auto;}}</style></head><body style=3D"padding:0"> <t=
+able width=3D'100%' cellspacing=3D'0' cellpadding=3D'0' border=3D'0'> <tr> =
+<td class=3D'logo' align=3D'left' style=3D'padding:15px 20px 15px 14px'> <a=
+ href=3D'https://www.mercadolibre.com.co'><img alt=3D'MercadoLibre' border=
+=3D'0' width=3D'132' height=3D'33' src=3D'https://static.mlstatic.com/org-i=
+mg/emails/logos/logo-mercadolibre-new.gif'/></a> </td></tr><tr> <td width=
+=3D'100%' height=3D'1' style=3D'border-top:solid 1px #E8E8E8;display:block;=
+font-size:1px'>&nbsp;</td></tr><tr> <td height=3D'10' style=3D'font-size:1p=
+x'>&nbsp;</td></tr></table> <table width=3D'100%' cellspacing=3D'0' cellpad=
+ding=3D'0' border=3D'0'> <tr> <td style=3D'font-family:Arial; font-size:14p=
+x; color:#333333; padding:2px 15px 10px 15px'> <p>Hola Cristian Felipe,</p>=
+<p style=3D'padding-top:15px;'>Nos apena que la compra no haya salido como =
+esperabas.<br/><br/>Si bien no es com=C3=BAn que sucedan estos problemas, t=
+en la certeza de que siempre contar=C3=A1s con nuestra ayuda.<br/><br/>En e=
+ste caso, <b>te devolvimos los $ 516.550</b> que pagaste con Visa.<br/><br/=
+>La devoluci=C3=B3n aparecer=C3=A1 en tu tarjeta de cr=C3=A9dito en los pr=
+=C3=B3ximos 4 d=C3=ADas h=C3=A1biles y podr=C3=A1s verla desde tu Home Bank=
+ing o a trav=C3=A9s de una consulta telef=C3=B3nica.<br/><br/>Ten en cuenta=
+ que para evitar estos casos, Mercado Libre suspende a aquellos vendedores =
+que hayan generado inconvenientes en reiteradas ocasiones.<br/><br/>Por est=
+o, tu experiencia ayuda. =C2=BFQuieres <a href=3Dhttps://feedback.mercadoli=
+bre.com.co/feedback?orderId=3D4023423719 target=3D_blank>calificar al vende=
+dor</a>?<br/><br/><br/><br/></p>      <p>Saludos,<br>El equipo de Mercado L=
+ibre</p> </td></tr></table>  <table> <tr> <td style=3D'font-family:Arial; f=
+ont-size:11px; color:#999999; padding-top:15px;'>No respondas este e-mail. =
+<a style=3D'font-family:Arial; font-size:11px; color:#0637B2; text-decorati=
+on:none' href=3D'https://mercadolibre.com.co/ayuda'>Ayuda</a></td></tr></ta=
+ble> </td></tr></table> </td></tr></table>
+<img src=3D"http://url8202.mercadolibre.com/wf/open?upn=3Dn-2BXHQCy63kpAQ5v=
+lgxDj9INL-2BRhVxrLbJegHCev16xucv08I0raT0JEV0tdZ9oJB1Svnofy0VUVCOksBluHktFMX=
+W5PT0rqt5Vj2fiYR7k6UXQ7Dlq-2F7ImIFVxR1JZWe4TlMeldf2-2FXvJ4PkKKuYe120lfIijAw=
+VJMJGLDdS3McXhxYdKlksSR4jQDs72xkK5fp1Ff5RMDavBv1rjSTb6cOSw1DDC8pqDiqO3dX2pj=
+HQMEJBAYgwzOqr-2BguPT9qihQv0wgQ3F0F2-2B-2B-2F6yo8a8-2B4BjXEunea9irVaLqSiNe-=
+2BiszaEDOlr4T1pgkU9JZNfu0lQXEy-2B7xHbPkLplMr6k-2FvbtdD0-2Feai6w5mzsfBnIolMR=
+vNr8gj83H7up0xQrl-2F4v4ro3B96ekSUu1hBq-2FdCmOe2AllC5RQb-2FG3Y1GrKS0xcW8hf3u=
+YRzX460VfWLuYZxQtLd0Aixdp-2FBDg9fb42QoOuD7eS5XbCN4b77pRJEpiKzpZeRMuPqstPEW1=
+owwbycgs4fD2OVQOts5Lder1z77thbir-2FD0ptX91TwOO9WJrAOhe0Q0swBSbqFpO-2B0QcYPR=
+O4iFpxowLv5wVIma4dz2mt5Qc-2FgL-2Bz2BqNeLuqD-2FAEj0FXZrulKLibl-2F9uM1JFPcDzE=
+Z9uwfrz1oEtE5lV7q4zsAo-2Bf7qKHyZaLjsTgEbRAtbHzHVCoeF3E7PeB21ZTEGN8bz46v-2F1=
+hOvuwvG9SSnr3m3IbFhEyAxxWc-2BpTxDnu5hT87cZolncz2eqsKp" alt=3D"" width=3D"1"=
+ height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !import=
+ant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !impo=
+rtant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !imp=
+ortant;padding-bottom:0 !important;padding-right:0 !important;padding-left:=
+0 !important;"/>
+</body></html><table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" ali=
+gn=3D"center" style=3D"background: rgb(255, 255, 255);"> <tr> <td align=3D"=
+center"> <!--[if mso]><table border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" align=3D"center" width=3D"600"><tr><td align=3D"center" valign=3D"top" w=
+idth=3D"600"><![endif]--> <table role=3D"presentation" cellspacing=3D"0" ce=
+llpadding=3D"0" width=3D"100%" align=3D"center" style=3D"max-width: 600px; =
+background: rgb(255, 255, 255);"> <tr> <td align=3D"center" style=3D"font-w=
+eight: 400; font-family: 'Proxima Nova', _apple_system, 'Helvetica Neue', H=
+elvetica, Roboto, Arial, sans-serif; font-size: 11px; line-height: 1.45; co=
+lor: rgb(140, 140, 140); padding: 20px 25px; text-align: center;"> Te envia=
+mos este e-mail a <a target=3D"_blank" href=3D"mailto:pharsat@gmail.com" st=
+yle=3D"color: rgb(52, 131, 250); text-decoration: none;">pharsat@gmail.com<=
+/a> porque elegiste recibir informaci=C3=B3n.<br><a target=3D"_blank" href=
+=3D"https://myaccount.mercadolibre.com.co/preferences/emails" style=3D"colo=
+r: rgb(52, 131, 250); text-decoration: none;">Administrar preferencias de e=
+-mails</a>.<br>Conoce <a target=3D"_blank" href=3D"https://www.mercadolibre=
+.com.co/privacidad" style=3D"color: rgb(52, 131, 250); text-decoration: non=
+e;">c=C3=B3mo cuidamos tu Privacidad</a> y visita los <a target=3D"_blank" =
+href=3D"https://www.mercadolibre.com.co/ayuda/991" style=3D"color: rgb(52, =
+131, 250); text-decoration: none;">T=C3=A9rminos y Condiciones de Mercado L=
+ibre</a>. </td> </tr> </table> <!--[if mso]></td></tr></table><![endif]--> =
+</td> </tr></table>

@@ -1,0 +1,1012 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a19:7fc2:0:0:0:0:0 with SMTP id a185csp1637661lfd;
+        Tue, 12 May 2020 19:45:29 -0700 (PDT)
+X-Google-Smtp-Source: APiQypI2Ni0IxaX39/iM/QrgnlK7cM6VMo19hDYfeHxpoU2hqIJkATlfp1AAuNhZjxjhbe5Zp9Qf
+X-Received: by 2002:a17:906:a417:: with SMTP id l23mr18844219ejz.213.1589337929467;
+        Tue, 12 May 2020 19:45:29 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1589337929; cv=none;
+        d=google.com; s=arc-20160816;
+        b=AeMrI1y03nCvx7wOxkUfOFXzeMXEwUNKSGKzdpGHeDvY3NLbKQ5c95Fz3rlBb242F/
+         +DZtEhxLCs4vkZbpJdGBcQRHgfBJka2EoDh7mhBgn5Q+oWhKCTqpiy/WdX2ppNMH8Di9
+         zVjsIzWhTQ2t5R0zi7bdXiCl+JRa+9g/tHDergTItReDAryWGnJCW9K5TUZbKTbVUDqk
+         Gvu4gBb08aCu2q9bvLR1TlQUTHfm/CbJ40A1PmYZ0KBReOeenTQHyeOTMtwje7oANEJB
+         42lGUX4sH8eevEL+vhDdAC5xH7mFsn21JtbCotn3xxcDwSjeLyolqrSiPp196pNvob19
+         bBZg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:message-id:to:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=Dg09kByo8WUvaIUXMu0ZlqQs+mStgM1m19/IuKS2wLU=;
+        b=I0zirv+p6idEoYZ1jVGr+cJ/M95yIczXNuxWNB64lX/OxxueTGe5wGOt9M5Kl5FjGU
+         AA7SgUlTX9BPKhxAclRTA6UoBmX881eWDnt/kUQFLYr0/AFoK0UcLO5rXsPlW7wmVxZ0
+         tXicnKiZQf5jrt7sQ4vkZY+Zg2gPnh0BD+HwZ4YjTsjPNLfRBWVwJaLZQcO85kgx0wBF
+         HKI/iYb3xNS8HO/46VSrV4MagC8+1td2WOaXbNRE+DnhtDlBdB71BsjgIfU60UF7c4gM
+         hf1VSyGFfakKtqnMpzDMB5LX3vXTvy1HuyjfBX9wrJxyv2DO64us5lB5TQFM+Pp7srr/
+         C1Dg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=nGRvB07P;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Ruen2k0M;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+Return-Path: <bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com>
+Received: from o11.ptr1968.sg.mercadolibre.com (o11.ptr1968.sg.mercadolibre.com. [149.72.129.250])
+        by mx.google.com with ESMTPS id nj6si743852ejb.292.2020.05.12.19.45.28
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 12 May 2020 19:45:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) client-ip=149.72.129.250;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=nGRvB07P;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Ruen2k0M;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=mercadolibre.com; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject; 
+	s=s1; bh=Dg09kByo8WUvaIUXMu0ZlqQs+mStgM1m19/IuKS2wLU=; b=nGRvB07
+	PZwVF3x614CT2uRlveCXTp32UYkSM9jPbMJsH5O60ImNKXM8smKTBOzhQi8T/aly
+	18Q85Up5UOttHOShk4HOtgbkATGakuJZ6LaPJhutX5GsdPiEOpsek4f0ZZ9Cjd4M
+	bYL2S5ZZLYZC8nuX4faP7RGe8mW+RQ7M7Q4M=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:x-feedback-id; 
+	s=smtpapi; bh=Dg09kByo8WUvaIUXMu0ZlqQs+mStgM1m19/IuKS2wLU=; b=Ru
+	en2k0MKWUVTm797r9et1XUUhlxIRGr+D2wdW4020FulYknpYWoAMH2uBgZoaTCTT
+	fsVIZMPB0AnMkSD98mnOL+/MWGkswsdgohGp4P2wiN1gMdbHapOZohpqhtKsGs3w
+	cRSk1mq0/sMMHHGKNXoV21kB0+17EgJ3yL1KTOwf4=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Date: Wed, 13 May 2020 02:45:27 +0000 (UTC)
+From: "Mercado Libre" <no-responder@mercadolibre.com>
+Mime-Version: 1.0
+To: pharsat@gmail.com
+Message-ID: <evVN4Mq5RquBB-Ecc5jfeQ@ismtpd0087p1mdw1.sendgrid.net>
+Subject: =?UTF-8?B?VGllbmVzIGVudsOtb3MgZ3JhdGlzIGRlc2RlICQgNjAuMDAw?=
+X-SG-EID: sqIrrLMbLsIyP9sBRWWxUF78JT7ZpfEH7TvBjG5fTpa4+FuIyFOog2KUXxbF1fmLz2NtlauI3xoH/k
+ koyeuIpIK/rtv/Uo4yOQJWh38n6y9IKZbdKEKsxxQi0GofYVssDOJMonMo3ruZcCRzHaSZmCOlLZt/
+ mSZ1iJZN7fEyvaCMAygexgZ0okdDaHtqQ1x6aUnpVC+dzYQs+/78ibSbjXutkPA6lta3ihhT8jrETi
+ k=
+X-SG-ID: YDTqBOjidbCUo/ar1oAtZuBOz5IZuFL5WjmXwfOYzN2loMH4/Z7mClMPRTx5GHxKnUG/ae0uSieDwa
+ +7vXDXkVQVxVLZzQ2UMc0uUeIEVmgBQCV3tkoflNnFLl5IG5bjARh6i4PcHoNBsd3rWyscvmGaxxRI
+ PoqDgaafwW1fGenB2sQqSRhpjzmb6O+ZsuHiZCKQbTpmaAvhR80M3B33kPmC+f5CS/+34nlEfQb9uF
+ bgJfubeg2GgY0ZBzQpoBjomi1f3sLap93IiWlw6gK+o8/iCZUhY1Y6WA8vncH65yP1oA1C7T+EI2i2
+ 1hUWOVmvfTndMHf8APgZi/eC16QFQtsAnBNXqCfdioLA44glUR2k8JHSIUDlBcs7hRNtx8cPeUI/5j
+ DxEIvYeMfY1kV/GKEjqqyJ+V/wOym7H8oB5Pj14iFNKavtiqlVAXRy12aGmsy6O+a72E1mQeYOG6X4
+ 2Mcjk3ea52QrRYIo9RgHiUw=
+X-Feedback-ID: 9647731:O1uIaeJcLGiMqc34AnjtHEL1fX9OufqyqcerW4Ul12s=:a8ycujShxZ5z3gGodwbKlQ==:SG
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <meta name=3D"format-detection" content=3D"telephone=3Dno">
+    <meta charset=3D"utf-8"/>
+    <title> </title>
+    <link rel=3D"stylesheet" href=3D"https://static.mlstatic.com/org-img/ui=
+/font/lato/300.400.700.css">
+    <style type=3D"text/css" style=3D"font-family: 'Lato', 'Helvetica', 'Ar=
+ialMT', sans-serif; "> .banner-container {} @media screen and (max-width: 4=
+80px) { .banner-container { padding-left: 15px !important; padding-right: 1=
+5px !important; } .button-container { box-sizing: border-box !important; pa=
+dding: 0 20px !important; width: 100% !important; } .action-btn { max-width=
+: 100% !important; } } @media screen and (max-width: 401px) { .two-column .=
+column { max-width: 100% !important; } .three-column .column { max-width: 1=
+50px !important; } .inner2 { padding: 20px 10px !important; } .three-column=
+ img {} .header-content .hashtag { font-size: 11px !important; } .banner-co=
+l-3 .three-column .column { max-width: 100% !important; } .banner-beneficio=
+s .three-column .column * { max-width: 100% !important; display: block; tex=
+t-align: center; } .btn_detalles { width: 100% !important; } .bt_explorar_c=
+at { width: 60% !important; } .btn_center { padding: 0 40px !important; wid=
+th: 100% !important; } .header-logo { content: url('https://http2.mlstatic.=
+com/ui/navigation/5.5.1/mercadolibre/logo__large_plus&#64;2x.png') !importa=
+nt; height: 36px !important; width: auto !important; } [class^=3D"banner-ve=
+rtical-text-"] { max-width: 280px !important; } .three-column .official_sto=
+res_column { max-width: 160px !important; } .img_stores_x6 a img { max-heig=
+ht: 43px !important; min-height: 43px !important; max-width: 138px !importa=
+nt; } .padding-top-item-sec-x4-moda { padding-top: 25px !important; } .padd=
+ing-med-item-sec-x4-moda { padding-top: 15px !important; } } @media screen =
+and (min-width: 360px) and (max-width: 620px) { .three-column .simple_info_=
+big { max-width: 180px !important; } .inner-simple-info-big { padding: 0 10=
+px 35px 10px !important; } } @media screen and (min-width: 401px) and (max-=
+width: 620px) { .three-column .column { max-width: 33% !important; } .two-c=
+olumn .column { max-width: 50% !important; } .btn_detalles { width: 100% !i=
+mportant; } } @media (min-width: 512px) { .footer-download-app { float: lef=
+t !important; padding: 20px !important; } .footer-icons-social { float: rig=
+ht !important; padding: 20px !important; } } @media (min-width: 537px) { .f=
+ooter-download-app-only { padding: 30px 8px !important; } } @media (max-wid=
+th: 401px) { .template-itemPrincipal { padding: 0 20px 50px 20px !important=
+; } .btn_detalles_itemPpl { padding: 20px; } } @media (max-width: 599px) { =
+} </style>
+<!--[if (gte mso 9)|(IE)]>
+                         <style type=3D"text/css"> table { border-collapse:=
+ collapse; font-family: Lato, Arial !important; } td, h1, h2, h3, h4, h5, d=
+iv { font-family: Lato, Arial !important; } .template-container { width:600=
+px !important;}.img_item_sec a img {height: 158px !important;width: 158px !=
+important;}.img_stores_x6 a img {height: 53px !important;width: 171px !impo=
+rtant;}.headline-container {display: inline-table !important;}</style>
+    <![endif]-->
+    <style>
+        .disclaimer-fs {
+            font-family: 'Lato', 'Helvetica', 'ArialMT', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.29;
+            letter-spacing: normal;
+            text-align: center;
+            color: #666666;
+        }
+        .disclaimer-fs a {
+            color: #3483fa;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body style=3D" -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+ background-color: transparent; font-family: &#39;Lato&#39;, &#39;Helvetica=
+&#39;, &#39;ArialMT&#39;, sans-serif; margin: 0; min-width: 100%; padding: =
+0;">
+<span style=3D"display:none !important;
+visibility:hidden;
+mso-hide:all;
+font-size:1px;
+color:#ffffff;
+line-height:1px;
+max-height:0px;
+max-width:0px;
+opacity:0;
+overflow:hidden;">
+    Y m=C3=A1s beneficios por ser nivel 3 en Mercado Puntos
+</span>
+
+<table align=3D"center" style=3D" margin:0 auto; border-spacing:0; font-fam=
+ily:Arial,Helvetica,sans-serif; max-width:600px; width:100%">
+    <tbody>
+    <tr>
+        <td style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D" background:#ffe600; border-spacing:0; font-family:Lato,=
+Arial,sans-serif; height:55px">
+                <tbody>
+                <tr style=3D"font-family:Lato,Arial,sans-serif">
+                    <td valign=3D"top" style=3D"float:left; font-family:Lat=
+o,Arial,sans-serif; height:36px; line-height:100%; padding:9px 20px 8px 20p=
+x; vertical-align:middle"> <a style=3D"color:#3483fa; font-family:Lato,Aria=
+l,sans-serif; font-weight:normal; margin:0; padding:0; text-decoration:none=
+; word-break:normal" target=3D"_blank"> <img width=3D"139" height=3D"37" al=
+t=3D"Ir a Mercado Puntos" src=3D"https://http2.mlstatic.com/ui/navigation/5=
+.5.1/mercadolibre/logo__large_plus&#64;2x.png" style=3D"border:0; font-fami=
+ly:Lato,Arial,sans-serif; height:36px; margin:0; padding:1px 0 0 0; text-al=
+ign:left; vertical-align:middle; width:139px"> </a> </td>
+                </tr>
+                </tbody>
+            </table>
+            <table align=3D"center" bgcolor=3D"#f7f7f7" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D" border-spacing:0; font-family:Lato,=
+Arial,sans-serif; width:100%">
+                <tbody>
+                <tr style=3D"font-family:Lato,Arial,sans-serif">
+                    <td align=3D"center" height=3D"100%" style=3D"font-fami=
+ly:Lato,Arial,sans-serif;padding:0" valign=3D"top" width=3D"100%">
+                        <table align=3D"center" bgcolor=3D"#f7f7f7" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D" background:url(https:/=
+/http2.mlstatic.com/resources/frontend/statics/loyal/banner-lvl-3.png) cent=
+er top no-repeat #f7f7f7; background-size:600px; border-spacing:0; font-fam=
+ily:Lato,Arial,sans-serif; width:100%">
+                            <tbody>
+                            <tr style=3D"font-family:Lato,Arial,sans-serif">
+                                <td align=3D"center" height=3D"100%" style=
+=3D"font-family:Lato,Arial,sans-serif;padding:0" valign=3D"top" width=3D"10=
+0%">
+                                    <table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D" border-spacing:0; font-family:L=
+ato,Arial,sans-serif; max-width:400px; width:100%">
+                                        <tbody>
+                                        <tr style=3D"font-family:Lato,Arial=
+,sans-serif">
+                                            <td align=3D"center" height=3D"=
+100%" style=3D"font-family:Lato,Arial,sans-serif;padding:0" valign=3D"top" =
+width=3D"100%">
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0;font-family:Lato,Ari=
+al,sans-serif">
+                                                    <tbody style=3D"font-fa=
+mily:Lato,Arial,sans-serif">
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td height=3D"48" s=
+tyle=3D"font-family:Lato,Arial,sans-serif; font-size:0; line-height:0; padd=
+ing:0">
+                                                            <!-- Espacio ar=
+riba del titulo -->
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" align=3D"center" style=3D"border-spacing:0; fo=
+nt-family:Lato,Arial,sans-serif; width:100%">
+                                                    <tbody style=3D"font-fa=
+mily:Lato,Arial,sans-serif">
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td align=3D"center=
+" height=3D"100%" valign=3D"top" width=3D"100%" style=3D"font-family:Lato,A=
+rial,sans-serif;padding:0">
+                                                            <table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+style=3D"border-spacing:0; font-family:Lato,Arial,sans-serif; max-width:400=
+px">
+                                                                <tbody>
+                                                                <tr style=
+=3D"font-family:Lato,Arial,sans-serif">
+                                                                    <td ali=
+gn=3D"center" valign=3D"top" style=3D"font-family:Lato,Arial,sans-serif; fo=
+nt-size:0; padding:0px">
+                                                                        <im=
+g src=3D'https://http2.mlstatic.com/resources/frontend/statics/loyal/ic-lvl=
+-3.png?v=3D2' width=3D"48" height=3D"48" style=3D"margin-top: 0; margin-bot=
+tom: 5px;"/>
+                                                                        <h1=
+ class=3D"headline-sub-title" style=3D"border:none;color:#ffffff;display:bl=
+ock;font-family:'Lato','Helvetica','ArialMT',sans-serif;font-size:24px;font=
+-weight:300;letter-spacing:normal;line-height:1.2;margin:0 auto;padding:0;t=
+ext-align:center;word-spacing:normal;width:80%"> =C2=A1Subiste al nivel 3! =
+</h1>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0; font-family:Lato,Ar=
+ial,sans-serif">
+                                                    <tbody style=3D"font-fa=
+mily:Lato,Arial,sans-serif">
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td height=3D"44" s=
+tyle=3D"font-family:Lato,Arial,sans-serif; font-size:0; line-height:0; padd=
+ing:0"> </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- Nuevos Beneficios -->
+                                                <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" align=3D"center" width=3D"100%" style=3D"backg=
+round:#fff; border-spacing:0; font-family:Lato,Arial,sans-serif; border-bot=
+tom:1px solid #d9d9d9">
+                                                    <tbody>
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td align=3D"center=
+" height=3D"100%" valign=3D"top" width=3D"100%" style=3D"font-family:Lato,A=
+rial,sans-serif; padding: 0;">
+                                                            <table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" width=3D"100%" =
+style=3D"border-spacing:0;font-family:Lato,Arial,sans-serif">
+                                                                <a href=3D"=
+" class=3D"headline-main" href=3D"" RILT=3D"P1" target=3D"_blank" style=3D"=
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-colo=
+r: #ffffff; color: #666666; display: block; font-family: 'Lato', 'Helvetica=
+', 'ArialMT', sans-serif; font-weight: normal; margin: 0; padding: 0 !impor=
+tant; position: relative; text-decoration: none; width: 100%;">
+                                                                    <table =
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"box headline-cont=
+ainer" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+ border-spacing: 0; display: table; font-family: 'Lato', 'Helvetica', 'Aria=
+lMT', sans-serif; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align:=
+ center; width: 100%;">
+                                                                        <tb=
+ody style=3D"font-family: 'Lato', 'Helvetica', 'ArialMT', sans-serif;">
+                                                                        <tr=
+ style=3D"border: none; font-family: 'Lato', 'Helvetica', 'ArialMT', sans-s=
+erif; margin: 0; padding: 0;">
+                                                                           =
+ <td class=3D"headline-main-table-td" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border: none; box-sizing: border-box; font-=
+family: 'Lato', 'Helvetica', 'ArialMT', sans-serif; margin: 0; mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; padding: 0 20px; width: 80%;">
+                                                                           =
+     <h2 class=3D"headline-sub-title" style=3D"border: none; display: block=
+; font-family: 'Lato', 'Helvetica', 'ArialMT', sans-serif; font-weight: 400=
+; letter-spacing: normal; line-height: 1.2; padding: 0; word-spacing: norma=
+l; margin-top: 28px; margin-bottom: 24px; max-width: 600px; font-size: 18px=
+; text-align: center; color: #000000;"> Conseguiste nuevos beneficios </h2>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                        <tr=
+ style=3D"font-family:Lato,Arial,sans-serif">
+                                                                           =
+ <td align=3D"center"style=3D" font-family: Lato, Arial, sans-serif; paddin=
+g: 0">
+                                                                           =
+     <div style=3D"display: block">
+                                                                           =
+         <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"1=
+00%" style=3D" background: #fff; border-spacing: 0; font-family: Lato,Arial=
+,sans-serif; max-width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                           =
+             <tbody>
+                                                                           =
+             <tr style=3D"font-family: Lato,Arial,sans-serif">
+                                                                           =
+                 <td style=3D"font-family: Lato,Arial,sans-serif;padding: 0=
+;width: 64px;"> <img style=3D" border: 0; font-family: Lato,Arial,sans-seri=
+f; width: 64px" src=3D"https://http2.mlstatic.com/resources/frontend/static=
+s/loyal/ic-free-shipping-lvl-3-3x.png" alt=3D""> </td>
+                                                                           =
+                 <td style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+                     <p class=3D"loyalty-level-txt" style=3D"color:#666666;=
+font-family:Lato,Arial,sans-serif;font-size:16px;font-weight:300;line-heigh=
+t:1.25;margin:0;padding:5px 0;padding-left:20px;text-align:left;white-space=
+:normal;word-break:normal">Env=C3=ADos gratis en compras desde $&nbsp;60.00=
+0</p>
+                                                                           =
+                 </td>
+                                                                           =
+             </tr>
+                                                                           =
+             </tbody>
+                                                                           =
+         </table>
+                                                                           =
+     </div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                        <tr=
+ style=3D"font-family:Lato,Arial,sans-serif">
+                                                                           =
+ <td align=3D"center"style=3D" font-family: Lato, Arial, sans-serif; paddin=
+g: 0">
+                                                                           =
+     <div style=3D"display: none">
+                                                                           =
+         <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"1=
+00%" style=3D" background: #fff; border-spacing: 0; font-family: Lato,Arial=
+,sans-serif; max-width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                           =
+             <tbody>
+                                                                           =
+             <tr style=3D"font-family: Lato,Arial,sans-serif">
+                                                                           =
+                 <td style=3D"font-family: Lato,Arial,sans-serif;padding: 0=
+;width: 64px;"> <img style=3D" border: 0; font-family: Lato,Arial,sans-seri=
+f; width: 64px" src=3D"https://http2.mlstatic.com/resources/frontend/static=
+s/loyal/ic-shipping-discounts-lvl-3-3x.png" alt=3D""> </td>
+                                                                           =
+                 <td style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+                     <p class=3D"loyalty-level-txt" style=3D"color:#666666;=
+font-family:Lato,Arial,sans-serif;font-size:16px;font-weight:300;line-heigh=
+t:1.25;margin:0;padding:5px 0;padding-left:20px;text-align:left;white-space=
+:normal;word-break:normal">null</p>
+                                                                           =
+                 </td>
+                                                                           =
+             </tr>
+                                                                           =
+             </tbody>
+                                                                           =
+         </table>
+                                                                           =
+     </div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                        <tr=
+ style=3D"font-family:Lato,Arial,sans-serif">
+                                                                           =
+ <td align=3D"center"style=3D" font-family: Lato, Arial, sans-serif; paddin=
+g: 0">
+                                                                           =
+     <div style=3D"display: none">
+                                                                           =
+         <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"1=
+00%" style=3D" background: #fff; border-spacing: 0; font-family: Lato,Arial=
+,sans-serif; max-width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                           =
+             <tbody>
+                                                                           =
+             <tr style=3D"font-family: Lato,Arial,sans-serif">
+                                                                           =
+                 <td style=3D"font-family: Lato,Arial,sans-serif;padding: 0=
+;width: 64px;"> <img style=3D" border: 0; font-family: Lato,Arial,sans-seri=
+f; width: 64px" src=3D"https://http2.mlstatic.com/resources/frontend/static=
+s/loyal/ic-returns-lvl-3-3x.png" alt=3D""> </td>
+                                                                           =
+                 <td style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+                     <p class=3D"loyalty-level-txt" style=3D"color:#666666;=
+font-family:Lato,Arial,sans-serif;font-size:16px;font-weight:300;line-heigh=
+t:1.25;margin:0;padding:5px 0;padding-left:20px;text-align:left;white-space=
+:normal;word-break:normal">  </p>
+                                                                           =
+                 </td>
+                                                                           =
+             </tr>
+                                                                           =
+             </tbody>
+                                                                           =
+         </table>
+                                                                           =
+     </div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                        <tr=
+ style=3D"font-family:Lato,Arial,sans-serif">
+                                                                           =
+ <td align=3D"center"style=3D" font-family: Lato, Arial, sans-serif; paddin=
+g: 0">
+                                                                           =
+     <div style=3D"display: none">
+                                                                           =
+         <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"1=
+00%" style=3D" background: #fff; border-spacing: 0; font-family: Lato,Arial=
+,sans-serif; max-width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                           =
+             <tbody>
+                                                                           =
+             <tr style=3D"font-family: Lato,Arial,sans-serif">
+                                                                           =
+                 <td style=3D"font-family: Lato,Arial,sans-serif;padding: 0=
+;width: 64px;"> <img style=3D" border: 0; font-family: Lato,Arial,sans-seri=
+f; width: 64px" src=3D"https://http2.mlstatic.com/resources/frontend/static=
+s/loyal/ic-cp-lvl-3-3x.png" alt=3D""> </td>
+                                                                           =
+                 <td style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+                     <p class=3D"loyalty-level-txt" style=3D"color:#666666;=
+font-family:Lato,Arial,sans-serif;font-size:16px;font-weight:300;line-heigh=
+t:1.25;margin:0;padding:5px 0;padding-left:20px;text-align:left;white-space=
+:normal;word-break:normal">  </p>
+                                                                           =
+                 </td>
+                                                                           =
+             </tr>
+                                                                           =
+             </tbody>
+                                                                           =
+         </table>
+                                                                           =
+     </div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                        <tr=
+ style=3D"font-family:Lato,Arial,sans-serif">
+                                                                           =
+ <td align=3D"center"style=3D" font-family: Lato, Arial, sans-serif; paddin=
+g: 0">
+                                                                           =
+     <div style=3D"display: none">
+                                                                           =
+         <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"1=
+00%" style=3D" background: #fff; border-spacing: 0; font-family: Lato,Arial=
+,sans-serif; max-width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                           =
+             <tbody>
+                                                                           =
+             <tr style=3D"font-family: Lato,Arial,sans-serif">
+                                                                           =
+                 <td style=3D"font-family: Lato,Arial,sans-serif;padding: 0=
+;width: 64px;"> <img style=3D" border: 0; font-family: Lato,Arial,sans-seri=
+f; width: 64px" src=3D"https://http2.mlstatic.com/resources/frontend/static=
+s/loyal/ic-acceso-pref-lvl-3-3x.png" alt=3D""> </td>
+                                                                           =
+                 <td style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+                     <p class=3D"loyalty-level-txt" style=3D"color:#666666;=
+font-family:Lato,Arial,sans-serif;font-size:16px;font-weight:300;line-heigh=
+t:1.25;margin:0;padding:5px 0;padding-left:20px;text-align:left;white-space=
+:normal;word-break:normal">  </p>
+                                                                           =
+                 </td>
+                                                                           =
+             </tr>
+                                                                           =
+             </tbody>
+                                                                           =
+         </table>
+                                                                           =
+     </div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                        <tr=
+ style=3D"font-family:Lato,Arial,sans-serif">
+                                                                           =
+ <td align=3D"center"style=3D" font-family: Lato, Arial, sans-serif; paddin=
+g: 0">
+                                                                           =
+     <div style=3D"display: none">
+                                                                           =
+         <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"1=
+00%" style=3D" background: #fff; border-spacing: 0; font-family: Lato,Arial=
+,sans-serif; max-width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                           =
+             <tbody>
+                                                                           =
+             <tr style=3D"font-family: Lato,Arial,sans-serif">
+                                                                           =
+                 <td style=3D"font-family: Lato,Arial,sans-serif;padding: 0=
+;width: 64px;"> <img style=3D" border: 0; font-family: Lato,Arial,sans-seri=
+f; width: 64px" src=3D"https://http2.mlstatic.com/resources/frontend/static=
+s/loyal/ic-mpos-lvl-3-3x.png" alt=3D""> </td>
+                                                                           =
+                 <td style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+                     <p class=3D"loyalty-level-txt" style=3D"color:#666666;=
+font-family:Lato,Arial,sans-serif;font-size:16px;font-weight:300;line-heigh=
+t:1.25;margin:0;padding:5px 0;padding-left:20px;text-align:left;white-space=
+:normal;word-break:normal">  </p>
+                                                                           =
+                 </td>
+                                                                           =
+             </tr>
+                                                                           =
+             </tbody>
+                                                                           =
+         </table>
+                                                                           =
+     </div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                        <tr=
+ style=3D"font-family:Lato,Arial,sans-serif">
+                                                                           =
+ <td align=3D"center"style=3D" font-family: Lato, Arial, sans-serif; paddin=
+g: 0">
+                                                                           =
+     <div style=3D"display: none; display: block">
+                                                                           =
+         <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"1=
+00%" style=3D" background: #fff; border-spacing: 0; font-family: Lato,Arial=
+,sans-serif; max-width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                           =
+             <tbody>
+                                                                           =
+             <tr style=3D"font-family: Lato,Arial,sans-serif">
+                                                                           =
+                 <td style=3D"font-family: Lato,Arial,sans-serif;padding: 0=
+;width: 64px;"> <img style=3D" border: 0; font-family: Lato,Arial,sans-seri=
+f; width: 64px" src=3D"https://http2.mlstatic.com/resources/frontend/static=
+s/loyal/ic-deals-lvl-3-3x.png" alt=3D""> </td>
+                                                                           =
+                 <td style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+                     <p class=3D"loyalty-level-txt" style=3D"color:#666666;=
+font-family:Lato,Arial,sans-serif;font-size:16px;font-weight:300;line-heigh=
+t:1.25;margin:0;padding:5px 0;padding-left:20px;text-align:left;white-space=
+:normal;word-break:normal"> Acceso a descuentos exclusivos </p>
+                                                                           =
+                 </td>
+                                                                           =
+             </tr>
+                                                                           =
+             </tbody>
+                                                                           =
+         </table>
+                                                                           =
+     </div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                        <tr=
+ style=3D"font-family:Lato,Arial,sans-serif">
+                                                                           =
+ <td align=3D"center"style=3D" font-family: Lato, Arial, sans-serif; paddin=
+g: 0">
+                                                                           =
+     <div style=3D"display: none; display: none">
+                                                                           =
+         <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"1=
+00%" style=3D" background: #fff; border-spacing: 0; font-family: Lato,Arial=
+,sans-serif; max-width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                           =
+             <tbody>
+                                                                           =
+             <tr style=3D"font-family: Lato,Arial,sans-serif">
+                                                                           =
+                 <td style=3D"font-family: Lato,Arial,sans-serif;padding: 0=
+;width: 64px;"> <img style=3D" border: 0; font-family: Lato,Arial,sans-seri=
+f; width: 64px" src=3D"https://http2.mlstatic.com/resources/frontend/static=
+s/loyal/ic-shipping-lvl-3-3x.png" alt=3D""> </td>
+                                                                           =
+                 <td style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+                     <p class=3D"loyalty-level-txt" style=3D"color:#666666;=
+font-family:Lato,Arial,sans-serif;font-size:16px;font-weight:300;line-heigh=
+t:1.25;margin:0;padding:5px 0;padding-left:20px;text-align:left;white-space=
+:normal;word-break:normal">  </p>
+                                                                           =
+                 </td>
+                                                                           =
+             </tr>
+                                                                           =
+             </tbody>
+                                                                           =
+         </table>
+                                                                           =
+     </div>
+                                                                           =
+ </td>
+                                                                        </t=
+r>
+                                                                        </t=
+body>
+                                                                    </table>
+                                                                </a>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- Viejos Beneficios -->
+                                                <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" class=3D"box headline-container" style=3D"-ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-spacing: 0; =
+display: table; font-family: 'Lato', 'Helvetica', 'ArialMT', sans-serif; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: center; width: 100%=
+; background: #f7f7f7;">
+                                                    <tbody style=3D"font-fa=
+mily: 'Lato', 'Helvetica', 'ArialMT', sans-serif; display: table-row-group">
+                                                    <tr style=3D"border: no=
+ne; font-family: 'Lato', 'Helvetica', 'ArialMT', sans-serif; margin: 0; pad=
+ding: 0;">
+                                                        <td class=3D"headli=
+ne-main-table-td" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%; border: none; box-sizing: border-box; font-family: 'Lato', 'Hel=
+vetica', 'ArialMT', sans-serif; margin: 0; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; padding: 0 20px;">
+                                                            <h2 class=3D"he=
+adline-sub-title" style=3D"border: none; color: #000000; display: block; fo=
+nt-family: 'Lato', 'Helvetica', 'ArialMT', sans-serif; font-size: 18px; fon=
+t-weight: 400; letter-spacing: normal; line-height: 1.2; padding: 0; text-a=
+lign: center; word-spacing: normal; margin-top: 48px; margin-bottom: 32px; =
+max-width: 600px;"> Adem=C3=A1s, recuerda que tienes... </h2>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td align=3D"center=
+" style=3D" font-family: Lato, Arial, sans-serif; padding: 0">
+                                                            <div style=3D"d=
+isplay: none">
+                                                                <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D" backg=
+round: #f7f7f7; border-spacing: 0; font-family: Lato,Arial,sans-serif; max-=
+width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                    <tbody>
+                                                                    <tr sty=
+le=3D"font-family: Lato,Arial,sans-serif">
+                                                                        <td=
+ style=3D"font-family: Lato,Arial,sans-serif;padding: 0; width: 64px;"> <im=
+g style=3D"border: 0;font-family: Lato,Arial,sans-serif;width: 64px" src=3D=
+"https://http2.mlstatic.com/resources/frontend/statics/loyal/ic-free-shippi=
+ng-lvl-3-3x.png" alt=3D""> </td>
+                                                                        <td=
+ style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+ <p class=3D"loyalty-level-txt" style=3D"color:#666666;font-family:Lato,Ari=
+al,sans-serif;font-size:16px;font-weight:300;line-height:1.25;margin:0;padd=
+ing:5px 0;padding-left:20px;text-align:left;white-space:normal;word-break:n=
+ormal"> null </p>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td align=3D"center=
+" style=3D" font-family: Lato, Arial, sans-serif; padding: 0">
+                                                            <div style=3D"d=
+isplay: none">
+                                                                <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D" backg=
+round: #f7f7f7; border-spacing: 0; font-family: Lato,Arial,sans-serif; max-=
+width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                    <tbody>
+                                                                    <tr sty=
+le=3D"font-family: Lato,Arial,sans-serif">
+                                                                        <td=
+ style=3D"font-family: Lato,Arial,sans-serif;padding: 0; width: 64px;"> <im=
+g style=3D"border: 0;font-family: Lato,Arial,sans-serif;width: 64px" src=3D=
+"https://http2.mlstatic.com/resources/frontend/statics/loyal/ic-returns-lvl=
+-3-3x.png" alt=3D""> </td>
+                                                                        <td=
+ style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+ <p class=3D"loyalty-level-txt" style=3D"color:#666666;font-family:Lato,Ari=
+al,sans-serif;font-size:16px;font-weight:300;line-height:1.25;margin:0;padd=
+ing:5px 0;padding-left:20px;text-align:left;white-space:normal;word-break:n=
+ormal">  </p>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td align=3D"center=
+" style=3D" font-family: Lato, Arial, sans-serif; padding: 0">
+                                                            <div style=3D"d=
+isplay: block">
+                                                                <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D" backg=
+round: #f7f7f7; border-spacing: 0; font-family: Lato,Arial,sans-serif; max-=
+width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                    <tbody>
+                                                                    <tr sty=
+le=3D"font-family: Lato,Arial,sans-serif">
+                                                                        <td=
+ style=3D"font-family: Lato,Arial,sans-serif;padding: 0; width: 64px;"> <im=
+g style=3D"border: 0;font-family: Lato,Arial,sans-serif;width: 64px" src=3D=
+"https://http2.mlstatic.com/resources/frontend/statics/loyal/ic-cp-lvl-3-3x=
+.png" alt=3D""> </td>
+                                                                        <td=
+ style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+ <p class=3D"loyalty-level-txt" style=3D"color:#666666;font-family:Lato,Ari=
+al,sans-serif;font-size:16px;font-weight:300;line-height:1.25;margin:0;padd=
+ing:5px 0;padding-left:20px;text-align:left;white-space:normal;word-break:n=
+ormal"> Compra protegida por 30 d=C3=ADas </p>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td align=3D"center=
+" style=3D" font-family: Lato, Arial, sans-serif; padding: 0">
+                                                            <div style=3D"d=
+isplay: none">
+                                                                <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D" backg=
+round: #f7f7f7; border-spacing: 0; font-family: Lato,Arial,sans-serif; max-=
+width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                    <tbody>
+                                                                    <tr sty=
+le=3D"font-family: Lato,Arial,sans-serif">
+                                                                        <td=
+ style=3D"font-family: Lato,Arial,sans-serif;padding: 0; width: 64px;"> <im=
+g style=3D"border: 0;font-family: Lato,Arial,sans-serif;width: 64px" src=3D=
+"https://http2.mlstatic.com/resources/frontend/statics/loyal/ic-acceso-pref=
+-lvl-3-3x.png" alt=3D""> </td>
+                                                                        <td=
+ style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+ <p class=3D"loyalty-level-txt" style=3D"color:#666666;font-family:Lato,Ari=
+al,sans-serif;font-size:16px;font-weight:300;line-height:1.25;margin:0;padd=
+ing:5px 0;padding-left:20px;text-align:left;white-space:normal;word-break:n=
+ormal">  </p>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td align=3D"center=
+" style=3D" font-family: Lato, Arial, sans-serif; padding: 0">
+                                                            <div style=3D"d=
+isplay: none">
+                                                                <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D" backg=
+round: #f7f7f7; border-spacing: 0; font-family: Lato,Arial,sans-serif; max-=
+width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                    <tbody>
+                                                                    <tr sty=
+le=3D"font-family: Lato,Arial,sans-serif">
+                                                                        <td=
+ style=3D"font-family: Lato,Arial,sans-serif;padding: 0; width: 64px;"> <im=
+g style=3D"border: 0;font-family: Lato,Arial,sans-serif;width: 64px" src=3D=
+"https://http2.mlstatic.com/resources/frontend/statics/loyal/ic-mpos-lvl-3-=
+3x.png" alt=3D""> </td>
+                                                                        <td=
+ style=3D"font-family:Lato,Arial,sans-serif;padding:0">
+                                                                           =
+ <p class=3D"loyalty-level-txt" style=3D"color:#666666;font-family:Lato,Ari=
+al,sans-serif;font-size:16px;font-weight:300;line-height:1.25;margin:0;padd=
+ing:5px 0;padding-left:20px;text-align:left;white-space:normal;word-break:n=
+ormal">  </p>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td align=3D"center=
+" style=3D" font-family: Lato, Arial, sans-serif; padding: 0">
+                                                            <div style=3D"d=
+isplay: none">
+                                                                <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D" backg=
+round: #f7f7f7; border-spacing: 0; font-family: Lato,Arial,sans-serif; max-=
+width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                    <tbody>
+                                                                    <tr sty=
+le=3D"font-family: Lato,Arial,sans-serif">
+                                                                        <td=
+ style=3D"font-family: Lato,Arial,sans-serif;padding: 0;width: 64px;"> <img=
+ style=3D" border: 0; font-family: Lato,Arial,sans-serif; width: 64px" src=
+=3D"https://http2.mlstatic.com/resources/frontend/statics/loyal/ic-deals-lv=
+l-3-3x.png" alt=3D""> </td>
+                                                                        <td=
+ style=3D"font-family:Lato,Arial,sans-serif;padding:0;">
+                                                                           =
+ <p class=3D"loyalty-level-txt" style=3D"color:#666666;font-family:Lato,Ari=
+al,sans-serif;font-size:16px;font-weight:300;line-height:1.25;margin:0;padd=
+ing:5px 0;padding-left:20px;text-align:left;white-space:normal;word-break:n=
+ormal">  </p>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr style=3D"font-famil=
+y:Lato,Arial,sans-serif">
+                                                        <td align=3D"center=
+" style=3D" font-family: Lato, Arial, sans-serif; padding: 0">
+                                                            <div style=3D"d=
+isplay: none">
+                                                                <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D" backg=
+round: #f7f7f7; border-spacing: 0; font-family: Lato,Arial,sans-serif; max-=
+width: 360px; padding: 0 20px 30px" align=3D"center">
+                                                                    <tbody>
+                                                                    <tr sty=
+le=3D"font-family: Lato,Arial,sans-serif">
+                                                                        <td=
+ style=3D"font-family: Lato,Arial,sans-serif;padding: 0;width: 64px;"> <img=
+ style=3D" border: 0; font-family: Lato,Arial,sans-serif; width: 64px" src=
+=3D"https://http2.mlstatic.com/resources/frontend/statics/loyal/ic-shipping=
+-lvl-3-3x.png" alt=3D""> </td>
+                                                                        <td=
+ style=3D"font-family:Lato,Arial,sans-serif;padding:0;">
+                                                                           =
+ <p class=3D"loyalty-level-txt" style=3D"color:#666666;font-family:Lato,Ari=
+al,sans-serif;font-size:16px;font-weight:300;line-height:1.25;margin:0;padd=
+ing:5px 0;padding-left:20px;text-align:left;white-space:normal;word-break:n=
+ormal">  </p>
+                                                                        </t=
+d>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- Button center -->
+                                                <table class=3D"button butt=
+on-container" align=3D"center" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0">
+                                                    <tr style=3D"-moz-osx-f=
+ont-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text=
+-size-adjust: none; font-family: 'Lato', 'Helvetica', 'ArialMT', sans-serif=
+;">
+                                                        <td style=3D"-moz-o=
+sx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-=
+text-size-adjust: none; font-family: 'Lato', 'Helvetica', 'ArialMT', sans-s=
+erif; text-align: center;" align=3D"center"> <a href=3D"https://www.mercado=
+libre.com.co/mercado-puntos" target=3D"_blank" class=3D"action-btn button__=
+link" style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; background-color: #3483fa; bor=
+der-radius: 2px; box-sizing: border-box; color: #fff; display: block; font-=
+family: 'Lato', 'ArialMT', Helvetica, sans-serif; font-size: 18px; font-wei=
+ght: normal; min-height: 48px; margin: 28px auto 0; max-width: 280px; paddi=
+ng: 0 20px; text-align: center; border-radius: 4px; text-decoration: none; =
+width: 100%; min-width: 232px;"> <span class=3D"button__value" style=3D"-mo=
+z-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webk=
+it-text-size-adjust: none; font-family: 'Lato', 'Helvetica', 'ArialMT', san=
+s-serif; line-height: 24px; padding: 12px 0; display: block; font-weight: 3=
+00;"> Ir a Mercado Puntos </span> </a> </td>
+                                                    </tr>
+                                                </table>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                                                <!-- Ends Button center -->=
+ <!-- Begin footer -->
+                                                <table class=3D"footer" cel=
+lspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"-moz-=
+osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit=
+-text-size-adjust: none; background-color: #f7f7f7; margin-top: 48px; margi=
+n-bottom: 20px; border-radius: 5px; font-family: 'Lato', 'Helvetica', 'Aria=
+lMT', sans-serif; text-align: center;">
+                                                    <tr style=3D"-moz-osx-f=
+ont-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text=
+-size-adjust: none; font-family: 'Lato', 'Helvetica', 'ArialMT', sans-serif=
+;">
+                                                        <td style=3D"-moz-o=
+sx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-=
+text-size-adjust: none; font-family: 'Lato', 'Helvetica', 'ArialMT', sans-s=
+erif;padding-bottom: 26px;"> <span class=3D"footer__content" style=3D"-moz-=
+osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit=
+-text-size-adjust: none; color: #999999; font-family: 'ArialMT', Helvetica,=
+ sans-serif; font-size: 12px;"> =C2=BFNecesitas ayuda? <a href=3Dhttps://ay=
+uda.mercadolibre.com.co/ayuda class=3D"footer__link" style=3D"-moz-osx-font=
+-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-si=
+ze-adjust: none; color: #3483fa; font-family: 'ArialMT', Helvetica, sans-se=
+rif; text-decoration: none;">Cont=C3=A1ctanos</a> </span> </td>
+                                                    </tr>
+                                                </table>
+                                                <!-- End Footer -->
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<img src=3D"http://url8202.mercadolibre.com/wf/open?upn=3Dn-2BXHQCy63kpAQ5v=
+lgxDj9INL-2BRhVxrLbJegHCev16xucv08I0raT0JEV0tdZ9oJBbhrBSCWQ3UpjexjHh2yCqTox=
+K4cJVO22TeTsKcaM19PUf4zVOWwziKieC1O49YqhpV-2BjRSIgNWVH3ZP7QtPt5sXKRzwsBy2q-=
+2BOMTk0SvZb9mRUm2vOirfxOW3DVdmuxpbZzXhNV3yvOFA5IIfRyT-2BmXstc-2BDCJfA7F-2Fi=
+AQmNbzrsBu8Ykx21NW0eYEteyBo18Bj-2BnVPhlYpa11NewWJD-2B8tMTOLV-2BOSPIMIZpAMWm=
+ZQWACxJsbTe7Kcay6aKGOmRGnV2GuFpnut1-2FTKJ6Iav2v7Dp-2FE74-2B-2F-2BvgljDF1XJm=
+6e8Pn4U33GHm7XHKOGNv1bZ7VpQv0twVqq4pG1ZAROKYiyViRkOU-2FYvWhI4Ki4SayUNE2OzcD=
+VmcN-2Fri4hjHyTWxYwfau8gnRmmuwB8DQhwfFwHfiQVmbM027LWXh3HVK82Wf-2BXTOgF-2FV6=
+acPUKKXvNnm54WzUKjjSrj3uqT8Vv-2B9qrzYJVvKrKdrmReV8tHsEMntRsupe7YDXfoG4NykUV=
+UwFLtBMGrLlXyRFH8L5fp6Qxc4vWQHxhHVh3KXcSDkkHEQ7M4-2FewPQOFc0CZzlAqwZ1RJsLWE=
+HpBerM9oWj9emLifBQlaSrLTdj3Fs2Stid8MCQtzH74HFzCoDMjMzC" alt=3D"" width=3D"1=
+" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !impor=
+tant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !imp=
+ortant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !im=
+portant;padding-bottom:0 !important;padding-right:0 !important;padding-left=
+:0 !important;"/>
+</body>
+</html>
+

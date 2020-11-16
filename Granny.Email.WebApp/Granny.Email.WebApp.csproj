@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>4ea5177f-1f48-4d55-aa6f-d390058b9127</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.28" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Granny.Email.Application\Granny.Email.Application.csproj" />
+    <ProjectReference Include="..\Granny.Email.Infrastructure\Granny.Email.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

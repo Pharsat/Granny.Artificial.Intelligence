@@ -1,0 +1,121 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp1455335ild;
+        Fri, 2 Oct 2020 07:09:14 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwURWYRjed5/Gtx1vVLM0j07NNYcHyeTIDybyJH5MzhkLSNsi6xDSPhQmTMDP6sjxQkXpEF
+X-Received: by 2002:a17:906:4a53:: with SMTP id a19mr2598015ejv.56.1601647754088;
+        Fri, 02 Oct 2020 07:09:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1601647754; cv=none;
+        d=google.com; s=arc-20160816;
+        b=giJ7lDdyi8e8ycatFQo+XvwsPbO1ealRKw7hO80hq6UliKCINxt5389gz+V9AzOat2
+         jrjD+z5okHlQG/YJ7PDnoi1o+h1VwnoeoV+OdqmnOz7SiQZpRz3Xt5WIQCq9QTdB1PYe
+         DRj2ljkhvm/TQMesRx4ttogzPCn4bRyMHISbNX9FQ4DoZEVaDTQoOw30j3BrgYsFGyTw
+         K2vryUkVVfDcw0E4rH4mgjWW/TCiJ4zagV67quFkDVs2PsvG3Gmyp+MMhtTZr3/bLda2
+         X0yOBTntwYLX7q4o/6/HSno2V86R7swRM/KkIuKD/1QUJK/MklntmAvUjyfKpa4gBDVa
+         FUEA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:message-id:to:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=EPvSwyq202yF+LZJMV30uAarbCVxRoT+1av8R6mPOQY=;
+        b=pbEhf7TJkLq05yQirKnhBcjjIGT5U0y37RH4RcvTB6/6PLsVPZQvjuaWTUEzqwJdGz
+         TNLoTuP9KtUHZ74Hz92GyStw5YbNKV83P6/PaQydF3uWJ6M7Z0fQf/1sONbO+xr+SWSY
+         berQmopGx/9A5TTkr9o1bOnEMMeEW5ZOUpBTFxiTTD4oECAY7XuR/AemeoG3APy+seIy
+         RpomTQ1nPx3k//Za+ygQ4Tz+Y2y0awNo1rZ5N00BUq+eSCcw8q8y2SVXIs1uGNPmpb4d
+         eS/LAeD+9F2iZOgFlOzfBciUz7Gn5M5fGpaoBE6WBQ2kj4DQI5O89rPBAhFu1Ku7LST2
+         lVgw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@validdamail.com header.s=s1 header.b=CGuN1fOH;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ibRAbWNZ;
+       spf=pass (google.com: domain of bounces+6503632-00c9-pharsat=gmail.com@app.validdamail.com designates 168.245.52.90 as permitted sender) smtp.mailfrom="bounces+6503632-00c9-pharsat=gmail.com@app.validdamail.com"
+Return-Path: <bounces+6503632-00c9-pharsat=gmail.com@app.validdamail.com>
+Received: from o1.payvalida.validdamail.com (o1.payvalida.validdamail.com. [168.245.52.90])
+        by mx.google.com with ESMTPS id s8si1269356ejr.404.2020.10.02.07.09.13
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 02 Oct 2020 07:09:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+6503632-00c9-pharsat=gmail.com@app.validdamail.com designates 168.245.52.90 as permitted sender) client-ip=168.245.52.90;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@validdamail.com header.s=s1 header.b=CGuN1fOH;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ibRAbWNZ;
+       spf=pass (google.com: domain of bounces+6503632-00c9-pharsat=gmail.com@app.validdamail.com designates 168.245.52.90 as permitted sender) smtp.mailfrom="bounces+6503632-00c9-pharsat=gmail.com@app.validdamail.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=validdamail.com; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject; 
+	s=s1; bh=EPvSwyq202yF+LZJMV30uAarbCVxRoT+1av8R6mPOQY=; b=CGuN1fO
+	Hanen0NIFd7kL0OhhBID+qEnBBs7uVfbHuKYzPS1/9iWl03p1ZNDUgRtCD4ocu5R
+	LoBR1/1/kLNRebjlhEZZS8b0ftchHQoN2AJByIKjTFO1J+R38j6x7ZjrxViR16yp
+	9QGeC8EMJ9nw5SRfjGWID80AshVJqsutmbmM=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:x-feedback-id; 
+	s=smtpapi; bh=EPvSwyq202yF+LZJMV30uAarbCVxRoT+1av8R6mPOQY=; b=ib
+	RAbWNZfct9zLvoSTw8nXC04Rv4URDREIsJpiVegDQ4xL7hma2My5ncr9K1ItEc1g
+	j4tssBldiGXGo5SIU0EbtYhDio03/E7/WPbM6/yPUt/IR6Fl30woqpL7hEP57Sqd
+	Cpz2GgEr3l6zhtHh7xkmUizjAqvJvw2oUAkgA5GRI=
+Received: by filter1246p1iad2.sendgrid.net with SMTP id filter1246p1iad2-2519-5F773487-26
+        2020-10-02 14:09:11.454483983 +0000 UTC m=+589473.479101902
+Received: from NjUwMzYzMg (unknown)
+	by ismtpd0045p1mdw1.sendgrid.net (SG) with HTTP id gCHDr1IRSGCUhABY23CE7g
+	Fri, 02 Oct 2020 14:09:11.422 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Date: Fri, 02 Oct 2020 14:09:11 +0000 (UTC)
+From: info@pinvalidda.com
+Mime-Version: 1.0
+To: pharsat@gmail.com
+Message-ID: <gCHDr1IRSGCUhABY23CE7g@ismtpd0045p1mdw1.sendgrid.net>
+Subject: Orden De Compra Aprobada -Pinvalidda
+X-SG-EID: sqIrrLMbLsIyP9sBRWWxUF78JT7ZpfEH7TvBjG5fTpb0d5G0FxIARfE8fZsmBU73c+uOiOQXjZrXED
+ DL8Jz69fRL2kqRu2hzpclp212J1+/Pic/bt4yNQ9CK2boKk0EAhcsgd+k6lfl7p6xr/EgoWsa012NZ
+ BD2FT7crLE5sBf4azqlJ24FJRlu6kWFn/Zq/
+X-SG-ID: ASZd1Go3F4BVOQO66Q83ejbdxQ3DxyYRG0UR4Y/0NUEHWSYiXtRMYPfn0rmIyv2fwmTxKrSmJXzlNE
+ nnWddn/kKnA5uxjLUox8wJsIB/2HI=
+X-Feedback-ID: 6503632:iJaTdTXU0bkh9gFrvUL+2B0sTCxu1+SnqiN9x9Cv3tg=:IHerVzpr18cvp++zdw8l0hzxB6aTNm552N7FcH+ZNIA=:SG
+
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"50%" style=3D"margin: a=
+uto;"><tr style=3D"box-shadow: 2px 2px 4px grey;"><th colspan=3D"6" style=
+=3D"background-color: #2d5f8c;" align=3D"center"><h1 style=3D"font-family: =
+sans-serif; font-size: 2em; font-weight: lighter; color: #FFF; background-c=
+olor: #2d5f8c;">Notificaci=EF=BF=BDn de transacci=EF=BF=BDn</h1></th></tr><=
+tr><td style=3D"padding: 10px; border: 1px solid #bdc3c7; background-color:=
+ #ecf0f1;" colspan=3D"3"><b>FECHA:</b> 2020-10-01 20:13:21.168257</td><td s=
+tyle=3D"padding: 10px; border: 1px solid #bdc3c7; background-color: #ecf0f1=
+;" colspan=3D"2" ><b>Transaccion NRO :</b> INFO-454158</td></tr><td style=
+=3D"padding: 10px; border: 1px solid #bdc3c7; background-color: #ecf0f1;"><=
+b>DESCRIPCION</b></td><td style=3D"padding: 10px; border: 1px solid #bdc3c7=
+; background-color: #ecf0f1;"><b>PIN</b></td><td style=3D"padding: 10px; bo=
+rder: 1px solid #bdc3c7; background-color: #ecf0f1;"><b>SERIAL</b></td><td =
+style=3D"padding: 10px; border: 1px solid #bdc3c7; background-color: #ecf0f=
+1;"><b>VALOR</b></td><td style=3D"padding: 10px; border: 1px solid #bdc3c7;=
+ background-color: #ecf0f1;"><b>IVA</b></td></tr><tr><td style=3D"padding: =
+10px; border: 1px solid #bdc3c7; background-color: #ecf0f1;">6000 ogrinas</=
+td><td style=3D"padding: 10px; border: 1px solid #bdc3c7; background-color:=
+ #ecf0f1;">RNVK8B5F4VDA9FM</td><td style=3D"padding: 10px; border: 1px soli=
+d #bdc3c7; background-color: #ecf0f1;"></td><td style=3D"padding: 10px; bor=
+der: 1px solid #bdc3c7; background-color: #ecf0f1;">24.200,00</td><td style=
+=3D"padding: 10px; border: 1px solid #bdc3c7; background-color: #ecf0f1;">0=
+.0</td></tr><tr><td style=3D"padding: 10px; border: 1px solid #bdc3c7; back=
+ground-color: #ecf0f1;" colspan=3D"3"> </td><td style=3D"padding: 10px; bor=
+der: 1px solid #bdc3c7; background-color: #ecf0f1;" colspan=3D"2"><b>VALOR =
+TOTAL:</b> 24.200,00</td></tr><tr style=3D"box-shadow: 2px 2px 4px grey;"><=
+th colspan=3D"5" style=3D"padding: 10px; background-color: #2d5f8c;" align=
+=3D"center"><h3 style=3D"font-weight: normal; color: #FFF; background-color=
+: #2d5f8c;">VALIDDA SAS opera unica y exclusivamente como recaudador, si ti=
+ene alguna duda relacionada con el producto o servicio adquirido, por favor=
+ comun=EF=BF=BDquese con el vendedor o portal en el cual o para el cual rea=
+liz=EF=BF=BD el pago.</h3></tr></td></tr><tr style=3D"box-shadow: 2px 2px 4=
+px grey;"><th colspan=3D"5" style=3D"padding: 10px; background-color: #2d5f=
+8c;" align=3D"center"><h3 style=3D"font-weight: normal; color: #FFF; backgr=
+ound-color: #2d5f8c;">VALIDDA SAS NIT:900.418.685-5 PBX: 574 4449969 Carrer=
+a 43A #15sur-15 Medell&iacute;n Colombia</h3></th></tr><tr align=3D"right">=
+<td colspan=3D"2" style=3D"padding: 10px;"><img src=3D"http://www.payvalida=
+.com/img/logo_payvalida_pagos.png" /></td></tr></table><img src=3D"http://l=
+inks.validdamail.com/wf/open?upn=3Dn-2BXHQCy63kpAQ5vlgxDj9J-2BAOW-2BKLSgm0Q=
+sw9Ll19b-2FNw9uNucKvy-2BXbmGcbSdZfiFNImKwk1I4-2Fkp8BVZc9TZs9nZ9ob56DdRO26-2=
+Fmk1-2FnKoQ-2BOyfEivsHJosCXRj-2FhLLVP4jHpSKf0mViT-2Fo82aRzn-2BN2DNbJ9yVoqWH=
+ykJeJlhq83GGVLh5ObjHwGX2QUmfn-2BHhISwl-2Faj4SoENIPJfl8r5ApJJ-2Fj6eZ32MRqEUi=
+sE9RUr-2BYUh7FEIrh4Wnzyv-2BHM9NGPmL9JYOIUSY17Rw-2BTqxTdRE7CzzTXw8hnCSiQ7WL4=
+HhMR4tseSfjMI-2BIk" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D=
+"height:1px !important;width:1px !important;border-width:0 !important;margi=
+n-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;mar=
+gin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;=
+padding-right:0 !important;padding-left:0 !important;"/>

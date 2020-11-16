@@ -1,0 +1,379 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp16433ild;
+        Thu, 22 Oct 2020 14:27:48 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJySfFb9cv2O27IavuvCSilkDPBEr5GokAi521/uIsVNHJvW7Mu7ut4akeudOEGmjl5VLP5a
+X-Received: by 2002:ae9:f507:: with SMTP id o7mr3020347qkg.420.1603402068157;
+        Thu, 22 Oct 2020 14:27:48 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1603402068; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Pv75dTcb3rin3OZVs5n9u7FlX4uf/Xkjjg51mBAwpi1X8WEJ0ROxRVr5mUHwQ9DW5K
+         caQ1/khkRxLlgaz7zG4ptfDP2PIKP4+J7Lbr7EcaHz43EaqPbDQ5YYH0ASWxgzRsyS79
+         jI85InlMh6edun15+vFKUkKxr094qibZf1KJJbW3RQJUUlxmRZQEAxDH0OYdtJaBltRh
+         FpuFVRDmBs/BaZdPyiQUpYmxMF7PR3tbCQiywb4Awi1xoZVMr59A9yNd8uxxT1qv91jv
+         xZh/y7K24i0IV4hi5w8chcB8Sz7cGn6fWdp7cKfUSfMYL2uY9X5JbC7SIMyWj8s81wes
+         C0Og==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:to:reply-to:from:list-unsubscribe:date:message-id
+         :content-transfer-encoding:mime-version:dkim-signature
+         :dkim-signature;
+        bh=KRC4k16Bxr2iGRfLmKc1FhICZCvjDcVX2acE6lQ2RqU=;
+        b=imXtSH4ffn8KWt+PkWeI0J48YcpdntYNn0TGAyv05OSMOyNhf6aLT8jBpkJgk3HJ1Q
+         rLgDdq20brvK0/fnpw4uUbAG34Gz7vvN1MWEXWl72pqmFcLCzv6ViBJB2iWPxAb5qqzu
+         l1E6tFv80qmf5NlcpLrJro0O9DVVclAc+cuM5/KNzb7glHLpHAloHW+my1T/EmjnqufC
+         Cl2d96+6jMMwr7SM/8i6PpIt1tDa1GqNwng+ubnjY2sV/gpvOcorb4GaM9C6yRn0tJ96
+         jP1Lp20qOPPTnz1+CvX8Tjr6W9vSjSUv1+rBfGomikqt0dSUxvceOBOgJK71ygTbb6zd
+         ++zA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mtlintl.com header.s=di header.b=Bpf4MrUy;
+       dkim=pass header.i=@p1.s1.diauth.com header.s=di header.b=rgxyo1us;
+       spf=pass (google.com: domain of kntb8hz6aaadun4d3dsvuaaappndc@ofsys.com designates 208.91.248.89 as permitted sender) smtp.mailfrom=kNtB8Hz6aAaDuN4D3DsVuAaApPnDc@ofsys.com
+Return-Path: <kNtB8Hz6aAaDuN4D3DsVuAaApPnDc@ofsys.com>
+Received: from mta8-89.ofsys.com (mta8-89.ofsys.com. [208.91.248.89])
+        by mx.google.com with ESMTPS id f132si1421177qke.48.2020.10.22.14.27.47
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 22 Oct 2020 14:27:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of kntb8hz6aaadun4d3dsvuaaappndc@ofsys.com designates 208.91.248.89 as permitted sender) client-ip=208.91.248.89;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mtlintl.com header.s=di header.b=Bpf4MrUy;
+       dkim=pass header.i=@p1.s1.diauth.com header.s=di header.b=rgxyo1us;
+       spf=pass (google.com: domain of kntb8hz6aaadun4d3dsvuaaappndc@ofsys.com designates 208.91.248.89 as permitted sender) smtp.mailfrom=kNtB8Hz6aAaDuN4D3DsVuAaApPnDc@ofsys.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=di; d=mtlintl.com;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:
+ List-Unsubscribe:From:Reply-To:To:Subject; i=talentmontreal@mtlintl.com;
+ bh=KRC4k16Bxr2iGRfLmKc1FhICZCvjDcVX2acE6lQ2RqU=;
+ b=Bpf4MrUy4tjWDkbv0lk5omOt66Goacw9m6rKBYESWrj0hqQdodSuwUiYzNNScLQLuGmdQoDEs45F
+   fu1j1jI/essve0+PGDZzX7m3lQHFVBsqTqK+d87o8bkVUTTPT6s5RFncqlE/nfd0cjFu6m5mwIu/
+   vsLaJLLYcbw0F0MRwhuCz6CPs03G5eHcUFIb6r2TyXuICSiAse428r7mmuPHpsAWllirqDWNtEot
+   XwaVX5hJGiVd/gE5TO7DWglqc5rbZUxMHrEBiURmfMd1QToPpFJ+3/R1nL7awde1dDza7TVZtGYS
+   0Bk8gOU/ZEu+Jj7y5zOQNTD3x7UdzYNxN3NVGw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=di; d=p1.s1.diauth.com;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:
+ List-Unsubscribe:From:Reply-To:To:Subject;
+ bh=KRC4k16Bxr2iGRfLmKc1FhICZCvjDcVX2acE6lQ2RqU=;
+ b=rgxyo1usvPmWsk8RkJGbs8QyQVr1nigB2I1bgGkyBosswQAYhMekSOoWRTB33fnqqPi78Kgos15u
+   h70b50HMVZOaoXpykR0UwMa39u8YM2M51iBu0zfwlFwTBGwoA5UkO2dbRZqMbn+2hG1AZyTFppeN
+   L/EOjl5cIjIiVEOT0D+fzoTace6fL43Lv2HLvYbR9MlhjPq7i68fVvLpLRQ9pCd1no31pqSHls+X
+   puG0szkbRBEnSMFixYpnLom7WoyN3Cmx0NUslpEX9eX9uD1dsZ2WkmGxDVWXQM9LIPOVdsgJNfO1
+   VnPWrG7ClCR2v+b2RAIEF/kW+y72pK7k50WcKQ==
+Received: by mta8-89.ofsys.com id hi7sl82ma50u for <pharsat@gmail.com>; Thu, 22 Oct 2020 17:27:46 -0400 (envelope-from <kNtB8Hz6aAaDuN4D3DsVuAaApPnDc@ofsys.com>)
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <kNtB8Hz6aAaDuN4D3DsVuAaApPnDc@ofsys.com>
+Date: Thu, 22 Oct 2020 17:27:45 -0400
+List-Unsubscribe: <mailto:kNtB8Hz6aAaDuN4D3DsVuAaApPnDc@unsubscribe.ofsys.com>
+From: =?utf-8?Q?Talent_Montr=C3=A9al?= <talentmontreal@mtlintl.com>
+Reply-To: =?utf-8?Q?Talent_Montr=C3=A9al?= <talentmontreal@mtlintl.com>
+To:  <pharsat@gmail.com>
+Subject: =?utf-8?Q?Montr=C3=A9al?= recrute en TI, IA et Jeux =?utf-8?Q?vid=C3=A9o!?= Participez =?utf-8?Q?=C3=A0?= la foire virtuelle de l'emploi =?utf-8?Q?d=C3=A8s?= aujourd'hui!
+
+=0A=0A<!---->=0A<!---->=0A<!DOCTYPE html>=0A<html xmlns=3D"https://www.w3.o=
+rg/1999/xhtml" lang=3D"fr" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:=
+o=3D"urn:schemas-microsoft-com:office:office">=0A<head>=0A	<!--[if gte mso =
+9]><xml>=0A     <o:OfficeDocumentSettings>=0A      <o:AllowPNG/>=0A      <o=
+:PixelsPerInch>96</o:PixelsPerInch>=0A     </o:OfficeDocumentSettings>=0A  =
+  </xml><![endif]-->=0A    <title>Montr=C3=A9al recrute en TI, IA et Jeux v=
+id=C3=A9o! Participez =C3=A0 la foire virtuelle de l'emploi d=C3=A8s aujour=
+d'hui!</title>=0A	<meta name=3D"viewport" content=3D"width=3Ddevice-width, =
+initial-scale=3D1.0"/>=0A	<meta name=3D"x-apple-disable-message-reformattin=
+g" />=0A    <!--[if !mso]><meta http-equiv=3D"X-UA-Compatible" content=3D"I=
+E=3Dedge" />=0A    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3D8"/=
+><![endif]-->=0A		=0A    <style type=3D"text/css"> =0A        @import url(h=
+ttps://fonts.googleapis.com/css?family=3DLato);=0A        @import url(https=
+://fonts.googleapis.com/css?family=3DRoboto);=0A        @import url(https:/=
+/fonts.googleapis.com/css?family=3DOpen+Sans);=0A        @import url(https:=
+//fonts.googleapis.com/css?family=3DOswald);=0A        @import url(https://=
+=66onts.googleapis.com/css?family=3DMontserrat);=0A        @import url(http=
+s://fonts.googleapis.com/css?family=3DDosis);=0A        =0A        =0A				=
+=0A		* {box-sizing: border-box;-moz-box-sizing: border-box;}	=0A		=0A		p{ m=
+argin:10px 0; padding:0;} =0A		table{border-collapse:collapse;}=0A		h1, h2,=
+ h3, h4, h5, h6{display:block; margin:0; padding:0;}=0A		img, a img{border:=
+0; height:auto; outline:none; text-decoration:none;}=0A		body, #bodyTable, =
+#bodyCell{height:100%; margin:0 !important; padding:0 !important; width:100=
+%;}=0A		=0A	=0A		body{=0A                        =0A            background-=
+color: #EEEEEE;=0A        }=0A        =0A        body, table, td, a { -webk=
+it-text-size-adjust:100%; -ms-text-size-adjust:100%; mso-line-height-rule:e=
+xactly; }=0A        div[style*=3D"margin: 16px 0"] { margin:0 !important; }=
+=0A		table, td { mso-table-lspace:0pt; mso-table-rspace:0pt; table-layout:=
+=66ixed; } /* Remove spacing between tables in Outlook Desktop. */=0A		tabl=
+e { margin:0 auto; } /* Yahoo fix, centering tables */=0A		table table { ta=
+ble-layout: auto; }=0A		img { -ms-interpolation-mode:bicubic; } /* Force IE=
+ to smoothly render resized images. */	=0A		a[x-apple-data-detectors]{ /* =
+=46orce iOS devices to heed link styles set in CSS. */=0A			color:inherit !=
+important; =0A			text-decoration:none !important; =0A			font-size:inherit !=
+important; =0A			font-family:inherit !important; =0A			font-weight:inherit =
+!important; =0A			line-height:inherit !important;=0A		}=0A		#outlook a { pa=
+dding:0; } /* Force Outlook 2007 and up to provide a "view in browser" mess=
+age. */=0A		.ExternalClass { width: 100%; }=0A		.ExternalClass * {line-heig=
+ht: 100%;}=0A		.textLink a {color: #333333 !important;text-decoration: unde=
+rline !important;}=0A		=0A	/*Fix lien bleu 1/3*/=0A		=0A    =0A        =0A =
+   =0A        =0A    =0A    =0A        .textLink0B1C3 a {color: #072EFA !im=
+portant; text-decoration: underline !important;}=0A.textLink3B1C2 a {color:=
+ #615=465F !important; text-decoration: underline !important;}=0A=0A	=0A	=
+=0A    </style> =0A	<!--[if (gte mso 9)|(IE)]>=0A	<style type=3D"text/css">=
+=0A		table {border-collapse: collapse !important;}=0A	</style>=0A	<![endi=
+=66]-->=0A	<!--[if mso]>=0A	<style type=3D"text/css">=0A    	.outlook-fallb=
+ack-font-family { font-family: Arial, Helvetica, Sans-Serif !important; }=
+=0A    	.outlook-fallback-font-family-preheader{=0A    		font-family: Arial=
+, Helvetica, Sans-Seri=66 !important;=0A    		font-size: 11px !important;=
+=0A	    }=0A	</style>=0A	<![endif]-->=0A</head>=0A<body style=3D"margin:0; =
+padding:0;">=0A<!-- -->=0A<div style=3D"background-color:#EEEEEE;">=0A=0A<t=
+able width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=
+=3D"presentation">=0A<tr>=0A	<td align=3D"center" valign=3D"top" style=3D"b=
+ackground-color:#EEEEEE; padding-top:10px;">	=0A		<table width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation">=0A		<t=
+r>			=0A			<td id=3D"Preheader" align=3D"center" style=3D"padding:0;">=0A		=
+	<!--[if (gte mso 9)|(IE)]>=0A		    <table width=3D"600" style=3D"width:600=
+px;max-width:600px;" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0">=0A			<tr><td>=0A		    <![endif]-->=0A=0A		    <table width=3D"=
+100%" style=3D"max-width:600px; Margin:0 auto;" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0" role=3D"presentation" >=0A            <tr>=0A        =
+        <td class=3D"outlook-fallback-font-family-preheader newFontSize11px=
+" bgcolor=3D"#00B7CE" style=3D"font-family:Arial, Helvetica, sans-serif; =
+=66ont-size:11px; color:#FFFFFF; padding:15px 10px 15px 10px; background-co=
+lor:#00B7CE; text-align:le=66t;  ">=0A				=0A				=0A				=0A					Les recrute=
+urs recherchent des talents comme vous=0A								=0A				=0A				</td>=0A				=
+<td class=3D"outlook-fallback-font-family-preheader newFontSize11px" bgcolo=
+r=3D"#00B7CE" style=3D"font-family:Arial, Helvetica, sans-serif; font-size:=
+11px; color:#FFFF=46F; padding:15px 10px 15px 10px; background-color:#00B7C=
+E; text-align:right;  ">=0A				<!---->=0A					<a hre=66=3D"http://app.dialo=
+ginsight.com/T/OFSYS/SM2/987/2/S/F/7970/64542/93CETkKq/1197.html" style=3D"=
+color:#FFFDFD; text-decoration:underline; font-weight:normal; font-style:no=
+rmal;">Version web</a>=0A				<!---->=0A				<img alt=3D"" width=3D"3" height=
+=3D"2" src=3D"http://app.dialoginsight.com/T/OFC4/T/7970/64542/93CETkKq.gi=
+=66" />=0A				</td>=0A            </tr>=0A            </table>=0A=0A			<!--=
+[if (gte mso 9)|(IE)]>=0A            </td></tr></table>=0A            <![en=
+dif]-->=0A			</td>=0A		</tr>=0A		</table>=0A		=0A    =0A    =0A    =0A=0A<t=
+able width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=
+=3D"presentation">=0A<tr>=0A    <td class=3D"OneColumn" align=3D"center" >=
+=0A	<!--[if (gte mso 9)|(IE)]>=0A	<table width=3D"600" style=3D"max-width:6=
+00px;width:600px;" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0">=0A	<tr><td>=0A	<![endif]-->=0A	<table width=3D"100%" style=3D"ma=
+x-width:600px; Margin:0 auto;" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" role=3D"presentation" >=0A	=0A    <tr>=0A		<td align=3D"center" bgco=
+lor=3D"#ffffff">=0A		=0A			=0A    =0A    =0A    =0A=0A<table width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation">=0A=
+<tr>=0A	<td align=3D"left">=0A	    <table align=3D"left"   width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation">=0A  =
+          <tr>=0A            	<td align=3D"left" style=3D"padding:16px 0px =
+10px 15px;">=0A            		<a hre=66=3D"http://app.dialoginsight.com/T/O=
+=46C4/L2S/7970/B2662/sbgm/1197/7028/viVidz/1/64542/93CETkKq/I/1198/FhyqPR.h=
+tml?h=3DF0v7wJ5bQrnn4n4sT7zm0RjmYtJohGTbg2cx99c-C9Q">		=0A            		=0A=
+            		<img src=3D"https://cdn.ofsys.com/T/OFSYS/H/C987/861/JkEnbW/c=
+apture-d-ecran-2020-09-26-a-10.38.47.png" width=3D"275" border=3D"0" alt=3D=
+"Logo Talent Montr=C3=A9al" style=3D"display:block; width:100%; max-width:2=
+75px; height:auto; font-family:'Open Sans', sans-serif; color:#333333; font=
+-size:18px; text-align:center;" />=0A            		</a>=0A            	</td=
+>=0A            </tr>=0A        </table>=0A    </td>=0A</tr>=0A</table>=0A<=
+table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=
+=3D"presentation">=0A<tr>=0A	<td align=3D"center">=0A	    <table align=3D"c=
+enter"   width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" ro=
+le=3D"presentation">=0A            <tr>=0A            	<td align=3D"center"=
+ style=3D"padding:0px 0px 0px 0px;">=0A            		<a hre=66=3D"http://ap=
+p.dialoginsight.com/T/OFC4/L2S/7970/B2662/sbgm/1197/7028/viVidz/2/64542/93C=
+ETkKq/I/1198/FhyqPR.html?h=3DRsApAoeaJmtJfJlwdRM-zi8bnO7nxoJ9uNBTOYUUhak">	=
+	=0A            		=0A            		<img src=3D"https://cdn.ofsys.com/T/OFSY=
+S/H/C987/858/zsDSmK/xxx.png" width=3D"600" border=3D"0" alt=3D"" style=3D"d=
+isplay:block; width:100%; max-width:600px; height:auto; font-family:'Open S=
+ans', sans-serif; color:#333333; font-size:18px; text-align:center;" />=0A =
+           		</a>=0A            	</td>=0A            </tr>=0A        </tabl=
+e>=0A    </td>=0A</tr>=0A</table>=0A<table width=3D"100%" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" >=0A<tr>=0A	<td align=
+=3D"center" class=3D"ButtonBlock">=0A	=0A		<table   align=3D"center" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion">=0A        <tr>=0A            <td class=3D"adjustPadding" align=3D"ce=
+nter" style=3D"padding:30px 0px 0px 0px;">=0A                =0A           =
+     <table align=3D"center" class=3D"alignCenter increaseCTA"  border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0" style=3D"border-collapse:separate;" r=
+ole=3D"presentation">=0A                <tr>=0A                	<td class=
+=3D"outlook-fallback-font-family newFontSize20px increaseCTA" align=3D"cent=
+er" valign=3D"middle" style=3D"-webkit-border-radius:5px; -moz-border-radiu=
+s:5px; border-radius:5px; padding:10px 10px; font-size:20px; font-family:Ar=
+ial, Helvetica, sans-serif; color:#ffff=66f; border:2px solid #00B7CE;" bgc=
+olor=3D"#00B7CE">=0A                    <a hre=66=3D"http://app.dialoginsig=
+ht.com/T/OFC4/L2S/7970/B2662/sbgm/1197/7028/viVidz/3/64542/93CETkKq/I/1198/=
+=46hyqPR.html?h=3Db8jHUdG7Cnc4bT5qccNxRIJyoBWJemdDDv1Z-2QhICY" class=3D"out=
+look-fallback-font-family" title=3D"En savoir plus" style=3D"font-size:20px=
+; font-family:Arial, Helvetica, sans-serif; color:#ffff=66f; text-decoratio=
+n:none; font-weight:bold; font-style:normal; text-align:center; display:blo=
+ck;">=0A                    En savoir plus=0A                    </a>=0A   =
+                 </td>=0A                </tr>=0A                </table>=
+=0A        	</td>=0A        </tr>=0A        </table>=0A	=0A	</td>=0A</tr>=
+=0A</table>=0A<table width=3D"100%" align=3D"center" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" role=3D"presentation" >=0A<tr>=0A	<td align=3D"c=
+enter">=0A		<table width=3D"90%" align=3D"center" role=3D"presentation" sty=
+le=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;=
+" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=0A		<tr>=0A			<td align=
+=3D"left" class=3D"outlook-fallback-font-family newFontSize14px" style=3D"=
+=66ont-family:Arial, Helvetica, sans-serif; font-size:14px; color:#333333; =
+-ms-text-size-adjust:100%; line-height:18px; padding:20px 0px 0px 0px; text=
+-align:left;">=0A				=0A                    <span class=3D"textLink0B1C3"><=
+em>Vous avez r&eacute;cemment particip&eacute; &agrave; la foire virtuelle =
+de l&#39;emploi ExpoEmpleo du SENA et vous vous &ecirc;tes montr&eacute; in=
+t&eacute;ress&eacute; pour recevoir davantage d&#39;informations de la part=
+ de Talent Montr&eacute;al.</em><br />=0A<br />=0A<font color=3D"#c0392b"><=
+b>Postulez avant le <u>1er novembre</u> !</b></font><br />=0A<br />=0A<span=
+ style=3D"font-size:16px;"><strong>Projet de vie et de carri&egrave;re pour=
+ les talents internationaux</strong></span>=0A<ul>=0A	<li paraeid=3D"{3b797=
+c45-e076-42d8-8f5e-ab0cd9a9dbf0}{182}" paraid=3D"1027344250">Vous &ecirc;te=
+s un professionnel en TI,&nbsp;jeux vid&eacute;o ou intelligence artificiel=
+le?</li>=0A	<li paraeid=3D"{3b797c45-e076-42d8-8f5e-ab0cd9a9dbf0}{182}" par=
+aid=3D"1027344250">Vous poss&eacute;dez au moins 3 ans d&#39;exp&eacute;rie=
+nce?</li>=0A	<li paraeid=3D"{3b797c45-e076-42d8-8f5e-ab0cd9a9dbf0}{182}" pa=
+raid=3D"1027344250">Vous parlez fran&ccedil;ais ou anglais couramment?</li>=
+=0A	<li paraeid=3D"{3b797c45-e076-42d8-8f5e-ab0cd9a9dbf0}{182}" paraid=3D"1=
+027344250">Vous r&ecirc;vez de vivre et travailler &agrave; Montr&eacute;al=
+ (Canada)?&nbsp;</li>=0A</ul>=0A=0A<div style=3D"margin-top:0; margin-botto=
+m:10px;"  paraeid=3D"{3b797c45-e076-42d8-8f5e-ab0cd9a9dbf0}{186}" paraid=3D=
+"805703356">Cet &eacute;v&eacute;nement de recrutement a &eacute;t&eacute; =
+cr&eacute;&eacute;&nbsp;pour vous!<br />=0A<br />=0ADu 19 octobre au 6 nove=
+mbre, Talent Montr&eacute;al, une initiative de Montr&eacute;al Internation=
+al,&nbsp;tient une foire virtuelle de l&#39;emploi&nbsp;avec plus de&nbsp;<=
+strong>20 entreprises</strong> et plus de&nbsp;<strong>200 postes</strong> =
+en vedette :<br />=0A<br />=0A<span style=3D"color: #00B7CE;">D&eacute;velo=
+ppeurs de logiciels, ing&eacute;nieurs de donn&eacute;es, d&eacute;veloppeu=
+rs BI, DevOps, architectes, experts SAP, Scrum Masters, experts cybers&eacu=
+te;curit&eacute;, analystes QA, concepteurs et programmeurs de jeux, artist=
+es et bien plus encore.</span><br />=0A<br />=0ATrouvez l&rsquo;emploi de v=
+os r&ecirc;ves&nbsp;&agrave; Montr&eacute;al&nbsp;et postulez&nbsp;d&egrave=
+;s maintenant en vue des entretiens.</div><br/>=0A=0A<hr />=0A<div style=3D=
+"margin-top:0; margin-bottom:10px;"  paraeid=3D"{3b797c45-e076-42d8-8f5e-ab=
+0cd9a9dbf0}{205}" paraid=3D"835975593"><br />=0ABon succ&egrave;s &agrave; =
+tous!<br />=0AL&#39;&eacute;quipe de Talent Montr&eacute;al</div></span>=0A=
+                =0A			</td>=0A		</tr>=0A		</table>=0A	</td>=0A</tr>=0A</tab=
+le>=0A    =0A=0A		=0A		</td>=0A	</tr>=0A	</table>=0A	<!--[if (gte mso 9)|(I=
+E)]>=0A    </td></tr></table>=0A    <![endif]-->=0A	</td>=0A</tr>=0A</table=
+>=0A<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+role=3D"presentation">=0A<tr>=0A    <td class=3D"OneColumn" align=3D"center=
+" >=0A	<!--[if (gte mso 9)|(IE)]>=0A	<table width=3D"600" style=3D"max-widt=
+h:600px;width:600px;" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0">=0A	<tr><td>=0A	<![endif]-->=0A	<table width=3D"100%" style=3D=
+"max-width:600px; Margin:0 auto;" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" role=3D"presentation" >=0A	=0A    <tr>=0A		<td align=3D"center" bgc=
+olor=3D"#ffffff">=0A		=0A			=0A    =0A    =0A    =0A=0A<table width=3D"100%=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" >=
+=0A<tr>=0A	<td align=3D"center" class=3D"ButtonBlock">=0A	=0A		<table   ali=
+gn=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation">=0A        <tr>=0A            <td class=3D"adjustP=
+adding" align=3D"center" style=3D"padding:5px 0px 15px 0px;">=0A           =
+     =0A                <table align=3D"center" class=3D"alignCenter increa=
+seCTA"  border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"border-co=
+llapse:separate;" role=3D"presentation">=0A                <tr>=0A         =
+       	<td class=3D"outlook-fallback-font-family newFontSize20px increaseC=
+TA" align=3D"center" valign=3D"middle" style=3D"-webkit-border-radius:5px; =
+-moz-border-radius:5px; border-radius:5px; padding:10px 10px; font-size:20p=
+x; font-family:Arial, Helvetica, sans-serif; color:#ffff=66f; border:2px so=
+lid #00B7CE;" bgcolor=3D"#00B7CE">=0A                    <a hre=66=3D"http:=
+//app.dialoginsight.com/T/OFC4/L2S/7970/B2662/sbgm/1197/7028/viVidz/4/64542=
+/93CETkKq/I/1198/FhyqPR.html?h=3DiMiRhj4iDQ9cKOZvLG-9XzxQaBwDOggJOg0nLuyYNg=
+4" class=3D"outlook-fallback-font-family" title=3D"Postulez maintenant" sty=
+le=3D"font-size:20px; font-family:Arial, Helvetica, sans-serif; color:#ffff=
+=66f; text-decoration:none; font-weight:bold; font-style:normal; text-align=
+:center; display:block;">=0A                    Postulez maintenant=0A     =
+               </a>=0A                    </td>=0A                </tr>=0A =
+               </table>=0A        	</td>=0A        </tr>=0A        </table>=
+=0A	=0A	</td>=0A</tr>=0A</table>=0A<table width=3D"100%" cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" role=3D"presentation">=0A<tr>=0A	<td align=
+=3D"center">=0A	    <table align=3D"center"   width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" role=3D"presentation">=0A            <tr=
+>=0A            	<td align=3D"center" style=3D"padding:8px 0px 8px 0px;">=
+=0A            		<a hre=66=3D"http://app.dialoginsight.com/T/OFC4/L2S/7970/=
+B2662/sbgm/1197/7028/viVidz/5/64542/93CETkKq/I/1198/FhyqPR.html?h=3DIsMz-JH=
+0FUn6cyKGbGejJOoOHna7wPTFeCxGNAohye8">		=0A            		=0A            		<=
+img src=3D"https://cdn.ofsys.com/T/OFSYS/H/C987/859/0IlwQI/logossss.jpg" wi=
+dth=3D"600" border=3D"0" alt=3D"" style=3D"display:block; width:100%; max-w=
+idth:600px; height:auto; font-family:'Open Sans', sans-serif; color:#333333=
+; font-size:18px; text-align:center;" />=0A            		</a>=0A           =
+ 	</td>=0A            </tr>=0A        </table>=0A    </td>=0A</tr>=0A</tabl=
+e>=0A    =0A=0A		=0A		</td>=0A	</tr>=0A	</table>=0A	<!--[if (gte mso 9)|(IE=
+)]>=0A    </td></tr></table>=0A    <![endif]-->=0A	</td>=0A</tr>=0A</table>=
+=0A<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" r=
+ole=3D"presentation">=0A<tr>=0A    <td class=3D"OneColumn" align=3D"center"=
+ >=0A	<!--[if (gte mso 9)|(IE)]>=0A	<table width=3D"600" style=3D"max-width=
+:600px;width:600px;" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0">=0A	<tr><td>=0A	<![endif]-->=0A	<table width=3D"100%" style=3D"=
+max-width:600px; Margin:0 auto;" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" role=3D"presentation" >=0A	=0A    <tr>=0A		<td align=3D"center" bgco=
+lor=3D"#ffffff">=0A		=0A			=0A    =0A    =0A    =0A=0A<table width=3D"100%"=
+ align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"=
+presentation" >=0A<tr>=0A	<td align=3D"center">=0A		<table width=3D"100%" a=
+lign=3D"center" role=3D"presentation" style=3D"border-collapse:collapse; ms=
+o-table-lspace:0pt; mso-table-rspace:0pt;" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0">=0A		<tr>=0A			<td align=3D"left" class=3D"outlook-fallbac=
+k-font-family newFontSize14px" style=3D"font-family:Arial, Helvetica, sans-=
+serif; font-size:14px; color:#333333; -ms-text-size-adjust:100%; line-heigh=
+t:18px; padding:11px 32px 11px 27px; text-align:left;">=0A				=0A          =
+          <span class=3D"textLink"><div style=3D"text-align: center;margin-=
+top:0; margin-bottom:10px;" ><span style=3D"font-size:12px;">Vous recevez c=
+e message&nbsp;car vous avez r&eacute;cemment particip&eacute; &agrave; l&#=
+39;une&nbsp;des activit&eacute;s de recrutement de Talent Montr&eacute;al e=
+t&nbsp;avez consenti &agrave; faire partie de notre communaut&eacute;.</spa=
+n></div></span>=0A                =0A			</td>=0A		</tr>=0A		</table>=0A	</t=
+d>=0A</tr>=0A</table>=0A    =0A=0A		=0A		</td>=0A	</tr>=0A	</table>=0A	<!--=
+[if (gte mso 9)|(IE)]>=0A    </td></tr></table>=0A    <![endif]-->=0A	</td>=
+=0A</tr>=0A</table>=0A<table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" role=3D"presentation">=0A<tr>=0A    <td class=3D"OneCol=
+umn" align=3D"center" >=0A	<!--[if (gte mso 9)|(IE)]>=0A	<table width=3D"60=
+0" style=3D"max-width:600px;width:600px;" align=3D"center" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0">=0A	<tr><td>=0A	<![endif]-->=0A	<table wid=
+th=3D"100%" style=3D"max-width:600px; Margin:0 auto;" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" role=3D"presentation" >=0A	=0A    <tr>=0A		<td =
+align=3D"center" bgcolor=3D"#ffffff">=0A		=0A			=0A    =0A    =0A    =0A=0A=
+<table width=3D"100%" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" role=3D"presentation" >=0A<tr>=0A	<td align=3D"center">=0A		<t=
+able bgcolor=3D"#004A7C" width=3D"100%" align=3D"center" role=3D"presentati=
+on" style=3D"border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspa=
+ce:0pt;background:#004A7C;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+">=0A		<tr>=0A			<td align=3D"left" class=3D"outlook-fallback-font-family n=
+ewFontSize14px" style=3D"font-family:'Open Sans', sans-serif; font-size:14p=
+x; color:#FFFF=46F; -ms-text-size-adjust:100%; line-height:18px; padding:20=
+px 40px 20px 40px; text-align:left;">=0A				=0A                    <span cl=
+ass=3D"textLink"><div style=3D"text-align: center;"><span style=3D"font-siz=
+e:11px;">Montr&eacute;al International, l&rsquo;agence de promotion &eacute=
+;conomique du Grand Montr&eacute;al, accompagne&nbsp;les investisseurs, les=
+ startups, les organisations internationales ainsi que les travailleurs et =
+&eacute;tudiants du monde entier dans leurs projets au sein de la m&eacute;=
+tropole qu&eacute;b&eacute;coise.</span></div></span>=0A                =0A=
+			</td>=0A		</tr>=0A		</table>=0A	</td>=0A</tr>=0A</table>=0A<table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presenta=
+tion">=0A<tr>=0A	<td align=3D"center">=0A	    <table align=3D"center"   wid=
+th=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presen=
+tation">=0A            <tr>=0A            	<td align=3D"center" style=3D"pa=
+dding:30px 0px 18px 0px;">=0A            		<a hre=66=3D"http://app.dialogin=
+sight.com/T/OFC4/L2S/7970/B2662/sbgm/1197/7027/ZkXOCo/1/64542/93CETkKq/I/11=
+98/FhyqPR.html?h=3Do_DFPlTA6S_28p3tWycwXG81uIYsAOmnvnk4jfo1r10">		=0A      =
+      		=0A            		<img src=3D"https://cdn.ofsys.com/T/OFSYS/H/C987/4=
+62/MePsU8/mi-mi-hori-rgb.jpg" width=3D"180" border=3D"0" alt=3D"" style=3D"=
+display:block; width:100%; max-width:180px; height:auto; font-family:'Open =
+Sans', sans-serif; color:#333333; font-size:18px; text-align:center;" />=0A=
+            		</a>=0A            	</td>=0A            </tr>=0A        </tab=
+le>=0A    </td>=0A</tr>=0A</table>=0A<table width=3D"100%" align=3D"center"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation" >=
+=0A<tr>=0A	<td align=3D"center">=0A		<table bgcolor=3D"#FFFFFF" width=3D"95=
+%" align=3D"center" role=3D"presentation" style=3D"border-collapse:collapse=
+; mso-table-lspace:0pt; mso-table-rspace:0pt;background:#FFFFFF;" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0">=0A		<tr>=0A			<td align=3D"center"=
+ class=3D"outlook-fallback-font-family newFontSize11px alignText" style=3D"=
+=66ont-family:'Open Sans', sans-serif; font-size:11px; color:#443F3F; -ms-t=
+ext-size-adjust:100%; line-height:14px; padding:10px 0px 10px 0px; text-ali=
+gn:center;">=0A				=0A                    <span class=3D"textLink3B1C2"><a =
+style=3D"text-decoration:underline; color:#615F5F; font-weight:normal; font=
+-style:normal;"  hre=66=3D"http://app.dialoginsight.com/T/OFC4/OO/fr-CA/797=
+0/64542/93CETkKq/14817/kX1MuW.html">Opt-out</a></span>=0A                =
+=0A			</td>=0A		</tr>=0A		</table>=0A	</td>=0A</tr>=0A</table>=0A    =0A=0A=
+		=0A		</td>=0A	</tr>=0A	</table>=0A	<!--[if (gte mso 9)|(IE)]>=0A    </td>=
+</tr></table>=0A    <![endif]-->=0A	</td>=0A</tr>=0A</table>=0A<table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presenta=
+tion">=0A<tr>=0A    <td class=3D"OneColumn" align=3D"center" >=0A	<!--[if (=
+gte mso 9)|(IE)]>=0A	<table width=3D"600" style=3D"max-width:600px;width:60=
+0px;" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=0A=
+	<tr><td>=0A	<![endif]-->=0A	<table width=3D"100%" style=3D"max-width:600px=
+; Margin:0 auto;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"=
+presentation" >=0A	=0A    <tr>=0A		<td align=3D"center" bgcolor=3D"#FFFFFF"=
+>=0A		=0A			=0A    =0A    =0A    =0A=0A    =0A=0A		=0A		</td>=0A	</tr>=0A	<=
+/table>=0A	<!--[if (gte mso 9)|(IE)]>=0A    </td></tr></table>=0A    <![end=
+if]-->=0A	</td>=0A</tr>=0A</table>=0A    =0A=0A	</td>=0A</tr>=0A</table>=0A=
+</div>=0A&nbsp;=0A</body>=0A</html>=0A=0A=0A=0A
+
+

@@ -1,0 +1,209 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:b605:0:0:0:0:0 with SMTP id s5csp2278226ili;
+        Sat, 5 Sep 2020 11:33:16 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwvl4bNBkG8/qbC1cKKRYbzUkMzj6mWT2D7A5bjKlJhIIJcChy2rY+aPIOcVgUc9/nISBjh
+X-Received: by 2002:a17:906:4a51:: with SMTP id a17mr4119924ejv.381.1599330796720;
+        Sat, 05 Sep 2020 11:33:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1599330796; cv=none;
+        d=google.com; s=arc-20160816;
+        b=atbLvsAvYe2IZPxYpHM+I1y7meI9rtw21Q0KeS59WO3GaxYw/O9cetUALctcIqOrxN
+         k5oO7JEwEaZkMQ1/r/tT974wxcdAkn3WFYBnCCehtjjFY8UcV0GjOQn/gvSZTRNel8wG
+         lH1wea68WjX6LkwOObdXmB0OC3maLAncltsLuraB0w2U3bc9M929Z4RqODDAJTEZ5Kuw
+         rTm2fvbT9e+d+RXL81pRjGrpRdk1HBsXA4G8Yke2RqsAEn7+ngO3wxGziWWd8BkZ0NhZ
+         cDvw6pBAZMRySq1FlHh/AwsIfQvtyPLgY5mZVKN9cHCOEYBZPmz9p0JfgbALjj7pO9pu
+         RfAA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to
+         :reply-to:from:date:dkim-signature;
+        bh=nGtPbtbiVKfmxKgwIg7tgVL5Xs9XZzieW7fIernxLR4=;
+        b=NRHO8CdixT6DiHd9uYCH0sP9TW9Lippfs7zYPVG4wJUEP0uNL/Eyjd/c5lQCtNQsMP
+         hNnlHYCxRmzJsz1VLj5Xj/63X+WXGqjjYmkE7CBK+ILybLy2WaN8BF7kZZgP2ZyBQVp6
+         P2UsY4DIkJroPDkUhOAhWX0AwvtJRhc3XS3oAZZkd6O3c0oR6G6l/JxJSHZN3YQ8/mmZ
+         jo9Psrr/Qo7zDiRpjr2kgFu6p7vhTlpc2K9DQHaawU6j2bKZlYEWCnq/ckPy8shtH8UY
+         xxtKoMzRtL8UtluFgDnuE0fB9NKHf8PDaVuUAr+QGcV/dNChxeCRtqpFSD5yntNoQTRp
+         K+LQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sendgrid.net header.s=smtpapi header.b=xZ4X1irD;
+       spf=pass (google.com: domain of bounces+15910693-c868-pharsat=gmail.com@sendgrid.net designates 149.72.53.165 as permitted sender) smtp.mailfrom="bounces+15910693-c868-pharsat=gmail.com@sendgrid.net"
+Return-Path: <bounces+15910693-c868-pharsat=gmail.com@sendgrid.net>
+Received: from wrqvprxr.outbound-mail.sendgrid.net (wrqvprxr.outbound-mail.sendgrid.net. [149.72.53.165])
+        by mx.google.com with ESMTPS id j18si6679100ejv.121.2020.09.05.11.33.15
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 05 Sep 2020 11:33:16 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+15910693-c868-pharsat=gmail.com@sendgrid.net designates 149.72.53.165 as permitted sender) client-ip=149.72.53.165;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sendgrid.net header.s=smtpapi header.b=xZ4X1irD;
+       spf=pass (google.com: domain of bounces+15910693-c868-pharsat=gmail.com@sendgrid.net designates 149.72.53.165 as permitted sender) smtp.mailfrom="bounces+15910693-c868-pharsat=gmail.com@sendgrid.net"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.net; 
+	h=from:reply-to:to:subject:mime-version:content-type:content-transfer-encoding:x-feedback-id; 
+	s=smtpapi; bh=nGtPbtbiVKfmxKgwIg7tgVL5Xs9XZzieW7fIernxLR4=; b=xZ
+	4X1irDA+QathPymsvbUHJh6PCXTgkGmtCi6LIekU2cahzdcv894ZUqaHl4nAMBa6
+	Usmq4i43aQZ1JTk6BuIIT3kTPRkI/9XDTttLjiG6Qpyd6FpmUwldD38LjIfZFzax
+	v1zEe2ZH1VskQfBCWNSC30oNbB2XYj4JslNBy23Z8=
+Received: by filter0375p1iad2.sendgrid.net with SMTP id filter0375p1iad2-15280-5F53D9E9-14
+        2020-09-05 18:33:13.750854336 +0000 UTC m=+91958.716943428
+Received: from smartfit.com.br (unknown)
+	by ismtpd0002p1iad1.sendgrid.net (SG) with ESMTP id PiYHjGpzTf-BuRW6r7J-sw
+	for <pharsat@gmail.com>; Sat, 05 Sep 2020 18:33:13.654 +0000 (UTC)
+Date: Sat, 05 Sep 2020 18:33:13 +0000 (UTC)
+From: email@smartfit.com.co
+Reply-To: Smart Fit <smartcolombia@sacbioritmo.zendesk.com>
+To: pharsat@gmail.com
+Message-ID: <5f53d9e996def_27d02b0db4f019cc2931e@smartsystem-jobs12.mail>
+Subject: =?UTF-8?Q?Smart_Fit_-_Cancelaci=C3=B3n?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-SG-EID: sqIrrLMbLsIyP9sBRWWxUF78JT7ZpfEH7TvBjG5fTpbYgBsGXGwJ+We0Mp/lowaUdiM/Xw04mgu3rD
+ gLkbnqVIiDCSq8b8m6PI5GGOSP/qOPg5F0je6TMKSBvfriB41oCLJ1E5FBTG4J0gzvEdaSa+pvfqXh
+ MK5/nSpHEE3v5vBraRyYUj9RnsyR0CFi9vurx9PnvSSfH+ajP1ons4hUWQ==
+X-Feedback-ID: 15910693:MA0oL4w4FJviGsbc5PT2+LIqtPHh2PBMkHspGVfAMV0=:MA0oL4w4FJviGsbc5PT2+LIqtPHh2PBMkHspGVfAMV0=:SG
+
+<!DOCTYPE html>=0D
+<html>=0D
+<head>=0D
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">=
+=0D
+  <meta charset=3D"UTF-8">=0D
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">=0D
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"ie=3Dedge">=0D
+  <title>Cancelaci=C3=B3n de plan</title>=0D
+<style>body {=0D
+background-color: #EFEDEC;=0D
+}=0D
+img {=0D
+display: block;=0D
+}=0D
+@media only screen and (max-width: 600px) {=0D
+  .content-mobile {=0D
+    width: 100% !important;=0D
+  }=0D
+  .title {=0D
+    font-size: 18px !important;=0D
+  }=0D
+  .body_content {=0D
+    font-size: 12px !important;=0D
+  }=0D
+  .footer-social-column-link {=0D
+    padding: 0 !important;=0D
+  }=0D
+  .footer-title {=0D
+    width: 100%; padding: 20px 0; margin-bottom: 0;=0D
+  }=0D
+  .footer-text-link {=0D
+    display: block;=0D
+  }=0D
+  .footer-title {=0D
+    display: block;=0D
+  }=0D
+  .footer-social {=0D
+    width: 100%;=0D
+  }=0D
+}=0D
+</style>=0D
+</head>=0D
+<body style=3D"" bgcolor=3D"#EFEDEC">=0D
+  <table class=3D"wrap" cellpadding=3D"10" cellspacing=3D"0" style=3D"width=
+: 100%; font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; b=
+order: 0;" bgcolor=3D"#EFEDEC">=0D
+    <tr>=0D
+      <td align=3D"center">=0D
+        <table cellpadding=3D"0" cellspacing=3D"0" style=3D"border: 0;">=0D
+          <tr>=0D
+            <td>=0D
+              <table cellpadding=3D"0" cellspacing=3D"0" style=3D"border: 0=
+;">=0D
+                <tr>=0D
+                  <td align=3D"right">=0D
+                    <img src=3D"https://s3.amazonaws.com/smartsystem/mailer=
+/logo_smart.png" title=3D"Smart Fit" alt=3D"Smart Fit" style=3D"display: bl=
+ock;">=0D
+                  </td>=0D
+                </tr>=0D
+                <tr>=0D
+                  <td align=3D"right">=0D
+                    <p class=3D"logo-slogan" style=3D"font-size: 8px; color=
+: #929291; width: 90px; margin: 0; padding: 3px;">=0D
+                      =C2=A0=0D
+                    </p>=0D
+                  </td>=0D
+                </tr>=0D
+              </table>=0D
+            </td>=0D
+            <td>=0D
+              <img src=3D"https://s3.amazonaws.com/smartsystem/mailer/logo_=
+fit.png" title=3D"Smart Fit" alt=3D"Smart Fit" style=3D"display: block;">=
+=0D
+            </td>=0D
+          </tr>=0D
+        </table>=0D
+      </td>=0D
+    </tr>=0D
+    <tr>=0D
+      <td align=3D"center">=0D
+        <table class=3D"content content-mobile" cellpadding=3D"30" cellspac=
+ing=3D"0" style=3D"width: 600px; border-radius: 8px; word-break: break-word=
+; margin: 0; padding: 0; border: 0;" bgcolor=3D"#FFFFFF">=0D
+            <tr>=0D
+              <td align=3D"left" class=3D"title" style=3D"font-size: 26px; =
+color: #ffb612;" bgcolor=3D"#222">=0D
+                Cancelaci=C3=B3n de plan=0D
+              </td>=0D
+            </tr>=0D
+          <tr>=0D
+            <td align=3D"left">=0D
+              <table class=3D"yield" cellpadding=3D"10" cellspacing=3D"0" s=
+tyle=3D"margin: 0; padding: 0; border: 0;">=0D
+                <tr>=0D
+                  <td>=0D
+                    <p>Estimad@ Cristian Felipe Gallego Ramirez,</p>=0D
+<p>Tu plan Black en la sede La 10 fue cancelado conforme a lo solicitado.</=
+p>=0D
+<p>Estamos a tu disposici=C3=B3n para aclarar cualquier duda,</p>=0D
+<p>Smart Fit</p>=0D
+=0D
+=0D
+                  </td>=0D
+                </tr>=0D
+              </table>=0D
+            </td>=0D
+          </tr>=0D
+        </table>=0D
+      </td>=0D
+    </tr>=0D
+=0D
+    <tr>=0D
+      <td align=3D"center">=0D
+        <table width=3D"150" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"devicewidth" height=3D"10" style=3D"border: 0;=
+">=0D
+          <tbody>=0D
+            <tr>=0D
+=0D
+=0D
+=0D
+=0D
+=0D
+            </tr>=0D
+          </tbody>=0D
+        </table>=0D
+      </td>=0D
+    </tr>=0D
+=0D
+  </table>=0D
+
+<img src=3D"https://u15910693.ct.sendgrid.net/wf/open?upn=3Dn-2BXHQCy63kpAQ=
+5vlgxDj9J-2BAOW-2BKLSgm0Qsw9Ll19b9RxwXj5wuwmqoQ3OiN9-2F4mYQ8TuEGy0-2FinTccV=
+Fe-2BCHLKpfAKLIfrUPvnEOVdclIE6v4xq8OUXIoNeaQT2iEA31rezCGa3C7f6K3lSgsKtlRZUP=
+ShV3M1CrUaGz-2BtN2E45l3uf2epf3TLHsMhPsex3tjQ0CxbFAfck-2FWb9pV-2FQQuZew569g8=
+AGn8c148-2FrTMY-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D=
+"height:1px !important;width:1px !important;border-width:0 !important;margi=
+n-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;mar=
+gin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;=
+padding-right:0 !important;padding-left:0 !important;"/>
+</body>=0D
+</html>=0D
+

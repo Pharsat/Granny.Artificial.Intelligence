@@ -1,0 +1,1054 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:ba8f:0:0:0:0:0 with SMTP id t15csp1312503ill;
+        Thu, 9 Jul 2020 02:14:47 -0700 (PDT)
+X-Received: by 2002:ac8:554f:: with SMTP id o15mr65559575qtr.278.1594286087354;
+        Thu, 09 Jul 2020 02:14:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1594286087; cv=none;
+        d=google.com; s=arc-20160816;
+        b=a/Scc91OwDns4l211CfyEc1dQv6d6dZZ2kKLqz/mcgRD70/ilFbjzueJDB0cNFGSkd
+         txuaplUpjPEwmaSPSUoPHpaG2RBOM8GpQbJ5ShoRAFcX63nPw5OPMGVDUnXQNxE/z4l+
+         MrlFGyUMuYTWyCC8GVVPnYKeiVk5SwLDpO5zjjdQCdY86s3MpRGBfJcYnp/Dc0hCFavu
+         CW+JAL1+SCkxIB11m03YJgd9ThZ74i5SwuOhgrhuoEngqxv8dez9WVsrGtcsgExP7h3t
+         SvUUOTMGvIj7pIlIt25yno5oYLlki+JDYjWTc7NLpvSTyNbnsmg9gIwdXnwDbKEOdCws
+         DzFQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:list-id:feedback-id:list-unsubscribe
+         :precedence:reply-to:date:mime-version:dkim-signature;
+        bh=r/jD2Cibd9PQrDNV0D+9Fn7stmdQI+V9eOhXo31uZDA=;
+        b=ca25bkIYtr/5HNV0poKK+glc5V9TdEspY4wEjkFVYCO6TdD0xxbzdEkmVYbYZiGu83
+         ZxC+NZrToRr2XQ2FOdyUF/BWCu4KubNRXvoaekOjpLKJ7qy2KAnIFFXDXaT3GK09RAnI
+         m14Dm8ueGPedK9Jmx6QjcAfyCpr/Dq6+ggP+xUhEN/XFNMqX8ICgi3SDmLSpM0n2dhap
+         jUF2+mSySO3ogtzVs9/eH3HrHihTBz16xstAmR3J9fgGhfJo4YmGyavWNLHiSGs6KmVM
+         mfIxgyE7zrdJ+ZFvKd+CXubQGeNsaUY+aBS4aXZyHz9+qlPdJk6aaQHvUUQzIhyQsGHS
+         cB/A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=HWf7YG+A;
+       spf=pass (google.com: domain of 3buagxxukb98hpphmfbddpvou-opsfqmzhpphmf.dpnqibstbuhnbjm.dpn@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3BuAGXxUKB98HPPHMFBDDPVOU-OPSFQMZHPPHMF.DPNQIBSTBUHNBJM.DPN@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3BuAGXxUKB98HPPHMFBDDPVOU-OPSFQMZHPPHMF.DPNQIBSTBUHNBJM.DPN@scoutcamp.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id s10sor2676877qvm.30.2020.07.09.02.14.47
+        for <pharsat@gmail.com>
+        (Google Transport Security);
+        Thu, 09 Jul 2020 02:14:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3buagxxukb98hpphmfbddpvou-opsfqmzhpphmf.dpnqibstbuhnbjm.dpn@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=HWf7YG+A;
+       spf=pass (google.com: domain of 3buagxxukb98hpphmfbddpvou-opsfqmzhpphmf.dpnqibstbuhnbjm.dpn@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3BuAGXxUKB98HPPHMFBDDPVOU-OPSFQMZHPPHMF.DPNQIBSTBUHNBJM.DPN@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:date:reply-to:precedence:list-unsubscribe:feedback-id
+         :list-id:message-id:subject:from:to;
+        bh=r/jD2Cibd9PQrDNV0D+9Fn7stmdQI+V9eOhXo31uZDA=;
+        b=HWf7YG+AP0QsewHXKDVlLplzLNMJtJlYeEAnfXlNoCgo9vHXqs99iubHe6J1vjyRZf
+         1gcqFH8w8kSI5KkgcbHRnULjYvouEqZ3ezsLnwzXGInL8hqpmiKddUmClQwq5fac/fi0
+         6N+kMin0DcfcI6tStqYLslpyXhRbozqtBYm9eaKbYIt3HnvIqAsVBega5+SFlvU5Pw/e
+         1WbU3BRzO23H/ykOlPS+czAFDn6dPEdZvXktvlMeD1TN9sBMh5BpIIoRoOVywPqjP5Hn
+         ZepvS02K7FKGreTiAMvBzxqPSqupmwQ9p47/ozIJU5njonHZicpCSFzDBMCdaRGlWalv
+         dbxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:date:reply-to:precedence
+         :list-unsubscribe:feedback-id:list-id:message-id:subject:from:to;
+        bh=r/jD2Cibd9PQrDNV0D+9Fn7stmdQI+V9eOhXo31uZDA=;
+        b=VVgYtukG+gbWpWETtsU/NdggOyMQylJRohf+p466XlHiOWVMQLpi3IIMRHw7nrvGxG
+         xz4Kj6s/39rRcit9d0C6Qem3Ms7Deam+VAEVTidngUF5Pqha/kM06P05YKj1pL6Cv/GK
+         IlPp7FeI9fZBffZfg+8vxR032Rjm2m4+3Gt1vJUuy+JwnFFLp+Uv/CDUlITZg3QTQYMJ
+         eGGb1xtQifWBm8l05kj26XaV33XOKPTydnPGVSOz93t+ZA23txnx1PqzFxPhMlmvyHZ3
+         lnTldbWr7xrmQf+F7BeMx3NePcUY9h+hdnyoY+BolhiYNN7aCdyc8K3QcTggQ34VWMQ5
+         y2tg==
+X-Gm-Message-State: AOAM530mxr1NXY6/jwPgo+wHt0btfDeMLgIYM/qw3wReFCagO+1ORtue
+	YSNYwA39T9J2/rg=
+X-Google-Smtp-Source: ABdhPJwnGzcW9tSbc3jeJjwP7W+xYLyMC2gyGl5qmj9YDZx/olU3bocNw7pt4rItcTP2J8n68ElUJnE=
+MIME-Version: 1.0
+X-Received: by 2002:a0c:aa41:: with SMTP id e1mr45795420qvb.117.1594286086896;
+ Thu, 09 Jul 2020 02:14:46 -0700 (PDT)
+Date: Thu, 09 Jul 2020 02:14:46 -0700
+Reply-To: Google Account <googleaccount-noreply@google.com>
+X-Google-Id: 318123
+Precedence: bulk
+List-Unsubscribe: <https://www.google.com/appserve/mkt/optout/AD-FnEz_2JofVbsH_iDfpevNhHLdFtBCCqQW-EzEz1xFI3OyrUk6UtXdlMcWeJYyWOpOQ2lLwne9ektKQtVK9xKWyixyzdoW5lGSy3DWq3kKvUDq?hl=es-419>
+Feedback-ID: P2602--955068252:C20114504:M0-es-419:gamma
+List-Id: <237e027d68f04974f4e3466fb8dd2afbda7df02d.google.com>
+X-Notifications: GAMMA:<985f9c15a536ec83f52e8b1bbfea85bd3c6e0411-20114504-110772657@google.com>
+Message-ID: <985f9c15a536ec83f52e8b1bbfea85bd3c6e0411-20114504-110772657@google.com>
+Subject: =?UTF-8?Q?Cristian_Felipe=2C_completa_la_Verificaci=C3=B3n_de_privac?=
+	=?UTF-8?Q?idad?=
+From: Google Account <googleaccount-noreply@google.com>
+To: pharsat@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000e13e3805a9fea7b2"
+
+--000000000000e13e3805a9fea7b2
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+DQoNCg0KDQpBY2NlZGVyICANCjxodHRwczovL3d3dy5nb29nbGUuY29tL2FwcHNlcnZlL21rdC9w
+L0FELUZuRXdTMHNPcmtrd01yV3V2Q3J2Wlhndk9TRk1EX1hFb01zVHYwV3Rwc1kxT2s5UDFObTBO
+dklBUXdSRFRpUnAzQkw5X09nT2dvQlJ4SV9NeUFfT2xTMmJ6WmZzZjV5dkZSS2hBVks5OD4NCg0K
+UmVhbGl6YSB1bmEgVmVyaWZpY2FjacOzbiBkZSBwcml2YWNpZGFkDQoNClRlIGd1aWFyZW1vcyBw
+b3IgdW4gcHJvY2VzbyBkZXRhbGxhZG8gZGUgY29uZmlndXJhY2nDs24gZGUgcHJpdmFjaWRhZCBj
+bGF2ZSAgDQpwYXJhIGF5dWRhcnRlIGEgZWxlZ2lyIGxhcyBvcGNpb25lcyBxdWUgbcOhcyB0ZSBj
+b252ZW5nYW4uDQoNCkNvbWllbnphIGFob3JhICANCjxodHRwczovL3d3dy5nb29nbGUuY29tL2Fw
+cHNlcnZlL21rdC9wL0FELUZuRXpZMmJWLU1WOTQxd1JRUnNPN0t6QmhKQU4zZmlTWVd1REVBc3Ew
+N3NMVl9nQ1FiaTBkc0l5bUphdWtCeGg4bkk4Q0NHaFBOV0FySW42OWVjaG5Mcl91MlJpZV90cVlo
+YkhsSnFoTm8wQ3ZOSDRCWGdkbEdUV0l5dVlJSllfcnVOd1N0SFlMMUlvQkZkT2hhVEhfN0d6MDlL
+TkhUTWwtdEV0eEhjYUd5ejFKdjZCZFNkRzRhVjdESmx2ZnZZSFhxbDBRYVYxNy1mY1lYb01VN3VT
+cGc1NmhWWlU+DQoNCkNvbnN1bHRhIHF1w6kgb3BjaW9uZXMgcHVlZGVzIGNvbnRyb2xhciBlbiBs
+YSBWZXJpZmljYWNpw7NuIGRlIHByaXZhY2lkYWQNCg0KRWxpZ2UgbG9zIGRhdG9zIHF1ZSBzZSBn
+dWFyZGFyw6FuIGVuIHR1IEN1ZW50YSBkZSBHb29nbGUNCg0KQ29uIGxhIFZlcmlmaWNhY2nDs24g
+ZGUgcHJpdmFjaWRhZCwgcHVlZGVzIHJldmlzYXIgdHVzIGNvbnRyb2xlcyBkZSAgDQphY3Rpdmlk
+YWQgeSBkZWNpZGlyIHF1w6kgZGF0b3Mgc2UgZ3VhcmRhbiBlbiB0dSBjdWVudGEgcGFyYSBwZXJz
+b25hbGl6YXIgdHUgIA0KZXhwZXJpZW5jaWEgZW4gcHJvZHVjdG9zIGRlIEdvb2dsZSBjb21vIE1h
+cHMsIGxhIELDunNxdWVkYSB5IFlvdVR1YmUuDQoNCkNvbWllbnphIGFob3JhICANCjxodHRwczov
+L3d3dy5nb29nbGUuY29tL2FwcHNlcnZlL21rdC9wL0FELUZuRXpiM09BOVFiT3RIRmVYbGhjNzhI
+a1lVVWRudloxbXBTSWJKVHJhRjN3bkVLeGJ2clFCbGhadlZGUTNZTlFxS2NudGQ0RHgwenBaYXly
+MVlyYXRHTkh4VHg5ckVOYmM1aEZrLWNpal9ueHdVd01MdGFxZTZnemhTZzU3Z0MyRFNTMUxZUFBH
+RF9mZTZqR3JOLURaTkMyUDVqT0hwYUFtR2ZveUQ5cVBGVnVNbDkxb1RBT3JGNjA0ZEVoaHJqZjAy
+eGF2OHpkZ29jTV9VbmVqa0N1YVZTNm1pekE+DQoNCkNvbnRyb2xhIGxvcyBhbnVuY2lvcyBxdWUg
+dmVzIHkgbXVjaG8gbcOhcw0KDQpMdWVnbywgcmVhbGl6YSBhanVzdGVzIGRlIGNvbmZpZ3VyYWNp
+w7NuIHBhcmEgcXVlIHRlIG1vc3RyZW1vcyBhbnVuY2lvcyBtw6FzICANCnJlbGV2YW50ZXMsIG8g
+YmllbiBwYXJhIGRlc2FjdGl2YXIgbG9zIGFudW5jaW9zIHBlcnNvbmFsaXphZG9zLiBZLCBlbiBz
+b2xvICANCnVub3MgcG9jb3MgcGFzb3MgZmluYWxlcywgYWRtaW5pc3RyYSBxdcOpIGluZm9ybWFj
+acOzbiBlc3RhcsOhIGRpc3BvbmlibGUgIA0KcMO6YmxpY2FtZW50ZSBvIHNlIGNvbXBhcnRpcsOh
+IGNvbiBhbWlnb3MgZW4gbG9zIHNlcnZpY2lvcyBkZSBHb29nbGUuDQoNCkNvbWllbnphIGFob3Jh
+ICANCjxodHRwczovL3d3dy5nb29nbGUuY29tL2FwcHNlcnZlL21rdC9wL0FELUZuRXc3TW0xMGVM
+TmZwODJWdTdvVUVlRzR4SW5MbWF6UnF4R3ZEUGJnRlpVOFFTVDdtV2lfbkhqc2toVnctWWhjbGtf
+bGpkeHgyMlpXS2NUelJ2UWRqYXNuR2hwMG1tYm5uXzFENEQ4ZlZYZDVfX2lrQnptU2RoS3FJS0py
+MV9IbVRzbXlBcmRpdWZfUGk4aF85bEdpNGpsRHJIbE9iRHEyWmpvM3F2NTNESnF2UUdNRlo2M1p6
+MG9MUDdmdS13Y0tvVDQ1YUZxVFk5bXJxWUFIcFNmcXY2VEY3OEE+DQoNCk1hbnRlbmVtb3MgbGEg
+c2VndXJpZGFkIHkgbGEgcHJpdmFjaWRhZCBkZSB0dXMgZGF0b3MNCg0KUmVjaWJpc3RlIGVzdGUg
+Y29ycmVvIGVsZWN0csOzbmljbyBwb3JxdWUgaGFjZSB1biBhw7FvIHF1ZSBubyBjb21wbGV0YXMg
+dW5hICANClZlcmlmaWNhY2nDs24gZGUgcHJpdmFjaWRhZC4gSGF6IGNsaWMgIA0KYXF1w608aHR0
+cHM6Ly93d3cuZ29vZ2xlLmNvbS9hcHBzZXJ2ZS9ta3Qvb3B0b3V0L0FELUZuRXhRZDU1aW82cFY0
+eGE1ZWVFYW5HQThHYVQ4Z2d6SXNtelAwWHVDbF9oYUZEMXQ4TGVtM2Vzb1VGRHJrVF9iakZjbTAy
+WkY1WGNhdWxISE9SM2FXU2RrZWVCTFcwS3ZOc0d6Q0FQVS1BP2hsPWVzLTQxOT4gIA0KcGFyYSBh
+bnVsYXIgbGEgc3VzY3JpcGNpw7NuIGEgZnV0dXJvcyBjb3JyZW9zIGVsZWN0csOzbmljb3MgZGUg
+ZXN0ZSB0aXBvLg0KDQooYykgMjAyMA0KR29vZ2xlIExMQyAxNjAwIEFtcGhpdGhlYXRyZQ0KUGFy
+a3dheSwgTW91bnRhaW4gVmlldywgQ0EgOTQwNDMNCg0K
+--000000000000e13e3805a9fea7b2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+
+<!doctype html public "- / /w3c / /dtd xhtml 1.0 transitional / /en" "https=
+: / /www.w3.org /tr /xhtml1 /dtd /xhtml1-transitional.dtd">
+<html xmlns=3Dhttps://www.w3.org/1999/xhtml>
+<head>
+<title>Privacy Checkup</title>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<!--[if !mso]><!-->
+<meta http-equiv=3DX-UA-Compatible content=3DIE=3Dedge>
+<!--<![endif]-->
+<meta name=3Dviewport content=3D"width=3Ddevice-width, initial-scale=3D1.0"=
+>
+<meta name=3Drobots content=3D"no index">
+<!--[if mso | ie]>
+<style>
+.out_nobod{border-bottom: 0px !important;}
+.wid{width:650px !important;}
+</style>
+<![endif]-->
+<style>
+body {
+font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+font-size: 12px;
+color: #000000;
+-webkit-text-size-adjust: none !important;
+-webkit-font-smoothing: antialiased !important;
+-ms-text-size-adjust: none !important;
+}
+table, tr, td {
+mso-table-lspace: 0pt;
+mso-table-rspace: 0pt;
+}
+a:link, a:visited, a:hover, a:active {
+color: #4285f4;
+text-decoration: none;
+}
+.appleLinks a {
+color: #000000 !important;
+text-decoration: none !important;
+}
+strong {
+font-weight: bold !important;
+}
+em {
+font-style: italic !important;
+}
+html {
+-webkit-text-size-adjust: none;
+-ms-text-size-adjust: 100%;
+}
+.ReadMsgBody {
+width: 100%;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass * {
+line-height: 100%
+}
+td {
+-webkit-text-size-adjust: none;
+}
+a[href^=3Dtel] {
+color: inherit;
+text-decoration: none;
+}
+div, p, a, li, td {
+-webkit-text-size-adjust: none;
+}
+td {
+text-decoration: none !important;
+}
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: none !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+.showdesktop{
+display:block;
+}
+.showmobile{
+display:none;
+}
+.button_box{text-decoration:none; font-size:14px !important;}
+/** Gmail-button-color fix **/
+.ii a[href]{color:#1A73E8;}
+@media screen and (max-width:896px){
+.padb{
+padding-bottom: 0px !important;
+}
+.showmobile{display:block !important;}
+.showdesktop{display:none !important;}
+}
+@media screen and (max-width:896px)
+{
+.width_main{
+width:100% !important;
+} .para_padding
+{
+padding: 20px 25px 38px 28px !important;
+}
+.cta_button_width
+{
+padding: 13px 0px 13px 0px !important;
+width:146px !important;
+}
+.footer_padding
+{
+padding:40px 0px 8px 0px !important;
+}
+.footer_para
+{
+padding:0px 0px 8px 0px !important;
+}
+.container_width{
+width:100% !important;
+min-width:100% !important;}
+.para_mob, .buttonA{
+width:100% !important;
+padding-left: 12px !important;
+padding-right: 12px !important;
+}
+.table_mob{
+width:100% !important;
+padding-left: 0 !important;
+padding-right: 0 !important;
+}
+.inner_blu_btn4{
+width:100% !important;
+}
+.logo_head{
+padding-bottom: 13px !important;
+padding-left: 12px !important;
+padding-right: 12px !important;
+}
+.pad_bot_38{padding-bottom:38px !important;}
+.emailE_blue_bg
+{
+font-size:32px !important;
+line-height:35px !important;
+width:100% !important;
+padding-left: 12px !important;
+padding-right: 12px !important;
+}
+.textalign_left
+{
+text-align:left !important;
+}
+.textalign_right
+{
+text-align:right !important;
+}
+.pad_r_12{padding-right: 12px !important;}
+.textalign{
+text-align: center !important;
+}
+.button_box{text-decoration:none !important;}
+.img_mob{
+padding: 38px 10px 0px 10px !important;
+}
+.pad_new{padding:63px 35px 0px 35px !important;}
+}
+/** EmailD-css **/
+@media screen and (max-width:736px){}
+@media screen and (min-width: 896px) and (max-width: 896px),
+screen and (min-width: 812px) and (max-width: 812px),
+screen and (min-width: 736px) and (max-width: 736px),
+screen and (min-width: 667px) and (max-width: 667px),
+screen and (min-width: 568px) and (max-width: 568px),
+screen and (min-width: 414px) and (max-width: 414px),
+screen and (min-width: 375px) and (max-width: 375px),
+screen and (min-width: 320px) and (max-width: 320px) {
+.body {
+min-width: 100vw !important;
+}
+}
+</style>
+<!--[if mso]>
+<style>*{font-family: Arial, serif !important;}
+span, td, table, div,a,p{font-family: Arial, serif !important;}
+</style>
+<![endif]-->
+<style>
+@media only screen and (min-device-width: 320px) and (max-device-width: 479=
+px)
+{
+.sign_in_content
+{
+width:80% !important;
+padding-left: 12px !important;
+color:#4284F4 !important;
+padding-right: 12px !important;
+}
+}
+@media screen and (min-device-width: 480px) and (max-width:736px)
+{.sign_in_content
+{ width:80% !important;
+padding-left: 30px !important;
+color:#4284F4 !important;
+padding-right: 30px !important;}
+.hide{display: none !important;}
+}
+</style>
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+</head>
+<body style=3D"font-family:&#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, s=
+ans-serif; margin:0;" class=3Dbody>
+<div style=3D"font-size: 0px; line-height: 0px; color: #ffffff; display: no=
+ne; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0p=
+x; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left:=
+ 0px;">=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=C2=A0 =C2=A0 =C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=C2=A0 =C2=A0 =
+=C2=A0 =C2=A0 =C2=A0</div>
+<center class=3Dwrapper_app style=3D"width:100%; margin:4px auto 0 auto;">
+<!--[if gte mso 9]>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"851" style=
+=3D"width:851px; margin:0; padding:0; table-layout:fixed;>
+<![endif]--> <!--[if !mso]><!-->
+<div style=3D"width: auto; line-height:0px; font-size: 0px; height:0px; ove=
+rflow: hidden;"><img height=3D1 src=3Dhttps://services.google.com/fh/files/=
+emails/spacer_11.gif width=3D3></div>
+<table class=3Dwidth_main border=3D0 cellpadding=3D0 cellspacing=3D0 style=
+=3D"margin:0 auto; padding:0; table-layout:fixed; background-color: #ffffff=
+">
+<!--<![endif]-->
+<tbody>
+<tr style=3D"border-collapse: collapse; border-spacing: 0; padding: 0; marg=
+in: 0;">
+<td class=3D"out_nobod container_width" style=3D"max-width:850px; padding: =
+0; margin: 0;width:850px;border: 1px solid #e0e0e0;max-width:850px; " width=
+=3D850 align=3Dcenter valign=3Dtop>
+<table class=3Dtable_mob cellspacing=3D0 cellpadding=3D0 border=3D0 width=
+=3D100% align=3Dcenter style=3Dwidth:100%px;background-color: bgcolor=3D"">
+<tbody>
+<tr>
+<td class=3Dpara_mob style=3D"font-family: &#39;Roboto&#39;, Arial, sans-se=
+rif;direction:ltr; text-align:center; font-weight:normal;color: #202124; di=
+splay: none;" dir=3Dltr>
+Te guiaremos por un proceso detallado de configuraci=C3=B3n de privacidad c=
+lave para ayudarte a elegir las opciones que m=C3=A1s te convengan.
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3Dtable_mob cellspacing=3D0 cellpadding=3D0 border=3D0 width=
+=3D850 valign=3Dtop>
+<tbody>
+<tr>
+<!--[if gte mso 9]>
+<td class=3D"para_mob textalign_left sign_in_content logo_head" style=3D"te=
+xt-align:left; padding: 10px 86px 5px 0px; line-height:18px; color: #448AFF=
+;width: 330px;text-align:center " valign=3D"top">
+<![endif]-->
+<!--[if !mso]><!-->
+<td class=3D"textalign_left sign_in_content logo_head" style=3D"text-align:=
+left; padding: 17px 86px 18px 86px; color: #448AFF;width: 330px;" valign=3D=
+top>
+<!--<![endif]-->
+<img src=3Dhttps://ssl.gstatic.com/s2/oz/images/notifications/privacymarket=
+ing/privacy_google_account_es-419.png width=3Dauto height=3D22 style=3D"wid=
+th: auto; height:22;border:0;" valign=3Dtop>
+</td>
+<td class=3D"pad_r_12 textalign_right sign_in_content" style=3D"font-family=
+: &#39;Roboto&#39;, Arial, sans-serif;text-align:center; font-size: 16px;di=
+rection:ltr;line-height:26px;font-weight:normal;color: #25272B;padding: 0;c=
+olor: #448AFF;font-size:12px;line-height:18px;width:350px;padding:0px 0px 0=
+px 80px" dir=3Dltr>
+<span class=3Dshowdesktop><a class=3Dapple_link1 href=3Dhttps://www.google.=
+com/appserve/mkt/p/AD-FnEzBsNpXjvpZOsZ7vxNHxLyI2j2wvkoAotNCgsBv8Ilh2xl6JuY-=
+g8fRe2a20MctASv2_q_mNpiKeMS2N19LghGsvuC4ciT-wl4XhYp0bM4 style=3Dtext-decora=
+tion:none;color:#4285F5; target=3D_blank>Acceder</a></span>
+<!--[if !mso]><!-->
+<p style=3D"display:none; font-size:0; line-height:0; mso-line-height-rule:=
+ exactly;">=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=
+=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=
+=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=
+=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=
+=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=
+=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=
+=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0=E2=80=8D=C2=A0</p>
+<!--<![endif]-->
+<span class=3Dshowmobile style=3Ddisplay:none;><a class=3Dapple_link1 href=
+=3Dhttps://www.google.com/appserve/mkt/p/AD-FnEzBsNpXjvpZOsZ7vxNHxLyI2j2wvk=
+oAotNCgsBv8Ilh2xl6JuY-g8fRe2a20MctASv2_q_mNpiKeMS2N19LghGsvuC4ciT-wl4XhYp0b=
+M4 style=3Dtext-decoration:none;color:#4285F5; target=3D_blank>Acceder</a><=
+/span>
+</td>
+</tr>
+<tr>
+<td style=3D"padding: 0px 0px 0px 0px;border-bottom: 1px solid #e0e0e0;padd=
+ing-top: 0px;padding-bottom: 0px;"></td>
+<td style=3D"padding: 0px 0px 0px 0px;border-bottom: 1px solid #e0e0e0;padd=
+ing-top: 0px;padding-bottom: 0px;"></td>
+</tr>
+<!--[if !mso]><!-->
+<tr>
+<td class=3Dshowmobile style=3Ddisplay:none; valign=3Dtop>=C2=A0</td>
+</tr>
+<!--<![endif]-->
+</tbody>
+</table>
+<table class=3Dwid cellspacing=3D0 cellpadding=3D0 border=3D0>
+<tbody>
+<tr>
+<td style=3Dpadding:0px;>
+<!--[if gte mso 9]>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"48%" align=
+=3D"left" >
+<![endif]-->
+<!--[if !mso]><!-->
+<table class=3Dcontainer_width cellspacing=3D0 cellpadding=3D0 border=3D0 w=
+idth=3D322 align=3Dleft style=3D"width: 322px;">
+<!--<![endif]-->
+<tbody>
+<tr>
+<td class=3Dtextalign style=3Dpadding-top:51px>
+<img src=3Dhttps://ssl.gstatic.com/s2/oz/images/notifications/privacymarket=
+ing/icon_privacy_checkup_grey.png width=3D63 height=3D65 style=3D"">
+</td>
+</tr>
+<tr>
+<td valign=3Dtop class=3Dtextalign style=3D"font-weight:normal;padding:37px=
+ 0px 0px 0px;line-height:44px;color:#202124; font-size: 38px; font-family: =
+&#39;Google Sans&#39;, Roboto, Arial, sans-serif; ;direction:ltr;font-famil=
+y: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif;" dir=3Dltr>Re=
+aliza una<br>Verificaci=C3=B3n de privacidad
+</td>
+</tr>
+<tr>
+<td valign=3Dtop class=3D"pad_bot_38 para_mob textalign" style=3D"font-fami=
+ly: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif;font-size: 16=
+px;direction:ltr;font-weight:normal;padding:18px 0px 41px 0px;line-height:3=
+2px;font-size:24px;color:#3C4043; font-family: &#39;Google Sans&#39;, Robot=
+o, Arial, sans-serif; " dir=3Dltr>Te guiaremos por un proceso detallado de =
+configuraci=C3=B3n de privacidad clave para ayudarte a elegir las opciones =
+que m=C3=A1s te convengan.</td>
+</tr>
+<tr>
+<td style=3D"padding-bottom: 30px;" class=3Dpadb>
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 class=3Dinner_blu_btn4 st=
+yle=3D"border-collapse:collapse; clear:both; padding:0; Margin:0; mso-table=
+-lspace:0pt;mso-table-rspace:0pt; table-layout:fixed;">
+<tbody>
+<tr>
+<td class=3DbuttonA style=3D"border-collapse:collapse;padding: 0px 0px 0px =
+0px;direction:ltr;" align=3Dcenter dir=3Dltr>
+<div>
+<!--[if mso]>
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" href=3D"https://www.google.com/appserve/mkt/p=
+/AD-FnEwksbdJJtn0KxHH0-gqo1cslO8uuo0j1n8ZsrpQttcCe2X-nxGd6IStpyrqG3b5gbuGF4=
+RqMB8kH2EaLmGHecjGyl8YqmdJCzA7yrfna5003k5R_eb5bsQXt-m4PTCfUWVyqht2Fd_4j-fmA=
+5EfdwEuh7CJJorMV1FxYUoPjAYnMl3nHFU8-l4zLN4caY3fVwrRJlta_NhO4xt11FlZiS5EL6m5=
+Nw" style=3D"height:46px;v-text-anchor:middle;width:258px;direction:ltr;fon=
+t-size:14px;font-weight:400;line-height:20px;font-family: 'Google Sans','Ro=
+boto', Arial, sans-serif;letter-spacing: 0.75px;" arcsize=3D"5%" stroke=3D"=
+f" fillcolor=3D"#1A73E8">
+<w:anchorlock/>
+<center>
+<![endif]-->
+<a href=3Dhttps://www.google.com/appserve/mkt/p/AD-FnEwksbdJJtn0KxHH0-gqo1c=
+slO8uuo0j1n8ZsrpQttcCe2X-nxGd6IStpyrqG3b5gbuGF4RqMB8kH2EaLmGHecjGyl8YqmdJCz=
+A7yrfna5003k5R_eb5bsQXt-m4PTCfUWVyqht2Fd_4j-fmA5EfdwEuh7CJJorMV1FxYUoPjAYnM=
+l3nHFU8-l4zLN4caY3fVwrRJlta_NhO4xt11FlZiS5EL6m5Nw target=3D_blank class=3D"=
+showdesktop button_box" style=3D"background-color:#1A73E8;direction:ltr;bor=
+der-radius:2px;color:#ffffff;display:inline-block;font-size:14px;font-weigh=
+t:400;line-height:20px;text-align:center;text-decoration:none; -webkit-text=
+-size-adjust:none;letter-spacing: 0.75px;padding: 13px 40px 13px 40px; font=
+-family: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif; ">Comie=
+nza ahora</a>
+<a href=3Dhttps://www.google.com/appserve/mkt/p/AD-FnEwksbdJJtn0KxHH0-gqo1c=
+slO8uuo0j1n8ZsrpQttcCe2X-nxGd6IStpyrqG3b5gbuGF4RqMB8kH2EaLmGHecjGyl8YqmdJCz=
+A7yrfna5003k5R_eb5bsQXt-m4PTCfUWVyqht2Fd_4j-fmA5EfdwEuh7CJJorMV1FxYUoPjAYnM=
+l3nHFU8-l4zLN4caY3fVwrRJlta_NhO4xt11FlZiS5EL6m5Nw target=3D_blank class=3D"=
+showmobile button_box cta_button_width" style=3D"background-color:#1A73E8; =
+direction:ltr; border-radius:2px;color:#ffffff;font-size:16px;font-weight:4=
+00;line-height:20px;text-align:center;text-decoration:none; -webkit-text-si=
+ze-adjust:none;letter-spacing: 0.75px;padding: 13px 40px 13px 40px; font-fa=
+mily: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif; display:no=
+ne;">Comienza ahora</a>
+<!--[if mso]>
+</center>
+</v:roundrect>
+<![endif]-->
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"48%" align=
+=3D"right" >
+<![endif]-->
+<!--[if !mso]><!-->
+<table class=3Dcontainer_width cellspacing=3D0 cellpadding=3D0 border=3D0 w=
+idth=3D322 align=3Dright style=3D"width: 322px;">
+<!--<![endif]-->
+<tbody>
+<tr>
+<!--[if gte mso 9]>
+<td valign=3D"top" class=3D"img_mob" style=3D"font-family: 'Roboto', Arial,=
+ sans-serif;text-align:center;font-size:16px;font-weight:normal;direction:l=
+tr;color:#25272B;padding:52px 10px 80px 10px;" dir=3D"ltr">
+<![endif]-->
+<!--[if !mso]><!-->
+<td valign=3Dtop class=3Dimg_mob style=3D"font-family: &#39;Roboto&#39;, Ar=
+ial, sans-serif;text-align:center;font-size:16px;font-weight:normal;directi=
+on:ltr;color:#25272B;padding:52px 10px 23px 10px;" dir=3Dltr>
+<!--<![endif]-->
+<!--[if gte mso 9]>
+<img src=3D"https://ssl.gstatic.com/s2/oz/images/notifications/privacymarke=
+ting/email1_para1_d_es-419.png" width=3D"273" height=3D"" style=3D"outline:=
+0; border:0;display:inline-block;vertical-align:top;" aria-hidden=3D"true;"=
+/>
+<![endif]-->
+<!--[if !mso]><!-->
+<div class=3Dshowdesktop>
+<img src=3Dhttps://ssl.gstatic.com/s2/oz/images/notifications/privacymarket=
+ing/email1_para1_d_es-419.gif width=3D273 height=3D"" style=3D"border:0;wid=
+th: 273px; " aria-hidden=3Dtrue>
+</div>
+<div class=3Dshowmobile style=3D"display: none;">
+<img valign=3Dbottom src=3Dhttps://ssl.gstatic.com/s2/oz/images/notificatio=
+ns/privacymarketing/email1_para1_m_es-419.gif width=3D273 height=3D"" style=
+=3D"border:0;width: 273px;vertical-align:bottom; " aria-hidden=3Dtrue>
+</div>
+<!--<![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3Dtable_mob cellspacing=3D0 cellpadding=3D0 border=3D0 width=
+=3D850 align=3Dcenter style=3Dwidth:850px;background-color:#E8F0FE bgcolor=
+=3D#E8F0FE>
+<tbody>
+<tr>
+<td class=3DemailE_blue_bg style=3D"font-family: &#39;Roboto&#39;, Arial, s=
+ans-serif;direction:ltr; text-align:center; font-size: 38px;line-height:49p=
+x;font-weight:normal;color: #202124; padding: 0 40px;padding:28px 200px 27p=
+x 200px;line-height:40px;font-size:32px;text-align:center;font-family: &#39=
+;Google Sans&#39;, Roboto, Arial, sans-serif; " dir=3Dltr>
+Consulta qu=C3=A9 opciones puedes controlar en la Verificaci=C3=B3n de priv=
+acidad
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3Dcontainer_width cellspacing=3D0 cellpadding=3D0 border=3D0 w=
+idth=3D660 style=3Dwidth:660px;>
+<tbody>
+<tr>
+<td style=3Dpadding:0px;>
+<!--[if gte mso 9]>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"48%" align=
+=3D"right" >
+<![endif]-->
+<!--[if !mso]><!-->
+<table class=3Dcontainer_width cellspacing=3D0 cellpadding=3D0 border=3D0 w=
+idth=3D50% align=3Dright>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td valign=3Dtop class=3D"textalign pad_new" style=3D"font-weight:normal;pa=
+dding:63px 56px 0px 28px;line-height:32px;color:#202124; font-size: 24px; f=
+ont-family: &#39;Google Sans&#39;, Roboto, Arial, sans-serif; ;direction:lt=
+r;font-family: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif;" =
+dir=3Dltr>Elige los datos que se guardar=C3=A1n en tu Cuenta=C2=A0de=C2=A0G=
+oogle
+</td>
+</tr>
+<tr>
+<td valign=3Dtop class=3D"para_mob textalign para_padding" style=3D"font-fa=
+mily: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif;font-size: =
+16px;direction:ltr;font-weight:normal;padding:14px 25px 21px 28px;line-heig=
+ht:26px;font-size:16px;color:#202124;font-family: &#39;Google Sans&#39;, Ro=
+boto, Arial, sans-serif; " dir=3Dltr>Con la Verificaci=C3=B3n de privacidad=
+, puedes revisar tus controles de actividad y decidir qu=C3=A9 datos se gua=
+rdan en tu cuenta para personalizar tu experiencia en productos de Google c=
+omo Maps, la B=C3=BAsqueda y YouTube.</td>
+</tr>
+<tr>
+<td>
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 class=3Dinner_blu_btn4 st=
+yle=3D"border-collapse:collapse; clear:both; padding:0; Margin:0; mso-table=
+-lspace:0pt;mso-table-rspace:0pt; table-layout:fixed;">
+<tbody>
+<tr>
+<td class=3DbuttonA style=3D"border-collapse:collapse;padding: 0px 25px 0px=
+ 28px;direction:ltr;" align=3Dcenter dir=3Dltr>
+<div>
+<!--[if mso]>
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" href=3D"https://www.google.com/appserve/mkt/p=
+/AD-FnExphJJOma-E59iyu8HGfV8gViqVcZE94nMtkl2E2IW97_9Dk68V7sazS4ZoGgjJQpaH97=
+DPg2UjO8bbQkTkXTc300gxMU9fPEqC8Ajy30l5EDRUn6OXfL1iPrTpdZ8ChzmuxjIRGuoQ04xOd=
+U98Fza8xz2XtW1LVtDa-9cOHXPhMmhbpe4TnJv-oBHtDbo1DDlY_rWJ002GUtTOCoWrxfcevqSw=
+Qw" style=3D"height:46px;v-text-anchor:middle;width:258px;direction:ltr;fon=
+t-size:14px;font-weight:400;line-height:20px;font-family: 'Google Sans','Ro=
+boto', Arial, sans-serif;letter-spacing: 0.75px;" arcsize=3D"5%" stroke=3D"=
+f" fillcolor=3D"#1A73E8">
+<w:anchorlock/>
+<center>
+<![endif]-->
+<a href=3Dhttps://www.google.com/appserve/mkt/p/AD-FnExphJJOma-E59iyu8HGfV8=
+gViqVcZE94nMtkl2E2IW97_9Dk68V7sazS4ZoGgjJQpaH97DPg2UjO8bbQkTkXTc300gxMU9fPE=
+qC8Ajy30l5EDRUn6OXfL1iPrTpdZ8ChzmuxjIRGuoQ04xOdU98Fza8xz2XtW1LVtDa-9cOHXPhM=
+mhbpe4TnJv-oBHtDbo1DDlY_rWJ002GUtTOCoWrxfcevqSwQw target=3D_blank class=3D"=
+showdesktop button_box " style=3D"background-color:#1A73E8;direction:ltr;bo=
+rder-radius:2px;color:#ffffff;display:inline-block;font-size:16px;font-weig=
+ht:400;line-height:20px;text-align:center;text-decoration:none; -webkit-tex=
+t-size-adjust:none;letter-spacing: 0.75px;padding: 13px 40px 13px 40px; fon=
+t-family: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif; ">Comi=
+enza ahora</a>
+<a href=3Dhttps://www.google.com/appserve/mkt/p/AD-FnExphJJOma-E59iyu8HGfV8=
+gViqVcZE94nMtkl2E2IW97_9Dk68V7sazS4ZoGgjJQpaH97DPg2UjO8bbQkTkXTc300gxMU9fPE=
+qC8Ajy30l5EDRUn6OXfL1iPrTpdZ8ChzmuxjIRGuoQ04xOdU98Fza8xz2XtW1LVtDa-9cOHXPhM=
+mhbpe4TnJv-oBHtDbo1DDlY_rWJ002GUtTOCoWrxfcevqSwQw target=3D_blank class=3D"=
+showmobile button_box cta_button_width" style=3D"background-color:#1A73E8; =
+direction:ltr; border-radius:2px;color:#ffffff;font-size:16px;font-weight:4=
+00;line-height:20px;text-align:center;text-decoration:none; -webkit-text-si=
+ze-adjust:none;letter-spacing: 0.75px;padding: 13px 40px 13px 40px; font-fa=
+mily: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif; display:no=
+ne;">Comienza ahora</a>
+<!--[if mso]>
+</center>
+</v:roundrect>
+<![endif]-->
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"48%" align=
+=3D"left" >
+<![endif]-->
+<!--[if !mso]><!-->
+<table class=3Dcontainer_width cellspacing=3D0 cellpadding=3D0 border=3D0 w=
+idth=3D50% align=3Dleft>
+<!--<![endif]-->
+<tbody>
+<tr>
+<!--[if gte mso 9]>
+<td valign=3D"top" class=3D"img_mob textalign" style=3D"font-family: 'Robot=
+o', Arial, sans-serif;text-align:center;font-size:16px;font-weight:normal;d=
+irection:ltr;color:#25272B;padding:34px 10px 0px 0px;" dir=3D"ltr">
+<![endif]-->
+<!--[if !mso]><!-->
+<td valign=3Dtop class=3D"img_mob textalign" style=3D"font-family: &#39;Rob=
+oto&#39;, Arial, sans-serif;text-align:center;font-size:16px;font-weight:no=
+rmal;direction:ltr;color:#25272B;padding:34px 10px 49px 0px;" dir=3Dltr>
+<!--<![endif]-->
+<!--[if gte mso 9]>
+<img src=3D"https://ssl.gstatic.com/s2/oz/images/notifications/privacymarke=
+ting/email1_para2_es-419.png" width=3D"292" height=3D"" style=3D"outline:0;=
+ border:0;display:inline-block;vertical-align:top;" aria-hidden=3D"true;"/>
+<![endif]-->
+<!--[if !mso]><!-->
+<div class=3Dshowdesktop>
+<a href=3D# style=3D"text-decoration: none;width: 292px">
+<img src=3Dhttps://ssl.gstatic.com/s2/oz/images/notifications/privacymarket=
+ing/email1_para2_es-419.gif width=3D292 height=3D"" style=3D"border:0;width=
+: 292px; " aria-hidden=3Dtrue>
+</a>
+</div>
+<div class=3Dshowmobile style=3D"display: none;">
+<a href=3D# style=3D"text-decoration: none;width: 292px">
+<img src=3Dhttps://ssl.gstatic.com/s2/oz/images/notifications/privacymarket=
+ing/email1_para2_es-419.gif width=3D292 height=3D"" style=3D"border:0;width=
+: 292px; " aria-hidden=3Dtrue>
+</a>
+</div>
+<!--<![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]>
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tr>
+<td height=3D"64" align=3D"left" valign=3D"top" style=3D"border-collapse:co=
+llapse;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-line-height-rule:exact=
+ly;line-height:18px;" class=3D"height10"><img src=3D"https://services.googl=
+e.com/fh/files/emails/spacer_11.gif" width=3D"1" height=3D"1" border=3D"0" =
+style=3D"display: block;" /></td>
+</tr>
+</table>
+<![endif]-->
+<table class=3Dcontainer_width cellspacing=3D0 cellpadding=3D0 border=3D0 w=
+idth=3D660 style=3Dwidth:660px;>
+<tbody>
+<tr>
+<td style=3Dpadding:0px;>
+<!--[if gte mso 9]>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" alig=
+n=3D"left" >
+<![endif]-->
+<!--[if !mso]><!-->
+<table class=3Dcontainer_width cellspacing=3D0 cellpadding=3D0 border=3D0 w=
+idth=3D50% align=3Dleft>
+<!--<![endif]-->
+<tbody>
+<tr>
+<td valign=3Dtop class=3Dtextalign style=3D"font-weight:normal;padding:64px=
+ 25px 0px 28px;line-height:32px;color:#202124; font-size: 24px; font-family=
+: &#39;Google Sans&#39;, Roboto, Arial, sans-serif; ;direction:ltr;font-fam=
+ily: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif;" dir=3Dltr>=
+Controla los anuncios<br>que ves y mucho m=C3=A1s
+</td>
+</tr>
+<tr>
+<td valign=3Dtop class=3D"para_mob textalign para_padding" style=3D"font-fa=
+mily: &#39;Roboto&#39;, Arial, sans-serif;font-size: 16px;direction:ltr;fon=
+t-weight:normal;padding:10px 10px 21px 28px;line-height:26px;font-size:16px=
+;color:#202124;font-family: &#39;Google Sans&#39;, Roboto, Arial, sans-seri=
+f; " dir=3Dltr>Luego, realiza ajustes de configuraci=C3=B3n para que te mos=
+tremos anuncios m=C3=A1s relevantes, o bien para desactivar los anuncios pe=
+rsonalizados. Y, en solo unos pocos pasos finales, administra qu=C3=A9 info=
+rmaci=C3=B3n estar=C3=A1 disponible p=C3=BAblicamente o se compartir=C3=A1 =
+con amigos en los servicios de Google.</td>
+</tr>
+<tr>
+<td>
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 class=3Dinner_blu_btn4 st=
+yle=3D"border-collapse:collapse; clear:both; padding:0; Margin:0; mso-table=
+-lspace:0pt;mso-table-rspace:0pt; table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if gte mso 9]>
+<td class=3D"buttonA" style=3D"border-collapse:collapse;padding: 0px 10px 7=
+0px 28px;direction:ltr;" align=3D"center" dir=3D"ltr">
+<![endif]-->
+<!--[if !mso]><!-->
+<td class=3DbuttonA style=3D"border-collapse:collapse;padding: 0px 10px 0px=
+ 28px;;direction:ltr;" align=3Dcenter dir=3Dltr>
+<!--<![endif]-->
+<div>
+<!--[if mso]>
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" href=3D"https://www.google.com/appserve/mkt/p=
+/AD-FnEz3CmHXSUc2NiExNQ4FzoXIA0k22pE75KjmoObNmbZmXENRVmRbNCZ8OUDT0kD5uYFz1S=
+zTp9uMdGkp0ewZA0P7W2KR90f8Ez6qhKig0Fd95YeRN8D4sYI6dBwod5MXlENB4xrscpG7FcyP0=
+qP9mzrelZrrJjmv1XobvjerNb1N83EPQmwvlttd7Yqx_xXJpXbTs6xz03P39uxcnEwGvKCipGmF=
+hg" style=3D"height:46px;v-text-anchor:middle;width:258px;direction:ltr;fon=
+t-size:14px;font-weight:400;line-height:20px;font-family: 'Google Sans','Ro=
+boto', Arial, sans-serif;letter-spacing: 0.75px;" arcsize=3D"5%" stroke=3D"=
+f" fillcolor=3D"#1A73E8">
+<w:anchorlock/>
+<center>
+<![endif]-->
+<a href=3Dhttps://www.google.com/appserve/mkt/p/AD-FnEz3CmHXSUc2NiExNQ4FzoX=
+IA0k22pE75KjmoObNmbZmXENRVmRbNCZ8OUDT0kD5uYFz1SzTp9uMdGkp0ewZA0P7W2KR90f8Ez=
+6qhKig0Fd95YeRN8D4sYI6dBwod5MXlENB4xrscpG7FcyP0qP9mzrelZrrJjmv1XobvjerNb1N8=
+3EPQmwvlttd7Yqx_xXJpXbTs6xz03P39uxcnEwGvKCipGmFhg target=3D_blank class=3D"=
+showdesktop button_box" style=3D"background-color:#1A73E8;direction:ltr;bor=
+der-radius:2px;color:#ffffff;display:inline-block;font-size:14px;font-weigh=
+t:400;line-height:20px;text-align:center;text-decoration:none; -webkit-text=
+-size-adjust:none;letter-spacing: 0.75px;padding: 13px 40px 13px 40px; font=
+-family: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif; ">Comie=
+nza ahora</a>
+<a href=3Dhttps://www.google.com/appserve/mkt/p/AD-FnEz3CmHXSUc2NiExNQ4FzoX=
+IA0k22pE75KjmoObNmbZmXENRVmRbNCZ8OUDT0kD5uYFz1SzTp9uMdGkp0ewZA0P7W2KR90f8Ez=
+6qhKig0Fd95YeRN8D4sYI6dBwod5MXlENB4xrscpG7FcyP0qP9mzrelZrrJjmv1XobvjerNb1N8=
+3EPQmwvlttd7Yqx_xXJpXbTs6xz03P39uxcnEwGvKCipGmFhg target=3D_blank class=3D"=
+showmobile button_box cta_button_width" style=3D"background-color:#1A73E8; =
+direction:ltr; border-radius:2px;color:#ffffff;font-size:14px;font-weight:4=
+00;line-height:20px;text-align:center;text-decoration:none; -webkit-text-si=
+ze-adjust:none;letter-spacing: 0.75px;padding: 13px 40px 13px 40px; font-fa=
+mily: &#39;Google Sans&#39;,&#39;Roboto&#39;, Arial, sans-serif; display:no=
+ne;">Comienza ahora</a>
+<!--[if mso]>
+</center>
+</v:roundrect>
+<![endif]-->
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]>
+</td>
+<td valign=3D"bottom">
+<![endif]-->
+<!--[if !mso]><!-->
+<table class=3Dcontainer_width cellspacing=3D0 cellpadding=3D0 border=3D0 w=
+idth=3D50% align=3Dright>
+<tbody>
+<tr>
+<td valign=3Dtop class=3D"img_mob textalign" style=3D"font-family: &#39;Rob=
+oto&#39;, Arial, sans-serif;text-align:center;font-size:16px;font-weight:no=
+rmal;direction:ltr;color:#25272B;padding:54px 0px 0px 0px;" dir=3Dltr>
+<!--<![endif]-->
+<!--[if gte mso 9]>
+<img src=3D"https://ssl.gstatic.com/s2/oz/images/notifications/privacymarke=
+ting/email1_para3_es-419.png" width=3D"304" height=3D"" style=3D"outline:0;=
+ border:0;display:inline-block;vertical-align:top;" aria-hidden=3D"true;"/>
+<![endif]-->
+<!--[if !mso]><!-->
+<div class=3Dshowdesktop>
+<a href=3D# style=3D"text-decoration: none;width: 304px">
+<img src=3Dhttps://ssl.gstatic.com/s2/oz/images/notifications/privacymarket=
+ing/email1_para3_es-419.gif width=3D304 valign=3Dbottom height=3D"" style=
+=3D"border:0;width: 304px;vertical-align: bottom; " aria-hidden=3Dtrue>
+</a>
+</div>
+<div class=3Dshowmobile style=3D"display: none;">
+<a href=3D# style=3D"text-decoration: none;width: 304px">
+<img src=3Dhttps://ssl.gstatic.com/s2/oz/images/notifications/privacymarket=
+ing/email1_para3_es-419.gif width=3D304 height=3D"" valign=3Dbottom style=
+=3D"border:0;width: 304px;vertical-align: bottom; " aria-hidden=3Dtrue>
+</a>
+</div>
+<!--<![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3Dtable_mob cellspacing=3D0 cellpadding=3D0 border=3D0 width=
+=3D100% style=3D"text-align:center;background: #F5F5F5; margin: 0 auto;" al=
+ign=3Dcenter>
+<tbody>
+<tr>
+<td class=3Dpara_mob style=3D"padding:43px 0px 0px 0px">
+<div class=3Dshowdesktop>
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 width=3D600 align=3Dcente=
+r style=3D545>
+<tbody>
+<tr>
+<td>
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 width=3D545 align=3Dcente=
+r style=3Dwidth:545px>
+<tbody>
+<tr>
+<td width=3D12% style=3Dwidth:12%>
+<img src=3Dhttps://services.google.com/fh/files/emails/privacy_checkup_foot=
+er.png width=3D31>
+</td>
+<td style=3D"direction:ltr;padding:0 0 0 0;font-family: &#39;Roboto&#39;, A=
+rial, sans-serif;color:#202125;line-height:15px; font-size:14px;font-weight=
+:normal;text-align:left;line-height:32px;color:#202124; font-size: 24px;pad=
+ding-bottom: 8px;padding-top:4px;font-family: &#39;Google Sans&#39;, Roboto=
+, Arial, sans-serif;" width=3D100% dir=3Dltr>
+Mantenemos la seguridad y la privacidad de tus datos
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if !mso]><!-->
+<div class=3Dshowmobile style=3D"display: none;">
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 width=3D100% style=3D545>
+<tbody>
+<tr>
+<td align=3Dcenter style=3Dtext-align:center>
+<img src=3Dhttps://services.google.com/fh/files/emails/privacy_checkup_foot=
+er.png width=3D31>
+</td>
+</tr>
+<tr>
+<td class=3Dfooter_padding style=3D"direction:ltr;padding:0 0 0 0;font-fami=
+ly: &#39;Roboto&#39;, Arial, sans-serif;color:#202125;line-height:15px; fon=
+t-weight:normal;font-size:14px;text-align:center;line-height:32px;color:#20=
+2124; font-size: 24px;padding-bottom: 8px;padding-top:4px;font-family: &#39=
+;Google Sans&#39;, Roboto, Arial, sans-serif;" width=3D100% dir=3Dltr>
+Mantenemos la seguridad y la privacidad de tus datos
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--<![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3Dtable_mob cellspacing=3D0 cellpadding=3D0 border=3D0 width=
+=3D100% style=3D"text-align:center;background: #F5F5F5; margin: 0 auto;" al=
+ign=3Dcenter>
+<tbody>
+<tr>
+<td class=3Dpara_mob style=3D"padding:26px 0px 41px 0px">
+<div class=3Dshowdesktop>
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 width=3D600 align=3Dcente=
+r style=3Dwidth:>
+<tbody>
+<tr>
+<td style=3D"direction:ltr;padding:0 0 0 0;font-family: &#39;Roboto&#39;, A=
+rial, sans-serif;color:#202125;line-height:15px; font-size:14px;font-weight=
+:normal;text-align:center;color:#999999;font-size:10px;line-height:14px;pad=
+ding-bottom: 8px;font-family:&#39; Roboto&#39;, Arial, sans-serif;letter-sp=
+acing:0.2px" width=3D100% dir=3Dltr>
+Recibiste este correo electr=C3=B3nico porque hace un a=C3=B1o que no compl=
+etas una Verificaci=C3=B3n de privacidad. Haz clic <a href=3Dhttps://www.go=
+ogle.com/appserve/mkt/optout/AD-FnEz_2JofVbsH_iDfpevNhHLdFtBCCqQW-EzEz1xFI3=
+OyrUk6UtXdlMcWeJYyWOpOQ2lLwne9ektKQtVK9xKWyixyzdoW5lGSy3DWq3kKvUDq?hl=3Des-=
+419 target=3D_blank style=3D"color: #4285F5; text-decoration: none;">aqu=C3=
+=AD</a> para anular la suscripci=C3=B3n a futuros correos electr=C3=B3nicos=
+ de este tipo.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if !mso]><!-->
+<div class=3Dshowmobile style=3D"display: none;">
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 width=3D100% style=3D"">
+<tbody>
+<tr>
+<td class=3Dfooter_para style=3D"direction:ltr;padding:0 0 0 0;font-family:=
+ &#39;Roboto&#39;, Arial, sans-serif;color:#202125;line-height:15px; font-w=
+eight:normal;font-size:14px;text-align:center;color:#999999;font-size:10px;=
+line-height:14px;padding-bottom: 8px;font-family:&#39; Roboto&#39;, Arial, =
+sans-serif;letter-spacing:0.2px" width=3D100% dir=3Dltr>
+Recibiste este correo electr=C3=B3nico porque hace un a=C3=B1o que no compl=
+etas una Verificaci=C3=B3n de privacidad. Haz clic <a href=3Dhttps://www.go=
+ogle.com/appserve/mkt/optout/AD-FnEz_2JofVbsH_iDfpevNhHLdFtBCCqQW-EzEz1xFI3=
+OyrUk6UtXdlMcWeJYyWOpOQ2lLwne9ektKQtVK9xKWyixyzdoW5lGSy3DWq3kKvUDq?hl=3Des-=
+419 target=3D_blank style=3D"color: #4285F5; text-decoration: none;">aqu=C3=
+=AD</a> para anular la suscripci=C3=B3n a futuros correos electr=C3=B3nicos=
+ de este tipo.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--<![endif]-->
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3Dtable_mob cellspacing=3D0 cellpadding=3D0 border=3D0 width=
+=3D100% style=3D"text-align:center;background: #F5F5F5;">
+<tbody>
+<tr>
+<td class=3Dpara_mob style=3Dpadding:0;>
+</td>
+</tr>
+<tr>
+<td class=3Dpara_mob>
+<table cellspacing=3D0 cellpadding=3D0 border=3D0 width=3D100%>
+<tbody>
+<tr>
+<td style=3D"text-align: center;">
+<img src=3Dhttps://services.google.com/fh/files/emails/googlelogo_88x28.png=
+ width=3D88 height=3D28>
+</td>
+</tr>
+<tr>
+<td class=3Dpara_mob style=3D"padding:2px 0px 50px 0px;font-size:10px;color=
+:#999999;line-height:15px;font-weight:normal;text-align: center;font-family=
+: &#39;Roboto&#39;, Arial, sans-serif;">
+<a style=3D"color:#999999; cursor: text; text-decoration:none; pointer-even=
+ts: none;">=C2=A9 2020
+Google LLC 1600 Amphitheatre <br>Parkway, Mountain View, CA 94043
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<img height=3D1 width=3D3 src=3Dhttps://www.google.com/appserve/mkt/img/AD-=
+FnEzt0VFJ-uFUs6pZMZe2ynBQusvHgqL8phkBMGKsvwQf3sQ.gif></body>
+</html>
+--000000000000e13e3805a9fea7b2--

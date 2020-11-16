@@ -1,0 +1,26 @@
+﻿@model Granny.Email.WebApp.Models.MailReceiver.InboxViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Email receiver</h1>
+
+<div>
+    <h4>InboxViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailList)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailList)
+        </dd>
+    </dl>
+</div>

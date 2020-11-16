@@ -1,0 +1,80 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:1511:0:0:0:0:0 with SMTP id v17csp3647641ilk;
+        Tue, 3 Mar 2020 04:08:14 -0800 (PST)
+X-Google-Smtp-Source: ADFU+vszTaxx4agnxO/Z06E9pV6AskDiyMRGY2gf6TPPVfXnaTl2GCWhn0UHgKoch2Id+YNKFjzC
+X-Received: by 2002:a37:48c4:: with SMTP id v187mr3907947qka.198.1583237294368;
+        Tue, 03 Mar 2020 04:08:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1583237294; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Z4mFe7XzfLRtXJynnn1tgpa81a5FJbIC9xFLm/H/y961LnbeOAAnMp+mykFythQsvZ
+         /hA7g5iWxG5c99coTFPe7jwFEE2xEvBrb1MsJJBfvBmCsRL6x29NN+898P/AJKsn6iht
+         ya8x24QNaRIxrjaBE3LO92LMlaiiQkjnCq58fj2/Bg9U0xyCNIyrTi1rs+7EEcPpOlHT
+         DVZsgQxAn1d9YiKAWAfumWLi9Cdjr1ZAdqhxla28kKNZD4r2FzXNAALx1uwxDBiZztDq
+         SAFBQdx1wq09mxOF4hHgfL2wwI7Tf7o+UrDGuPsVX9pxnFRys2nucIebmFHT9/wPtIFp
+         1Z1A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:date:from:to:subject
+         :message-id:dkim-signature;
+        bh=mgYD6GKE8EKb9IWghfqZvvOv30urlA73joAl92sDFBQ=;
+        b=CsaehAqj72fwm1C4CJDI8MdQxbCENNoP32OCrV0DwPTqyJ0vOxlq9BAfyc6SZkYwG1
+         O65b+oXUYfXc+VsVTKLoKSs+lqwOLuOFl5fCdgULvsKbt3Z1nS1ACpNOWpqm/2ImphxS
+         g26Fw3F6Uk1BBDUjI38ogxCHt19hpd9YZ9bHG1d+WWnZrIwR39OYfKJP20Q3VVs0W4HU
+         KE3sXlPlScarqap56WsxrpKth5JaOvLwXtNBZJnOHx4LSutvqm8M3XYI6jGM3qKvXmhn
+         yI5Nth8B0mF8TzIwPXEXMwEAKUP9Qyn8tRQsqt6XfqlnwYzYdpSszFojH4yQlGRa9e1+
+         mO4Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@accounts.nintendo.com header.s=default header.b=SAVYUjv4;
+       spf=pass (google.com: domain of no-reply@accounts.nintendo.com designates 52.1.79.116 as permitted sender) smtp.mailfrom=no-reply@accounts.nintendo.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=accounts.nintendo.com
+Return-Path: <no-reply@accounts.nintendo.com>
+Received: from smtp5.accounts.nintendo.com (smtp5.accounts.nintendo.com. [52.1.79.116])
+        by mx.google.com with ESMTP id i5si186092qtp.161.2020.03.03.04.08.13
+        for <pharsat@gmail.com>;
+        Tue, 03 Mar 2020 04:08:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of no-reply@accounts.nintendo.com designates 52.1.79.116 as permitted sender) client-ip=52.1.79.116;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@accounts.nintendo.com header.s=default header.b=SAVYUjv4;
+       spf=pass (google.com: domain of no-reply@accounts.nintendo.com designates 52.1.79.116 as permitted sender) smtp.mailfrom=no-reply@accounts.nintendo.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=accounts.nintendo.com
+Received: from localhost.localdomain (unknown [10.127.14.67])
+	by smtp5.accounts.nintendo.com (Postfix) with ESMTP id D160D7765
+	for <pharsat@gmail.com>; Tue,  3 Mar 2020 12:08:13 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=accounts.nintendo.com; s=default; t=1583237293;
+	bh=mgYD6GKE8EKb9IWghfqZvvOv30urlA73joAl92sDFBQ=;
+	h=Subject:To:From:Date;
+	b=SAVYUjv47BV0Tmg0aAGzEO2qgO7HK7CjRdoHUdFedD4Api4xi5YzWwAqynHATrOX4
+	 0vSK5Ukk3onfYl1xaRFITqftt5DzTjugsCm5DS1HR6VQjMaRhgSGKLvLd6x2g0bMUL
+	 6xDP7Ygs41NLC9tqs7weB9gF5LFLPaRuY1+iVDp4=
+Message-ID:
+ <4a6fb0da-bcb1-4d4b-93e3-0d4790a9cef0_1754414555-1583237293@accounts.nintendo.com>
+Subject: [Cuenta Nintendo]=?UTF-8?B?IENhbWJpbyBkZSBjb250cmFzZcOxYQ==?=
+To: "pharsat@gmail.com" <pharsat@gmail.com>
+From: "no-reply@accounts.nintendo.com" <no-reply@accounts.nintendo.com>
+Date: Tue, 3 Mar 2020 12:08:13 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+
+RXN0ZSBlcyB1biBjb3JyZW8gYXV0b23DoXRpY28gZW52aWFkbyBwb3IgTmludGVuZG8uCgotLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tCkdyYWNpYXMgcG9yIHVzYXIgbGEgY3VlbnRhIE5pbnRlbmRv
+LgoKRXN0YSBkaXJlY2Npw7NuIGRlIGNvcnJlbyBlbGVjdHLDs25pY28gbm8gZXMgbGEgcXVlIHVz
+YXN0ZSBwYXJhIGNyZWFyIGxhIGN1ZW50YSwgYXPDrSBxdWUgbm8gcG9kcsOhcyBjcmVhciB1bmEg
+Y29udHJhc2XDsWEgbnVldmEuCgpJbnRyb2R1Y2UgbGEgZGlyZWNjacOzbiBkZSBjb3JyZW8gZWxl
+Y3Ryw7NuaWNvIGNvcnJlY3RhIHkgdnVlbHZlIGEgaW50ZW50YXJsby4KClBvciBmYXZvciwgYm9y
+cmEgZXN0ZSBtZW5zYWplIHNpIGxvIGhhcyByZWNpYmlkbyBwb3IgZXJyb3IuCgpUZW4gZW4gY3Vl
+bnRhIHF1ZSBhc8OtIG5vIHB1ZWRlcyBjYW1iaWFyIGxhIGNvbnRyYXNlw7FhIGRlIHR1IE5pbnRl
+bmRvIE5ldHdvcmsgSUQuIFBhcmEgaGFjZXJsbywgYWNjZWRlIGFsIGVubGFjZSBxdWUgc2UgaW5j
+bHV5ZSBtw6FzIGFiYWpvLgpodHRwczovL2lkLm5pbnRlbmRvLm5ldC9hY2NvdW50L2ZvcmdvdHRl
+bi1wYXNzd29yZAotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCk5vIGNvbnRlc3RlcyBhIGVzdGUg
+bWVuc2FqZS4KU2kgdGllbmVzIGN1YWxxdWllciBkdWRhIG8gcHJlZ3VudGEsIHB1ZWRlcyBjb250
+YWN0YXIgY29uIG5vc290cm9zIGRlIGxhIG1hbmVyYSBxdWUgc2UgZXhwbGljYSBtw6FzIGFiYWpv
+LgoKTmludGVuZG8gQ28uLCBMdGQuLCAxMS0xIEhva290YXRlLWNobywgS2FtaXRvYmEsIE1pbmFt
+aS1rdSwgS3lvdG8gNjAxLTg1MDEsIEphcMOzbi4gTsO6bWVybyBkZSByZWdpc3RybzogMTMwMC0w
+MS0wMTE0MjAuIERpcmVjdG9yZXMgcmVwcmVzZW50YXRpdm9zOiBTaHVudGFybyBGdXJ1a2F3YSB5
+IFNoaWdlcnUgTWl5YW1vdG8uIAoKUGFyYSBjdWVzdGlvbmVzIHJlbGFjaW9uYWRhcyBjb24gdHUg
+Y3VlbnRhIE5pbnRlbmRvLCBwb250ZSBlbiBjb250YWN0byBjb24gZWwgc2VydmljaW8gZGUgYXRl
+bmNpw7NuIGVzcGVjaWFsaXphZG86IHNlcnZpY2VAbmludGVuZG8uZGUKClBhcmEgY29uc3VsdGFy
+IG3DoXMgaW5mb3JtYWNpw7NuLCB2aXNpdGEgZWwgc2l0aW8gd2ViIGRlbCBzZXJ2aWNpbyBkZSBh
+eXVkYSBkZSBOaW50ZW5kbzogCmh0dHA6Ly9zdXBwb3J0Lm5pbnRlbmRvLmNvbS9lbl9VUy9uaW50
+ZW5kb2FjY291bnQvZmFxCgo=

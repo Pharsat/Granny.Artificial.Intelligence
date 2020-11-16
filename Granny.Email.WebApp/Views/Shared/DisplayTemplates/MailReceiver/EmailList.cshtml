@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Granny.Email.WebApp.Models.MailReceiver.MailViewModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceivedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReceivedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @Html.ActionLink("Clean", "GenerateEmailSentence", "Analyzer", new { item.MessageId, isSpam = false })
+                    <br />
+                    @Html.ActionLink("Spam", "GenerateEmailSentence", "Analyzer", new { item.MessageId, isSpam = false })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

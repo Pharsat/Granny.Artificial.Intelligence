@@ -1,0 +1,1056 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp6243330ild;
+        Thu, 22 Oct 2020 13:19:53 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwWwBS/w42F/yioZhyJo/ICJDKO+YLw2IdP/ZeQXd1hoF/rnPGHEDSzpPRtaRLJjuiUSjDT
+X-Received: by 2002:a25:3146:: with SMTP id x67mr5828872ybx.381.1603397993356;
+        Thu, 22 Oct 2020 13:19:53 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1603397993; cv=none;
+        d=google.com; s=arc-20160816;
+        b=CF8eYNGJyx8FPheC4/OBbe4QOKUrytqStAsKUHNE8Upuzx1cypESD3i32B6CZRkBoB
+         XRauiQD1brYztCst5EFxYLvx5SAl4S3wkWHznFk1Sza6Cz2ERQerMaHaszieluwprGcV
+         +v/1YCcJU0vdYs/VZbtHEEctWPASLLiKBd/jJCL4ysbBeDR9Sg/C7RnqmjdtNffC1+ss
+         Kv8DXuqM3HKa0QQHPMUfLlIQ2s4y85dERaXE/a1GLuqptI870rcwByBCJxdwB6Yot4Ls
+         StL6fANDOuYQSZnfvs2QSC0RzZlcyAqZarpfh8mUBtz9eO4rTqEWV9HmeScX8LtqfGwq
+         U3VA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:name:feedback-id:subject:reply-to:from:to:date
+         :mime-version:dkim-signature:dkim-signature;
+        bh=3zJlGisu9PKvSWOTlxRSAjmSsNe0KMLA+JsRftb2mro=;
+        b=EVtb0mQqXED9GPOqfTTXyWrxePA8tHXO+taLySLyF5nrGGlZNo+jW9uwfkM9s7neg1
+         1D0/LtXeHXdsfvxGU+f1L2JfJk83BCibbEo/Kcb6vfEgPLmgxpvqndbcpUNsjy7rs/4I
+         EGGUF5gb8Y783FCh/5BUze0GwZLe3JLU8lE8qGOQK+aIHI6KarMv6zBsZKSt8A/DnFSE
+         psnFtpkhYaA+npHzIyKe6C6/NdxJju+xHLnmux+Uj3Xw8CsfJpb2/4I19bQJRX3hqnPp
+         RsgSpw0zfWJ81LP13Q6WIX+nQXIJ6LDdh9jJpCPuS5onDsQcy6Iep+h6oA9B/uJHY651
+         Nhsw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.scotiabankcolpatria.com header.s=scotiabankcolpatria header.b=r820MGoL;
+       dkim=pass header.i=@responsys.net header.s=oraclersys header.b=CeEoFy9K;
+       spf=pass (google.com: domain of email@email.scotiabankcolpatria.com designates 129.145.67.48 as permitted sender) smtp.mailfrom=email@email.scotiabankcolpatria.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.scotiabankcolpatria.com
+Return-Path: <email@email.scotiabankcolpatria.com>
+Received: from omptrans.email.scotiabankcolpatria.com (omptrans.email.scotiabankcolpatria.com. [129.145.67.48])
+        by mx.google.com with ESMTPS id e9si2440253ybp.153.2020.10.22.13.19.52
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Thu, 22 Oct 2020 13:19:53 -0700 (PDT)
+Received-SPF: pass (google.com: domain of email@email.scotiabankcolpatria.com designates 129.145.67.48 as permitted sender) client-ip=129.145.67.48;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.scotiabankcolpatria.com header.s=scotiabankcolpatria header.b=r820MGoL;
+       dkim=pass header.i=@responsys.net header.s=oraclersys header.b=CeEoFy9K;
+       spf=pass (google.com: domain of email@email.scotiabankcolpatria.com designates 129.145.67.48 as permitted sender) smtp.mailfrom=email@email.scotiabankcolpatria.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.scotiabankcolpatria.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=scotiabankcolpatria;
+ d=email.scotiabankcolpatria.com;
+ h=MIME-Version:Content-Type:Date:To:From:Reply-To:Subject:Feedback-ID:
+ Message-ID; i=email@email.scotiabankcolpatria.com;
+ bh=3zJlGisu9PKvSWOTlxRSAjmSsNe0KMLA+JsRftb2mro=;
+ b=r820MGoLMrGMU7VF7t17HWkvhaQg8bzuerVRDpiwvBdhI9AaUYIRKpZ3ICBYWQxhSCv2Y4/xywFb
+   xaMLq4BFvz0DRosf4DDh5FmFx9DbbMbI8TTLvSOpgLGikQDBsaJRtY4y62urkuTWag6C2HubfT4o
+   w8ocIKCWQpukz53EI3I=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=oraclersys; d=responsys.net;
+ h=MIME-Version:Content-Type:Date:To:From:Reply-To:Subject:Feedback-ID:
+ Message-ID;
+ bh=3zJlGisu9PKvSWOTlxRSAjmSsNe0KMLA+JsRftb2mro=;
+ b=CeEoFy9KkRE1FsbPc+0axCR6pAHlOWLJw5uZQ/L/yoV9EFtnyyXTDegv4uFx9gO+49u1hMttiBFu
+   Hz7T2JZBtgXSgPZRgKWo7rPnyqJu+KorT3itvLgqxdMBbo+xkaiqESzWMYC3o+JM3cuak6bHUlxh
+   UKBPQ0ohoBzfWEeiM1s=
+Received: by omptrans.email.scotiabankcolpatria.com id hi7kmg2lr0o2 for <pharsat@gmail.com>; Thu, 22 Oct 2020 12:59:50 -0700 (envelope-from <email@email.scotiabankcolpatria.com>)
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="----msg_border_AGOOSuqLnR"
+Date: Thu, 22 Oct 2020 12:59:50 -0700
+To: pharsat@gmail.com
+From: =?UTF-8?B?U2NvdGlhYmFuayBDb2xwYXRyaWE=?=
+ <email@email.scotiabankcolpatria.com>
+Reply-To: =?UTF-8?B?U2NvdGlhYmFuayBDb2xwYXRyaWE=?=
+ <noreply@email.scotiabankcolpatria.com>
+Subject: =?UTF-8?B?Q29ub2NlIHF1w6kgZXMgdmlzaGluZyB5IGPDs21vIHByb3RlZ2U=?=
+	=?UTF-8?B?cnRl?=
+Feedback-ID: 80160:30698482:oraclersys
+X-sgxh1: ioHjkHlxnuHptQJhu
+X-rext: 6.interact2.Eqb3sEWUUqanRcVl3nosvtbZn4kAWv690zQK8yXBaTRI-5A2IkYuGiXx
+X-cid: bancocolp.46836402
+X-ei: Es5ZYGEN-5c5LZ9cocTKnFo6naMLgoZ1klqbtupICozWoIv9_A_y-YH9hxeYIlQ
+name: product
+Message-ID: <0.1.56F.23A.1D6A8ADE6628C4C.0@omptrans.email.scotiabankcolpatria.com>
+
+This is a multi-part message in MIME format.
+
+------msg_border_AGOOSuqLnR
+Date: Thu, 22 Oct 2020 12:59:50 -0700
+Content-Type: multipart/alternative; boundary="----alt_border_qornYZNqej_1"
+
+
+
+------alt_border_qornYZNqej_1
+Content-Type: text/plain;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Scotiabank Colpatria
+No caigas en la trampa =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C
+
+
+
+https://email=2Escotiabankcolpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJ=
+lTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3=
+DBRAWCTAT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh=
+8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Dhrqa=
+g935ma5rag53qea5bdn6i9dpp07tnopb2hq3k21us87n9tngJg%3D%3D
+
+El vishing es una modalidad que utilizan
+
+los ciberdelincuentes para obtener tu informaci=C3=B3n
+confidencial a trav=C3=A9s de llamadas telef=C3=B3nicas=2E
+En =23CRIMINALMENTE te contamos cu=C3=A1les
+
+son las dos formas m=C3=A1s recurrentes de vishing
+para que no caigas en la trampa=2E
+
+
+
+https://email=2Escotiabankcolpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJ=
+lTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3=
+DBRAWCTAT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh=
+8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Dhrqa=
+g935ma5rag53qea5bdn6i9dpp07tnopb2hq3k21us87n9tngJg%3D%3D
+
+
+Intentan ganar tu confianza haci=C3=A9ndose pasar por
+
+funcionarios del Banco y te informan que est=C3=A1n registrando
+
+movimientos sospechosos en tus productos=2E Esto con el fin
+
+de generar urgencia y luego solicitar tu informaci=C3=B3n
+
+confidencial con el pretexto de ayudarte=2E
+
+A diferencia de la primera modalidad, en esta los delincuentes
+
+tratan de cautivarte con promociones y ofertas exclusivas=2E
+Para que puedas acceder a ellas, te dan algunos de los
+
+datos de tu tarjeta cr=C3=A9dito o d=C3=A9bito, que han obtenido
+
+previamente con ingenier=C3=ADa social, para que posteriormente
+tu completes la informaci=C3=B3n y as=C3=AD poder robar tu dinero=2E
+Aprende c=C3=B3mo puedes protegerte del vishing=2E
+Quiero saber m=C3=A1s
+
+https://email=2Escotiabankcolpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJ=
+lTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3=
+DBRAWCTAT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh=
+8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Dhrqa=
+g935ma5rag53qea5bdn6i9dpp07tnopb2hq3k21us87n9tngJg%3D%3D
+
+=23CRIMINALMENTE
+T=C3=A9rminos y condiciones
+
+Scotiabank Colpatria Establecimiento Bancario=2E =C2=AEMarca registrada de =
+The Bank of Nova Scotia, utilizada bajo licencia Scotiabank Colpatria=2E Es=
+ta campa=C3=B1a de Scotiabank Colpatria es promocional e informativa=2E Por=
+ ninguna circunstancia Scotiabank Colpatria solicitar=C3=A1 a sus clientes =
+ingresar datos bancarios por medio de un enlace (link) de internet=2E Para =
+actualizar tus datos personales debes acercarte a una oficina de Scotiabank=
+ Colpatria=2E Celular y email pueden ser actualizados a trav=C3=A9s de nues=
+tra l=C3=ADnea de atenci=C3=B3n durante el tiempo que dure la actual emerge=
+ncia sanitaria=2E
+=C2=A0
+
+------alt_border_qornYZNqej_1
+Content-Type: text/html;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<=21DOCTYPE html PUBLIC =22-//W3C//DTD XHTML 1=2E0 Transitional//EN=22
+=22http://www=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-transitional=2Edtd=22>
+<=21-- saved from url=3D(0014)about:internet -->
+<html xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22>
+<head>
+<title>Scotiabank Colpatria</title>
+<meta http-equiv=3D=22Content-Type=22 content=3D=22text/html; charset=3Dutf=
+-8=22 />
+<meta name=3D=22x-apple-disable-message-reformatting=22 />
+<style type=3D=22text/css=22>
+	html,body=7Bmargin:0;padding: 0;=7D
+	button =7Bbackground: red;border: none;padding: 10px 60px;color: white;fon=
+t-size: 15px;float: left;=7D
+	=2Ewilstyle=7Bfont-size:19px;font-family: Verdana, Geneva, sans-serif;colo=
+r:=23000;=7D
+	td img =7Bdisplay: block;=7D=2EEstilo5 =7Bfont-size: 11px;color: =23333333=
+;font-weight: normal;font-family: Verdana, Geneva, sans-serif;=7D
+	=2EEstilo6 =7Bfont-family: Verdana, Arial, Helvetica, sans-serif;font-size=
+: 10px;color: =237C7C7C;=7D
+	=2EEstilo12 =7Bcolor: =23DBDCDE=7D
+	=2EEstilo13 =7Bcolor: =23000000;font-family: Arial, Helvetica, sans-serif;=
+font-size: xx-small;font-weight: normal;=7D
+	=2EEstilo51 =7Bfont-size: 11px;color: =23333333;font-weight: normal;font-f=
+amily: Verdana, Geneva, sans-serif;=7D
+	=2EEstilo55=7Bfont-family: Verdana, Geneva, sans-serif;text-align:center;b=
+ackground: =23f2f2f2; color: =23afafaf;font-size: 8px;padding: 20px 0 0 0;=
+=7D
+	=2EEstilo56=7Bfont-family: Verdana, Geneva, sans-serif;text-align:left;bac=
+kground: =23f2f2f2; color: =23afafaf;font-size: 8px;padding-left: 20px;=7D
+	=2EEstilo55 p =7Bmargin:0;=7D
+	=2EReadMsgBody =7Bwidth: 100%;=7D
+	=2EExternalClass =7Bwidth: 100%;=7D
+	td img =7Bdisplay: block;=7D
+	span=2Eyshortcuts =7B color:=23000; background-color:none; border:none;=7D
+	span=2Eyshortcuts:hover,
+	span=2Eyshortcuts:active,
+	span=2Eyshortcuts:focus =7Bcolor:=23000; background-color:none; border:non=
+e;=7D
+</style>
+</head>
+<body bgcolor=3D=22=23ffffff=22>
+	<=21-- HIDING PRE HEADER : START -->
+	<span style=3D=22display: none; max-height: 0px; overflow: hidden;=22>No c=
+aigas en la trampa</span>
+	<=21-- HIDING PRE HEADER : END -->
+
+	<=21-- PREHEADER HACK : START -->
+	<span style=3D=22display: none; max-height: 0px; overflow: hidden;=22>&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</span>
+	<=21-- PREHEADER HACK : END -->
+
+	<=21-- HEADER : START -->
+<=21DOCTYPE html PUBLIC =22-//W3C//DTD XHTML 1=2E0 Strict//EN=22 =22https:/=
+/www=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-strict=2Edtd=22>
+<html xmlns=3D=22https://www=2Ew3=2Eorg/1999/xhtml=22 style=3D=22margin: 0;=
+ padding: 0;=22><head>
+<title>::Colpatria::</title>
+<meta http-equiv=3D=22Content-Type=22 content=3D=22text/html; charset=3Dutf=
+-8=22>
+<meta name=3D=22x-apple-disable-message-reformatting=22>
+<style type=3D=22text/css=22>=2Eeoa_v2o=7B=7D=2Eeoa_k0k=7B=7D
+html,body=7Bmargin:0;padding: 0;=7D
+button =7Bbackground: red;border: none;padding: 10px 60px;color: white;font=
+-size: 15px;float: left;=7D
+=2Ewilstyle=7Bfont-size:19px;font-family: Verdana, Geneva, sans-serif;color=
+:=23000;=7D
+td img =7Bdisplay: block;=7D=2EEstilo5 =7Bfont-size: 11px;color: =23333333;=
+font-weight: normal;font-family: Verdana, Geneva, sans-serif;=7D
+=2EEstilo6 =7Btext-decoration:none; font-family: Verdana, Arial, Helvetica,=
+ sans-serif;font-size: 10px;color: =23000000;=7D
+=2EEstilo7 =7Bfont-family: Verdana, Arial, Helvetica, sans-serif;font-size:=
+ 19px;color: =23ffffff;=7D
+=2EEstilo12 =7Bcolor: =23DBDCDE=7D
+=2EEstilo13 =7Bcolor: =23000000;font-family: Arial, Helvetica, sans-serif;f=
+ont-size: xx-small;font-weight: normal;=7D
+=2EEstilo51 =7Bfont-size: 11px;color: =23333333;font-weight: normal;font-fa=
+mily: Verdana, Geneva, sans-serif;=7D
+=2EEstilo55=7Bfont-family: Verdana, Geneva, sans-serif;text-align:center;ba=
+ckground: =23f2f2f2; color: =23afafaf;font-size: 8px;padding: 20px 0 0 0;=7D
+=2EEstilo56=7Bfont-family: Verdana, Geneva, sans-serif;text-align:left;back=
+ground: =23f2f2f2; color: =23afafaf;font-size: 8px;padding-left: 20px;=7D
+=2EEstilo55 p =7Bmargin:0;=7D
+=2EReadMsgBody =7Bwidth: 100%;=7D
+=2EExternalClass =7Bwidth: 100%;=7D
+hr=2Estyle14 =7B=20
+  border: 0;=20
+  height: 1px;=20
+  background-image: -webkit-linear-gradient(left, =23f0f0f0, =23F78181, =23=
+f0f0f0);
+  background-image: -moz-linear-gradient(left, =23f0f0f0, =23F78181, =23f0f=
+0f0);
+  background-image: -ms-linear-gradient(left, =23f0f0f0, =23F78181, =23f0f0=
+f0);
+  background-image: -o-linear-gradient(left, =23f0f0f0, =23F78181, =23f0f0f=
+0);=20
+=7D  =20
+    td img =7Bdisplay: block;=7D
+span=2Eyshortcuts =7B color:=23000; background-color:none; border:none;=7D
+span=2Eyshortcuts:hover,
+span=2Eyshortcuts:active,
+span=2Eyshortcuts:focus =7Bcolor:=23000; background-color:none; border:none=
+;=7D
+td img =7Bdisplay: block;=7D
+td img =7Bdisplay: block;=7D
+=2E__web-inspector-hide-shortcut__, =2E__web-inspector-hide-shortcut__ *, =
+=2E__web-inspector-hidebefore-shortcut__::before, =2E__web-inspector-hideaf=
+ter-shortcut__::after
+=7B
+    visibility: hidden =21important;
+=7D
+</style>
+</head>
+<body bgcolor=3D=22=23ffffff=22 style=3D=22margin: 0; padding: 0;=22>
+<table width=3D=22100%=22 border=3D=220=22 cellspacing=3D=220=22 cellpaddin=
+g=3D=220=22 style=3D=22=22 bgcolor=3D=22=23ffffff=22><tbody><tr><td>
+ =20
+  <div align=3D=22center=22>
+<table style=3D=22display: inline-table;=22 border=3D=220=22 cellpadding=3D=
+=220=22 cellspacing=3D=220=22 width=3D=22600=22><tbody>
+<tr>
+<td style=3D=22display: none =21important; visibility: hidden; mso-hide: al=
+l; font-size: 1px; color: =23ffffff; line-height: 1px; max-height: 0px; max=
+-width: 0px; opacity: 0; overflow: hidden;=22 class=3D=22eoa_k0k eoa_v2o=22>
+=20
+</td>
+  </tr>
+
+<tr>
+<td colspan=3D=225=22 bgcolor=3D=22=23ffffff=22>
+                    <div align=3D=22center=22><span class=3D=22Estilo6=22 s=
+tyle=3D=22font-size: 11px; color: =23ffffff; font-weight: normal; font-fami=
+ly: Verdana, Geneva, sans-serif; letter-spacing: -1px; float: left; width: =
+210px; text-decoration: none;=22></span></div>
+                   <div align=3D=22center=22><span style=3D=22font-size: 11=
+px; text-decoration: none; color: =237c7c7c; font-weight: normal; font-fami=
+ly: Verdana, Geneva, sans-serif; letter-spacing: 0px; float: center;=22>
+							<b>=C2=BFNo puede ver este email? <a href=3D=22https://email=2Escoti=
+abankcolpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0Jze=
+tUghkNlIzdgWs64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCTCT&_ei_=3DEq2t=
+f9zs59idfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIz=
+KnyOix4xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3D89c9je2t1kd3cp1ug1abk6p62=
+ssfejqh372qgp87bhjjddql8cg0=22 title=3D=22Versi=C3=B3n online=22 style=3D=
+=22color:=235d5d5d;font-family:Helvetica,Arial,sans-serif;font-size:11px;fo=
+nt-weight:normal;padding:0;text-align:center; word-break:normal;=22 target=
+=3D=22_blank=22>Ver online ac=C3=A1</a></b>
+						</div>
+                    <div align=3D=22left=22 class=3D=22wilstyle=22 style=3D=
+=22height: 0px; max-height: 0px; letter-spacing: -1px; font-size: 10px; fon=
+t-family: Verdana, Geneva, sans-serif; color: =23000;=22><font face=3D=22Ve=
+rdana, Arial, Helvetica, sans-serif=22 size=3D=221=22 color=3D=22=23787878=
+=22></font></div>
+                  </td>
+                  <td>
+                    <img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank=
+-colombia/Colpatria/digital/mailing/spacer=2Egif=22 width=3D=221=22 height=
+=3D=2237=22 alt=3D=22=22 style=3D=22display: block;=22>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href=3D=22https://email=2Escotiabankcolpatria=2Ecom/=
+pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFz=
+adCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCURT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8=
+MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDy=
+pJcrSZ9z8MdJ7P8OW0=2E&_di_=3Dkajj6igrb4h7653b4anbognola3akgq3l1270jmo897q9g=
+i64j80=22 target=3D=22_blank=22><img src=3D=22https://static=2Ecdn=2Erespon=
+sys=2Enet/i2/responsysimages/bancocolp/contentlibrary/list_master/header/re=
+sponsivescotiacolpatria/headerscotia/logo-colpatria-header=2Epng=22 height=
+=3D=2225=22 alt=3D=22Scotiabnk Colpatria=22 style=3D=22display: block;=22><=
+/a>
+                  </td>
+                  <td style=3D=22max-width:68px;width:68px;height:auto; let=
+ter-spacing: -1px;=22 >
+                    <div align=3D=22left=22 ><font face=3D=22Verdana, Arial=
+, Helvetica, sans-serif=22 size=3D=221=22 color=3D=22=23787878=22 ></font><=
+/div>
+                  </td>
+                  <td style=3D=22max-width:68px;width:68px;height:auto; let=
+ter-spacing: -1px;=22 >
+                    <div align=3D=22left=22 ><font face=3D=22Verdana, Arial=
+, Helvetica, sans-serif=22 size=3D=221=22 color=3D=22=23787878=22 ></font><=
+/div>
+                  </td>
+                  <td align=3D=22right=22>
+                    <table cellpadding=3D=220=22 cellspacing=3D=220=22>
+                    <tr>
+                      <td>
+                        <a href=3D=22https://email=2Escotiabankcolpatria=2E=
+com/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NA=
+DRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCUTT&_ei_=3DEq2tf9zs59idfPO1Sc_9B=
+bmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkA=
+jIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Dq9ahnqg10nf8k7k1mclmdgl6kqh0fu7atj82r07nee=
+lfp7t2st10=22 target=3D=22_blank=22><img src=3D=22https://static=2Ecdn=2Ere=
+sponsys=2Enet/i2/responsysimages/bancocolp/contentlibrary/list_master/heade=
+r/responsivescotiacolpatria/headerscotia/Banca-virtual=2Epng=22 height=3D=
+=2225=22 alt=3D=22Banca virtual=22 style=3D=22display: block;=22></a>
+                      </td>
+                    </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr height=3D=2210=22></tr>
+                <tr>
+                  <td colspan=3D=225=22>
+                    <table cellpadding=3D=220=22 cellspacing=3D=220=22  wid=
+th=3D=22590=22 class=3D=22width290=22>
+                      <tr>
+                        <td align=3D=22left=22 height=3D=2230=22>
+                         =20
+                          <table cellpadding=3D=220=22 cellspacing=3D=220=
+=22>
+                            <tr>
+                              <td width=3D=2219=22>
+                                <img src=3D=22https://static=2Ecdn=2Erespon=
+sys=2Enet/i2/responsysimages/bancocolp/contentlibrary/list_master/header/re=
+sponsivescotiacolpatria/headerscotia/seguro=2Epng=22 height=3D=2220=22 alt=
+=3D=22zona segura=22>
+                              </td>
+                              <td>
+                                <div style=3D=22font-family:Arial, Helvetic=
+a, sans-serif; font-size:10px; line-height:14px; color:=237F7E7E;=22>
+                                  <a href=3D=22https://email=2Escotiabankco=
+lpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNl=
+IzdgWs64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCUWT&_ei_=3DEq2tf9zs59i=
+dfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4=
+xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Dee95one6dpu7f80p6e8gn1qi6os8hefn=
+dkvokj7i3vu2v4nthpcg=22 style=3D=22color:=237F7E7E; text-decoration:none;=
+=22><b>Zona segura Scotiabank Colpatria: Cristian Felipe Gallego Ramirez</b=
+></a>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td align=3D=22right=22 height=3D=2230=22>
+                          <table cellpadding=3D=220=22 cellspacing=3D=220=
+=22>
+                            <tr>
+                              <td>
+                                <div style=3D=22font-family:Arial, Helvetic=
+a, sans-serif; font-size:10px; line-height:14px; color:=237F7E7E;=22>
+                                  <b>Oct 22, 2020</b>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table><table cellpadding=3D=220=22 cellspacing=3D=220=22 style=3D=22bor=
+der: 0px; padding: 0px; margin: 0px; position: absolute; display: none; flo=
+at: left=22>
+<tr>
+<td height=3D=221=22 style=3D=22font-size: 1px; line-height: 1px; padding: =
+0px;=22>
+<br><img src=3D=22https://email=2Escotiabankcolpatria=2Ecom/pub/as?_ri_=3DX=
+0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H20bqY6T=
+bs5mEpzczfVXHkMX%3Dw&_ei_=3DEolaGGF4SNMvxFF7KucKuWPHZrRvI5ySomHcMjzRkeFKi7Y=
+C6wP9VllzKEOoomr-jfOKAKS2_mfl115yQWNK0s7otszVrOWWA1-6Wuqo95o=2E=22></img>
+</td>
+</tr>
+</table>
+</body></html>	<=21-- HEADER : END -->
+
+	<div align=3D=22center=22 style=3D=22display: block=22>
+		<table style=3D=22display: inline-table;=22 border=3D=220=22 cellpadding=
+=3D=220=22 cellspacing=3D=220=22 width=3D=22600=22>
+			<center>
+			<tr align=3D=22center=22>
+				<td bgcolor=3D=22=23FFFFFF=22><a href=3D=22https://email=2Escotiabankco=
+lpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNl=
+IzdgWs64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCTAT&amp;_ei_=3DEq2tf9z=
+s59idfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKny=
+Oix4xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&amp;_di_=3Dhrqag935ma5rag53qea5bdn6=
+i9dpp07tnopb2hq3k21us87n9tng=22 target=3D=22_blank=22><img name=3D=22Crimin=
+almente=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimag=
+es/bancocolp/contentlibrary/regulatorios/2020/octubre/21mkt0025_criminalmen=
+te_vishing2/criminalmente=2Ejpg=22 width=3D=22600=22  id=3D=22n19DBM0183_r1=
+_c1=22 alt=3D=22criminalmente=22 /></a></td>
+			</tr>
+			<tr height=3D=2220=22></tr>
+			<tr>
+				<td align=3D=22center=22>
+					<center>
+					<table style=3D=22display: inline-table;=22 border=3D=220=22 cellpaddi=
+ng=3D=220=22 cellspacing=3D=220=22 width=3D=22600=22>
+						<tr>
+							<td align=3D=22center=22>
+								<div style=3D=22letter-spacing: -1px; font-size:16px; text-align:ce=
+nter;=22><font face=3D=22Verdana, Arial, Helvetica, sans-serif=22 color=3D=
+=22=235d5d5d=22 >
+									<b>El vishing</b> es una modalidad que utilizan<br>
+								los ciberdelincuentes para obtener tu informaci=C3=B3n<br>
+								confidencial a trav=C3=A9s de llamadas telef=C3=B3nicas=2E
+
+								</font>
+								</div>
+							</td>
+						</tr>
+
+				<tr height=3D=2220=22></tr>
+				<tr>
+					<td align=3D=22center=22>
+						<div style=3D=22letter-spacing: -1px; font-size:16px; text-align:cent=
+er;=22><font face=3D=22Verdana, Arial, Helvetica, sans-serif=22 color=3D=22=
+=233e2444=22 >
+<b>En =23</b>CRIMINAL<b><font style=3D=22font-size:20px;=22><i>MENTE</i></f=
+ont> te contamos cu=C3=A1les<br>
+	son las dos formas m=C3=A1s recurrentes de vishing<br>
+
+	para que no caigas en la trampa=2E</b>
+						</font>
+						</div>
+					</td>
+				</tr>
+							<tr height=3D=2220=22></tr>
+							<tr align=3D=22center=22>
+								<td bgcolor=3D=22=23FFFFFF=22><a href=3D=22https://email=2Escotiaba=
+nkcolpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUg=
+hkNlIzdgWs64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCTAT&amp;_ei_=3DEq2=
+tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dI=
+zKnyOix4xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&amp;_di_=3Dhrqag935ma5rag53qea5=
+bdn6i9dpp07tnopb2hq3k21us87n9tng=22 target=3D=22_blank=22><img name=3D=22Cr=
+iminalmente=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsys=
+images/bancocolp/contentlibrary/regulatorios/2020/octubre/21mkt0025_crimina=
+lmente_vishing2/icon=2Epng=22 width=3D=2290=22  id=3D=22n19DBM0183_r1_c1=22=
+ alt=3D=22criminalmente=22 /></a></td>
+							</tr>
+
+					</table>
+					</center>
+				</td>
+			</tr>
+
+
+			</center>
+
+			<tr height=3D=2210=22></tr>
+
+			<tr>
+				<td>
+					<table style=3D=22display: inline-table;=22 border=3D=220=22 cellpaddi=
+ng=3D=220=22 cellspacing=3D=220=22 width=3D=22540=22>
+							<tr height=3D=2220=22></tr>
+
+						<tr>
+							<td width=3D=2270=22></td>
+							<td align=3D=22center=22 style=3D=22vertical-align:top;=22><img heig=
+ht=3D=2260=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysi=
+mages/bancocolp/contentlibrary/regulatorios/2020/octubre/21mkt0025_criminal=
+mente_vishing2/icon1=2Epng=22 alt=3D=22icon1 =22/></td>
+							<td width=3D=2210=22></td>
+							<td>
+								<div border=3D=220=22 style=3D=22letter-spacing: 0px; font-size:12p=
+x; text-align:left;=22><font face=3D=22Verdana, Arial, Helvetica, sans-seri=
+f=22 color=3D=22=235d5d5d=22 >
+									Intentan ganar tu confianza haci=C3=A9ndose pasar por<br>
+		funcionarios del Banco y <b>te informan que est=C3=A1n registrando<br>
+		movimientos sospechosos en tus productos=2E</b> Esto con el fin<br>
+		de generar urgencia y luego solicitar tu informaci=C3=B3n<br>
+		confidencial con el pretexto de ayudarte=2E</font>
+								</div>
+							</td>
+						</tr>
+						<tr height=3D=2220=22></tr>
+						<tr>
+							<td width=3D=2270=22></td>
+							<td align=3D=22center=22 style=3D=22vertical-align:middle;=22><img h=
+eight=3D=2260=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/respons=
+ysimages/bancocolp/contentlibrary/regulatorios/2020/octubre/21mkt0025_crimi=
+nalmente_vishing2/icon2=2Epng=22 alt=3D=22icon2=22/></td>
+							<td width=3D=2210=22></td>
+							<td>
+								<div border=3D=220=22 style=3D=22letter-spacing: 0px; font-size:12p=
+x; text-align:left;=22><font face=3D=22Verdana, Arial, Helvetica, sans-seri=
+f=22 color=3D=22=235d5d5d=22 >
+									A diferencia de la primera modalidad, en esta los delincuentes<br>
+		tratan de cautivarte con promociones y ofertas exclusivas=2E<br>
+		<b>Para que puedas acceder a ellas, te dan algunos de los<br>
+		datos de tu tarjeta cr=C3=A9dito o d=C3=A9bito,</b> que han obtenido<br>
+		previamente con ingenier=C3=ADa social, para que posteriormente<br>
+		tu completes la informaci=C3=B3n y as=C3=AD poder robar tu dinero=2E
+
+								</font>
+								</div>
+							</td>
+						</tr>
+
+
+
+
+
+
+						<tr height=3D=2210=22></tr>
+
+
+
+
+					</table>
+				</td>
+			</tr>
+					<tr height=3D=2220=22></tr>
+
+			<tr>
+				<td>
+					<table style=3D=22display: inline-table;=22 border=3D=220=22 cellpaddi=
+ng=3D=220=22 cellspacing=3D=220=22 width=3D=22600=22 bgcolor=3D=22=23f3f3f3=
+=22>
+						<td width=3D=2230=22 style=3D=22vertical-align: middle;=22>
+							<img name=3D=22n19DBM0183_r3_c1=22 src=3D=22https://static=2Ecdn=2Er=
+esponsys=2Enet/i2/responsysimages/bancocolp/contentlibrary/regulatorios/202=
+0/octubre/21mkt0025_criminalmente_vishing2/vigilado=2Epng=22 width=3D=2227=
+=22 id=3D=22n19DBM0183_r3_c1=22 alt=3D=22vigilado=22 />
+						</td>
+						<td align=3D=22left=22>
+							<table style=3D=22margin:0; display:block; padding:0; margin-left:au=
+to; margin-right:auto;=22 border=3D=220=22 cellpadding=3D=220=22 cellspacin=
+g=3D=220=22 width=3D=22540=22>
+									<tr>
+										<tr height=3D=2230=22></tr>
+				<tr>
+					<td align=3D=22center=22>
+						<div style=3D=22letter-spacing: -1px; font-size:18px; text-align:cent=
+er;=22><font face=3D=22Verdana, Arial, Helvetica, sans-serif=22 color=3D=22=
+=237848b5=22 >
+				<b>Aprende c=C3=B3mo puedes protegerte del vishing=2E</b>
+						</font>
+						</div>
+					</td>
+				</tr>
+
+						<tr height=3D=2230=22></tr>
+						<tr>
+										<td align=3D=22center=22>
+											<table style=3D=22display: inline-table;=22 border=3D=220=22 cel=
+lpadding=3D=220=22 cellspacing=3D=220=22 width=3D=22540=22>
+												<td align=3D=22left=22>
+													<table cellpadding=3D=220=22 cellspacing=3D=220=22 bgcolor=3D=
+=22=23441980=22 align=3D=22center=22 style=3D=22border-radius: 20px;=22>
+														<tr>
+															<td width=3D=2220=22></td>
+															<td height=3D=2250=22>
+																<div style=3D=22font-family:Arial, Helvetica, sans-serif; f=
+ont-size:22px; background: =23441980; color: =23ffffff; text-decoration: no=
+ne; width: 190px; text-align: center;display: inherit;=22><a target=3D=22_b=
+lank=22 href=3D=22https://email=2Escotiabankcolpatria=2Ecom/pub/cc?_ri_=3DX=
+0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H20bqY6T=
+bs5mEpzczfVXtpKX%3DBRAWCTAT&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9Q=
+EiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z8Md=
+J7P8OW0=2E&amp;_di_=3Dhrqag935ma5rag53qea5bdn6i9dpp07tnopb2hq3k21us87n9tng=
+=22 style=3D=22color:=23ffffff; text-decoration:none;=22><strong>Quiero sab=
+er m=C3=A1s</strong></a></div>
+															</td>
+															<td width=3D=2220=22></td>
+														</tr>
+													</table>
+												</td>
+											</table>
+										</td>
+									</tr>
+									<tr height=3D=2230=22></tr>
+									<tr>
+										<td align=3D=22center=22>
+											<div style=3D=22letter-spacing: -1px; font-size:25px; text-align=
+:center;=22><font face=3D=22Verdana, Arial, Helvetica, sans-serif=22 color=
+=3D=22=233e2444=22 >
+									<b>=23</b>CRIMINAL<b><font style=3D=22font-size:30px;=22><i>MENTE<=
+/i></font> </b>
+											</font>
+											</div>
+										</td>
+									</tr>
+											<tr height=3D=2230=22></tr>
+							</table>
+						</td>
+						<td width=3D=2230=22></td>
+					</table>
+				</td>
+			</tr>
+			<tr height=3D=2210=22></tr>
+			<tr align=3D=22center=22>
+				<td>
+					<table style=3D=22display: inline-table;=22 border=3D=220=22 cellpaddi=
+ng=3D=220=22 cellspacing=3D=220=22>
+					<td>
+					<center>
+						<table style=3D=22display: inline-table;=22 border=3D=220=22 cellpadd=
+ing=3D=220=22 cellspacing=3D=220=22 width=3D=22500=22>
+
+
+							<center>
+
+							<tr height=3D=2230=22></tr>
+							<tr>
+								<td>
+								<table style=3D=22display: inline-table;=22 border=3D=220=22 cellpa=
+dding=3D=220=22 cellspacing=3D=220=22 width=3D=22540=22>
+									<td align=3D=22left=22><img src=3D=22https://static=2Ecdn=2Erespon=
+sys=2Enet/i2/responsysimages/bancocolp/contentlibrary/regulatorios/2020/oct=
+ubre/21mkt0025_criminalmente_vishing2/logo_colpatria=2Epng=22 width=3D=2211=
+0=22 id=3D=22n19DBM0183_r8_c2=22 alt=3D=22footer_Colpatria=22 /></td>
+
+
+								</table>
+								</td>
+							</tr>
+							</center>
+						</table>
+					</center>
+					</td>
+					</table>
+				</td>
+			</tr>
+			<center>
+			<tr>
+				<td>
+					<center>
+					<table style=3D=22display: inline-table;=22 border=3D=220=22 cellpaddi=
+ng=3D=220=22 cellspacing=3D=220=22 width=3D=22500=22>
+
+						<tr align=3D=22center=22>
+							<td><div align=3D=22center=22 class=3D=22wilstyle=22 style=3D=22heig=
+ht:auto;letter-spacing:-1px; font-size:20px; text-align: center;=22><font f=
+ace=3D=22Verdana, Arial, Helvetica, sans-serif=22 color=3D=22=235d5d5d=22 >=
+<br><br>T=C3=A9rminos y condiciones</font></div><br>
+								<div class=3D=22wilstyle=22 style=3D=22max-width:548px;width:548px;=
+letter-spacing: -1px; font-size: 10px; text-align: justify;=22 ><font face=
+=3D=22Verdana, Arial, Helvetica, sans-serif=22 color=3D=22=235d5d5d=22 >
+						 Scotiabank Colpatria Establecimiento Bancario=2E =C2=AEMarca registr=
+ada de The Bank of Nova Scotia, utilizada bajo licencia Scotiabank Colpatri=
+a=2E Esta campa=C3=B1a de Scotiabank Colpatria es promocional e informativa=
+=2E Por ninguna circunstancia Scotiabank Colpatria solicitar=C3=A1 a sus cl=
+ientes ingresar datos bancarios por medio de un enlace (link) de internet=
+=2E Para actualizar tus datos personales debes acercarte a una oficina de S=
+cotiabank Colpatria=2E Celular y email pueden ser actualizados a trav=C3=A9=
+s de nuestra l=C3=ADnea de atenci=C3=B3n durante el tiempo que dure la actu=
+al emergencia sanitaria=2E</font></div>
+						</tr>
+					</table>
+					</center>
+				</td>
+			</tr>
+			</center>
+		</table>
+	</div>
+
+	<=21-- FOOTER : START -->
+<=21DOCTYPE html PUBLIC =22-//W3C//DTD XHTML 1=2E0 Transitional//EN=22
+=22http://www=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-transitional=2Edtd=22>
+<=21-- saved from url=3D(0014)about:internet -->
+<html xmlns=3D=22https://www=2Ew3=2Eorg/1999/xhtml=22>
+	<=21-- FOOTER : START -->
+	<div align=3D=22center=22 style=3D=22display: block=22>
+		<table style=3D=22display: inline-table;=22 border=3D=220=22 cellpadding=
+=3D=220=22 cellspacing=3D=220=22 width=3D=22600=22><tbody>
+			<tr>
+				<td style=3D=22display: none =21important; visibility: hidden; mso-hide=
+: all; font-size: 1px; color: =23ffffff; line-height: 1px; max-height: 0px;=
+ max-width: 0px; opacity: 0; overflow: hidden;=22 class=3D=22eoa_gxg=22>
+				</td>
+			</tr>
+			<tr>
+				<td><img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysim=
+ages/bancocolp/contentlibrary/list_master/footer/responsivescotiacolpatria/=
+footerscotia/=22 width=3D=2272=22 height=3D=221=22 alt=3D=22=22 style=3D=22=
+display: block;=22/></td>
+				<td><img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Co=
+lpatria/digital/mailing/spacer=2Egif=22 width=3D=2249=22 height=3D=221=22 a=
+lt=3D=22=22 style=3D=22display: block;=22/></td>
+				<td><img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Co=
+lpatria/digital/mailing/spacer=2Egif=22 width=3D=2268=22 height=3D=221=22 a=
+lt=3D=22=22 style=3D=22display: block;=22/></td>
+				<td><img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Co=
+lpatria/digital/mailing/spacer=2Egif=22 width=3D=2276=22 height=3D=221=22 a=
+lt=3D=22=22 style=3D=22display: block;=22/></td>
+				<td><img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Co=
+lpatria/digital/mailing/spacer=2Egif=22 width=3D=2270=22 height=3D=221=22 a=
+lt=3D=22=22 style=3D=22display: block;=22/></td>
+				<td><img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Co=
+lpatria/digital/mailing/spacer=2Egif=22 width=3D=2268=22 height=3D=221=22 a=
+lt=3D=22=22 style=3D=22display: block;=22/></td>
+				<td><img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Co=
+lpatria/digital/mailing/spacer=2Egif=22 width=3D=2259=22 height=3D=221=22 a=
+lt=3D=22=22 style=3D=22display: block;=22/></td>
+				<td><img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Co=
+lpatria/digital/mailing/spacer=2Egif=22 width=3D=2258=22 height=3D=221=22 a=
+lt=3D=22=22 style=3D=22display: block;=22/></td>
+				<td><img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Co=
+lpatria/digital/mailing/spacer=2Egif=22 width=3D=2281=22 height=3D=221=22 a=
+lt=3D=22=22 style=3D=22display: block;=22/></td>
+				<td><img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Co=
+lpatria/digital/mailing/spacer=2Egif=22 width=3D=221=22 height=3D=221=22 al=
+t=3D=22=22 style=3D=22display: block;=22/></td>
+			</tr>
+			<tr>
+				<td colspan=3D=229=22 bgcolor=3D=22=23C4220D=22 style=3D=22background-i=
+mage: linear-gradient(to right, =23d81e05,=230000);border-radius: 20px;=22>
+					<div align=3D=22center=22 class=3D=22wilstyle=22 style=3D=22text-decor=
+ation: none;font-family: sans-serif;font-size: 12px;color: =239b9b9b;=22>
+						<b><a style=3D=22color: =23fff;=22>&nbsp; &nbsp;</a><a href=3D=22http=
+s://email=2Escotiabankcolpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQG=
+zbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRA=
+WCUAT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOn=
+WNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Df29b0nht=
+6dngcjord9205b7t23ct45qae7840sr943ll9s21149g=22 style=3D=22color: =23fff; t=
+ext-decoration: none;=22 target=3D=22_blank=22>Oficinas&nbsp; &nbsp;=7C&nbs=
+p; &nbsp;</a><a href=3D=22https://email=2Escotiabankcolpatria=2Ecom/pub/cc?=
+_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7=
+H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCUCT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQ=
+Je9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9=
+z8MdJ7P8OW0=2E&_di_=3Din841vmnighmqju0em2pt7clge0lrj3suqtqrkl9ktrgujnf9fug=
+=22 style=3D=22color: =23fff; text-decoration: none;=22 target=3D=22_blank=
+=22>Cajeros&nbsp; &nbsp;=7C&nbsp; &nbsp;</a><a href=3D=22https://email=2Esc=
+otiabankcolpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0=
+JzetUghkNlIzdgWs64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCWRT&_ei_=3DE=
+q2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1=
+dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Dgd0f9sepprsc681d6i9gel=
+l4ofdrbuj01cua62liif58s0d0o7f0=22 style=3D=22color: =23fff; text-decoration=
+: none;=22 target=3D=22_blank=22>Extractos&nbsp; &nbsp;=7C&nbsp; &nbsp;</a>=
+<a href=3D=22https://email=2Escotiabankcolpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2=
+X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H20bqY6Tbs5mE=
+pzczfVXtpKX%3DBRAWCWTT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66=
+TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=
+=2E&_di_=3D6linrs36228egfrtg2vgo1t5nca8otgmfov4johtsju27hu2dku0=22 style=3D=
+=22color: =23fff; text-decoration: none;=22 target=3D=22_blank=22>Tel=C3=A9=
+fonos&nbsp; &nbsp;</a> </b>
+					</div>
+				</td>
+				<td>
+					<img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Colpa=
+tria/digital/mailing/spacer=2Egif=22 width=3D=221=22 height=3D=2245=22 alt=
+=3D=22=22 style=3D=22display: block;=22>
+				</td>
+			</tr>
+			<tr>
+				<td colspan=3D=229=22 bgcolor=3D=22=23fff=22 style=3D=22background-colo=
+r: =23ffffff;=22></td>
+				<td><img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Co=
+lpatria/digital/mailing/spacer=2Egif=22 width=3D=221=22 height=3D=2221=22 a=
+lt=3D=22=22 /></td>
+			</tr>
+			<tr align=3D=22center=22>
+				<td colspan=3D=225=22>
+					<div align=3D=22center=22 style=3D=22max-width: 270px;width: 270px;hei=
+ght: auto;letter-spacing: 0px;font-size: 9px;font-family: sans-serif;color:=
+ =23000000; text-align: center=22>
+						<font face=3D=22Verdana, Arial, Helvetica, sans-serif=22 color=3D=22=
+=238E8E8E=22>
+							<b>VISITA NUESTRAS REDES</b>
+						</font>
+					</div>
+				</td>
+				<td rowspan=3D=222=22>
+					<img src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimage=
+s/bancocolp/contentlibrary/list_master/footer/responsivescotiacolpatria/foo=
+terscotia/LINE=2Epng=22 height=3D=2260=22 alt=3D=22line=22 />
+				</td>
+				<td colspan=3D=222=22>
+					<div align=3D=22center=22 class=3D=22wilstyle=22 style=3D=22max-width:=
+ 117px;width: 117px;height: auto;letter-spacing: 0px;font-size: 9px;font-fa=
+mily: sans-serif;color: =23000000; text-align: center=22>
+						<font face=3D=22Verdana, Arial, Helvetica, sans-serif=22 color=3D=22=
+=238E8E8E=22>
+							<b>DESCARGA LA APP</b>
+						</font>
+					</div>
+				</td>
+			</tr>
+			<tr align=3D=22center=22>
+				<td><a href=3D=22https://email=2Escotiabankcolpatria=2Ecom/pub/cc?_ri_=
+=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H20b=
+qY6Tbs5mEpzczfVXtpKX%3DBRAWCWWT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9Q=
+EiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z8Md=
+J7P8OW0=2E&_di_=3Dgk1dlfpjgjo09ouresd5qq7fdji0ose7emboh7gofvjo9gp1rj50=22 t=
+arget=3D=22blank=22><img alt=3D=22facebook=22 height=3D=2230=22 src=3D=22ht=
+tps://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimages/bancocolp/contentli=
+brary/list_master/footer/responsivescotiacolpatria/footerscotia/FACEBOOK=2E=
+png=22 style=3D=22display: block;margin-left: 15px;=22 /></a></td>
+				<td align=3D=22right=22><a href=3D=22https://email=2Escotiabankcolpatri=
+a=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs=
+64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCWAT&_ei_=3DEq2tf9zs59idfPO1S=
+c_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILR=
+aXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Dvo3kv7su0ol007v76gbklmu0ggd2q927qa3kln=
+edaujjto13213g=22 target=3D=22blank=22><img alt=3D=22youtube=22 height=3D=
+=2225=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimages=
+/bancocolp/contentlibrary/list_master/footer/responsivescotiacolpatria/foot=
+erscotia/YOUTUBE=2Epng=22 style=3D=22display: block;=22 /></a></td>
+				<td align=3D=22right=22><a href=3D=22https://email=2Escotiabankcolpatri=
+a=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs=
+64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCWCT&_ei_=3DEq2tf9zs59idfPO1S=
+c_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILR=
+aXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Daghm1800nmrfvpflsqd5e8kaprda69jdar44kl=
+v2t7m6h3m2stag=22 target=3D=22blank=22><img src=3D=22https://static=2Ecdn=
+=2Eresponsys=2Enet/i2/responsysimages/bancocolp/contentlibrary/list_master/=
+footer/responsivescotiacolpatria/footerscotia/INSTAGRAM=2Epng=22 width=3D=
+=2230=22 alt=3D=22instagram=22 style=3D=22display: block;=22 /></a></td>
+				<td align=3D=22right=22><a href=3D=22https://email=2Escotiabankcolpatri=
+a=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs=
+64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCYRT&_ei_=3DEq2tf9zs59idfPO1S=
+c_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILR=
+aXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Dhd6rfc5qc72s32pug77q11e3ql4t0imfk2kjar=
+s9tb32v6tpaugg=22 target=3D=22blank=22><img src=3D=22https://static=2Ecdn=
+=2Eresponsys=2Enet/i2/responsysimages/bancocolp/contentlibrary/list_master/=
+footer/responsivescotiacolpatria/footerscotia/LINKEDIN=2Epng=22 width=3D=22=
+30=22 alt=3D=22linkedin=22 style=3D=22display: block;=22 /></a></td>
+				<td align=3D=22right=22><a href=3D=22https://email=2Escotiabankcolpatri=
+a=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs=
+64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCYTT&_ei_=3DEq2tf9zs59idfPO1S=
+c_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILR=
+aXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3Dfm8i9eoma8emfgnp30j73ob7nsnhs73p7org2e=
+a03nabhflkuha0=22 target=3D=22blank=22><img alt=3D=22twitter=22 height=3D=
+=2230=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimages=
+/bancocolp/contentlibrary/list_master/footer/responsivescotiacolpatria/foot=
+erscotia/TWITTER=2Epng=22 style=3D=22display: block;=22 /></a></td>
+
+
+				<td><a href=3D=22https://email=2Escotiabankcolpatria=2Ecom/pub/cc?_ri_=
+=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H20b=
+qY6Tbs5mEpzczfVXtpKX%3DBRAWCYWT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9Q=
+EiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z8Md=
+J7P8OW0=2E&_di_=3Dn6r2rnrl39k91c1akc3dhgja8htnr9hendib9a2rn5qo8fbttr5g=22 t=
+arget=3D=22blank=22><img alt=3D=22playstore=22 height=3D=2230=22 src=3D=22h=
+ttps://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimages/bancocolp/contentl=
+ibrary/list_master/footer/responsivescotiacolpatria/footerscotia/ANDROID=2E=
+png=22 style=3D=22display: block;=22 /></a></td>
+				<td><a href=3D=22https://email=2Escotiabankcolpatria=2Ecom/pub/cc?_ri_=
+=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H20b=
+qY6Tbs5mEpzczfVXtpKX%3DBRAWCYWT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJe9Q=
+EiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z8Md=
+J7P8OW0=2E&_di_=3Dn6r2rnrl39k91c1akc3dhgja8htnr9hendib9a2rn5qo8fbttr5g=22 t=
+arget=3D=22blank=22><img alt=3D=22Appstore=22 height=3D=2230=22 src=3D=22ht=
+tps://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimages/bancocolp/contentli=
+brary/list_master/footer/responsivescotiacolpatria/footerscotia/IOS=2Epng=
+=22 style=3D=22display: block;=22 /></a></td>
+			</tr>=09
+			<tr align=3D=22center=22>
+				<td colspan=3D=229=22>
+					<br>
+					<div align=3D=22center=22 class=3D=22wilstyle=22 style=3D=22text-decor=
+ation: none;font-family: sans-serif;font-size: 9=2E5px;color: =239b9b9b;=22>
+						<p style=3D=22text-align: center;=22><font color=3D=22=239b9b9b=22 fa=
+ce=3D=22Verdana, Arial, Helvetica, sans-serif=22>
+							Has recibido este email porque autorizaste el env=C3=ADo de correos =
+electr=C3=B3nicos comerciales<br>
+							por parte de <font style=3D=22color: rgb(216, 30, 5);=22>Scotiabank =
+Colpatria</font> de conformidad con la pol=C3=ADtica de <a style=3D=22text-=
+decoration: none;=22 target=3D=22_blank=22 href=3D=22https://email=2Escotia=
+bankcolpatria=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0Jzet=
+UghkNlIzdgWs64NADRFzadCPzc7H20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCYAT&_ei_=3DEq2tf=
+9zs59idfPO1Sc_9Bbmf8MfixOVQJe9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzK=
+nyOix4xgFILRaXkAjIDypJcrSZ9z8MdJ7P8OW0=2E&_di_=3D5ec9t4tfirg2bj82pcoerot10n=
+5cm6ltgu4oamfo1vnhjgdkvv8g=22>tratamiento de datos=2E</a><br>
+							Este correo es enviado a <font style=3D=22color: rgb(216, 30, 5);=22=
+>Cristian Felipe Gallego Ramirez</font> al correo pharsat=40gmail=2Ecom=2E
+							</font>
+						</p>
+					</div>
+					<div align=3D=22center=22 class=3D=22wilstyle=22 style=3D=22text-decor=
+ation: none; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:=
+ 9=2E5px; color: =239b9b9b; height: auto;=22>
+						<p style=3D=22display: block; margin: 0 auto;=22>
+							<font style=3D=22color: =239B9B9B; text-decoration: none;=22>
+								Carrera 7 No 24-89, Torre Colpatria<br>
+								Bogot=C3=A1 D=2EC, Colombia=2E
+							</font>
+						</p>
+					</div>
+					<div align=3D=22center=22 class=3D=22wilstyle=22 style=3D=22text-decor=
+ation: none; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:=
+ 9=2E5px; color: =239b9b9b; height: auto;=22>
+										<p style=3D=22text-align: center;=22>
+											<font color=3D=22=239b9b9b=22 face=3D=22Verdana, Arial, Helvetic=
+a, sans-serif;font-size: 9=2E5px;=22>
+												<a href=3D=22https://email=2Escotiabankcolpatria=2Ecom/pub/cc?_=
+ri_=3DX0Gzc2X%3DAQpglLjHJlTQGzbIUkG433zbHg0JzetUghkNlIzdgWs64NADRFzadCPzc7H=
+20bqY6Tbs5mEpzczfVXtpKX%3DBRAWCYCT&_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmf8MfixOVQJ=
+e9QEiauNIx66TjEQ3q6QGvjSh8LOnWNnSSoYJZpTtr1dIzKnyOix4xgFILRaXkAjIDypJcrSZ9z=
+8MdJ7P8OW0=2E&_di_=3Dfuqo9pt7tcqlslo8og3imt3rlggihi67n9f16aoejldf269949vg=
+=22 target=3D=22_blank=22 title=3D=22Desuscribirme=22>Desuscribirme</a>
+											</font>
+										</p>
+									</div> =20
+				</td>
+				<td>
+					<img src=3D=22https://cdn=2Eagilitycms=2Ecom/scotiabank-colombia/Colpa=
+tria/digital/mailing/spacer=2Egif=22 width=3D=221=22 height=3D=2272=22 alt=
+=3D=22=22 style=3D=22display: block;=22>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<=21-- FOOTER : END -->
+</html>	<=21-- FOOTER : END -->
+</body>
+</html>
+
+------alt_border_qornYZNqej_1--
+
+------msg_border_AGOOSuqLnR--
+

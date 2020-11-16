@@ -1,0 +1,257 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:a155:0:0:0:0:0 with SMTP id v82csp3486025ili;
+        Tue, 18 Aug 2020 10:26:56 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzfZFzP0oxp7etTqlTNYr8pwSOzIJ5KRigQ8msK4SSreAV3jGFRemlSeJqlOwxRAaoJdPrJ
+X-Received: by 2002:a05:6214:108a:: with SMTP id o10mr20551176qvr.239.1597771616662;
+        Tue, 18 Aug 2020 10:26:56 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1597771616; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=B3ZVnMxCV3F3CpgmQapTfmBDm0QllCDAW8uba88z+ij52GNF9MI45moBYn+lqS6Mxo
+         Vis6UBb3OfHjZK3s3qWfVjV11uYhopyyaAGzW4ZBVQ48QeoR4Epb7or4O3JiLUjtDAFE
+         40uVutVwys0nvrkH7mLq7xmzoKZopNa8WytIOk/jXV6XsXjtVIMIbUcZJBeEZBgYU49g
+         M/YPHTnXtAffqBOib5kJoTS7PvAEOOTQNlJHjZYiQ7tjtZh5SmcSp+ORMF5I5VhnrNP2
+         RF3BNxr3EKg69QcqTXxXcK4fo0G7tt0PCh59VreEJ/usmWFlh+8UxsrefZL4xSawCCTQ
+         6ReA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:auto-submitted:in-reply-to:references:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=agPml1MRgSFutkkHjcTMegVR7wEdm2wTMAAVldTcgmw=;
+        b=Jvolonl/RZVGDDI1YbrzDSn3QP2EtEd1LoY5g2bZZhbzUpf57054mPfzzuXltExF+8
+         6+zNirSMcl0bjt3YdB5jqiv2qJenX8wLlHqs53fx62DM951yVnnFHeIupwkH5gbgK5sh
+         RBusZhPxQwB0SHsh77572DqYBW21ujQ+GvOcNik6rMBvxAow0VINd5/KdkOlFfvva0A9
+         wlq6q8StXrpNnPosniH3g3nv2TqGUPpba0UHjqrdQBjiqqIKy2P8FcPYlapvF4aqvC4G
+         Fh+465aBT3C8/rjX9HNnaRoJSPrKQeQsUI82R0+5rMR9tjM7qtT1tgvPpQfmKubZIfbi
+         GKqw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@bancolombia.com.co header.s=selector2 header.b="dkND/oid";
+       arc=pass (i=1 spf=pass spfdomain=bn6pr02mb3347.namprd02.prod.outlook.com dkim=pass dkdomain=bancolombia.com.co dmarc=pass fromdomain=bancolombia.com.co);
+       spf=pass (google.com: domain of postmaster@nam12-bn8-obe.outbound.protection.outlook.com designates 52.100.165.247 as permitted sender) smtp.helo=NAM12-BN8-obe.outbound.protection.outlook.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=bancolombia.com.co
+Return-Path: <>
+Received: from NAM12-BN8-obe.outbound.protection.outlook.com (mail-bn8nam12hn2247.outbound.protection.outlook.com. [52.100.165.247])
+        by mx.google.com with ESMTPS id b14si8904366qvi.35.2020.08.18.10.26.56
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 18 Aug 2020 10:26:56 -0700 (PDT)
+Received-SPF: pass (google.com: domain of postmaster@nam12-bn8-obe.outbound.protection.outlook.com designates 52.100.165.247 as permitted sender) client-ip=52.100.165.247;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bancolombia.com.co header.s=selector2 header.b="dkND/oid";
+       arc=pass (i=1 spf=pass spfdomain=bn6pr02mb3347.namprd02.prod.outlook.com dkim=pass dkdomain=bancolombia.com.co dmarc=pass fromdomain=bancolombia.com.co);
+       spf=pass (google.com: domain of postmaster@nam12-bn8-obe.outbound.protection.outlook.com designates 52.100.165.247 as permitted sender) smtp.helo=NAM12-BN8-obe.outbound.protection.outlook.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=bancolombia.com.co
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=U62DiQ948a1RKjKr0WQ9s4XRNMRUFbFTbibb/n1VENHhpVlSQwGpoOc++rKkiU7FZFJJNtQFRVYNzu91GXBxJGMHo9kLMRhcES+f7hZ18EtTDDmu4aMIl0ej4p0xIRNKNAn9H6U2OhJrM+im0Ec6fXj0G54BJ0ksNPiPUjIshLV63CcM6aYpTtG7Wwb6W/92HS+LC4i0HbbxN1V1QojecVCdEFvcrr1q46O2kBy0e2gIgH39U3ccJNuqAXnMFO+UK/QDCFsQ7XuonD2Zm0siKS4g9qwKu/yG2eaye2qJtn0U9D0cD8uawJ/Kd8TB3DrKk7IjYJhAvk9YVseae2/byw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=agPml1MRgSFutkkHjcTMegVR7wEdm2wTMAAVldTcgmw=;
+ b=QqF7vs1uvsZiemVDFHFLY+SLyj82qjgiQSan588PEss+UMzfui9NaZCX6AYgw1dta8dY90JSdZXsbYbG0Jda7aVq9MO8HgSOPefnIUrlqRzkbj3VfEpZ6PE0OCy3YDp5qqtf84OGHR3n0B9TgbvczIbZRmLwkbb0enoA8BEDqNy6PdgazLLc0nAJBFwYnMUo2Na4n2XniZxvgIT36/De+bAoSnlKjLJ9c4XkvxsTTknu8E62F3EdBXsD/oUm1Ya3vQtGYiMdGzwMDD48FY4oM0i28TDfMyJXk1qTlk/8N6cNENFemeCEO08yYFw9UI4tGlukwqXcup+5F/WN3OZjBQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.helo=bn6pr02mb3347.namprd02.prod.outlook.com; dmarc=pass action=none
+ header.from=bancolombia.com.co; dkim=pass header.d=bancolombia.com.co;
+ arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bancolombia.com.co;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=agPml1MRgSFutkkHjcTMegVR7wEdm2wTMAAVldTcgmw=;
+ b=dkND/oidi5gnQqlmRzqbXhv9iw/bg6MtCmUCbwCTPsRMWTpU4NV8rjJIH39otBedhoiZfvnApEM6u7Q3HuxQGA0kbPdlhYgSf3fmPeHgGye+bZmrE1KSjLzNyo5cTmyJkkiQDwpvPPZqJQ0Jv6e0cufdJc8Y2Bugdn3/jrZyPiU=
+Received: from BN6PR02MB3347.namprd02.prod.outlook.com (2603:10b6:405:63::31)
+ by BN6PR02MB2881.namprd02.prod.outlook.com (2603:10b6:404:fc::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3283.15; Tue, 18 Aug
+ 2020 17:26:54 +0000
+Received: from BN6PR02MB3347.namprd02.prod.outlook.com ([::1]) by
+ BN6PR02MB3347.namprd02.prod.outlook.com ([fe80::71a8:1f98:f981:69eb%6]) with
+ Microsoft SMTP Server id 15.20.3305.024; Tue, 18 Aug 2020 17:26:54 +0000
+From: Soportes para gestion de reclamos <soportes@bancolombia.com.co>
+To: =?Windows-1252?Q?Cristian_Felipe_Gallego_Ram=EDrez?= <pharsat@gmail.com>
+Subject:
+ =?Windows-1252?Q?Automatic_reply:_Caso:_Doble_reporte_de_Bancolombia_ante?=
+ =?Windows-1252?Q?_la_DIAN_afectando_la_informaci=F3n_ex=F3gena_reportada_?=
+ =?Windows-1252?Q?por_terceros.?=
+Thread-Topic:
+ =?Windows-1252?Q?Caso:_Doble_reporte_de_Bancolombia_ante_la_DIAN_afectand?=
+ =?Windows-1252?Q?o_la_informaci=F3n_ex=F3gena_reportada_por_terceros.?=
+Thread-Index: AQHWdYTEw6SZ60C+OUqrMBBrA0ZrkKk+Hn9k
+Date: Tue, 18 Aug 2020 17:26:54 +0000
+Message-ID:
+ <7449d27b1c274d1999d1c7e954447d13@BN6PR02MB3347.namprd02.prod.outlook.com>
+References:
+ <CAMEUduS2TaDi4Rj_L0wh8L+mCv57V+emHGi-rSd9LqoRM7gZ5g@mail.gmail.com>
+In-Reply-To:
+ <CAMEUduS2TaDi4Rj_L0wh8L+mCv57V+emHGi-rSd9LqoRM7gZ5g@mail.gmail.com>
+X-MS-Has-Attach:
+X-Auto-Response-Suppress: All
+X-MS-Exchange-Inbox-Rules-Loop: Soportes@bancolombia.com.co
+X-MS-TNEF-Correlator:
+authentication-results: gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=none action=none
+ header.from=bancolombia.com.co;
+x-ms-exchange-parent-message-id:
+ <CAMEUduS2TaDi4Rj_L0wh8L+mCv57V+emHGi-rSd9LqoRM7gZ5g@mail.gmail.com>
+auto-submitted: auto-generated
+x-ms-exchange-generated-message-source: Mailbox Rules Agent
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 422104f4-1aaf-4b64-fcf4-08d8439be713
+x-ms-traffictypediagnostic: BN6PR02MB2881:
+x-microsoft-antispam-prvs:
+ <BN6PR02MB2881317C562797F0007135F7B85C0@BN6PR02MB2881.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1051;
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ Clkhc8qpz2HTusk3f6aaFnmxoKD+a/mOjtctNNOi64rnN5ctX4ehPcw/XLt574bNxjayFlUW2zCNYAZL5cKDVEFpbRil4NFScrVSPJAPfcKaNtybmCA6ZdJvB4lCmzpCYDdNAk1uYaPOhJZlyXZ0uXYd0C80U7CRL4+wkwwc8r6/Qf1wAFHpnNvwCb7EriXIDOdQVijwW2XFkqGIzDmj8dD2efOf4pfrsMCh5u2Sv/UdRvHRLXpD6TneXlR/RCSRJU0PJxVQ1lhbyR7ZWFZfxECtz8MdTbbzFO304H2goGL3ayuse/AiBTd1ZnVEcGdm4ullQfLfZ5jHEPE7kZqstxAdEN3NLx3chTcJeh42YSmM0WroNe7+0MxBbPgcjK0U
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:es;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BN6PR02MB3347.namprd02.prod.outlook.com;PTR:;CAT:NONE;SFS:(50650200002)(366004)(346002)(136003)(376002)(396003)(39860400002)(64756008)(66556008)(66476007)(66446008)(88996005)(71200400001)(8936002)(66946007)(9686003)(7696005)(5660300002)(6916009)(55016002)(108616005)(24736004)(498600001)(78352004)(42882007)(6506007)(316002)(10290500003)(2906002)(224303003)(111220200005)(80100003);DIR:OUT;SFP:1501;
+x-ms-exchange-transport-forked: True
+Content-Type: multipart/alternative;
+	boundary="_000_7449d27b1c274d1999d1c7e954447d13BN6PR02MB3347namprd02pr_"
+MIME-Version: 1.0
+X-OriginatorOrg: bancolombia.com.co
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: BN6PR02MB3347.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 422104f4-1aaf-4b64-fcf4-08d8439be713
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Aug 2020 17:26:54.7384
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b5e244bd-c492-495b-8b10-61bfd453e423
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR02MB2881
+
+--_000_7449d27b1c274d1999d1c7e954447d13BN6PR02MB3347namprd02pr_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+Hemos recibido su correo electr=F3nico, agradecemos haberse puesto en conta=
+cto con nosotros.
+
+
+
+Si el correo que nos envi=F3 contiene informaci=F3n y/o documentos solicita=
+dos para la radicaci=F3n o investigaci=F3n de una queja, reclamo o aclaraci=
+=F3n; en los pr=F3ximos d=EDas, le ser=E1 enviada una notificaci=F3n indic=
+=E1ndole el n=FAmero de radicado y la fecha estimada de soluci=F3n; o la re=
+spuesta brindada a su caso.
+
+
+
+Si el correo que nos envi=F3 est=E1 relacionado con temas diferentes como p=
+ublicidad, hojas de vida, solicitud de documentos al Banco, embargos, desem=
+bargos, entre otros; deber=E1 comunicarse con la L=EDnea de Atenci=F3n al C=
+liente Bogot=E1 343 00 00, Medell=EDn 510 90 00, Cali 554 05 05, Barranquil=
+la 361 88 88, Cartagena 693 44 00, Bucaramanga 697 25 25, Pereira 340 12 13=
+ y l=EDnea nacional: 018000912345. Desde el exterior Espa=F1a: 900 995 717 =
+y Estados Unidos: 1866 379 9714.
+
+
+
+Si es proveedor debe comunicarse a la L=EDnea de Atenci=F3n a Proveedores 5=
+14 66 55 en Medell=EDn o a la L=EDnea gratuita 01 8000 952346. Horario de a=
+tenci=F3n 8:00 am - 1:00 pm y de 2:00 pm =96 5:00 pm.
+
+
+
+O si es corresponsal Bancario comunicarse a la L=EDnea especializada de ate=
+nci=F3n a corresponsales 018000953344, o acercarse a la sucursal madrina.
+
+
+
+Equipo Bancolombia
+
+
+
+
+
+
+
+--_000_7449d27b1c274d1999d1c7e954447d13BN6PR02MB3347namprd02pr_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+</head>
+<body>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif">
+<span style=3D"font-size:12.0pt; font-family:&quot;Gotham Rounded Light&quo=
+t;">Hemos recibido su correo electr=F3nico, agradecemos haberse puesto en c=
+ontacto con nosotros.
+</span></p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif">
+<span style=3D"font-size:12.0pt; font-family:&quot;Gotham Rounded Light&quo=
+t;">&nbsp;</span></p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif">
+<span style=3D"font-size:12.0pt; font-family:&quot;Gotham Rounded Light&quo=
+t;">Si el correo que nos envi=F3 contiene informaci=F3n y/o documentos soli=
+citados para la radicaci=F3n o investigaci=F3n de una queja, reclamo o acla=
+raci=F3n; en los pr=F3ximos d=EDas, le ser=E1 enviada una notificaci=F3n
+ indic=E1ndole el n=FAmero de radicado y la fecha estimada de soluci=F3n; o=
+ la respuesta brindada a su caso.</span></p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif">
+<span style=3D"font-size:12.0pt; font-family:&quot;Gotham Rounded Light&quo=
+t;">&nbsp;</span></p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:12pt; font-family:&quot;Cali=
+bri Light&quot;,sans-serif; color:black">
+<span style=3D"font-family:&quot;Gotham Rounded Light&quot;">Si el correo q=
+ue nos envi=F3 est=E1 relacionado con temas diferentes como publicidad, hoj=
+as de vida, solicitud de documentos al Banco, embargos, desembargos, entre =
+otros; deber=E1 comunicarse con la L=EDnea de Atenci=F3n
+ al Cliente Bogot=E1 343 00 00, Medell=EDn 510 90 00, Cali 554 05 05, Barra=
+nquilla 361 88 88, Cartagena 693 44 00, Bucaramanga 697 25 25, Pereira 340 =
+12 13 y l=EDnea nacional: 018000912345. Desde el exterior Espa=F1a: 900 995=
+ 717 y Estados Unidos: 1866 379 9714.</span></p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:12pt; font-family:&quot;Cali=
+bri Light&quot;,sans-serif; color:black">
+<span style=3D"font-family:&quot;Gotham Rounded Light&quot;">&nbsp;</span><=
+/p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:12pt; font-family:&quot;Cali=
+bri Light&quot;,sans-serif; color:black">
+<span style=3D"font-family:&quot;Gotham Rounded Light&quot;">Si es proveedo=
+r debe comunicarse a la L=EDnea de Atenci=F3n a Proveedores 514 66 55&nbsp;=
+en Medell=EDn o a la L=EDnea gratuita 01 8000 952346. Horario de atenci=F3n=
+ 8:00 am - 1:00 pm y de 2:00 pm =96 5:00 pm.</span></p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif">
+<span style=3D"font-size:12.0pt; font-family:&quot;Gotham Rounded Light&quo=
+t;">&nbsp;</span></p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif; text-align:justify">
+<span style=3D"font-size:12.0pt; font-family:&quot;Gotham Rounded Light&quo=
+t;">O si es <span style=3D"color:black">
+corresponsal Bancario comunicarse a la L=EDnea especializada de atenci=F3n =
+a corresponsales 018000953344, o acercarse a la sucursal madrina.</span></s=
+pan></p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif; text-align:justify">
+<span style=3D"font-size:12.0pt; font-family:&quot;Gotham Rounded Light&quo=
+t;; color:black">&nbsp;</span></p>
+<div style=3D"margin:0px 0in 0.000133333px; font-size:11pt; font-family:Cal=
+ibri,sans-serif">
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif">
+<span style=3D"font-size:12pt; font-family:&quot;gotham rounded light&quot;=
+; color:rgb(0,0,0); background-color:rgba(0,0,0,0)"><b>Equipo Bancolombia</=
+b></span></p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif">
+<br>
+</p>
+<br>
+</div>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif">
+<br>
+</p>
+<p style=3D"margin:0in 0in 0.0001pt; font-size:11pt; font-family:Calibri,sa=
+ns-serif">
+<span style=3D"color:black">&nbsp;</span></p>
+<br>
+</body>
+</html>
+
+--_000_7449d27b1c274d1999d1c7e954447d13BN6PR02MB3347namprd02pr_--

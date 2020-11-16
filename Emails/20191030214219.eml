@@ -1,0 +1,772 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:da8e:0:0:0:0:0 with SMTP id u14csp1745873iln;
+        Wed, 30 Oct 2019 14:42:21 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqxv9FaJ3QIEVBQ59X+aNogGKwsNrv1I8d5VwS6uo/o5Mgp+VlZW3DWDzoEeuBXucOSJ5YL9
+X-Received: by 2002:a37:f905:: with SMTP id l5mr2176560qkj.90.1572471741498;
+        Wed, 30 Oct 2019 14:42:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1572471741; cv=none;
+        d=google.com; s=arc-20160816;
+        b=mZfxH3ma90jYD8nHxM+zB2FB1hVPgIXEecc1o6h+/rzFkhmJX9WJmiFgRDWUV4Q6Y7
+         MJF+6HzO1+PjKUYvZliFAKUyIzzIoPbHlKkli3WUrzA5XJAxoXnKD6lXrnTURexjMMiS
+         ft66e4PWgSGyq0VbwTvI54NyGOp5VSMIwtN8z2bviejWr4OtLEUI8p5h8Ens/vP+e+ON
+         BplJ2rV3tvhfhhx+nOAAskTdo8/UxSQGPsVyX49Q45Pwm33X344Wra5PwpA4PUxr/yfr
+         XgYQm2s5sVnbNsuF05M7jUP8T3fPJUGGDLeL68ZfF2GKtXLoMSDzbT0UOznZI0+/is1g
+         MXvQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:mime-version:date:subject:to:from:message-id
+         :reply-to:dkim-signature;
+        bh=tujahXSykZFTRirIXJmWFv1UaYp6V2JOFUmfOITjTS0=;
+        b=XX2BhGrLw6rGViTt627afjWk4kLGPsaatX5qdTT0hnqmxbXTxWj2m90Em6/bEV7+QY
+         raNaKgqC6chG2iwQft8ZiuXATVyO8Bcr42Ld0Ml9UJFHzjzQ2NMs0tQAORQq7oeNi6Gb
+         zbWTZrQv6QMCQFE3TBck96s8GozpLF3HX6v0lm7iUcC7YjOsqjlw8XreXvr3++pevQcM
+         KCNkpwVvgM4uNYwViNM9wXqmcSMU020kpLKOlmxvuAXrdWBv7CauAwRLF/szKBMFtrDm
+         +8lQkYGWmR7PklXw7znBaLHbnFo07jjfQjOiA+9s6Qx6mmjif4xNFlghA9iLkN4dNg9S
+         sSCw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass (test mode) header.i=@em.scotiabankcolpatria.com header.s=masterbase header.b=S5Tf2u3v;
+       spf=pass (google.com: domain of mb_citiopeco.0.54626.609212@masterbase.em.scotiabankcolpatria.com designates 108.175.97.120 as permitted sender) smtp.mailfrom=MB_CITIOPECO.0.54626.609212@masterbase.em.scotiabankcolpatria.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=em.scotiabankcolpatria.com
+Return-Path: <MB_CITIOPECO.0.54626.609212@masterbase.em.scotiabankcolpatria.com>
+Received: from mail97-120.masterbase.com (mail97-120.masterbase.com. [108.175.97.120])
+        by mx.google.com with ESMTPS id m128si2963745qkd.289.2019.10.30.14.42.20
+        for <pharsat@gmail.com>
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Wed, 30 Oct 2019 14:42:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of mb_citiopeco.0.54626.609212@masterbase.em.scotiabankcolpatria.com designates 108.175.97.120 as permitted sender) client-ip=108.175.97.120;
+Authentication-Results: mx.google.com;
+       dkim=pass (test mode) header.i=@em.scotiabankcolpatria.com header.s=masterbase header.b=S5Tf2u3v;
+       spf=pass (google.com: domain of mb_citiopeco.0.54626.609212@masterbase.em.scotiabankcolpatria.com designates 108.175.97.120 as permitted sender) smtp.mailfrom=MB_CITIOPECO.0.54626.609212@masterbase.em.scotiabankcolpatria.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=em.scotiabankcolpatria.com
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed;
+  s=masterbase;d=em.scotiabankcolpatria.com;
+  h=message-id:from:to:subject:date:mime-version:content-type;
+  bh=LGV3j1np2TPzyhpXk+wQabCFMDE=;
+  b=S5Tf2u3vvo/eJybgTl8bR/DC7ghfy7xSI47yNZb9dKGXg2iIentGUxknMKy2Vir2zS9f5NdjueQNOsjTVVqO7t/rjpjusbLTkwFtxG8RB8vNf2Qn1z9xBwcK2RZzPnl7cWyzlDLvGRQFB3utnAwPmxxzSs4VOi42hoS66VeCn7s=
+Reply-To: "scotiabankcolpatria" <scotiabankcolpatria@em.scotiabankcolpatria.com>
+Message-ID: <e016553553924691d9ecfc561b3025e1@em.scotiabankcolpatria.com>
+From: "scotiabankcolpatria" <scotiabankcolpatria@em.scotiabankcolpatria.com>
+To: <pharsat@gmail.com>
+Subject: =?utf-8?B?QmllbnZlbmlkbyBhIFNjb3RpYWJhbmsgQ29scGF0cmlhLCBz?=
+	=?utf-8?B?dXMgcHJvZHVjdG9zIGZ1ZXJvbiBhcHJvYmFkb3Mu?=
+Date: Wed, 30 Oct 2019 21:42:19 +0000
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="a92480fa51af1eb61ad2340500025a90"
+List-Unsubscribe: <mailto: MB_CITIOPECO.0.54626.609212@listunsubscribe.masterbase.com>
+
+This is a multi-part message in MIME format.
+
+--a92480fa51af1eb61ad2340500025a90
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+Ingrese con su usuario y contrase=C3=B1a de siempre
+
+
+
+=20
+ =20
+  =20
+  =20
+   =20
+    =20
+     =20
+     =20
+     =20
+      =20
+       =20
+          Bienvenida  | =20
+        =20
+       =20
+      =20
+     =20
+     =20
+    =20
+   =20
+  =20
+  =20
+ =20
+ =20
+  =20
+  =20
+   =20
+    =20
+     =20
+      Zona segura: CRISTIAN FELIPE GALLEGO RAMIREZ
+    =20
+    =20
+      =20
+      Identificaci=C3=B3n terminada en: *9851
+    =20
+   =20
+  =20
+  =20
+ =20
+ =20
+  =20
+ =20
+ =20
+   Scotiabank Colpatria le da la bienvenida como cliente de sus productos =
+y servicios financieros=2E
+ =20
+ =20
+   Estamos dispuestos a brindarle experiencias memorables, y desde hoy =
+trabajamos para que comience a disfrutar de nuestros beneficios=2E
+  =20
+   Le informamos que los siguientes productos fueron aprobados:
+  =20
+   Tarjeta de Credito Visa terminado en 593
+   =20
+   =20
+   =20
+   =20
+   =20
+  =20
+   Durante los pr=C3=B3ximos 7 d=C3=ADas h=C3=A1biles recibir=C3=A1 sus =
+Tarjetas D=C3=A9bito y/o Cr=C3=A9dito en la direcci=C3=B3n de =
+correspondencia registrada al momento de su solicitud=2E
+  =20
+   La Tarjeta D=C3=A9bito le permitir=C3=A1 realizar retiros de su Cuenta =
+Corriente, Cuenta de Ahorros, One Plus y/o Cr=C3=A9dito Rotativo=2E
+  =20
+   Por su seguridad su nueva Tarjeta D=C3=A9bito le solicitar=C3=A1 clave =
+en dat=C3=A1fonos al momento de realizar compras, recuerde que esta clave =
+es la misma que utilizar=C3=A1 para retiros en cajeros electr=C3=B3nicos y =
+que podr=C3=A1 generarla o modificarla en la L=C3=ADnea de Atenci=C3=B3n=2E
+ =20
+ =20
+   =20
+ =20
+ =20
+  =20
+  =20
+   =20
+    =20
+     =20
+      Si despu=C3=A9s de 7 d=C3=ADas h=C3=A1biles del env=C3=ADo de
+      esta comunicaci=C3=B3n a=C3=BAn no ha recibido las
+      tarjetas, comun=C3=ADquese con un asesor al
+       487 2457 en Bogot=C3=A1 o al
+      018000 51 2929 desde el resto del pa=C3=ADs=2E
+    =20
+   =20
+  =20
+  =20
+ =20
+ =20
+   =20
+ =20
+ =20
+   Para Scotiabank Colpatria es muy importante su opini=C3=B3n=2E
+ =20
+ =20
+  =20
+  =20
+   =20
+    =20
+      Por favor
+     =20
+      y responda esta sencilla encuesta que solo le tomar=C3=A1 unos pocos =
+minutos=2E
+    =20
+   =20
+  =20
+  =20
+ =20
+ =20
+   Encuentre m=C3=A1s informaci=C3=B3n sobre sus nuevos productos y todos =
+los beneficios que tenemos para usted en =
+www.scotiabankcolpatria.com/bienvenida
+   =20
+ =20
+ =20
+  =20
+  =20
+   =20
+   =20
+  =20
+  =20
+ =20
+ =20
+
+       =20
+ =20
+  =20
+      Conozca todos nuestros canales
+   =20
+   =20
+        =20
+     =20
+     =20
+     =20
+     =20
+     =20
+      =20
+   =20
+ =20
+
+
+     =20
+  =20
+       =20
+ =20
+   =20
+        =20
+ =20
+ =20
+ =20
+ =20
+       =20
+        =20
+   =20
+ =20
+
+
+     =20
+
+ =20
+  =20
+  =20
+   =20
+    =20
+     =20
+     =20
+     =20
+      =20
+       =20
+         Zona de seguridad de e-mails
+       =20
+       =20
+         En la parte superior de este mensaje, ver=C3=A1 una zona de =
+seguridad para correos electr=C3=B3nicos. Su prop=C3=B3sito es ayudar a =
+que usted pueda confirmar que el correo electr=C3=B3nico fue efectivamente =
+enviado por Scotiabank Colpatria. Si tiene alguna pregunta, por favor =
+comun=C3=ADquese con nuestra L=C3=ADnea de Atenci=C3=B3n. Para obtener =
+informaci=C3=B3n sobre el fraude en l=C3=ADnea, visite =
+www.scotiabankcolpatria.com en =E2=80=9CRecomendaciones de =
+seguridad=E2=80=9D. Scotiabank Colpatria nunca le pedir=C3=A1 sus datos =
+personales o bancarios por e-mail. Por favor reporte a nuestra L=C3=ADnea =
+de Atenci=C3=B3n cualquier e-mail sospechoso que le pida diligenciar sus =
+datos o contrase=C3=B1as y haga caso omiso a la solicitud=2E
+       =20
+      =20
+     =20
+     =20
+    =20
+   =20
+  =20
+  =20
+ =20
+
+        &reg; Marca registrada de The Bank of Nova Scotia, utilizada bajo =
+licencia. Scotiabank Colpatria Establecimiento Bancario.=20
+          Con fecha 30 de junio de 2018, Scotiabank Colpatria S.A. =
+("Scotiabank Colpatria") adquiri&oacute; la operaci&oacute;n en Colombia =
+de banca de consumo y de peque&ntilde;as y medianas empresas de Citibank =
+Colombia S.A. ("Citibank"). A partir del 1 de julio de 2018, la =
+gesti&oacute;n de los productos que Ud. manten&iacute;a con Citibank, =
+junto con sus derechos y obligaciones, han quedado bajo la exclusiva =
+responsabilidad de Scotiabank Colpatria. Por favor ingrese a =
+www.scotiabankcolpatria.com para acceder a la Banca Online, consultar la =
+red de oficinas en donde lo atenderemos y conocer todos los =
+t&eacute;rminos y condiciones de sus productos.=20
+        Las marcas Citi, Citi y el dise&ntilde;o del arco, ThankYou y =
+marcas relacionadas, son marcas de servicios de Citigroup Inc. o de sus =
+filiales o subsidiarias, utilizadas y registradas alrededor del mundo. =
+Dichas marcas son usadas bajo licencia=2E
+      
+  
+   Pol=C3=ADtica de privacidad
+  
+ 
+
+
+
+--a92480fa51af1eb61ad2340500025a90
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+ <title>Scotiabank Colpatria</title>
+ <style media=3D"all" type=3D"text/css">.ReadMsgBody {
+ width: 100%;
+}
+=2EExternalClass * {
+ line-height: 100%
+}
+body {
+ -webkit-text-size-adjust: 100%;
+}
+img {
+ border: none
+}
+body {
+ width: 100% !important;
+}
+div, p, a, li, td {
+    -webkit-text-size-adjust: none;
+    color: #606061;
+}
+p {
+ -webkit-text-size-adjust: none;
+}
+table {
+ border-collapse: collapse;
+ mso-table-lspace: 0pt;
+ mso-table-rspace: 0pt;
+}
+table td {
+ border-collapse: collapse;
+ mso-table-lspace: 0pt;
+ mso-table-rspace: 0pt;
+}
+ </style>
+</head>
+<body bgcolor=3D"#ffffff" bottommargin=3D"0" leftmargin=3D"0" =
+rightmargin=3D"0" topmargin=3D"0">
+<div style=3D"color: rgb(255, 255, 255); line-height: 1px; overflow: =
+hidden; font-family: Arial; font-size: 1px; display: none; max-width: 0px; =
+opacity: 0; maxheight: 0px;">Ingrese con su usuario y contrase=C3=B1a de =
+siempre</div>
+
+<div align=3D"center"><!--
+   <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" =
+id=3D"table26" height=3D"39">
+    <tr>
+     <td valign=3D"top">
+      div align=3D"center">
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"441" id=3D"table27">
+       <tbody><tr>
+       =20
+        <td =
+style=3D"font-size:10px;color:#666666;font-family:verdana;text-decoration:n=
+one;line-height:12px;">
+         <div align=3D"center">Para asegurar la entrega de nuestros
+          e-mail en su correo, por favor agregue
+          <span =
+style=3D"font-size:10px;color:#0073AE;font-family:verdana;text-decoration:n=
+one;">
+          mail@mail.com </span>a su libreta de direcciones de correo.<br>
+          Si usted no visualiza bien este mail, haga <a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB1E3799A1AF881B2E7268308C627BF4A=
+89D72280B14B2EE183E99E735AEC78D4EECE290CFFE46D5142265ABAD4F492035C2C476CD91=
+272CFAC823ADA4B47B1F824C83E2CFB1146CB6A11A0EB4967243F9D3367054A52E04D569C1B=
+DA880005BDCF7E7F80DE867A86FAE40FED9EF0446108050ECFFCCF30E1E6B4028C575DB1E8D=
+2704F69474D8F59D1" style=3D"text-decoration:none; color:#0073AE">click =
+aqu=C3=AD</a></div></td>
+         </tr>
+        </tbody></table>
+       </div>
+      </td>
+     </tr>
+    </table> -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"640">
+ <tbody>
+  <tr>
+   <td>
+   <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"640">
+    <tbody>
+     <tr>
+      <td width=3D"248"><span style=3D"line-height: 1px; font-size: =
+1px;"><img alt=3D"Scotiabank Colpatria" border=3D"0" height=3D"56" =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20180801cr1/mail_=
+02.jpg" style=3D"display: block;" width=3D"248" /></span></td>
+      <td style=3D"text-align: right; padding-right: 12px;" valign=3D"top" =
+width=3D"392">
+      <table align=3D"right" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"190">
+       <tbody>
+        <tr>
+         <td style=3D"text-align: left; color: rgb(0, 0, 0); padding-top: =
+18px; font-family: arial; font-size: 12px;" width=3D"184"><a =
+href=3D''https://www.scotiabankcolpatria.com/bienvenida"  =
+style=3D"text-decoration:none;"> Bienvenida</a>  |  </td>
+         <td style=3D"padding-top: 18px;" width=3D"116"><span =
+style=3D"line-height: 1px; font-size: 1px;"><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB1C8EBEB0692E35B9D268308C627BF4A=
+89F5DBDB5A1D19D4ECE7F5DA6B705366EA1595647835936D25A4C65E5D930D18CE084E35E89=
+3FA9F0534F03910D7E56206C3FB978C5B1369545B752E1830CD38EC" =
+target=3D"_blank"><img alt=3D"Scotiabank Colpatria" border=3D"0" =
+height=3D"20" =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20180801cr1/mail_=
+05.jpg" style=3D"display: block;" width=3D"116" /></a></span></td>
+        </tr>
+       </tbody>
+      </table>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   </td>
+  </tr>
+  <tr>
+   <td style=3D"padding: 8px 0px;">
+   <table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"608">
+    <tbody>
+     <tr>
+      <td width=3D"12"><img alt=3D"CITI" height=3D"14" =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20180801cr1/mail_=
+10.jpg" width=3D"11" /></td>
+      <td style=3D"padding: 2px 5px; text-align: left; color: rgb(51, 51, =
+51); font-family: arial; font-size: 11px;" width=3D"530">Zona segura: =
+CRISTIAN FELIPE GALLEGO RAMIREZ</td>
+     </tr>
+     <tr>
+      <td> </td>
+      <td style=3D"padding: 2px 5px; text-align: left; color: rgb(51, 51, =
+51); font-family: arial; font-size: 11px;">Identificaci=C3=B3n terminada =
+en: *9851</td>
+     </tr>
+    </tbody>
+   </table>
+   </td>
+  </tr>
+  <tr>
+   <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB1FFBCD5AC1BA78A37268308C627BF4A=
+89F5DBDB5A1D19D4ECE7F5DA6B705366EA1595647835936D25A4C65E5D930D18CE1564F28D9=
+E890342D8CE56C5BD30E501B98E5F523CEF1393254BE0E9661EB7B3762E37CC2A457AD5" =
+target=3D"_blank"><img alt=3D"Scotiabank Colpatria" height=3D"453" =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20180801cr1/mail_=
+14.jpg" style=3D"display: block;" width=3D"640" /></td>
+  </tr>
+  <tr>
+   <td bgcolor=3D"#ffffff" style=3D"padding: 15px 50px 0px; text-align: =
+left; color: rgb(224, 0, 25); line-height: 26px; font-family: arial; =
+font-size: 22px; mso-line-height-rule: exactly;"><strong>Scotiabank =
+Colpatria le da la bienvenida como cliente de sus productos y servicios =
+financieros.</strong></td>
+  </tr>
+  <tr>
+   <td style=3D"padding: 12px 51px 0px; text-align: left; color: rgb(0, 0, =
+0); line-height: 18px; font-family: arial; font-size: 13px; =
+mso-line-height-rule: exactly;">Estamos dispuestos a brindarle =
+experiencias memorables, y desde hoy trabajamos para que comience a =
+disfrutar de nuestros beneficios.<br />
+   <br />
+   Le informamos que los siguientes productos fueron aprobados:<br />
+   <br />
+   <strong>Tarjeta de Credito Visa terminado en 593<br />
+    <br />
+    <br />
+    <br />
+    <br />
+    </strong><br />
+   <br />
+   Durante los pr=C3=B3ximos 7 d=C3=ADas h=C3=A1biles recibir=C3=A1 sus =
+Tarjetas D=C3=A9bito y/o Cr=C3=A9dito en la direcci=C3=B3n de =
+correspondencia registrada al momento de su solicitud.<br />
+   <br />
+   La Tarjeta D=C3=A9bito le permitir=C3=A1 realizar retiros de su Cuenta =
+Corriente, Cuenta de Ahorros, One Plus y/o Cr=C3=A9dito Rotativo.<br />
+   <br />
+   Por su seguridad su nueva Tarjeta D=C3=A9bito le solicitar=C3=A1 clave =
+en dat=C3=A1fonos al momento de realizar compras, recuerde que esta clave =
+es la misma que utilizar=C3=A1 para retiros en cajeros electr=C3=B3nicos y =
+que podr=C3=A1 generarla o modificarla en la L=C3=ADnea de =
+Atenci=C3=B3n.</td>
+  </tr>
+  <tr>
+   <td height=3D"20"> </td>
+  </tr>
+  <tr>
+   <td>
+   <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"640">
+    <tbody>
+     <tr>
+      <td align=3D"left" width=3D"194"><img alt=3D"" height=3D"150" =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20180801cr1/mail_=
+15.jpg" width=3D"194" /></td>
+      <td style=3D"text-align: left; color: rgb(0, 0, 0); line-height: =
+21px; font-family: arial; font-size: 15px;">Si despu=C3=A9s de 7 d=C3=ADas =
+h=C3=A1biles del env=C3=ADo de<br />
+      esta comunicaci=C3=B3n a=C3=BAn no ha recibido las<br />
+      tarjetas, comun=C3=ADquese con un asesor al<br />
+      <span style=3D"color: rgb(224, 0, 25); font-weight: bold;"></span> =
+<span style=3D"color: rgb(224, 0, 25); font-weight: bold;">487 2457 en =
+Bogot=C3=A1</span> o al<br />
+      <span style=3D"color: rgb(224, 0, 25); font-weight: bold;">018000 51 =
+2929</span> desde el resto del pa=C3=ADs.</td>
+     </tr>
+    </tbody>
+   </table>
+   </td>
+  </tr>
+  <tr>
+   <td height=3D"20"> </td>
+  </tr>
+  <tr>
+   <td style=3D"padding: 0px 51px; text-align: left; color: rgb(0, 0, 0); =
+line-height: 18px; font-family: arial; font-size: 13px; =
+mso-line-height-rule: exactly;">Para Scotiabank Colpatria es muy =
+importante su opini=C3=B3n.</td>
+  </tr>
+  <tr>
+   <td style=3D"padding: 0px 20px 0px 51px;">
+   <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+    <tbody>
+     <tr>
+      <td style=3D"text-align: left; color: rgb(0, 0, 0); line-height: =
+18px; font-family: arial; font-size: 13px;" width=3D"58">Por favor</td>
+      <td align=3D"left" valign=3D"middle"><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB1451FAB561E73130F268308C627BF4A=
+89F5DBDB5A1D19D4EC5A6B0B29BEB512CBBB88B65FC416138633A86ED39042BF9624F91EDBC=
+EB3641307B76D6F37C7B7FD3979F8D9E49612BB356FB03699BC308D264CF513FC22DF8D431C=
+04778722949B0BB22845F389F164B693F0E8FDE6A5B7FDD4B58D7D707C018835723A0E17B60=
+F232B55E076C97332705198308DF332922DD3823CA64AD3883B4A0C47F0C7DA4BFE8F540CC5=
+4E02A6D155D81EAAAB1FC79F699D2C5A0261C7ABC5F59B7F013E060399AF59F6AE422FD97F9=
+F2B1FB9A56190EDD23B30AD7F13B83E768FFB34C4D2478C8534AD9703EB8C7DC1D9BBAD44CA=
+" target=3D"_blank"><img alt=3D"" height=3D"20" =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20180801cr1/mail_=
+16.jpg" width=3D"60" /></a></td>
+      <td style=3D"text-align: left; color: rgb(0, 0, 0); line-height: =
+18px; padding-left: 3px; font-family: arial; font-size: 13px;">y responda =
+esta sencilla encuesta que solo le tomar=C3=A1 unos pocos minutos.</td>
+     </tr>
+    </tbody>
+   </table>
+   </td>
+  </tr>
+  <tr>
+   <td style=3D"padding: 20px 51px 0px; text-align: left; color: rgb(0, 0, =
+0); line-height: 18px; font-family: arial; font-size: 13px; =
+mso-line-height-rule: exactly;">Encuentre m=C3=A1s informaci=C3=B3n sobre =
+sus nuevos productos y todos los beneficios que tenemos para usted en =
+<span style=3D"color: rgb(224, 0, 25); font-weight: bold;"><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB1245CE1098E1D61FA268308C627BF4A=
+89F5DBDB5A1D19D4ECE7F5DA6B705366EA1595647835936D25A4C65E5D930D18CE1564F28D9=
+E890342D8CE56C5BD30E501B98E5F523CEF1393254BE0E9661EB7B3762E37CC2A457AD5" =
+style=3D"color: rgb(224, 0, 25); text-decoration: none;" =
+target=3D"_blank">www.scotiabankcolpatria.com/bienvenida</a></span><br />
+    </td>
+  </tr>
+  <tr>
+   <td>
+   <table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"640">
+    <tbody>
+    </tbody>
+   </table>
+   </td>
+  </tr>
+ =20
+<tr>
+        <td><table width=3D"100%%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" bgcolor=3D"#e1e1e1">
+  <tbody>
+   <tr>
+      <td bgcolor=3D"#e1e1e1" colspan=3D"7" align=3D"center" height=3D"50" =
+style=3D"font-family: Arial; font-weight: bold; font-size:25px; =
+color:#e41b2e">Conozca todos nuestros canales</td>
+    </tr>
+    <tr>
+        <td width=3D"39">&nbsp;</td>
+      <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB19D702C18515059A1268308C627BF4A=
+89E9D681C6C4188F70DB1F5164C11C6CC472787CF49FDF52290CE8A92BE7E71B694B40C0E62=
+A1D912035DFD6502DB170C217BA9D4ED41F9C12B0C2CDA9E742C6A4" =
+target=3D"_blank"><img =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20181002cr1/mail_=
+24.jpg" width=3D"111" height=3D"74" alt=3D"Scotiabank Colpatria" =
+style=3D"display: block; border=3D"0"></a></td>
+      <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB15F05632D7F5E56BD268308C627BF4A=
+89F5DBDB5A1D19D4ECE7F5DA6B705366EA1595647835936D25A4C65E5D930D18CE26187802D=
+03B248167DB8526739A7F5762D61B2E201594CAC4E6D4545BEAA096B98E5F523CEF1393254B=
+E0E9661EB7B3762E37CC2A457AD5" target=3D"_blank"><img =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20181002cr1/mail_=
+25.jpg" width=3D"114" height=3D"74" alt=3D"Scotiabank Colpatria" =
+style=3D"display: block; border=3D"0"></a></td>
+      <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB12B037259AFA7C849268308C627BF4A=
+89F5DBDB5A1D19D4ECE7F5DA6B705366EA1595647835936D25A4C65E5D930D18CE26187802D=
+03B248167DB8526739A7F570E7B554E8761A6ED68332EB8A5509A878156FFA367DE282E3FB9=
+22E4981FE26CB04CA0B5235183CDA109E66FB3C16596B8DA83CA29200578F510D3A61A502A5=
+9" target=3D"_blank"><img =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20181002cr1/mail_=
+26.jpg" width=3D"122" height=3D"74" alt=3D"Scotiabank Colpatria" =
+style=3D"display: block;border=3D"0"></a></td>
+      <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB1974C3F228E00E9FF268308C627BF4A=
+89F5DBDB5A1D19D4ECE7F5DA6B705366EA1595647835936D25A4C65E5D930D18CE26187802D=
+03B248167DB8526739A7F570E7B554E8761A6ED68332EB8A5509A87275E55ABFDE3A738B15C=
+C68E794F8B78D2480B7D47B9CCABD8549851DDD2DF61155DB2849E3238BE" =
+target=3D"_blank"><img =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20181002cr1/mail_=
+27.jpg" width=3D"97" height=3D"74" alt=3D"Scotiabank Colpatria" =
+style=3D"display: block; border=3D"0"></a></td>
+      <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB183EE22BF81B5204112932D2A578FC1=
+FD56F0AA5A148195446350233D97305D47841A952AE34348BFDC795B31D7DC7E08A1B3D382B=
+49A736A67E8415EAC0935C03C6040D4A8EFA5570D5897F1521FB45222EDA4B44379635B42D5=
+BDC8B0119B65350B6F4DC138CDF6" target=3D"_blank"><img =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20181002cr1/mail_=
+28.jpg" width=3D"119" height=3D"74" alt=3D"Scotiabank Colpatria" =
+style=3D"display: block; border=3D"0"></a></td>
+      <td width=3D"38">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</td>
+      </tr>
+   <tr>
+        <td><table width=3D"100%%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0">
+  <tbody>
+    <tr>
+        <td width=3D"183" bgcolor=3D"#ffffff">&nbsp;</td>
+  <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB1770CF031243CD8CB12932D2A578FC1=
+FDFDD4B58D7D707C01D7E65D7302974D48A419D78E342BB8A98A73DAE01E7DA1D493DADFBFE=
+35A27116ED15926FEE27ED50E5F0DCD36521B0E34F03910D7E56206C3FB978C5B1369545B75=
+2E1830CD38EC" target=3D"_blank"><img =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20181002cr1/mail_=
+29.jpg" width=3D"64" height=3D"79" alt=3D"Scotiabank Colpatria" =
+style=3D"display: block; border=3D"0"></a></td>
+  <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB1570BEE39D4BF3BCF12932D2A578FC1=
+FDFDD4B58D7D707C017381B02720767A444551FF4D552F0DD922853EB6FB81E73C889BFBE02=
+DFD967C7F8661243FAA16866A1005856712F34D34F03910D7E56206C3FB978C5B1369545B75=
+2E1830CD38EC" target=3D"_blank"><img =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20181002cr1/mail_=
+30.jpg" width=3D"48" height=3D"79" alt=3D"Scotiabank Colpatria" =
+style=3D"display: block; border=3D"0"></a></td>
+  <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB143C7AB61B942A09212932D2A578FC1=
+FD026D188EB19B844115C30BB5BE9A193472D0F9114256491B889BFBE02DFD967CE24B53A0E=
+200433534F03910D7E56206C3FB978C5B1369545B752E1830CD38EC" =
+target=3D"_blank"><img =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20181002cr1/mail_=
+31.jpg" width=3D"52" height=3D"79" alt=3D"Scotiabank Colpatria" =
+style=3D"display: block; border=3D"0"></a></td>
+  <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB14B840C0BCFEAE8CB12932D2A578FC1=
+FDFDD4B58D7D707C017CEBEC2F2EEA14926C2E31E65E1C478B12ABE7ACE8FDB8068A73DAE01=
+E7DA1D4254E02A24439B906F1F1AE781D108AF722EDA4B44379635B42D5BDC8B0119B65350B=
+6F4DC138CDF6" target=3D"_blank"><img =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20181002cr1/mail_=
+32.jpg" width=3D"46" height=3D"79" alt=3D"Scotiabank Colpatria" =
+style=3D"display: block;border=3D"0"></a></td>
+        <td><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB1E11A17A7E64A048812932D2A578FC1=
+FDFDD4B58D7D707C010947A5958552C9CC9BE4C8290CD7A0B4AA47AC5F50532902CCE466F3A=
+54FC6BFF1F1AE781D108AF722EDA4B44379635B42D5BDC8B0119B65350B6F4DC138CDF6" =
+target=3D"_blank"><img =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20181002cr1/mail_=
+33.jpg" width=3D"65" height=3D"79" alt=3D"Scotiabank Colpatria" =
+style=3D"display: block; border=3D"0"></a></td>
+        <td width=3D"183" bgcolor=3D"#ffffff">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</td>
+      </tr>
+
+  <tr>
+   <td>
+   <table align=3D"center" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"640">
+    <tbody>
+     <tr>
+      <td valign=3D"bottom" width=3D"55"><img alt=3D"CITI" border=3D"0" =
+height=3D"140" =
+src=3D"http://images.masterbase.com/v1/citibankcolombia/b/20180808aa1/legal=
+=2Ejpg" style=3D"display: block;" width=3D"55" /></td>
+      <td valign=3D"top" width=3D"585">
+      <table align=3D"left" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" style=3D"border: 1px solid rgb(220, 23, 37); =
+border-image: none; border-collapse: collapse;" width=3D"543">
+       <tbody>
+        <tr>
+         <td bgcolor=3D"#dc1725" height=3D"24" style=3D"padding: 6px 20px; =
+text-align: left; color: rgb(255, 255, 255); font-family: arial; =
+font-size: 18px;">Zona de seguridad de e-mails</td>
+        </tr>
+        <tr>
+         <td height=3D"77" style=3D"padding: 9px 13px; text-align: =
+justify; color: rgb(0, 0, 0); line-height: 13px; font-family: arial; =
+font-size: 10.5px; mso-line-height-rule: exactly;">En la parte superior de =
+este mensaje, ver=C3=A1 una zona de seguridad para correos =
+electr=C3=B3nicos. Su prop=C3=B3sito es ayudar a que usted pueda confirmar =
+que el correo electr=C3=B3nico fue efectivamente enviado por Scotiabank =
+Colpatria. Si tiene alguna pregunta, por favor comun=C3=ADquese con =
+nuestra L=C3=ADnea de Atenci=C3=B3n. Para obtener informaci=C3=B3n sobre =
+el fraude en l=C3=ADnea, visite www.scotiabankcolpatria.com en =
+=E2=80=9CRecomendaciones de seguridad=E2=80=9D. Scotiabank Colpatria nunca =
+le pedir=C3=A1 sus datos personales o bancarios por e-mail. Por favor =
+reporte a nuestra L=C3=ADnea de Atenci=C3=B3n cualquier e-mail sospechoso =
+que le pida diligenciar sus datos o contrase=C3=B1as y haga caso omiso a =
+la solicitud.</td>
+        </tr>
+       </tbody>
+      </table>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   </td>
+  </tr>
+<tr>
+        <td bgcolor=3D"#ffffff" style=3D"font-family: arial; font-size: =
+9px; color: #666666; text-align: left; padding: 25px 55px 25px =
+55px;"><p>&reg; Marca registrada de The Bank of Nova Scotia, utilizada =
+bajo licencia. Scotiabank Colpatria Establecimiento Bancario. <br><br>
+          Con fecha 30 de junio de 2018, Scotiabank Colpatria S.A. =
+("Scotiabank Colpatria") adquiri&oacute; la operaci&oacute;n en Colombia =
+de banca de consumo y de peque&ntilde;as y medianas empresas de Citibank =
+Colombia S.A. ("Citibank"). A partir del 1 de julio de 2018, la =
+gesti&oacute;n de los productos que Ud. manten&iacute;a con Citibank, =
+junto con sus derechos y obligaciones, han quedado bajo la exclusiva =
+responsabilidad de Scotiabank Colpatria. Por favor ingrese a =
+www.scotiabankcolpatria.com para acceder a la Banca Online, consultar la =
+red de oficinas en donde lo atenderemos y conocer todos los =
+t&eacute;rminos y condiciones de sus productos. <br><br>
+        Las marcas Citi, Citi y el dise&ntilde;o del arco, ThankYou y =
+marcas relacionadas, son marcas de servicios de Citigroup Inc. o de sus =
+filiales o subsidiarias, utilizadas y registradas alrededor del mundo. =
+Dichas marcas son usadas bajo licencia.</p></td>
+      </tr>
+  <tr>
+   <td bgcolor=3D"#ffffff" style=3D"padding: 0px 0px 30px; text-align: =
+center; color: rgb(51, 51, 51); font-family: arial; font-size: 10px;"><a =
+href=3D"http://trk.masterbase.com/v3/MB/43BE8FF8FC213E8A5E9AFA03AC408D9C660=
+5EFCECCA2B1AAC51ECCE25C637577EBBB3AB032BAAAB102A69A337523D865D3A8EF4E1B526E=
+F5BFA36A1D71CED2C48A73DAE01E7DA1D4B8F6B41415B4CD490D79B7F03C6A22827DF9203D9=
+267F1C7AA9DD0D5AA4294087C38B3E99844A406D4C1A40E524576B12059C79B5BAFB261D45A=
+62BCAD11D69B4923A527D941AC59D18A195E6A85AD90C0430FB834200D6B7663751B95175C0=
+134F03910D7E56206C3FB978C5B1369545B752E1830CD38EC">Pol=C3=ADtica de =
+privacidad</a></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+<img =
+src=3D"http://trk.masterbase.com/v3/MB/AB008D63ED707B73AF5438F8F447E6D1248D=
+A8A6458D5E50E4BF9D5B1A6EC649B0F542FAC77A154DF502D9E8DB7F1D7FB15CC68E794F8B7=
+8D2480B7D47B9CCABD8549851DDD2DF61155DB2849E3238BE/blank.png" border=3D0 =
+height=3D1 width=3D1></body>
+</html>
+
+--a92480fa51af1eb61ad2340500025a90--
+

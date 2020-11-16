@@ -1,0 +1,150 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:d44d:0:0:0:0:0 with SMTP id r13csp4450587ilm;
+        Mon, 27 Apr 2020 09:57:52 -0700 (PDT)
+X-Received: by 2002:a05:620a:1236:: with SMTP id v22mr23452167qkj.169.1588006672341;
+        Mon, 27 Apr 2020 09:57:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1588006672; cv=none;
+        d=google.com; s=arc-20160816;
+        b=kBMFNb/fcMbaZDnlGTFNEz4vSVzTtTXkjTJRcJdNVRZ3yw4B2WWFzh2ZIHZ83LtNDs
+         XpdkUzEGQt2yJfTzlSx4seowZtiiX0VqreS/eDLHahGGUrjvz7UXM27Y8Cl6Z5zPyyho
+         u3LtE9AdwtIueeRt5fjfEeqRIko/Vp/NBirSFj1PiSim00M5PQSWBWuQxpzLM6iiRayS
+         W/cELGrbLnCtSRwN9OKz8sEyFDRe8A/cVc35Y9JQ3muYV4f/TOIs8WXqJBAqfC/2kR4n
+         KaHcIfvXoPyJeZw85LXFDRJkv7+U+NTqbXlspTonsu1K2uRih2LolzPbR8jdhR+w4mxf
+         2Czw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=t1EJeiGbDmLekmTVr6MAP9WJDJymGHw7ciWF6+oda94=;
+        b=OZJ3YNJhyb4Fz1koJ06yXHx5teTaYbEozIFV5hrYqnzDWY0AT+iZA/3kanpsvyC9hX
+         wV3y3hcaTG1Ppgd70cOECxAgpdJ2bhTN+6OEFFJz0Ms+M9ekx8i58dk9uW3nb/Dmebgn
+         FTFPV6p+rMdrSreaooh2ea39K39vo7InW8MxR8u3yeybtUpkZd91oV9aX1kktp+coDkX
+         emKIbJ7IGuN+0bpGlU0FcM1Gm5ErZhTNTCr8SZDt5AaEDZFid3Y3jqjMdUGZfs5M023A
+         3oNU3mQwibqnG5G5wQiXzuC9jVLkKfgYXmOI9ap78TmqumjKLM95G6qn9TBsAM0zbYxv
+         X+Lw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=d3RNfmN+;
+       spf=pass (google.com: domain of arrendamientosmonteverde@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=arrendamientosmonteverde@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <arrendamientosmonteverde@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id p2sor22633008qtq.30.2020.04.27.09.57.52
+        for <pharsat@gmail.com>
+        (Google Transport Security);
+        Mon, 27 Apr 2020 09:57:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of arrendamientosmonteverde@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=d3RNfmN+;
+       spf=pass (google.com: domain of arrendamientosmonteverde@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=arrendamientosmonteverde@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=t1EJeiGbDmLekmTVr6MAP9WJDJymGHw7ciWF6+oda94=;
+        b=d3RNfmN+Y8HC0h+garihXRuYuWJdE9NXPRyKUsjV6ph7Td3B33aYj+U96AI+/iQgI9
+         Is3rADxI3xurdPLed8s/9OWtG1okrzP9W8sbZTWUr0DTfeqNoqx9WTWv1C2xwweBKsd/
+         6OZVyIYpRJzxOUk7fZzQeVwjkfTm8jw8QzDWc0FS3RrDpITRMHDwfsJAlGacLeaaTuxA
+         NRgnrvK++hFtC5HOJANLL3ZOp+OI3RxjUV1Q2C347vLZAecCaL9fJzU0SVsT2UdS1jjS
+         8nWPAJD7wjSYukxtrezZpKgUSvH/OSi5kJo7UIaOBR785tjd/+9Nvroy1AnDFK9v+sZT
+         Mkew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=t1EJeiGbDmLekmTVr6MAP9WJDJymGHw7ciWF6+oda94=;
+        b=b8R0cv1HVpNtLtXyUbeO7wWjdUhfWbBzfp/idROb5OddabZMkD/Iw29uFKxuXKlaa5
+         bpu23Bqfu+8yL8BTGibW08OaeF2BJ2WSz4JIPNhLmDh9eguqqrG/8ocSuurRZPbxizeY
+         vz640lGOKgSlFg0hRuxEGdLNi8YwpbGOQUNdwtCErXEVN3d3rP2e1VIemiYz7L5LI9Ay
+         tmY8bELv5rKPs1m7sULMkXMe+ezaHGXFjNSWBM8+rEIEJybtJJWEzzWb6jw1j5WjefIM
+         TPIaXkGGFvgwVT+g1T6QeC2D1GmQPzVmPiyF/NaDKkuGB/lOxzDLbXcQ3xpjiO8XbP6g
+         BT7g==
+X-Gm-Message-State: AGi0PuauCb7PUgebB8ONjDxyv807DFml5szZBKEwo+ovVIb7y6nattl1
+	qP2HcVfd6AU6WoY+yMJc3V03w6TyG98VJsKNXmVMZ08L
+X-Google-Smtp-Source: APiQypKjSa7JM4rZN25Nbrtue0790sHrT69weHvMDJdyWuG/Zpx0VJ27ICQ+1hksUJ6FhCXle651gadcg1l22TKQs+c=
+X-Received: by 2002:ac8:23e3:: with SMTP id r32mr24888632qtr.268.1588006670177;
+ Mon, 27 Apr 2020 09:57:50 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAMEUduQ7pTPS=ahqe8BNSwrUj0f95C3wVw5cMEFa6peK5BiQ6w@mail.gmail.com>
+ <CAMEUduR9-jgxWhTuEvvN6L-yxvaWtUuWMX8TEaDhqKgAxtb=2A@mail.gmail.com>
+In-Reply-To: <CAMEUduR9-jgxWhTuEvvN6L-yxvaWtUuWMX8TEaDhqKgAxtb=2A@mail.gmail.com>
+From: Arrendamientos Monteverde <arrendamientosmonteverde@gmail.com>
+Date: Mon, 27 Apr 2020 11:57:38 -0500
+Message-ID: <CAJtjCJ94WrfNsAXy_CQwZhTT_XNC-Fp8prxcRV8BCZTBT1PAGQ@mail.gmail.com>
+Subject: =?UTF-8?Q?Re=3A_Solicitud_de_no_renovaci=C3=B3n_del_contrato_de_arre?=
+	=?UTF-8?Q?ndamiento_Calle_43_=23_36=C2=AA=2D61_int_104_del_Salvador=2E?=
+To: =?UTF-8?Q?Cristian_Felipe_Gallego_Ram=C3=ADrez?= <pharsat@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000007a19ee05a4489d4b"
+
+--0000000000007a19ee05a4489d4b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Confirmamos recibido.
+Pronto emitiremos una respuesta a su solicitud
+Muchas gracias.
+
+
+ABRAHAM ZULUAGA MONTOYA
+ARRENDAMIENTOS MONTEVERDE
+Cra 40 # 47-90 CENTRO
+L=C3=ADnea =C3=9Anica 444 85 99
+Cel: 316 831 61 67
+www.arrendamientosmonteverde.com.co
+facebook: Arrendamientos Monteverde
+*Antes de imprimir este mensaje aseg=C3=BArate que sea estrictamente necesa=
+rio. *
+*Proteger el medio ambiente tambi=C3=A9n es tu Responsabilidad.*
+
+
+El lun., 27 abr. 2020 a las 11:49, Cristian Felipe Gallego Ram=C3=ADrez (<
+pharsat@gmail.com>) escribi=C3=B3:
+
+> Hago correci=C3=B3n del documento en la firma de Bratriz Gallego.
+>
+> Muchas gracias.
+>
+> --
+> Arrendataria: Beatriz Elena Gallego
+> Codeudor solidario: Cristian Felipe Gallego Ram=C3=ADrez
+>
+
+--0000000000007a19ee05a4489d4b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Confirmamos recibido.<div>Pronto emitiremos una respuesta =
+a su solicitud</div><div>Muchas=C2=A0gracias.</div><div><div><div dir=3D"lt=
+r" class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D=
+"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><=
+div dir=3D"ltr"><div><div><div><div><div><br></div><div><br></div><div>ABRA=
+HAM ZULUAGA MONTOYA</div><font face=3D"arial black,sans-serif">ARRENDAMIENT=
+OS MONTEVERDE<br></font></div><div><font face=3D"arial black,sans-serif"><s=
+pan style=3D"background-color:rgb(255,255,255)"><font color=3D"#38761d">Cra=
+ 40 # 47-90 CENTRO</font></span><br></font></div><font face=3D"arial black,=
+sans-serif">L=C3=ADnea =C3=9Anica 444 85 99<br></font></div><font face=3D"a=
+rial black,sans-serif">Cel: 316 831 61 67<br></font></div><div><font face=
+=3D"arial black,sans-serif"><a href=3D"http://www.arrendamientosmonteverde.=
+com.co" target=3D"_blank">www.arrendamientosmonteverde.com.co</a><br></font=
+></div><div><font face=3D"arial black,sans-serif"><span style=3D"color:rgb(=
+11,83,148)">facebook</span>: Arrendamientos Monteverde<br></font></div><div=
+><strong style=3D"color:rgb(0,128,0);font-family:Helvetica;text-align:cente=
+r"><font size=3D"1">Antes de imprimir este mensaje aseg=C3=BArate que sea e=
+strictamente necesario.=C2=A0</font></strong></div><div><strong style=3D"co=
+lor:rgb(0,128,0);font-family:Helvetica;text-align:center"><font size=3D"1">=
+Proteger el medio ambiente tambi=C3=A9n es tu Responsabilidad.</font></stro=
+ng><font face=3D"arial black,sans-serif"><br></font></div><font face=3D"ari=
+al black,sans-serif"></font></div><font face=3D"arial black,sans-serif"></f=
+ont></div></div></div></div></div></div></div></div><br></div></div><br><di=
+v class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">El lun., 27 a=
+br. 2020 a las 11:49, Cristian Felipe Gallego Ram=C3=ADrez (&lt;<a href=3D"=
+mailto:pharsat@gmail.com">pharsat@gmail.com</a>&gt;) escribi=C3=B3:<br></di=
+v><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;borde=
+r-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Hago c=
+orreci=C3=B3n del documento en la firma de Bratriz=C2=A0Gallego.<div><br></=
+div><div>Muchas=C2=A0gracias.<div class=3D"gmail_quote"><div dir=3D"ltr"><d=
+iv><div><br></div>-- <br><div dir=3D"ltr"><div dir=3D"ltr"><div><span style=
+=3D"font-size:large">Arrendataria: Beatriz Elena Gallego</span></div><div><=
+span style=3D"font-size:large">Codeudor solidario: Cristian Felipe Gallego =
+Ram=C3=ADrez</span></div></div></div></div></div></div></div></div>
+</blockquote></div>
+
+--0000000000007a19ee05a4489d4b--

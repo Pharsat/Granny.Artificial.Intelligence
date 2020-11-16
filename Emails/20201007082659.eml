@@ -1,0 +1,407 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp520885ild;
+        Wed, 7 Oct 2020 06:27:13 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxv6eTLh19Mhal/sPKOkhhZYTbpqt8U02RjY5P+9W5BqDHO1Ki3uifPsXYXQa0rdSlnqYsh
+X-Received: by 2002:aa7:d785:: with SMTP id s5mr3475525edq.154.1602077233591;
+        Wed, 07 Oct 2020 06:27:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1602077233; cv=none;
+        d=google.com; s=arc-20160816;
+        b=eJBMYfUuRkXEE88Do4YVi4iu19qAXaxHlPK8Uzu43NXvbaOC7pJvcsc+ZsDfWDZR7E
+         3xo1Mi9RB64xxSEncurqAFZljU0+2ymmFJMyrSu7M1H75whmkgp8WRjY72J2/BV+UQTI
+         wurvj6D9RNMU4wYoYxQijgKBBZD3zChg+jkj+mgif4fcnm9Mh9rml96Zeqja4HKvIncX
+         TfgPB2+AENk8cvXNn7LdnmBoDDzKZWvR4vkbzLRIaK2AfdMCqUojO/oM6xa3nyyq62as
+         bpFpVyQXx3pFHBSG2vgabVTzFKaCBLK6nDswRxvuy8oPPb9NlkqBXZtGNKt8UE2qela/
+         WhPA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:to:message-id:subject:date:from;
+        bh=YxeP59WSeVAk4mXH1JK5VBW386+EKymtEOZQoEcx5UA=;
+        b=O7ihqHWIHUE8azbwvg9QQtJTak35OIgpwwYVHOmobq58AZmh8IHaLWMN9zG+HcRj5f
+         YU+B+5K2mfnPkN7fMvyExSQ66W1WJdOcBp4SC61N+DCGXxHCYggT6HRBmMVvNms8xBax
+         l0ygCLM9GA9wti3qj47mu0PhdWc9UWn1dZ4NW6HRonfvXNxvWuu4HWID5x8/RqBlOu50
+         RDNIv5TyM7+gr/Hen/wGtlNafyhg/4SXsSMiNdzhpOmxc0IzhnLPSFqzv93kW950tHAF
+         puefwmb9/CeUGJTqKx+emowhIHadh9FsLSukEQsmNoXkVoOtsOyy0d/IpT4NvkShMpVn
+         qHaQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of welcome.to@canadianvp.com designates 88.202.217.33 as permitted sender) smtp.mailfrom=Welcome.to@canadianvp.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=canadianvp.com
+Return-Path: <Welcome.to@canadianvp.com>
+Received: from mail1.pro-immigration.com (mail1.pro-immigration.com. [88.202.217.33])
+        by mx.google.com with ESMTP id s5si1473569edj.285.2020.10.07.06.27.12
+        for <pharsat@gmail.com>;
+        Wed, 07 Oct 2020 06:27:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of welcome.to@canadianvp.com designates 88.202.217.33 as permitted sender) client-ip=88.202.217.33;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of welcome.to@canadianvp.com designates 88.202.217.33 as permitted sender) smtp.mailfrom=Welcome.to@canadianvp.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=canadianvp.com
+Received: from mail1.pro-immigration.com (unknown [127.0.0.1])
+	by IMSVA80 (Postfix) with ESMTP id A274A3B811A
+	for <pharsat@gmail.com>; Wed,  7 Oct 2020 15:25:22 +0200 (IST)
+Received: from [10.0.2.226] (unknown [147.234.16.58])
+	by mail1.pro-immigration.com (Postfix) with ESMTP id CCEE93B8127
+	for <pharsat@gmail.com>; Wed,  7 Oct 2020 15:25:10 +0200 (IST)
+From: Canadian visa <Welcome.to@canadianvp.com>
+Date: Wed, 07 Oct 2020 08:26:59 -0500
+Subject: The Canadian Visa
+Message-Id: <BZZ1EIT4VBU4.IOOC9AS72DJR@UTIL02>
+To: Valued Customer <pharsat@gmail.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=-FT/cDHPcXXb7gnWh/rNN0g=="
+X-TM-AS-Product-Ver: IMSVA-8.0.0.1450-8.1.0.1062-25710.007
+X-TM-AS-User-Approved-Sender: Yes
+X-TMASE-MatchedRID: rL1qmhkJqTT0phMcDft0Eq2PT/qro4dM4Pjj54kIW/HshP1/r64z1TMw
+	nlPyqy3KIAdnfSYUE3hYfKBBZlP12I1MKXhkMOrssXrDfSIo7VgEa8g1x8eqF2bpV4212z/8xdm
+	SBHvTmJP9oGc0BGAGcJsT77+0gOKiYMdbbUpmsXxQ/WhbouCmvDCz97FcYVRijFFYmmGGytzgw/
+	h4GV+h7l23UaFaNPe8y5PqnJRFA+GKZAgL8Nggo04Yf9ifkMrFqb3/o5s+OcPtlRn/Yfsfm3Q7y
+	wLCreYATuu6u5TCMa9ZlmvjMEgKcz3kj483DveggRTWSf0X8xlo3Yq5PCwLAqQx27RNqoVZ33pX
+	Y2CsQeI7hj96eAIzhWHW7YqF/VawLEu3XubSvQExNOsBwNfn/gPOOkGDNg0sbx0lpadwJZunvg2
+	KCDOgGEu5vOlXVyOcZc3lVKbx0ahPXYdz0WFWNW0lh85vSrk7w30INz0ENh2bKItl61J/yZUdXE
+	/WGn0FzmifKQLKn/uQSkkBlAr/oPe5FhZw200VF70JBot7Y89QraqT74UQxmnZ5mKc+1MSybD63
+	Y4iC8TTc2pVE8O+b/ECV0Zd0TJpfPNn1Gjfcx7HW77M0n38Wlxdu44DMq+0PYThvrM7NjbIMRSX
+	0p532g==
+X-IMSS-DKIM-White-List: No
+
+
+--=-FT/cDHPcXXb7gnWh/rNN0g==
+Content-Type: text/plain; charset=utf-8
+
+Canadian Visa&nbsp;Professionals
+&nbsp;your gateway to Canada
+
+&nbsp;
+
+Dear&nbsp;Cristian Felipe&nbsp;Gallego Ramirez,
+
+User Number:&nbsp;179894755
+
+We have been trying to reach you in order to check your immigration options to Canada and to start your process.
+
+It is of high importance that you reply to this email after completing your missing information below:
+
+Current Occupation/Profession: ____________
+
+Highest Education Level: ______________
+
+Monthly income: ______________ &shy;&shy;&shy;
+
+Year of birth: ___________
+
+Main Phone Number (include country code): 00-______________
+
+Alternate Phone Number (include country code): 00-_____________
+
+It is crucial that we reach you as soon as possible since your application has been pending in our system for a long period of time. Please reply to this email and provide us with the best day and time to contact you.
+
+Sincerely,
+
+Canadian Visa Professionals
+
+Registration Department
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+&nbsp;
+
+--=-FT/cDHPcXXb7gnWh/rNN0g==
+Content-Type: text/html; charset=utf-8
+Content-Id: <BZZ1EIT4VBU4.0T6U860WGLDT2@UTIL02>
+Content-Transfer-Encoding: quoted-printable
+
+<p style=3D"text-align:center"><span style=3D"font-size:12pt"><span st=
+yle=3D"font-family:&quot;Times New Roman&quot;,serif"><strong><span st=
+yle=3D"font-size:26.0pt"><span style=3D"font-family:&quot;Lucida Sans&=
+quot;,sans-serif"><span style=3D"color:#595959">Canadian Visa&nbsp;Pro=
+fessionals</span></span></span></strong><br>
+<span style=3D"font-size:14.0pt"><span style=3D"font-family:&quot;Luci=
+da Sans&quot;,sans-serif"><span style=3D"color:red">&nbsp;your gateway=
+ to Canada</span></span></span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">Dear&nbsp;</span></span></span></span></span>Cristian Felipe&nbsp;Ga=
+llego Ramirez<span style=3D"font-size:12pt"><span style=3D"font-family=
+:&quot;Times New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><s=
+pan style=3D"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D=
+"color:black">,</span></span></span></span></span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">User Number:&nbsp;</span></span></span></span></span>179894755</p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">We have been trying to reach you in order to check your immigration =
+options to Canada and to start your process.</span></span></span></spa=
+n></span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">It is of high importance that you reply to this email after completi=
+ng your missing information below:</span></span></span></span></span><=
+/p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">Current Occupation/Profession: ____________</span></span></span></sp=
+an></span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">Highest Education Level: ______________</span></span></span></span><=
+/span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">Monthly income: ______________ &shy;&shy;&shy;</span></span></span><=
+/span></span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">Year of birth: ___________</span></span></span></span></span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">Main Phone Number (include country code): 00-______________</span></=
+span></span></span></span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">Alternate Phone Number (include country code): 00-_____________</spa=
+n></span></span></span></span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">It is crucial that we reach you as soon as possible since your appli=
+cation has been pending in our system for a long period of time. Pleas=
+e reply to this email and provide us with the best day and time to con=
+tact you.</span></span></span></span></span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">Sincerely,</span></span></span></span></span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">Canadian Visa Professionals</span></span></span></span></span></p>
+
+<p><span style=3D"font-size:12pt"><span style=3D"font-family:&quot;Tim=
+es New Roman&quot;,serif"><span style=3D"font-size:9.0pt"><span style=3D=
+"font-family:&quot;Tahoma&quot;,sans-serif"><span style=3D"color:black=
+">Registration Department</span></span></span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p style=3D"text-align:center"><span style=3D"font-size:11pt"><span st=
+yle=3D"font-family:Calibri,sans-serif"><span style=3D"font-size:13.5pt=
+"><span style=3D"font-family:&quot;Lucida Sans&quot;,sans-serif"><span=
+ style=3D"color:black"><img src=3D"data:image/png;base64,iVBORw0KGgoAA=
+AANSUhEUgAAAWkAAABMCAYAAACvbUZ/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJ=
+lYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpb=
+j0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1=
+sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jM=
+TMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREY=
+geG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtb=
+nMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA=
+6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuY=
+WRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA=
+6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N=
+kVCMzY2NTQ2RDZDMTFFNzg1QkY5RTk4NkFBRkZBQjEiIHhtcE1NOkluc3RhbmNlSUQ9Inh=
+tcC5paWQ6NkVCMzY2NTM2RDZDMTFFNzg1QkY5RTk4NkFBRkZBQjEiIHhtcDpDcmVhdG9yV=
+G9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml=
+2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NjA2NEVBQzM2QTJGMTFFNzk5M=
+TdENDI4RjVDOURGOTgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NjA2NEVBQzQ2QTJ=
+GMTFFNzk5MTdENDI4RjVDOURGOTgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJER=
+j4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz79VA6pAAAgyElEQVR42uxdCZw=
+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
+ggg=3D=3D" style=3D"height:76px; width:361px"></span></span></span></s=
+pan></span><br>
+&nbsp;</p>
+<br/>
+--=-FT/cDHPcXXb7gnWh/rNN0g==--
+

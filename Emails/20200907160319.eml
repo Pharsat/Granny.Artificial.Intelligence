@@ -1,0 +1,1479 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:b605:0:0:0:0:0 with SMTP id s5csp3431496ili;
+        Mon, 7 Sep 2020 09:03:25 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxMMeyORuRrDQcTN8VX3zvuHjvoGQR08fCsXCdmxV3Wt8Mq/jfU6aYAx3uYSG/Se6PdhK6i
+X-Received: by 2002:a05:6402:445:: with SMTP id p5mr7799370edw.214.1599494605566;
+        Mon, 07 Sep 2020 09:03:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1599494605; cv=none;
+        d=google.com; s=arc-20160816;
+        b=mx7nBNbcEI4O5+lWbh1iEdJuCXtZ8XY+AZvQoLf0AOseQa5VAgWdmbGZW9xn6iKTWP
+         NP2PzjEa2NRxf5ZQ8wDfgtcWv951zyFRIuYygIwwrXpHUk/b2VxvCdobJS92punfb73Q
+         f2FkMeYDtS8bMp8neW268VYmk1oQUpNQ75P1YQqvcFh8z9v4aakzeNEqgNaxrvtJQSlC
+         pmRVU/bNH3a7btTfR3GmjLj558PVacyj7SvsNUrHXj03dutghUIIXBASt/5fyflSWIjp
+         Ei/VyFc8Md9eIVBCRZ2QqLVQYCMc2XxGRgCvrdQTg+dsFgGb1gsxcmq031mS/5+ZbHtg
+         iFXw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:message-id:to:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=GbciphV2sg/iAGq80MdRu+vwW+XNLr1uI96WSbKEgvg=;
+        b=Kvfo1faXVASFadI66TpJSiBUz8p3+96RYCVr1PPjt31zYrDsj/3v8dK8QR3hmykths
+         8tjHihUJGD9iKZqvnNLWAALgdA96bcWqYMIoCChLsPhRtdg4Qt2/2DFZpK9cjNs2jZ4G
+         OfOwHVWg76+INEZpPGQmrw+j2EbsCcedN+32l77rGkDK8ECe+7SEl02+nCHY0Ny+BIcx
+         Qi9zrbqZapYVvCEBnnEy4xkaVarBZ4sj5l/Zj81cIzaDvUGYPDNwsytELFJkKTMKqRWu
+         aWqmTwvN30lqNZ7GEdDDHCs9tn9F9HqHvYuWBMsHR2peWFXSwqL5LjiuBHIB9GSCT5As
+         mpKA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=KWC4j6PI;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=OqZyHkVI;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+Return-Path: <bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com>
+Received: from o11.ptr1968.sg.mercadolibre.com (o11.ptr1968.sg.mercadolibre.com. [149.72.129.250])
+        by mx.google.com with ESMTPS id qn24si9917030ejb.299.2020.09.07.09.03.24
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 07 Sep 2020 09:03:25 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) client-ip=149.72.129.250;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=KWC4j6PI;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=OqZyHkVI;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=mercadolibre.com; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject; 
+	s=s1; bh=GbciphV2sg/iAGq80MdRu+vwW+XNLr1uI96WSbKEgvg=; b=KWC4j6P
+	IyRayjSrp5nYOHhYCNxEun0xlw+RKZihcALwBNLKk19FufUtxSmNWrlmbJb74rq5
+	FuaYblkB39a7O0Y9GWtjDShIHUP83p0tQiLnzvgpcLmQMAaPihwsxsXnx+izzAuG
+	tpyKN3rIk21uHj91W7Rq5OOXijzrIwiDNL+4=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:x-feedback-id; 
+	s=smtpapi; bh=GbciphV2sg/iAGq80MdRu+vwW+XNLr1uI96WSbKEgvg=; b=Oq
+	ZyHkVI7lfYYZZc+ScMjAh4VgWpWYBejNVX6h/XLEVDsoDCFE3JeXsk94ISvGQfxr
+	hik3Wq72T9yD7EmkBIzRL7EcnAVAeLjLczjrx6Oa00mqDtq5NyA6+YbRrKu8VUfB
+	HccsGXOEYHcjnGAf2hDcCi3eVI4iLZaHJb33T9RB4=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Date: Mon, 07 Sep 2020 16:03:19 +0000 (UTC)
+From: "Mercado Libre" <no-reply@mercadolibre.com>
+Mime-Version: 1.0
+To: pharsat@gmail.com
+Message-ID: <AEinuNYWTe-v67ZQdA5h8Q@ismtpd0025p1iad2.sendgrid.net>
+Subject: =?UTF-8?B?VGllbmVzIHVuIG1lbnNhamUgbnVldm8gZW4gQXVkaWZvbm9zIEtyYWtlbiAyMDE5IFJhemVyIENvbG9yIFZlcmRlIENvbiBN?= =?UTF-8?B?aWNyw7Nmb25v?=
+X-SG-EID: sqIrrLMbLsIyP9sBRWWxUF78JT7ZpfEH7TvBjG5fTpae8RVhUSVfb7bwsmzvDzmJCS8mJ3G2ap5BAr
+ gvlz+pXAVKJUQW2o+37qaJNEiAQmLSV0SMQXVFavP53KkfjrM0QS0S1qQARpLWcFGTqULeNkJnJp9f
+ uHYfQW6JMkY20hvfAprOay1Vxkhs7NjBV+t5VM8Hp5/9L6453IdH8IkdDCgsUSOC5uNpO3VOW+KI5X
+ o=
+X-SG-ID: YDTqBOjidbCUo/ar1oAtZlwqgLpd0IEH5+fNxcSEnp4C0UbaLAtULpljXDzQyvzVkCWTaDqkZDFTv/
+ M4vNsthYUakFevpdVBBrKhAnpbbBcuf6gzf0OFesxr2TLf47iSguXxg+kA+Rq81g+FkmLq1ha/FUKV
+ qra9KQEFTFYJjJXP9kwW/EM8h81v1o3dmQGgTo2LwKBu4Y60PaahTDiexhmGducu5DXhFvqxzcIcJj
+ UjJWOir2eMyukYXzTV08jGGhY/fMc0yxMf++/St5TNd6H4No6A9rPRxOj3J4sDXrt+CiC3aaVeaWFq
+ B2Go+tPRMeYh8QZz1eDmw1JlqpLes/SA++BaTXDbY1rgCmFTcbfLYvtX/faL/XPmXF8q0BfVX1hIaT
+ gHjvPm6SAxInormhifmptureP5L1pKJE0HxrteTOHB2Pym8Aa7y3eHw/ohBRfAoWIDvHJHtraGg8TI
+ lDtttO9IChFtmsj9/ouaAvJTSYwYgDDVWtGflYTcOy+XO9wYJngXR1r1DTd97Piexuf+2RvR232FI9
+ r1E292ZMg=
+X-Feedback-ID: 9647731:O1uIaeJcLGiMqc34AnjtHEL1fX9OufqyqcerW4Ul12s=:a8ycujShxZ5z3gGodwbKlQ==:SG
+
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/x=
+html1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3Dhttp://www.w3.org/1999/xhtml> <head>
+    <meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+    <meta name=3Dviewport content=3D"width=3Ddevice-width,initial-scale=3D1=
+,minimum-scale=3D1,maximum-scale=3D1">
+    <meta name=3Dformat-detection content=3D"telephone=3Dno">
+    <title>Mercado Libre</title>
+    <style>
+    @font-face {
+        font-family: Proxima Nova;
+        src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-light.eot");
+        src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-light.eot?#iefix") format("embedded-opentype"), url("https://ui.mls=
+tatic.com/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2") format("wo=
+ff2"), url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanov=
+a-light.woff") format("woff"), url("https://ui.mlstatic.com/webfonts/v3.0.0=
+/proxima-nova/proximanova-light.ttf") format("truetype");
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: Proxima Nova;
+        src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-regular.eot");
+        src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-regular.eot?#iefix") format("embedded-opentype"), url("https://ui.m=
+lstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2") format=
+("woff2"), url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proxim=
+anova-regular.woff") format("woff"), url("https://ui.mlstatic.com/webfonts/=
+v3.0.0/proxima-nova/proximanova-regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: Proxima Nova;
+        src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-medium.eot");
+        src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-medium.eot?#iefix") format("embedded-opentype"), url("https://ui.ml=
+static.com/webfonts/v3.0.0/proxima-nova/proximanova-medium.woff2") format("=
+woff2"), url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-medium.woff") format("woff"), url("https://ui.mlstatic.com/webfonts/v3.=
+0.0/proxima-nova/proximanova-medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: Proxima Nova;
+        src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-semibold.eot");
+        src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-semibold.eot?#iefix") format("embedded-opentype"), url("https://ui.=
+mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2") form=
+at("woff2"), url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-semibold.woff") format("woff"), url("https://ui.mlstatic.com/webfon=
+ts/v3.0.0/proxima-nova/proximanova-semibold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: Proxima Nova;
+        src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-bold.eot");
+        src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/prox=
+imanova-bold.eot?#iefix") format("embedded-opentype"), url("https://ui.mlst=
+atic.com/webfonts/v3.0.0/proxima-nova/proximanova-bold.woff2") format("woff=
+2"), url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-=
+bold.woff") format("woff"), url("https://ui.mlstatic.com/webfonts/v3.0.0/pr=
+oxima-nova/proximanova-bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @media (max-width:472px) {
+        .hide--small {
+            display: none;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+        }
+
+        .hide--large {
+            display: inherit !important;
+        }
+    }
+
+    @media (min-width:473px) {
+        .hide--large {
+            display: none;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+        }
+    }
+
+    @media (max-width:472px) {
+
+        .ui-panel,
+        .ui-panel__box {
+            width: 100% !important;
+        }
+    }
+
+    @media (max-width:472px) {
+
+        .action,
+        .action--primary,
+        .action--tertiary {
+            width: 100%;
+        }
+
+        .action__text,
+        .action__text--primary {
+            font-size: 18px !important;
+        }
+
+        .action--tertiary.action--left .action__text {
+            font-size: 14px !important;
+            line-height: 1 !important;
+        }
+    }
+
+    @media (min-width:0) {
+        .body__main-wrapper {
+            width: 100% !important;
+            max-width: 640px;
+            min-width: 320px;
+        }
+    }
+</style>
+<style>
+@font-face {
+    font-family: Proxima Nova;
+    src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-light.eot");
+    src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-light.eot?#iefix") format("embedded-opentype"), url("https://ui.mlstati=
+c.com/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2") format("woff2"=
+), url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-li=
+ght.woff") format("woff"), url("https://ui.mlstatic.com/webfonts/v3.0.0/pro=
+xima-nova/proximanova-light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Proxima Nova;
+    src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-regular.eot");
+    src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-regular.eot?#iefix") format("embedded-opentype"), url("https://ui.mlsta=
+tic.com/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2") format("wo=
+ff2"), url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanov=
+a-regular.woff") format("woff"), url("https://ui.mlstatic.com/webfonts/v3.0=
+.0/proxima-nova/proximanova-regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Proxima Nova;
+    src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-medium.eot");
+    src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-medium.eot?#iefix") format("embedded-opentype"), url("https://ui.mlstat=
+ic.com/webfonts/v3.0.0/proxima-nova/proximanova-medium.woff2") format("woff=
+2"), url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-=
+medium.woff") format("woff"), url("https://ui.mlstatic.com/webfonts/v3.0.0/=
+proxima-nova/proximanova-medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Proxima Nova;
+    src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-semibold.eot");
+    src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-semibold.eot?#iefix") format("embedded-opentype"), url("https://ui.mlst=
+atic.com/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2") format("=
+woff2"), url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-semibold.woff") format("woff"), url("https://ui.mlstatic.com/webfonts/v=
+3.0.0/proxima-nova/proximanova-semibold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Proxima Nova;
+    src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-bold.eot");
+    src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximan=
+ova-bold.eot?#iefix") format("embedded-opentype"), url("https://ui.mlstatic=
+.com/webfonts/v3.0.0/proxima-nova/proximanova-bold.woff2") format("woff2"),=
+ url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-bold=
+.woff") format("woff"), url("https://ui.mlstatic.com/webfonts/v3.0.0/proxim=
+a-nova/proximanova-bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@media (max-width:472px) {
+    .hide--small {
+        display: none;
+        width: 0;
+        height: 0;
+        visibility: hidden
+    }
+
+    .hide--large {
+        display: inherit !important
+    }
+}
+
+@media (min-width:473px) {
+    .hide--large {
+        display: none;
+        width: 0;
+        height: 0;
+        visibility: hidden
+    }
+}
+
+@media (max-width:472px) {
+
+    .ui-panel,
+    .ui-panel__box {
+        width: 100% !important
+    }
+}
+
+@media (max-width:472px) {
+
+    .action,
+    .action--primary,
+    .action--tertiary {
+        width: 100%
+    }
+
+    .action__text,
+    .action__text--primary {
+        font-size: 18px !important
+    }
+
+    .action--tertiary.action--left .action__text {
+        font-size: 14px !important;
+        line-height: 1 !important
+    }
+}
+
+.image__dimmer {
+    position: relative
+}
+
+.image__dimmer:before {
+    background-color: rgba(51, 51, 51, .05);
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2
+}
+
+@media (min-width:0) {
+    .body__main-wrapper {
+        width: 100% !important;
+        max-width: 640px;
+        min-width: 320px
+    }
+}
+
+/*# sourceMappingURL=3Dbase__head.38c8c311.css.map*/
+</style>
+</head>
+
+<body class=3Dbody
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -webkit-text-size-adjust: none; background-color: #fff; margin: 0; p=
+adding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: gr=
+ayscale;">
+<span style=3D"display: none !important; mso-hide:all;">
+            =C2=A1Hola, Cristian, bienvenid@ a *Simaro*!&lt;br&gt;
+Es un gusto para nosotros ayudarte.&lt;br&gt;
+&lt;br&gt;
+En primer lugar agradecemos el que hayas elegido a Simaro para adquirir tu =
+*Audifonos Kraken 2019 Razer Color verde Con micr=C3=B3fono retr=C3=A1ctil =
+y cancelaci=C3=B3n de ruido*.&lt;br&gt;
+Te recordamos que todos nuestros art=C3=ADculos son tra=C3=ADdos de Estados=
+ Unidos y el tiempo estimado de entrega es de *8 a 13 d=C3=ADas h=C3=A1bile=
+s*.&lt;br&gt;
+Te informaremos una vez el art=C3=ADculo haya llegado a nuestra bodega en l=
+a ciudad de Miami y salga hacia tu domicilio.&lt;br&gt;
+No olvides visitar nuestra tienda online *https://simaro.co* donde encontra=
+r=C3=A1s miles de art=C3=ADculos.&lt;br&gt;
+Puedes seguirnos en redes sociales como *@simarocolombia* donde encontrar=
+=C3=A1s Descuentos y novedades en nuestros art=C3=ADculos.&lt;br&gt;
+&lt;br&gt;
+Te deseamos un feliz d=C3=ADa.&lt;br&gt;
+Bendiciones.&lt;br&gt;
+El Equipo Simaro.
+</span>
+<table class=3Dbody__main-wrapper align=3Dcenter cellpadding=3D0 cellspacin=
+g=3D0 width=3D640
+style=3D"-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: gray=
+scale; background: #f7f7f7; width: 640px;">
+<tbody>
+    <tr>
+        <td align=3Dcenter valign=3Dtop width=3D100%
+        style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+        <table class=3Dinstitutional-header__wrapper align=3Dright cellpadd=
+ing=3D0 cellspacing=3D0
+        width=3D100%
+        style=3D"background-color: #fcec00; overflow: hidden; min-width: 10=
+0%; text-align: right; width: 100%; padding: 0;">
+        <tbody>
+            <tr>
+                <td height=3D10
+                style=3D"font-family: Proxima Nova,-apple-system,Lato,Helve=
+tica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            </td>
+        </tr>
+        <tr>
+            <td align=3Dcenter valign=3Dmiddle
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <table class=3Dinstitutional-header__container align=3Dcenter c=
+ellpadding=3D0
+            cellspacing=3D0 width=3D100% style=3D"min-width: 100%;">
+            <tbody>
+                <tr>
+                <td class=3Dinstitutional-header__logo width=3D50% align=3D=
+left valign=3Dmiddle
+                style=3D"font-family: Proxima Nova,-apple-system,Lato,Helve=
+tica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; font-size: 0; line-hei=
+ght: 0; text-align: left;">
+        <a class=3Dinstitutional-header__logo-link href=3Dhttps://www.merca=
+dolibre.com style=3D"margin-left: 16px;-moz-osx-font-smoothing: grayscale; =
+-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-f=
+amily: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,san=
+s-serif; display: block; font-size: 0; line-height: 0; padding: 0; text-ali=
+gn: left; width: 100%;">
+            <div class=3Dhide--large style=3D"font-family: Proxima Nova,-ap=
+ple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: graysc=
+ale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; d=
+isplay: none;">
+                <img class=3D"institutional-header__logo-mobile hide--large=
+"alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow=
+-frontend-emails/images/header/header-mobile.png height=3D30 width=3D42 bor=
+der=3D0 style=3D"font-size: 0; display: none;">
+            </div>
+            <img class=3D"institutional-header__logo-desktop hide--small"al=
+t=3D"Mercado Libre"src=3Dhttps://http2.mlstatic.com/ui/navigation/4.2.5/mer=
+cadolibre/logo__large_plus@2x.png height=3D30 width=3D112 border=3D0 style=
+=3D"font-size: 0;">
+        </a>
+
+    </td>
+    <td class=3Dinstitutional-header__text align=3Dright valign=3Dmiddle
+    style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: an=
+tialiased; -webkit-text-size-adjust: none; color: #666; font-size: 12px; fo=
+nt-weight: 300; line-height: 1; text-transform: uppercase; font-family: Pro=
+xima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;">
+    </td>
+<td width=3D24
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+    <td height=3D10
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"banner u-background--info" cellpadding=3D0 cellspacing=3D0 =
+width=3D100%
+style=3D"background-color: #fcec00;">
+<tbody>
+    <tr>
+        <td valign=3Dtop align=3Dcenter
+        style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+        <table class=3Dbanner__container align=3Dcenter cellpadding=3D0 cel=
+lspacing=3D0
+        width=3D100%>
+        <tbody>
+            <tr>
+                <td align=3Dcenter valign=3Dtop
+                style=3D"font-family: Proxima Nova,-apple-system,Lato,Helve=
+tica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+                <img class=3Dimage title alt
+                src=3Dhttps://http2.mlstatic.com/resources/frontend/statics=
+/buyingflow-frontend-emails/images/spacer.png
+                height=3D48 width=3D0 border=3D0
+                style=3D"font-size: 0; border: 0; display: block; z-index: =
+1;">
+            </td>
+        </tr>
+        <tr>
+            <td
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <table class=3D"" align=3Dcenter cellpadding=3D0 cellspacing=3D0
+            width=3D100%>
+            <tbody>
+                <tr>
+                    <td align=3Dcenter valign=3Dtop
+                    style=3D"font-family: Proxima Nova,-apple-system,Lato,H=
+elvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font=
+-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+                    <div class=3Dhide--small
+                    style=3D"font-family: Proxima Nova,-apple-system,Lato,H=
+elvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font=
+-smoothing: antialiased; -webkit-text-size-adjust: none;">
+                    <img class=3Dimage title alt
+                    src=3Dhttps://http2.mlstatic.com/resources/frontend/sta=
+tics/buyingflow-frontend-emails/images/spacer.png
+                    height=3D1 width=3D128 border=3D0
+                    style=3D"font-size: 0; border: 0; display: block; z-ind=
+ex: 1;">
+                </div>
+            </td>
+            <td align=3Dcenter valign=3Dtop
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <img class=3Dimage title alt
+            src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buy=
+ingflow-frontend-emails/images/spacer.png
+            height=3D0 width=3D32 border=3D0
+            style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+        </td>
+        <td align=3Dcenter valign=3Dmiddle
+        style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+    </td>
+    <td align=3Dcenter valign=3Dtop
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+    <img class=3Dimage title alt
+    src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-=
+frontend-emails/images/spacer.png
+    height=3D0 width=3D32 border=3D0
+    style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+<td align=3Dcenter valign=3Dtop
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0;">
+<div class=3Dhide--small
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none;">
+<img class=3Dimage title alt
+src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-fron=
+tend-emails/images/spacer.png
+height=3D1 width=3D128 border=3D0
+style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+    <td
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+    <table class=3D"" align=3Dcenter cellpadding=3D0 cellspacing=3D0
+    width=3D100%>
+    <tbody>
+        <tr>
+            <td align=3Dcenter valign=3Dtop
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <div class=3Dhide--small
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none;">
+            <img class=3Dimage title alt
+            src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buy=
+ingflow-frontend-emails/images/spacer.png
+            height=3D1 width=3D96 border=3D0
+            style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+        </div>
+    </td>
+    <td align=3Dcenter valign=3Dtop
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+    <img class=3Dimage title alt
+    src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-=
+frontend-emails/images/spacer.png
+    height=3D0 width=3D32 border=3D0
+    style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+<td class=3D"banner__title banner__title--gray"
+align=3Dcenter valign=3Dtop
+style=3D"-webkit-text-size-adjust: none; max-width:200px; font-size: 24px; =
+font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Ari=
+al,sans-serif; font-weight: 600; line-height: 1.25; -webkit-font-smoothing:=
+ antialiased; -moz-osx-font-smoothing: grayscale; color: #333;">
+Tu vendedor te envi=C3=B3 un mensaje nuevo
+</td>
+
+<td align=3Dcenter valign=3Dtop
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0;">
+<img class=3Dimage title alt
+src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-fron=
+tend-emails/images/spacer.png
+height=3D0 width=3D32 border=3D0
+style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+<td align=3Dcenter valign=3Dtop
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0;">
+<div class=3Dhide--small
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none;">
+<img class=3Dimage title alt
+src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-fron=
+tend-emails/images/spacer.png
+height=3D1 width=3D96 border=3D0
+style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+    <td align=3Dcenter valign=3Dtop
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0; line-height: 0;">
+    <img class=3Dimage title alt
+    src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-=
+frontend-emails/images/spacer.png
+    height=3D42 width=3D0 border=3D0
+    style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3Du-brackground--gray align=3Dcenter cellpadding=3D0 cellspaci=
+ng=3D0 width=3D100%>
+    <tbody>
+        <tr>
+            <td
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <table class=3D"" align=3Dcenter cellpadding=3D0 cellspacing=3D=
+0 width=3D100%>
+                <tbody>
+                    <tr>
+                        <td class=3D"hide--small u-background--gray" valign=
+=3Dtop
+                        style=3D"font-family: Proxima Nova,-apple-system,La=
+to,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-=
+font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0; =
+background-color: #f7f7f7;"
+                        >
+                        <table class=3D"" align=3Dcenter cellpadding=3D0 ce=
+llspacing=3D0
+                        width=3D100%>
+                        <tbody>
+                            <tr>
+                                <td align=3Dcenter valign=3Dtop height=3D54
+                                class=3Du-background--info
+                                style=3D"font-family: Proxima Nova,-apple-s=
+ystem,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; =
+-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-s=
+ize: 0; background-color: #fcec00;"
+                                ></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td class=3Dui-panel valign=3Dtop
+                style=3D"font-family: Proxima Nova,-apple-system,Lato,Helve=
+tica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; font-size: 0; margin: =
+0 auto; width: 472px;"
+                width=3D472>
+                <table class=3Dui-panel--raised align=3Dcenter cellpadding=
+=3D0
+                cellspacing=3D0 width=3D100%>
+                <tbody>
+                    <tr>
+                        <td align=3Dcenter valign=3Dtop
+                        class=3D"hide--small u-background--info"
+                        style=3D"font-family: Proxima Nova,-apple-system,La=
+to,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-=
+font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0; =
+background-color: #fcec00;"
+                        >
+                        <table class=3D"" align=3Dcenter cellpadding=3D0
+                        cellspacing=3D0 width=3D100%>
+                        <tbody>
+                            <tr>
+                                <td valign=3Dtop align=3Dright width=3D3
+                                height=3D2
+                                style=3D"font-family: Proxima Nova,-apple-s=
+ystem,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; =
+-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-s=
+ize: 0; line-height: 0;">
+                                <img class=3Dimage alt
+                                src=3Dhttps://http2.mlstatic.com/resources/=
+frontend/statics/buyingflow-frontend-emails/images/panel/panel_top-left.png
+                                height=3D2 width=3D3 border=3D0
+                                style=3D"font-size: 0; border: 0; display: =
+block; z-index: 1;">
+                            </td>
+                            <td valign=3Dbottom align=3Dcenter
+                            class=3Du-background--white
+                            style=3D"font-family: Proxima Nova,-apple-syste=
+m,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -web=
+kit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size:=
+ 0; background-color: #fff;"
+                            ></td>
+                            <td valign=3Dtop align=3Dleft width=3D3
+                            height=3D2
+                            style=3D"font-family: Proxima Nova,-apple-syste=
+m,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -web=
+kit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size:=
+ 0; line-height: 0;">
+                            <img class=3Dimage alt
+                            src=3Dhttps://http2.mlstatic.com/resources/fron=
+tend/statics/buyingflow-frontend-emails/images/panel/panel_top-right.png
+                            height=3D2 width=3D3 border=3D0
+                            style=3D"font-size: 0; border: 0; display: bloc=
+k; z-index: 1;">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class=3Dui-panel__content
+        style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0; border: 1px soli=
+d #e6e6e6; border-top: 0; border-bottom: 0; background-color: #fff;"
+        >
+        <table class=3D"" align=3Dcenter cellpadding=3D0
+        cellspacing=3D0 width=3D100%>
+        <tbody>
+            <tr>
+                <td width=3D32 class=3Dhide--small
+                style=3D"font-family: Proxima Nova,-apple-system,Lato,Helve=
+tica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+                <img class=3Dimage title alt
+                src=3Dhttps://http2.mlstatic.com/resources/frontend/statics=
+/buyingflow-frontend-emails/images/spacer.png
+                height=3D0 width=3D32 border=3D0
+                style=3D"font-size: 0; border: 0; display: block; z-index: =
+1;">
+            </td>
+            <td width=3D32
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <img class=3Dimage title alt
+            src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buy=
+ingflow-frontend-emails/images/spacer.png
+            height=3D0 width=3D32 border=3D0
+            style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+        </td>
+        <td valign=3Dtop align=3Dleft
+        style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+        <table class=3D"" align=3Dcenter
+        cellpadding=3D0 cellspacing=3D0
+        width=3D100%>
+        <tbody>
+            <tr>
+                <td height=3D44
+                style=3D"font-family: Proxima Nova,-apple-system,Lato,Helve=
+tica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            </td>
+        </tr>
+        <tr>
+            <td
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <table class=3D""
+            align=3Dcenter
+            cellpadding=3D0
+            cellspacing=3D0
+            width=3D100%>
+            <tbody>
+                <tr>
+                    <td valign=3Dtop
+                    align=3Dcenter
+                    style=3D"font-family: Proxima Nova,-apple-system,Lato,H=
+elvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font=
+-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+                    <span
+                    class=3Drich-text
+                    style=3D"font-family: Proxima Nova,-apple-system,Lato,H=
+elvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font=
+-smoothing: antialiased; -webkit-text-size-adjust: none;"></span>
+                    <table
+                    class=3Dheadings
+                    align=3Dcenter
+                    cellpadding=3D0
+                    cellspacing=3D0
+                    width=3D100%>
+                    <tbody>
+                        <tr>
+                            <td class=3Dheadings__title
+                            align=3Dleft
+                            valign=3Dmiddle
+                            style=3D"-moz-osx-font-smoothing: grayscale; -w=
+ebkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; color: r=
+gba(0,0,0,.8); font-family: Proxima Nova,-apple-system,Helvetica Neue,Helve=
+tica,Roboto,Arial,sans-serif; font-size: 14px; font-weight: 600; line-heigh=
+t: 2.25;">
+                            SIMARO COLOMBIA S.A.S. dijo:
+                        </td>
+                    </tr>
+                             <tr>
+                        <td class=3Dheadings__title align=3Dleft valign=3Dm=
+iddle
+                        style=3D"-moz-osx-font-smoothing: grayscale; -webki=
+t-font-smoothing: antialiased; -webkit-text-size-adjust: none; color: rgba(=
+0,0,0,.8); font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica=
+,Roboto,Arial,sans-serif; font-size: 14px; font-weight: 400; line-height: 1=
+.25;">
+                                    =C2=A1Hola, Cristian, bienvenid@ a *Sim=
+aro*!<br>
+Es un gusto para nosotros ayudarte.<br>
+<br>
+En primer lugar agradecemos el que hayas elegido a Simaro para adquirir tu =
+*Audifonos Kraken 2019 Razer Color verde Con micr=C3=B3fono retr=C3=A1ctil =
+y cancelaci=C3=B3n de ruido*.<br>
+Te recordamos que todos nuestros art=C3=ADculos son tra=C3=ADdos de Estados=
+ Unidos y el tiempo estimado de entrega es de *8 a 13 d=C3=ADas h=C3=A1bile=
+s*.<br>
+Te informaremos una vez el art=C3=ADculo haya llegado a nuestra bodega en l=
+a ciudad de Miami y salga hacia tu domicilio.<br>
+No olvides visitar nuestra tienda online *https://simaro.co* donde encontra=
+r=C3=A1s miles de art=C3=ADculos.<br>
+Puedes seguirnos en redes sociales como *@simarocolombia* donde encontrar=
+=C3=A1s Descuentos y novedades en nuestros art=C3=ADculos.<br>
+<br>
+Te deseamos un feliz d=C3=ADa.<br>
+Bendiciones.<br>
+El Equipo Simaro.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+
+</td>
+</tr>
+<tr>
+    <td
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+    <img class=3Dimage
+    title
+    alt
+    src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-=
+frontend-emails/images/spacer.png
+    height=3D30
+    width=3D0
+    border=3D0
+    style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+</tr>
+<tr>
+    <td valign=3Dtop
+    align=3Dcenter
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+    <table
+    class=3Daction
+    align=3Dleft
+    cellpadding=3D0
+    cellspacing=3D0
+    width=3Dauto>
+    <tbody>
+        <tr>
+            <td
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <a href=3Dhttps://www.mercadolibre.com.co/compras/mensajeria/pa=
+cks/4023423719/sellers/218237182?source=3Demail&amp;nickname=3DSIMARO_CO
+            class=3Daction__link
+            target=3D_blank
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; text-decoration: none;">
+            <table
+            class=3Daction--primary
+            align=3Dcenter
+            cellpadding=3D0
+            cellspacing=3D0
+            width=3Dauto
+            style=3D"background-color: #3483fa; -webkit-border-radius: 4px;=
+ border-radius: 4px;">
+            <tbody>
+                <tr>
+                    <td
+                    style=3D"font-family: Proxima Nova,-apple-system,Lato,H=
+elvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font=
+-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+                    <img class=3Dimage
+                    title
+                    alt
+                    src=3Dhttps://http2.mlstatic.com/resources/frontend/sta=
+tics/buyingflow-frontend-emails/images/spacer.png
+                    height=3D11
+                    width=3D0
+                    border=3D0
+                    style=3D"font-size: 0; border: 0; display: block; z-ind=
+ex: 1;">
+                </td>
+            </tr>
+            <tr class=3Dhide--large
+            style=3D"display: none;">
+            <td
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <img class=3Dimage
+            title
+            alt
+            src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buy=
+ingflow-frontend-emails/images/spacer.png
+            height=3D4
+            width=3D0
+            border=3D0
+            style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+        </td>
+    </tr>
+    <tr>
+        <td
+        style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+        <table
+        class=3D""
+        align=3Dcenter
+        cellpadding=3D0
+        cellspacing=3D0
+        width=3D100%>
+        <tbody>
+            <tr>
+                <td width=3D24
+                style=3D"font-family: Proxima Nova,-apple-system,Lato,Helve=
+tica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            </td>
+            <td valign=3Dmiddle
+            align=3Dcenter
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <span
+            class=3Daction__text--primary
+            style=3D"-moz-osx-font-smoothing: grayscale; -webkit-text-size-=
+adjust: none; font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvet=
+ica,Roboto,Arial,sans-serif; font-size: 14px; font-weight: 400; -webkit-fon=
+t-smoothing: antialiased; color: #fff; line-height: 1;">Responder mensaje</=
+span>
+        </td>
+        <td width=3D24
+        style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+    </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+    <td
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+    <img class=3Dimage
+    title
+    alt
+    src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-=
+frontend-emails/images/spacer.png
+    height=3D11
+    width=3D0
+    border=3D0
+    style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+</tr>
+<tr class=3Dhide--large
+style=3D"display: none;">
+<td
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0;">
+<img class=3Dimage
+title
+alt
+src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-fron=
+tend-emails/images/spacer.png
+height=3D4
+width=3D0
+border=3D0
+style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+</tr>
+</tbody>
+</table>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+    <td height=3D44
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D32 class=3Dhide--small
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0;">
+<img class=3Dimage title alt
+src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-fron=
+tend-emails/images/spacer.png
+height=3D0 width=3D32 border=3D0
+style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+<td width=3D32
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0;">
+<img class=3Dimage title alt
+src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-fron=
+tend-emails/images/spacer.png
+height=3D0 width=3D32 border=3D0
+style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+    <td class=3D"hide--small u-background--gray" valign=3Dtop
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0; background-color: #f=
+7f7f7;"
+    >
+    <table class=3D"" align=3Dcenter cellpadding=3D0
+    cellspacing=3D0 width=3D100%>
+    <tbody>
+        <tr>
+            <td valign=3Dtop align=3Dright width=3D3
+            height=3D2 class=3Du-background--gray
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0; background-c=
+olor: #f7f7f7; line-height: 0;"
+            >
+            <img class=3Dimage alt
+            src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buy=
+ingflow-frontend-emails/images/panel/panel_bottom-left.png
+            height=3D3 width=3D3 border=3D0
+            style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+        </td>
+        <td valign=3Dtop align=3Dcenter
+        class=3Dui-panel--raised__bottom-image-container
+        style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0; line-height: 0; =
+width: 100%;"
+        width=3D100%>
+        <img class=3Dimage alt
+        src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingf=
+low-frontend-emails/images/panel/panel_bottom-center.png
+        height=3D3 width=3D467 border=3D0
+        style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+    </td>
+    <td valign=3Dtop align=3Dleft width=3D3
+    height=3D2 class=3Du-background--gray
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0; background-color: #f=
+7f7f7; line-height: 0;"
+    >
+    <img class=3Dimage alt
+    src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-=
+frontend-emails/images/panel/panel_bottom-right.png
+    height=3D3 width=3D3 border=3D0
+    style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"hide--small u-background--gray" valign=3Dtop
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0; background-color: #f7f7f=
+7;"
+>
+<table class=3D"" align=3Dcenter cellpadding=3D0 cellspacing=3D0
+width=3D100%>
+<tbody>
+    <tr>
+        <td align=3Dcenter valign=3Dtop height=3D54
+        class=3Du-background--info
+        style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0; background-color=
+: #fcec00;"
+        ></td>
+    </tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3Dpackage__wrapper align=3Dcenter cellpadding=3D0 cellspacing=
+=3D0 width=3Dauto style=3D"margin: 0 auto;">
+    <tbody>
+        <tr>
+            <td style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-s=
+moothing: antialiased; -webkit-text-size-adjust: none; font-size: 0; font-f=
+amily: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,san=
+s-serif; text-align: center;"
+            align=3Dcenter>
+            <img class=3Dimage title alt
+            src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buy=
+ingflow-frontend-emails/images/spacer.png
+            height=3D30 width=3D0 border=3D0 style=3D"font-size: 0; border:=
+ 0; display: block; z-index: 1;">
+        </td>
+    </tr>
+    <tr>
+        <td style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoot=
+hing: antialiased; -webkit-text-size-adjust: none; font-size: 0; font-famil=
+y: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-se=
+rif; text-align: center;"
+        align=3Dcenter>
+        <table class=3Dpackage__wrapper align=3Dcenter cellpadding=3D0 cell=
+spacing=3D0 width=3Dauto
+        style=3D"margin: 0 auto;">
+        <tbody>
+            <tr align=3Dcenter>
+                    <td align=3Dcenter height width class=3Dpackage__image
+                        style=3D"-moz-osx-font-smoothing: grayscale; -webki=
+t-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0=
+; font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,A=
+rial,sans-serif; text-align: center;">
+                        <img class=3Dimage alt=3DPa&#xF1;ales
+                        src=3Dhttps://mco-s1-p.mlstatic.com/836705-MCO32617=
+182038_102019-I.jpg
+                        height=3D48 width=3D48 border=3D0
+                        style=3D"font-size: 0; border: 0; display: block; z=
+-index: 1; position: relative; -webkit-border-radius: 100%; border-radius: =
+100%;">
+                    </td>
+                    <td align=3Dcenter valign=3Dmiddle width=3D4
+                    style=3D"-moz-osx-font-smoothing: grayscale; -webkit-fo=
+nt-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0; fo=
+nt-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial=
+,sans-serif; text-align: center;">
+                    </td>
+            </tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+    <td style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing=
+: antialiased; -webkit-text-size-adjust: none; font-size: 0; font-family: P=
+roxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;=
+ text-align: center;"
+    align=3Dcenter>
+    <img class=3Dimage title alt
+    src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-=
+frontend-emails/images/spacer.png
+    height=3D10 width=3D0 border=3D0 style=3D"font-size: 0; border: 0; disp=
+lay: block; z-index: 1;">
+</td>
+</tr>
+<tr>
+    <td style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing=
+: antialiased; -webkit-text-size-adjust: none; font-size: 0; font-family: P=
+roxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;=
+ text-align: center;"
+    align=3Dcenter>
+    <table class=3Dpackage__wrapper align=3Dcenter cellpadding=3D0 cellspac=
+ing=3D0 width=3Dauto
+    style=3D"margin: 0 auto;">
+    <tbody>
+        <tr>
+            <td class=3Dhide--small align=3Dcenter valign=3Dmiddle width=3D=
+48
+            style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoot=
+hing: antialiased; -webkit-text-size-adjust: none; font-size: 0; font-famil=
+y: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-se=
+rif; text-align: center;">
+        </td>
+        <td align=3Dcenter
+        style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing=
+: antialiased; -webkit-text-size-adjust: none; font-size: 0; font-family: P=
+roxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;=
+ text-align: center;">
+        <table class=3Dpackage__wrapper align=3Dcenter cellpadding=3D0 cell=
+spacing=3D0
+        width=3Dauto style=3D"margin: 0 auto;">
+        <tbody>
+            <tr>
+                <td style=3D"-moz-osx-font-smoothing: grayscale; -webkit-fo=
+nt-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0; fo=
+nt-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial=
+,sans-serif; text-align: center;"
+                align=3Dcenter>
+                <span class=3Dpackage__title
+                style=3D"font-family: Proxima Nova,-apple-system,Lato,Helve=
+tica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; line-height: 1.35; tex=
+t-align: center; margin: 0; font-size: 14px; font-weight: 300; color: rgba(=
+0,0,0,.8);">Tu producto</span>
+        </td>
+    </tr>
+</tbody>
+</table>
+</td>
+<td class=3Dhide--small align=3Dcenter valign=3Dmiddle width=3D48
+style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antial=
+iased; -webkit-text-size-adjust: none; font-size: 0; font-family: Proxima N=
+ova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; text-al=
+ign: center;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3Dfooter width=3D100% align=3Dcenter valign=3Dtop cellpadding=
+=3D0 cellspacing=3D0
+style=3D"min-width: 100%; background-color: #f7f7f7;">
+<tbody>
+    <tr>
+        <td
+        style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+        <img class=3Dimage title alt
+        src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingf=
+low-frontend-emails/images/spacer.png
+        height=3D44 width=3D0 border=3D0
+        style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+    <4/td>
+</tr>
+<tr>
+    <td
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+    <img class=3Dimage title alt
+    src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-=
+frontend-emails/images/spacer.png
+    height=3D28 width=3D0 border=3D0
+    style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+</tr>
+<tr>
+    <td
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+    <table class=3Dfooter__icons-container align=3Dcenter cellpadding=3D0
+    cellspacing=3D0 width=3Dauto style=3D"margin: 0 auto;">
+    <tbody>
+        <tr>
+            <td align=3Dcenter valign=3Dtop
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;">
+            <a title=3D"Play Store" href=3D"https://play.google.com/store/a=
+pps/details?id=3Dcom.mercadolibre&amp;hl=3Des" target=3D_blank class=3Dfoot=
+er__image-link
+            style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; text-decoration: none;">
+            <img class=3D"image image--inline" alt
+            src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buy=
+ingflow-frontend-emails/images/footer/android.png
+            height=3D20 width=3D16 border=3D0
+            style=3D"font-size: 0; border: 0; z-index: 1; display: inline-b=
+lock; vertical-align: middle;">
+        </a>
+    </td>
+    <td align=3Dleft valign=3Dmiddle width=3D4
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+</td>
+<td align=3Dcenter valign=3Dtop
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0;">
+<a title=3D"App Store" href=3D"https://itunes.apple.com/es/app/mercadolibre=
+/id463624852?mt=3D8" target=3D_blank class=3Dfooter__image-link
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; text-decoration: none;">
+<img class=3D"image image--inline" alt
+src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-fron=
+tend-emails/images/footer/ios.png
+height=3D20 width=3D16 border=3D0
+style=3D"font-size: 0; border: 0; z-index: 1; display: inline-block; vertic=
+al-align: middle;">
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+    <td
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+    <img class=3Dimage title alt
+    src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-=
+frontend-emails/images/spacer.png
+    height=3D6 width=3D0 border=3D0
+    style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+</tr>
+<tr>
+    <td class=3Dfooter__subtitle align=3Dcenter valign=3Dtop
+    style=3D"-moz-osx-font-smoothing: grayscale; -webkit-text-size-adjust: =
+none; color: #999; font-family: Proxima Nova,-apple-system,Helvetica Neue,H=
+elvetica,Roboto,Arial,sans-serif; font-size: 12px; -webkit-font-smoothing: =
+antialiased;">
+    <span class=3Drich-text
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none;">=C2=A1Compra y vende desde tu cel=
+ular!</span>
+</td>
+</tr>
+<tr>
+    <td
+    style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;">
+    <img class=3Dimage title alt
+    src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-=
+frontend-emails/images/spacer.png
+    height=3D44 width=3D0 border=3D0
+    style=3D"font-size: 0; border: 0; display: block; z-index: 1;">
+</td>
+</tr>
+</tbody>
+</table>
+<span
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none;">
+<img class=3Dimage alt
+src=3Dhttps://http2.mlstatic.com/resources/frontend/fury_buyingflow-notific=
+ations/ui-dist/spacer-9a1f9e0fb3.png
+height=3D1 width=3D1 border=3D0 style=3D"font-size: 0; border: 0; display: =
+block; z-index: 1;">
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+
+<img src=3D"http://url8202.mercadolibre.com/wf/open?upn=3Dn-2BXHQCy63kpAQ5v=
+lgxDj9INL-2BRhVxrLbJegHCev16xucv08I0raT0JEV0tdZ9oJBk0plZVz5X0NPqfyAg0NVyg6H=
+ljBiyj8TPiamlGSF5mbWFMxmA8Voz2R1SNYmXKHhJ55LPuoCQH-2BExixZxZozBPGrDpHxL-2Bn=
+bnBXqMVTqcYRpMFgNFP23D9Xb4dJNlogf8eFMVmzYdhy7oRwvXs5MQduY6P-2FKGdS0IxiKojV6=
+fjAeC5H9BqDF8sR-2B4xf-2FdRyNgygIqrlr6OZ-2BYZQKbZYG0-2ByoYekMOQecsOw-2BULKg7=
+yA1QhMD1L3PUdG7UlEvj7fwYhh2qWGU0wEhtj66uTJ56uiOzGjYq0RuXXAwtQXhp3lzTMu4uDkK=
+k2mn8TYeKIq1vvg3djvqqZY-2BbOhEVWf-2Fgix-2FZQw-2F4EImPK-2FTcnZi63DMx-2FavtFc=
+nmCQggzR6o8fbyp13MEFAY2IUwdDqVjY7OLDXUKco42GwG23W1tr8LzpkJvhxoQVnGqiq0VoQMH=
+8Q-2FqLg1UEtoJIx41ezu-2F4E0X0fN4VIJ-2F21AKPBc7V6Y-2BBKr9kn6qHhn7WXfPoJ-2Bfr=
+cF6lJKJhgo3dSHXAi8qbEsW9yZGG02po7kZbEa-2BgRsWvFVPvoG8T-2FdtVB4rmz9kJsasFWmU=
+UzGG9LTOoEmnGcrjVTEcqkcLxSpdsubm6mxgFtfZD-2FyjIQND3eY09a1BxT-2Bv52MjbraGjHR=
+lD175kHExMrJpHb9ohkrXRCCT4g7SYgEYt75fAq3K8HKZsep4rc" alt=3D"" width=3D"1" h=
+eight=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !importan=
+t;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !import=
+ant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !impor=
+tant;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 =
+!important;"/>
+</body>
+
+</html>
+ <!--es--><table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" align=
+=3D"center" style=3D"background: rgb(255, 255, 255);"> <tr> <td align=3D"ce=
+nter"> <!--[if mso]><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"center" width=3D"600"><tr><td align=3D"center" valign=3D"top" wid=
+th=3D"600"><![endif]--> <table role=3D"presentation" cellspacing=3D"0" cell=
+padding=3D"0" width=3D"100%" align=3D"center" style=3D"max-width: 600px; ba=
+ckground: rgb(255, 255, 255);"> <tr> <td align=3D"center" style=3D"font-wei=
+ght: 400; font-family: 'Proxima Nova', _apple_system, 'Helvetica Neue', Hel=
+vetica, Roboto, Arial, sans-serif; font-size: 11px; line-height: 1.45; colo=
+r: rgb(140, 140, 140); padding: 20px 25px; text-align: center;"> Te enviamo=
+s este e-mail a <a target=3D"_blank" href=3D"mailto:pharsat@gmail.com" styl=
+e=3D"color: rgb(52, 131, 250); text-decoration: none;">pharsat@gmail.com</a=
+> porque elegiste recibir informaci=C3=B3n.<br><a target=3D"_blank" href=3D=
+"https://myaccount.mercadolibre.com.co/preferences/emails" style=3D"color: =
+rgb(52, 131, 250); text-decoration: none;">Administrar preferencias de e-ma=
+ils</a>.<br>Conoce <a target=3D"_blank" href=3D"https://www.mercadolibre.co=
+m.co/privacidad" style=3D"color: rgb(52, 131, 250); text-decoration: none;"=
+>c=C3=B3mo cuidamos tu Privacidad</a> y visita los <a target=3D"_blank" hre=
+f=3D"https://www.mercadolibre.com.co/ayuda/991" style=3D"color: rgb(52, 131=
+, 250); text-decoration: none;">T=C3=A9rminos y Condiciones de Mercado Libr=
+e</a>. </td> </tr> </table> <!--[if mso]></td></tr></table><![endif]--> </t=
+d> </tr></table>

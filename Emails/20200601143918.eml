@@ -1,0 +1,744 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a19:4283:0:0:0:0:0 with SMTP id p125csp2893573lfa;
+        Mon, 1 Jun 2020 07:39:19 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwDP2SgeNV4wurWxhkU8zoSunrumu84f/FPIHVdkbLjeJVc8p9RecyY5a1Ixe2w62Ut9rN6
+X-Received: by 2002:a05:6402:b13:: with SMTP id bm19mr2246238edb.82.1591022359114;
+        Mon, 01 Jun 2020 07:39:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1591022359; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nf9AfHiSGGQizsPciBLoz4Cy9PXSxpezE8j5RONai3RVFOesqV3NjhJMF+PnHQRghm
+         xWzNQbJjvS7c4WZumfVWFclqVP60NVn5ARbnhy/81BbOhiJhKB9SfqlwEOrU7bB3ZVpe
+         nESKmYbGphz2dxQl+HUugFC4Z2tQnoXu+xQ6oXbsPmICyuW0YZkN+QRGIo8jclB8yanu
+         8zWzH1WJl9XASEVb3Kf1udfUdNuMrRjZw92OUJcmeNLwPtshoWUSplRL6ixxRhzlROH8
+         83SyhlFINJsrx11HrYTcraRNOFx+bKl9eaXLQ2FsDArQJL/Ux2Qtkhbd4AlFM+0sd3Gv
+         otpg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:mime-version:to:from:subject:date:message-id
+         :dkim-signature:dkim-signature;
+        bh=WUxBiacQc9uPXEXfbP0MQXJpCV/3zWz78r5x897Sw4k=;
+        b=AjzzEdKNeQO/RCWz4pu/bEIdxaYHzYo4GV+ElplRkoWyy7vPf2TqK9b6rgV3b+xwwK
+         mqzNa822Ma3SUUQxsxMIGZxdCSFSu7NmXaQbqxIFgVzbwe4cpRNoauwPw7rktVjYWQmK
+         uEBSJFeSa2IucI8fyXNSmEtALHnXAAWZIpLCq8RphC2xPw3REDk3s7aNj6IGu9ljAsDs
+         0EalhOIue5WrPW8AbRQjpJHeKvSgsG1GXT30L/ks+kkcCDb+qCVHZ98WtM8aSdDvBCtN
+         /TQceRJXM+EpdWUc+mpXVLAsbpTd0D01P30pIP5CUpD/Zfy80t5nWXykfqtmgA0MZJ4o
+         Kh0g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@wakfu.com header.s=ci4p6lyrm2x3os7of3za3ms25eupfgxk header.b=KtcfJkuB;
+       dkim=pass header.i=@amazonses.com header.s=shh3fegwg5fppqsuzphvschd53n6ihuv header.b="mxWHmE/d";
+       spf=pass (google.com: domain of 0102017270529086-0d7892e8-83be-4423-8dab-e618548ce417-000000@eu-west-1.amazonses.com designates 54.240.6.63 as permitted sender) smtp.mailfrom=0102017270529086-0d7892e8-83be-4423-8dab-e618548ce417-000000@eu-west-1.amazonses.com
+Return-Path: <0102017270529086-0d7892e8-83be-4423-8dab-e618548ce417-000000@eu-west-1.amazonses.com>
+Received: from a6-63.smtp-out.eu-west-1.amazonses.com (a6-63.smtp-out.eu-west-1.amazonses.com. [54.240.6.63])
+        by mx.google.com with ESMTPS id r25si9715846edt.337.2020.06.01.07.39.18
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Mon, 01 Jun 2020 07:39:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0102017270529086-0d7892e8-83be-4423-8dab-e618548ce417-000000@eu-west-1.amazonses.com designates 54.240.6.63 as permitted sender) client-ip=54.240.6.63;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@wakfu.com header.s=ci4p6lyrm2x3os7of3za3ms25eupfgxk header.b=KtcfJkuB;
+       dkim=pass header.i=@amazonses.com header.s=shh3fegwg5fppqsuzphvschd53n6ihuv header.b="mxWHmE/d";
+       spf=pass (google.com: domain of 0102017270529086-0d7892e8-83be-4423-8dab-e618548ce417-000000@eu-west-1.amazonses.com designates 54.240.6.63 as permitted sender) smtp.mailfrom=0102017270529086-0d7892e8-83be-4423-8dab-e618548ce417-000000@eu-west-1.amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ci4p6lyrm2x3os7of3za3ms25eupfgxk; d=wakfu.com; t=1591022358;
+	h=Message-ID:Date:Subject:From:To:MIME-Version:Content-Type;
+	bh=rjyPh+9YctLSw/2Y6bmCwv4LgKcKvmiIU4k/vgbU2q0=;
+	b=KtcfJkuB5ArLgh6BzV9yocF12QR3RjoSwzNkjSpCTjseokCwvnQnDzolA+STl0Xl
+	GED6IK3hJWUa1bmT0Zp2jl+HZcVmkGzJz6v9lMogZfmTmE85ycEiiwx4kJBmjkeVMAK
+	ymqdjND5Ag2lIy2mCv7dxuDaCNluqUyZj277fM2U=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=shh3fegwg5fppqsuzphvschd53n6ihuv; d=amazonses.com; t=1591022358;
+	h=Message-ID:Date:Subject:From:To:MIME-Version:Content-Type:Feedback-ID;
+	bh=rjyPh+9YctLSw/2Y6bmCwv4LgKcKvmiIU4k/vgbU2q0=;
+	b=mxWHmE/da41BavmkBgMeFHhTUGOA0QOQlxRvg5SbTLd61JZ9GTeu5bXFqnPi/Gdj
+	bUfdWJqkRgABcGygSj5smVCWMrMu/3fnuDyTmbWnBMszT+4sL9cne6rPpJNJv3wrAnc
+	NmxQ5EqYMD6GczSUdwGNKHwHZiuazv3BwciFQcBg=
+Message-ID: <0102017270529086-0d7892e8-83be-4423-8dab-e618548ce417-000000@eu-west-1.amazonses.com>
+Date: Mon, 1 Jun 2020 14:39:18 +0000
+Subject: A por la temporada 4 de WAKFU
+From: WAKFU <noreply@wakfu.com>
+To: pharsat@gmail.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_v4_1591022358_8a80ba2ef426ae0a61910e0c99b9cd9b_=_"
+X-Type: MASS
+X-EMLT: 892F34282052C1F072507AEFCF320A6BC3E45E12C1E5D59733605DA56FCA07DD
+X-SES-Outgoing: 2020.06.01-54.240.6.63
+Feedback-ID: 1.eu-west-1.B44kiN2JGgaeHojzopx27Kq2eOzR4IYlte+c6KtKlfY=:AmazonSES
+
+
+--_=_swift_v4_1591022358_8a80ba2ef426ae0a61910e0c99b9cd9b_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+A por la temporada 4 de WAKFU
+#outlook a { padding: 0; }
+.ReadMsgBod=
+y { width: 100%; }
+.ExternalClass { width: 100%; }
+.ExternalClass * { l=
+ine-height:100%; }
+body { margin: 0; padding: 0; -webkit-text-size-adjust=
+: 100%; -ms-text-size-adjust: 100%; }
+table, td { border-collapse:collaps=
+e; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+img { border: 0; heigh=
+t: auto; line-height: 100%; outline: none; text-decoration: none; -ms-inter=
+polation-mode: bicubic; }
+p { display: block; margin: 13px 0; }
+@media =
+only screen and (max-width:480px) {
+@-ms-viewport { width:320px; }
+@vie=
+wport { width:320px; }
+}
+@import url(https://fonts.googleapis.com/css?f=
+amily=3DUbuntu:300,400,500,700);
+@media only screen and (min-width:480px)=
+ {
+.mj-column-per-100 { width:100%!important; }
+.mj-column-per-20 { wid=
+th:20%!important; }
+.mj-column-per-80 { width:80%!important; }
+}
+Se a=
+cerca una campa=C3=B1a Kickstarter para la temporada 4 de la serie de anima=
+ci=C3=B3n
+Si no visualizas correctamente este mensaje, haz clic aqu=C3=
+=AD [ http://emailing.ankama.com/mirror?q=3D2CC1C2C9A62672BA4BBE688BAA69926=
+7D2487E615F87C4152B7D94FA5C1C0DA8 ]
+La serie que crece con el amor de sus=
+ fans, llega a Kickstarter
+en junio de 2020
+Fiel a las citas con todas =
+las batallas, formas parte de nuestros eminentes compa=C3=B1eros. Siempre l=
+isto para el asalto final, est=C3=A1s en todas las peleas. =C2=A1Atenci=
+=C3=B3n! Esta ser=C3=A1 grande=E2=80=A6 Acomp=C3=A1=C3=B1anos en esta nueva=
+ misi=C3=B3n: =C2=A1pasemos juntos a la acci=C3=B3n!
+[ https://emailing.a=
+nkama.com/click?q=3DD7ECAEEFFAFEF3266548314F8DAC6F5A8122A87C9B74A0EF9F6BA90=
+DAA0D1ED3 ]
+Objetivos
+=E2=80=A2 Llevar a WAKFU m=C3=A1s all=C3=A1 de su=
+s l=C3=ADmites gracias a los fans.
+=E2=80=A2 Crear una cuarta temporada c=
+on libertad absoluta y continuar
+siendo due=C3=B1os del resultado al 100=
+=C2=A0% gracias a la financiaci=C3=B3n colectiva.
+=E2=80=A2 Ofrecer a los=
+ fans de la serie un final a la altura
+de sus expectativas.
+=C2=A1REALI=
+CEMOS JUNTOS EL PR=C3=93XIMO CAP=C3=8DTULO DE LA SAGA!
+Nos vemos pronto e=
+n:
+Para seguir la campa=C3=B1a de cerca y no perderte nada,
+echa un vis=
+tazo a los nuevos v=C3=ADdeos cada semana en nuestros sitios
+e inscr=
+=C3=ADbete a la newsletter. [ # ]
+Ankama
+Ankama 2020, todos los derecho=
+s reservados.
+Condiciones de uso [ http://emailing.ankama.com/click?q=3D9=
+EB29284E7C399576384EB497ADB4D4F8122A87C9B74A0EF9F6BA90DAA0D1ED3 ]
+Pol=
+=C3=ADtica de confidencialidad [ http://emailing.ankama.com/click?q=3D87B63=
+B3437C21353FC80A160ADE748E48122A87C9B74A0EF9F6BA90DAA0D1ED3 ] -
+Condicion=
+es generales de venta [ http://emailing.ankama.com/click?q=3DD56004351FED01=
+719AF7F4A205A1625F8122A87C9B74A0EF9F6BA90DAA0D1ED3 ] -
+Menciones Legales =
+[ http://emailing.ankama.com/click?q=3D8DFB1AFBE599920452748577BE714D718122=
+A87C9B74A0EF9F6BA90DAA0D1ED3 ]
+Para desinscribirte de la newsletter, haz =
+clic aqu=C3=AD [ https://account.ankama.com/es/unsubscribe?n=3DNLWAKFU&emai=
+l=3Dpharsat@gmail.com ]
+
+
+--_=_swift_v4_1591022358_8a80ba2ef426ae0a61910e0c99b9cd9b_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"u=
+rn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:o=
+ffice">
+<head>
+  <title>A por la temporada 4 de WAKFU</title>
+  <!--[=
+if !mso]><!-- -->
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3D=
+edge">
+  <!--<![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"=
+text/html; charset=3DUTF-8">
+<meta name=3D"viewport" content=3D"width=3Dd=
+evice-width, initial-scale=3D1.0">
+<style type=3D"text/css">
+  #outlook=
+ a { padding: 0; }
+  .ReadMsgBody { width: 100%; }
+  .ExternalClass { w=
+idth: 100%; }
+  .ExternalClass * { line-height:100%; }
+  body { margin:=
+ 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;=
+ }
+  table, td { border-collapse:collapse; mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; }
+  img { border: 0; height: auto; line-height: 100%; out=
+line: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+  p=
+ { display: block; margin: 13px 0; }
+</style>
+<!--[if !mso]><!-->
+<st=
+yle type=3D"text/css">
+  @media only screen and (max-width:480px) {
+   =
+ @-ms-viewport { width:320px; }
+    @viewport { width:320px; }
+  }
+</=
+style>
+<!--<![endif]-->
+<!--[if mso]>
+<xml>
+  <o:OfficeDocumentSett=
+ings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+  <=
+/o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<!--[if lte mso 11]>=
+
+<style type=3D"text/css">
+  .outlook-group-fix {
+    width:100% !imp=
+ortant;
+  }
+</style>
+<![endif]-->
+
+<!--[if !mso]><!-->
+    <lin=
+k href=3D"https://fonts.googleapis.com/css?family=3DUbuntu:300,400,500,700"=
+ rel=3D"stylesheet" type=3D"text/css">
+    <style type=3D"text/css">
+=
+
+        @import url(https://fonts.googleapis.com/css?family=3DUbuntu:300=
+,400,500,700);
+
+    </style>
+  <!--<![endif]--><style type=3D"text/cs=
+s">
+  @media only screen and (min-width:480px) {
+    .mj-column-per-100=
+ { width:100%!important; }
+.mj-column-per-20 { width:20%!important; }
+.=
+mj-column-per-80 { width:80%!important; }
+  }
+</style>
+</head>
+<bod=
+y>
+  <div style=3D"display:none;font-size:1px;color:#ffffff;line-height:1=
+px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+      Se ace=
+rca una campa=C3=B1a Kickstarter para la temporada 4 de la serie de animaci=
+=C3=B3n
+    </div>
+  <div class=3D"mj-container"><!--[if mso | IE]>
+ =
+     <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"600" align=3D"center" style=3D"width:600px;">
+        <t=
+r>
+          <td style=3D"line-height:0px;font-size:0px;mso-line-height-r=
+ule:exactly;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:=
+600px;background:#ffffff;"><table role=3D"presentation" cellpadding=3D"0" c=
+ellspacing=3D"0" style=3D"font-size:0px;width:100%;background:#ffffff;" ali=
+gn=3D"center" border=3D"0"><tbody><tr><td style=3D"text-align:center;vertic=
+al-align:top;direction:ltr;font-size:0px;padding:0px;"><!--[if mso | IE]>=
+
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0">
+        <tr>
+          <td style=3D"vertical-align:top;wid=
+th:600px;">
+      <![endif]--><div class=3D"mj-column-per-100 outlook-gro=
+up-fix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font=
+-size:13px;text-align:left;width:100%;"><table role=3D"presentation" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"100%" border=3D"0"><tbody><tr><td st=
+yle=3D"word-wrap:break-word;font-size:0px;padding:10px 25px;padding-top:0px=
+;padding-bottom:0px;" align=3D"left"><div style=3D"cursor:auto;color:#00000=
+0;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;line-heig=
+ht:22px;text-align:left;"><p style=3D"color:#000000;font-size:14px;text-ali=
+gn:center;">
+=09=09=09=09    Si no visualizas correctamente este mensaje, <a style=3D"te=
+xt-decoration:none;color:#18b69a;font-size:12px;font-family:verdana;" href=
+=3D"http://emailing.ankama.com/mirror?q=3D2CC1C2C9A62672BA4BBE688BAA699267D=
+2487E615F87C4152B7D94FA5C1C0DA8" target=3D"_blank">haz clic aqu=C3=AD</a>
+=09=09=09    </p></div></td></tr></tbody></table></div><!--[if mso | IE]>=
+
+      </td></tr></table>
+      <![endif]--></td></tr></tbody></table><=
+/div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]-->
+ =
+     <!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"600" align=3D"center" style=3D"=
+width:600px;">
+        <tr>
+          <td style=3D"line-height:0px;font=
+-size:0px;mso-line-height-rule:exactly;">
+      <![endif]--><div style=3D=
+"margin:0px auto;max-width:600px;background:#071525;"><table role=3D"presen=
+tation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:10=
+0%;background:#071525;" align=3D"center" border=3D"0"><tbody><tr><td style=
+=3D"text-align:center;vertical-align:top;direction:ltr;font-size:0px;paddin=
+g:0px;"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0">
+        <tr>
+          <td style=
+=3D"vertical-align:top;width:600px;">
+      <![endif]--><div class=3D"mj-=
+column-per-100 outlook-group-fix" style=3D"vertical-align:top;display:inlin=
+e-block;direction:ltr;font-size:13px;text-align:left;width:100%;"><table ro=
+le=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bord=
+er=3D"0"><tbody><tr><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:0px 25px;padding-bottom:0px;padding-right:0px;padding-left:0px;" align=3D"=
+center"><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"border-collapse:collapse;border-spacing:0px;" align=3D"center" borde=
+r=3D"0"><tbody><tr><td style=3D"width:600px;"><img alt=3D"" title=3D"" heig=
+ht=3D"auto" src=3D"http://staticns.ankama.com/comm/mailing/4030/banner.jpg"=
+ style=3D"border:none;border-radius:0px;display:block;font-size:13px;outlin=
+e:none;text-decoration:none;width:100%;height:auto;" width=3D"600"></td></t=
+r></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]>
+    =
+  </td></tr></table>
+      <![endif]--></td></tr></tbody></table></div><!=
+--[if mso | IE]>
+      </td></tr></table>
+      <![endif]-->
+      <!=
+--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"600" align=3D"center" style=3D"width:6=
+00px;">
+        <tr>
+          <td style=3D"line-height:0px;font-size:0=
+px;mso-line-height-rule:exactly;">
+      <![endif]--><div style=3D"margin=
+:0px auto;max-width:600px;background:#102e32;"><table role=3D"presentation"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;back=
+ground:#102e32;" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text=
+-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:20px 0=
+px;padding-top:0px;"><!--[if mso | IE]>
+      <table role=3D"presentation=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+        <tr>
+      =
+    <td style=3D"vertical-align:top;width:600px;">
+      <![endif]--><div=
+ class=3D"mj-column-per-100 outlook-group-fix" style=3D"vertical-align:top;=
+display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100=
+%;"><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" border=3D"0"><tbody><tr><td style=3D"word-wrap:break-word;font-si=
+ze:0px;padding:10px 25px;" align=3D"center"><div style=3D"cursor:auto;color=
+:#fff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:30px;font-=
+weight:bold;line-height:36px;text-align:center;">La serie que crece con el =
+amor de sus fans, llega a Kickstarter
+=09=09=09=09=09=09<br>en junio de 2020</div></td></tr></tbody></table></div=
+><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></td></t=
+r></tbody></table></div><!--[if mso | IE]>
+      </td></tr></table>
+   =
+   <![endif]-->
+      <!--[if mso | IE]>
+      <table role=3D"presentat=
+ion" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" align=
+=3D"center" style=3D"width:600px;">
+        <tr>
+          <td style=3D=
+"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![e=
+ndif]--><div style=3D"margin:0px auto;max-width:600px;background:#102e32;">=
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"f=
+ont-size:0px;width:100%;background:#102e32;" align=3D"center" border=3D"0">=
+<tbody><tr><td style=3D"text-align:center;vertical-align:top;direction:ltr;=
+font-size:0px;padding:20px 0px;padding-top:0px;"><!--[if mso | IE]>
+     =
+ <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0">
+        <tr>
+          <td style=3D"vertical-align:top;width:600px=
+;">
+      <![endif]--><div class=3D"mj-column-per-100 outlook-group-fix" =
+style=3D"vertical-align:top;display:inline-block;direction:ltr;font-size:13=
+px;text-align:left;width:100%;"><table role=3D"presentation" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%" border=3D"0"><tbody><tr><td style=3D"w=
+ord-wrap:break-word;font-size:0px;padding:10px 25px;" align=3D"center"><div=
+ style=3D"cursor:auto;color:#8dc0c7;font-family:Ubuntu, Helvetica, Arial, s=
+ans-serif;font-size:18px;font-style:italic;line-height:22px;text-align:cent=
+er;">Fiel a las citas con todas las batallas, formas parte de nuestros emin=
+entes compa=C3=B1eros. Siempre listo para el asalto final, est=C3=A1s en to=
+das las peleas. =C2=A1Atenci=C3=B3n! Esta ser=C3=A1 grande=E2=80=A6 Acomp=
+=C3=A1=C3=B1anos en esta nueva misi=C3=B3n: =C2=A1pasemos juntos a la acci=
+=C3=B3n!</div></td></tr></tbody></table></div><!--[if mso | IE]>
+      </=
+td></tr></table>
+      <![endif]--></td></tr></tbody></table></div><!--[i=
+f mso | IE]>
+      </td></tr></table>
+      <![endif]-->
+      <!--[i=
+f mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"600" align=3D"center" style=3D"width:600p=
+x;">
+        <tr>
+          <td style=3D"line-height:0px;font-size:0px;=
+mso-line-height-rule:exactly;">
+      <![endif]--><div style=3D"margin:0p=
+x auto;max-width:600px;background:#071525;"><table role=3D"presentation" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;backgro=
+und:#071525;" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-al=
+ign:center;vertical-align:top;direction:ltr;font-size:0px;padding:0px;"><!-=
+-[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0">
+        <tr>
+          <td style=3D"vertica=
+l-align:top;width:600px;">
+      <![endif]--><div class=3D"mj-column-per-=
+100 outlook-group-fix" style=3D"vertical-align:top;display:inline-block;dir=
+ection:ltr;font-size:13px;text-align:left;width:100%;"><table role=3D"prese=
+ntation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" border=3D"0"><t=
+body><tr><td style=3D"word-wrap:break-word;font-size:0px;padding:0px 25px;p=
+adding-bottom:0px;padding-right:0px;padding-left:0px;" align=3D"center"><ta=
+ble role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"bord=
+er-collapse:collapse;border-spacing:0px;" align=3D"center" border=3D"0"><tb=
+ody><tr><td style=3D"width:600px;"><a href=3D"https://emailing.ankama.com/c=
+lick?q=3DD7ECAEEFFAFEF3266548314F8DAC6F5A8122A87C9B74A0EF9F6BA90DAA0D1ED3" =
+target=3D"blank"><img alt=3D"" title=3D"" height=3D"auto" src=3D"http://sta=
+ticns.ankama.com/comm/mailing/4030/video.jpg" style=3D"border:none;border-r=
+adius:0px;display:block;font-size:13px;outline:none;text-decoration:none;wi=
+dth:100%;height:auto;" width=3D"600"></a></td></tr></tbody></table></td></t=
+r></tbody></table></div><!--[if mso | IE]>
+      </td></tr></table>
+   =
+   <![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>
+      <=
+/td></tr></table>
+      <![endif]-->
+      <!--[if mso | IE]>
+      <=
+table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"600" align=3D"center" style=3D"width:600px;">
+        <tr>
+ =
+         <td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:ex=
+actly;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;=
+background:#102e32;"><table role=3D"presentation" cellpadding=3D"0" cellspa=
+cing=3D"0" style=3D"font-size:0px;width:100%;background:#102e32;" align=3D"=
+center" border=3D"0"><tbody><tr><td style=3D"text-align:center;vertical-ali=
+gn:top;direction:ltr;font-size:0px;padding:20px 0px;padding-bottom:0px;"><!=
+--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0">
+        <tr>
+          <td style=3D"vertic=
+al-align:top;width:600px;">
+      <![endif]--><div class=3D"mj-column-per=
+-100 outlook-group-fix" style=3D"vertical-align:top;display:inline-block;di=
+rection:ltr;font-size:13px;text-align:left;width:100%;"><table role=3D"pres=
+entation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" border=3D"0"><=
+tbody><tr><td style=3D"word-wrap:break-word;font-size:0px;padding:10px 25px=
+;" align=3D"center"><div style=3D"cursor:auto;color:#fff;font-family:Ubuntu=
+, Helvetica, Arial, sans-serif;font-size:30px;font-weight:bold;line-height:=
+36px;text-align:center;text-transform:uppercase;">Objetivos</div></td></tr>=
+</tbody></table></div><!--[if mso | IE]>
+      </td></tr></table>
+     =
+ <![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>
+      </t=
+d></tr></table>
+      <![endif]-->
+      <!--[if mso | IE]>
+      <ta=
+ble role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"600" align=3D"center" style=3D"width:600px;">
+        <tr>
+   =
+       <td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;ba=
+ckground:#102e32;"><table role=3D"presentation" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"font-size:0px;width:100%;background:#102e32;" align=3D"ce=
+nter" border=3D"0"><tbody><tr><td style=3D"text-align:center;vertical-align=
+:top;direction:ltr;font-size:0px;padding:20px 0px;padding-top:0px;"><!--[if=
+ mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0">
+        <tr>
+          <td style=3D"vertical-=
+align:top;width:600px;">
+      <![endif]--><div class=3D"mj-column-per-10=
+0 outlook-group-fix" style=3D"vertical-align:top;display:inline-block;direc=
+tion:ltr;font-size:13px;text-align:left;width:100%;"><table role=3D"present=
+ation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" border=3D"0"><tbo=
+dy><tr><td style=3D"word-wrap:break-word;font-size:0px;padding:10px 25px;" =
+align=3D"center"><div style=3D"cursor:auto;color:#fff;font-family:Ubuntu, H=
+elvetica, Arial, sans-serif;font-size:18px;line-height:22px;text-align:cent=
+er;"><span style=3D"color:#05ce78;">=E2=80=A2</span> Llevar a WAKFU m=C3=
+=A1s all=C3=A1 de sus l=C3=ADmites gracias a los fans.
+=09=09=09=09=09=09=09<br><br>
+=09=09=09=09=09=09=09<span style=3D"color:#05ce78;">=E2=80=A2</span> Crear =
+una cuarta temporada con libertad absoluta y continuar
+=09=09=09=09=09=09=09siendo due=C3=B1os del resultado al 100=C2=A0% gracias=
+ a la financiaci=C3=B3n colectiva.
+=09=09=09=09=09=09=09<br><br>
+=09=09=09=09=09=09=09<span style=3D"color:#05ce78;">=E2=80=A2</span> Ofrece=
+r a los fans de la serie un final a la altura
+=09=09=09=09=09=09=09de sus expectativas.</div></td></tr></tbody></table></=
+div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></td>=
+</tr></tbody></table></div><!--[if mso | IE]>
+      </td></tr></table>
+=
+      <![endif]-->
+      <!--[if mso | IE]>
+      <table role=3D"presen=
+tation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" alig=
+n=3D"center" style=3D"width:600px;">
+        <tr>
+          <td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <=
+![endif]--><div style=3D"margin:0px auto;max-width:600px;background:#0c2326=
+;"><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"font-size:0px;width:100%;background:#0c2326;" align=3D"center" border=
+=3D"0"><tbody><tr><td style=3D"text-align:center;vertical-align:top;directi=
+on:ltr;font-size:0px;padding:20px 0px;padding-bottom:0px;"><!--[if mso | IE=
+]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0">
+        <tr>
+          <td style=3D"vertical-align:top;w=
+idth:600px;">
+      <![endif]--><div class=3D"mj-column-per-100 outlook-g=
+roup-fix" style=3D"vertical-align:top;display:inline-block;direction:ltr;fo=
+nt-size:13px;text-align:left;width:100%;"><table role=3D"presentation" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%" border=3D"0"><tbody><tr><td =
+style=3D"word-wrap:break-word;font-size:0px;padding:10px 25px;" align=3D"ce=
+nter"><div style=3D"cursor:auto;color:#05ce78;font-family:Ubuntu, Helvetica=
+, Arial, sans-serif;font-size:30px;font-weight:bold;line-height:36px;text-a=
+lign:center;text-transform:uppercase;">=C2=A1REALICEMOS JUNTOS EL PR=C3=
+=93XIMO CAP=C3=8DTULO DE LA SAGA!</div></td></tr></tbody></table></div><!--=
+[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></td></tr></t=
+body></table></div><!--[if mso | IE]>
+      </td></tr></table>
+      <!=
+[endif]-->
+      <!--[if mso | IE]>
+      <table role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" align=3D"cen=
+ter" style=3D"width:600px;">
+        <tr>
+          <td style=3D"line-h=
+eight:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <![endif]--=
+><div style=3D"margin:0px auto;max-width:600px;background:#0c2326;"><table =
+role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-siz=
+e:0px;width:100%;background:#0c2326;" align=3D"center" border=3D"0"><tbody>=
+<tr><td style=3D"text-align:center;vertical-align:top;direction:ltr;font-si=
+ze:0px;padding:0px;"><!--[if mso | IE]>
+      <table role=3D"presentation=
+" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+        <tr>
+      =
+    <td style=3D"vertical-align:top;width:600px;">
+      <![endif]--><div=
+ class=3D"mj-column-per-100 outlook-group-fix" style=3D"vertical-align:top;=
+display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100=
+%;"><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" border=3D"0"><tbody><tr><td style=3D"word-wrap:break-word;font-si=
+ze:0px;padding:10px 25px;" align=3D"center"><div style=3D"cursor:auto;color=
+:#fff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:18px;font-=
+weight:bold;line-height:36px;text-align:center;">Nos vemos pronto en:</div>=
+</td></tr></tbody></table></div><!--[if mso | IE]>
+      </td></tr></tabl=
+e>
+      <![endif]--></td></tr></tbody></table></div><!--[if mso | IE]>=
+
+      </td></tr></table>
+      <![endif]-->
+      <!--[if mso | IE]>=
+
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"600" align=3D"center" style=3D"width:600px;">
+      =
+  <tr>
+          <td style=3D"line-height:0px;font-size:0px;mso-line-heig=
+ht-rule:exactly;">
+      <![endif]--><div style=3D"margin:0px auto;max-wi=
+dth:600px;background:#0c2326;"><table role=3D"presentation" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;background:#0c2326;"=
+ align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-align:center;ve=
+rtical-align:top;direction:ltr;font-size:0px;padding:0px;"><!--[if mso | IE=
+]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0">
+        <tr>
+          <td style=3D"vertical-align:top;w=
+idth:600px;">
+      <![endif]--><div class=3D"mj-column-per-100 outlook-g=
+roup-fix" style=3D"vertical-align:top;display:inline-block;direction:ltr;fo=
+nt-size:13px;text-align:left;width:100%;"><table role=3D"presentation" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%" border=3D"0"><tbody><tr><td =
+style=3D"word-wrap:break-word;font-size:0px;padding:0px 25px 25px;" align=
+=3D"center"><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0=
+" style=3D"border-collapse:collapse;border-spacing:0px;" align=3D"center" b=
+order=3D"0"><tbody><tr><td style=3D"width:307px;"><img alt=3D"" title=3D"" =
+height=3D"auto" src=3D"http://staticns.ankama.com/comm/mailing/4030/kick.jp=
+g" style=3D"border:none;border-radius:0px;display:block;font-size:13px;outl=
+ine:none;text-decoration:none;width:100%;height:auto;" width=3D"307"></td><=
+/tr></tbody></table></td></tr></tbody></table></div><!--[if mso | IE]>
+  =
+    </td></tr></table>
+      <![endif]--></td></tr></tbody></table></div>=
+<!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]-->
+      =
+<!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"600" align=3D"center" style=3D"width=
+:600px;">
+        <tr>
+          <td style=3D"line-height:0px;font-size=
+:0px;mso-line-height-rule:exactly;">
+      <![endif]--><div style=3D"marg=
+in:0px auto;max-width:600px;background:#102e32;"><table role=3D"presentatio=
+n" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;ba=
+ckground:#102e32;" align=3D"center" border=3D"0"><tbody><tr><td style=3D"te=
+xt-align:center;vertical-align:top;direction:ltr;font-size:0px;padding:20px=
+ 0px;"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0">
+        <tr>
+          <td style=
+=3D"vertical-align:top;width:600px;">
+      <![endif]--><div class=3D"mj-=
+column-per-100 outlook-group-fix" style=3D"vertical-align:top;display:inlin=
+e-block;direction:ltr;font-size:13px;text-align:left;width:100%;"><table ro=
+le=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" bord=
+er=3D"0"><tbody><tr><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:10px 25px;" align=3D"center"><div style=3D"cursor:auto;color:#fff;font-fam=
+ily:Ubuntu, Helvetica, Arial, sans-serif;font-size:18px;line-height:22px;te=
+xt-align:center;">Para seguir la campa=C3=B1a de cerca y no perderte nada,
+=09=09=09=09=09=09<br>echa un vistazo a los nuevos v=C3=ADdeos cada semana =
+en nuestros sitios
+=09=09=09=09=09=09<br>e <a href=3D"#" style=3D"color:#05ce78;font-weight:bo=
+ld;">inscr=C3=ADbete a la newsletter.</a></div></td></tr></tbody></table></=
+div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></td>=
+</tr></tbody></table></div><!--[if mso | IE]>
+      </td></tr></table>
+=
+      <![endif]-->
+      <!--[if mso | IE]>
+      <table role=3D"presen=
+tation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"600" alig=
+n=3D"center" style=3D"width:600px;">
+        <tr>
+          <td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      <=
+![endif]--><div style=3D"margin:0px auto;max-width:600px;background:#262626=
+;"><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"font-size:0px;width:100%;background:#262626;" align=3D"center" border=
+=3D"0"><tbody><tr><td style=3D"text-align:center;vertical-align:top;directi=
+on:ltr;font-size:0px;padding:20px 0px;padding-bottom:0px;padding-top:0px;">=
+<!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0">
+        <tr>
+          <td style=3D"vert=
+ical-align:top;width:120px;">
+      <![endif]--><div class=3D"mj-column-p=
+er-20 outlook-group-fix" style=3D"vertical-align:top;display:inline-block;d=
+irection:ltr;font-size:13px;text-align:left;width:100%;"><table role=3D"pre=
+sentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" border=3D"0">=
+<tbody><tr><td style=3D"word-wrap:break-word;font-size:0px;padding:10px 25p=
+x;padding-top:10px;padding-bottom:0px;padding-right:0px;padding-left:0px;" =
+align=3D"center"><table role=3D"presentation" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;border-spacing:0px;" align=3D"cent=
+er" border=3D"0"><tbody><tr><td style=3D"width:50px;"><img alt=3D"Ankama" t=
+itle=3D"" height=3D"auto" src=3D"http://staticns.ankama.com/comm/mailing/re=
+sponsive/ankama.png" style=3D"border:none;border-radius:0px;display:block;f=
+ont-size:13px;outline:none;text-decoration:none;width:100%;height:auto;" wi=
+dth=3D"50"></td></tr></tbody></table></td></tr></tbody></table></div><!--[i=
+f mso | IE]>
+      </td><td style=3D"vertical-align:top;width:480px;">
+=
+      <![endif]--><div class=3D"mj-column-per-80 outlook-group-fix" style=
+=3D"vertical-align:top;display:inline-block;direction:ltr;font-size:13px;te=
+xt-align:left;width:100%;"><table role=3D"presentation" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"100%" border=3D"0"><tbody><tr><td style=3D"word-w=
+rap:break-word;font-size:0px;padding:10px 25px;padding-top:0px;padding-bott=
+om:0px;padding-right:10px;padding-left:10px;" align=3D"left"><div style=3D"=
+cursor:auto;color:#fff;font-family:Ubuntu, Helvetica, Arial, sans-serif;fon=
+t-size:13px;line-height:22px;text-align:left;"><p style=3D"font-size: 12px;=
+color: #666666;line-height: 15px;font-family:arial;">
+=09=09=09=09    Ankama 2020, todos los derechos reservados.=20
+=09=09=09=09    <a href=3D"http://emailing.ankama.com/click?q=3D9EB29284E7C=
+399576384EB497ADB4D4F8122A87C9B74A0EF9F6BA90DAA0D1ED3" target=3D"_blank" st=
+yle=3D"color: #666666;text-decoration: none">Condiciones de uso</a><br>
+=09=09=09=09    <a href=3D"http://emailing.ankama.com/click?q=3D87B63B3437C=
+21353FC80A160ADE748E48122A87C9B74A0EF9F6BA90DAA0D1ED3" target=3D"_blank" st=
+yle=3D"color: #666666;text-decoration: none">Pol=C3=ADtica de confidenciali=
+dad</a> -
+=09=09=09=09    <a href=3D"http://emailing.ankama.com/click?q=3DD56004351FE=
+D01719AF7F4A205A1625F8122A87C9B74A0EF9F6BA90DAA0D1ED3" target=3D"_blank" st=
+yle=3D"color: #666666;text-decoration: none">Condiciones generales de venta=
+</a> -
+=09=09=09=09    <a href=3D"http://emailing.ankama.com/click?q=3D8DFB1AFBE59=
+9920452748577BE714D718122A87C9B74A0EF9F6BA90DAA0D1ED3" target=3D"_blank" st=
+yle=3D"color: #666666;text-decoration: none">Menciones Legales</a>
+=09=09=09    </p>
+=09=09=09    <p style=3D"font-size: 12px;color: #666666;line-height: 12px;f=
+ont-family:arial;">Para desinscribirte de la newsletter, <a href=3D"https:/=
+/account.ankama.com/es/unsubscribe?n=3DNLWAKFU&email=3Dpharsat@gmail.com" t=
+arget=3D"_blank" style=3D"color:#666666;font-size:12px;font-family:verdana;=
+">haz clic aqu=C3=AD</a></p></div></td></tr></tbody></table></div><!--[if m=
+so | IE]>
+      </td></tr></table>
+      <![endif]--></td></tr></tbody>=
+</table></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endi=
+f]--></div>
+<img src=3D"http://emailing.ankama.com/view_892F34282052C1F07=
+2507AEFCF320A6BC3E45E12C1E5D59733605DA56FCA07DD.gif" alt=3D"" width=3D"1" h=
+eight=3D"1" style=3D"display:none" /></body>
+</html>
+
+--_=_swift_v4_1591022358_8a80ba2ef426ae0a61910e0c99b9cd9b_=_--
+

@@ -1,0 +1,293 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:b605:0:0:0:0:0 with SMTP id s5csp3341464ili;
+        Tue, 1 Sep 2020 09:37:35 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJy8FM1wiuWL0kD835E5ny7ugKAxlgTwC5p6BBWX98tjQWl02NB0mTnO6YJUmpyJtGUUR2+a
+X-Received: by 2002:a0c:8b5d:: with SMTP id d29mr2703668qvc.172.1598978254950;
+        Tue, 01 Sep 2020 09:37:34 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1598978254; cv=none;
+        d=google.com; s=arc-20160816;
+        b=nAtGMJ0D3FwehvCyFKGR8W2Jj70G2mscEcsRCuT+TKztf+WrfFm7qFE82DJ/6UeRHY
+         YJAAm/wQSH4MgYsU5tsdDDH/6G3wdouwwoT/eCty3vj02ZUmVVdhvM77T63OCqzjWNa8
+         LBzoiMwXzWA5YEvfk8/oPuo52kNr+vBlXgRc8t7ql+DchYQYPF88OH/TsWSu/0GwyfRN
+         4ySKxs+cJmz3cZYKpzc9H7YQjDZFBsEFTMrurSX/rnIXce3y7J/QQseY+C7e7RIkynNA
+         fzOoZqmmQReY//rv5ZftYwxRKhLTpdq13fXI/Ycwo9KfGc1UiFaEXja+8WCnQBO4o0qf
+         JwJg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe:date:subject:to:from:dkim-signature;
+        bh=Ub2X8mj5beIpIOX4TJWIMHe1OhSaxwqEuf35OMsWINU=;
+        b=WvfA1myxVYvpti3o9YxxSDXl35/Ex9twcR7qy4fUP/mBUJuOGUfsa+vYDRQm/9L6po
+         /unX46XRHM5otlLnr7F2gOMD7FxuZFMt9WFKFUIFygWbgr1wl41iws2Xzvv1VNGQLLrh
+         G2Rn/7t6MR1JtByOOg7B4FM/rJrfvAgmaHOAhgj4Loq1APuXfLoV8KRhIwnNMzPdOiua
+         XCu5BKyHq0gbej+yxX5A8/h1QZpr4sFyU+cVYvIAVRF7N280WzZnlg4fxAZJuDp96vJ8
+         ferSSrrcWsIzT3slKo2UbXc28nBdgcHzoW9gBl7dyZT9O3I+/edu1DOEpnPRjz5bJ1ES
+         rjHA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@smartfitco.com.co header.s=11dkim1 header.b="bCUQmU/o";
+       spf=pass (google.com: domain of bounce-301_html-134709092-26793-514003612-312@bounce.smartfitco.com.co designates 13.111.171.175 as permitted sender) smtp.mailfrom=bounce-301_HTML-134709092-26793-514003612-312@bounce.smartfitco.com.co;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=smartfitco.com.co
+Return-Path: <bounce-301_HTML-134709092-26793-514003612-312@bounce.smartfitco.com.co>
+Received: from mta.smartfitco.com.co (mta.smartfitco.com.co. [13.111.171.175])
+        by mx.google.com with ESMTPS id dl15si1169957qvb.175.2020.09.01.09.37.34
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 01 Sep 2020 09:37:34 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-301_html-134709092-26793-514003612-312@bounce.smartfitco.com.co designates 13.111.171.175 as permitted sender) client-ip=13.111.171.175;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@smartfitco.com.co header.s=11dkim1 header.b="bCUQmU/o";
+       spf=pass (google.com: domain of bounce-301_html-134709092-26793-514003612-312@bounce.smartfitco.com.co designates 13.111.171.175 as permitted sender) smtp.mailfrom=bounce-301_HTML-134709092-26793-514003612-312@bounce.smartfitco.com.co;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=smartfitco.com.co
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=11dkim1; d=smartfitco.com.co;
+ h=From:To:Subject:Date:List-Unsubscribe:MIME-Version:Reply-To:List-ID:
+ X-CSA-Complaints:Message-ID:Content-Type; i=noreply@smartfitco.com.co;
+ bh=Ub2X8mj5beIpIOX4TJWIMHe1OhSaxwqEuf35OMsWINU=;
+ b=bCUQmU/o+T7SFL8qyesTMi4ayhix+gRcqLoBj1v7Of9AyIQ3wdQixYJryaPcmzyQ4pLRPUyo+0Oh
+   li+StEkcR4FdOSICQGjIC60usbCyjdFbr9xgqfA/oBdVnHXYPdyl62XSi/s7BIrV4eDHg0AKSWM+
+   DywabM7UECweFlMRhnHvAVXoGvpG878BELI23DqTGFbMpgqcNzohKAVND6Zw3yZHgd3ceBOTE0yp
+   Gy5Uw9fs1kj9wRWwS4FXNnBuvIyLwEG6Hpkt2Wr0CE+TOWgyY+mictjJD87rgCQOTwBtBzDTvMWQ
+   JWC9/Z6+u3OhxZSkmBcX/yFxg2QFpui8WnTBrw==
+Received: by mta.smartfitco.com.co id h9pscu2fmd4t for <pharsat@gmail.com>; Tue, 1 Sep 2020 16:35:19 +0000 (envelope-from <bounce-301_HTML-134709092-26793-514003612-312@bounce.smartfitco.com.co>)
+From: "Smart Fit Colombia" <noreply@smartfitco.com.co>
+To: <pharsat@gmail.com>
+Subject: =?UTF-8?B?wqFUdSBzZWRlIHlhIGVzdMOhIGFiaWVydGEh8J+lsw==?=
+Date: Tue, 01 Sep 2020 10:35:19 -0600
+List-Unsubscribe: <mailto:leave-fd571770740b5c392848-fe2c157371630474751d72-fef41676726d07-fe3911717164047e731572-ff69177177@leave.smartfitco.com.co>
+MIME-Version: 1.0
+Reply-To: "Smart Fit Colombia" <noreply@smartfitco.com.co>
+List-ID: <514003612.xt.local>
+X-CSA-Complaints: whitelist-complaints@eco.de
+X-SFMC-Stack: 11
+x-job: 514003612_26793
+Message-ID: <bounce-301_HTML-134709092-26793-514003612-312@bounce.smartfitco.com.co>
+X-Return-Path: bounce-301_HTML-134709092-26793-514003612-312@bounce.smartfitco.com.co
+Feedback-ID: 514003612:26793:13.111.171.175:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="kUfSufeE88lT=_?:"
+
+This is a multi-part message in MIME format.
+
+--kUfSufeE88lT=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+ Web Version:  http://click.smartfitco.com.co/?qs=59c33c442e520351e888445e1abf56bf3952507bca3b182c852f80e6d6502aa203e98693a2bb38b0c3a60443c2bb7634cbf8c7c07d774ce28745a5a513150684
+----------------------------------------
+ 
+
+ 
+http://click.smartfitco.com.co/?qs=59c33c442e5203514bf2a59a78bab497c2ce63b3d53fbb7bf8b6f12da52e9b38727acafe8dd44661e012bbfd76d1caa49bba78e16277fc52b95940fbcf8aff77 
+
+
+ 
+ 
+
+
+ 
+----------------------------------------
+This email was sent by: Smart Fit
+Carrera 42 # 3 Sur 81 Torre Norte piso 6 - Milla de Oro, 
+Medellín, Antioquia, 050021 CO 
+
+Privacy Policy:  http://click.smartfitco.com.co/?qs=59c33c442e520351f2bb3dbce09cbe113be0110d586ff3403de02be83e61b9f14357da8e37de2a4ac591ead10726c0dd8e6ae6c57000a77477f955cacbe9df37
+Update Profile: http://click.smartfitco.com.co/profile_center.aspx?qs=3432e05c4f0cd779badfc8541090de25ea69d939a75d249613a3c433c45178aa8a5bb57c90b2fe02d08696268635ab470d6a2c06cfdb6941b6ec42fbbe56a792
+Manage Subscriptions:  http://click.smartfitco.com.co/subscription_center.aspx?qs=3432e05c4f0cd77972a5a34028260a27f77ecbcede0a6a2b0c3128f4377b0c758494c258b9ee755f17edf16fb4e9c4f150fa2e593243e5cc86c9bfb6c14dc5e7
+Unsubscribe:  http://click.smartfitco.com.co/unsub_center.aspx?qs=3432e05c4f0cd77972a5a34028260a27f77ecbcede0a6a2b0c3128f4377b0c7568f0deb93fba4977935f95aa76deca783ac391c6e6083a1e21ffa5b7007152e29681224669dc3963
+
+ 
+
+
+--kUfSufeE88lT=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      ReadMsgBody{ width: 100%;}
+      .ExternalClass {width: 100%;}
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+      body {-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;margin:0 !important;}
+      p { margin: 1em 0;}
+      table td { border-collapse: collapse;}
+      img {outline:0;}
+      a img {border:none;}
+      @-ms-viewport{ width: device-width;}
+    </style>
+    <style type="text/css">
+      @media only screen and (max-width: 480px) {
+        .container {width: 100% !important;}
+        .footer { width:auto !important; margin-left:0; }
+        .mobile-hidden { display:none !important; }
+        .logo { display:block !important; padding:0 !important; }
+        img { max-width:100% !important; height:auto !important; max-height:auto !important;}
+        .header img{max-width:100% !important;height:auto !important; max-height:auto !important;}
+        .photo img { width:100% !important; max-width:100% !important; height:auto !important;}
+        .drop { display:block !important; width: 100% !important; float:left; clear:both;}
+        .footerlogo { display:block !important; width: 100% !important; padding-top:15px; float:left; clear:both;}
+        .nav4, .nav5, .nav6 { display: none !important; }
+        .tableBlock {width:100% !important;}
+        .responsive-td {width:100% !important; display:block !important; padding:0 !important; }
+        .fluid, .fluid-centered {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        /* MOBILE GLOBAL STYLES - DO NOT CHANGE */
+        body { padding: 0px !important; font-size: 16px !important; line-height: 150% !important;}
+        h1 { font-size: 22px !important; line-height: normal !important;}
+        h2 { font-size: 20px !important; line-height: normal !important;}
+        h3 { font-size: 18px !important; line-height: normal !important;}
+        .buttonstyles {
+          font-family:arial,helvetica,sans-serif !important;
+          font-size: 16px !important;
+          color: #FFFFFF !important;
+          padding: 10px !important;
+        }
+        /* END OF MOBILE GLOBAL STYLES - DO NOT CHANGE */
+      }
+      @media only screen and (max-width: 640px) {
+        .container { width:100% !important; }
+        .mobile-hidden { display:none !important; }
+        .logo { display:block !important; padding:0 !important; }
+        .photo img { width:100% !important; height:auto !important;}
+        .nav5, .nav6 { display: none !important;}
+        .fluid, .fluid-centered {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
+    </style>
+    <!--[if mso]>       <style type="text/css">           /* Begin Outlook Font Fix */           body, table, td {               font-family: Arial, Helvetica, sans-serif ;               font-size:16px;               color:#000000;               line-height:1;           }           /* End Outlook Font Fix */       </style>     <![endif]-->
+  </head>
+  <body bgcolor="#ffffff" text="#000000" style="background-color: #ffffff; color: #000000; padding: 0px; -webkit-text-size-adjust:none; font-size: 16px; font-family:arial,helvetica,sans-serif;"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">Agenda tu entrenamiento</div>
+    <div style="font-size:0; line-height:0;"><img src="http://click.smartfitco.com.co/open.aspx?ffcb10-fef41676726d07-fe6015787562057a7611-fe3911717164047e731572-ff6b177074-fe2c157371630474751d72-ff69177177" width="1" height="1"></div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+      <tr>
+        <td align="center" valign="top">
+          
+<table width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#fff;"> 
+    <!-- HEADER CONTENT -->
+    <tr>
+        <td align="center" valign="top" style="background:#fff;" width="100%">
+        <table class="container" cellpadding="0" cellspacing="0" width="600">
+            <tr>
+                <td align="right" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 11px; color: #959595;" padding:10px 25px 25px 0px;">
+            <a href="http://view.smartfitco.com.co/?qs=fc1212a93cba3ed02e9542fc99fd0c208ee6b084b1cb0f52bf2cfabc8529191e5c221f791f1ec4f36af277e8da1623fd087e895ebd9dc83ee2b814cedb8df3168d627b5b32c2112af1862b10a4d5277c"  target="_blank" style="font-size:11px; color: #959595; text-decoration: none;">Web Version</a>
+                </td>
+            </tr>
+        </table>
+        </td>
+    </tr>  
+</table>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <table cellspacing="0" cellpadding="0" border="0" width="600" class="container" align="center">
+            <tr>
+              <td>
+                <table class="tb_properties border_style" style="background-color:#FFFFFF;" cellspacing="0" cellpadding="0" bgcolor="#ffffff" width="100%">
+                  <tr>
+                    <td align="center" valign="top">
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                          <!-- added padding here -->
+                          <td class="content_padding" style="">
+                            <!-- end of comment -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tr> <!-- top slot -->
+                                <td align="center" class="header" valign="top">
+                                  <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                          <td align="left" valign="top">
+                                            <table cellspacing="0" cellpadding="0" style="width:100%">
+                                              <tbody>
+                                              <tr>
+                                                <td class="responsive-td" valign="top" style="width: 100%;">
+                                                  <table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0"><tr><td align="center"><a href="http://click.smartfitco.com.co/?qs=59c33c442e5203514bf2a59a78bab497c2ce63b3d53fbb7bf8b6f12da52e9b38727acafe8dd44661e012bbfd76d1caa49bba78e16277fc52b95940fbcf8aff77" title=""   data-linkto="https://"><img data-assetid="10611" src="http://image.smartfitco.com.co/lib/fe3911717164047e731572/m/1/a3468531-2ff4-418c-b9f6-a4da71de689b.jpg" alt="" width="100%" style="display: block; width: 100%; height: auto; padding: 0px; text-align: center;"></a></td></tr></table></td></tr></table>
+												  
+                                                </td>
+                                              </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#fff;">
+     
+    <!-- FOOTER CONTENT -->
+    <tr>
+        <td align="center" valign="top" style="background:#fff;" width="100%">
+        <table class="container" cellpadding="0" cellspacing="0" width="600">
+            <tr>
+                <td align="center" style="font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 11px; color: #959595; padding:0px 0px 25px 0px;">
+                This email was sent by: 
+                <span>Smart Fit<br>
+                Carrera 42 # 3 Sur 81 Torre Norte piso 6 - Milla de Oro, Medellín, Antioquia, 050021 CO</span>
+                <br>
+                <br>
+                <a href="http://click.smartfitco.com.co/?qs=59c33c442e5203516c056ee2e88943f1d323ae873ef5d9e3d0afb86e98c0cb672d888a364bc5b547736f24a357d77a73df4b1f1cd0cf18a1a97dee7d8c8b25a3"  target="_blank" style="font-size:12px; color: #959595; text-decoration: none; font-weight:bold;">Privacy Policy</a>
+                <br>
+                <br>
+                <a href="http://click.smartfitco.com.co/profile_center.aspx?qs=3432e05c4f0cd779badfc8541090de25ea69d939a75d249613a3c433c45178aa8a5bb57c90b2fe02d08696268635ab47b550810bd3b95a9f960d41335b060fec"  target="_blank" style="font-size:12px; color: #959595; text-decoration: none; font-weight:bold;">Update Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://click.smartfitco.com.co/subscription_center.aspx?qs=3432e05c4f0cd77972a5a34028260a27f77ecbcede0a6a2b0c3128f4377b0c758494c258b9ee755f17edf16fb4e9c4f1cdcd69068433467e8e100cea59009921"  target="_blank" style="font-size:12px; color: #959595; text-decoration: none; font-weight:bold;">Manage Subscriptions</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://click.smartfitco.com.co/unsub_center.aspx?qs=3432e05c4f0cd77972a5a34028260a27f77ecbcede0a6a2b0c3128f4377b0c7568f0deb93fba4977935f95aa76deca783f474596e0d2a3e735f9b13d741b825533fc457fd77cfb3d"  target="_blank" style="font-size:12px; color: #959595; text-decoration: none; font-weight:bold;">Unsubscribe</a>
+                </td>
+            </tr>
+        </table>
+        </td>
+    </tr> 
+</table>
+
+        </td>
+      </tr>
+    </table>
+  
+<!--
+X-Return-Path: bounce-301_HTML-134709092-26793-514003612-312@bounce.smartfitco.com.co
+-->
+</body>
+</html>
+
+--kUfSufeE88lT=_?:--
+

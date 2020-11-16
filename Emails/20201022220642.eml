@@ -1,0 +1,761 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp37659ild;
+        Thu, 22 Oct 2020 15:09:46 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzupWP+2Nz3srpRtzlOZ0Kir3o6MXANp5sXbmQ8P5W/KzLc92sXVTwVod8v7YKiWim7qtVM
+X-Received: by 2002:a02:7112:: with SMTP id n18mr3427236jac.34.1603404586809;
+        Thu, 22 Oct 2020 15:09:46 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1603404586; cv=none;
+        d=google.com; s=arc-20160816;
+        b=U3ES+eqreeoxlAorWVVmi7e7qOMtK3kxXXO6PdSfyAf3801fhxJFI7oJvwoiXDGAFk
+         KMYoXjRAE8RxD9fd8Nl+rvO1KbUzWPIuQOp+SbVpmq+NEQrD+JmoIwjJ7Dp8BREPRdZr
+         lxxKx7mc10TuV2pdBB5IXGaAMR3MUYRzyY7zIbOedep6fFlLz/WfISCr/3SCApEjlkUh
+         hQ22q3Gc+d2BTpkjmBZpTS0KwB4y0szPlHdLO4hwXAazV2g/zHaRhLloCoWKwbBg0ia5
+         ye21KdjpQiKuatlkBNOREk6ip4A+NFCmqfktssusoVivzc7ddmFlmKvMMn9K8DKb1MgV
+         YCTg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:from:to:reply-to
+         :message-id:sender:date:list-unsubscribe:list-unsubscribe-post
+         :dkim-signature:dkim-signature;
+        bh=4immCabX8OcmSVwUKz1GSPVHFIjzAf6ZrTqBJLT2+UM=;
+        b=yNNq2QutZ8c9F/rTmFWDUt6oRslm7Z5KrFl9L8CjgX55SWqXpNWex8uyrUGBi3n/DL
+         pkkHiPLbUWSxamZiMsGG5a+uj7KtpW+H8p3F3eQJ7PcksZS3/0SNgftaSJjaonOvWdcm
+         N4cIW3s/Xp6+ltQsIyxwrV07fYqPyfbkwWQkycJI2v9D1Nk2zuLVvpITzurfQN06xobo
+         SKhd1kKVlhvsMfDE4qiEYZKZwNl66N1WAm+DsXbaA4XmQae1Dkyi9JgXbZiobNuPxeFd
+         zGtdbHPIpw4aWiQeZOxFFLd2fT2GXmSezlhyun1Nxxka+t2Skn5VByK0LSefQ7Ga5rbj
+         8flg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@z.teachablemail.com header.s=krs header.b=RhWME1Rr;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=oXfpHJeb;
+       spf=pass (google.com: domain of bounce+b60f6d.1b8f22-pharsat=gmail.com@z.teachablemail.com designates 198.61.255.227 as permitted sender) smtp.mailfrom="bounce+b60f6d.1b8f22-pharsat=gmail.com@z.teachablemail.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=teachablemail.com
+Return-Path: <bounce+b60f6d.1b8f22-pharsat=gmail.com@z.teachablemail.com>
+Received: from do255-227.mailgun.net (do255-227.mailgun.net. [198.61.255.227])
+        by mx.google.com with UTF8SMTPS id y10si1411400ilk.104.2020.10.22.15.07.27
+        for <pharsat@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 22 Oct 2020 15:09:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+b60f6d.1b8f22-pharsat=gmail.com@z.teachablemail.com designates 198.61.255.227 as permitted sender) client-ip=198.61.255.227;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@z.teachablemail.com header.s=krs header.b=RhWME1Rr;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=oXfpHJeb;
+       spf=pass (google.com: domain of bounce+b60f6d.1b8f22-pharsat=gmail.com@z.teachablemail.com designates 198.61.255.227 as permitted sender) smtp.mailfrom="bounce+b60f6d.1b8f22-pharsat=gmail.com@z.teachablemail.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=teachablemail.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=z.teachablemail.com;
+ q=dns/txt; s=krs; t=1603404586; h=Content-Transfer-Encoding:
+ Mime-Version: Content-Type: Subject: From: To: Reply-To: Message-Id:
+ Sender: Date: List-Unsubscribe: List-Unsubscribe-Post: X-Feedback-Id;
+ bh=4immCabX8OcmSVwUKz1GSPVHFIjzAf6ZrTqBJLT2+UM=; b=RhWME1RrKFiyaid6Th4wkEFtzeiDrWn/gY/6WpUdfi+2iBCKFL5KEPQnn4C7F1fGS3Ik8kwR
+ jn6C1qGC6jHEXKmOw47C9E8q8SONvKWPS+QLcx81puzEq7Vm27SSUE8PCyAml0hxCH0UjunG
+ FkQrXtaQgQaAi8un5+wnV24ppS4=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg;
+ t=1603404586; h=Content-Transfer-Encoding: Mime-Version: Content-Type:
+ Subject: From: To: Reply-To: Message-Id: Sender: Date:
+ List-Unsubscribe: List-Unsubscribe-Post: X-Feedback-Id;
+ bh=4immCabX8OcmSVwUKz1GSPVHFIjzAf6ZrTqBJLT2+UM=; b=oXfpHJeblZ6Xm7RqQZkpNwit//zaNGRU35Nd48g2HE+V438mSmuL5+rLafxNn+hb2PqfWml9
+ OLihSqEkS45sL+b3sPN/rUV1+2656mDSbigdUHdQuAPqtV5tICvYc9VZKfWwRub84j+ezEYd
+ 5jGAAbdgR19him4omEadCBi/6+4=
+X-Feedback-Id: 5c1272ffff8b9e0001765639:mailgun
+X-Mailgun-Sending-Ip: 198.61.255.227
+X-Mailgun-Sid: WyI2ZTgxYSIsICJwaGFyc2F0QGdtYWlsLmNvbSIsICIxYjhmMjIiXQ==
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <mailto:u+mq6tcyrymyzdejtjhuzdamrqgeydemrsgiydmnbsfyys4mrsgvcugqscg5btmqkeimztoqrfgqyhultumvqwg2dbmjwgk3lbnfwc4y3pnutgqpjwhe2winjwgy2tknrwge3tknjtge3tkztdgy4dizbxgzstoojsgetg2zltonqwozk7nfsd2jjsgi3tmobrhazskmrsezsw2yljnrpxezldmvuxa5c7nfsd2jjsgi3dimzxgazdkmzreuzdejtuhusteqjgoi6xa2dbojzwc5bfgqygo3lbnfwc4y3pnuthgy3in5xwyx3jmq6skmrsge2dmnrygqstemq@z.teachablemail.com>,
+ <https://link.mailgun.com/u/eJw9TssOgyAQ_Bo5GlhhwQOHavsdBgGFRKMRTv36bhvTSXYz2cfMBCtmswCwbIEDFxwIHCW0ogVQr3EY9IiP59jpoZH83dbofHLzFneXt9YfO0sWexUUoqISWqmO2uLRyKAx6h4E22Mpbo1TDrYB0GiE6Yiwn8h0RR_zWe8tyk5zIJHvQaXJg132TO4qrlKC9e9bfDqO7f4SEsmQyAcvZzpz>
+X-Mailgun-Batch-Id: 5f92027542f9861fb1431c3c
+Received: by luna.mailgun.net with HTTP; Thu, 22 Oct 2020 22:06:45 +0000
+Date: Thu, 22 Oct 2020 22:06:42 +0000
+Sender: notifications@z.teachablemail.com
+Message-Id: <20201022220642.1.225ECBB7C6ADC37B@z.teachablemail.com>
+X-Mailgun-Variables: {"email_receipt_id": "\"643702531\"", "message_id":
+ "\"768183\"", "school_id": "\"146684\""}
+Reply-To: "Code with Mosh" <support@codewithmosh.com>
+To: 'Cristian Gallego' <pharsat@gmail.com>
+From: Code with Mosh <notifications@z.teachablemail.com>
+Subject: Forum temporarily down
+Content-Type: text/html; charset="ascii"
+Mime-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+<!--
+Email template: email_header
+Description: The email header used across all templates
+ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+/* -------------------------------------
+Email template: email_styles
+Description: The CSS used across all email templates.
+------------------------------------- */
+
+
+/* -------------------------------------
+GLOBAL
+------------------------------------- */
+.rounded-gravatar {
+  border-radius: 30px;
+  margin-top: -5px;
+}
+
+.aligned-user {
+  position:relative;
+  clear:both;
+}
+
+.condensed-users {
+  margin-left:120px;
+  margin-right:120px
+}
+
+.clear-elements {
+  clear: both;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.6;
+}
+
+.table-wrapper, .legal-wrapper {
+  width: 700px;
+  margin: auto;
+}
+
+.table-wrapper {
+  margin-top: 50px;
+  box-shadow: 0 8px 20px #e3e7ea !important;
+  -webkit-box-shadow: 0 8px 20px #e3e7ea !important;
+  -moz-box-shadow: 0 8px 20px #e3e7ea !important;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+}
+
+/* -------------------------------------
+ELEMENTS
+------------------------------------- */
+p a {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  color: #fc4364;
+}
+
+.btn-primary {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #FFF !important;
+  background-color: #fc4364;
+  border: solid #fc4364;
+  line-height: 2;
+  max-width: 100%;
+  font-size: 14px;
+  padding: 8px 40px 8px 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* -------------------------------------
+BODY
+------------------------------------- */
+table.body-wrap {
+  width: 100%;
+  padding: 30px 55px;
+  background: #f6f6f6;
+  margin: 0;
+  font-size: 100%;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.container {
+  display: block !important;
+  margin: 0 auto !important; /* makes it centered */
+  clear: both !important;
+}
+
+/* -------------------------------------
+HEADER
+------------------------------------- */
+.header {
+  background-repeat: no-repeat;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 80px;
+  background: #ffffff;
+  background-size: 300px;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  line-height: 55px;
+  padding-top: 40px;
+  text-align: center;
+  color: #707070;
+}
+
+.header img {
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.header-title {
+  background: #ffffff;
+  color: #707070;
+  padding: 0px 60px 40px;
+  text-align: center;
+  
+    padding-bottom: 0px;
+  
+  margin-bottom: 40px;
+}
+
+.header-school-title {
+  font-weight: bold;
+}
+
+.header-title h1, .header-title h1 a {
+  font-size: 28px;
+  line-height: 40px;
+  padding-top: 0px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: #707070;
+}
+
+.content .header-title h1:first-child {
+  padding-top: 0px;
+}
+
+.header-title p, .header-title p a {
+  color: #707070;
+  opacity: 0.8;
+}
+
+.header-margin-overide {
+  margin-top: -40px;
+}
+
+/* -------------------------------------
+CONTENT
+------------------------------------- */
+
+.content {
+  margin: 0 auto !important; /* makes it centered */
+  clear: both !important;
+  background: #fff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding-bottom: 40px;
+}
+
+.content p, .content h1, .content h2, .content table, .content hr {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.content p:first-child, .content h1 {
+  padding-top: 40px;
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.condensed-width {
+  max-width: 510px;
+  margin: auto;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.content-bordered {
+  padding: 24px;
+  border: 1px solid #EFEFF5;
+}
+.content-bordered tr {
+  margin: 24px 0;
+}
+
+span .left {
+  float: left;
+}
+span .right {
+  float: right;
+}
+
+/* -------------------------------------
+FOOTER
+------------------------------------- */
+.footer {
+  padding-top: 30px;
+  padding-bottom: 55px;
+  width: 100%;
+  clear: both !important;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 12px;
+  color: #666;
+}
+
+.footer a {
+  color: #999;
+}
+
+.footer .social-icons {
+  padding-top: 5px;
+}
+
+
+/* -------------------------------------
+INVOICE RECEIPT
+------------------------------------- */
+
+h1.price-jumbo {
+  text-align: center;
+  font-weight: 200;
+  font-size: 40px;
+  padding-top: 10px;
+}
+
+.data-table {
+  width: 550px;
+  margin:auto;
+  margin-bottom: 30px;
+}
+
+.data-table td {
+  color: #a0a5ad;
+  letter-spacing: 0.6px;
+  font-size: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px dashed #B5C2D3;
+}
+
+.data-table .total td, .data-table .total td.text-right {
+  background: #f7f7f7;
+  border: 0;
+  color: #4f5c63;
+  font-weight: bold;
+}
+
+.data-table td a {
+  color: #fc4364;
+}
+
+.data-table td.text-right {
+  color: #4f5c63;
+}
+
+/* -------------------------------------
+TYPOGRAPHY
+------------------------------------- */
+a {
+  color: #fc4364;
+  word-wrap: break-word;
+}
+
+h1, h2, h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  color: #47505E;
+  margin: 0px 0 10px;
+  line-height: 1.2;
+  font-weight: 200;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.small {
+  font-size: 80%;
+  line-height: 250%;
+  vertical-align: middle;
+}
+
+.margin-none {
+  margin: 0 !important;
+}
+
+.padding-none {
+  padding: 0 !important;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 45px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+p, ul, ol {
+  font-weight: normal;
+  padding: 0;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  margin-bottom: 1.3em;
+  font-size: 15px;
+  color: #47505E;
+}
+
+p:first-child {
+  margin-top: 0px;
+}
+
+ul li, ol li {
+  margin-left: 50px;
+  list-style-position: inside;
+}
+
+hr {
+  border-top-width: 0;
+}
+
+/* Unsubscribe Link */
+a.unsubscribe-link {
+  font-size: 12px;
+  margin-top: 50px;
+  display: block;
+  text-align: center;
+  text-decoration: underline;
+}
+
+/* Legal Text */
+p.legal-text {
+  font-size: 12px;
+  margin-top: 50px;
+}
+
+/* -------------------------------------
+TAX FORMS
+------------------------------------- */
+.tax-form-box {
+  border: solid;
+  border-width: 2px;
+  border-color: #808080;
+  border-radius: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-top: 20px;
+  height: 45px;
+  text-align: center;
+  color: #44443f;
+}
+
+/* -------------------------------------
+FREE TRIAL ORDER SUMMARY
+------------------------------------- */
+
+.free-trial-summary p, .free-trial-summary .small-text {
+  font-size: 12px;
+  line-height: 19px;
+  color: black;
+}
+
+.free-trial-summary p a {
+  color: #20BDAF !important;
+  text-decoration: none;
+}
+
+.free-trial-summary table {
+  font-size:14px;
+  line-height:21px;
+  border-collapse:collapse;
+  width: 100%;
+}
+
+.free-trial-summary table td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.free-trial-summary .heading {
+  font-size: 16px;
+  line-height: 24px;
+  padding-top: 10px;
+}
+
+.free-trial-summary .gray {
+  color: #6B6D7C;
+}
+
+.free-trial-summary .border-row {
+  border-top: 1px solid #EFEFF5;
+}
+
+.free-trial-summary .content-bordered {
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* -------------------------------------
+LEGACY STUFF
+These are no longer needed, but will save old customized templates from breaking
+------------------------------------- */
+.content h1.headline:first-child, .content h2.headline:first-child {
+  padding-top: 40px;
+}
+
+.content h2.subline {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.invoice {
+  margin: 20px auto;
+  text-align: left;
+  width: 80%;
+}
+
+.invoice td {
+  padding: 15px 10px;
+  font-size: 110%;
+  line-height: 125%;
+}
+
+.invoice .invoice-details {
+  font-size: 19px;
+}
+
+.invoice .invoice-items {
+  width: 100%;
+}
+
+.invoice .invoice-items td {
+  border-top: #eee 1px solid;
+}
+
+.invoice .invoice-items .total td {
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  font-weight: 700;
+}
+
+.alignright {
+  text-align: right;
+}
+
+.personal-details {
+  margin: 0px auto;
+  text-align: left;
+  width: 80%;
+}
+
+.personal-details td {
+  padding: 15px 10px;
+  font-size: 100%;
+  line-height: 125%;
+}
+
+.personal-details .detail-items {
+  width: 100%;
+}
+
+.personal-details .detail-items tr:first-child td {
+  border-top: #eee 1px solid;
+}
+
+.personal-details .detail-items td {
+  border-bottom: #eee 1px solid;
+}
+
+.personal-details .detail-items .stripe {
+  background: #fcfcfc;
+}
+
+.personal-details .detail-items .alignleft {
+  font-weight: bold;
+}
+
+.personal-details .detail-items .alignright {
+  border-left: 1px solid #eee;
+  padding-left: 20px;
+}
+
+/*
+INTAKE FORM EMAILS
+*/
+
+
+.intake__response-header {
+  padding-left: 40px;
+  margin-top: 48px;
+}
+
+.intake__question {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: -14px;
+}
+
+.intake__answer {
+  font-size: 14px;
+}
+
+</style>
+
+
+<style data-roadie-ignore>
+/* -------------------------------------
+RESPONSIVENESS
+!importants in here are necessary since email clients
+don't automatically override these
+------------------------------------- */
+@media only screen and (max-device-width: 700px) {
+  .table-wrapper, .legal-wrapper {
+    width: 100% !important;
+    margin-top: 0px !important;
+  }
+
+  .table-wrapper {
+    border-radius: 0px !important;
+  }
+
+  .header {
+    border-radius: 0px !important;
+  }
+
+  .header-title {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .header-title h1 {
+    font-size: 25px !important;
+  }
+
+  .data-table {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+</style>
+  </head>
+  <body>
+    <table style="background: #F5F6F7;" width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>
+          <!-- body -->
+          <table cellpadding="0" cellspacing="0" class="table-wrapper" style="box-shadow: 0 8px 20px #e3e7ea !important; -webkit-box-shadow: 0 8px 20px #e3e7ea !important; -moz-box-shadow: 0 8px 20px #e3e7ea !important;">
+            <tr>
+              <!-- Brand Header -->
+                <td class="container header">
+                  
+                    <img src="https://www.filepicker.io/api/file/9OxlMI8TjGM2W6ELElMd" height="64" width="64">
+                  
+               </td>
+            </tr>
+
+  <tr>
+    <td class="content">
+      <!--
+Email template: email
+Description: This email is sent to a student when they are emailed directly.
+ -->
+
+<!-- Content -->
+<p>Hi guys,
+</p>
+<p>As some of you may know, our forum has been flooded with spams lately. We've been trying to do everything we could to minimize the issue but we've hit a roadblock since we're using a free service called FreeFlaurm.
+</p>
+<p>So, based on some students' feedback, I've decided to move our forum to Discourse. It's a lot better and more feature-rich. Plus, it's safer and free of spam. However, we'll lose all the existing discussions. Unfortunately, there's no way for us to transfer the existing discussions to the new platform. So, I apologize for the inconvenience. But I'm pretty sure that the new platform is better for everyone.
+</p>
+<p>The transition will take a few days so you won't be able to access the forum in the meantime.
+</p>
+<p>Thank you for your patience,
+</p>
+<p>Mosh
+</p>
+
+    </td>
+  </tr>
+</table>
+
+
+
+<table width="100%">
+  <tr>
+    <td>
+      <center>
+        
+          <a data-skip-utm-params="true" data-skip-click="true" href="http://e.z.teachablemail.com/c/eJw9UMtuwjAQ_BpyK7I3juMccoh5REUVqEhQ0gtyHAebPBWHpuXrayrU1R5mZ1aj0RQxzlkJ4JkYECCMwA2iBOZ4DhCsFpyHC5osF37IZwTd56MSUou8Vo0w9Vx2jadjnymmQIaYFqVUQSlLKTAGlkfC0X7k1bEex37mJzNYu5VdoSYz6qaz-mHhqIdbZWTloL3lVg6mH03XWnfzROeLQ2XWLe-y0-aenfbJJ2AtPqZbBtHIr126P-57_qbSclpvXi_1UcLxh19tsq8qs2q3V5FGX_mafW-XGeyW7-lu4oeXF0IokTIKUYEIQTjwoaQMFJZOUI7FpZBhVAYuxK19xsqV1yhrxUWdTRHPAELKMPMd8P4qOQ9KKhf-qVLihwgCHz8ehrjXYrBidE1e_vuzUndd_fzHhFJGHPgFbLZ-Vw" class="unsubscribe-link">Unsubscribe from Marketing Emails</a>
+
+        
+      </center>
+    </td>
+  </tr>
+
+        </table>
+      <!-- /body -->
+      <!-- footer -->
+      <div class="footer">
+        <p>&copy; Code with Mosh</p>
+        
+      </div>
+      <br>
+    </td>
+  </tr>
+</table>
+
+<!-- the </table> close is student_email_footer -->
+<img width="1px" height="1px" alt="" src="http://e.z.teachablemail.com/o/eJw9jUEOgyAURE8jS8L_IOCCRbU9h0H4ColGI656-tLGdFaTzMyb6GCyMyLLDgUKEFgltEIOHLF9DX1vBv14DtL0jRJvfpEPyU8rbT6vPOwbSw4CKUFdUNHLDrrKEYYMQBu9jgpmVkLa93XM0TWIoLS2qhr2Y4wnBcrHdadaSSOwlfAtnO5I_iz-qtfL_3CjUvxC98BoC1ZW8wFU_Dny">

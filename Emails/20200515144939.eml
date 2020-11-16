@@ -1,0 +1,610 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a19:4283:0:0:0:0:0 with SMTP id p125csp520741lfa;
+        Fri, 15 May 2020 07:49:40 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJx7vMoylYRi0KGl2jPdvC702q9UjoylZrPeDqM7djpNT5zHJuTlMV+uJEmKcylbBsoAF3Or
+X-Received: by 2002:a50:f057:: with SMTP id u23mr3176630edl.238.1589554180593;
+        Fri, 15 May 2020 07:49:40 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1589554180; cv=none;
+        d=google.com; s=arc-20160816;
+        b=DoVE3C+N33b9C3MIhy5ntS3Dlzppn9P7S5MlL0PPZYXWH6kEgV/4tt39aUmUIzmfUd
+         mnPbFMpFVKn0QnYNEB2HrGt7fdUIn/52V8DdHr/hHdS6FgfLFsmYDwdIb4Wv5VEnqgI9
+         uwwK44hmyfrL6f5YKNBrflVemR6FtcN9fLqP8PJOucOM/yB1FFeuhVoHqwVmGgQX8dfA
+         dUbGPsXZEoPMLdVtCNvEAlg6CLm8sDT0XdRbMCiYUntjKks3cLirrXfv4hOkRmcre2za
+         YOF6s6MH/lu0JNoUA3X6LyP4sGVOqGGagqR/MR1P9k8ccxl6L66v000oVW8nOQIBkQEo
+         xt4Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:message-id:to:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=9foEpGyovh72zlD7/UK1PGowVmXEaS1WHqXmgIcpczY=;
+        b=ryr4nT7IVXbOqqzqsvpJkpF0/iCV5+YPYmzgfH3NfR8ePbv0UFLC+BAgivAnlP/9EE
+         0Y/N2n+CJ7OFWtklYRlGAnbNmN4HyzimBNoCmLFNRPD9HvhxtDkcUjwi0U0v0/zoM87+
+         zhEXo3mGT0mQHwEtcgXrmL/g9K6AArSR+MpFRQVAK58g52s0caFGRdiBmyyHbwM8tjRE
+         MbJY4OVHL9it9I7Zq2rcQTb4rLxXxSPdIKDwEkKGyQiXQIYVRjubTRasjZiIRxEuFLaW
+         20YKdBlfSYBtne2WHccqWIEUxelvk2xtudi9WrCrmh9jrAI0PCV0nnzQvF3ppZQDEzEZ
+         lo4g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=AGf8GTAH;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Loggvqgq;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+Return-Path: <bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com>
+Received: from o11.ptr1968.sg.mercadolibre.com (o11.ptr1968.sg.mercadolibre.com. [149.72.129.250])
+        by mx.google.com with ESMTPS id b13si1369823ejg.10.2020.05.15.07.49.39
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 15 May 2020 07:49:40 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) client-ip=149.72.129.250;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=AGf8GTAH;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Loggvqgq;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.250 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=mercadolibre.com; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject; 
+	s=s1; bh=9foEpGyovh72zlD7/UK1PGowVmXEaS1WHqXmgIcpczY=; b=AGf8GTA
+	HID+BIZqc6UhB1oQw3qF1j2kbmjl/mM+QZTHCeUflmdcUzBbz9C10Ekcg8WZ08cP
+	4/rV6YpyTytTU4aeEsObY6EYKgqcqOYKSJ9STysGjrmKqYkI1kWDyvcna2QS9JaB
+	69MpzXKUg8LIp1x1jQ0fO+Zr/CAX37Vr5HHM=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:x-feedback-id; 
+	s=smtpapi; bh=9foEpGyovh72zlD7/UK1PGowVmXEaS1WHqXmgIcpczY=; b=Lo
+	ggvqgqXRKy22EMz8bJxV7bHrqBbbWjJYVeI4rYZQb6Qu04gcEbFGX2qnoV0TIsro
+	pSJHDGFqhBSr8C4JxKW9tORkm6j4AteeCONqHos+mz5J5bGs3le4Ptku3MUQNcuL
+	m7a4t1n1l6D6mnEgrT1kk1d5iTZTwo1ksAoPlaEw0=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Date: Fri, 15 May 2020 14:49:39 +0000 (UTC)
+From: "Mercado Libre" <no-responder@mercadolibre.com>
+Mime-Version: 1.0
+To: pharsat@gmail.com
+Message-ID: <DbrPZllNQouAXDLRcpjhIg@geopod-ismtpd-4-2>
+Subject: =?UTF-8?B?VHUgcGFxdWV0ZSBlc3TDoSBlbiBjYW1pbm8=?=
+X-SG-EID: sqIrrLMbLsIyP9sBRWWxUF78JT7ZpfEH7TvBjG5fTpZ+zZhH8YM4XRoa3HfhxkmbZygkhGi7flLZX7
+ j91SuQ839+iJ0wvMC1X//Si2iDReH9JaPU/UE7d5WVXHHWa9qm82P3o4zwyUElQ6ZvT0uNhv+6DZxZ
+ yQHndUjFi/BzYBEnQdVDi8dIW4+zydYZ0YoVPDKI/4h5CJfDKP4knCjL6SQkVfJRY6Ml390Fc4rao3
+ E=
+X-SG-ID: YDTqBOjidbCUo/ar1oAtZu/aLAjXk9mZWRCp9TXDrYtaIdu+FU2rHhmkS2/levk8q67eYd+M/DRwdD
+ Ry5Bx46Go2rHWtbiceFIC84xz7ze67vVoTJv5WdaJyreeTYro0tOlo2C72JTwhC9aCUWlrisRQ7fn6
+ VY6h1sjyUv0dAP40LpBVsJ5+DouHIVp/v6tiGY/O+Ma0/sISc9M8i65HriT8B2a0O3vR8NnM7/S5Cg
+ mBUDHW87Eb4ulHd0NcWZR9ysiPQOgCgNwtwdN2EbMj6wEukejuj3k9JuhaN3B9HM+mAU6Fg0JCBDKb
+ TlvMQ5tt3nWS2zGxrH2fVV3RYmHL30Z9po+KsUuQ+6gze0WXSUQwGdpDSidww9/3Uw1I0ivIDz1z4k
+ BlmqL2Iu6H8mvrHD4q63ovrDXvkTplZmJf7HwWvIoaxqprKQEwmoyKCoweQkjExtjvdQXE/r9b2zwe
+ VT7SQyG65BsUZxG9NJonWj4=
+X-Feedback-ID: 9647731:O1uIaeJcLGiMqc34AnjtHEL1fX9OufqyqcerW4Ul12s=:a8ycujShxZ5z3gGodwbKlQ==:SG
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0, minimum-scale=3D1.0, maximum-scale=3D1.0, user-scalable=3Dno">
+  <meta name=3D"format-detection" content=3D"telephone=3Dno">
+  <link rel=3D"stylesheet" href=3D"https://http2.mlstatic.com/ui/webfonts/v=
+3.0.0/proxima-nova/300-400.woff2.css">
+  <meta charset=3D"utf-8">
+
+</head>
+<body>
+
+<style type=3D"text/css">
+
+table, tr, td, span, a {
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.title {
+  padding: 20px 0 45px 0;
+  text-align: center;
+}
+
+.main-card-shadow {
+  width: 78.2% !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.responsive-width div {
+  border-width: 0 !important;
+  border-bottom: none !important;
+}
+
+.div-table-wrapper {
+  padding: 0;
+}
+
+@media only screen and (min-width: 480px) {
+  .title {
+    padding-top: 20px !important;
+    padding-bottom: 45px !important;
+  }
+
+  .title span {
+    font-size: 26px !important;
+  }
+
+  .info-box span{
+    font-size: 12px !important;
+  }
+
+  .responsive-width div {
+    height: 30px;
+    border-width: 1px 1px 0 1px !important;
+    border-style: solid;
+    border-color: #f1f1f1;
+    margin: 0 auto;
+  }
+
+  .main-card-shadow {
+    box-shadow: 0 5px 10px #eeeeee !important;
+    border-width: 0 1px 2px 1px !important;
+    border-style: solid !important;
+    border-color: #efefef !important;
+    width: 78.2% !important;
+  }
+
+  .div-table-wrapper {
+    padding-bottom: 75px !important;
+  }
+
+  .responsive-width {
+    width: 78.2% !important;
+  }
+
+  .main-card-shadow,
+  .responsive-width {
+    width: 78.2% !important;
+  }
+
+  /*.card-title,*/
+  #card-title {
+    padding: 0 16% !important;
+  }
+}
+</style>
+
+
+<!-- PREHEADER -->
+
+=20=20
+=20=20=20=20
+      Tu paquete llegar=C3=A1 entre el<br>15 y 18 de mayo
+=20=20=20=20
+=20=20
+
+<!-- CONTAINER HACK - DONT REMOVE -->
+<style>
+@import url('https://http2.mlstatic.com/ui/webfonts/v3.0.0/proxima-nova/300=
+-400.woff2.css');
+</style>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"padding:0p=
+x;margin:0px;width:100%;">
+  <tbody><tr>
+    <td colspan=3D"3" style=3D"padding:0px;margin:0px;font-size:1px;height:=
+1px;" height=3D"1">&nbsp;</td>
+  </tr>
+  <tr>
+    <td style=3D"padding:0px;margin:0px;font-size:1px;">&nbsp;</td>
+    <td style=3D"padding:0px;margin:0px;" width=3D"590"><!-- max width goes=
+ here -->
+
+    <!-- PUT YOUR CONTENT HERE -->
+    <!-- ///////////////////// -->
+
+
+
+    <!-- HEADER -->
+      <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+">
+        <tbody>
+        <tr>
+          <td class=3D"logo" style=3D"padding: 11px 15px 8px 15px; backgrou=
+nd-color: #fbee00;">
+              <a href=3D"http://www.mercadolibre.com.co">
+                  <img alt=3D"MercadoLibre" border=3D"0" width=3D"125" src=
+=3D"https://http2.mlstatic.com/ui/navigation/1.6.2/mercadolibre/logo__large=
+@2x.png">
+              </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <!-- CONTENT -->
+
+      <!-- SUBHEADER -->
+      <table bgcolor=3D"#64c574" width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" style=3D"background-color: #64c574;">
+        <tbody>
+        <tr>
+          <td height=3D"45" class=3D"mail__header-top-space"></td>
+        </tr>
+        <tr>
+          <td align=3D"center" class=3D"mail__color-header-img-container" s=
+tyle=3D"display: block;">
+            <img class=3D"mail__color-header-img" src=3D"http://shipping-fr=
+ontend.mercadolibre.com.ar/images/carritov2-header-verde.png" width=3D"90" =
+style=3D"width: 90px; text-align: center;">
+          </td>
+        </tr>
+        <tr>
+          <td class=3D"title" style=3D"padding: 20px 0 45px 0;text-align:ce=
+nter;">
+            <span style=3D"font-family: 'Proxima-nova', Helvetica, Arial, s=
+ans-serif; font-size: 26px; font-weight:300;color: #ffffff; display:inline-=
+block;overflow:hidden; text-decoration:none; padding: 0 8%;">
+=20=20=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                    Tu paquete llegar=C3=A1 entre el <br> 15 y 18 de mayo
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20=20=20
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td style=3D"text-align:center;padding:0;">
+            <!--[if mso]><center><table><tr><td width=3D"460"><![endif]-->
+            <div id=3D"responsive-width" class=3D"responsive-width" width=
+=3D"77.8% !important" style=3D"width: 77.8% !important;margin:0 auto;backgr=
+ound: #ffffff;border-left: 1px solid #ededed;">
+              <div style=3D"height: 50px;border-width: 0 !important;border-=
+style: solid;border-color: #f1f1f1; margin: 0 auto;">&nbsp;</div>
+            </div>
+            <!--[if mso]></td></tr></table></center><![endif]-->
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- SUBHEADER -->
+      <!-- benefits -->
+      <div id=3D"div-table-wrapper" class=3D"div-table-wrapper" style=3D"te=
+xt-align:center;margin: 0 auto;background: #f8f8f8;padding-bottom: 52px;">
+        <table class=3D"main-card-shadow" bgcolor=3D"#ffffff" align=3D"cent=
+er" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"78.2% !import=
+ant" style=3D"width: 78.2% !important;padding: 0; box-shadow: 0 5px 10px #e=
+eeeee; border-width: 0 1px 2px 1px; border-style: solid;border-color: #efef=
+ef; text-align:center;">
+          <tbody>
+=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20
+            <tr>
+              <td class=3D"card-title" id=3D"card-title" align=3D"center">
+                <img width=3D"50" height=3D"50" src=3D"http://shipping-fron=
+tend.mercadolibre.com.ar/images/icono-producto-chomba_2x.png" style=3D"text=
+-align: center;display: block;margin: 0 auto;width: 50px;height: 50px;">
+              </td>
+            </tr>
+=20=20=20=20=20=20=20=20=20=20
+          <tr>
+            <td height=3D"12"></td>
+          </tr>
+=20=20=20=20=20=20=20=20=20=20
+            <tr>
+              <td>
+                <p style=3D"font-family: 'Proxima Nova', Arial, Helvetica, =
+sans-serif;font-weight: 100;font-size: 16px;text-align: center;color: #6666=
+66;margin: 0 0 4px 0;">C=C3=B3digo de seguimiento</p>
+                <p style=3D"font-family: 'Proxima Nova', Arial, Helvetica, =
+sans-serif;font-weight: 300;font-size: 16px;text-align: center;color: #6666=
+66;margin: 0 0 0 0;">014999688222</p>
+              </td>
+            </tr>
+=20=20=20=20=20=20=20=20=20=20
+          <tr>
+            <td height=3D"20"></td>
+          </tr>
+          <tr>
+            <td>
+              <a href=3D"https://myaccount.mercadolibre.com.co/purchases/24=
+41610026/shipments/30011802143/detail" style=3D"text-align: center;color: #=
+3483fa;font-family: 'Proxima Nova', 'Lato', 'Helvetica', 'ArialMT', Arial, =
+sans-serif; font-size:16px;text-decoration: none;">Seguir envio</a>
+            </td>
+          </tr>
+          <tr>
+            <td height=3D"50" bgcolor=3D"#ffffff"></td>
+          </tr>
+          <tr>
+            <table class=3D"" align=3D"center" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"82%">
+              <tbody>
+              <tr>
+                <td style=3D"font-family: 'Proxima Nova', -apple-system, 'L=
+ato', Helvetica, Arial, sans-serif; -moz-osx-font-smoothing: grayscale; -we=
+bkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size=
+: 0;">
+                  <table class=3D"ui-message ui-message--quiet" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"-webkit-b=
+order-radius: 4px; border-radius: 4px; position: relative; table-layout: fi=
+xed; background-color: #f7f7f7;" bgcolor=3D"#f7f7f7">
+                    <tbody>
+                    <tr>
+                      <td width=3D"4" style=3D"font-family: 'Proxima Nova',=
+ -apple-system, 'Lato', Helvetica, Arial, sans-serif; -moz-osx-font-smoothi=
+ng: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjus=
+t: none; font-size: 0; -webkit-border-radius: 6px 0 0 6px; border-radius: 6=
+px 0 0 6px; height: 100%; width: 4px; background-color: #3483fa;">
+                      </td>
+                      <td style=3D"font-family: 'Proxima Nova', -apple-syst=
+em, 'Lato', Helvetica, Arial, sans-serif; -moz-osx-font-smoothing: grayscal=
+e; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; fon=
+t-size: 0;">
+                        <table class=3D"" align=3D"center" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%">
+                          <tbody>
+                          <tr>
+                            <td style=3D"font-family: 'Proxima Nova', -appl=
+e-system, 'Lato', Helvetica, Arial, sans-serif; -moz-osx-font-smoothing: gr=
+ayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: non=
+e; font-size: 0;">
+                              <img class=3D"image" title=3D"" alt=3D"" src=
+=3D"/images/spacer.png" height=3D"16" width=3D"1" border=3D"0" style=3D"fon=
+t-size: 0; border: 0; display: block; z-index: 1;">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align=3D"left" valign=3D"top" class=3D"ui-m=
+essage__text" style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; font-family: 'Proxima =
+Nova', -apple-system, 'Helvetica Neue', Helvetica, 'Roboto', Arial, sans-se=
+rif; font-size: 14px; font-weight: 400; line-height: 1.25; color: #000;" wi=
+dth=3D"50">
+                              <img class=3D"image image--inline" alt=3D"ico=
+n" src=3D"https://http2.mlstatic.com/storage/shipping-statics/communication=
+s/information.png" width=3D"14" border=3D"0" style=3D"font-size: 0; border:=
+ 0; z-index: 1; display: inline-block; vertical-align: middle; width: 40px;=
+ position: relative; top: -10px; margin-left: 4px;">
+                            </td>
+                            <td align=3D"left" valign=3D"top" style=3D"font=
+-family:'Proxima Nova',-apple-system,'Helvetica Neue',Helvetica,'Roboto',Ar=
+ial,sans-serif;font-size:14px;font-weight:400;line-height:1.25;color:#000">
+                              A raiz de la evoluci=C3=B3n global del COVID-=
+19, te acercamos algunos <a href=3D"https://vendedores.mercadolibre.com.co/=
+blog/notas/recomendaciones-para-recibir-y-enviar-paqueteria/?utm_source=3Dp=
+romotional_emails&utm_medium=3Demail&utm_campaign=3Dprevencion_coronavirus&=
+utm_content=3Dcta">consejos y recomendaciones a la hora de recibir y enviar=
+ tus compras</a>.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style=3D"font-family: 'Proxima Nova', -appl=
+e-system, 'Lato', Helvetica, Arial, sans-serif; -moz-osx-font-smoothing: gr=
+ayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: non=
+e; font-size: 0;">
+                              <img class=3D"image" title=3D"" alt=3D"" src=
+=3D"/images/spacer.png" height=3D"16" width=3D"1" border=3D"0" style=3D"fon=
+t-size: 0; border: 0; display: block; z-index: 1;">
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td width=3D"40" style=3D"font-family: 'Proxima Nova'=
+, -apple-system, 'Lato', Helvetica, Arial, sans-serif; -moz-osx-font-smooth=
+ing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adju=
+st: none; font-size: 0;">
+                        <img class=3D"image" title=3D"" alt=3D"" src=3D"/im=
+ages/spacer.png" height=3D"0" width=3D"40" border=3D"0" style=3D"font-size:=
+ 0; border: 0; display: block; z-index: 1;">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style=3D"font-family: 'Proxima Nova', -apple-syst=
+em, 'Lato', Helvetica, Arial, sans-serif; -moz-osx-font-smoothing: grayscal=
+e; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; fon=
+t-size: 0;">
+                        <img class=3D"image" title=3D"" alt=3D"" src=3D"/im=
+ages/spacer.png" height=3D"0" width=3D"20" border=3D"0" style=3D"font-size:=
+ 0; border: 0; display: block; z-index: 1;">
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </tr>
+          <tr height=3D"30">
+          </tr>
+          </tbody>
+        </table>
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"78.2% !important">
+          <tbody>
+          <tr>
+            <td height=3D"50"></td>
+          </tr>
+          <tr>
+            <td align=3D"center" style=3D"font-family: 'Proxima Nova', Aria=
+l, Helvetica, sans-serif;font-weight: 100;font-size: 18px;text-align: cente=
+r;color: #666666;padding: 0 0 20px 0;font-weight: 600;">Detalle de env=C3=
+=ADo
+
+            </td>
+          </tr>
+          <tr>
+            <td align=3D"center">
+              <img width=3D"50" height=3D"50" style=3D"width: 50px; height:=
+ 50px; margin: 0 0 12px 0;" src=3D"http://shipping-frontend.mercadolibre.co=
+m.ar/images/circulo-azul-marker-blanco_2x.png">
+            </td>
+          </tr>
+          <tr>
+            <td align=3D"center">
+              <p style=3D"text-decoration:none; font-family: 'Proxima Nova'=
+, Arial, Helvetica, sans-serif;font-weight: 100;font-size: 14px;text-align:=
+ center;color: #666666;margin: 0 0 4px 0;">Carrera 56C #83DD Sur-201, Apart=
+amento 1505, Torres Aldea del Sur</p>
+              <p style=3D"text-decoration:none; font-family: 'Proxima Nova'=
+, Arial, Helvetica, sans-serif;font-weight: 100;font-size: 14px;text-align:=
+ center;color: #666666;margin: 0 0 4px 0;">
+                  La Estrella, Antioquia, CP=20
+              </p>
+              <p style=3D"text-decoration:none; font-family: 'Proxima Nova'=
+, Arial, Helvetica, sans-serif;font-weight: 100;font-size: 14px;text-align:=
+ center;color: #666666;margin: 0;">Tel.: 3004068554</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td height=3D"32"></td>
+          </tr>
+
+
+          <tr>
+            <td align=3D"center">
+              <table style=3D"display: inline-block !important;vertical-ali=
+gn: top;">
+                <tbody>
+                <tr>
+                  <td>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                        <div style=3D"position: relative;display: inline-bl=
+ock;width: 50px;height: 50px;border-radius: 50%;border: solid 0.5px #bebebe=
+;">
+                          <img width=3D"50" height=3D"50" src=3D"http://mco=
+-s2-p.mlstatic.com/852161-MCO32858935099_112019-I.jpg" style=3D"width: 50px=
+; height: 50px; border-radius: 50%;">
+                          <div style=3D"position:absolute; top: 0; bottom: =
+0; left: 0; right: 0;"></div>
+                        </div>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td height=3D"32"></td>
+          </tr>
+          <tr>
+=20=20=20=20=20=20=20=20=20=20=20=20
+              <td align=3D"center" style=3D"width: 100%;max-width: 277px;fo=
+nt-family: 'Proxima Nova', Arial, Helvetica, sans-serif;font-size: 14px;fon=
+t-weight: 300;line-height: 1.25;text-align: center;padding: 0 23%;color: #6=
+66666;">
+                Celular Xiaomi Redmi Note 8 Global 64 Gb 4 Ram Garant=C3=AD=
+a 12 M
+              </td>
+=20=20=20=20=20=20=20=20=20=20=20=20
+          </tr>
+
+          <tr>
+            <td height=3D"32"></td>
+          </tr>
+
+          <tr>
+            <td align=3D"center">
+              <a href=3D"https://myaccount.mercadolibre.com.co/purchases/24=
+41610026/detail" style=3D"text-align: center;color: #3483fa;font-family: 'P=
+roxima Nova', 'Lato', 'Helvetica', 'ArialMT', Arial, sans-serif; font-size:=
+16px;text-decoration: none;">Ver en mi cuenta</a>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <!-- FOOTER -->
+      <table align=3D"center" width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" style=3D"text-align:center; background-color: #eeeeee;">
+        <!-- FOOTER -->
+        <tbody><tr style=3D"background-color: #ffffff ;">
+          <td colspan=3D"3" align=3D"center" height=3D"50"></td>
+        </tr>
+        <tr style=3D"background-color: #ffffff ;">
+          <td colspan=3D"3" align=3D"center" style=3D"font-family: 'Proxima=
+ Nova', Arial, Helvetica, sans-serif; font-size: 13px;font-weight: 300;line=
+-height: 1.08;text-align: center;color: #cccccc;margin: 0 auto;width: 100%;=
+text-align: center;">
+            =C2=BFNecesitas ayuda?
+            <a href=3D"http://ayuda.mercadolibre.com.co" style=3D"color:#30=
+65ff;color: #3483fa; text-decoration: none;">Cont=C3=A1ctanos</a>
+          </td>
+        </tr>
+        <tr style=3D"background-color: #ffffff ;">
+          <td colspan=3D"3" align=3D"center" height=3D"18"></td>
+        </tr>
+        <tr style=3D"background-color: #ffffff;">
+          <td align=3D"center" style=3D"text-align: center;width: 100%;" co=
+lspan=3D"3">
+            <img src=3D"http://shipping-frontend.mercadolibre.com.ar/images=
+/apple-log_2x.png" width=3D"27" style=3D"display: inline-block; width: 27px=
+;">
+            <img src=3D"http://shipping-frontend.mercadolibre.com.ar/images=
+/android-logo_2x.png" width=3D"27"  style=3D"display: inline-block; width: =
+27px; margin-left: 5px;">
+          </td>
+        </tr>
+        <tr style=3D"background-color: #ffffff ;">
+          <td colspan=3D"3" align=3D"center" height=3D"18"></td>
+        </tr>
+
+        <tr style=3D"background-color: #ffffff;">
+          <td colspan=3D"3" align=3D"center" style=3D"font-family: 'Proxima=
+ Nova', Arial, Helvetica, sans-serif;font-size: 13px;font-weight: 300;line-=
+height: 1.08;text-align: center;color: #cccccc;">
+            =C2=A1Compra y vende desde tu celular!
+          </td>
+        </tr>
+
+
+        <tr style=3D"background-color: #ffffff ;">
+          <td colspan=3D"3" align=3D"center" height=3D"8"></td>
+        </tr>
+
+
+        <tr style=3D"background-color: #ffffff;">
+          <td colspan=3D"3" align=3D"center" style=3D"font-family: 'Proxima=
+ Nova', Arial, Helvetica, sans-serif;font-size: 13px;font-weight: 300;line-=
+height: 1.08;text-align: center;color: #cccccc;width: 100%;background-color=
+: #ffffff;">
+            No responder este e-mail.
+          </td>
+        </tr>
+
+        <tr style=3D"background-color: #ffffff ;">
+          <td colspan=3D"3" align=3D"center" height=3D"50"></td>
+        </tr>
+        <!-- FOOTER -->
+        </tbody></table>
+      <!-- PUT YOUR CONTENT HERE -->
+      <!-- ///////////////////// -->
+
+    </td>
+    <td style=3D"padding:0px;margin:0px;font-size:1px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan=3D"3" style=3D"padding:0px;margin:0px;font-size:1px;height:=
+1px;" height=3D"1">&nbsp;</td>
+  </tr>
+  </tbody></table>
+
+
+<img src=3D"http://url8202.mercadolibre.com/wf/open?upn=3Dn-2BXHQCy63kpAQ5v=
+lgxDj9INL-2BRhVxrLbJegHCev16xucv08I0raT0JEV0tdZ9oJBoe2h-2FYdJ-2B-2BVTiywmFz=
+Hc-2FXPvkl5fqPYPW-2BnjdPT0QMhamLtdioAhvIrwj8Oq3Pkhj6-2FI-2FCiYdKMlpNLVh8FHy=
+5Kea4u0XMv14ByPbtZtPa4yFujOZFPOY7j8aDtCPDhqdeWtW2-2BW-2FmhmiRIRWNwlmzAbz6h0=
+UKjL1vmXTckv7t9w4DOLuIhO6-2Bm2n4Ef8gy4hOKGBnjtHW13cHVr0IKEFdSehBKRbnG052kb6=
+K3VTrmD86gwwi30rs1-2F0pEFbNUmSpb1tEUxnsvcWkA1Ow74x5cPU39tKuRl2HaW5OyGRybsog=
+6L4dL5Mwk-2Bemm7kLWbXbLL1pTnNGc8VpmigFIQXBhFwBtuPq9bc0JmPH4WyWkOgUQOmNl5kz9=
+jbFXIVhqzxhT48mANwc6WhFuZpv1-2Bs4Pa3Kz-2F4DBZbwsFX-2BUI0iv72VxX3E-2FCSMddWx=
+GBa1UsQtK1lrrup9lY6psNWA9JWyJJFGmwFgnrwJ1OyhjnCxt7En343BxinnsnkSyXnGTPbKlbp=
+qTYt8qwkworhAVezNgZ6ajzv6rXJVgr2hqSyXnbmEkXup2mrV0YeCoVcg4I5HmZjCPGiRtG4jHW=
+5bTlCi4WCsojyRNsDSnV-2BZGiRo-2FkefO-2F4qXjC2P83e3P1S5s" alt=3D"" width=3D"1=
+" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !impor=
+tant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !imp=
+ortant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !im=
+portant;padding-bottom:0 !important;padding-right:0 !important;padding-left=
+:0 !important;"/>
+</body></html>
+

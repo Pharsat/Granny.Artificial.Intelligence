@@ -1,0 +1,151 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp13760ild;
+        Tue, 27 Oct 2020 14:03:05 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwH1KqW0eEMTuxhya9OR2JZxV0z5jlj28Zsm7j3hfDZBxqfhG10Wo6MI4ZA+58e/N2mzjUx
+X-Received: by 2002:a05:6830:1694:: with SMTP id k20mr3089460otr.100.1603832585006;
+        Tue, 27 Oct 2020 14:03:05 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1603832585; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=vQ2uSpRPDW3kMbECMdjw63Jxw5736Hn3K8YqO3nfV8uupv2gmXXJVPPQkc0VkbdVXI
+         hGhLK2+q0m9duDny90CBQWGkjA3nMnSEtt648baV68JsXvLEE9TF5w9kmyIQsrowJcx+
+         6WFi9tvQEB91pE0jCcYLaZl1vr9eGZoPuRlzGaazsIPxQQ8TqSIcW3J/Wg7FI3ZHgp9W
+         9otIYmZumL8mkxMSqnhYveLe6DMgfe8Jh5W+eg+44aglpN3dSAURB6C0rFDtWdCQnykA
+         uQxJXd0JzuiTpaMvvs1RDdPpwUghzF0VtXPcDzUXqgehj5A+e0VOFx6EAVr/kTB+xVcd
+         hSrg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:message-id:to:from:date:dkim-signature;
+        bh=hXDt2nsz8fil7H2cSaftwxpJlWu8oj9RQTDjcG9VBvM=;
+        b=W5G8e0lJSn2LwFwH8Lbs/9xLQ8yEsLxanV3sfmwoHpDoDHicneRZHcyQjH2iYX992L
+         FUctzYlYh1ANtgQJP3siCHuca8WDn3ln1kNQw/ahMeKVX/o5W/n7tOd2Shhjuy5mT90+
+         FrC0ySGAivzQ9rO7LBuyDoYqcK2Eg0Vht2i3O8ZbtMkGV2YDhByrJXWjYmgcrZH1GVlt
+         fQDwlEgrXXwmyVWahMuxeVCOdf8xGKjAHa4luy4QFG2Lx0admGPu7ScjRaiz5azGZrvZ
+         Ob/5Ya+isnLO4iJkbDtWhYUSLIK7pJcoOdepU5BalBbb1uf1yiQAAk1yMLwg9gnRDZba
+         7oQw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@sena.edu.co header.s=selector2 header.b=ItQBZhzA;
+       arc=pass (i=1 spf=pass spfdomain=sena.edu.co dmarc=pass fromdomain=sena.edu.co);
+       spf=pass (google.com: domain of ape@sena.edu.co designates 40.107.223.94 as permitted sender) smtp.mailfrom=ape@sena.edu.co;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=sena.edu.co
+Return-Path: <ape@sena.edu.co>
+Received: from NAM11-DM6-obe.outbound.protection.outlook.com (mail-dm6nam11on2094.outbound.protection.outlook.com. [40.107.223.94])
+        by mx.google.com with ESMTPS id t26si2041457oth.78.2020.10.27.14.03.04
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 27 Oct 2020 14:03:04 -0700 (PDT)
+Received-SPF: pass (google.com: domain of ape@sena.edu.co designates 40.107.223.94 as permitted sender) client-ip=40.107.223.94;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sena.edu.co header.s=selector2 header.b=ItQBZhzA;
+       arc=pass (i=1 spf=pass spfdomain=sena.edu.co dmarc=pass fromdomain=sena.edu.co);
+       spf=pass (google.com: domain of ape@sena.edu.co designates 40.107.223.94 as permitted sender) smtp.mailfrom=ape@sena.edu.co;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=sena.edu.co
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BfC/igBQoPICszFWq6ABrHKM5W7TrtK5Rg+J9vHZmJgrv4T541FIVlIr2SbH7Q+e0FFlSB0wY/suM6L2JFK9M0GKRMhCFmlYOUQZPTX7JnVr6JZxrCBsVcn2iDnUEmKgXVGe/OFf/eOyXiwdJ5hW6sNwTD4Cbdbt+4EKeSmju+0iye3HEYfuXQ53H9C9fUwvJGbZZozuD8E9Ib9wtXyiQeoXsmqQcYkHRuDNo8O6saCWp4SMmo8+hjd2k8eXceoW3YCxw0Cr0mmtucfTd4r00dGKftCd1nijm570u81hb7wmtmkltijDS4cmXtFszpHPzurs3Dy/Lae4P8SuFB2LZw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hXDt2nsz8fil7H2cSaftwxpJlWu8oj9RQTDjcG9VBvM=;
+ b=Ppr2UvWM4NQvyp6EonO7iuKFQ+3zebSlc4qqNidghoRGENWCWBRII4HboWA+ZcTYycYZr0uCkwheX4rcSXxXSBj3ryMEQ/v3D3h2LTl8wBk+kt8z9FEJdxEyfbscRKHBbXaQ3z1mex5BDBHJU1FL00pDBQ+Ed3jlJNe80LYUvPHuEzDe5sFc1VrvUoalvaod7LOuFkCymecz+wkDyUseJqUD62EfyJaIeMAJH7JX/DgT7tpIE6eq2bde2QJau1tD4h1tWlbk7oDkUIicNEDSDOPdXwt612ddC19C83bcWeFYhAh7ArQ/iYzTK/zBgjWb+Fadp+XsDMpr6LDfPvPrGA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 186.113.6.30) smtp.rcpttodomain=gmail.com smtp.mailfrom=sena.edu.co;
+ dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
+ header.from=sena.edu.co; dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sena.edu.co;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hXDt2nsz8fil7H2cSaftwxpJlWu8oj9RQTDjcG9VBvM=;
+ b=ItQBZhzAz0xXvGE2xg1StU02V1Zw5CSOpT+ev8GEWgjLDmPC7+VN4mbbNWTH9CkLxwjDEM4bd/Hjf9d66Xf0n79KmSXhjQk6OfQCBcf/U7dQtWCjnvoMN6wSFgSWkmphpxDA04m7NiPMZZquG8VDxUnFlScBcFIuk80S0xObab0=
+Received: from DM5PR15CA0064.namprd15.prod.outlook.com (2603:10b6:3:ae::26) by
+ DM5PR08MB2955.namprd08.prod.outlook.com (2603:10b6:3:145::18) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3499.19; Tue, 27 Oct 2020 21:03:03 +0000
+Received: from DM6NAM10FT059.eop-nam10.prod.protection.outlook.com
+ (2603:10b6:3:ae:cafe::ce) by DM5PR15CA0064.outlook.office365.com
+ (2603:10b6:3:ae::26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3477.22 via Frontend
+ Transport; Tue, 27 Oct 2020 21:03:03 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 186.113.6.30)
+ smtp.mailfrom=sena.edu.co; gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=pass action=none header.from=sena.edu.co;
+Received-SPF: Pass (protection.outlook.com: domain of sena.edu.co designates
+ 186.113.6.30 as permitted sender) receiver=protection.outlook.com;
+ client-ip=186.113.6.30; helo=mail.sena.edu.co;
+Received: from mail.sena.edu.co (186.113.6.30) by
+ DM6NAM10FT059.mail.protection.outlook.com (10.13.153.71) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.3499.18 via Frontend Transport; Tue, 27 Oct 2020 21:03:03 +0000
+Received: from sc01iod1z02 (172.29.11.242) by VSEXCHHUB02.SENA.RED
+ (172.29.13.10) with Microsoft SMTP Server id 14.3.468.0; Tue, 27 Oct 2020
+ 16:00:03 -0500
+Date: Tue, 27 Oct 2020 16:00:19 -0500
+From: <ape@sena.edu.co>
+To: <pharsat@gmail.com>
+Message-ID: <1195745326.155856.1603832419548.JavaMail.oracle@sc01iod1z02>
+Subject: =?ISO646-US?Q?Notificaci=3Fn_Postulaci=3Fn_Vacante?=
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----=_Part_155854_1642954459.1603832419544"
+Return-Path: ape@sena.edu.co
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: a6b8bc70-a49c-48ec-a84b-08d87abbb1e9
+X-MS-TrafficTypeDiagnostic: DM5PR08MB2955:
+X-Microsoft-Antispam-PRVS:
+	<DM5PR08MB29553ABA0E382AF51B70414BEF160@DM5PR08MB2955.namprd08.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:1051;
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info:
+	DxJeFAkxSLRroi/VmQlluOJffz4a1t1Nl0vvTWv8e7m6UIYki7Nu/GVlbDVEZtHp711/5ZBntoK4FxEIYui7PjOiO93JuhU8USDz128evlcyeu8F6mqyPmHzUgHksPH98rWa92rcdO8DxuqCWt3oCJ3tmSEVDxH4n0n/sfQdcgolpe6mfYrcEVigL2KBURxrpGfIFj5bs4iUUP23qkW5p2dUSd/rCCWyt7jE45GSrfu+FKH7bNAfimzjLr1dYD2/6gzxBw9vSnuFt0mivOtwRkC1zMcIHlTERVPuNkSB6WjwZDfLrsdI60wkXpPEtfACSN8LyYX/bQGPACSrFczg8jaFdLogguVZ0snL/ZNr+9BSZb+cUdVeKdO9MP1b/oesXFY3bz7W8AP/CkpiHRsbWB08K5XkTHMrIe+1xkGu0M8RfcuD2M5cevJJl6gHBL6wNMPdNdRuTO2A3rkeSlHVK8s1/mLelxE855dVW32LIIY=
+X-Forefront-Antispam-Report:
+	CIP:186.113.6.30;CTRY:CO;LANG:es;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail.sena.edu.co;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(4636009)(136003)(396003)(346002)(39860400002)(376002)(46966005)(2876002)(786003)(336012)(36906005)(186003)(4300700001)(6666004)(316002)(82310400003)(2906002)(26005)(5660300002)(70586007)(9576002)(47076004)(55016002)(8676002)(6916009)(8936002)(70206006)(81166007)(33716001)(9686003)(166002)(478600001)(86362001)(82740400003)(3480700007)(356005);DIR:OUT;SFP:1102;
+X-OriginatorOrg: sena.edu.co
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Oct 2020 21:03:03.3109
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a6b8bc70-a49c-48ec-a84b-08d87abbb1e9
+X-MS-Exchange-CrossTenant-Id: cbc2c381-2f2e-4d93-91d1-506c9316ace7
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=cbc2c381-2f2e-4d93-91d1-506c9316ace7;Ip=[186.113.6.30];Helo=[mail.sena.edu.co]
+X-MS-Exchange-CrossTenant-AuthSource:
+	DM6NAM10FT059.eop-nam10.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR08MB2955
+
+------=_Part_155854_1642954459.1603832419544
+Content-Type: multipart/related;
+	boundary="----=_Part_155855_790859287.1603832419544"
+
+------=_Part_155855_790859287.1603832419544
+Content-Type: text/html; charset="ISO646-US"
+Content-Transfer-Encoding: quoted-printable
+
+<div align=3D"middle"><img src=3D"https://agenciapublicadeempleo.sena.edu.c=
+o/imgLayout/imagenesUsadasDesdeCorreosAPE/logoAPE.png">
+<table><tr><td>
+Apreciado Usuario,<br /><br />
+
+Notificamos que un empresario est=E1 interesado en su perfil para una vacan=
+te. <br />
+le recomendamos ingresar lo m=E1s pronto posible: <a href=3D"https://agenci=
+apublicadeempleo.sena.edu.co/"> clic aqu=ED</a>
+<br />
+<br />
+Por favor ingresar con su usuario y contrase=F1a y verificar en la pesta=F1=
+a Mis Oportunidades y Mis Invitaciones.=20
+<br />
+<br />
+
+Recuerde que todos los servicios que ofrece el SENA a los colombianos son d=
+e car=E1cter p=FAblico, gratuito, indiscriminado,=20
+transparente y no requiere intermediarios.<br /><br />
+Agencia P=FAblica de Empleo del SENA<br />
+=A1Donde el talento y las oportunidades se encuentran!
+</td></tr></table>
+<img src=3D"https://agenciapublicadeempleo.sena.edu.co/imgLayout/imagenesUs=
+adasDesdeCorreosAPE/logoSPE.png">
+<img src=3D"https://agenciapublicadeempleo.sena.edu.co/imgLayout/imagenesUs=
+adasDesdeCorreosAPE/headed-ape2.png">
+</div>
+------=_Part_155855_790859287.1603832419544--
+
+------=_Part_155854_1642954459.1603832419544--

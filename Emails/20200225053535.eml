@@ -1,0 +1,302 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:1511:0:0:0:0:0 with SMTP id v17csp3423742ilk;
+        Mon, 24 Feb 2020 21:35:37 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyqf7kWdUwHHIE7gHXh4euZjxFTDD5XnzwjSRiDey/kLrGeH2biav2tIe0ud4BtieOH3Ity
+X-Received: by 2002:a50:fc85:: with SMTP id f5mr49761789edq.294.1582608937825;
+        Mon, 24 Feb 2020 21:35:37 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1582608937; cv=none;
+        d=google.com; s=arc-20160816;
+        b=D89LXaAPMvohSfkRvJWgBj5hAs8JsZk7yrYIEeiOYLu5SODrwNEmBhVd2Uip9aeYoR
+         E3P119cVF/hY9ATBRqGqfFS7YGVD86lJSHQzBbLGlD5wIg32lOMOzo1G8fRJZ4t6pzwB
+         cOK6L57NhJmZi4RF26BR8XnlYHNWJjjqM1D3xgSwKC/8oBZdmhPWIih2OekACOqc9IjZ
+         AV5+NHbaarJgU5Mx93rTRT6cjl38Vu4UMTOE7A/MaYLFkI7ZW/HiZTHmLQKgdxEaaf6I
+         PylhX6RDZUoevvrJ4xWAhNP1s2odBYevjbe3HaElR3EF+RWUDlHdRhV1u8byxKbQyzh3
+         374A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:message-id:to:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=680TzisLKUv3M4jWuzWW1+xft5Jmr8kX/nlLIWZ+X+A=;
+        b=IInik56EFxSgkw+QqaVfZ06tyRzasagkT4ERRPldEhHdRVQQil1q2j6RL2IMhCqCAw
+         pjuGz74i/74DXuZ13Ohn61WjUOV/l26BnnzvRfrMZzC+3CQQwGfJdGzG3EtskArs/Iq7
+         gJJ6NYUNkaboMKVGoOnxMRlelXddBwrt/wc++ZdTJgafEflaRsi2F9rdZTOci3NXr35W
+         +G7LHWEvCPmZa/1PvCM3wqSOk+MXHJM68aSIMchuE1NAxrH063C16fxRhweBRA2A4OO5
+         +HhxCzsJ6n4giYD4YNRCt1aEvE8Pi/qvXqvxiFgWkucrv8NJki6kgvv+qxBqMPGvgDNU
+         nWlA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=c9JCaziR;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qjXmSN85;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.251 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+Return-Path: <bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com>
+Received: from o12.ptr7196.sg.mercadolibre.com (o12.ptr7196.sg.mercadolibre.com. [149.72.129.251])
+        by mx.google.com with ESMTPS id jz12si9321286ejb.418.2020.02.24.21.35.36
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 24 Feb 2020 21:35:37 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.251 as permitted sender) client-ip=149.72.129.251;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=c9JCaziR;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=qjXmSN85;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 149.72.129.251 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=mercadolibre.com; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject; 
+	s=s1; bh=680TzisLKUv3M4jWuzWW1+xft5Jmr8kX/nlLIWZ+X+A=; b=c9JCazi
+	RkNrSQih+SoLWdymIEm85PUwNyaJAiIJAOitcKt5pb7z2Ew7v+5tFe96GhEcPweT
+	oK8NOOFml5T8PqI5b40Z4XQCtSUSstjR5JwGiFre9mmfgJU7BmtiV1hFfs/srXRQ
+	pfeeZGurHLzjymmtAGHOHd5y4NIsX5cWs5jo=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:x-feedback-id; 
+	s=smtpapi; bh=680TzisLKUv3M4jWuzWW1+xft5Jmr8kX/nlLIWZ+X+A=; b=qj
+	XmSN85aHsiEXioMm61mGrg31JTGWcERcvW81PKMSdk6GmoQc2Hb02yB3+Bq4Zg1i
+	e1i51uEccc/vLWRt3L5mcDRkTLMzxffXKDXB8YAhBNKrwpi2Ywq8qP9i3qcRYvsQ
+	4Ve0CgAaWqFErxxKU3sCXc+NkuaLgUPhP+OlTioR8=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Date: Tue, 25 Feb 2020 05:35:35 +0000 (UTC)
+From: "Mercado Libre" <no-responder@mercadolibre.com>
+Mime-Version: 1.0
+To: pharsat@gmail.com
+Message-ID: <txyA7DWxQBGTUUpZlGpY7Q@ismtpd0047p1mdw1.sendgrid.net>
+Subject: Opina sobre tu producto: Ajustadores Sujetadores Tirantes De Vestir Camisa Hombre 
+X-SG-EID: sqIrrLMbLsIyP9sBRWWxUF78JT7ZpfEH7TvBjG5fTparCrfbTqYOYPxHm/L5rcb9oVqdof5KpY0CNK
+ nXeCsuqR4ou6M4DBWM9XkrrdIRer2tZqcOymjq6DyhQfTTe36nQU7V+0fmw/xqZXULwKC1UYf//9DU
+ okBBcsD5hGdqxUF9vZRnC2+zizyoiqe4q592Ngr0bMA5fKBPDIlBjcsZowFs33m78WXLMqx/7aj/Fm
+ 8=
+X-SG-ID: YDTqBOjidbCUo/ar1oAtZjCcGwd6zin5JsUuvBmEObGZnl6pilZBn8/hdDxrflhxq/4FD3MyMYcl+L
+ 2qFaJbHcdC10p245FWs5/1DGpLCQUY+9nb6xNQxmEmTI07xp41Yc9cTHt1587JUJ9N7jBqTnr9cS0N
+ 1lGjr5eD38Tzq5BiVNVIS6MBsU6vN5zy9AYa9YIPklkaXeUM9UvRHVQLCdBcgddsKyfBRFd6Y+IW5B
+ PBE5iYyn6RSVWXyenwzMGGPztzP69pdrrXm2bNFaPCJ/tjF6hrrau4+ZPg7Pq5YD41Josr+pv/2yU3
+ DlvSRwky+NJpptLHk/dVZLhg8ei6pM0ULJWilqg1RZAQp1xZ/EjgZbUndZVj8/7VYJ69f6XqIOcYaR
+ Tko4ciReGkm+FuouDZVP5mdoVvgKz8CmhUGLReFhouffTRUcpfj6vaY9QqxuaIDzw5QDKulYFmfZUR
+ Ste9QGo0R4VtIDIZ+i1dIbs9Y46+O7gM0YrWILGh0SJG
+X-Feedback-ID: 9647731:O1uIaeJcLGiMqc34AnjtHEL1fX9OufqyqcerW4Ul12s=:a8ycujShxZ5z3gGodwbKlQ==:SG
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml"><head><meta http-equiv=3D"Content-Type" content=3D"text/htm=
+l; charset=3Dutf-8"><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Ded=
+ge"><meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0"><title></title><link rel=3D"stylesheet" href=3D"https://static.mlst=
+atic.com/org-img/ui/font/lato/300.400.700.css"><style type=3D"text/css" sty=
+le=3D"font-family: Lato, Arial, sans-serif;"> @media screen and (max-width:=
+ 401px) { .two-column .column { max-width: 100% !important; } .three-column=
+ .column { max-width: 150px !important; } .inner2 { padding: 20px 10px !imp=
+ortant; } .three-column img {} .header-content .hashtag { font-size: 11px !=
+important; } .banner-col-3 .three-column .column { max-width: 100% !importa=
+nt; } .banner-beneficios .three-column .column * { max-width: 100% !importa=
+nt; display: block; text-align: center; } .btn_detalles, .bt_explorar_cat {=
+ width: 100% !important; } .header-logo { content: url(http://static.mlstat=
+ic.com/org-img/mkt/email-mkt-assets/2x/isologoml.png) !important; height: 3=
+6px !important; width: auto !important; } [class^=3D"banner-vertical-text-"=
+] { max-width: 280px !important; } } @media (max-width: 401px) { .template-=
+itemPrincipal { padding: 0 20px 20px 20px !important;} }</style></head><bod=
+y style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; back=
+ground-color: #FFFFFF; font-family: Lato, Arial, sans-serif; margin: 0; max=
+-width: 600px; min-width: 100%; padding: 0;"><img src=3D"https://api.mercad=
+olibre.com/reviews/emails/pixel.gif?reviewer=3D171558912&item_id=3DMCO53139=
+2560&review_type=3DdefaultReview"/><img src=3D"http://data.mercadolibre.com=
+/pixel.gif?q=3D%7B%22tracks%22%3A%5B%7B%22path%22%3A%22%2Freviews%2Femail%2=
+2%2C%22user%22%3A%7B%22uid%22%3Anull%2C%22user_id%22%3A171558912%7D%2C%22ty=
+pe%22%3A%22View%22%2C%22user_time_zone%22%3A%220%22%2C%22server_id%22%3A%22=
+6d168b72-e570-4797-8d21-7ba890807303%22%2C%22id%22%3A%227f3cb9d9-56ae-4b25-=
+8ff8-801bdc96a1c4%22%2C%22event_data%22%3A%7B%22cookies%22%3A%5B%5D%2C%22he=
+aders%22%3A%5B%5D%2C%22http_url%22%3Anull%2C%22item_id%22%3A%22MCO531392560=
+%22%2C%22reviewer_id%22%3A171558912%2C%22requested_type%22%3A%22defaultRevi=
+ew%22%7D%2C%22application%22%3A%7B%22version%22%3A%22unkown%22%2C%22server_=
+hostname%22%3A%22i-0c897a604fc57dfc8-10.69.30.37%22%2C%22server_poolname%22=
+%3A%22unkown%22%2C%22business%22%3A%22mercadolibre%22%2C%22site_id%22%3A%22=
+MCO%22%7D%2C%22device%22%3A%7B%22resolution_height%22%3Anull%2C%22resolutio=
+n_width%22%3Anull%2C%22platform%22%3A%22%2Femail%22%2C%22user_agent%22%3Anu=
+ll%7D%2C%22experiments%22%3A%5B%5D%2C%22created_hidden%22%3Afalse%7D%5D%7D"=
+/><center class=3D"wrapper" style=3D"-ms-text-size-adjust: 100%; -webkit-te=
+xt-size-adjust: 100%; font-family: Lato, Arial, sans-serif; table-layout: f=
+ixed; width: 100%;"><div class=3D"webkit" style=3D"font-family: Lato, Arial=
+, sans-serif; max-width: 600px;"><!--[if (gte mso 9)|(IE)]><table width=3D"=
+600" align=3D"center"><tr><td><![endif]--><table class=3D"outer" align=3D"c=
+enter" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+ Margin: 0 auto; border-spacing: 0; font-family: Arial, Helvetica, sans-ser=
+if; max-width: 600px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: =
+100%;"><tr><td class=3D" preheader-content headerLink align-left  header_fi=
+rst_line" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; color: #FFFFFF; font-family: Lato, Arial, sans-serif; font-size: 1px; m=
+argin: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; text-al=
+ign: center;"><span class=3D"align-left  " style=3D"font-family: Lato, Aria=
+l, sans-serif; text-align: left;">=C2=A1Comparte tu opini=C3=B3n!</span></t=
+d></tr><tr style=3D"font-family: Lato, Arial, sans-serif;"><td style=3D"-ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: Lato,=
+ Arial, sans-serif; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: =
+0;"><table class=3D"outer" align=3D"center" style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; Margin: 0 auto; border-spacing: 0; fo=
+nt-family: Arial, Helvetica, sans-serif; max-width: 600px; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt; width: 100%;"><tr style=3D"font-family: Lato,=
+ Arial, sans-serif;"><td style=3D"-ms-text-size-adjust: 100%; -webkit-text-=
+size-adjust: 100%; font-family: Lato, Arial, sans-serif; mso-table-lspace: =
+0pt; mso-table-rspace: 0pt; padding: 0;"><!-- Begin Header --><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"template=
+-mainHeader" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%; background: #FFE600; border-spacing: 0; font-family: Lato, Arial, sa=
+ns-serif; height: 55px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr =
+style=3D"font-family: Lato, Arial, sans-serif;"><td valign=3D"top" class=3D=
+"header-content" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%; float: left; font-family: Lato, Arial, sans-serif; height: 36px;=
+ line-height: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: =
+9px 20px 8px 20px; vertical-align: middle;"><a class=3D"logo" href=3D"http:=
+//www.mercadolibre.com/" target=3D"_blank" style=3D"-ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; color: #3483FA; font-family: Lato, Ari=
+al, sans-serif; font-weight: normal; margin: 0; padding: 0; text-decoration=
+: none; word-break: normal;"><img class=3D"header-logo" width=3D"139" heigh=
+t=3D"37" alt=3D"Ir a Mercado Libre" src=3D"http://static.mlstatic.com/org-i=
+mg/mkt/email-mkt-assets/2x/logoml.png" style=3D"-ms-interpolation-mode: bic=
+ubic; border: 0; font-family: Lato, Arial, sans-serif; height: 36px; margin=
+: 0; padding: 1px 0 0 0; text-align: left; vertical-align: middle; width: 1=
+39px;"></a></td></tr></table><!-- End Header --><div style=3D"font-family: =
+Lato, Arial, sans-serif; padding-top: 40px;"></div><!--[if gte mso 9]><tabl=
+e cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"table-layout: f=
+ixed;" align=3D"center"><tr><td><![endif]--><!-- Start Headline --><table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" class=3D"box headline-conta=
+iner" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+border-spacing: 0; display: table; font-family: Lato, Arial, sans-serif; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 10px; text-align: ce=
+nter; width: 100%;"><tbody style=3D"font-family: Lato, Arial, sans-serif;">=
+<tr style=3D"border: none; font-family: Lato, Arial, sans-serif; margin: 0;=
+ padding: 0;"><td class=3D"headline-main-table-td" style=3D"-ms-text-size-a=
+djust: 100%; -webkit-text-size-adjust: 100%; border: none; box-sizing: bord=
+er-box; font-family: Lato, Arial, sans-serif; margin: 0; mso-table-lspace: =
+0pt; mso-table-rspace: 0pt; padding: 0 10px;"><h1 class=3D"headline-title" =
+style=3D"border: none; color: #333333; display: block; font-family: Lato, A=
+rial, sans-serif; font-size: 28px; font-weight: 400; letter-spacing: normal=
+; line-height: normal; margin: 0; padding: 0; text-align: center; word-brea=
+k: normal; word-spacing: normal;">=C2=BFQu=C3=A9 te pareci=C3=B3 el product=
+o?</h1></td></tr></tbody></table><!-- End Headline --><!--[if gte mso 9]></=
+td></tr></table><![endif]--><div style=3D"font-family: Lato, Arial, sans-se=
+rif; padding-top: 35px;"></div><!-- BEGIN item Principal --><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"template-itemPrincipal"=
+ style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; backg=
+round-color: #FFFFFF; border-spacing: 0; font-family: Lato, Arial, sans-ser=
+if; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 20px; wid=
+th: 100%;"><tr style=3D"font-family: Lato, Arial, sans-serif;"><td style=3D=
+"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: L=
+ato, Arial, sans-serif; margin: 0 auto; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; padding: 0; text-align: center;"><a href=3D"https://www.mercadol=
+ibre.com/jms/mco/lgz/login/otp?otp=3DIAN-zJPsfPjjrUMPFdsSQe6qtGRYvze77pDxlg=
+TbAA3-vwRYoEs5Yao68wkCA6xterM6zLwTbWUAHEwm9tdRFhD7dsZPclfR7zGSnWX-s43_6cNBA=
+Y0tTD9Ed3bJkZ4ZAid13BM4NqLzq-IOaiY441ceIpGUjCmGD9GyyRU_eDB7n9MWi6U-qa-tXy28=
+t7p-_2V6LgSE4kVKWHtc7IYp97-2aZIVkJPCVPGMP9z7bTGTWwyS7DhIxshE=3D#entry=3Dema=
+il-1"><img height=3D"280" width=3D"280"  src=3D"http://mco-s1-p.mlstatic.co=
+m/870807-MCO40800914561_022020-P.jpg" alt=3D"Ajustadores Sujetadores Tirant=
+es De Vestir Camisa Hombre" style=3D"-ms-interpolation-mode: bicubic; borde=
+r: solid 1px #cccccc; font-family: Lato, Arial, sans-serif;"></a></td></tr>=
+<tr style=3D"font-family: Lato, Arial, sans-serif;"><td style=3D"-ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: Lato, Arial,=
+ sans-serif; margin: 0 auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; =
+padding: 0; text-align: center;"><h2 class=3D"itemPrincipal-title" style=3D=
+"color: #333333; font-family: Lato, Arial, sans-serif; font-size: 24px; fon=
+t-weight: normal; line-height: 20px; margin: 0 auto; max-width: 280px; padd=
+ing: 20px 0 0 0; text-align: left; text-indent: 0; word-break: normal;"><a =
+href=3D"https://www.mercadolibre.com/jms/mco/lgz/login/otp?otp=3DIAN-zJPsfP=
+jjrUMPFdsSQe6qtGRYvze77pDxlgTbAA3-vwRYoEs5Yao68wkCA6xterM6zLwTbWUAHEwm9tdRF=
+hD7dsZPclfR7zGSnWX-s43_6cNBAY0tTD9Ed3bJkZ4ZAid13BM4NqLzq-IOaiY441ceIpGUjCmG=
+D9GyyRU_eDB7n9MWi6U-qa-tXy28t7p-_2V6LgSE4kVKWHtc7IYp97-2aZIVkJPCVPGMP9z7bTG=
+TWwyS7DhIxshE=3D#entry=3Demail-1" style=3D"-ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%; color: #999999; font-family: Lato, Arial, sans-=
+serif; font-size: 16px; font-weight: 300; line-height: 1.4; margin-bottom: =
+5px; margin-top: 0; padding: 0; text-align: left; text-decoration: none; te=
+xt-indent: 0; word-break: normal;">Ajustadores Sujetadores Tirantes De Vest=
+ir Camisa Hombre</a></h2></td></tr></table><!-- END item Principal --><!-- =
+Button center --><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" cl=
+ass=3D"row row-grey" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%; background-color: #FFFFFF; border-spacing: 0; font-family: L=
+ato, Arial, sans-serif; margin: 0 auto; max-width: 600px; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt; text-align: center; width: auto;"><tr style=3D=
+"font-family: Lato, Arial, sans-serif;"><td class=3D"" style=3D"-ms-text-si=
+ze-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: Lato, Arial, =
+sans-serif; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0;"><a h=
+ref=3D"https://www.mercadolibre.com/jms/mco/lgz/login/otp?otp=3DIAN-zJPsfPj=
+jrUMPFdsSQe6qtGRYvze77pDxlgTbAA3-vwRYoEs5Yao68wkCA6xterM6zLwTbWUAHEwm9tdRFh=
+D7dsZPclfR7zGSnWX-s43_6cNBAY0tTD9Ed3bJkZ4ZAid13BM4NqLzq-IOaiY441ceIpGUjCmGD=
+9GyyRU_eDB7n9MWi6U-qa-tXy28t7p-_2V6LgSE4kVKWHtc7IYp97-2aZIVkJPCVPGMP9z7bTGT=
+WwyS7DhIxshE=3D#entry=3Demail-1" target=3D"_blank" class=3D"button-containe=
+r button-itemPpl" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%; color: #3483FA; display: block; font-family: Lato, Arial, sans-=
+serif; font-weight: normal; margin: 0; padding: 0; padding-left: 0; positio=
+n: relative; text-decoration: none; width: 100%; word-break: normal;"><tabl=
+e border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"btn_center" sty=
+le=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-sp=
+acing: 0; display: table !important; font-family: Lato, Arial, sans-serif; =
+height: 48px; margin: 0 auto; max-height: 48px; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; width: 280px;"><tr style=3D"font-family: Lato, Arial, sa=
+ns-serif;"><td align=3D"center" class=3D"button-normal button button-primar=
+y " style=3D"-moz-border-radius: 4px; -ms-text-size-adjust: 100%; -webkit-b=
+order-radius: 4px; -webkit-text-size-adjust: 100%; background-color: #3483F=
+A; border: 0; border-radius: 4px; color: #FFFFFF; font-family: Lato, Arial,=
+ sans-serif; font-size: 18px; font-weight: 400; height: 48px; margin: 5px 0=
+; max-height: 48px; max-width: 280px; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; outline: 0; padding: 0 30px; text-align: center; text-decoration: =
+none; width: 100%;">Dar mi opini=C3=B3n</td></tr></table></a></td></tr></ta=
+ble><!-- Ends Button center --><div style=3D"font-family: Lato, Arial, sans=
+-serif; padding-top: 50px;"></div><!-- Begin footer --><table width=3D"100%=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"-ms-text-size-a=
+djust: 100%; -webkit-text-size-adjust: 100%; background: #eee; border-spaci=
+ng: 0; font-family: Lato, Arial, sans-serif; mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; padding: 0;"><tr style=3D"font-family: Lato, Arial, sans-se=
+rif;"><td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; font-family: Lato, Arial, sans-serif; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt; padding: 0; text-align: center;"><div class=3D"footer-download=
+-app" style=3D"display: inline-block; font-family: Lato, Arial, sans-serif;=
+ font-size: 17px; max-width: 230px; min-width: 90px; padding: 20px 40px; ve=
+rtical-align: middle;"><span class=3D"footer-download-app-text" style=3D"co=
+lor: #666666; display: block; font-family: Lato, Arial, sans-serif; font-si=
+ze: 14px; font-weight: 300; text-align: center; width: auto; word-break: no=
+rmal;">=C2=A1Descarga gratis la aplicaci=C3=B3n!</span><table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%; border-spacing: 0; font-family: Lato, Arial=
+, sans-serif; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 10=
+px;" class=3D"ecxicon-app"><tbody style=3D"font-family: Lato, Arial, sans-s=
+erif;"><tr style=3D"font-family: Lato, Arial, sans-serif;"><td class=3D"ecx=
+logo-left" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%; font-family: Lato, Arial, sans-serif; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; padding: 0;"><a href=3D"https://itunes.apple.com/es/app/merca=
+dolibre/id463624852" target=3D"_blank" title=3D"Descargar para iOS" class=
+=3D"ecxlogo-left-a" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%; color: #3483FA; font-family: Lato, Arial, sans-serif; font-we=
+ight: normal; padding: 0 !important; text-decoration: none; word-break: nor=
+mal;"><img src=3D"http://static.mlstatic.com/org-img/mkt/email-mkt-assets/2=
+x/appleStore.png" border=3D"0" width=3D"104" height=3D"32" alt=3D"Descargar=
+ para iOS" style=3D"-ms-interpolation-mode: bicubic; border: 0; font-family=
+: Lato, Arial, sans-serif;"></a></td><td width=3D"20" style=3D"-ms-text-siz=
+e-adjust: 100%; -webkit-text-size-adjust: 100%; font-family: Lato, Arial, s=
+ans-serif; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0;">&nbsp=
+;</td><td class=3D"ecxlogo-right" style=3D"-ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%; font-family: Lato, Arial, sans-serif; mso-table=
+-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; padding-left: 0px;"><a hre=
+f=3D"https://play.google.com/store/apps/details?id=3Dcom.mercadolibre&hl=3D=
+es_419" target=3D"_blank" title=3D"Descargar para Android" class=3D"ecxlogo=
+-right-a" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; color: #3483FA; font-family: Lato, Arial, sans-serif; font-weight: norm=
+al; padding: 0 !important; text-decoration: none; word-break: normal;"><img=
+ src=3D"http://static.mlstatic.com/org-img/mkt/email-mkt-assets/2x/googlePl=
+ay.png" border=3D"0" width=3D"104" height=3D"32" alt=3D"Descargar para Andr=
+oid" style=3D"-ms-interpolation-mode: bicubic; border: 0; font-family: Lato=
+, Arial, sans-serif;"></a></td></tr></tbody></table></div></td></tr></table=
+><!-- End Footer --></td></tr></table></td></tr></table><!--[if (gte mso 9)=
+|(IE)]></td></tr></table><![endif]--></div></center>
+<img src=3D"http://url8202.mercadolibre.com/wf/open?upn=3Dn-2BXHQCy63kpAQ5v=
+lgxDj9INL-2BRhVxrLbJegHCev16xucv08I0raT0JEV0tdZ9oJBHMm7wgnuajTqyM8OD3oQvvui=
+AJhUz7OYO8K1wxQiRnOgnO9G-2BwhqCfIZgJcXd0vfv1Xd7IoQV4Hv4dcdj-2FMw1F0X1q3cpcT=
+ZrI91whasF-2BqujtJG3JWiFP-2BbjMxqa6sQ6T6TS-2F3fqtlP3PUAHkHrXUI0Kfgvti62lOtB=
+qzaCD7-2BZfqxqsSrgMoZjDmDo58lkI7S9JXTUrukRyXrWEbQLIvmNNxoowZm6Pxrtv-2BuSn1-=
+2Ff9Ae0iJ6XLEi48Rt6NSjJKcA5EeWyDdWjfyYQpRBHWXwZY-2FTVpueeIckBl5lbp5mXSDfT4t=
+M8HCHfQYEyvvey9Nav35scGHkpdrV9wVcu7LwEIoBbv5-2BD9qescdWRPNqNdZEimwKz1DTVq5E=
+ysPyGu-2Boc84bVz1HKKYuvH-2FakPR3gUWJqoUebW1NLEGttSLwl1Bj2YfUgfbXaOQaNfxE-2F=
+2YOqoC4i5Ksp1aey1LsQdA6AYF36b5G95ienGt3nkCzgO1W-2Bg6fWw-2B-2BmkdveNHNP9gCfo=
+N329cPfr14ZvOohv-2FeBRPIXTg2xZ4WWvAd48-2FPcwEi8LEyl6rZM8YzWI3yYDfwfsnhL-2BO=
+pZKMlfZFvZAyw6qEw1YOxH0UqHEPQ03iis6hYSKv-2Fs3RHgH5WZqKQZjeMFFSKo1szWbzRcCze=
+S3Q-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1=
+px !important;width:1px !important;border-width:0 !important;margin-top:0 !=
+important;margin-bottom:0 !important;margin-right:0 !important;margin-left:=
+0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-r=
+ight:0 !important;padding-left:0 !important;"/>
+</body></html>

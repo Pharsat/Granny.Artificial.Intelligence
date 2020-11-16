@@ -1,0 +1,390 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:b605:0:0:0:0:0 with SMTP id s5csp1329141ili;
+        Sat, 29 Aug 2020 10:05:50 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxRfjbmE7k6xzpzSLqLksKC0pG1CEkMcMYSGc+dGeMgRvupM0LfvgEl/ZeWOtXajSxgnQd9
+X-Received: by 2002:ac8:1b92:: with SMTP id z18mr6268187qtj.265.1598720750073;
+        Sat, 29 Aug 2020 10:05:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1598720750; cv=none;
+        d=google.com; s=arc-20160816;
+        b=AsnY55YdDzkpw3elpvxlMgo0ylDMW5GsSW4xZ+yaA8EMKFxmB/8KBr5TVBHKbzVepc
+         hpFRkOCP+TEBRB+M+0QUoaKYWVYd+6740G3gge5eglbvE7waPVeUwSVFYDnDtXeaHOuw
+         ZgNop3nF3s/7nn+uZbYSll9oa9XwO2p45FZXkhTXHVPiDyF/YV5/F3Ezc6x2Uj0NpuIW
+         PiDuVz7Qd3IV9fCu8nDIpSC2kAr5UNvjpC8KdTkEpddepFFMFF3aX6cDzdc2oguBBPGs
+         q6AzlWOGpZZNrKT1yFFK4kfMbeTCp8AyK6shZOZskbbnuS70JhMNwSW2GJSB7mq2xdMp
+         h5fg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:message-id:to:sender:from:date;
+        bh=DaBFDqjsuFf5SnIc91sCRNxrwbJruZKWOSzsz3Wpu10=;
+        b=uUhvz5jQK9KTps50cRrQlk8WLkqobpmlPKKrMOdIi5co5A/StNk+hIkgpPSLbD7tKW
+         5XaaWde3E15pFrb3e2hFo7HS/B0Ez3I/Ck+xx0x5r1ZlJza1CF2+BrucdWJQJSc8nx7R
+         dXjtYUO8MNyT9OsrYV9FvJG33B4M6T3ws8VPOub39AYuHV+QITcTXPZlxK9NQ/zGWdy4
+         SaFli4UsKSM635x9L4MsTe62Xry57tlE7Tsa91NfKMKZ48U+UYvm5ASJ8O/8w/SLqRgV
+         sihzZ3Z1Vb0nkeYAOD5j0Q0t01GV97TQJQ4esIYpSJvbVx5bZBqhEjxAUY2t1Cb3uw5C
+         5sHg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of sac=smartfit.com.co__u637lbfn4scgoqdy@yoo7y5twoxb.6g-7qxy6eag.na174.bnc.salesforce.com designates 13.110.78.229 as permitted sender) smtp.mailfrom="sac=smartfit.com.co__u637lbfn4scgoqdy@yoo7y5twoxb.6g-7qxy6eag.na174.bnc.salesforce.com"
+Return-Path: <sac=smartfit.com.co__u637lbfn4scgoqdy@yoo7y5twoxb.6g-7qxy6eag.na174.bnc.salesforce.com>
+Received: from smtp06-ia5-sp1.mta.salesforce.com (smtp06-ia5-sp1.mta.salesforce.com. [13.110.78.229])
+        by mx.google.com with ESMTPS id o4si1875823qki.336.2020.08.29.10.05.49
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 29 Aug 2020 10:05:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of sac=smartfit.com.co__u637lbfn4scgoqdy@yoo7y5twoxb.6g-7qxy6eag.na174.bnc.salesforce.com designates 13.110.78.229 as permitted sender) client-ip=13.110.78.229;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of sac=smartfit.com.co__u637lbfn4scgoqdy@yoo7y5twoxb.6g-7qxy6eag.na174.bnc.salesforce.com designates 13.110.78.229 as permitted sender) smtp.mailfrom="sac=smartfit.com.co__u637lbfn4scgoqdy@yoo7y5twoxb.6g-7qxy6eag.na174.bnc.salesforce.com"
+Return-Path: <sac=smartfit.com.co__u637lbfn4scgoqdy@yoo7y5twoxb.6g-7qxy6eag.na174.bnc.salesforce.com>
+Authentication-Results:  mx2-ia5-sp1.mta.salesforce.com x-tls.subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia5;2:ia5-sp1;3:na174;4:prod/CN=na174-app1-1-ia5.ops.sfdc.net"; auth=pass (cipher=ECDHE-RSA-AES256-GCM-SHA384)
+Received: from [10.182.146.18] ([10.182.146.18:53606] helo=na174-app1-1-ia5.ops.sfdc.net)
+	by mx2-ia5-sp1.mta.salesforce.com (envelope-from <sac=smartfit.com.co__u637lbfn4scgoqdy@yoo7y5twoxb.6g-7qxy6eag.na174.bnc.salesforce.com>)
+	(ecelerity 4.2.38.62368 r(Core:release/4.2.38.0)) with ESMTPS (cipher=ECDHE-RSA-AES256-GCM-SHA384
+	subject="/C=US/ST=California/L=San Francisco/O=salesforce.com, inc./OU=0:app;1:ia5;2:ia5-sp1;3:na174;4:prod/CN=na174-app1-1-ia5.ops.sfdc.net") 
+	id 5E/3D-14610-DEA8A4F5; Sat, 29 Aug 2020 17:05:49 +0000
+Date: Sat, 29 Aug 2020 17:05:49 +0000 (GMT)
+From: Servicio al cliente SmartFit <sac@smartfit.com.co>
+Sender: noreply@salesforce.com
+To: "pharsat@gmail.com" <pharsat@gmail.com>
+Message-ID: <ydkQR000000000000000000000000000000000000000000000QFU4TP00SRnIXWUZTQOMdkwdmI8Yjw@sfdc.net>
+Subject: =?ISO-8859-1?Q?Informaci=F3n_de_planes,_prec?=
+ =?ISO-8859-1?Q?ios_y_proceso_de_inscripci=F3n?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_580_422995354.1598720749809"
+X-SFDC-LK: 00D6g000007QXy6
+X-SFDC-User: 0056g000005HCtR
+X-Sender: postmaster@salesforce.com
+X-mail_abuse_inquiries: http://www.salesforce.com/company/abuse.jsp
+X-SFDC-TLS-NoRelay: 1
+X-SFDC-Binding: 1WrIRBV94myi25uB
+X-SFDC-EmailCategory: workflowActionAlert
+X-SFDC-EntityId: 01W6g000000GvG6
+X-SFDC-Interface: internal
+
+------=_Part_580_422995354.1598720749809
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Hola Cristian Felipe Gallego Ramirez;
+
+
+Aqu=ED est=E1 la informaci=F3n de nuestros planes, sus diferencias y el pas=
+o a paso para tu inscripci=F3n a trav=E9s de la p=E1gina www.smartfit.com.c=
+o
+
+
+INSCRIPCI=D3N
+
+Ingresa a la p=E1gina www.smartfit.com.co
+
+=95 En la parte superior de la p=E1gina busca el bot=F3n que dice sedes y d=
+a clic.
+
+=95 Elije la sede de tu preferencia.
+
+=95 En la parte inferior aparecer=E1n los planes a los cuales puedes accede=
+r: BLACK, SMART o ANUALIDAD
+
+Luego, ingresa los datos personales y en forma de pago escoges: tarjeta d=
+=E9bito o cr=E9dito. (Todos los pagos son por d=E9bito autom=E1tico).
+
+=95 Te llegar=E1 un correo electr=F3nico: CONFIRMACI=D3N DE REGISTRO. Dando=
+ clic en el enlace se activar=E1 el d=E9bito autom=E1tico y podr=E1s realiz=
+ar el registro de tu encuesta m=E9dica.
+
+Si eres mayor de edad y no tienes problemas de salud, podr=E1s comenzar a e=
+ntrenar el mismo d=EDa que finalizas la compra por la web www.smartfit.com.=
+co
+
+Si compraste en preapertura, es decir, que tu sede a=FAn no est=E1 abierta,=
+ el d=E9bito comenzar=E1 cuando la sede abra sus puertas.
+
+Si eres menor de edad debes pedir la cita de valoraci=F3n cl=EDnica en la p=
+=E1gina web, en la opci=F3n TU ESPACIO, para que puedas comenzar a entrenar=
+.
+
+
+TIPOS DE PLANES
+
+
+PLAN SMART, te ofrece acceso a todas las zonas del Centro de Acondicionamie=
+nto y Preparaci=F3n F=EDsica - CAPF, asesor=EDa nutricional, valoraci=F3n c=
+l=EDnica y m=E1s de 120 clases grupales. El mantenimiento anual de este pla=
+n es de $89.000 y se debita al tercer mes de realizar tu compra. El valor d=
+e inscripci=F3n es desde $90.000. No tiene cl=E1usula de permanencia. Para =
+realizar la cancelaci=F3n debes presentar una carta en la recepci=F3n de la=
+ sede, m=EDnimo 30 d=EDas antes de tus cobros.
+
+
+PLAN BLACK, te ofrece ingreso a todas las sedes de Smart Fit en Colombia y =
+Latinoam=E9rica, puedes invitar hasta a cinco amigos o familiares durante e=
+l mes, puedes usar los sillones de masajes y recibir=E1s tu camiseta BLACK.=
+ Adem=E1s cuentas con asesor=EDa nutricional, valoraci=F3n cl=EDnica y m=E1=
+s de 120 clases grupales. El mantenimiento anual es de $89.000 y se debita =
+al tercer mes de realizar tu compra. El valor de inscripci=F3n es desde $90=
+.000. Tiene cl=E1usula de permanencia de 12 meses, si cancelas antes te cob=
+rar=E1n el 20% de los meses que se incumplieron. Para realizar la cancelaci=
+=F3n debes presentar una carta en la recepci=F3n de la sede, m=EDnimo 30 d=
+=EDas antes de tus cobros.
+
+
+PLAN ANUAL, te ofrece ingreso a todas las sedes de Smart Fit en Colombia y =
+Latinoam=E9rica, puedes invitar hasta a cinco amigos o familiares durante e=
+l mes, puedes usar los sillones de masajes y recibir=E1s tu camiseta BLACK.=
+ Adem=E1s cuentas con asesor=EDa nutricional, valoraci=F3n cl=EDnica y m=E1=
+s de 120 clases grupales. No pagas el valor del mantenimiento anual, es dec=
+ir, tienes un ahorro de $89.000,  ni pagas el valor de inscripci=F3n, es de=
+cir, un ahorro de $90.000.
+
+
+El valor de la inscripci=F3n se paga cada vez que ingreses como usuario Sma=
+rt Fit. Es decir, si cancelas tu plan y luego quieres regresar, debes pagar=
+ nuevamente la inscripci=F3n.
+
+
+
+GERENCIA SERVICIO AL CLIENTE
+
+
+
+
+
+------=_Part_580_422995354.1598720749809
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<html><style>p{margin-top:0px; margin-bottom:0px;}</style><body class=3D"se=
+tupTab"  style=3D" background-color:#FFFFFF; bEditID:b1st1; bLabel:body;"><=
+center ><table cellpadding=3D"0" width=3D"500" cellspacing=3D"0" id=3D"topT=
+able" height=3D"450" ><tr valign=3D"top" ><td  style=3D" background-color:#=
+FFFFFF; bEditID:r1st1; bLabel:header; vertical-align:top; height:100; text-=
+align:left;"><img border=3D"0" bEditID=3D"r1sp1" bLabel=3D"headerImage" id=
+=3D"r1sp1" src=3D"https://smartfitco.my.salesforce.com/servlet/servlet.Imag=
+eServer?id=3D0156g000001Vbes&oid=3D00D6g000007QXy6" ></img></td></tr><tr va=
+lign=3D"top" ><td  style=3D" background-color:#FFFFFF; bEditID:r2st1; bLabe=
+l:accent1; height:0px;"></td></tr><tr valign=3D"top" ><td styleInsert=3D"1"=
+ height=3D"300"  style=3D" background-color:#FFFFFF; bEditID:r3st1; color:#=
+000000; bLabel:main; font-size:12pt; font-family:arial;"><table border=3D"0=
+" cellpadding=3D"5" width=3D"550" cellspacing=3D"5" height=3D"400" ><tr val=
+ign=3D"top" height=3D"400" ><td tEditID=3D"c1r1" style=3D" background-color=
+:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-f=
+amily:arial;" aEditID=3D"c1r1" locked=3D"0" ><div style=3D"font-family: ari=
+al; font-size: 12pt;"><span style=3D"font-size: 12pt; background-color: rgb=
+(255, 255, 255);">Hola&nbsp;</span><span style=3D"font-size: 12pt; backgrou=
+nd-color: rgb(255, 255, 255);">Cristian Felipe Gallego Ramirez;</span></div=
+><div style=3D"font-family: arial; font-size: 12pt;"><span style=3D"backgro=
+und-color: rgb(255, 255, 255);"><br></span></div><div style=3D"font-family:=
+ arial; font-size: 12pt;"><span style=3D"background-color: rgb(255, 255, 25=
+5);"><br></span></div><div style=3D""><span id=3D"docs-internal-guid-43b4c4=
+21-7fff-3610-570b-e9e80241ce14" style=3D""><p dir=3D"ltr" style=3D"line-hei=
+ght: 1.295; margin-top: 0pt; margin-bottom: 8pt;"><font face=3D"Arial, sans=
+-serif"><span style=3D"font-variant-numeric: normal; font-variant-east-asia=
+n: normal; vertical-align: baseline; white-space: pre-wrap;">Aqu=ED est=E1 =
+la informaci=F3n de nuestros planes, sus diferencias y el paso a paso para =
+tu inscripci=F3n a trav=E9s de la p=E1gina</span><span style=3D"font-varian=
+t-numeric: normal; font-variant-east-asian: normal; vertical-align: baselin=
+e; white-space: pre-wrap;"> </span></font><font face=3D"Arial"><span style=
+=3D"font-size: 14.6667px; white-space: pre-wrap; background-color: rgb(255,=
+ 255, 255);"><a href=3D"www.smartfit.com.co">www.smartfit.com.co</a></span>=
+</font></p><p dir=3D"ltr" style=3D"font-family: arial; font-size: 12pt; lin=
+e-height: 1.295; background-color: rgb(255, 255, 255); margin-top: 0pt; mar=
+gin-bottom: 0pt; padding: 0pt 0pt 8pt;">&nbsp;</p><p dir=3D"ltr" style=3D"f=
+ont-family: arial; font-size: 12pt; line-height: 1.295; background-color: r=
+gb(255, 255, 255); margin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 8p=
+t;"><span style=3D"font-size: 11pt; font-family: Arial; color: rgb(34, 34, =
+34); background-color: transparent; font-variant-numeric: normal; font-vari=
+ant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;"><=
+b>INSCRIPCI=D3N</b></span></p><p dir=3D"ltr" style=3D"font-family: arial; f=
+ont-size: 12pt; line-height: 1.295; background-color: rgb(255, 255, 255); m=
+argin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 8pt;"><span style=3D"f=
+ont-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); background-colo=
+r: transparent; font-variant-numeric: normal; font-variant-east-asian: norm=
+al; vertical-align: baseline; white-space: pre-wrap;">Ingresa a la p=E1gina=
+&nbsp;</span><span style=3D"text-decoration-line: underline; font-size: 11p=
+t; font-family: Arial; color: rgb(17, 85, 204); background-color: transpare=
+nt; font-variant-numeric: normal; font-variant-east-asian: normal; text-dec=
+oration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;"><=
+a href=3D"www.smartfit.com.co">www.smartfit.com.co</a></span></p><p dir=3D"=
+ltr" style=3D"font-family: arial; font-size: 12pt; line-height: 1.295; back=
+ground-color: rgb(255, 255, 255); margin-top: 0pt; margin-bottom: 0pt; padd=
+ing: 0pt 0pt 8pt;"><span style=3D"font-size: 11pt; font-family: Arial; colo=
+r: rgb(34, 34, 34); background-color: transparent; font-variant-numeric: no=
+rmal; font-variant-east-asian: normal; vertical-align: baseline; white-spac=
+e: pre-wrap;">=95 En la parte superior de la p=E1gina busca el bot=F3n que =
+dice&nbsp;</span><span style=3D"font-size: 11pt; font-family: Arial; color:=
+ rgb(34, 34, 34); background-color: transparent; font-weight: 700; font-sty=
+le: italic; font-variant-numeric: normal; font-variant-east-asian: normal; =
+vertical-align: baseline; white-space: pre-wrap;">sedes</span><span style=
+=3D"font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); background=
+-color: transparent; font-variant-numeric: normal; font-variant-east-asian:=
+ normal; vertical-align: baseline; white-space: pre-wrap;"> y da clic.</spa=
+n></p><p dir=3D"ltr" style=3D"font-family: arial; font-size: 12pt; line-hei=
+ght: 1.295; background-color: rgb(255, 255, 255); margin-top: 0pt; margin-b=
+ottom: 0pt; padding: 0pt 0pt 8pt;"><span style=3D"font-size: 11pt; font-fam=
+ily: Arial; color: rgb(34, 34, 34); background-color: transparent; font-var=
+iant-numeric: normal; font-variant-east-asian: normal; vertical-align: base=
+line; white-space: pre-wrap;">=95 Elije la sede de tu preferencia.</span></=
+p><p dir=3D"ltr" style=3D"font-family: arial; font-size: 12pt; line-height:=
+ 1.295; background-color: rgb(255, 255, 255); margin-top: 0pt; margin-botto=
+m: 0pt; padding: 0pt 0pt 8pt;"><span style=3D"font-size: 11pt; font-family:=
+ Arial; color: rgb(34, 34, 34); background-color: transparent; font-variant=
+-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline=
+; white-space: pre-wrap;">=95 En la parte inferior aparecer=E1n los planes =
+a los cuales puedes acceder:&nbsp;</span><span style=3D"font-size: 11pt; fo=
+nt-family: Arial; color: rgb(34, 34, 34); background-color: transparent; fo=
+nt-weight: 700; font-variant-numeric: normal; font-variant-east-asian: norm=
+al; vertical-align: baseline; white-space: pre-wrap;">BLACK, SMART&nbsp;</s=
+pan><span style=3D"font-size: 11pt; font-family: Arial; color: rgb(34, 34, =
+34); background-color: transparent; font-variant-numeric: normal; font-vari=
+ant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;">o=
+</span><span style=3D"font-size: 11pt; font-family: Arial; color: rgb(34, 3=
+4, 34); background-color: transparent; font-weight: 700; font-variant-numer=
+ic: normal; font-variant-east-asian: normal; vertical-align: baseline; whit=
+e-space: pre-wrap;">&nbsp;ANUALIDAD</span><span style=3D"font-size: 11pt; f=
+ont-family: Arial; color: rgb(34, 34, 34); background-color: transparent; f=
+ont-variant-numeric: normal; font-variant-east-asian: normal; vertical-alig=
+n: baseline; white-space: pre-wrap;">&nbsp;</span></p><p dir=3D"ltr" style=
+=3D"font-family: arial; font-size: 12pt; line-height: 1.295; background-col=
+or: rgb(255, 255, 255); margin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0=
+pt 8pt;"><span style=3D"font-size: 11pt; font-family: Arial; color: rgb(34,=
+ 34, 34); background-color: transparent; font-variant-numeric: normal; font=
+-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wra=
+p;">Luego, ingresa los datos personales y en forma de pago escoges: tarjeta=
+ d=E9bito o cr=E9dito. (Todos los pagos son&nbsp;por d=E9bito autom=E1tico)=
+.&nbsp;</span></p><p dir=3D"ltr" style=3D"font-family: arial; font-size: 12=
+pt; line-height: 1.295; background-color: rgb(255, 255, 255); margin-top: 0=
+pt; margin-bottom: 0pt; padding: 0pt 0pt 8pt;"><span style=3D"font-size: 11=
+pt; font-family: Arial; color: rgb(34, 34, 34); background-color: transpare=
+nt; font-variant-numeric: normal; font-variant-east-asian: normal; vertical=
+-align: baseline; white-space: pre-wrap;">=95 Te llegar=E1 un correo electr=
+=F3nico: CONFIRMACI=D3N DE REGISTRO. Dando clic en el enlace se activar=E1 =
+el d=E9bito autom=E1tico y podr=E1s realizar el registro de&nbsp;tu encuest=
+a m=E9dica.</span></p><p dir=3D"ltr" style=3D"font-family: arial; font-size=
+: 12pt; line-height: 1.295; background-color: rgb(255, 255, 255); margin-to=
+p: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 8pt;"><span style=3D"font-size=
+: 11pt; font-family: Arial; color: rgb(34, 34, 34); background-color: trans=
+parent; font-variant-numeric: normal; font-variant-east-asian: normal; vert=
+ical-align: baseline; white-space: pre-wrap;">Si eres mayor de edad y no ti=
+enes problemas de salud, podr=E1s comenzar a entrenar el mismo d=EDa que fi=
+nalizas la compra por la web&nbsp;<a href=3D"www.smartfit.com.co">www.smart=
+fit.com.co</a></span></p><p dir=3D"ltr" style=3D"font-family: arial; font-s=
+ize: 12pt; line-height: 1.295; background-color: rgb(255, 255, 255); margin=
+-top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 8pt;"><span style=3D"font-s=
+ize: 11pt; font-family: Arial; color: rgb(34, 34, 34); background-color: tr=
+ansparent; font-variant-numeric: normal; font-variant-east-asian: normal; v=
+ertical-align: baseline; white-space: pre-wrap;">Si compraste en preapertur=
+a, es decir, que tu sede a=FAn no est=E1 abierta, el d=E9bito comenzar=E1 c=
+uando la sede abra sus puertas.&nbsp;</span></p><p dir=3D"ltr" style=3D"fon=
+t-family: arial; font-size: 12pt; line-height: 1.295; background-color: rgb=
+(255, 255, 255); margin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 8pt;=
+"><span style=3D"font-size: 11pt; font-family: Arial; color: rgb(34, 34, 34=
+); background-color: transparent; font-variant-numeric: normal; font-varian=
+t-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;">Si =
+eres menor de edad debes pedir la cita de valoraci=F3n cl=EDnica en la p=E1=
+gina web, en la opci=F3n&nbsp;</span><span style=3D"font-size: 11pt; font-f=
+amily: Arial; color: rgb(34, 34, 34); background-color: transparent; font-w=
+eight: 700; font-style: italic; font-variant-numeric: normal; font-variant-=
+east-asian: normal; vertical-align: baseline; white-space: pre-wrap;">TU ES=
+PACIO,&nbsp;</span><span style=3D"font-size: 11pt; font-family: Arial; colo=
+r: rgb(34, 34, 34); background-color: transparent; font-variant-numeric: no=
+rmal; font-variant-east-asian: normal; vertical-align: baseline; white-spac=
+e: pre-wrap;">para que puedas comenzar&nbsp;a entrenar.</span></p><p dir=3D=
+"ltr" style=3D"font-family: arial; font-size: 12pt; line-height: 1.295; bac=
+kground-color: rgb(255, 255, 255); margin-top: 0pt; margin-bottom: 0pt; pad=
+ding: 0pt 0pt 8pt;">&nbsp;</p><p dir=3D"ltr" style=3D"font-family: arial; f=
+ont-size: 12pt; line-height: 1.295; background-color: rgb(255, 255, 255); m=
+argin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 8pt;"><span style=3D"f=
+ont-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); background-colo=
+r: transparent; font-weight: 700; font-variant-numeric: normal; font-varian=
+t-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;">TIP=
+OS DE PLANES</span></p><p dir=3D"ltr" style=3D"font-family: arial; font-siz=
+e: 12pt; line-height: 1.295; background-color: rgb(255, 255, 255); margin-t=
+op: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 8pt;">&nbsp;</p><p dir=3D"ltr=
+" style=3D"font-family: arial; font-size: 12pt; line-height: 1.295; backgro=
+und-color: rgb(255, 255, 255); margin-top: 0pt; margin-bottom: 0pt; padding=
+: 0pt 0pt 8pt;"><span style=3D"font-size: 11pt; font-family: Arial; color: =
+rgb(34, 34, 34); background-color: transparent; font-weight: 700; font-vari=
+ant-numeric: normal; font-variant-east-asian: normal; vertical-align: basel=
+ine; white-space: pre-wrap;">PLAN SMART</span><span style=3D"font-size: 11p=
+t; font-family: Arial; color: rgb(34, 34, 34); background-color: transparen=
+t; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-=
+align: baseline; white-space: pre-wrap;">, te ofrece acceso a todas las zon=
+as del Centro de Acondicionamiento y Preparaci=F3n F=EDsica - CAPF, asesor=
+=EDa nutricional, valoraci=F3n cl=EDnica y m=E1s de 120 clases grupales. El=
+ mantenimiento anual de este plan es de $89.000 y se debita al tercer mes d=
+e realizar tu compra. El valor de inscripci=F3n es desde $90.000. No tiene =
+cl=E1usula de permanencia. Para realizar la cancelaci=F3n debes presentar u=
+na carta en la recepci=F3n de la sede, m=EDnimo 30 d=EDas antes de tus cobr=
+os.</span></p><p dir=3D"ltr" style=3D"font-family: arial; font-size: 12pt; =
+line-height: 1.295; background-color: rgb(255, 255, 255); margin-top: 0pt; =
+margin-bottom: 0pt; padding: 0pt 0pt 8pt;">&nbsp;</p><p dir=3D"ltr" style=
+=3D"font-family: arial; font-size: 12pt; line-height: 1.295; background-col=
+or: rgb(255, 255, 255); margin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0=
+pt 8pt;"><span style=3D"font-size: 11pt; font-family: Arial; color: rgb(34,=
+ 34, 34); background-color: transparent; font-weight: 700; font-variant-num=
+eric: normal; font-variant-east-asian: normal; vertical-align: baseline; wh=
+ite-space: pre-wrap;">PLAN BLACK</span><span style=3D"font-size: 11pt; font=
+-family: Arial; color: rgb(34, 34, 34); background-color: transparent; font=
+-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: =
+baseline; white-space: pre-wrap;">, te ofrece ingreso a todas las sedes de =
+Smart Fit en Colombia y Latinoam=E9rica, puedes invitar hasta a cinco amigo=
+s o familiares durante el mes, puedes usar los sillones de masajes y recibi=
+r=E1s tu camiseta BLACK. Adem=E1s cuentas con asesor=EDa nutricional, valor=
+aci=F3n cl=EDnica y m=E1s de 120 clases grupales. El mantenimiento anual es=
+ de $89.000 y se debita al tercer mes de realizar tu compra. El valor de in=
+scripci=F3n es desde $90.000. Tiene cl=E1usula de permanencia de 12 meses, =
+si cancelas antes te cobrar=E1n el 20% de los meses que se incumplieron. Pa=
+ra realizar la cancelaci=F3n debes presentar una carta en la recepci=F3n de=
+ la sede, m=EDnimo 30 d=EDas antes de tus cobros.</span></p><p dir=3D"ltr" =
+style=3D"font-family: arial; font-size: 12pt; line-height: 1.295; backgroun=
+d-color: rgb(255, 255, 255); margin-top: 0pt; margin-bottom: 0pt; padding: =
+0pt 0pt 8pt;">&nbsp;</p><p dir=3D"ltr" style=3D"font-family: arial; font-si=
+ze: 12pt; line-height: 1.295; background-color: rgb(255, 255, 255); margin-=
+top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 8pt;"><span style=3D"font-si=
+ze: 11pt; font-family: Arial; color: rgb(34, 34, 34); background-color: tra=
+nsparent; font-weight: 700; font-variant-numeric: normal; font-variant-east=
+-asian: normal; vertical-align: baseline; white-space: pre-wrap;">PLAN ANUA=
+L,</span><span style=3D"font-size: 11pt; font-family: Arial; color: rgb(34,=
+ 34, 34); background-color: transparent; font-variant-numeric: normal; font=
+-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wra=
+p;">&nbsp;te ofrece ingreso a todas las sedes de Smart Fit en Colombia y La=
+tinoam=E9rica, puedes invitar hasta a cinco amigos o familiares durante el =
+mes, puedes usar los sillones de masajes y recibir=E1s tu camiseta BLACK. A=
+dem=E1s cuentas con asesor=EDa nutricional, valoraci=F3n cl=EDnica y m=E1s =
+de 120 clases grupales. No pagas el valor del mantenimiento anual, es decir=
+, tienes un ahorro de $89.000,&nbsp; ni pagas el valor de inscripci=F3n, es=
+ decir, un ahorro de $90.000.</span></p><p dir=3D"ltr" style=3D"font-family=
+: arial; font-size: 12pt; line-height: 1.295; background-color: rgb(255, 25=
+5, 255); margin-top: 0pt; margin-bottom: 0pt; padding: 0pt 0pt 8pt;">&nbsp;=
+</p><p dir=3D"ltr" style=3D"font-family: arial; font-size: 12pt; line-heigh=
+t: 1.295; background-color: rgb(255, 255, 255); margin-top: 0pt; margin-bot=
+tom: 8pt;"><span style=3D"font-size: 11pt; font-family: Arial; color: rgb(3=
+4, 34, 34); background-color: transparent; font-variant-numeric: normal; fo=
+nt-variant-east-asian: normal; vertical-align: baseline; white-space: pre-w=
+rap;">El valor de la inscripci=F3n se paga cada vez que ingreses como usuar=
+io Smart Fit. Es decir, si cancelas tu plan y luego quieres regresar, debes=
+ pagar nuevamente la inscripci=F3n.&nbsp;</span></p><p dir=3D"ltr" style=3D=
+"font-family: arial; font-size: 12pt; line-height: 1.295; background-color:=
+ rgb(255, 255, 255); margin-top: 0pt; margin-bottom: 8pt;"><span style=3D"f=
+ont-size: 11pt; font-family: Arial; color: rgb(34, 34, 34); background-colo=
+r: transparent; font-variant-numeric: normal; font-variant-east-asian: norm=
+al; vertical-align: baseline; white-space: pre-wrap;"><br></span></p><div s=
+tyle=3D"font-family: arial; font-size: 12pt;"><b>GERENCIA SERVICIO AL CLIEN=
+TE</b></div><div style=3D"font-family: arial; font-size: 12pt;"><br></div><=
+div style=3D"font-family: arial; font-size: 12pt;"><font face=3D"arial"></f=
+ont></div><p dir=3D"ltr" style=3D"font-family: arial; font-size: 12pt; line=
+-height: 1.295; background-color: rgb(255, 255, 255); margin-top: 0pt; marg=
+in-bottom: 8pt;"><span style=3D"font-size: 11pt; font-family: Arial; color:=
+ rgb(34, 34, 34); background-color: transparent; font-variant-numeric: norm=
+al; font-variant-east-asian: normal; vertical-align: baseline; white-space:=
+ pre-wrap;"></span></p><div style=3D"font-family: arial; font-size: 12pt;">=
+<font face=3D"arial"></font></div><div style=3D"font-family: arial; font-si=
+ze: 12pt;"><span style=3D"font-size: 11pt; font-family: Arial; color: rgb(3=
+4, 34, 34); background-color: transparent; font-variant-numeric: normal; fo=
+nt-variant-east-asian: normal; vertical-align: baseline; white-space: pre-w=
+rap;"><br></span></div></span></div></td></tr></table></td></tr><tr valign=
+=3D"top" ><td  style=3D" background-color:#FFFFFF; bEditID:r4st1; bLabel:ac=
+cent2; height:0px;"></td></tr><tr valign=3D"top" ><td  style=3D" background=
+-color:#FFFFFF; bEditID:r5st1; bLabel:footer; vertical-align:top; height:10=
+0; text-align:left;"></td></tr><tr valign=3D"top" ><td  style=3D" backgroun=
+d-color:#000000; bEditID:r6st1; bLabel:accent3; height:0px;"></td></tr></ta=
+ble></center></body></html>
+------=_Part_580_422995354.1598720749809--

@@ -1,0 +1,358 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp699529ild;
+        Wed, 23 Sep 2020 09:45:21 -0700 (PDT)
+X-Received: by 2002:a92:dcc5:: with SMTP id b5mr541745ilr.89.1600879520884;
+        Wed, 23 Sep 2020 09:45:20 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1600879520; cv=none;
+        d=google.com; s=arc-20160816;
+        b=JT5VLuN287+bNpZ86Zyv25WEy6Ry/0kNL+keEkMKOrQ+E24jAmZWIFtxtWO+q2M/0z
+         lVDBhD915muermXkZ77XrNYPr5lqoYC6c3JmqooR1E5OozH5Xo+cgbVR8mAfi7Cu8Ag5
+         NpK4ZpT0wJPFgIfFXIeUJQgNYJ5GabVNDxQXYTeQGLcfj9JSvWGg/Vr1VLr9SGppZIUA
+         ovxLQqU3cJDlPZhT5+SzDj6JhsnaRY8Q8XRlmRSVYYYsNtujqjN0ulSv8yQmRdeqfgu2
+         8T66Bj5bVmoakcPOeCT6PoZqKSrKy7Q+9kNdKAjxLgFZUnSt9BGyJ6NqRoCOZH1FAvN6
+         3Z0A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:sender:reply-to:mime-version
+         :dkim-signature:dkim-signature;
+        bh=UPP1ilWr+b4B8XE6mONxXOFXeRwe84ATa2BTZse3eSM=;
+        b=r7iz21jGegDLjx7eKyZyju+AcUpf4xU697aQrI8Iu6uXcnKu6BY5nwSy8tke41yrjB
+         1KEg/0NmzDAbk31Fv/Eq41j01kIWWUkGQ0ANyi42uxoyMk6JOK8Ux2QSQ4BWuBvsMGuo
+         sx6z/MejyvC1YkvNyzHAv0SH4K/vIvm5VzXt1RW8GMY+E26Po5+KZ2IGCMqJ3wDyfdJ7
+         VOT+/ZpzAvSfYrIQSgxdwApu9h357s6m0GW+L63njyPlndC8aqZVFNJT2Zb4Var7Tlmd
+         VGruqUa+6/YnXvSfsleL1HyoPq4fdAhzgjMqu/iYVnAzERAXvntjOt6heiT4nW39DeAJ
+         +MBA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=dQW0Ssh3;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=cjTeBrJK;
+       spf=pass (google.com: domain of castillojulian@gmail.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=castillojulian@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <castillojulian@gmail.com>
+Received: from mail-sor-f73.google.com (mail-sor-f73.google.com. [209.85.220.73])
+        by mx.google.com with SMTPS id g15sor170853ilk.24.2020.09.23.09.45.20
+        for <pharsat@gmail.com>
+        (Google Transport Security);
+        Wed, 23 Sep 2020 09:45:20 -0700 (PDT)
+Received-SPF: pass (google.com: domain of castillojulian@gmail.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b=dQW0Ssh3;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=cjTeBrJK;
+       spf=pass (google.com: domain of castillojulian@gmail.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=castillojulian@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:reply-to:sender:message-id:date:subject:from:to;
+        bh=UPP1ilWr+b4B8XE6mONxXOFXeRwe84ATa2BTZse3eSM=;
+        b=dQW0Ssh3Sbw7tXWOFFgt+Um8ahwqRZ0YEn/vXc56Oo2jjjITS5XujWc419Wyq/41Vk
+         y69DHjb386WIA7xyYX6WGwlcUhqXCOMoPc9eunl2zNyII1fz8RLlQKFVCfXRim/IeX8e
+         Vu5wWch5IJPtXbvppyq/FCPWcgKZ3NJCj8NzbNQSgZlCL7QjSkM60WHkgGRvBNLhl4cl
+         bwq3m6OO37aty7y4ujY14pECnDPQg/wbxUoT1gFpObDz9KaJPizxYqftkmGmW2D2oFvU
+         KpU5x1P62F41Rd6EpKRHl0Cgwkdz+seyzk3s0UlD1aAXytmdwFP0dGJfxNxT5RNRTg8l
+         hsTw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:reply-to:sender:message-id:date:subject:from:to;
+        bh=UPP1ilWr+b4B8XE6mONxXOFXeRwe84ATa2BTZse3eSM=;
+        b=cjTeBrJKsqCJ5QZFFM0rsN72Y06dGRARtSPezy9otfkkTKuvIY3+LdhhMDZ1VRFW8l
+         ySFUwG0N0mj0+hyFWPFs/weVcrRRMoutmHFRz+Ec+hTgj2NPYZVfTuG7NE2tZUgXqoBL
+         2nOaG/VCaP9IcUu9NJafIuks8szTFo8b4dOntY7l5KX0COgr9eunbOIodAXKU8osO5C/
+         BZHTunAbXpexK+iDFrbz3QCDEoNKonxiW9p6PZeE9djiC/j+JQADGM30yBidsd3Kd4VJ
+         XEXxUl8xCGnpvFMpnmWoo22S/RRmDbBWmEP0pJDz9qGewPbR4qq5qX79a6/5lG87KXjQ
+         KtWQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:reply-to:sender:message-id:date
+         :subject:from:to;
+        bh=UPP1ilWr+b4B8XE6mONxXOFXeRwe84ATa2BTZse3eSM=;
+        b=YS4tI6D4m6brO6XBB7WgWFCuHdQTK80K3Z043h59MOP6kMB2Fi15ypB/epQDnOItI5
+         9SrskzvwtmjREjaVGw40OHmvH56qCww8a5RsDVZBVcAkrK+eGAhrRgZCKvQiFIWGEpty
+         XdlGGtThe27DdDP4k8hH7gLVUttSOpGUbmYugBnytCA94bDRFUhYnCw9ew4SCLbO3mAm
+         NuYbTB8gPAW3BORyYtegjxmxs5pJferF/I4KBLjDDaq0DiPiXWPVMLQ7KpkmePEDgiuh
+         etyU2w4WIQy+DD6zw1UhDrxXy7B//1snPnFmcBdfrl0rGmn2qMHaH7obaA7rsaWpLQoP
+         InIg==
+X-Gm-Message-State: AOAM532QYZYNXGMB/Hi/+gNmWCBn6S5DR6gIRL0Q6lxYOW5e7HYFbbfI
+	4ZGLGSayxvg+V6/yHU7NrwXNka3LDgX33PLgU3cc
+X-Google-Smtp-Source: ABdhPJzDzPJ1JJBrQc97eD+Suy4dgQEqHsefWMcocSanXDVcUhsrBsA7ZNEqA5UhU1Pt9db4rGue9O+rlOlK4zZLDnCU
+MIME-Version: 1.0
+X-Received: by 2002:a92:217:: with SMTP id 23mr645846ilc.118.1600879519711;
+ Wed, 23 Sep 2020 09:45:19 -0700 (PDT)
+Reply-To: castillojulian@gmail.com
+Sender: Google Calendario <calendar-notification@google.com>
+Message-ID: <0000000000001b511d05affdcfad@google.com>
+Date: Wed, 23 Sep 2020 16:45:19 +0000
+Subject: =?UTF-8?Q?Invitaci=C3=B3n=3A_The_Game_Awards_jue_10_dic_2020_19=3A00_=2D?=
+	=?UTF-8?Q?_23=3A00_=28COT=29_=28pharsat=40gmail=2Ecom=29?=
+From: castillojulian@gmail.com
+To: pharsat@gmail.com
+Content-Type: multipart/mixed; boundary="0000000000001b510b05affdcfac"
+
+--0000000000001b510b05affdcfac
+Content-Type: multipart/alternative; boundary="0000000000001b510905affdcfaa"
+
+--0000000000001b510905affdcfaa
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+VGllbmVzIHVuYSBpbnZpdGFjacOzbiBwYXJhIGVsIHNpZ3VpZW50ZSBldmVudG8uDQoNClTDrXR1
+bG86IFRoZSBHYW1lIEF3YXJkcw0KTGl2ZSBmcm9tIExvcyBBbmdlbGVzLCBMb25kb24gYW5kIFRv
+a3lvLiBBIG11bHRpd29ybGQgb2Ygd29uZGVyIGF3YWl0cyBhdCAgDQpnYW1pbmcncyBiaWdnZXN0
+IG5pZ2h0LiBBd2FyZHMsIHdvcmxkIHByZW1pZXJlcywgYW5kIG11c2ljYWwgcGVyZm9ybWFuY2Vz
+Lg0KRmVjaGE6IGp1ZSAxMCBkaWMgMjAyMCAxOTowMCDigJMgMjM6MDAgSG9yYSBlc3TDoW5kYXIg
+ZGUgQ29sb21iaWENCkTDs25kZTogaHR0cDovL3d3dy50aGVnYW1lYXdhcmRzLmNvbQ0KDQpJbmZv
+cm1hY2nDs24gcGFyYSB1bmlyc2U6IFVuaXJzZSBjb24gR29vZ2xlIE1lZXQNCmh0dHBzOi8vbWVl
+dC5nb29nbGUuY29tL2J6Yi15b29jLWh1cQ0KDQpDYWxlbmRhcmlvOiBwaGFyc2F0QGdtYWlsLmNv
+bQ0KUXVpw6luOg0KICAgICAqIGNhc3RpbGxvanVsaWFuQGdtYWlsLmNvbSAtIG9yZ2FuaXphZG9y
+DQogICAgICogcGhhcnNhdEBnbWFpbC5jb20NCg0KRGV0YWxsZXMgZGVsIGV2ZW50bzogIA0KaHR0
+cHM6Ly93d3cuZ29vZ2xlLmNvbS9jYWxlbmRhci9ldmVudD9hY3Rpb249VklFVyZlaWQ9TlRsbWNE
+Wm9PVzVzTUhGMmJqUnhaelpsYzI5dk5EVjBibTBnY0doaGNuTmhkRUJ0JnRvaz1NalFqWTJGemRH
+bHNiRzlxZFd4cFlXNUFaMjFoYVd3dVkyOXROVFpoTURSaU9XSmlPR1JrWXpJeFl6WmxZakZpWVRO
+ak9HVm1ZVGMzTXpKa05tTXlaREJtT0EmY3R6PUFtZXJpY2ElMkZCb2dvdGEmaGw9ZXNfNDE5JmVz
+PTENCg0KSW52aXRhY2nDs24gZGUgQ2FsZW5kYXJpbyBkZSBHb29nbGU6IGh0dHBzOi8vd3d3Lmdv
+b2dsZS5jb20vY2FsZW5kYXIvDQoNClJlY2liZXMgZXN0ZSBtZW5zYWplIGRlIGNvcnJlbyBlbGVj
+dHLDs25pY28gZW4gbGEgZGlyZWNjacOzbiAgDQpwaGFyc2F0QGdtYWlsLmNvbSBkZSBsYSBjdWVu
+dGEgcG9ycXVlIGVzdMOhcyBzdXNjcml0byBwYXJhIHJlY2liaXIgIA0KaW52aXRhY2lvbmVzIGRl
+bCBjYWxlbmRhcmlvIHBoYXJzYXRAZ21haWwuY29tLg0KDQpTaSBxdWllcmVzIGRlamFyIGRlIHJl
+Y2liaXIgZXN0b3MgY29ycmVvcyBlbGVjdHLDs25pY29zLCBhY2NlZGUgYSAgDQpodHRwczovL3d3
+dy5nb29nbGUuY29tL2NhbGVuZGFyLyB5IG1vZGlmaWNhIGxhIGNvbmZpZ3VyYWNpw7NuIGRlIGxh
+cyAgDQpub3RpZmljYWNpb25lcyBkZSBlc3RlIGNhbGVuZGFyaW8uDQoNClNpIHJlZW52w61hcyBl
+c3RhIGludml0YWNpw7NuLCBsb3MgZGVzdGluYXRhcmlvcyBwb2Ryw61hbiBlbnZpYXIgdW5hIHJl
+c3B1ZXN0YSAgDQphbCBvcmdhbml6YWRvciB5IHNlIGxvcyBwb2Ryw61hIGFncmVnYXIgYSBsYSBs
+aXN0YSBkZSBpbnZpdGFkb3MuIFRhbWJpw6luICANCnBvZHLDrWFuIGludml0YXIgYSBvdHJhcyBw
+ZXJzb25hcyBpbmRlcGVuZGllbnRlbWVudGUgZGVsIGVzdGFkbyBkZSBzdSAgDQppbnZpdGFjacOz
+biBvIG1vZGlmaWNhciB0dSBjb25maXJtYWNpw7NuIGRlIGFzaXN0ZW5jaWEuIE3DoXMgaW5mb3Jt
+YWNpw7NuIGVuICANCmh0dHBzOi8vc3VwcG9ydC5nb29nbGUuY29tL2NhbGVuZGFyL2Fuc3dlci8z
+NzEzNSNmb3J3YXJkaW5nDQo=
+--0000000000001b510905affdcfaa
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<span itemscope itemtype=3D"http://schema.org/InformAction"><span style=3D"=
+display:none" itemprop=3D"about" itemscope itemtype=3D"http://schema.org/Pe=
+rson"><meta itemprop=3D"description" content=3D"Invitaci=C3=B3n de castillo=
+julian@gmail.com"/></span><span itemprop=3D"object" itemscope itemtype=3D"h=
+ttp://schema.org/Event"><div style=3D""><table cellspacing=3D"0" cellpaddin=
+g=3D"8" border=3D"0" summary=3D"" style=3D"width:100%;font-family:Arial,San=
+s-serif;border:1px Solid #ccc;border-width:1px 2px 2px 1px;background-color=
+:#fff;"><tr><td><meta itemprop=3D"eventStatus" content=3D"http://schema.org=
+/EventScheduled"/><h4 style=3D"padding:6px 10px;margin:0 0 4px 0;font-famil=
+y:Arial,Sans-serif;font-size:13px;line-height:1.4;border:1px Solid #d9f2db;=
+background:#d9f2db;color:#222;font-weight:normal"><strong>Tienes una invita=
+ci=C3=B3n para el siguiente evento.</strong></h4><div style=3D"padding:2px"=
+><span itemprop=3D"publisher" itemscope itemtype=3D"http://schema.org/Organ=
+ization"><meta itemprop=3D"name" content=3D"Google Calendar"/></span><meta =
+itemprop=3D"eventId/googleCalendar" content=3D"59fp6h9nl0qvn4qg6esoo45tnm"/=
+><h3 style=3D"padding:0 0 6px 0;margin:0;font-family:Arial,Sans-serif;font-=
+size:16px;font-weight:bold;color:#222"><span itemprop=3D"name">The Game Awa=
+rds</span></h3><table style=3D"display:inline-table" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" summary=3D"Detalles del evento"><tr><td style=3D=
+"padding:0 1em 10px 0;font-family:Arial,Sans-serif;font-size:13px;color:#88=
+8;white-space:nowrap" valign=3D"top"><div><i style=3D"font-style:normal">Cu=
+=C3=A1ndo</i></div></td><td style=3D"padding-bottom:10px;font-family:Arial,=
+Sans-serif;font-size:13px;color:#222" valign=3D"top"><time itemprop=3D"star=
+tDate" datetime=3D"20201211T000000Z"></time><time itemprop=3D"endDate" date=
+time=3D"20201211T040000Z"></time>jue 10 dic 2020 19:00 =E2=80=93 23:00 <spa=
+n style=3D"color:#888">Hora est=C3=A1ndar de Colombia</span></td></tr><tr><=
+td style=3D"padding:0 1em 10px 0;font-family:Arial,Sans-serif;font-size:13p=
+x;color:#888;white-space:nowrap" valign=3D"top"><div><i style=3D"font-style=
+:normal">D=C3=B3nde</i></div></td><td style=3D"padding-bottom:10px;font-fam=
+ily:Arial,Sans-serif;font-size:13px;color:#222" valign=3D"top"><span itempr=
+op=3D"location" itemscope itemtype=3D"http://schema.org/Place"><span itempr=
+op=3D"name" class=3D"notranslate">http://www.thegameawards.com</span><span =
+dir=3D"ltr"> (<a href=3D"https://www.google.com/url?q=3Dhttp%3A%2F%2Fwww.th=
+egameawards.com&amp;sa=3DD&amp;source=3Dcalendar&amp;usd=3D2&amp;usg=3DAOvV=
+aw1wdz6B4h2nX5hKQFBhhz86" style=3D"color:#20c;white-space:nowrap" target=3D=
+"_blank" itemprop=3D"map">mapa</a>)</span></span></td></tr><tr><td style=3D=
+"padding:0 1em 4px 0;font-family:Arial,Sans-serif;font-size:13px;color:#888=
+;white-space:nowrap" valign=3D"top"><div><i style=3D"font-style:normal">Inf=
+ormaci=C3=B3n para unirse</i></div></td><td style=3D"padding-bottom:4px;fon=
+t-family:Arial,Sans-serif;font-size:13px;color:#222" valign=3D"top">Unirse =
+con Google Meet</td></tr><tr><td style=3D"padding:0 1em 10px 0;font-family:=
+Arial,Sans-serif;font-size:13px;color:#888;white-space:nowrap"></td><td sty=
+le=3D"padding-bottom:10px;font-family:Arial,Sans-serif;font-size:13px;color=
+:#222" valign=3D"top"><span itemprop=3D"potentialaction" itemscope itemtype=
+=3D"http://schema.org/JoinAction"><span itemprop=3D"name" content=3D"meet.g=
+oogle.com/bzb-yooc-huq"><span itemprop=3D"target" itemscope itemtype=3D"htt=
+p://schema.org/EntryPoint"><span itemprop=3D"url" content=3D"https://meet.g=
+oogle.com/bzb-yooc-huq"><span itemprop=3D"httpMethod" content=3D"GET"><a hr=
+ef=3D"https://meet.google.com/bzb-yooc-huq" style=3D"color:#20c;white-space=
+:nowrap" target=3D"_blank">meet.google.com/bzb-yooc-huq</a></span></span></=
+span></span></span> </td></tr><tr><td style=3D"padding:0 1em 10px 0;font-fa=
+mily:Arial,Sans-serif;font-size:13px;color:#888;white-space:nowrap" valign=
+=3D"top"><div><i style=3D"font-style:normal">Calendario </i></div></td><td =
+style=3D"padding-bottom:10px;font-family:Arial,Sans-serif;font-size:13px;co=
+lor:#222" valign=3D"top">pharsat@gmail.com</td></tr><tr><td style=3D"paddin=
+g:0 1em 10px 0;font-family:Arial,Sans-serif;font-size:13px;color:#888;white=
+-space:nowrap" valign=3D"top"><div><i style=3D"font-style:normal">Invitados=
+</i></div></td><td style=3D"padding-bottom:10px;font-family:Arial,Sans-seri=
+f;font-size:13px;color:#222" valign=3D"top"><table cellspacing=3D"0" cellpa=
+dding=3D"0"><tr><td style=3D"padding-right:10px;font-family:Arial,Sans-seri=
+f;font-size:13px;color:#222"><span style=3D"font-family:Courier New,monospa=
+ce">&#x2022;</span></td><td style=3D"padding-right:10px;font-family:Arial,S=
+ans-serif;font-size:13px;color:#222"><div><div style=3D"margin:0 0 0.3em 0"=
+><span itemprop=3D"attendee" itemscope itemtype=3D"http://schema.org/Person=
+"><span itemprop=3D"name" class=3D"notranslate">castillojulian@gmail.com</s=
+pan><meta itemprop=3D"email" content=3D"castillojulian@gmail.com"/></span><=
+span itemprop=3D"organizer" itemscope itemtype=3D"http://schema.org/Person"=
+><meta itemprop=3D"name" content=3D"castillojulian@gmail.com"/><meta itempr=
+op=3D"email" content=3D"castillojulian@gmail.com"/></span><span style=3D"fo=
+nt-size:11px;color:#888"> - organizador</span></div></div></td></tr><tr><td=
+ style=3D"padding-right:10px;font-family:Arial,Sans-serif;font-size:13px;co=
+lor:#222"><span style=3D"font-family:Courier New,monospace">&#x2022;</span>=
+</td><td style=3D"padding-right:10px;font-family:Arial,Sans-serif;font-size=
+:13px;color:#222"><div><div style=3D"margin:0 0 0.3em 0"><span itemprop=3D"=
+attendee" itemscope itemtype=3D"http://schema.org/Person"><span itemprop=3D=
+"name" class=3D"notranslate">pharsat@gmail.com</span><meta itemprop=3D"emai=
+l" content=3D"pharsat@gmail.com"/></span></div></div></td></tr></table></td=
+></tr></table><div style=3D"float:right;font-weight:bold;font-size:13px"> <=
+a href=3D"https://www.google.com/calendar/event?action=3DVIEW&amp;eid=3DNTl=
+mcDZoOW5sMHF2bjRxZzZlc29vNDV0bm0gcGhhcnNhdEBt&amp;tok=3DMjQjY2FzdGlsbG9qdWx=
+pYW5AZ21haWwuY29tNTZhMDRiOWJiOGRkYzIxYzZlYjFiYTNjOGVmYTc3MzJkNmMyZDBmOA&amp=
+;ctz=3DAmerica%2FBogota&amp;hl=3Des_419&amp;es=3D1" style=3D"color:#20c;whi=
+te-space:nowrap" itemprop=3D"url">m=C3=A1s detalles &raquo;</a><br></div><d=
+iv style=3D"padding-bottom:15px;font-family:Arial,Sans-serif;font-size:13px=
+;color:#222;white-space:pre-wrap!important;white-space:-moz-pre-wrap!import=
+ant;white-space:-pre-wrap!important;white-space:-o-pre-wrap!important;white=
+-space:pre;word-wrap:break-word"><span>Live from Los Angeles, London and To=
+kyo. A multiworld of wonder awaits at gaming's biggest night. Awards, world=
+ premieres, and musical performances.</span><meta itemprop=3D"description" =
+content=3D"Live from Los Angeles, London and Tokyo. A multiworld of wonder =
+awaits at gaming&#39;s biggest night. Awards, world premieres, and musical =
+performances."/></div></div><p style=3D"color:#222;font-size:13px;margin:0"=
+><span style=3D"color:#888">=C2=BFAsistir=C3=A1s (pharsat@gmail.com)?&nbsp;=
+&nbsp;&nbsp;</span><wbr><strong><span itemprop=3D"potentialaction" itemscop=
+e itemtype=3D"http://schema.org/RsvpAction"><meta itemprop=3D"attendance" c=
+ontent=3D"http://schema.org/RsvpAttendance/Yes"/><span itemprop=3D"handler"=
+ itemscope itemtype=3D"http://schema.org/HttpActionHandler"><link itemprop=
+=3D"method" href=3D"http://schema.org/HttpRequestMethod/GET"/><a href=3D"ht=
+tps://www.google.com/calendar/event?action=3DRESPOND&amp;eid=3DNTlmcDZoOW5s=
+MHF2bjRxZzZlc29vNDV0bm0gcGhhcnNhdEBt&amp;rst=3D1&amp;tok=3DMjQjY2FzdGlsbG9q=
+dWxpYW5AZ21haWwuY29tNTZhMDRiOWJiOGRkYzIxYzZlYjFiYTNjOGVmYTc3MzJkNmMyZDBmOA&=
+amp;ctz=3DAmerica%2FBogota&amp;hl=3Des_419&amp;es=3D1" style=3D"color:#20c;=
+white-space:nowrap" itemprop=3D"url">S=C3=AD</a></span></span><span style=
+=3D"margin:0 0.4em;font-weight:normal"> - </span><span itemprop=3D"potentia=
+laction" itemscope itemtype=3D"http://schema.org/RsvpAction"><meta itemprop=
+=3D"attendance" content=3D"http://schema.org/RsvpAttendance/Maybe"/><span i=
+temprop=3D"handler" itemscope itemtype=3D"http://schema.org/HttpActionHandl=
+er"><link itemprop=3D"method" href=3D"http://schema.org/HttpRequestMethod/G=
+ET"/><a href=3D"https://www.google.com/calendar/event?action=3DRESPOND&amp;=
+eid=3DNTlmcDZoOW5sMHF2bjRxZzZlc29vNDV0bm0gcGhhcnNhdEBt&amp;rst=3D3&amp;tok=
+=3DMjQjY2FzdGlsbG9qdWxpYW5AZ21haWwuY29tNTZhMDRiOWJiOGRkYzIxYzZlYjFiYTNjOGVm=
+YTc3MzJkNmMyZDBmOA&amp;ctz=3DAmerica%2FBogota&amp;hl=3Des_419&amp;es=3D1" s=
+tyle=3D"color:#20c;white-space:nowrap" itemprop=3D"url">Tal vez</a></span><=
+/span><span style=3D"margin:0 0.4em;font-weight:normal"> - </span><span ite=
+mprop=3D"potentialaction" itemscope itemtype=3D"http://schema.org/RsvpActio=
+n"><meta itemprop=3D"attendance" content=3D"http://schema.org/RsvpAttendanc=
+e/No"/><span itemprop=3D"handler" itemscope itemtype=3D"http://schema.org/H=
+ttpActionHandler"><link itemprop=3D"method" href=3D"http://schema.org/HttpR=
+equestMethod/GET"/><a href=3D"https://www.google.com/calendar/event?action=
+=3DRESPOND&amp;eid=3DNTlmcDZoOW5sMHF2bjRxZzZlc29vNDV0bm0gcGhhcnNhdEBt&amp;r=
+st=3D2&amp;tok=3DMjQjY2FzdGlsbG9qdWxpYW5AZ21haWwuY29tNTZhMDRiOWJiOGRkYzIxYz=
+ZlYjFiYTNjOGVmYTc3MzJkNmMyZDBmOA&amp;ctz=3DAmerica%2FBogota&amp;hl=3Des_419=
+&amp;es=3D1" style=3D"color:#20c;white-space:nowrap" itemprop=3D"url">No</a=
+></span></span></strong>&nbsp;&nbsp;&nbsp;&nbsp;<wbr><a href=3D"https://www=
+.google.com/calendar/event?action=3DVIEW&amp;eid=3DNTlmcDZoOW5sMHF2bjRxZzZl=
+c29vNDV0bm0gcGhhcnNhdEBt&amp;tok=3DMjQjY2FzdGlsbG9qdWxpYW5AZ21haWwuY29tNTZh=
+MDRiOWJiOGRkYzIxYzZlYjFiYTNjOGVmYTc3MzJkNmMyZDBmOA&amp;ctz=3DAmerica%2FBogo=
+ta&amp;hl=3Des_419&amp;es=3D1" style=3D"color:#20c;white-space:nowrap" item=
+prop=3D"url">m=C3=A1s opciones &raquo;</a></p></td></tr><tr><td style=3D"ba=
+ckground-color:#f6f6f6;color:#888;border-top:1px Solid #ccc;font-family:Ari=
+al,Sans-serif;font-size:11px"><p>Invitaci=C3=B3n de <a href=3D"https://www.=
+google.com/calendar/" target=3D"_blank" style=3D"">Calendario de Google</a>=
+</p><p>Recibes este mensaje de correo electr=C3=B3nico en la direcci=C3=B3n=
+ pharsat@gmail.com de la cuenta porque est=C3=A1s suscrito para recibir inv=
+itaciones del calendario pharsat@gmail.com.</p><p>Si quieres dejar de recib=
+ir estos correos electr=C3=B3nicos, accede a https://www.google.com/calenda=
+r/ y modifica la configuraci=C3=B3n de las notificaciones de este calendari=
+o.</p><p>Si reenv=C3=ADas esta invitaci=C3=B3n, los destinatarios podr=C3=
+=ADan enviar una respuesta al organizador y se los podr=C3=ADa agregar a la=
+ lista de invitados. Tambi=C3=A9n podr=C3=ADan invitar a otras personas ind=
+ependientemente del estado de su invitaci=C3=B3n o modificar tu confirmaci=
+=C3=B3n de asistencia. <a href=3D"https://support.google.com/calendar/answe=
+r/37135#forwarding">M=C3=A1s informaci=C3=B3n</a>.</p></td></tr></table></d=
+iv></span></span>
+--0000000000001b510905affdcfaa
+Content-Type: text/calendar; charset="UTF-8"; method=REQUEST
+Content-Transfer-Encoding: quoted-printable
+
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTART:20201211T000000Z
+DTEND:20201211T040000Z
+DTSTAMP:20200923T164519Z
+ORGANIZER;CN=3Dcastillojulian@gmail.com:mailto:castillojulian@gmail.com
+UID:59fp6h9nl0qvn4qg6esoo45tnm@google.com
+ATTENDEE;CUTYPE=3DINDIVIDUAL;ROLE=3DREQ-PARTICIPANT;PARTSTAT=3DACCEPTED;RSV=
+P=3DTRUE
+ ;CN=3Dcastillojulian@gmail.com;X-NUM-GUESTS=3D0:mailto:castillojulian@gmai=
+l.com
+ATTENDEE;CUTYPE=3DINDIVIDUAL;ROLE=3DREQ-PARTICIPANT;PARTSTAT=3DNEEDS-ACTION=
+;RSVP=3D
+ TRUE;CN=3Dpharsat@gmail.com;X-NUM-GUESTS=3D0:mailto:pharsat@gmail.com
+X-MICROSOFT-CDO-OWNERAPPTID:429361178
+CREATED:20200923T163647Z
+DESCRIPTION:Live from Los Angeles\, London and Tokyo. A multiworld of wonde
+ r awaits at gaming's biggest night. Awards\, world premieres\, and musical=
+=20
+ performances.\n\n-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~=
+:
+ ~:~:~:~:~:~:~:~:~:~:~::~:~::-\nNo edite esta secci=C3=B3n de la descripci=
+=C3=B3n.\n\n
+ Este evento tiene una videollamada.\nUnirse: https://meet.google.com/bzb-y=
+o
+ oc-huq\n\nConsulta el evento en https://www.google.com/calendar/event?acti=
+o
+ n=3DVIEW&eid=3DNTlmcDZoOW5sMHF2bjRxZzZlc29vNDV0bm0gcGhhcnNhdEBt&tok=3DMjQj=
+Y2FzdGl
+ sbG9qdWxpYW5AZ21haWwuY29tNTZhMDRiOWJiOGRkYzIxYzZlYjFiYTNjOGVmYTc3MzJkNmMyZ=
+D
+ BmOA&ctz=3DAmerica%2FBogota&hl=3Des_419&es=3D1.\n-::~:~::~:~:~:~:~:~:~:~:~=
+:~:~:~:
+ ~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-
+LAST-MODIFIED:20200923T164518Z
+LOCATION:http://www.thegameawards.com
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:The Game Awards
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
+
+--0000000000001b510905affdcfaa--
+--0000000000001b510b05affdcfac
+Content-Type: application/ics; name="invite.ics"
+Content-Disposition: attachment; filename="invite.ics"
+Content-Transfer-Encoding: base64
+
+QkVHSU46VkNBTEVOREFSDQpQUk9ESUQ6LS8vR29vZ2xlIEluYy8vR29vZ2xlIENhbGVuZGFyIDcw
+LjkwNTQvL0VODQpWRVJTSU9OOjIuMA0KQ0FMU0NBTEU6R1JFR09SSUFODQpNRVRIT0Q6UkVRVUVT
+VA0KQkVHSU46VkVWRU5UDQpEVFNUQVJUOjIwMjAxMjExVDAwMDAwMFoNCkRURU5EOjIwMjAxMjEx
+VDA0MDAwMFoNCkRUU1RBTVA6MjAyMDA5MjNUMTY0NTE5Wg0KT1JHQU5JWkVSO0NOPWNhc3RpbGxv
+anVsaWFuQGdtYWlsLmNvbTptYWlsdG86Y2FzdGlsbG9qdWxpYW5AZ21haWwuY29tDQpVSUQ6NTlm
+cDZoOW5sMHF2bjRxZzZlc29vNDV0bm1AZ29vZ2xlLmNvbQ0KQVRURU5ERUU7Q1VUWVBFPUlORElW
+SURVQUw7Uk9MRT1SRVEtUEFSVElDSVBBTlQ7UEFSVFNUQVQ9QUNDRVBURUQ7UlNWUD1UUlVFDQog
+O0NOPWNhc3RpbGxvanVsaWFuQGdtYWlsLmNvbTtYLU5VTS1HVUVTVFM9MDptYWlsdG86Y2FzdGls
+bG9qdWxpYW5AZ21haWwuY29tDQpBVFRFTkRFRTtDVVRZUEU9SU5ESVZJRFVBTDtST0xFPVJFUS1Q
+QVJUSUNJUEFOVDtQQVJUU1RBVD1ORUVEUy1BQ1RJT047UlNWUD0NCiBUUlVFO0NOPXBoYXJzYXRA
+Z21haWwuY29tO1gtTlVNLUdVRVNUUz0wOm1haWx0bzpwaGFyc2F0QGdtYWlsLmNvbQ0KWC1NSUNS
+T1NPRlQtQ0RPLU9XTkVSQVBQVElEOjQyOTM2MTE3OA0KQ1JFQVRFRDoyMDIwMDkyM1QxNjM2NDda
+DQpERVNDUklQVElPTjpMaXZlIGZyb20gTG9zIEFuZ2VsZXNcLCBMb25kb24gYW5kIFRva3lvLiBB
+IG11bHRpd29ybGQgb2Ygd29uZGUNCiByIGF3YWl0cyBhdCBnYW1pbmcncyBiaWdnZXN0IG5pZ2h0
+LiBBd2FyZHNcLCB3b3JsZCBwcmVtaWVyZXNcLCBhbmQgbXVzaWNhbCANCiBwZXJmb3JtYW5jZXMu
+XG5cbi06On46fjo6fjp+On46fjp+On46fjp+On46fjp+On46fjp+On46fjp+On46fjp+On46fjp+
+On46fjoNCiB+On46fjp+On46fjp+On46fjp+On46On46fjo6LVxuTm8gZWRpdGUgZXN0YSBzZWNj
+acOzbiBkZSBsYSBkZXNjcmlwY2nDs24uXG5cbg0KIEVzdGUgZXZlbnRvIHRpZW5lIHVuYSB2aWRl
+b2xsYW1hZGEuXG5Vbmlyc2U6IGh0dHBzOi8vbWVldC5nb29nbGUuY29tL2J6Yi15bw0KIG9jLWh1
+cVxuXG5Db25zdWx0YSBlbCBldmVudG8gZW4gaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9jYWxlbmRh
+ci9ldmVudD9hY3Rpbw0KIG49VklFVyZlaWQ9TlRsbWNEWm9PVzVzTUhGMmJqUnhaelpsYzI5dk5E
+VjBibTBnY0doaGNuTmhkRUJ0JnRvaz1NalFqWTJGemRHbA0KIHNiRzlxZFd4cFlXNUFaMjFoYVd3
+dVkyOXROVFpoTURSaU9XSmlPR1JrWXpJeFl6WmxZakZpWVROak9HVm1ZVGMzTXpKa05tTXlaRA0K
+IEJtT0EmY3R6PUFtZXJpY2ElMkZCb2dvdGEmaGw9ZXNfNDE5JmVzPTEuXG4tOjp+On46On46fjp+
+On46fjp+On46fjp+On46fjp+Og0KIH46fjp+On46fjp+On46fjp+On46fjp+On46fjp+On46fjp+
+On46fjp+On46fjp+Ojp+On46Oi0NCkxBU1QtTU9ESUZJRUQ6MjAyMDA5MjNUMTY0NTE4Wg0KTE9D
+QVRJT046aHR0cDovL3d3dy50aGVnYW1lYXdhcmRzLmNvbQ0KU0VRVUVOQ0U6MA0KU1RBVFVTOkNP
+TkZJUk1FRA0KU1VNTUFSWTpUaGUgR2FtZSBBd2FyZHMNClRSQU5TUDpPUEFRVUUNCkVORDpWRVZF
+TlQNCkVORDpWQ0FMRU5EQVINCg==
+--0000000000001b510b05affdcfac--

@@ -1,0 +1,163 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8516:0:0:0:0:0 with SMTP id f22csp792127ilh;
+        Thu, 29 Oct 2020 18:14:25 -0700 (PDT)
+X-Received: by 2002:a9f:2701:: with SMTP id a1mr79126uaa.70.1604020465890;
+        Thu, 29 Oct 2020 18:14:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1604020465; cv=none;
+        d=google.com; s=arc-20160816;
+        b=msTZXID1oJfAS+MVCilwItc+4vb9SzS8R0ctZAFPMnjCXFqXxX9pljFEclek/SEIdU
+         Kp6Rq/jXkx8+ip7brRuNGR3bvozdWJMc+K6YNyiXn4y0DHWb6j9dlUctKv8lH1Lz8+dh
+         ilxOM1wAgU0T8koHYJqRs0ALxI6UGQzR/Y5BvhyHzdkV2ybVYLT0waQejozkEbsAkiw4
+         vxAma7mnib7gIrPV+Xhh7pMzFnrNKfGM0SwpmEYgDSuOhci4rPCLeO+y70tVwhYJ/jH4
+         O6RXeVPo07fiMCmItrXxvWXoZXvfa7c5NtPer1BJ3MsoLDUnpnxD7/LwRho9tV7lcVSL
+         FG6A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:feedback-id:date:mime-version
+         :dkim-signature;
+        bh=0yyEcvFewF3FB3gV1vHnkyrbvvleQPNLcnB5T/pvRkQ=;
+        b=BTQuum3vCK5PSjCzJyoV2ZP2Uil95XP39dw/M4m/PpQOq6kIb8smV0XkwcnldHfABl
+         EHF1LkWU3hZKTr+Lffcr9wo6tMrzy/dcY/QSApGecP3hllXjVsa+vPtu6PLscBf5+BSk
+         OZcoqYr04Q+F/tGeuiWCY7pflxiKqyw8fgQ9ogFiFxc8baoKqaUwnyUejmS8WXgQ7sXI
+         /LA39zunhXTcSRhxuru88IrWuOrfYtHGoGfjcKZQ9KStYdDKnnAl3UXbfxk6fEZKtdEk
+         UUpVw6pHnMjuNvpQVaZv723G7xQy65QfoVZ1bChvoq0T3u8e5lanzqMTAMKGNqdWQoJU
+         vbfQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@accounts.google.com header.s=20161025 header.b=kAvuFu2N;
+       spf=pass (google.com: domain of 38wibxwgtbzqde-hufboqssekdji.weewbu.secfxqhiqjwcqyb.sec@gaia.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=38WibXwgTBzQde-hUfboQSSekdji.WeeWbU.SecfXQhiQjWcQYb.Sec@gaia.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com
+Return-Path: <38WibXwgTBzQde-hUfboQSSekdji.WeeWbU.SecfXQhiQjWcQYb.Sec@gaia.bounces.google.com>
+Received: from mail-sor-f73.google.com (mail-sor-f73.google.com. [209.85.220.73])
+        by mx.google.com with SMTPS id 59sor1071667uar.2.2020.10.29.18.14.25
+        for <pharsat@gmail.com>
+        (Google Transport Security);
+        Thu, 29 Oct 2020 18:14:25 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 38wibxwgtbzqde-hufboqssekdji.weewbu.secfxqhiqjwcqyb.sec@gaia.bounces.google.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@accounts.google.com header.s=20161025 header.b=kAvuFu2N;
+       spf=pass (google.com: domain of 38wibxwgtbzqde-hufboqssekdji.weewbu.secfxqhiqjwcqyb.sec@gaia.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=38WibXwgTBzQde-hUfboQSSekdji.WeeWbU.SecfXQhiQjWcQYb.Sec@gaia.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=accounts.google.com; s=20161025;
+        h=mime-version:date:feedback-id:message-id:subject:from:to;
+        bh=0yyEcvFewF3FB3gV1vHnkyrbvvleQPNLcnB5T/pvRkQ=;
+        b=kAvuFu2N4lyOOJI1LlanwMU9+OP2zp3QECVfGHZZn7fuiDK7ih3c8UdPIDGaks+FyK
+         fT/MTGauWFxvvJR19eLWRWy2zu2xWdxfLlaOWARxXU/MsyfrGJWjTVUi2ZTr8sBUaPvD
+         5aXgfmibq/aKTMRgWXyJl6kFthgJmOcZxbOiAtJYllumlFiC5x47ceoUAoUWML5GqGOi
+         9Bhv6dG4GbiUgWC86/VKwtHbFHYhR0RlSaaZlG8jaZvj/pvcEOHlnrrzVyU9wxP1Mh5K
+         WwoQf6u1p6mjNsFY8b/So0um5MHXwBYam25WBNnSJOm9SY3ow5UcVnKfvXRA6+s9DqOE
+         RMkA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:date:feedback-id:message-id:subject
+         :from:to;
+        bh=0yyEcvFewF3FB3gV1vHnkyrbvvleQPNLcnB5T/pvRkQ=;
+        b=WZb813Xyy/ihsW1oOFTa7U6kEue25do+xfXhKSenm5/S5bLWTJ2OmpwFv2saTZAG7G
+         tdwedJpMa8pzZ0royWuQ/+ekFBs5Y7KxORJ8aCsqrLKvrGKIPkTgTYgGRZGaAYA2X9bn
+         ThjORFBCG9qJ+O07bkc0fRdWLAXHtRAwGRmOYQZH23EuyGW8o29fxUxhJKay2tz5pJm4
+         JgTNmBXh0wDyAHO/AuaMJghLiCTeh2Y39ehH8B9djxIK/IQIrCfJlpe7N2If+EtjXAwg
+         TWhMhxOyATTSUkcn9JwTnIRxgT2LHSubY6bLZvEaDMTAPb9bGbc9QpB6NBHeRCU11n0n
+         zzMQ==
+X-Gm-Message-State: AOAM533aNKYVUpQ+5KdRl/gehCxwjKWHbX+LhjdMN0g6DBaMcqEKsXHt
+	CGmUMFFoS3FTYkRRnwFWgNkNP2F8DAdJ
+X-Google-Smtp-Source: ABdhPJw8CMa4iHOxB6Y0JXY3/t3Or4Awod4UWszHzWSs1v+6OFuSf21PMPfim14Jpzg8hbkFOv7/pyouPBGmx1d8TTnscA==
+MIME-Version: 1.0
+X-Received: by 2002:ab0:720e:: with SMTP id u14mr90502uao.6.1604020465678;
+ Thu, 29 Oct 2020 18:14:25 -0700 (PDT)
+Date: Fri, 30 Oct 2020 01:14:25 GMT
+X-Account-Notification-Type: 28
+Feedback-ID: 28:account-notifier
+X-Notifications: 3a56bada20c00000
+Message-ID: <GgJxFI_Zkt9COa3i-eTCzA.0@notifications.google.com>
+Subject: =?UTF-8?Q?Alerta_de_seguridad_cr=C3=ADtica?=
+From: Google <no-reply@accounts.google.com>
+To: pharsat@gmail.com
+Content-Type: multipart/alternative; boundary="00000000000011b7a605b2d91e4f"
+
+--00000000000011b7a605b2d91e4f
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+W2ltYWdlOiBHb29nbGVdDQpTZSBhY3RpdsOzIGxhIGNvbmZpZ3VyYWNpw7NuIGRlIGFjY2VzbyBw
+YXJhIGFwcHMgbWVub3Mgc2VndXJhcw0KDQoNCnBoYXJzYXRAZ21haWwuY29tDQpTZSBhY3RpdsOz
+IGVsIGFjY2VzbyBwYXJhIGFwcHMgbWVub3Mgc2VndXJhcyBlbiB0dSBjdWVudGEgZGUgR29vZ2xl
+DQpwaGFyc2F0QGdtYWlsLmNvbS4gU2kgbm8gZnVpc3RlIHTDuiwgdmVyaWZpY2EgbG8gcXVlIG9j
+dXJyacOzLg0KVmVyIGFjdGl2aWRhZA0KPGh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbS9BY2Nv
+dW50Q2hvb3Nlcj9FbWFpbD1waGFyc2F0QGdtYWlsLmNvbSZjb250aW51ZT1odHRwczovL215YWNj
+b3VudC5nb29nbGUuY29tL2FsZXJ0L250LzE2MDQwMjA0NjUyNTI/cmZuJTNEMjglMjZyZm5jJTNE
+MSUyNmVpZCUzRC01MzUwOTM5MjUzMTQzODg3MjU3JTI2ZXQlM0QwPg0KVGFtYmnDqW4gcHVlZGVz
+IGlyIGRpcmVjdGFtZW50ZSBhOg0KaHR0cHM6Ly9teWFjY291bnQuZ29vZ2xlLmNvbS9ub3RpZmlj
+YXRpb25zDQpUZSBlbnZpYW1vcyBlc3RlIGNvcnJlbyBlbGVjdHLDs25pY28gcGFyYSBub3RpZmlj
+YXJ0ZSBhY2VyY2EgZGUgY2FtYmlvcw0KaW1wb3J0YW50ZXMgZW4gdHUgY3VlbnRhIHkgZW4gbG9z
+IHNlcnZpY2lvcyBkZSBHb29nbGUuDQrCqSAyMDIwIEdvb2dsZSBMTEMsIDE2MDAgQW1waGl0aGVh
+dHJlIFBhcmt3YXksIE1vdW50YWluIFZpZXcsIENBIDk0MDQzLCBVU0ENCg==
+--00000000000011b7a605b2d91e4f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html lang=3D"en"><head><meta name=3D"format-detection" cont=
+ent=3D"email=3Dno"/><meta name=3D"format-detection" content=3D"date=3Dno"/>=
+<style nonce=3D"ZcZAE9pBfQCFJ74YN5ncaw">.awl a {color: #FFFFFF; text-decora=
+tion: none;} .abml a {color: #000000; font-family: Roboto-Medium,Helvetica,=
+Arial,sans-serif; font-weight: bold; text-decoration: none;} .adgl a {color=
+: rgba(0, 0, 0, 0.87); text-decoration: none;} .afal a {color: #b0b0b0; tex=
+t-decoration: none;} @media screen and (min-width: 600px) {.v2sp {padding: =
+6px 30px 0px;} .v2rsp {padding: 0px 10px;}} @media screen and (min-width: 6=
+00px) {.mdv2rw {padding: 40px 40px;}} </style><link href=3D"//fonts.googlea=
+pis.com/css?family=3DGoogle+Sans" rel=3D"stylesheet" type=3D"text/css"/></h=
+ead><body style=3D"margin: 0; padding: 0;" bgcolor=3D"#FFFFFF"><table width=
+=3D"100%" height=3D"100%" style=3D"min-width: 348px;" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" lang=3D"en"><tr height=3D"32" style=3D"height: =
+32px;"><td></td></tr><tr align=3D"center"><td><div itemscope itemtype=3D"//=
+schema.org/EmailMessage"><div itemprop=3D"action" itemscope itemtype=3D"//s=
+chema.org/ViewAction"><link itemprop=3D"url" href=3D"https://accounts.googl=
+e.com/AccountChooser?Email=3Dpharsat@gmail.com&amp;continue=3Dhttps://myacc=
+ount.google.com/alert/nt/1604020465252?rfn%3D28%26rfnc%3D1%26eid%3D-5350939=
+253143887257%26et%3D0"/><meta itemprop=3D"name" content=3D"Revisar activida=
+d"/></div></div><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" sty=
+le=3D"padding-bottom: 20px; max-width: 516px; min-width: 220px;"><tr><td wi=
+dth=3D"8" style=3D"width: 8px;"></td><td><div style=3D"border-style: solid;=
+ border-width: thin; border-color:#dadce0; border-radius: 8px; padding: 40p=
+x 20px;" align=3D"center" class=3D"mdv2rw"><img src=3D"https://www.gstatic.=
+com/images/branding/googlelogo/2x/googlelogo_color_74x24dp.png" width=3D"74=
+" height=3D"24" aria-hidden=3D"true" style=3D"margin-bottom: 16px;" alt=3D"=
+Google"><div style=3D"font-family: &#39;Google Sans&#39;,Roboto,RobotoDraft=
+,Helvetica,Arial,sans-serif;border-bottom: thin solid #dadce0; color: rgba(=
+0,0,0,0.87); line-height: 32px; padding-bottom: 24px;text-align: center; wo=
+rd-break: break-word;"><div style=3D"font-size: 24px;">Se activ=C3=B3 la co=
+nfiguraci=C3=B3n de acceso para apps menos seguras </div><table align=3D"ce=
+nter" style=3D"margin-top:8px;"><tr style=3D"line-height: normal;"><td alig=
+n=3D"right" style=3D"padding-right:8px;"><img width=3D"20" height=3D"20" st=
+yle=3D"width: 20px; height: 20px; vertical-align: sub; border-radius: 50%;;=
+" src=3D"https://lh3.googleusercontent.com/a-/AOh14GgNGRzoMwDsb1r359Ltb8p18=
+XZkiwtaFN5-gaMeUw=3Ds96" alt=3D""></td><td><a style=3D"font-family: &#39;Go=
+ogle Sans&#39;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;color: rgba(0,=
+0,0,0.87); font-size: 14px; line-height: 20px;">pharsat@gmail.com</a></td><=
+/tr></table> </div><div style=3D"font-family: Roboto-Regular,Helvetica,Aria=
+l,sans-serif; font-size: 14px; color: rgba(0,0,0,0.87); line-height: 20px;p=
+adding-top: 20px; text-align: left;">Se activ=C3=B3 el acceso para apps men=
+os seguras en tu cuenta de Google pharsat@gmail.com. Si no fuiste t=C3=BA, =
+verifica lo que ocurri=C3=B3.<div style=3D"padding-top: 32px; text-align: c=
+enter;"><a href=3D"https://accounts.google.com/AccountChooser?Email=3Dphars=
+at@gmail.com&amp;continue=3Dhttps://myaccount.google.com/alert/nt/160402046=
+5252?rfn%3D28%26rfnc%3D1%26eid%3D-5350939253143887257%26et%3D0" target=3D"_=
+blank" link-id=3D"main-button-link" style=3D"font-family: &#39;Google Sans&=
+#39;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif; line-height: 16px; colo=
+r: #ffffff; font-weight: 400; text-decoration: none;font-size: 14px;display=
+:inline-block;padding: 10px 24px;background-color: #4184F3; border-radius: =
+5px; min-width: 90px;">Ver actividad</a></div></div><div style=3D"padding-t=
+op: 20px; font-size: 12px; line-height: 16px; color: #5f6368; letter-spacin=
+g: 0.3px; text-align: center">Tambi=C3=A9n puedes ir directamente a:<br><a =
+style=3D"color: rgba(0, 0, 0, 0.87);text-decoration: inherit;">https://myac=
+count.google.com/notifications</a></div></div><div style=3D"text-align: lef=
+t;"><div style=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-serif;co=
+lor: rgba(0,0,0,0.54); font-size: 11px; line-height: 18px; padding-top: 12p=
+x; text-align: center;"><div>Te enviamos este correo electr=C3=B3nico para =
+notificarte acerca de cambios importantes en tu cuenta y en los servicios d=
+e Google.</div><div style=3D"direction: ltr;">&copy; 2020 Google LLC, <a cl=
+ass=3D"afal" style=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-seri=
+f;color: rgba(0,0,0,0.54); font-size: 11px; line-height: 18px; padding-top:=
+ 12px; text-align: center;">1600 Amphitheatre Parkway, Mountain View, CA 94=
+043, USA</a></div></div></div></td><td width=3D"8" style=3D"width: 8px;"></=
+td></tr></table></td></tr><tr height=3D"32" style=3D"height: 32px;"><td></t=
+d></tr></table></body></html>
+--00000000000011b7a605b2d91e4f--

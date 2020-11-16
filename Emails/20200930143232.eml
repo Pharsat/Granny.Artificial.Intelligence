@@ -1,0 +1,496 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:8b41:0:0:0:0:0 with SMTP id i62csp59541ild;
+        Wed, 30 Sep 2020 14:33:00 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJx5vscOWNeIuhYJAxX/8ye1dYqk37qEp0hj4CwFmg23hVMOzUFY9uaHUjWsqbYZcpzg1pKy
+X-Received: by 2002:a05:6e02:5cf:: with SMTP id l15mr3571415ils.281.1601501580470;
+        Wed, 30 Sep 2020 14:33:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1601501580; cv=none;
+        d=google.com; s=arc-20160816;
+        b=RWokpclfIJgw3QMXQfdp9a1ixuxs5u68FYrNe2Y3wvcD6f7I9r8zcfUT/AsHfRIsyD
+         B3mHMbZnqPVEOy84U2Ab5cTllgcRUsgtD4YiMG6I8orxRvA6wUJZfboYEQJ2mpI0hjlo
+         qzZvMZDa49oqEzgPO7kS039JwKM5vbTP/Kktp21bxaN5+KvGc19E6WmKkT15RvKgoVrN
+         FVFfp5cdZgb/wKwlNjOfCg0qgKs8Sy3kBFDhWekB9YKXYoKO1hqzmZzTGbcATN1HmUYt
+         NZb+2U6J7tZnRC4XmrfDspCdfPoV+2+cjFU/yPPJBu5oshU9hqIFeXQ/AzIJfiANlmKb
+         uHZg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe-post:list-unsubscribe:feedback-id:mime-version
+         :subject:message-id:to:from:date:dkim-signature;
+        bh=Gn/zomCF+KcqarriiMX3FKAkJRGgs/WSlGDhg7Y9BuI=;
+        b=A4UC2jc/n3U3xwxn9g89kjVlIlL6HTUfzPsb+Zr4EK+k8kjSfOEreYibeBayC+gXgs
+         Ag+sTZTvNbEMUO8WS6ePJ42VgZ26I1XnAdl96Rl3kvgn5IEV3o4diXZUCOmQcAtmrxG+
+         CwJq/s97q1qbaveKz/pwiCuGFBZc/A07FB5IhpL54NTEvMxcu5zMkkXTqQ6YZMpabli3
+         SLycAtzgdyTAEqj9N67VMi7h4RImSWHHVOzG/iVnm1RrTk7aFtOtJQtgvqA/FMDggeyQ
+         ruZNEFYQ4YD2D5qSGRDI0X/zOcgJVlc52eXpXA9eew+HTTVPryMPQ+pdjbiJoom3oH+P
+         cdVg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@comentarios.colpatria.com header.s=default header.b=tL2EAQk6;
+       spf=pass (google.com: domain of void-bounce-pharsat=gmail.com@express.can.medallia.ca designates 147.75.178.228 as permitted sender) smtp.mailfrom="void-bounce-pharsat=gmail.com@express.can.medallia.ca";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=colpatria.com
+Return-Path: <void-bounce-pharsat=gmail.com@express.can.medallia.ca>
+Received: from can228.mx.medallia.ca (can228.mx.medallia.ca. [147.75.178.228])
+        by mx.google.com with ESMTPS id e14si1752392iow.80.2020.09.30.14.33.00
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 30 Sep 2020 14:33:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of void-bounce-pharsat=gmail.com@express.can.medallia.ca designates 147.75.178.228 as permitted sender) client-ip=147.75.178.228;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@comentarios.colpatria.com header.s=default header.b=tL2EAQk6;
+       spf=pass (google.com: domain of void-bounce-pharsat=gmail.com@express.can.medallia.ca designates 147.75.178.228 as permitted sender) smtp.mailfrom="void-bounce-pharsat=gmail.com@express.can.medallia.ca";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=colpatria.com
+Received: from mx.medallia.com (localhost [127.0.0.1])
+	by mx.medallia.com (SMTP) with ESMTP id E219E1D4C
+	for <pharsat@gmail.com>; Wed, 30 Sep 2020 21:32:59 +0000 (UTC)
+Received: from express.can.medallia.ca (unknown [10.143.120.51])
+	by mx.medallia.com (SMTP) with ESMTP id B1391FB0
+	for <pharsat@gmail.com>; Wed, 30 Sep 2020 21:32:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+	d=comentarios.colpatria.com; s=default; t=1601501579;
+	bh=CaKIKpVr05vJz6BElmA7IyHloYc8RpRCd2xAaNicdi4=; h=From:Subject;
+	b=tL2EAQk6gaTFHzX1VJALSXMGHOLTkjZ8rNQRe1NCdgv4UQFyFGAt1AQtoa7UKhM/7
+	 LpE7CvzahHBgf8Gz5jVpOQI75bNurzALHr1CZfynHFoflVKcyyK8/AbjjFzMElOAjW
+	 wX3MMuS8UJm4D2Yr4s6CfoqQF9A5OdAVjpsPCJnk=
+Date: Wed, 30 Sep 2020 14:32:32 -0700 (PDT)
+From: Scotiabank Colpatria <encuesta@comentarios.colpatria.com>
+To: pharsat@gmail.com
+Message-ID: <kfpworwf.xzognxre7lp3@express.can.medallia.ca>
+Subject: Queremos tus comentarios - encuesta corta
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_47461_796139379.1601501552611"
+Feedback-ID: scotiabank-3d433606-c876-4d75-aafe-4c42777b4048:scotiabank.medallia.ca-scotiabank:MedalliaInc
+List-Unsubscribe: <mailto:opt-out-1162.eywrw38ytp6b9bhdczd@express.can.medallia.ca?subject=unsubscribe>, <https://survey.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&reject=yes>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Medallia-Company-Name: Scotiabank
+X-Medallia-Company-URL-Name: scotiabank
+X-Mail-Sequence: 1654132
+X-Virus-Scanned: ClamAV
+
+------=_Part_47461_796139379.1601501552611
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Estimado(a) Sr(a) CRISTIAN FELIPE:
+
+Estamos experimentando una situaci=C3=B3n sin precedentes, y tus comentario=
+s siguen siendo importantes para nosotros.
+
+Por favor responde a una encuesta corta sobre tu experiencia con  nuestra [=
+b]L=C3=ADnea de Atenci=C3=B3n [/b]el 29 de septiembre de 2020.[/b]
+
+Por favor copia y pega el siguiente enlace en tu navegador: https://survey.=
+medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO
+
+Esta encuesta solo te tomar=C3=A1 algunos minutos y en ella no se solicita =
+informaci=C3=B3n personal.
+
+Gracias por tus comentarios, tu opini=C3=B3n es importante para nosotros.
+
+Javier Maldonado Celis=20
+Gerente de Conocimiento y Experiencia de Clientes=20
+
+Esta encuesta es administrada por nuestros socios de Medallia Inc.
+Esta encuesta expirar=C3=A1 en 7 d=C3=ADas.
+
+Si necesitas asistencia t=C3=A9cnica debido a que no puedes acceder ni envi=
+ar esta encuesta, ponte en contacto con Medallia aqu=C3=AD: https://surveys=
+upport.medallia.com/s/?id=3Dhttps://survey.medallia.ca/?e2bpy7t4rfrbr3xkfwb=
+9&language=3Des
+
+Si ya no quieres recibir encuestas sobre tus =C3=BAltimas experiencias como=
+ cliente, por favor copia y pega el siguiente enlace en tu navegador: https=
+://survey.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&reject=3Dyes
+
+CONT=C3=81CTANOS: https://www.scotiabankcolpatria.com/contactenos | POL=C3=
+=8DTICA DE PRIVACIDAD: https://scotiabankfiles.azureedge.net/scotiabank-col=
+ombia/scotiabank-colpatria/pdf/Politica%20proteccion%20de%20datos.pdf
+
+Est=C3=A1s recibiendo este correo electr=C3=B3nico de Scotiabank Colpatria =
+S.A.,=20
+Cra 7 # 24 =E2=80=93 89, Bogot=C3=A1, Cundinamarca, Colombia.
+------=_Part_47461_796139379.1601501552611
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF=
+-8" />
+      <title>Medallia HTML Template</title>
+      <style type=3D"text/css"> /* Take care of image borders and formattin=
+g */ img { max-width:600px !important; outline:none; text-decoration:none; =
+-ms-interpolation-mode: bicubic; }a img{ border:none; } /* Fix Apple contac=
+t links */ .applefix a{color:#888888; text-decoration: none;} /* Responsive=
+ Styles*/ @media only screen and (max-width:600px){/* set column image maxi=
+mum width for mobile screens */img[class=3D"columnImage"]{ height:auto !imp=
+ortant; max-width:280px !important; width:100% !important; }table[id=3D"ema=
+ilContainer"]{ width:100% !important; }table[class=3D"columnContainer"]{ wi=
+dth:100% !important; }table[class=3D"mobileButton"] { width:60% !important;=
+ }td[class=3D"columnSingle"] { display:block !important; width:100% !import=
+ant; } }</style>
+   </head>
+   <body bgcolor=3D"#efefef" style=3D"background-color:#efefef; -webkit-tex=
+t-size-adjust: none;">
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600" id=3D"emailContainer" style=3D"display:block; max-width:6=
+00px; background-color:#ffffff; width:100%!important;">
+      <tr>
+         <!--=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D  Sta=
+rt email header  =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D-=
+->
+         <td align=3D"center" valign=3D"top">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"max-width:600px;">
+      <tr>
+         <td>
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"max-width:600px;">
+               <tr>
+                  <td align=3D"center" valign=3D"top">
+                     <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%">
+                        <tr>
+                           <td align=3D"center" valign=3D"top">
+                              <!--**************** HEADER IMAGE ***********=
+*****               Images need to have the width and height specified. The=
+ style property "display:block" is necessary to get rid of unwanted marging=
+s in some older email clients Remember that email clients have images turne=
+d off by default, alternate text "alt-text" is necessary, The color, backgr=
+ound-color and font styles are for the alt text in case images are turned o=
+ff                It is best to reference the image through the images set =
+in the LNF instead of hardcoding the image URL              --><img src=3D"=
+https://medallia.s3.amazonaws.com/Scotia/sb_scotiabank_colpatria_new_logo.p=
+ng" width=3D"600px" height=3D"75px" border=3D"0" alt=3D"Colpatria"  style=
+=3D"display:block; color:#efefef; text-align:center; font-family:Arial; fon=
+t-size:28px; font-weight:bold; background-color:#888888;" />
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <!--///////////////////  End email header  ///////////////////-->
+      <tr>
+         <!--=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D  Sta=
+rt email body  =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D-->
+         <td>
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"max-width:600px;">
+               <tr>
+                  <td align=3D"center" valign=3D"top">
+                     <table border=3D"0" cellpadding=3D"10" cellspacing=3D"=
+0" width=3D"100%">
+                        <tr>
+                           <td align=3D"left" valign=3D"top"><br /><span st=
+yle=3D"font-family:Arial; font-size:16px; color:#525252;">Estimado(a) Sr(a)=
+ CRISTIAN FELIPE:<br><br><i>Estamos experimentando una situaci=C3=B3n sin p=
+recedentes, y tus comentarios siguen siendo importantes para nosotros.</i><=
+br/><br/>
+
+                           Por favor responde a una encuesta corta sobre tu=
+ experiencia con  nuestra <b>L=C3=ADnea de Atenci=C3=B3n </b>el 29 de septi=
+embre de 2020</b>.</span><br /><br /></td>
+                        </tr>
+                        <tr>
+                           <td align=3D"left" valign=3D"top">
+                              <!-- Set main horizontal and vertical alignme=
+nt. Horizontal: left, center, right; Vertical: top, middle, bottom --><span=
+ style=3D"font-family:Arial; font-size:16px; font-weight:bold; color:#00000=
+0;">=C2=BFQu=C3=A9 tan probable es que recomendaras Scotiabank Colpatria a =
+un amigo o un familiar?</span><br /><br />
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                                 <tr>
+                                    <td align=3D"left"><span style=3D"font-=
+family:Arial, Verdana, Helvetica, sans-serif; font-size:13px; color: #00000=
+0;">Nada<br>probable</span></td>
+                                    <td align=3D"right"><span style=3D"font=
+-family:Arial, Verdana, Helvetica, sans-serif; font-size:13px; color: #0000=
+00;">Muy<br>probable</span></td>
+                                 </tr>
+                                 <tr>
+                                    <td colspan=3D"2" align=3D"center">
+                                       <table class=3D"number-scale" width=
+=3D"100%" border=3D"1" bordercolor=3D"#ffffff" cellspacing=3D"0" cellpaddin=
+g=3D"5" style=3D"border-style:solid;">
+                                          <tr>
+
+                                                                           =
+               <td align=3D"center" style=3D"background-color: #D9D9D9; tex=
+t-align:center;" bgcolor=3D"#D9D9D9"><a style=3D"display:block; padding:5px=
+; font-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none;=
+ color: #000000; font-weight:bold; font-size: 13px;" href=3D"https://survey=
+.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&_score=3D0"><span style=3D"f=
+ont-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; co=
+lor: #000000; font-weight:bold; font-size: 13px;">0</span></a></td>
+                                                                           =
+              =20
+                                                                           =
+               <td align=3D"center" style=3D"background-color: #D9D9D9; tex=
+t-align:center;" bgcolor=3D"#D9D9D9"><a style=3D"display:block; padding:5px=
+; font-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none;=
+ color: #000000; font-weight:bold; font-size: 13px;" href=3D"https://survey=
+.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&_score=3D1"><span style=3D"f=
+ont-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; co=
+lor: #000000; font-weight:bold; font-size: 13px;">1</span></a></td>
+                                                                           =
+              =20
+                                                                           =
+               <td align=3D"center" style=3D"background-color: #D9D9D9; tex=
+t-align:center;" bgcolor=3D"#D9D9D9"><a style=3D"display:block; padding:5px=
+; font-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none;=
+ color: #000000; font-weight:bold; font-size: 13px;" href=3D"https://survey=
+.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&_score=3D2"><span style=3D"f=
+ont-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; co=
+lor: #000000; font-weight:bold; font-size: 13px;">2</span></a></td>
+                                                                           =
+              =20
+                                                                           =
+               <td align=3D"center" style=3D"background-color: #D9D9D9; tex=
+t-align:center;" bgcolor=3D"#D9D9D9"><a style=3D"display:block; padding:5px=
+; font-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none;=
+ color: #000000; font-weight:bold; font-size: 13px;" href=3D"https://survey=
+.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&_score=3D3"><span style=3D"f=
+ont-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; co=
+lor: #000000; font-weight:bold; font-size: 13px;">3</span></a></td>
+                                                                           =
+              =20
+                                                                           =
+               <td align=3D"center" style=3D"background-color: #D9D9D9; tex=
+t-align:center;" bgcolor=3D"#D9D9D9"><a style=3D"display:block; padding:5px=
+; font-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none;=
+ color: #000000; font-weight:bold; font-size: 13px;" href=3D"https://survey=
+.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&_score=3D4"><span style=3D"f=
+ont-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; co=
+lor: #000000; font-weight:bold; font-size: 13px;">4</span></a></td>
+                                                                           =
+              =20
+                                                                           =
+               <td align=3D"center" style=3D"background-color: #D9D9D9; tex=
+t-align:center;" bgcolor=3D"#D9D9D9"><a style=3D"display:block; padding:5px=
+; font-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none;=
+ color: #000000; font-weight:bold; font-size: 13px;" href=3D"https://survey=
+.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&_score=3D5"><span style=3D"f=
+ont-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; co=
+lor: #000000; font-weight:bold; font-size: 13px;">5</span></a></td>
+                                                                           =
+              =20
+                                                                           =
+               <td align=3D"center" style=3D"background-color: #D9D9D9; tex=
+t-align:center;" bgcolor=3D"#D9D9D9"><a style=3D"display:block; padding:5px=
+; font-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none;=
+ color: #000000; font-weight:bold; font-size: 13px;" href=3D"https://survey=
+.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&_score=3D6"><span style=3D"f=
+ont-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; co=
+lor: #000000; font-weight:bold; font-size: 13px;">6</span></a></td>
+                                                                           =
+              =20
+                                                                           =
+               <td align=3D"center" style=3D"background-color: #D9D9D9; tex=
+t-align:center;" bgcolor=3D"#D9D9D9"><a style=3D"display:block; padding:5px=
+; font-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none;=
+ color: #000000; font-weight:bold; font-size: 13px;" href=3D"https://survey=
+.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&_score=3D7"><span style=3D"f=
+ont-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; co=
+lor: #000000; font-weight:bold; font-size: 13px;">7</span></a></td>
+                                                                           =
+              =20
+                                                                           =
+               <td align=3D"center" style=3D"background-color: #D9D9D9; tex=
+t-align:center;" bgcolor=3D"#D9D9D9"><a style=3D"display:block; padding:5px=
+; font-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none;=
+ color: #000000; font-weight:bold; font-size: 13px;" href=3D"https://survey=
+.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&_score=3D8"><span style=3D"f=
+ont-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; co=
+lor: #000000; font-weight:bold; font-size: 13px;">8</span></a></td>
+                                                                           =
+              =20
+                                                                           =
+               <td align=3D"center" style=3D"background-color: #D9D9D9; tex=
+t-align:center;" bgcolor=3D"#D9D9D9"><a style=3D"display:block; padding:5px=
+; font-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none;=
+ color: #000000; font-weight:bold; font-size: 13px;" href=3D"https://survey=
+.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&_score=3D9"><span style=3D"f=
+ont-family:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; co=
+lor: #000000; font-weight:bold; font-size: 13px;">9</span></a></td>
+                                                                           =
+              =20
+                                             <td align=3D"center" style=3D"=
+background-color: #D9D9D9; text-align:center;" bgcolor=3D"#D9D9D9"><a style=
+=3D"display:block; padding:3px; word-break:normal; font-family:Arial, Verda=
+na, Helvetica, sans-serif; text-decoration: none; color: #000000; font-weig=
+ht:bold; font-size: 13px;" href=3D"https://survey.medallia.ca/?e2bpy7t4rfrb=
+r3xkfwb9&lng=3Des_CO&_score=3D10"><span style=3D"word-break:normal; font-fa=
+mily:Arial, Verdana, Helvetica, sans-serif; text-decoration: none; color: #=
+000000; font-weight:bold; font-size: 13px;">10</span></a></td>
+                                          </tr>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </table>
+                              <br />
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align=3D"left" valign=3D"top"><span style=3D=
+"font-family:Arial; font-size:16px; color:#525252;">Esta encuesta solo te t=
+omar=C3=A1 algunos minutos y en ella no se solicita informaci=C3=B3n person=
+al.<br /><br />Gracias por tus comentarios, tu opini=C3=B3n es importante p=
+ara nosotros.<br /><br />Javier Maldonado Celis<br>Gerente de Conocimiento =
+y Experiencia de Clientes<br /></span></td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <!--/////////////////////  End email body  /////////////////////-->
+      <tr>
+         <!--=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D  Sta=
+rt footer image  =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D-=
+->
+         <td align=3D"center" valign=3D"top">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"max-width:600px;">
+               <tr>
+                  <td>
+                     <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%" style=3D"max-width:600px;">
+                        <tr>
+                           <td align=3D"center" valign=3D"top">
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                                 <tr>
+                                    <td align=3D"center" valign=3D"top">
+                                       <!--**************** HEADER IMAGE **=
+**************               Images need to have the width and height speci=
+fied. The style property "display:block" is necessary to get rid of unwante=
+d margings in some older email clients Remember that email clients have ima=
+ges turned off by default, alternate text "alt-text" is necessary, The colo=
+r, background-color and font styles are for the alt text in case images are=
+ turned off                It is best to reference the image through the im=
+ages set in the LNF instead of hardcoding the image URL              --><im=
+g src=3D"https://medallia.s3.amazonaws.com/Scotia/sb_scotiabank_colpatria_n=
+ew_logo.png" width=3D"600px" height=3D"75" border=3D"0" alt=3D"Colpatria"  =
+style=3D"display:block; color:#efefef; text-align:center; font-family:Arial=
+; font-size:28px; font-weight:bold; background-color:#888888;" />
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <!--///////////////////  End footer image  /////////////////=
+//-->
+               <tr>
+                  <!--=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D  Start footer begin text  =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D-->
+                  <td align=3D"center" valign=3D"top">
+                     <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%" style=3D"max-width:600px;">
+                        <tr>
+                           <td>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%" style=3D"max-width:600px;">
+                                 <tr>
+                                    <td align=3D"center" valign=3D"top">
+                                       <table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%">
+                                          <tr>
+                                             <td align=3D"right" valign=3D"=
+top"><br /><span style=3D"font-family:Arial; font-size:13px; color:#000000;=
+ padding-right: 20px">Esta encuesta es administrada por nuestros socios de =
+Medallia Inc.</span><br /><br /></td>
+                                          </tr>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                        <!--///////////////////  End footer begin text  ///=
+////////////////--><!-- <table align=3D"right"><td width=3D"10"></td><br><b=
+r><td ><img style=3D"display:block;"  src=3D"https://medallia.s3.amazonaws.=
+com/Scotia/sb_scotiabank_colpatria_new_logo.png" /></td></table></td><td wi=
+dth=3D"10"></td></tr><tr><td height=3D"20" colspan=3D"3"></td></tr><tr><td =
+width=3D"10"></td><td><table align=3D"right"  width=3D"100%" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"font-family:Arial, sans=
+-serif; padding-left: 2cm; font-size: 12px; color: #525252;" align=3D"right=
+">Survey administered by our partner, Medallia Inc.</td><td></td></tr></tab=
+le><br><table><tr><td height=3D"1" style=3D"font-size: 0px; border-bottom-w=
+idth: 1px; border-bottom-style: solid; border-bottom-color: #e7e7e7;">&nbsp=
+;</td></tr><tr><td height=3D"20" style=3D"font-size: 0px;">&nbsp;</td></tr>=
+<tr><td style=3D"font-size: 12px; color: #525252; vertical-align: top; font=
+-family: Arial, sans-serif;" valign=3D"top">If you are unable to access the=
+ survey through the question above, please copy and paste the following URL=
+ into your browser: https://survey.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3D=
+es_CO<br><br>This survey will expire in 7 days.<br><br>If you need technica=
+l assistance due to problems accessing or submitting this survey, please co=
+ntact Medallia <a href=3D"https://surveysupport.medallia.com/s/?id=3Dhttps:=
+//survey.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&language=3Des">here</a>.<br><br>=
+If you no longer wish to receive surveys asking about your recent customer =
+experiences please click <a href=3D"https://survey.medallia.ca/?e2bpy7t4rfr=
+br3xkfwb9&lng=3Des_CO&reject=3Dyes">here</a>.<br><br><a href=3D"https://www=
+.scotiabankcolpatria.com/contactenos">CONTACT US</a> | <a href=3D"https://s=
+cotiabankfiles.azureedge.net/scotiabank-colombia/scotiabank-colpatria/pdf/P=
+olitica%20proteccion%20de%20datos.pdf">PRIVACY POLICY</a><br><br>You are re=
+ceiving this email from Scotiabank Colpatria.<br>[ADDRESS] </td></tr>-->
+                        <tr>
+                           <!--=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D  Start email footer  =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D-->
+                           <td>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%" style=3D"max-width: 600px; background-color:#FFFF=
+FF; border-top-color:#EEEEEE; border-top-style:solid; border-top-width:1px;=
+">
+                                 <tr>
+                                    <td align=3D"center" valign=3D"top">
+                                       <table border=3D"0" cellpadding=3D"1=
+0" cellspacing=3D"0" width=3D"100%">
+                                          <tr>
+                                             <td align=3D"left" valign=3D"t=
+op" style=3D"line-height:12px;"><span style=3D"font-family:Arial; font-size=
+:12px; color:#888888;">Si no puedes acceder a la encuesta a trav=C3=A9s de =
+la pregunta anterior, por favor copia y pega el siguiente enlace en tu nave=
+gador: https://survey.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO<br /><b=
+r />Esta encuesta expirar=C3=A1 en 7 d=C3=ADas.<br /><br />Si necesitas asi=
+stencia t=C3=A9cnica debido a que no puedes acceder ni enviar esta encuesta=
+, ponte en contacto con Medallia <a href=3D"https://surveysupport.medallia.=
+com/s/?id=3Dhttps://survey.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&language=3Des"=
+>aqu=C3=AD</a>.<br /><br />Si ya no quieres recibir encuestas sobre tus =C3=
+=BAltimas experiencias como cliente, por favor haz clic <a href=3D"https://=
+survey.medallia.ca/?e2bpy7t4rfrbr3xkfwb9&lng=3Des_CO&reject=3Dyes">aqu=C3=
+=AD</a>.<br /><br /><a href=3D"https://www.scotiabankcolpatria.com/contacte=
+nos">CONT=C3=81CTANOS</a> | <a href=3D"https://scotiabankfiles.azureedge.ne=
+t/scotiabank-colombia/scotiabank-colpatria/pdf/Politica%20proteccion%20de%2=
+0datos.pdf">POL=C3=8DTICA DE PRIVACIDAD</a><br /><br />Est=C3=A1s recibiend=
+o este correo electr=C3=B3nico de Scotiabank Colpatria S.A., Cra 7 # 24 =E2=
+=80=93 89, Bogot=C3=A1, Cundinamarca, Colombia. <br /><br /></td>
+                                          </tr>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                        <!--/////////////////////  End email footer  //////=
+///////////////-->
+                     </table>
+                  </td>
+               </tr>
+            </table>
+            <span style=3D"display: none; max-height: 0px; font-size: 0px; =
+overflow: hidden; mso-hide: all;"><img src=3D"https://survey.medallia.ca/?e=
+2bpy7t4rfrbr3xkfwb9&invite-opened=3Dyes" width=3D"0" height=3D"0" style=3D"=
+display: none !important;" alt=3D""></span>
+   </body>
+</html>
+------=_Part_47461_796139379.1601501552611--

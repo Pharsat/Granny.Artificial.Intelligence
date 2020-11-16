@@ -1,0 +1,1230 @@
+Delivered-To: pharsat@gmail.com
+Received: by 2002:a92:1511:0:0:0:0:0 with SMTP id v17csp2971797ilk;
+        Sun, 9 Feb 2020 08:04:15 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxqihJEtOefh5KAVsGYh29Y2fFUdKlHcv9M5+36elRY5QPbsx5ImQQpEfD8Bytgxtb3f5be
+X-Received: by 2002:a17:906:90c3:: with SMTP id v3mr8381559ejw.30.1581264255332;
+        Sun, 09 Feb 2020 08:04:15 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1581264255; cv=none;
+        d=google.com; s=arc-20160816;
+        b=M2yftxxdLhyo0pD7AN5qoV3i+D+srRdSvwdmY422WgvwDMEEYnk2+6y0Vi40dtqhxJ
+         d8e4QOExPcTdf+hOianLdr3boXsqM1+LcXKhWo7RuSk7ZD9mIyH6ABmPWkOW4IXCztIj
+         Lc34mqfJdeGYql9LiI7P0irjKqVTLs1OxdKtG72LkLRn6gV5eZiG2gpCXcbyHp/ho8Hy
+         UVtq1mWA+OpLTCGVrpgQm6ITp3xA+uqJySPA82ZsOBbhcKWSUZlghf++j1ebDigwHdJb
+         y9SjVJfuIGVlWLeT9edfld31NU2BAozK1pJ5yu/wRNX2rogzPWAuIKiZQjuJmpVWm9Sb
+         pgCQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:message-id:to:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=VBAD7jnb0q0k9bKNKzRzUjXFc9oWk46jIKl5lta1mao=;
+        b=amAASJHPN/JB/UpVxsI6/alJsM2BZJX+FnzV2I5SOCz6HzMrxwG9Gmr1/8b5utnj4S
+         alQMiY5+BvusFKqQkAUj/aAlKl80A9t59B/fz3VcoG7tDrPUNqMM8jHUmODv3Tj4aFva
+         4wxUU48SfdtjTS4JYy1QT/oQhd0Aun4jlyiPg9rvc4xRPBqx5HTHkG7ICtQgKUvS3uLq
+         1fL9ylIT0ZwdP8snghcbEWbDjesHK8Dmx5P7l6LKkMkP4RGDUYBfAx0x2m5OOTG7g/lg
+         SXY8IMXUGI4zKneTn9Mb6CQFZdNVmf6rqgRmEaVDLfrc4FlLB9pUX91aBfEC6EXM/bYF
+         YwAQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=kRjKj54W;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=cS8UhT6q;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 167.89.0.102 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+Return-Path: <bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com>
+Received: from xtrwhhss.outbound-mail.sendgrid.net (xtrwhhss.outbound-mail.sendgrid.net. [167.89.0.102])
+        by mx.google.com with ESMTPS id p5si3735633ejj.324.2020.02.09.08.04.14
+        for <pharsat@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 09 Feb 2020 08:04:15 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 167.89.0.102 as permitted sender) client-ip=167.89.0.102;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mercadolibre.com header.s=s1 header.b=kRjKj54W;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=cS8UhT6q;
+       spf=pass (google.com: domain of bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com designates 167.89.0.102 as permitted sender) smtp.mailfrom="bounces+9647731-bde1-pharsat=gmail.com@em9322.mercadolibre.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mercadolibre.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=mercadolibre.com; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject; 
+	s=s1; bh=VBAD7jnb0q0k9bKNKzRzUjXFc9oWk46jIKl5lta1mao=; b=kRjKj54
+	W8iN/EjktlIPeC6MhOIzzK6fiCq08f6rriQnJEVtaubivGSp8zizHawpTsnTZxpt
+	7mqq+btq1TOHlq07gzmf5bQdlgZd4fyhTaoNsShyybRLsU727sCLgxnuV8uISgMT
+	yjVIH8e5isAMpVJmM1YlBLArnI34DArVyyog=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; 
+	d=sendgrid.info; 
+	h=content-transfer-encoding:content-type:from:mime-version:to:subject:x-feedback-id; 
+	s=smtpapi; bh=VBAD7jnb0q0k9bKNKzRzUjXFc9oWk46jIKl5lta1mao=; b=cS
+	8UhT6q3qIr6/ixJE5AkQRhl3WCGCCI8mcL4iYZyU+ApNThzIU7gRSokmb5bwsn68
+	OJL/QWWY92JlIBD0VxmiV3UYZ1qAbD9MYz6mYWbh8A0bjLhAysTk7b1jdD20aOZN
+	v6Q7u6QO/os4yQDPIKnuP3xyhN7qlgxBIRdISh3Hs=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Date: Sun, 09 Feb 2020 16:04:13 +0000 (UTC)
+From: "Mercado Libre" <no-responder@mercadolibre.com>
+Mime-Version: 1.0
+To: pharsat@gmail.com
+Message-ID: <S1tfEHExQfuOQmfLOkOKvA@ismtpd0052p1iad1.sendgrid.net>
+Subject: Compraste Ajustadores Sujetadores Tirantes De Vestir Camisa Hombre          
+X-SG-EID: sqIrrLMbLsIyP9sBRWWxUF78JT7ZpfEH7TvBjG5fTpbU7IvRu7FWGobslHJ7jI6eYxBM9lxKISkgvx
+ KSXOrL0fDf/jhts6eTx5NtLgPDfIxOIQZiuRLzhwj8KcTLITiFyq+RvNy4eoAFruw/OOmiyvEduyQn
+ m6mgR94lcJr1FcV6FBgH9nRUO6P4dc1OzjGdFA/T0SeYcIv6+7gQ4Ko9PsLPzTTePFbtf2U++kalLd
+ w=
+X-SG-ID: YDTqBOjidbCUo/ar1oAtZhsXDmAENitzRvnMkkKuDRbU/aLNIkZDus5KYKh4V7sc5Nn2j7kQEWKepM
+ cvoy8OYb3jLhH0s6AQtpQg3XMgHipA0ZueE2dlMn/ZgpnFfcHLka0xg338P6u6dgZqVDkL7h+gU4VP
+ d9wj5fSYjg1uOPGQ2Mvz8qS0i/5v2/ozEbYlQnin+0LXBearL3HuoHLuphHfavkc+aBtH6bNEgs7ot
+ BI4t4xCrkiwZ7ZHnH5Su1oBuGBa/xtiSMqx5O14gQ/4xYwVxa/Ag4KN+ndelZvNI9aFHZrGUbxiKUZ
+ L35oTE5urgO85ulG+lzChzWcjTnkR/OL/JBhYmsrIDvzbp/HPqDUJ3h3UFqiQjTQ7gRi7bEjY4zOea
+ Y5UZuS/FPzwZT04566PYZEmZUYhPP7kTy/w2lwt6LByNvJiUewkCroqcbYR5FqhQK+E4RJ8KlXz7DN
+ 3rIYqQKd6HF0HSoYZ0nlqms=
+X-Feedback-ID: 9647731:O1uIaeJcLGiMqc34AnjtHEL1fX9OufqyqcerW4Ul12s=:a8ycujShxZ5z3gGodwbKlQ==:SG
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3Dhttp://www.w3.=
+org/1999/xhtml><head><meta http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dutf-8"><meta name=3Dviewport content=3D"width=3Ddevice-width,init=
+ial-scale=3D1,minimum-scale=3D1,maximum-scale=3D1"><meta name=3Dformat-dete=
+ction content=3D"telephone=3Dno"><title>Resumen de tu compra</title><style>=
+@font-face {
+  font-family: Proxima Nova;
+  src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanov=
+a-light.eot?#iefix") format("embedded-opentype"),url("https://ui.mlstatic.c=
+om/webfonts/v3.0.0/proxima-nova/proximanova-light.woff2") format("woff2"),u=
+rl("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-light.=
+woff") format("woff"),url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-=
+nova/proximanova-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;}
+@font-face {
+  font-family: Proxima Nova;
+  src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanov=
+a-regular.eot?#iefix") format("embedded-opentype"),url("https://ui.mlstatic=
+.com/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2") format("woff2=
+"),url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-re=
+gular.woff") format("woff"),url("https://ui.mlstatic.com/webfonts/v3.0.0/pr=
+oxima-nova/proximanova-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;}
+@font-face {
+  font-family: Proxima Nova;
+  src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanov=
+a-medium.eot?#iefix") format("embedded-opentype"),url("https://ui.mlstatic.=
+com/webfonts/v3.0.0/proxima-nova/proximanova-medium.woff2") format("woff2")=
+,url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-medi=
+um.woff") format("woff"),url("https://ui.mlstatic.com/webfonts/v3.0.0/proxi=
+ma-nova/proximanova-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;}
+@font-face {
+  font-family: Proxima Nova;
+  src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanov=
+a-semibold.eot?#iefix") format("embedded-opentype"),url("https://ui.mlstati=
+c.com/webfonts/v3.0.0/proxima-nova/proximanova-semibold.woff2") format("wof=
+f2"),url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-=
+semibold.woff") format("woff"),url("https://ui.mlstatic.com/webfonts/v3.0.0=
+/proxima-nova/proximanova-semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;}
+@font-face {
+  font-family: Proxima Nova;
+  src: url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanov=
+a-bold.eot?#iefix") format("embedded-opentype"),url("https://ui.mlstatic.co=
+m/webfonts/v3.0.0/proxima-nova/proximanova-bold.woff2") format("woff2"),url=
+("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-bold.wof=
+f") format("woff"),url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nov=
+a/proximanova-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;}
+@media (max-width:472px) {
+  .hide--small {
+    display: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+
+  .hide--large {
+    display: inherit!important;
+  }
+}
+@media (min-width:473px) {
+  .hide--large {
+    display: none;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+@media (max-width:472px) {
+  .ui-panel,
+.ui-panel__box {
+    width: 100%!important;
+  }
+}
+@media (max-width:472px) {
+  .action,
+.action--primary,
+.action--tertiary {
+    width: 100%;
+  }
+
+  .action__text,
+.action__text--primary {
+    font-size: 18px!important;
+  }
+
+  .action--tertiary.action--left .action__text {
+    font-size: 14px!important;
+    line-height: 1!important;
+  }
+}
+@media (min-width:0) {
+  .body__main-wrapper {
+    width: 100%!important;
+    max-width: 640px;
+    min-width: 320px;
+  }
+}</style><style>@font-face{font-family:Proxima Nova;src:url("https://ui.mls=
+tatic.com/webfonts/v3.0.0/proxima-nova/proximanova-light.eot?#iefix") forma=
+t("embedded-opentype"),url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima=
+-nova/proximanova-light.woff2") format("woff2"),url("https://ui.mlstatic.co=
+m/webfonts/v3.0.0/proxima-nova/proximanova-light.woff") format("woff"),url(=
+"https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-light.ttf=
+") format("truetype");font-weight:300;font-style:normal}@font-face{font-fam=
+ily:Proxima Nova;src:url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-n=
+ova/proximanova-regular.eot?#iefix") format("embedded-opentype"),url("https=
+://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-regular.woff2")=
+ format("woff2"),url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/=
+proximanova-regular.woff") format("woff"),url("https://ui.mlstatic.com/webf=
+onts/v3.0.0/proxima-nova/proximanova-regular.ttf") format("truetype");font-=
+weight:400;font-style:normal}@font-face{font-family:Proxima Nova;src:url("h=
+ttps://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-medium.eot?=
+#iefix") format("embedded-opentype"),url("https://ui.mlstatic.com/webfonts/=
+v3.0.0/proxima-nova/proximanova-medium.woff2") format("woff2"),url("https:/=
+/ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-medium.woff") for=
+mat("woff"),url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proxi=
+manova-medium.ttf") format("truetype");font-weight:500;font-style:normal}@f=
+ont-face{font-family:Proxima Nova;src:url("https://ui.mlstatic.com/webfonts=
+/v3.0.0/proxima-nova/proximanova-semibold.eot?#iefix") format("embedded-ope=
+ntype"),url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximano=
+va-semibold.woff2") format("woff2"),url("https://ui.mlstatic.com/webfonts/v=
+3.0.0/proxima-nova/proximanova-semibold.woff") format("woff"),url("https://=
+ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-semibold.ttf") for=
+mat("truetype");font-weight:600;font-style:normal}@font-face{font-family:Pr=
+oxima Nova;src:url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/pr=
+oximanova-bold.eot?#iefix") format("embedded-opentype"),url("https://ui.mls=
+tatic.com/webfonts/v3.0.0/proxima-nova/proximanova-bold.woff2") format("wof=
+f2"),url("https://ui.mlstatic.com/webfonts/v3.0.0/proxima-nova/proximanova-=
+bold.woff") format("woff"),url("https://ui.mlstatic.com/webfonts/v3.0.0/pro=
+xima-nova/proximanova-bold.ttf") format("truetype");font-weight:700;font-st=
+yle:normal}@media (max-width:472px){.hide--small{display:none;width:0;heigh=
+t:0;visibility:hidden}.hide--large{display:inherit!important}}@media (min-w=
+idth:473px){.hide--large{display:none;width:0;height:0;visibility:hidden}}@=
+media (max-width:472px){.ui-panel,.ui-panel__box{width:100%!important}}@med=
+ia (max-width:472px){.action,.action--primary,.action--tertiary{width:100%}=
+.action__text,.action__text--primary{font-size:18px!important}.action--tert=
+iary.action--left .action__text{font-size:14px!important;line-height:1!impo=
+rtant}}.same-row-actions .action__text,.same-row-actions .action__text--pri=
+mary{font-size:14px!important}.image__dimmer{position:relative}.image__dimm=
+er:before{background-color:rgba(51,51,51,.05);-webkit-border-radius:50%;bor=
+der-radius:50%;content:"";height:100%;left:0;position:absolute;top:0;right:=
+0;width:100%;z-index:2}@media (min-width:0){.body__main-wrapper{width:100%!=
+important;max-width:640px;min-width:320px}}
+
+/*# sourceMappingURL=3Dbase__head.8eb226d6.css.map*/</style></head><body cl=
+ass=3Dbody style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,=
+Arial,sans-serif; -webkit-text-size-adjust: none; background-color: #fff; m=
+argin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-sm=
+oothing: grayscale;"><table class=3Dbody__main-wrapper align=3Dcenter cellp=
+adding=3D0 cellspacing=3D0 width=3D640 style=3D"-webkit-font-smoothing: ant=
+ialiased; -moz-osx-font-smoothing: grayscale; background: #f7f7f7; width: 6=
+40px;"><tbody><tr><td align=3Dcenter valign=3Dtop width=3D100% style=3D"fon=
+t-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-=
+osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit=
+-text-size-adjust: none; font-size: 0;"><span class=3Dpre-header style=3D"f=
+ont-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -mo=
+z-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webk=
+it-text-size-adjust: none; display: none; line-height: 1px; overflow: hidde=
+n; color: #fff; opacity: 0; mso-hide: all; max-height: 0; max-width: 0;">Ll=
+ega entre el 12 y 13 de febrero&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#=
+x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C=
+;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA=
+0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x=
+200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;=
+&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0=
+;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x2=
+00C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&=
+#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;=
+&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x20=
+0C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#=
+xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&=
+#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;&#x200C;&#xA0;</span=
+><table class=3Dinstitutional-header__wrapper align=3Dright cellpadding=3D0=
+ cellspacing=3D0 width=3D100% style=3D"background-color: #fcec00; overflow:=
+ hidden; min-width: 100%; text-align: right; width: 100%; padding: 0;"bgcol=
+or=3D#fcec00><tbody><tr><td height=3D10 style=3D"font-family: Proxima Nova,=
+-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: gra=
+yscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none=
+; font-size: 0;"></td></tr><tr><td align=3Dcenter valign=3Dmiddle style=3D"=
+font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -m=
+oz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -web=
+kit-text-size-adjust: none; font-size: 0;"><table class=3Dinstitutional-hea=
+der__container align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100% =
+style=3D"min-width: 100%;"><tbody><tr><td width=3D24 style=3D"font-family: =
+Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-s=
+moothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size=
+-adjust: none; font-size: 0;"></td><td class=3Dinstitutional-header__logo w=
+idth=3D50% align=3Dleft valign=3Dmiddle style=3D"font-family: Proxima Nova,=
+-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: gra=
+yscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none=
+; font-size: 0; line-height: 0; text-align: left;"><a class=3Dinstitutional=
+-header__logo-link href=3Dhttp://www.mercadolibre.com.co style=3D"-moz-osx-=
+font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-tex=
+t-size-adjust: none; font-family: Proxima Nova,-apple-system,Helvetica Neue=
+,Helvetica,Roboto,Arial,sans-serif; display: block; font-size: 0; line-heig=
+ht: 0; padding: 0; text-align: left; width: 100%;"><div class=3Dhide--large=
+ style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans=
+-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antiali=
+ased; -webkit-text-size-adjust: none; display: none;"><img class=3D"institu=
+tional-header__logo-mobile hide--large"alt src=3Dhttps://http2.mlstatic.com=
+/resources/frontend/statics/buyingflow-frontend-emails/1.8.0/images/header/=
+header-mobile.png height=3D30 width=3D42 border=3D0 style=3D"font-size: 0; =
+display: none;"></div><img class=3D"institutional-header__logo-desktop hide=
+--small"alt=3D"Mercado Libre"src=3Dhttps://http2.mlstatic.com/resources/fro=
+ntend/statics/buyingflow-frontend-emails/1.8.0/images/header/header-desktop=
+.png height=3D30 width=3D112 border=3D0 style=3D"font-size: 0;"></a></td><t=
+d class=3Dinstitutional-header__text align=3Dright valign=3Dmiddle style=3D=
+"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -=
+webkit-text-size-adjust: none; color: #666; font-size: 12px; font-weight: 3=
+00; line-height: 1; text-transform: uppercase; font-family: Proxima Nova,-a=
+pple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;">PHARSAT</td>=
+<td width=3D24 style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvet=
+ica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoo=
+thing: antialiased; -webkit-text-size-adjust: none; font-size: 0;"></td></t=
+r></tbody></table></td></tr><tr><td height=3D10 style=3D"font-family: Proxi=
+ma Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smooth=
+ing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adju=
+st: none; font-size: 0;"></td></tr></tbody></table><table class=3D"banner u=
+-background--success"cellpadding=3D0 cellspacing=3D0 width=3D100% style=3D"=
+background-color: #00a650;"bgcolor=3D#00a650><tbody><tr><td valign=3Dtop al=
+ign=3Dcenter style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetic=
+a,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smooth=
+ing: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><table cla=
+ss=3Dbanner__container align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=
+=3D100%><tbody><tr><td align=3Dcenter valign=3Dtop style=3D"font-family: Pr=
+oxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smo=
+othing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-a=
+djust: none; font-size: 0;"><img class=3Dimage title alt src=3Dhttps://http=
+2.mlstatic.com/resources/frontend/statics/buyingflow-frontend-emails/1.8.0/=
+images/spacer.png height=3D34 width=3D0 border=3D0 style=3D"font-size: 0; b=
+order: 0; display: block; z-index: 1;"></td></tr><tr><td align=3Dcenter sty=
+le=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-ser=
+if; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased=
+; -webkit-text-size-adjust: none; font-size: 0;"><table class=3Dhide--large=
+ align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100% style=3D"displ=
+ay: none;"><tbody><tr><td style=3D"font-family: Proxima Nova,-apple-system,=
+Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webki=
+t-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0=
+;"><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.com/resources/=
+frontend/statics/buyingflow-frontend-emails/1.8.0/images/spacer.png height=
+=3D1 width=3D32 border=3D0 style=3D"font-size: 0; border: 0; display: block=
+; z-index: 1;"></td><td align=3Dcenter valign=3Dmiddle style=3D"font-family=
+: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font=
+-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-si=
+ze-adjust: none; font-size: 0;"><img class=3D"image rounded-borders"alt src=
+=3Dhttps://mco-s1-p.mlstatic.com/945824-MCO40034252500_122019-I.jpg height=
+=3D80 width=3D80 border=3D0 style=3D"font-size: 0; border: 0; display: bloc=
+k; z-index: 1; -webkit-border-radius: 100%; border-radius: 100%;"></td><td =
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0;"><img class=3Dimage titl=
+e alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflo=
+w-frontend-emails/1.8.0/images/spacer.png height=3D1 width=3D32 border=3D0 =
+style=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td></tr><t=
+r><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial=
+,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: an=
+tialiased; -webkit-text-size-adjust: none; font-size: 0;"><img class=3Dimag=
+e title alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buy=
+ingflow-frontend-emails/1.8.0/images/spacer.png height=3D18 width=3D0 borde=
+r=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td><=
+/tr><tr><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><img class=
+=3Dimage title alt src=3Dhttps://http2.mlstatic.com/resources/frontend/stat=
+ics/buyingflow-frontend-emails/1.8.0/images/spacer.png height=3D1 width=3D3=
+2 border=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"=
+></td><td class=3D"banner__title banner__title--acredited"align=3Dcenter va=
+lign=3Dtop style=3D"-webkit-text-size-adjust: none; font-size: 24px; font-f=
+amily: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,san=
+s-serif; line-height: 1.25; font-weight: 600; -webkit-font-smoothing: antia=
+liased; -moz-osx-font-smoothing: grayscale; color: #fff;"><p class=3Dbanner=
+__title-intro style=3D"-webkit-text-size-adjust: none; -webkit-font-smoothi=
+ng: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 14px; font-=
+family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sa=
+ns-serif; font-weight: 300; width: 255px; overflow: hidden; -o-text-overflo=
+w: ellipsis; text-overflow: ellipsis; white-space: nowrap; margin: 0; color=
+: #fff;">Compraste Ajustadores Sujetadores Tirantes De Vestir Camisa Hombre=
+</p><span class=3Drich-text style=3D"font-family: Proxima Nova,-apple-syste=
+m,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -web=
+kit-font-smoothing: antialiased; -webkit-text-size-adjust: none;">Llega ent=
+re el 12 y 13 de febrero</span></td><td style=3D"font-family: Proxima Nova,=
+-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: gra=
+yscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none=
+; font-size: 0;"><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.=
+com/resources/frontend/statics/buyingflow-frontend-emails/1.8.0/images/spac=
+er.png height=3D1 width=3D32 border=3D0 style=3D"font-size: 0; border: 0; d=
+isplay: block; z-index: 1;"></td></tr></tbody></table><table class=3Dhide--=
+small align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><t=
+r><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial=
+,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: an=
+tialiased; -webkit-text-size-adjust: none; font-size: 0;"><img class=3Dimag=
+e title alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buy=
+ingflow-frontend-emails/1.8.0/images/spacer.png height=3D1 width=3D22 borde=
+r=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td><=
+td align=3Dcenter style=3D"font-family: Proxima Nova,-apple-system,Lato,Hel=
+vetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-s=
+moothing: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><tabl=
+e class=3Dbanner__box style=3D"width: 396px;"width=3D396><tbody><tr><td cla=
+ss=3D"banner__title banner__title--acredited"align=3Dleft valign=3Dtop styl=
+e=3D"-webkit-text-size-adjust: none; font-size: 24px; font-family: Proxima =
+Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; line-h=
+eight: 1.25; font-weight: 600; -webkit-font-smoothing: antialiased; -moz-os=
+x-font-smoothing: grayscale; color: #fff;"><p class=3Dbanner__title-intro s=
+tyle=3D"-webkit-text-size-adjust: none; -webkit-font-smoothing: antialiased=
+; -moz-osx-font-smoothing: grayscale; font-size: 14px; font-family: Proxima=
+ Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; font-=
+weight: 300; width: 255px; overflow: hidden; -o-text-overflow: ellipsis; te=
+xt-overflow: ellipsis; white-space: nowrap; margin: 0; color: #fff;">Compra=
+ste Ajustadores Sujetadores Tirantes De Vestir Camisa Hombre</p><span class=
+=3Drich-text style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetic=
+a,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smooth=
+ing: antialiased; -webkit-text-size-adjust: none;">Llega entre el 12 y 13 d=
+e febrero</span></td><td align=3Dcenter valign=3Dtop style=3D"font-family: =
+Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-s=
+moothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size=
+-adjust: none; font-size: 0;"><div style=3D"font-family: Proxima Nova,-appl=
+e-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscal=
+e; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none;"><i=
+mg class=3Dimage title alt src=3Dhttps://http2.mlstatic.com/resources/front=
+end/statics/buyingflow-frontend-emails/1.8.0/images/spacer.png height=3D1 w=
+idth=3D14 border=3D0 style=3D"font-size: 0; border: 0; display: block; z-in=
+dex: 1;"></div></td><td align=3Dleft valign=3Dmiddle style=3D"font-family: =
+Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-s=
+moothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size=
+-adjust: none; font-size: 0;"><img class=3D"image rounded-borders"alt src=
+=3Dhttps://mco-s1-p.mlstatic.com/945824-MCO40034252500_122019-I.jpg height=
+=3D80 width=3D80 border=3D0 style=3D"font-size: 0; border: 0; display: bloc=
+k; z-index: 1; -webkit-border-radius: 100%; border-radius: 100%;"></td></tr=
+></tbody></table></td><td style=3D"font-family: Proxima Nova,-apple-system,=
+Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webki=
+t-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0=
+;"><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.com/resources/=
+frontend/statics/buyingflow-frontend-emails/1.8.0/images/spacer.png height=
+=3D1 width=3D22 border=3D0 style=3D"font-size: 0; border: 0; display: block=
+; z-index: 1;"></td></tr></tbody></table></td></tr><tr><td align=3Dcenter v=
+align=3Dtop style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0; line-height:=
+ 0;"><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.com/resource=
+s/frontend/statics/buyingflow-frontend-emails/1.8.0/images/spacer.png heigh=
+t=3D34 width=3D0 border=3D0 style=3D"font-size: 0; border: 0; display: bloc=
+k; z-index: 1;"></td></tr></tbody></table></td></tr></tbody></table><table =
+class=3Du-brackground--gray align=3Dcenter cellpadding=3D0 cellspacing=3D0 =
+width=3D100%><tbody><tr><td style=3D"font-family: Proxima Nova,-apple-syste=
+m,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -web=
+kit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size:=
+ 0;"><table class=3D""align=3Dleft cellpadding=3D0 cellspacing=3D0 width=3D=
+100%><tbody><tr><td class=3D"hide--small u-background--gray"valign=3Dtop st=
+yle=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-se=
+rif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiase=
+d; -webkit-text-size-adjust: none; font-size: 0; background-color: #f7f7f7;=
+"bgcolor=3D#f7f7f7><table class=3D""align=3Dcenter cellpadding=3D0 cellspac=
+ing=3D0 width=3D100%><tbody><tr><td align=3Dcenter valign=3Dtop height=3D54=
+ class=3Du-background--success style=3D"font-family: Proxima Nova,-apple-sy=
+stem,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -=
+webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-si=
+ze: 0; background-color: #00a650;"bgcolor=3D#00a650></td></tr></tbody></tab=
+le></td><td class=3Dui-panel valign=3Dtop style=3D"font-family: Proxima Nov=
+a,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: g=
+rayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: no=
+ne; font-size: 0; margin: 0 auto; width: 472px;"width=3D472><table class=3D=
+ui-panel--raised align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100=
+%><tbody><tr><td align=3Dcenter valign=3Dtop class=3D"hide--small u-backgro=
+und--success"style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetic=
+a,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smooth=
+ing: antialiased; -webkit-text-size-adjust: none; font-size: 0; background-=
+color: #00a650;"bgcolor=3D#00a650><table class=3D""align=3Dcenter cellpaddi=
+ng=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td valign=3Dtop align=3Drig=
+ht width=3D3 height=3D2 style=3D"font-family: Proxima Nova,-apple-system,La=
+to,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-=
+font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0; =
+line-height: 0;"><img class=3Dimage alt src=3Dhttps://http2.mlstatic.com/re=
+sources/frontend/statics/buyingflow-frontend-emails/1.8.0/images/panel/pane=
+l_top-left.png height=3D2 width=3D3 border=3D0 style=3D"font-size: 0; borde=
+r: 0; display: block; z-index: 1;"></td><td valign=3Dbottom align=3Dcenter =
+class=3Du-background--white style=3D"font-family: Proxima Nova,-apple-syste=
+m,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -web=
+kit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size:=
+ 0; background-color: #fff;"bgcolor=3D#fff></td><td valign=3Dtop align=3Dle=
+ft width=3D3 height=3D2 style=3D"font-family: Proxima Nova,-apple-system,La=
+to,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-=
+font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0; =
+line-height: 0;"><img class=3Dimage alt src=3Dhttps://http2.mlstatic.com/re=
+sources/frontend/statics/buyingflow-frontend-emails/1.8.0/images/panel/pane=
+l_top-right.png height=3D2 width=3D3 border=3D0 style=3D"font-size: 0; bord=
+er: 0; display: block; z-index: 1;"></td></tr></tbody></table></td></tr><tr=
+><td class=3Dui-panel__content style=3D"font-family: Proxima Nova,-apple-sy=
+stem,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -=
+webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-si=
+ze: 0; border: 1px solid #e6e6e6; border-top: 0; border-bottom: 0; backgrou=
+nd-color: #fff;"bgcolor=3D#fff><table class=3D""align=3Dcenter cellpadding=
+=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td width=3D24 class=3Dhide--s=
+mall style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,=
+sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: ant=
+ialiased; -webkit-text-size-adjust: none; font-size: 0;"><img class=3Dimage=
+ title alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyi=
+ngflow-frontend-emails/1.8.0/images/spacer.png height=3D0 width=3D24 border=
+=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td><t=
+d width=3D24 style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetic=
+a,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smooth=
+ing: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><img class=
+=3Dimage title alt src=3Dhttps://http2.mlstatic.com/resources/frontend/stat=
+ics/buyingflow-frontend-emails/1.8.0/images/spacer.png height=3D0 width=3D2=
+4 border=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"=
+></td><td valign=3Dtop align=3Dleft style=3D"font-family: Proxima Nova,-app=
+le-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: graysca=
+le; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; fo=
+nt-size: 0;"><table class=3D""align=3Dcenter cellpadding=3D0 cellspacing=3D=
+0 width=3D100%><tbody><tr><td height=3D44 style=3D"font-family: Proxima Nov=
+a,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: g=
+rayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: no=
+ne; font-size: 0;"></td></tr><tr><td style=3D"font-family: Proxima Nova,-ap=
+ple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: graysc=
+ale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; f=
+ont-size: 0;"><table class=3D""align=3Dcenter cellpadding=3D0 cellspacing=
+=3D0 width=3D100%><tbody><tr><td valign=3Dtop align=3Dcenter style=3D"font-=
+family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-os=
+x-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-t=
+ext-size-adjust: none; font-size: 0;"><span class=3Drich-text style=3D"font=
+-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-o=
+sx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-=
+text-size-adjust: none;"></span><table class=3Dheadings align=3Dleft cellpa=
+dding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td class=3Dheadings__tit=
+le align=3Dleft valign=3Dmiddle style=3D"-moz-osx-font-smoothing: grayscale=
+; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; colo=
+r: rgba(0,0,0,.8); font-family: Proxima Nova,-apple-system,Helvetica Neue,H=
+elvetica,Roboto,Arial,sans-serif; font-size: 18px; font-weight: 400; line-h=
+eight: 1.25;">Resumen de tu compra</td></tr></tbody></table></td></tr><tr><=
+td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sa=
+ns-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antia=
+liased; -webkit-text-size-adjust: none; font-size: 0;"><img class=3Dimage t=
+itle alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buying=
+flow-frontend-emails/1.8.0/images/spacer.png height=3D22 width=3D0 border=
+=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td></=
+tr><tr><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,=
+Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothin=
+g: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><table class=
+=3Ddescriptions cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td=
+ valign=3Dtop align=3Dcenter style=3D"font-family: Proxima Nova,-apple-syst=
+em,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -we=
+bkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size=
+: 0;"><table class=3Ddescriptions__container align=3Dcenter cellpadding=3D0=
+ cellspacing=3D0 width=3D100%><tbody><tr><td valign=3Dtop width=3D15 style=
+=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif=
+; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; =
+-webkit-text-size-adjust: none; font-size: 0;"><table class=3D""align=3Dcen=
+ter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td align=3Dlef=
+t valign=3Dtop class=3Ddescriptions__icon style=3D"font-family: Proxima Nov=
+a,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: g=
+rayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: no=
+ne; font-size: 0; width: 15px;"width=3D15><span class=3Drich-text style=3D"=
+font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -m=
+oz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -web=
+kit-text-size-adjust: none;"><img class=3D"image image--inline"alt=3Dicon s=
+rc=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-front=
+end-emails/1.8.0/images/shipping/shipping-mail.png height=3D16 width=3D20 b=
+order=3D0 style=3D"font-size: 0; border: 0; z-index: 1; display: inline-blo=
+ck; vertical-align: middle;"></span></td><td style=3D"font-family: Proxima =
+Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing=
+: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust:=
+ none; font-size: 0;"><img class=3Dimage title alt src=3Dhttps://http2.mlst=
+atic.com/resources/frontend/statics/buyingflow-frontend-emails/1.8.0/images=
+/spacer.png height=3D0 width=3D14 border=3D0 style=3D"font-size: 0; border:=
+ 0; display: block; z-index: 1;"></td></tr></tbody></table></td><td style=
+=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif=
+; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; =
+-webkit-text-size-adjust: none; font-size: 0;"><table class=3D""align=3Dcen=
+ter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td align=3Dlef=
+t valign=3Dtop class=3Ddescriptions__title style=3D"-moz-osx-font-smoothing=
+: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust:=
+ none; color: #333; font-family: Proxima Nova,-apple-system,Helvetica Neue,=
+Helvetica,Roboto,Arial,sans-serif; font-size: 14px; font-weight: 400; line-=
+height: 1.45;"><span class=3Drich-text style=3D"font-family: Proxima Nova,-=
+apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: gray=
+scale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none;=
+">Env&#xED;o a domicilio</span></td></tr><tr><td align=3Dleft valign=3Dtop =
+class=3Ddescriptions__subtitle style=3D"-moz-osx-font-smoothing: grayscale;=
+ -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-=
+family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sa=
+ns-serif; font-size: 14px; font-weight: 300; font-stretch: normal; line-hei=
+ght: 1.43; letter-spacing: normal; color: #666;"><span class=3Drich-text st=
+yle=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-se=
+rif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiase=
+d; -webkit-text-size-adjust: none;">Carrera 56C #83DD Sur-201 - Antioquia, =
+La Estrella<br>Cristian Felipe Gallego Ram&#xED;rez - 3004068554</span></td=
+></tr></tbody></table></td></tr><tr><td style=3D"font-family: Proxima Nova,=
+-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: gra=
+yscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none=
+; font-size: 0;"><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.=
+com/resources/frontend/statics/buyingflow-frontend-emails/1.8.0/images/spac=
+er.png height=3D0 width=3D19 border=3D0 style=3D"font-size: 0; border: 0; d=
+isplay: block; z-index: 1;"></td></tr></tbody></table></td></tr></tbody></t=
+able></td></tr><tr><td style=3D"font-family: Proxima Nova,-apple-system,Lat=
+o,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-f=
+ont-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0;">=
+<img class=3Dimage title alt src=3Dhttps://http2.mlstatic.com/resources/fro=
+ntend/statics/buyingflow-frontend-emails/1.8.0/images/spacer.png height=3D1=
+9 width=3D0 border=3D0 style=3D"font-size: 0; border: 0; display: block; z-=
+index: 1;"></td></tr><tr><td style=3D"font-family: Proxima Nova,-apple-syst=
+em,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -we=
+bkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size=
+: 0;"><table class=3Ddescriptions cellpadding=3D0 cellspacing=3D0 width=3D1=
+00%><tbody><tr><td valign=3Dtop align=3Dcenter style=3D"font-family: Proxim=
+a Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothi=
+ng: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjus=
+t: none; font-size: 0;"><table class=3Ddescriptions__container align=3Dcent=
+er cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td valign=3Dtop=
+ width=3D15 style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><table clas=
+s=3D""align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><t=
+r><td align=3Dleft valign=3Dtop class=3Ddescriptions__icon style=3D"font-fa=
+mily: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-=
+font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-tex=
+t-size-adjust: none; font-size: 0; width: 15px;"width=3D15><span class=3Dri=
+ch-text style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none;"><img class=3D"image image--in=
+line"alt=3Dicon src=3Dhttps://http2.mlstatic.com/resources/frontend/statics=
+/buyingflow-frontend-emails/1.8.0/images/payments/payment.png height=3D16 w=
+idth=3D20 border=3D0 style=3D"font-size: 0; border: 0; z-index: 1; display:=
+ inline-block; vertical-align: middle;"></span></td><td style=3D"font-famil=
+y: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-fon=
+t-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-s=
+ize-adjust: none; font-size: 0;"><img class=3Dimage title alt src=3Dhttps:/=
+/http2.mlstatic.com/resources/frontend/statics/buyingflow-frontend-emails/1=
+.8.0/images/spacer.png height=3D0 width=3D14 border=3D0 style=3D"font-size:=
+ 0; border: 0; display: block; z-index: 1;"></td></tr></tbody></table></td>=
+<td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-size: 0;"><table class=3D""al=
+ign=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td al=
+ign=3Dleft valign=3Dtop class=3Ddescriptions__title style=3D"-moz-osx-font-=
+smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-siz=
+e-adjust: none; color: #333; font-family: Proxima Nova,-apple-system,Helvet=
+ica Neue,Helvetica,Roboto,Arial,sans-serif; font-size: 14px; font-weight: 4=
+00; line-height: 1.45;"><span class=3Drich-text style=3D"font-family: Proxi=
+ma Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smooth=
+ing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adju=
+st: none;">Pagaste <span class=3Dprice-tag style=3D"font-family: Proxima No=
+va,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: =
+grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: n=
+one; overflow: visible; display: inline; white-space: nowrap; line-height: =
+1em;"><span class=3Dprice-tag-symbol style=3D"font-family: Proxima Nova,-ap=
+ple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: graysc=
+ale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; m=
+argin-right: 3px;">$</span><span class=3Dprice-tag-fraction style=3D"font-f=
+amily: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx=
+-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-te=
+xt-size-adjust: none;">53.700</span></span></span></td></tr><tr><td align=
+=3Dleft valign=3Dtop class=3Ddescriptions__subtitle style=3D"-moz-osx-font-=
+smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-siz=
+e-adjust: none; font-family: Proxima Nova,-apple-system,Helvetica Neue,Helv=
+etica,Roboto,Arial,sans-serif; font-size: 14px; font-weight: 300; font-stre=
+tch: normal; line-height: 1.43; letter-spacing: normal; color: #666;"><span=
+ class=3Drich-text style=3D"font-family: Proxima Nova,-apple-system,Lato,He=
+lvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-=
+smoothing: antialiased; -webkit-text-size-adjust: none;">2x <span class=3Dp=
+rice-tag style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ar=
+ial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing:=
+ antialiased; -webkit-text-size-adjust: none; overflow: visible; display: i=
+nline; white-space: nowrap; line-height: 1em;"><span class=3Dprice-tag-symb=
+ol style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sa=
+ns-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antia=
+liased; -webkit-text-size-adjust: none; margin-right: 3px;">$</span><span c=
+lass=3Dprice-tag-fraction style=3D"font-family: Proxima Nova,-apple-system,=
+Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webki=
+t-font-smoothing: antialiased; -webkit-text-size-adjust: none;">26.850</spa=
+n> </span>con tarjeta de cr&#xE9;dito Visa terminada en 3877</span></td></t=
+r></tbody></table></td></tr><tr><td style=3D"font-family: Proxima Nova,-app=
+le-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: graysca=
+le; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; fo=
+nt-size: 0;"><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.com/=
+resources/frontend/statics/buyingflow-frontend-emails/1.8.0/images/spacer.p=
+ng height=3D0 width=3D19 border=3D0 style=3D"font-size: 0; border: 0; displ=
+ay: block; z-index: 1;"></td></tr></tbody></table></td></tr></tbody></table=
+></td></tr><tr><td style=3D"font-family: Proxima Nova,-apple-system,Lato,He=
+lvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-=
+smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><img=
+ class=3Dimage title alt src=3Dhttps://http2.mlstatic.com/resources/fronten=
+d/statics/buyingflow-frontend-emails/1.8.0/images/spacer.png height=3D20 wi=
+dth=3D0 border=3D0 style=3D"font-size: 0; border: 0; display: block; z-inde=
+x: 1;"></td></tr><tr><td valign=3Dtop align=3Dcenter style=3D"font-family: =
+Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-s=
+moothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size=
+-adjust: none; font-size: 0;"><table class=3Daction align=3Dleft cellpaddin=
+g=3D0 cellspacing=3D0 width=3Dauto><tbody><tr><td style=3D"font-family: Pro=
+xima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoo=
+thing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-ad=
+just: none; font-size: 0;"><a href=3Dhttps://myaccount.mercadolibre.com.co/=
+purchases/2319362785/detail class=3Daction__link target=3D_blank style=3D"f=
+ont-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -mo=
+z-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webk=
+it-text-size-adjust: none; text-decoration: none;"><table class=3Daction--p=
+rimary align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3Dauto style=3D=
+"background-color: #3483fa; -webkit-border-radius: 4px; border-radius: 4px;=
+"bgcolor=3D#3483fa><tbody><tr><td style=3D"font-family: Proxima Nova,-apple=
+-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale=
+; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font=
+-size: 0;"><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.com/re=
+sources/frontend/statics/buyingflow-frontend-emails/1.8.0/images/spacer.png=
+ height=3D11 width=3D0 border=3D0 style=3D"font-size: 0; border: 0; display=
+: block; z-index: 1;"></td></tr><tr class=3Dhide--large style=3D"display: n=
+one;"><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,A=
+rial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing=
+: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><img class=3D=
+image title alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics=
+/buyingflow-frontend-emails/1.8.0/images/spacer.png height=3D4 width=3D0 bo=
+rder=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"></t=
+d></tr><tr><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvet=
+ica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoo=
+thing: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><table c=
+lass=3D""align=3Dleft cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><=
+tr><td width=3D24 style=3D"font-family: Proxima Nova,-apple-system,Lato,Hel=
+vetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-s=
+moothing: antialiased; -webkit-text-size-adjust: none; font-size: 0;"></td>=
+<td valign=3Dmiddle align=3Dcenter style=3D"font-family: Proxima Nova,-appl=
+e-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscal=
+e; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; fon=
+t-size: 0;"><span class=3Daction__text--primary style=3D"-moz-osx-font-smoo=
+thing: grayscale; -webkit-text-size-adjust: none; font-family: Proxima Nova=
+,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; font-size:=
+ 14px; font-weight: 400; -webkit-font-smoothing: antialiased; color: #fff; =
+line-height: 1;">Ver en mis compras</span></td><td width=3D24 style=3D"font=
+-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-o=
+sx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-=
+text-size-adjust: none; font-size: 0;"></td></tr></tbody></table></td></tr>=
+<tr><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0;"><img class=3Dim=
+age title alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/b=
+uyingflow-frontend-emails/1.8.0/images/spacer.png height=3D11 width=3D0 bor=
+der=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td=
+></tr><tr class=3Dhide--large style=3D"display: none;"><td style=3D"font-fa=
+mily: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-=
+font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-tex=
+t-size-adjust: none; font-size: 0;"><img class=3Dimage title alt src=3Dhttp=
+s://http2.mlstatic.com/resources/frontend/statics/buyingflow-frontend-email=
+s/1.8.0/images/spacer.png height=3D4 width=3D0 border=3D0 style=3D"font-siz=
+e: 0; border: 0; display: block; z-index: 1;"></td></tr></tbody></table></a=
+></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td heig=
+ht=3D44 style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Ari=
+al,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-size: 0;"></td></tr></tbo=
+dy></table></td><td width=3D24 class=3Dhide--small style=3D"font-family: Pr=
+oxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smo=
+othing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-a=
+djust: none; font-size: 0;"><img class=3Dimage title alt src=3Dhttps://http=
+2.mlstatic.com/resources/frontend/statics/buyingflow-frontend-emails/1.8.0/=
+images/spacer.png height=3D0 width=3D24 border=3D0 style=3D"font-size: 0; b=
+order: 0; display: block; z-index: 1;"></td><td width=3D24 style=3D"font-fa=
+mily: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-=
+font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-tex=
+t-size-adjust: none; font-size: 0;"><img class=3Dimage title alt src=3Dhttp=
+s://http2.mlstatic.com/resources/frontend/statics/buyingflow-frontend-email=
+s/1.8.0/images/spacer.png height=3D0 width=3D24 border=3D0 style=3D"font-si=
+ze: 0; border: 0; display: block; z-index: 1;"></td></tr></tbody></table></=
+td></tr><tr><td class=3D"hide--small u-background--gray"valign=3Dtop style=
+=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif=
+; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; =
+-webkit-text-size-adjust: none; font-size: 0; background-color: #f7f7f7;"bg=
+color=3D#f7f7f7><table class=3D""align=3Dcenter cellpadding=3D0 cellspacing=
+=3D0 width=3D100%><tbody><tr><td valign=3Dtop align=3Dright width=3D3 heigh=
+t=3D2 class=3Du-background--gray style=3D"font-family: Proxima Nova,-apple-=
+system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale;=
+ -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-=
+size: 0; background-color: #f7f7f7; line-height: 0;"bgcolor=3D#f7f7f7><img =
+class=3Dimage alt src=3Dhttps://http2.mlstatic.com/resources/frontend/stati=
+cs/buyingflow-frontend-emails/1.8.0/images/panel/panel_bottom-left.png heig=
+ht=3D3 width=3D3 border=3D0 style=3D"font-size: 0; border: 0; display: bloc=
+k; z-index: 1;"></td><td valign=3Dtop align=3Dcenter class=3Dui-panel--rais=
+ed__bottom-image-container style=3D"font-family: Proxima Nova,-apple-system=
+,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webk=
+it-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: =
+0; line-height: 0; width: 100%;"width=3D100%><img class=3Dimage alt src=3Dh=
+ttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-frontend-em=
+ails/1.8.0/images/panel/panel_bottom-center.png height=3D3 width=3D467 bord=
+er=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td>=
+<td valign=3Dtop align=3Dleft width=3D3 height=3D2 class=3Du-background--gr=
+ay style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sa=
+ns-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antia=
+liased; -webkit-text-size-adjust: none; font-size: 0; background-color: #f7=
+f7f7; line-height: 0;"bgcolor=3D#f7f7f7><img class=3Dimage alt src=3Dhttps:=
+//http2.mlstatic.com/resources/frontend/statics/buyingflow-frontend-emails/=
+1.8.0/images/panel/panel_bottom-right.png height=3D3 width=3D3 border=3D0 s=
+tyle=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td></tr></t=
+body></table></td></tr></tbody></table></td><td class=3D"hide--small u-back=
+ground--gray"valign=3Dtop style=3D"font-family: Proxima Nova,-apple-system,=
+Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webki=
+t-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0=
+; background-color: #f7f7f7;"bgcolor=3D#f7f7f7><table class=3D""align=3Dcen=
+ter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td align=3Dcen=
+ter valign=3Dtop height=3D54 class=3Du-background--success style=3D"font-fa=
+mily: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-=
+font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-tex=
+t-size-adjust: none; font-size: 0; background-color: #00a650;"bgcolor=3D#00=
+a650></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td =
+style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-=
+serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-size: 0;"><table class=3Dui-panel=
+--raised__margin align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100=
+% style=3D"margin: 40px 0;"><tbody><tr><td class=3D"hide--small u-backgroun=
+d--gray"valign=3Dtop style=3D"font-family: Proxima Nova,-apple-system,Lato,=
+Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-fon=
+t-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0; bac=
+kground-color: #f7f7f7;"bgcolor=3D#f7f7f7><table class=3D""align=3Dcenter c=
+ellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td align=3Dcenter v=
+align=3Dtop height=3D54 class=3Du-background--transparent style=3D"font-fam=
+ily: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-f=
+ont-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text=
+-size-adjust: none; font-size: 0; background-color: transparent;"bgcolor=3D=
+transparent></td></tr></tbody></table></td><td class=3Dui-panel valign=3Dto=
+p style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,san=
+s-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antial=
+iased; -webkit-text-size-adjust: none; font-size: 0; margin: 0 auto; width:=
+ 472px;"width=3D472><table class=3Dui-panel--raised align=3Dcenter cellpadd=
+ing=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td align=3Dcenter valign=
+=3Dtop class=3D"hide--small u-background--transparent"style=3D"font-family:=
+ Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-=
+smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-siz=
+e-adjust: none; font-size: 0; background-color: transparent;"bgcolor=3Dtran=
+sparent><table class=3D""align=3Dcenter cellpadding=3D0 cellspacing=3D0 wid=
+th=3D100%><tbody><tr><td valign=3Dtop align=3Dright width=3D3 height=3D2 st=
+yle=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-se=
+rif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiase=
+d; -webkit-text-size-adjust: none; font-size: 0; line-height: 0;"><img clas=
+s=3Dimage alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/b=
+uyingflow-frontend-emails/1.8.0/images/panel/panel_top-left.png height=3D2 =
+width=3D3 border=3D0 style=3D"font-size: 0; border: 0; display: block; z-in=
+dex: 1;"></td><td valign=3Dbottom align=3Dcenter class=3Du-background--whit=
+e style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,san=
+s-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antial=
+iased; -webkit-text-size-adjust: none; font-size: 0; background-color: #fff=
+;"bgcolor=3D#fff></td><td valign=3Dtop align=3Dleft width=3D3 height=3D2 st=
+yle=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-se=
+rif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiase=
+d; -webkit-text-size-adjust: none; font-size: 0; line-height: 0;"><img clas=
+s=3Dimage alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/b=
+uyingflow-frontend-emails/1.8.0/images/panel/panel_top-right.png height=3D2=
+ width=3D3 border=3D0 style=3D"font-size: 0; border: 0; display: block; z-i=
+ndex: 1;"></td></tr></tbody></table></td></tr><tr><td class=3Dui-panel__con=
+tent style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,=
+sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: ant=
+ialiased; -webkit-text-size-adjust: none; font-size: 0; border: 1px solid #=
+e6e6e6; border-top: 0; border-bottom: 0; background-color: #fff;"bgcolor=3D=
+#fff><table class=3D""align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=
+=3D100%><tbody><tr><td valign=3Dtop align=3Dleft style=3D"font-family: Prox=
+ima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoot=
+hing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adj=
+ust: none; font-size: 0;"><table class=3D""align=3Dcenter cellpadding=3D0 c=
+ellspacing=3D0 width=3D100%><tbody><tr><td style=3D"font-family: Proxima No=
+va,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: =
+grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: n=
+one; font-size: 0;"><table class=3Dreceipt__wrapper align=3Dcenter cellpadd=
+ing=3D0 cellspacing=3D0 width=3D100% style=3D"padding: 35px 35px 5px;"><tbo=
+dy><tr><td class=3Dreceipt__title valign=3Dtop align=3Dcenter style=3D"-moz=
+-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webki=
+t-text-size-adjust: none; font-weight: 600; font-family: Proxima Nova,-appl=
+e-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; color: #666; fon=
+t-size: 10px; line-height: 1.45;">PLACETOPAY ES SU RED</td></tr><tr><td cla=
+ss=3Dreceipt__content valign=3Dtop align=3Dcenter style=3D"-moz-osx-font-sm=
+oothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-=
+adjust: none; font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvet=
+ica,Roboto,Arial,sans-serif; color: #666; font-size: 10px; line-height: 1.4=
+5; font-weight: 300;">09/02/2020 12:04:09</td></tr><tr><td class=3Dreceipt_=
+_content height=3D16 style=3D"-moz-osx-font-smoothing: grayscale; -webkit-f=
+ont-smoothing: antialiased; -webkit-text-size-adjust: none; font-family: Pr=
+oxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; =
+color: #666; font-size: 10px; line-height: 1.45; font-weight: 300;"></td></=
+tr><tr><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,=
+Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothin=
+g: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><table class=
+=3D""align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr=
+><td class=3Dreceipt__content style=3D"-moz-osx-font-smoothing: grayscale; =
+-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-f=
+amily: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,san=
+s-serif; color: #666; font-size: 10px; line-height: 1.45; font-weight: 300;=
+">COD: 14501761</td><td class=3Dreceipt__content align=3Dright style=3D"-mo=
+z-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webk=
+it-text-size-adjust: none; font-family: Proxima Nova,-apple-system,Helvetic=
+a Neue,Helvetica,Roboto,Arial,sans-serif; color: #666; font-size: 10px; lin=
+e-height: 1.45; font-weight: 300;">MERCADOPAGO COLOMBIA</td></tr></tbody></=
+table></td></tr><tr><td class=3Dreceipt__content style=3D"-moz-osx-font-smo=
+othing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-a=
+djust: none; font-family: Proxima Nova,-apple-system,Helvetica Neue,Helveti=
+ca,Roboto,Arial,sans-serif; color: #666; font-size: 10px; line-height: 1.45=
+; font-weight: 300;">TERM: 1</td></tr><tr><td style=3D"font-family: Proxima=
+ Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothin=
+g: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust=
+: none; font-size: 0;"><table class=3D""align=3Dcenter cellpadding=3D0 cell=
+spacing=3D0 width=3D100%><tbody><tr><td class=3Dreceipt__content width=3D40=
+% style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; font-family: Proxima Nova,-apple-s=
+ystem,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; color: #666; font-s=
+ize: 10px; line-height: 1.45; font-weight: 300;">VISA</td><td class=3Drecei=
+pt__content align=3Dcenter style=3D"-moz-osx-font-smoothing: grayscale; -we=
+bkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-fami=
+ly: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-s=
+erif; color: #666; font-size: 10px; line-height: 1.45; font-weight: 300;">C=
+R</td><td class=3Dreceipt__content align=3Dright width=3D40% style=3D"-moz-=
+osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit=
+-text-size-adjust: none; font-family: Proxima Nova,-apple-system,Helvetica =
+Neue,Helvetica,Roboto,Arial,sans-serif; color: #666; font-size: 10px; line-=
+height: 1.45; font-weight: 300;">CUOTAS: 2</td></tr></tbody></table></td></=
+tr><tr><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,=
+Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothin=
+g: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><table class=
+=3D""align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr=
+><td class=3Dreceipt__content style=3D"-moz-osx-font-smoothing: grayscale; =
+-webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-f=
+amily: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,san=
+s-serif; color: #666; font-size: 10px; line-height: 1.45; font-weight: 300;=
+">****3877</td><td class=3Dreceipt__content align=3Dright style=3D"-moz-osx=
+-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-te=
+xt-size-adjust: none; font-family: Proxima Nova,-apple-system,Helvetica Neu=
+e,Helvetica,Roboto,Arial,sans-serif; color: #666; font-size: 10px; line-hei=
+ght: 1.45; font-weight: 300;">REF: 13743379923</td></tr></tbody></table></t=
+d></tr><tr><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvet=
+ica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoo=
+thing: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><table c=
+lass=3D""align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody=
+><tr><td class=3Dreceipt__content style=3D"-moz-osx-font-smoothing: graysca=
+le; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; fo=
+nt-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial=
+,sans-serif; color: #666; font-size: 10px; line-height: 1.45; font-weight: =
+300;">RECIBO: 13743379923</td><td class=3Dreceipt__content align=3Dright st=
+yle=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialia=
+sed; -webkit-text-size-adjust: none; font-family: Proxima Nova,-apple-syste=
+m,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; color: #666; font-size:=
+ 10px; line-height: 1.45; font-weight: 300;">AUT: 006434</td></tr></tbody><=
+/table></td></tr><tr><td height=3D16 class=3Dreceipt__content--small style=
+=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif=
+; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; =
+-webkit-text-size-adjust: none; font-size: 0;"></td></tr><tr><td class=3Dre=
+ceipt__title style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoo=
+thing: antialiased; -webkit-text-size-adjust: none; font-weight: 600; font-=
+family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sa=
+ns-serif; color: #666; font-size: 10px; line-height: 1.45;"><strong>COD. DE=
+ RTA: 00</strong></td></tr><tr><td height=3D16 class=3Dreceipt__content sty=
+le=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialias=
+ed; -webkit-text-size-adjust: none; font-family: Proxima Nova,-apple-system=
+,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; color: #666; font-size: =
+10px; line-height: 1.45; font-weight: 300;"></td></tr><tr><td style=3D"font=
+-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-o=
+sx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-=
+text-size-adjust: none; font-size: 0;"><table class=3D""align=3Dcenter cell=
+padding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td class=3Dreceipt__co=
+ntent style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-family: Proxima Nova,-app=
+le-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; color: #666; fo=
+nt-size: 10px; line-height: 1.45; font-weight: 300;">COMPRA NETA:</td><td c=
+lass=3Dreceipt__content align=3Dright style=3D"-moz-osx-font-smoothing: gra=
+yscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none=
+; font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,A=
+rial,sans-serif; color: #666; font-size: 10px; line-height: 1.45; font-weig=
+ht: 300;">$53700</td></tr><tr><td class=3Dreceipt__content style=3D"-moz-os=
+x-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-t=
+ext-size-adjust: none; font-family: Proxima Nova,-apple-system,Helvetica Ne=
+ue,Helvetica,Roboto,Arial,sans-serif; color: #666; font-size: 10px; line-he=
+ight: 1.45; font-weight: 300;">IVA:</td><td class=3Dreceipt__content align=
+=3Dright style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothin=
+g: antialiased; -webkit-text-size-adjust: none; font-family: Proxima Nova,-=
+apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; color: #666;=
+ font-size: 10px; line-height: 1.45; font-weight: 300;">$7407</td></tr><tr>=
+<td class=3Dreceipt__content style=3D"-moz-osx-font-smoothing: grayscale; -=
+webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-fa=
+mily: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans=
+-serif; color: #666; font-size: 10px; line-height: 1.45; font-weight: 300;"=
+><strong>TOTAL:</strong></td><td class=3Dreceipt__content align=3Dright sty=
+le=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialias=
+ed; -webkit-text-size-adjust: none; font-family: Proxima Nova,-apple-system=
+,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; color: #666; font-size: =
+10px; line-height: 1.45; font-weight: 300;"><strong>$53700</strong></td></t=
+r><tr><td class=3Dreceipt__content style=3D"-moz-osx-font-smoothing: graysc=
+ale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; f=
+ont-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Aria=
+l,sans-serif; color: #666; font-size: 10px; line-height: 1.45; font-weight:=
+ 300;">BASE DEV. IVA:</td><td class=3Dreceipt__content align=3Dright style=
+=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased=
+; -webkit-text-size-adjust: none; font-family: Proxima Nova,-apple-system,H=
+elvetica Neue,Helvetica,Roboto,Arial,sans-serif; color: #666; font-size: 10=
+px; line-height: 1.45; font-weight: 300;">$46293</td></tr></tbody></table><=
+/td></tr><tr><td class=3Dreceipt__content height=3D16 style=3D"-moz-osx-fon=
+t-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-s=
+ize-adjust: none; font-family: Proxima Nova,-apple-system,Helvetica Neue,He=
+lvetica,Roboto,Arial,sans-serif; color: #666; font-size: 10px; line-height:=
+ 1.45; font-weight: 300;"></td></tr><tr><td class=3Dreceipt__content--foote=
+r-title align=3Dcenter style=3D"-moz-osx-font-smoothing: grayscale; -webkit=
+-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-weight: =
+600; font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Robot=
+o,Arial,sans-serif; color: rgba(0,0,0,.45); font-size: 10px; line-height: 1=
+.45;"><strong>VENTA NO PRESENCIAL</strong></td></tr><tr><td class=3Dreceipt=
+__content--footer-content align=3Dcenter style=3D"-moz-osx-font-smoothing: =
+grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: n=
+one; font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Robot=
+o,Arial,sans-serif; color: rgba(0,0,0,.45); font-size: 10px; line-height: 1=
+.45; font-weight: 300;">SUJETO A VERIFICACION DE LA DIAN</td></tr><tr><td c=
+lass=3Dreceipt__content height=3D8 style=3D"-moz-osx-font-smoothing: graysc=
+ale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; f=
+ont-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Aria=
+l,sans-serif; color: #666; font-size: 10px; line-height: 1.45; font-weight:=
+ 300;"></td></tr><tr><td class=3Dreceipt__content--footer-content align=3Dc=
+enter style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: =
+antialiased; -webkit-text-size-adjust: none; font-family: Proxima Nova,-app=
+le-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; color: rgba(0,0=
+,0,.45); font-size: 10px; line-height: 1.45; font-weight: 300;">PAGARE INCO=
+NDICIONALMENTE Y A LA ORDEN DEL ACREEDOR, EL VALOR TOTAL DE ESTE PAGARE JUN=
+TO CON LOS INTERESES A LAS TASAS MAXIMAS PERMITIDAS POR LA LEY.</td></tr></=
+tbody></table></td></tr><tr><td height=3D44 style=3D"font-family: Proxima N=
+ova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing:=
+ grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: =
+none; font-size: 0;"></td></tr></tbody></table></td></tr></tbody></table></=
+td></tr><tr><td class=3D"hide--small u-background--gray"valign=3Dtop style=
+=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif=
+; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; =
+-webkit-text-size-adjust: none; font-size: 0; background-color: #f7f7f7;"bg=
+color=3D#f7f7f7><table class=3D""align=3Dcenter cellpadding=3D0 cellspacing=
+=3D0 width=3D100%><tbody><tr><td valign=3Dtop align=3Dright width=3D3 heigh=
+t=3D2 class=3Du-background--gray style=3D"font-family: Proxima Nova,-apple-=
+system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale;=
+ -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-=
+size: 0; background-color: #f7f7f7; line-height: 0;"bgcolor=3D#f7f7f7><img =
+class=3Dimage alt src=3Dhttps://http2.mlstatic.com/resources/frontend/stati=
+cs/buyingflow-frontend-emails/1.8.0/images/panel/panel_bottom-left.png heig=
+ht=3D3 width=3D3 border=3D0 style=3D"font-size: 0; border: 0; display: bloc=
+k; z-index: 1;"></td><td valign=3Dtop align=3Dcenter class=3Dui-panel--rais=
+ed__bottom-image-container style=3D"font-family: Proxima Nova,-apple-system=
+,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webk=
+it-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: =
+0; line-height: 0; width: 100%;"width=3D100%><img class=3Dimage alt src=3Dh=
+ttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-frontend-em=
+ails/1.8.0/images/panel/panel_bottom-center.png height=3D3 width=3D467 bord=
+er=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td>=
+<td valign=3Dtop align=3Dleft width=3D3 height=3D2 class=3Du-background--gr=
+ay style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sa=
+ns-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antia=
+liased; -webkit-text-size-adjust: none; font-size: 0; background-color: #f7=
+f7f7; line-height: 0;"bgcolor=3D#f7f7f7><img class=3Dimage alt src=3Dhttps:=
+//http2.mlstatic.com/resources/frontend/statics/buyingflow-frontend-emails/=
+1.8.0/images/panel/panel_bottom-right.png height=3D3 width=3D3 border=3D0 s=
+tyle=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td></tr></t=
+body></table></td></tr></tbody></table></td><td class=3D"hide--small u-back=
+ground--gray"valign=3Dtop style=3D"font-family: Proxima Nova,-apple-system,=
+Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webki=
+t-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0=
+; background-color: #f7f7f7;"bgcolor=3D#f7f7f7><table class=3D""align=3Dcen=
+ter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td align=3Dcen=
+ter valign=3Dtop height=3D54 class=3Du-background--transparent style=3D"fon=
+t-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-=
+osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit=
+-text-size-adjust: none; font-size: 0; background-color: transparent;"bgcol=
+or=3Dtransparent></td></tr></tbody></table></td></tr></tbody></table></td><=
+/tr><tr><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica=
+,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothi=
+ng: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><table clas=
+s=3D""align=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><t=
+r><td class=3D"hide--small u-background--gray"valign=3Dtop style=3D"font-fa=
+mily: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-=
+font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-tex=
+t-size-adjust: none; font-size: 0; background-color: #f7f7f7;"bgcolor=3D#f7=
+f7f7><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.com/resource=
+s/frontend/statics/buyingflow-frontend-emails/1.8.0/images/spacer.png heigh=
+t=3D1 width=3D0 border=3D0 style=3D"font-size: 0; border: 0; display: block=
+; z-index: 1;"></td><td class=3D"ui-panel ui-panel__box"valign=3Dtop style=
+=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif=
+; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; =
+-webkit-text-size-adjust: none; font-size: 0; margin: 0 auto; width: 472px;=
+"width=3D472><table class=3D""align=3Dcenter cellpadding=3D0 cellspacing=3D=
+0 width=3D100%><tbody><tr><td class=3Dui-panel__content style=3D"font-famil=
+y: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-fon=
+t-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-s=
+ize-adjust: none; font-size: 0;"><table class=3D""align=3Dcenter cellpaddin=
+g=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td valign=3Dtop align=3Dleft=
+ style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans=
+-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antiali=
+ased; -webkit-text-size-adjust: none; font-size: 0;"><table class=3D""align=
+=3Dcenter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td style=
+=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif=
+; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; =
+-webkit-text-size-adjust: none; font-size: 0;"><table class=3D""align=3Dcen=
+ter cellpadding=3D0 cellspacing=3D0 width=3D100%><tbody><tr><td valign=3Dmi=
+ddle align=3Dcenter style=3D"font-family: Proxima Nova,-apple-system,Lato,H=
+elvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font=
+-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0; text=
+-align: center;"><table class=3Ddetail__wrapper align=3Dcenter cellpadding=
+=3D0 cellspacing=3D0 width=3D100% style=3D"margin: 0 auto;"><tbody><tr><td =
+style=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antial=
+iased; -webkit-text-size-adjust: none; font-size: 0; font-family: Proxima N=
+ova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; text-al=
+ign: center;"align=3Dcenter><img class=3Dimage title alt src=3Dhttps://http=
+2.mlstatic.com/resources/frontend/statics/buyingflow-frontend-emails/1.8.0/=
+images/spacer.png height=3D34 width=3D0 border=3D0 style=3D"font-size: 0; b=
+order: 0; display: block; z-index: 1;"></td></tr><tr><td class=3Ddetail__ti=
+tle align=3Dcenter valign=3Dmiddle style=3D"-moz-osx-font-smoothing: graysc=
+ale; -webkit-text-size-adjust: none; color: rgba(0,0,0,.8); font-size: 14px=
+; font-weight: 400; line-height: 1.25; -webkit-font-smoothing: antialiased;=
+ font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Ar=
+ial,sans-serif; text-align: center;"><span class=3Drich-text style=3D"font-=
+family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-os=
+x-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-t=
+ext-size-adjust: none;">Sumaste 22 Mercado Puntos</span></td></tr><tr><td s=
+tyle=3D"-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antiali=
+ased; -webkit-text-size-adjust: none; font-size: 0; font-family: Proxima No=
+va,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; text-ali=
+gn: center;"align=3Dcenter><img class=3Dimage title alt src=3Dhttps://http2=
+.mlstatic.com/resources/frontend/statics/buyingflow-frontend-emails/1.8.0/i=
+mages/spacer.png height=3D2 width=3D0 border=3D0 style=3D"font-size: 0; bor=
+der: 0; display: block; z-index: 1;"></td></tr><tr><td class=3Ddetail__subt=
+itle align=3Dcenter valign=3Dmiddle style=3D"-moz-osx-font-smoothing: grays=
+cale; -webkit-text-size-adjust: none; font-size: 14px; font-weight: 400; li=
+ne-height: 1.25; -webkit-font-smoothing: antialiased; color: rgba(0,0,0,.45=
+); font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,=
+Arial,sans-serif; text-align: center;"><span class=3Drich-text style=3D"fon=
+t-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-=
+osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit=
+-text-size-adjust: none;">Sigue sumando con tus compras, te esperan grandes=
+ beneficios.</span></td></tr></tbody></table></td></tr></tbody></table></td=
+></tr><tr><td height=3D44 style=3D"font-family: Proxima Nova,-apple-system,=
+Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webki=
+t-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-size: 0=
+;"></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></=
+table></td><td class=3D"hide--small u-background--gray"valign=3Dtop style=
+=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif=
+; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; =
+-webkit-text-size-adjust: none; font-size: 0; background-color: #f7f7f7;"bg=
+color=3D#f7f7f7><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.c=
+om/resources/frontend/statics/buyingflow-frontend-emails/1.8.0/images/space=
+r.png height=3D1 width=3D0 border=3D0 style=3D"font-size: 0; border: 0; dis=
+play: block; z-index: 1;"></td></tr></tbody></table></td></tr></tbody></tab=
+le><table class=3Dfooter width=3D100% bgcolor=3D#fff align=3Dcenter valign=
+=3Dtop cellpadding=3D0 cellspacing=3D0 style=3D"min-width: 100%;"><tbody><t=
+r><td style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial=
+,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: an=
+tialiased; -webkit-text-size-adjust: none; font-size: 0;"><img class=3Dimag=
+e title alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buy=
+ingflow-frontend-emails/1.8.0/images/spacer.png height=3D44 width=3D0 borde=
+r=3D0 style=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td><=
+/tr><tr><td class=3Dfooter__title align=3Dcenter valign=3Dtop style=3D"-moz=
+-osx-font-smoothing: grayscale; -webkit-text-size-adjust: none; color: #999=
+; font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,A=
+rial,sans-serif; font-size: 12px; -webkit-font-smoothing: antialiased;"><sp=
+an class=3Drich-text style=3D"font-family: Proxima Nova,-apple-system,Lato,=
+Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-fon=
+t-smoothing: antialiased; -webkit-text-size-adjust: none;">Si tienes un pro=
+blema estamos para ayudarte. <a href=3Dhttps://ayuda.mercadolibre.com.co/ay=
+uda target=3D_blank title=3DCont&#xE1;ctanos. class=3Dui-link style=3D"font=
+-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-o=
+sx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-=
+text-size-adjust: none; text-decoration: none;"><span class=3Dui-link__wrap=
+per style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,s=
+ans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: anti=
+aliased; -webkit-text-size-adjust: none; color: #3483fa;">Cont&#xE1;ctanos.=
+</span></a></span></td></tr><tr><td style=3D"font-family: Proxima Nova,-app=
+le-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: graysca=
+le; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; fo=
+nt-size: 0;"><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.com/=
+resources/frontend/statics/buyingflow-frontend-emails/1.8.0/images/spacer.p=
+ng height=3D28 width=3D0 border=3D0 style=3D"font-size: 0; border: 0; displ=
+ay: block; z-index: 1;"></td></tr><tr><td style=3D"font-family: Proxima Nov=
+a,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: g=
+rayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: no=
+ne; font-size: 0;"><table class=3Dfooter__icons-container align=3Dcenter ce=
+llpadding=3D0 cellspacing=3D0 width=3Dauto style=3D"margin: 0 auto;"><tbody=
+><tr><td align=3Dcenter valign=3Dtop style=3D"font-family: Proxima Nova,-ap=
+ple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: graysc=
+ale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; f=
+ont-size: 0;"><a href=3D"https://itunes.apple.com/cl/app/mercado-libre/id46=
+3624852?mt=3D8"target=3D_blank class=3Dfooter__image-link style=3D"font-fam=
+ily: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-f=
+ont-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text=
+-size-adjust: none; text-decoration: none;"><img class=3D"image image--inli=
+ne"alt src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingfl=
+ow-frontend-emails/1.8.0/images/footer/ios.png height=3D20 width=3D16 borde=
+r=3D0 style=3D"font-size: 0; border: 0; z-index: 1; display: inline-block; =
+vertical-align: middle;"></a></td><td align=3Dleft valign=3Dmiddle width=3D=
+4 style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,san=
+s-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antial=
+iased; -webkit-text-size-adjust: none; font-size: 0;"></td><td align=3Dcent=
+er valign=3Dtop style=3D"font-family: Proxima Nova,-apple-system,Lato,Helve=
+tica,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smo=
+othing: antialiased; -webkit-text-size-adjust: none; font-size: 0;"><a href=
+=3D"https://play.google.com/store/apps/details?id=3Dcom.mercadolibre&amp;hl=
+=3Dcl"target=3D_blank class=3Dfooter__image-link style=3D"font-family: Prox=
+ima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoot=
+hing: grayscale; -webkit-font-smoothing: antialiased; -webkit-text-size-adj=
+ust: none; text-decoration: none;"><img class=3D"image image--inline"alt sr=
+c=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-fronte=
+nd-emails/1.8.0/images/footer/android.png height=3D20 width=3D16 border=3D0=
+ style=3D"font-size: 0; border: 0; z-index: 1; display: inline-block; verti=
+cal-align: middle;"></a></td></tr></tbody></table></td></tr><tr><td style=
+=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif=
+; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; =
+-webkit-text-size-adjust: none; font-size: 0;"><img class=3Dimage title alt=
+ src=3Dhttps://http2.mlstatic.com/resources/frontend/statics/buyingflow-fro=
+ntend-emails/1.8.0/images/spacer.png height=3D6 width=3D0 border=3D0 style=
+=3D"font-size: 0; border: 0; display: block; z-index: 1;"></td></tr><tr><td=
+ class=3Dfooter__subtitle align=3Dcenter valign=3Dtop style=3D"-moz-osx-fon=
+t-smoothing: grayscale; -webkit-text-size-adjust: none; color: #999; font-f=
+amily: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,san=
+s-serif; font-size: 12px; -webkit-font-smoothing: antialiased;"><span class=
+=3Drich-text style=3D"font-family: Proxima Nova,-apple-system,Lato,Helvetic=
+a,Arial,sans-serif; -moz-osx-font-smoothing: grayscale; -webkit-font-smooth=
+ing: antialiased; -webkit-text-size-adjust: none;">&#xA1;Compra y vende des=
+de tu celular!</span></td></tr><tr><td style=3D"font-family: Proxima Nova,-=
+apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-font-smoothing: gray=
+scale; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none;=
+ font-size: 0;"><img class=3Dimage title alt src=3Dhttps://http2.mlstatic.c=
+om/resources/frontend/statics/buyingflow-frontend-emails/1.8.0/images/space=
+r.png height=3D44 width=3D0 border=3D0 style=3D"font-size: 0; border: 0; di=
+splay: block; z-index: 1;"></td></tr></tbody></table><span style=3D"font-fa=
+mily: Proxima Nova,-apple-system,Lato,Helvetica,Arial,sans-serif; -moz-osx-=
+font-smoothing: grayscale; -webkit-font-smoothing: antialiased; -webkit-tex=
+t-size-adjust: none;"><img class=3Dimage alt src=3D"https://data.mercadolib=
+re.com/pixel.gif?q=3D%7B%22tracks%22%3A%5B%7B%22path%22%3A%22%2Femail%2Fche=
+ckout%2Fok%22%2C%22event_data%22%3A%7B%22purchase_id%22%3A2319362785%2C%22p=
+urchase_status%22%3A%22ok%22%2C%22email_template%22%3A%22DRCT_APPROVED%22%2=
+C%22event_type%22%3A%22open%22%2C%22payments%22%3A%5B%7B%22id%22%3A59020586=
+13%2C%22status%22%3A%22APPROVED%22%2C%22status_detail%22%3A%22ACCREDITED%22=
+%2C%22type%22%3A%22CREDIT_CARD%22%2C%22method_id%22%3A%22visa%22%2C%22date_=
+approved%22%3A%222020-02-09T12%3A04%3A11-0400%22%2C%22date_created%22%3A%22=
+2020-02-09T12%3A04%3A09-0400%22%2C%22date_last_modified%22%3A%222019-12-17T=
+10%3A45%3A28-0400%22%7D%5D%2C%22shipping_type%22%3A%22ENVIO%22%2C%22buy_equ=
+als_pay%22%3Atrue%7D%2C%22user%22%3A%7B%22user_id%22%3A171558912%7D%2C%22ap=
+plication%22%3A%7B%22site_id%22%3A%22MCO%22%2C%22business%22%3A%22mercadoli=
+bre%22%7D%2C%22device%22%3A%7B%22platform%22%3A%22%2Femail%22%7D%2C%22platf=
+orm%22%3A%7B%22http%22%3A%7B%7D%7D%2C%22type%22%3A%22event%22%2C%22id%22%3A=
+%2283c05b93-2c26-414b-b4b4-5e932c2f34a9%22%2C%22experiments%22%3A%7B%7D%7D%=
+5D%7D"height=3D1 width=3D1 border=3D0 style=3D"font-size: 0; border: 0; dis=
+play: block; z-index: 1;"></span></td></tr></tbody></table>
+<img src=3D"http://url8202.mercadolibre.com/wf/open?upn=3Dn-2BXHQCy63kpAQ5v=
+lgxDj9INL-2BRhVxrLbJegHCev16xucv08I0raT0JEV0tdZ9oJBDyeUsBf-2BIazPE8dZMzg2dZ=
+UbUOMNG0OnubdzPpvYVKmWizDogNpSZPn65wAH6899hQhWeTPlK-2Bs4QISasIGHwIDjRdC1BRj=
+JowOL9abTrXXHPROfDODDGSut7vkyafHQGaqWV4OIjoiNatG5qJJMsGOKBoDm-2BKhETH-2F28j=
+5GQl9wMuZbGV6KufeQZvj6KQEha8yMNaKTj-2F0r8mhJkKvZsWNGv2A2ONZPXlRP2V6hGWGZ0AI=
+iGZptZl4x3AsBqP3KGj0Mb9hDg7fmQdJr8NXhIK8QIexXjg5miVuMHh-2FscKQ42nrCzHO0ymrk=
+oMVW44CRCqEADWyyNt7f6W9Y2WwK-2BoVgDTkI1-2Fiv3OnlIgDBqeB03ur8PoOvfBceOyCiQTR=
+xTNfSb9Ib7ShS0H4TGRXjb5F7c8QdRs7Kr1ezkM2QgzCl05-2Fo2VPn6ZJpwIsLhmKEPlSPRKyY=
+K9yTPUHNDZn3B-2BlSZ-2BS-2FObpKF9CfjTl6FVPOFIw8VAjWgCRsPVYCidlNFAVt6R4YQ-2BL=
+qeqeZvJxsyBhR65M-2BgiNIcXklSQL4DGlv3Z8U6dAzuX4zRZ-2Bp6GXzXh6c-2Fjaiuu1t6yrR=
+j1kMWzksLaBMHYG-2FCQBWbZ0EpH2kp5ixbXUj6QTmMuzm6Qnw" alt=3D"" width=3D"1" he=
+ight=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !important=
+;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !importa=
+nt;margin-right:0 !important;margin-left:0 !important;padding-top:0 !import=
+ant;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !=
+important;"/>
+</body></html>
