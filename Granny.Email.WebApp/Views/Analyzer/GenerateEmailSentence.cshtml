@@ -1,0 +1,50 @@
+﻿@model Granny.Email.WebApp.Models.Train.TrainedEmailAddedResultViewModel
+
+@{
+    ViewData["Title"] = "GenerateEmailSentence";
+}
+
+<h1>GenerateEmailSentence</h1>
+
+<div>
+    <h4>TrainedEmailAddedResultViewModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SubjectSentence)
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var word in Model.SubjectSentence)
+            {
+                <span class="badge badge-secondary">@word &nbsp;</span>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HeaderSentence)
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var word in Model.HeaderSentence)
+            {
+                <span class="badge badge-secondary">@word &nbsp;</span>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BodySentence)
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var word in Model.BodySentence)
+            {
+                <span class="badge badge-secondary">@word &nbsp;</span>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Uris)
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var word in Model.Uris)
+            {
+                <span class="badge badge-secondary">@word </span><br />
+            }
+        </dd>
+    </dl>
+</div>

@@ -9,6 +9,7 @@ using Granny.Email.Application.Classification;
 using Granny.Email.Application.EmailInformationExtractor;
 using Granny.Email.Application.Preparation;
 using Granny.Email.Application.Repository;
+using Granny.Email.WebApp.Models.Train;
 using HtmlAgilityPack;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
@@ -115,7 +116,8 @@ namespace Granny.Email.WebApp.Controllers
 
             var uris = Regex
                 .Matches(bodyHtmlText, @"((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)", RegexOptions.IgnoreCase)
-                .Select(match => match.Value);
+                .Select(match => match.Value)
+                .ToList();
 
             var subjectSentence = _textPreparerService.Prepare(mail.Subject).ToList();
             var subjectLabel = Convert.ToInt32(isSpam);
@@ -123,7 +125,7 @@ namespace Granny.Email.WebApp.Controllers
             var headerSentence = _textPreparerService.Prepare(headerEmailSentence.ToString()).ToList();
             var headerLabel = Convert.ToInt32(isSpam);
 
-            var bodySentence = _textPreparerService.Prepare(GetBodyText(bodyHtmlText));
+            var bodySentence = _textPreparerService.Prepare(GetBodyText(bodyHtmlText)).ToList();
             var bodyLabel = Convert.ToInt32(isSpam);
 
             await _grannyRepository.AddSubjectArray(subjectSentence, subjectLabel).ConfigureAwait(false);
@@ -137,7 +139,15 @@ namespace Granny.Email.WebApp.Controllers
 
             await _mailKitRepository.MarkEmailAsSeen(uniqueId).ConfigureAwait(false);
 
-            return View();
+            var trainedEmailAddedResultViewModel = new TrainedEmailAddedResultViewModel()
+            {
+                SubjectSentence = subjectSentence,
+                HeaderSentence = headerSentence,
+                BodySentence = bodySentence,
+                Uris = uris
+            };
+
+            return View(trainedEmailAddedResultViewModel);
         }
 
         private string GetBodyText(string html)

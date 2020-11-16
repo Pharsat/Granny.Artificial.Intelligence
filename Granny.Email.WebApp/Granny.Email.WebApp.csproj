@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Granny.Email.Infrastructure\Granny.Email.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Analyzer\" />
+  </ItemGroup>
+
 </Project>

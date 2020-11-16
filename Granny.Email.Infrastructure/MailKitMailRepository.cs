@@ -138,6 +138,8 @@ namespace Granny.Email.Infrastructure
 
             var inbox = client.Inbox;
 
+            await inbox.OpenAsync(FolderAccess.ReadWrite).ConfigureAwait(false);
+
             await inbox.AddFlagsAsync(new List<UniqueId>{ uid }, MessageFlags.Seen, true);
 
             await client.DisconnectAsync(true).ConfigureAwait(false);
