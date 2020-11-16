@@ -59,5 +59,41 @@ namespace Granny.Email.Infrastructure.Repository.Mongo
                 await collection.InsertOneAsync(new EmailInUri { Secured = secure, Uri = uri }).ConfigureAwait(false);
             }
         }
+
+        public async Task<(IEnumerable<Sentence> Sentences, IEnumerable<Label> Labels)> GetHeaderTrainData()
+        {
+            var client = new MongoClient(_connectionString);
+            var database = client.GetDatabase("granny");
+            var sentencesCollection = database.GetCollection<Sentence>("header_sentences");
+            var labelsCollection = database.GetCollection<Label>("header_labels");
+            var sentences = await sentencesCollection.FindAsync(Builders<Sentence>.Filter.Empty).ConfigureAwait(false);
+            var labels = await labelsCollection.FindAsync(Builders<Label>.Filter.Empty).ConfigureAwait(false);
+
+            return (sentences.ToList(), labels.ToList());
+        }
+
+        public async Task<(IEnumerable<Sentence> Sentences, IEnumerable<Label> Labels)> GetSubjectTrainData()
+        {
+            var client = new MongoClient(_connectionString);
+            var database = client.GetDatabase("granny");
+            var sentencesCollection = database.GetCollection<Sentence>("subject_sentences");
+            var labelsCollection = database.GetCollection<Label>("subject_labels");
+            var sentences = await sentencesCollection.FindAsync(Builders<Sentence>.Filter.Empty).ConfigureAwait(false);
+            var labels = await labelsCollection.FindAsync(Builders<Label>.Filter.Empty).ConfigureAwait(false);
+
+            return (sentences.ToList(), labels.ToList());
+        }
+
+        public async Task<(IEnumerable<Sentence> Sentences, IEnumerable<Label> Labels)> GetBodyTrainData()
+        {
+            var client = new MongoClient(_connectionString);
+            var database = client.GetDatabase("granny");
+            var sentencesCollection = database.GetCollection<Sentence>("body_sentences");
+            var labelsCollection = database.GetCollection<Label>("body_labels");
+            var sentences = await sentencesCollection.FindAsync(Builders<Sentence>.Filter.Empty).ConfigureAwait(false);
+            var labels = await labelsCollection.FindAsync(Builders<Label>.Filter.Empty).ConfigureAwait(false);
+
+            return (sentences.ToList(), labels.ToList());
+        }
     }
 }
