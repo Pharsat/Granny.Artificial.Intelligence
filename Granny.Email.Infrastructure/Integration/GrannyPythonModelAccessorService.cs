@@ -8,9 +8,9 @@ namespace Granny.Email.Infrastructure.Integration
 {
     public class GrannyPythonModelAccessorService : IGrannyModelAccessorService
     {
-        private const string BodyModelBaseUrl = "http://127.0.0.1:5000";
-        private const string HeaderModelBaseUrl = "http://127.0.0.1:5000";
-        private const string SubjectModelBaseUrl = "http://127.0.0.1:5000";
+        private const string BodyModelBaseUrl = "http://127.0.0.1:8082";
+        private const string HeaderModelBaseUrl = "http://127.0.0.1:8082";
+        private const string SubjectModelBaseUrl = "http://127.0.0.1:8082";
 
         public async Task GenerateBodyModel(
             IEnumerable<string> trainingSentences,
@@ -31,7 +31,7 @@ namespace Granny.Email.Infrastructure.Integration
             };
 
             await BodyModelBaseUrl
-                   .AppendPathSegment("api/model/generate")
+                   .AppendPathSegment("api/model/train/body")
                    .PostJsonAsync(body)
                    .ConfigureAwait(false);
         }
@@ -55,7 +55,7 @@ namespace Granny.Email.Infrastructure.Integration
             };
 
             await HeaderModelBaseUrl
-                .AppendPathSegment("api/model/generate")
+                .AppendPathSegment("api/model/train/header")
                 .PostJsonAsync(body)
                 .ConfigureAwait(false);
         }
@@ -79,7 +79,7 @@ namespace Granny.Email.Infrastructure.Integration
             };
 
             await SubjectModelBaseUrl
-                .AppendPathSegment("api/model/generate")
+                .AppendPathSegment("api/model/train/subject")
                 .PostJsonAsync(body)
                 .ConfigureAwait(false);
         }

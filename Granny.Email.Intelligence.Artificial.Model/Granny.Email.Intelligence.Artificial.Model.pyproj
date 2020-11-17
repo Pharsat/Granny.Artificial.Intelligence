@@ -29,6 +29,9 @@
     <Compile Include="train.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="train_request.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
