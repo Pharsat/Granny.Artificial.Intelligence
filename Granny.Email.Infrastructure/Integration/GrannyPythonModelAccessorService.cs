@@ -15,9 +15,9 @@ namespace Granny.Email.Infrastructure.Integration
         private const string HeaderModelBaseUrl = "http://127.0.0.1:8082";
         private const string SubjectModelBaseUrl = "http://127.0.0.1:8082";
 
-        private const string BodyPredictBaseUrl = "";
-        private const string HeaderPredictBaseUrl = "";
-        private const string SubjectPredictBaseUrl = "";
+        private const string BodyPredictBaseUrl = "http://127.0.0.1:8081";
+        private const string HeaderPredictBaseUrl = "http://127.0.0.1:8081";
+        private const string SubjectPredictBaseUrl = "http://127.0.0.1:8081";
 
         public async Task GenerateBodyModel(
             IEnumerable<string> trainingSentences,
@@ -95,7 +95,7 @@ namespace Granny.Email.Infrastructure.Integration
         {
             var body = new { sentence };
             var result = await BodyPredictBaseUrl
-                 .AppendPathSegment("api/model/predict")
+                 .AppendPathSegment("api/model/predict/body")
                  .PostJsonAsync(body)
                  .ConfigureAwait(false);
 
@@ -110,7 +110,7 @@ namespace Granny.Email.Infrastructure.Integration
         {
             var body = new { sentence };
             var result = await HeaderPredictBaseUrl
-                .AppendPathSegment("api/model/predict")
+                .AppendPathSegment("api/model/predict/header")
                 .PostJsonAsync(body)
                 .ConfigureAwait(false);
 
@@ -125,7 +125,7 @@ namespace Granny.Email.Infrastructure.Integration
         {
             var body = new { sentence };
             var result = await SubjectPredictBaseUrl
-                .AppendPathSegment("api/model/predict")
+                .AppendPathSegment("api/model/predict/subject")
                 .PostJsonAsync(body)
                 .ConfigureAwait(false);
 
