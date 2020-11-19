@@ -33,19 +33,19 @@ namespace Granny.Email.Infrastructure
             client.AuthenticationMechanisms.Remove("XOAUTH2");
 
             await client.AuthenticateAsync(_login, _password).ConfigureAwait(false);
-            
-            var inbox = client.Inbox;
-           
-            await inbox.OpenAsync(FolderAccess.ReadOnly).ConfigureAwait(false);
 
-            var results = await inbox.SearchAsync(SearchQuery.HeaderContains("Message-Id", messageId)).ConfigureAwait(false);
+            var folder = await client.GetFolderAsync("CorreosNoSeguros").ConfigureAwait(false);
+
+            await folder.OpenAsync(FolderAccess.ReadOnly).ConfigureAwait(false);
+
+            var results = await folder.SearchAsync(SearchQuery.HeaderContains("Message-Id", messageId)).ConfigureAwait(false);
             
             MimeMessage message = null;
             var uniqueId = new UniqueId();
 
             foreach (var id in results)
             {
-                message = await inbox.GetMessageAsync(id).ConfigureAwait(false);
+                message = await folder.GetMessageAsync(id).ConfigureAwait(false);
                 uniqueId = id;
             }
 
@@ -69,15 +69,15 @@ namespace Granny.Email.Infrastructure
             await client.AuthenticateAsync(_login, _password).ConfigureAwait(false);
 
             // The Inbox folder is always available on all IMAP servers...
-            var inbox = client.Inbox;
+            var folder = await client.GetFolderAsync("CorreosNoSeguros").ConfigureAwait(false);
 
-            await inbox.OpenAsync(FolderAccess.ReadOnly).ConfigureAwait(false);
+            await folder.OpenAsync(FolderAccess.ReadOnly).ConfigureAwait(false);
 
-            var results = await inbox.SearchAsync(SearchQuery.NotSeen).ConfigureAwait(false);
+            var results = await folder.SearchAsync(SearchQuery.NotSeen).ConfigureAwait(false);
 
             foreach (var uniqueId in results)
             {
-                var message = await inbox.GetMessageAsync(uniqueId).ConfigureAwait(false);
+                var message = await folder.GetMessageAsync(uniqueId).ConfigureAwait(false);
 
                 messages.Add(message);
 

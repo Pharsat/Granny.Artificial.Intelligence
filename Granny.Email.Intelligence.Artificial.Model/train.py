@@ -66,7 +66,7 @@ def model_train(data, prefix):
 
     model = tf.keras.Sequential([
         tf.keras.layers.Embedding(vocab_size, embedding_dim, input_length=train_request.max_length),
-        tf.keras.layers.GlobalAveragePooling1D(),
+        tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(6, activation='relu'),
         tf.keras.layers.Dense(1, activation='sigmoid')
     ])
