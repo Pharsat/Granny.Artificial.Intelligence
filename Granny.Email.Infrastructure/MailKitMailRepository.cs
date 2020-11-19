@@ -14,6 +14,7 @@ namespace Granny.Email.Infrastructure
         private readonly string _mailServer, _login, _password;
         private readonly int _port;
         private readonly bool _ssl;
+        private const string _currentFolder = "CorreosNoSeguros";
 
         public MailKitMailRepository(IOptions<EmailReceiverConfiguration> emailReceiverConfiguration)
         {
@@ -34,12 +35,12 @@ namespace Granny.Email.Infrastructure
 
             await client.AuthenticateAsync(_login, _password).ConfigureAwait(false);
 
-            var folder = await client.GetFolderAsync("CorreosNoSeguros").ConfigureAwait(false);
+            var folder = await client.GetFolderAsync(_currentFolder).ConfigureAwait(false);
 
             await folder.OpenAsync(FolderAccess.ReadOnly).ConfigureAwait(false);
 
             var results = await folder.SearchAsync(SearchQuery.HeaderContains("Message-Id", messageId)).ConfigureAwait(false);
-            
+
             MimeMessage message = null;
             var uniqueId = new UniqueId();
 
@@ -69,7 +70,7 @@ namespace Granny.Email.Infrastructure
             await client.AuthenticateAsync(_login, _password).ConfigureAwait(false);
 
             // The Inbox folder is always available on all IMAP servers...
-            var folder = await client.GetFolderAsync("CorreosNoSeguros").ConfigureAwait(false);
+            var folder = await client.GetFolderAsync(_currentFolder).ConfigureAwait(false);
 
             await folder.OpenAsync(FolderAccess.ReadOnly).ConfigureAwait(false);
 
@@ -105,15 +106,15 @@ namespace Granny.Email.Infrastructure
             await client.AuthenticateAsync(_login, _password).ConfigureAwait(false);
 
             // The Inbox folder is always available on all IMAP servers...
-            var inbox = client.Inbox;
-                
-            await inbox.OpenAsync(FolderAccess.ReadOnly).ConfigureAwait(false);
-                
-            var results = await inbox.SearchAsync(SearchOptions.All, SearchQuery.NotSeen);
-                
+            var folder = await client.GetFolderAsync(_currentFolder).ConfigureAwait(false);
+
+            await folder.OpenAsync(FolderAccess.ReadOnly).ConfigureAwait(false);
+
+            var results = await folder.SearchAsync(SearchOptions.All, SearchQuery.NotSeen);
+
             foreach (var uniqueId in results.UniqueIds)
             {
-                var message = await inbox.GetMessageAsync(uniqueId).ConfigureAwait(false);
+                var message = await folder.GetMessageAsync(uniqueId).ConfigureAwait(false);
 
                 messages.Add(message);
 
@@ -136,11 +137,11 @@ namespace Granny.Email.Infrastructure
 
             await client.AuthenticateAsync(_login, _password).ConfigureAwait(false);
 
-            var inbox = client.Inbox;
+            var folder = await client.GetFolderAsync(_currentFolder).ConfigureAwait(false);
 
-            await inbox.OpenAsync(FolderAccess.ReadWrite).ConfigureAwait(false);
+            await folder.OpenAsync(FolderAccess.ReadWrite).ConfigureAwait(false);
 
-            await inbox.AddFlagsAsync(new List<UniqueId>{ uid }, MessageFlags.Seen, true);
+            await folder.AddFlagsAsync(new List<UniqueId> { uid }, MessageFlags.Seen, true);
 
             await client.DisconnectAsync(true).ConfigureAwait(false);
         }
