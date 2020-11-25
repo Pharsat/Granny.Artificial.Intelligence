@@ -14,7 +14,7 @@ namespace Granny.Email.Infrastructure
         private readonly string _mailServer, _login, _password;
         private readonly int _port;
         private readonly bool _ssl;
-        private const string _currentFolder = "CorreosNoSeguros";
+        private const string _currentFolder = "CorreosSeguros";
 
         public MailKitMailRepository(IOptions<EmailReceiverConfiguration> emailReceiverConfiguration)
         {

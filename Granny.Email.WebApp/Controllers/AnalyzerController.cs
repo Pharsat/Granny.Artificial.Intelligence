@@ -93,11 +93,14 @@ namespace Granny.Email.WebApp.Controllers
             //Add attachments info
             foreach (var attachment in mail.Attachments)
             {
-                var file = attachment.ContentDisposition.FileName;
-                var fileSize = attachment.ContentDisposition.Size;
-                var fileName = Path.GetFileName(file).ToLower();
-                var fileExtension = Path.GetExtension(file).ToLower();
-                headerEmailSentence.Append($"attachment filename {fileName} extension {fileExtension} size {fileSize} ");
+                if (attachment.ContentDisposition.FileName != null)
+                {
+                    var file = attachment.ContentDisposition.FileName;
+                    var fileSize = attachment.ContentDisposition.Size;
+                    var fileName = Path.GetFileName(file).ToLower();
+                    var fileExtension = Path.GetExtension(file).ToLower();
+                    headerEmailSentence.Append($"attachment filename {fileName} extension {fileExtension} size {fileSize} ");
+                }
             }
 
             //Add protocol result info
