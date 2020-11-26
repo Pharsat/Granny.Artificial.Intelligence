@@ -12,5 +12,9 @@ namespace Granny.Email.Application.Repository
         Task<(IEnumerable<Sentence> Sentences, IEnumerable<Label> Labels)> GetHeaderTrainData();
         Task<(IEnumerable<Sentence> Sentences, IEnumerable<Label> Labels)> GetSubjectTrainData();
         Task<(IEnumerable<Sentence> Sentences, IEnumerable<Label> Labels)> GetBodyTrainData();
+        Task<(IEnumerable<Sentence> Sentences, IEnumerable<Label> Labels)> GetRawEmailTrainData();
+
+        Task<(int OkEmailsCount, int BadEmailsCount)> GetEmailClassificationTypesCount();
+        Task AddRawEmail(List<List<string>> sentences, List<int> labels);
     }
 }

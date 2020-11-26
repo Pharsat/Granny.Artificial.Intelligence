@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Granny.Email.Application.Repository;
 using MongoDB.Driver;
@@ -90,6 +91,40 @@ namespace Granny.Email.Infrastructure.Repository.Mongo
             var database = client.GetDatabase("granny");
             var sentencesCollection = database.GetCollection<Sentence>("body_sentences");
             var labelsCollection = database.GetCollection<Label>("body_labels");
+            var sentences = await sentencesCollection.FindAsync(Builders<Sentence>.Filter.Empty).ConfigureAwait(false);
+            var labels = await labelsCollection.FindAsync(Builders<Label>.Filter.Empty).ConfigureAwait(false);
+
+            return (sentences.ToList(), labels.ToList());
+        }
+
+
+        public async Task<(int OkEmailsCount, int BadEmailsCount)> GetEmailClassificationTypesCount()
+        {
+            var client = new MongoClient(_connectionString);
+            var database = client.GetDatabase("granny");
+            var labelsCollection = database.GetCollection<Label>("body_labels");
+            var badLabels = await labelsCollection.FindAsync(label => label.Value == 1).ConfigureAwait(false);
+            var goodLabels = await labelsCollection.FindAsync(label => label.Value == 0).ConfigureAwait(false);
+            return (goodLabels.ToList().Count, badLabels.ToList().Count);
+        }
+
+        public async Task AddRawEmail(List<List<string>> sentences, List<int> labels)
+        {
+            var client = new MongoClient(_connectionString);
+            var database = client.GetDatabase("granny");
+            var headerCollection = database.GetCollection<Sentence>("raw_email_sentences");
+            var headerLabelCollection = database.GetCollection<Label>("raw_email_labels");
+
+            await headerCollection.InsertManyAsync(sentences.Select(sentence => new Sentence {Words = sentence})).ConfigureAwait(false);
+            await headerLabelCollection.InsertManyAsync(labels.Select(label=> new Label { Value = label })).ConfigureAwait(false);
+        }
+
+        public async Task<(IEnumerable<Sentence> Sentences, IEnumerable<Label> Labels)> GetRawEmailTrainData()
+        {
+            var client = new MongoClient(_connectionString);
+            var database = client.GetDatabase("granny");
+            var sentencesCollection = database.GetCollection<Sentence>("raw_email_sentences");
+            var labelsCollection = database.GetCollection<Label>("raw_email_labels");
             var sentences = await sentencesCollection.FindAsync(Builders<Sentence>.Filter.Empty).ConfigureAwait(false);
             var labels = await labelsCollection.FindAsync(Builders<Label>.Filter.Empty).ConfigureAwait(false);
 

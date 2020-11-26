@@ -91,6 +91,31 @@ namespace Granny.Email.Infrastructure.Integration
                 .ConfigureAwait(false);
         }
 
+
+        public async Task GenerateRawEmailModel(
+            IEnumerable<string> trainingSentences,
+            IEnumerable<int> trainingLabels,
+            IEnumerable<string> testSentences,
+            IEnumerable<int> testLabels,
+            int totalWords,
+            int sentencesMaxLength)
+        {
+            var body = new
+            {
+                training_sentences = trainingSentences,
+                training_labels = trainingLabels,
+                test_sentences = testSentences,
+                test_labels = testLabels,
+                total_words = totalWords,
+                sentence_max_lenght = sentencesMaxLength
+            };
+
+            await BodyModelBaseUrl
+                .AppendPathSegment("api/model/train/body")
+                .PostJsonAsync(body)
+                .ConfigureAwait(false);
+        }
+
         public async Task<IEnumerable<double>> PredictBody(string sentence)
         {
             var body = new { sentence };
@@ -126,6 +151,21 @@ namespace Granny.Email.Infrastructure.Integration
             var body = new { sentence };
             var result = await SubjectPredictBaseUrl
                 .AppendPathSegment("api/model/predict/subject")
+                .PostJsonAsync(body)
+                .ConfigureAwait(false);
+
+            if (result.StatusCode != (int)HttpStatusCode.OK) throw new Exception("Response is not ok.");
+
+            var json = await result.GetJsonAsync().ConfigureAwait(false);
+
+            return JsonSerializer.Deserialize<IEnumerable<double>>(json);
+        }
+
+        public async Task<IEnumerable<double>> PredictRawEmail(string sentence)
+        {
+            var body = new { sentence };
+            var result = await SubjectPredictBaseUrl
+                .AppendPathSegment("api/model/predict/body")
                 .PostJsonAsync(body)
                 .ConfigureAwait(false);
 

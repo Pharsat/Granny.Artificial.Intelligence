@@ -10,6 +10,7 @@ using Granny.Email.Application.Preparation;
 using Granny.Email.Application.Repository;
 using Granny.Email.Infrastructure;
 using Granny.Email.Infrastructure.Integration;
+using Granny.Email.Infrastructure.Repository;
 using Granny.Email.Infrastructure.Repository.Mongo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -45,6 +46,7 @@ namespace Granny.Email.WebApp
             services.AddScoped<ITextPreparerService, TextPreparerService>();
             services.AddScoped<IGrannyRepository>(_ => new GrannyMongoRepository(mongoDbConnectionString));
             services.AddScoped<IGrannyModelAccessorService, GrannyPythonModelAccessorService>();
+            services.AddScoped<IRawEmailsRepository, SmsEmailRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

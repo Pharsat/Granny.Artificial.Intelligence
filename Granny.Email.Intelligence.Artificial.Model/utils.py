@@ -6,8 +6,8 @@ class Prefixes:
 
 
 class Suffixes:
-    max_length = '_max_length.pickle'
-    metadata = '_meta.tsv'
-    model = '_model.h5'
-    tokenizer = '_tokenizer.pickle'
-    vectors = '_vecs.tsv'
+    max_length = 'max_length.pickle'
+    metadata = 'meta.tsv'
+    model = 'model.h5'
+    tokenizer = 'tokenizer.pickle'
+    vectors = 'vecs.tsv'

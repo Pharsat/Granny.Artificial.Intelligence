@@ -26,8 +26,19 @@ namespace Granny.Email.Application.Integration
             IEnumerable<int> testLabels,
             int totalWords,
             int sentencesMaxLength);
+
+        Task GenerateRawEmailModel(
+            IEnumerable<string> trainingSentences,
+            IEnumerable<int> trainingLabels,
+            IEnumerable<string> testSentences,
+            IEnumerable<int> testLabels,
+            int totalWords,
+            int sentencesMaxLength);
+
         Task<IEnumerable<double>> PredictBody(string sentence);
         Task<IEnumerable<double>> PredictHeader(string sentence);
         Task<IEnumerable<double>> PredictSubject(string sentence);
+
+        Task<IEnumerable<double>> PredictRawEmail(string sentence);
     }
 }

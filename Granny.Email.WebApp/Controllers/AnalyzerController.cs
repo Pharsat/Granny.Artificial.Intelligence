@@ -26,6 +26,7 @@ namespace Granny.Email.WebApp.Controllers
         private readonly ITextPreparerService _textPreparerService;
         private readonly IGrannyRepository _grannyRepository;
         private readonly IGrannyModelAccessorService _grannyModelAccessorService;
+        private readonly IRawEmailsRepository _rawEmailsRepository;
 
         public AnalyzerController(
             IMailRepository mailKitRepository,
@@ -33,7 +34,8 @@ namespace Granny.Email.WebApp.Controllers
             IInformationExtractorService informationExtractorService,
             ITextPreparerService textPreparerService,
             IGrannyRepository grannyRepository,
-            IGrannyModelAccessorService grannyModelAccessorService)
+            IGrannyModelAccessorService grannyModelAccessorService,
+            IRawEmailsRepository rawEmailsRepository)
         {
             _mailKitRepository = mailKitRepository;
             _classificationService = classificationService;
@@ -41,6 +43,7 @@ namespace Granny.Email.WebApp.Controllers
             _textPreparerService = textPreparerService;
             _grannyRepository = grannyRepository;
             _grannyModelAccessorService = grannyModelAccessorService;
+            _rawEmailsRepository = rawEmailsRepository;
         }
 
         public async Task<IActionResult> Analyze(string messageId)
@@ -160,56 +163,74 @@ namespace Granny.Email.WebApp.Controllers
 
         public async Task<IActionResult> GenerateModel()
         {
-            var (bodySentences, bodyLabels) = await _grannyRepository.GetBodyTrainData().ConfigureAwait(false);
-            var (headerSentences, headerLabels) = await _grannyRepository.GetHeaderTrainData().ConfigureAwait(false);
-            var (subjectSentences, subjectLabels) = await _grannyRepository.GetSubjectTrainData().ConfigureAwait(false);
+            //var (bodySentences, bodyLabels) = await _grannyRepository.GetBodyTrainData().ConfigureAwait(false);
+            //var (headerSentences, headerLabels) = await _grannyRepository.GetHeaderTrainData().ConfigureAwait(false);
+            //var (subjectSentences, subjectLabels) = await _grannyRepository.GetSubjectTrainData().ConfigureAwait(false);
+            var (subjectSentences, subjectLabels) = await _grannyRepository.GetRawEmailTrainData().ConfigureAwait(false);
 
-            var bodyTotalWords = bodySentences
-                .SelectMany(sentence => sentence.Words)
-                .Distinct()
-                .Count();
-            var headerTotalWords = headerSentences
-                .SelectMany(sentence => sentence.Words)
-                .Distinct()
-                .Count();
+            //var bodyTotalWords = bodySentences
+            //    .SelectMany(sentence => sentence.Words)
+            //    .Distinct()
+            //    .Count();
+            //var headerTotalWords = headerSentences
+            //    .SelectMany(sentence => sentence.Words)
+            //    .Distinct()
+            //    .Count();
+            //var subjectTotalWords = subjectSentences
+            //    .SelectMany(sentence => sentence.Words)
+            //    .Distinct()
+            //    .Count();
             var subjectTotalWords = subjectSentences
                 .SelectMany(sentence => sentence.Words)
                 .Distinct()
                 .Count();
 
-            var bodyMaxLengthSize = bodySentences
-                .Select(sentence => sentence.Words.Count())
-                .Max();
-            var headerMaxLengthSize = headerSentences
-                .Select(sentence => sentence.Words.Count())
-                .Max();
+            //var bodyMaxLengthSize = bodySentences
+            //    .Select(sentence => sentence.Words.Count())
+            //    .Max();
+            //var headerMaxLengthSize = headerSentences
+            //    .Select(sentence => sentence.Words.Count())
+            //    .Max();
+            //var subjectMaxLengthSize = subjectSentences
+            //    .Select(sentence => sentence.Words.Count())
+            //    .Max();
             var subjectMaxLengthSize = subjectSentences
                 .Select(sentence => sentence.Words.Count())
                 .Max();
 
-            var bodyFullSentences = bodySentences.Select(sentence => string.Join(" ", sentence.Words));
-            var headerFullSentences = headerSentences.Select(sentence => string.Join(" ", sentence.Words));
+            //var bodyFullSentences = bodySentences.Select(sentence => string.Join(" ", sentence.Words));
+            //var headerFullSentences = headerSentences.Select(sentence => string.Join(" ", sentence.Words));
+            //var subjectFullSentences = subjectSentences.Select(sentence => string.Join(" ", sentence.Words));
             var subjectFullSentences = subjectSentences.Select(sentence => string.Join(" ", sentence.Words));
 
-            var bodyFullLabels = bodyLabels.Select(label => label.Value);
-            var headerFullLabels = headerLabels.Select(label => label.Value);
+            //var bodyFullLabels = bodyLabels.Select(label => label.Value);
+            //var headerFullLabels = headerLabels.Select(label => label.Value);
+            //var subjectFullLabels = subjectLabels.Select(label => label.Value);
             var subjectFullLabels = subjectLabels.Select(label => label.Value);
 
-            await _grannyModelAccessorService.GenerateBodyModel(
-                bodyFullSentences,
-                bodyFullLabels,
-                bodyFullSentences,
-                bodyFullLabels,
-                bodyTotalWords,
-                bodyMaxLengthSize).ConfigureAwait(false);
-            await _grannyModelAccessorService.GenerateHeaderModel(
-                headerFullSentences,
-                headerFullLabels,
-                headerFullSentences,
-                headerFullLabels,
-                headerTotalWords,
-                headerMaxLengthSize).ConfigureAwait(false);
-            await _grannyModelAccessorService.GenerateSubjectModel(
+            //_grannyModelAccessorService.GenerateBodyModel(
+            //    bodyFullSentences,
+            //    bodyFullLabels,
+            //    bodyFullSentences,
+            //    bodyFullLabels,
+            //    bodyTotalWords,
+            //    bodyMaxLengthSize).ConfigureAwait(false);
+            //_grannyModelAccessorService.GenerateHeaderModel(
+            //    headerFullSentences,
+            //    headerFullLabels,
+            //    headerFullSentences,
+            //    headerFullLabels,
+            //    headerTotalWords,
+            //    headerMaxLengthSize).ConfigureAwait(false);
+            //_grannyModelAccessorService.GenerateSubjectModel(
+            //    subjectFullSentences,
+            //    subjectFullLabels,
+            //    subjectFullSentences,
+            //    subjectFullLabels,
+            //    subjectTotalWords,
+            //    subjectMaxLengthSize).ConfigureAwait(false);
+
+            _grannyModelAccessorService.GenerateRawEmailModel(
                 subjectFullSentences,
                 subjectFullLabels,
                 subjectFullSentences,
@@ -262,28 +283,39 @@ namespace Granny.Email.WebApp.Controllers
             //Add body info
             var bodyHtmlText = mail.HtmlBody;
 
-            var subjectSentence = _textPreparerService.Prepare(mail.Subject).ToList();
-            var headerSentence = _textPreparerService.Prepare(headerEmailSentence.ToString()).ToList();
             var bodySentence = _textPreparerService.Prepare(GetBodyText(bodyHtmlText)).ToList();
 
-            var bodyFullSentence = string.Join(" ", subjectSentence);
-            var headerFullSentence =  string.Join(" ", headerSentence);
-            var subjectFullSentence = string.Join(" ", bodySentence);
+            var bodyFullSentence = string.Join(" ", bodySentence);
 
-            var bodyPrediction = await _grannyModelAccessorService.PredictBody(bodyFullSentence).ConfigureAwait(false);
-            var headerPrediction = await _grannyModelAccessorService.PredictHeader(headerFullSentence).ConfigureAwait(false);
-            var subjectPrediction = await _grannyModelAccessorService.PredictSubject(subjectFullSentence).ConfigureAwait(false);
+            var bodyPrediction = await _grannyModelAccessorService.PredictRawEmail(bodyFullSentence).ConfigureAwait(false);
 
             var predictionResultViewModel = new PredictionResultViewModel()
             {
                 BodyPredictionResult = bodyPrediction.First(),
-                HeaderPredictionResult = headerPrediction.First(),
-                SubjectPredictionResult = subjectPrediction.First()
+                HeaderPredictionResult = 0,
+                SubjectPredictionResult = 0
             };
 
             await _mailKitRepository.MarkEmailAsSeen(uniqueId).ConfigureAwait(false);
 
             return View(predictionResultViewModel);
+        }
+
+        public async Task<IActionResult> GetLabelsCount()
+        {
+            var (ok, bad) = await _grannyRepository.GetEmailClassificationTypesCount().ConfigureAwait(false);
+            return View();
+        }
+
+        public async Task<IActionResult> LoadExcelFileData()
+        {
+            var results = _rawEmailsRepository.GetEmailsFromFile(@"C:\Users\user\Downloads\SMSSpamCollection.xlsx");
+
+            await _grannyRepository.AddRawEmail(
+                results.Select(result => _textPreparerService.Prepare(result.EmailText).ToList()).ToList(),
+                results.Select(result => result.Label).ToList()).ConfigureAwait(false);
+
+            return View();
         }
 
         private string GetBodyText(string html)

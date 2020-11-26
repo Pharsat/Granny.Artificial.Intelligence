@@ -66,7 +66,9 @@ def model_train(data, prefix):
 
     model = tf.keras.Sequential([
         tf.keras.layers.Embedding(vocab_size, embedding_dim, input_length=train_request.max_length),
-        tf.keras.layers.Flatten(),
+        #tf.keras.layers.GlobalAveragePooling1D(),
+        #tf.keras.layers.Flatten(),
+        tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(train_request.max_length)),
         tf.keras.layers.Dense(6, activation='relu'),
         tf.keras.layers.Dense(1, activation='sigmoid')
     ])
@@ -80,7 +82,7 @@ def model_train(data, prefix):
     model.save(f'{prefix}model.h5')
 
     reverse_word_index = dict([(value, key) for (key, value) in word_index.items()])
-    #save_tsv(model, vocab_size, reverse_word_index, prefix)
+    save_tsv(model, vocab_size, reverse_word_index, prefix)
 
 
 @app.route('/api/model/train/header', methods=['POST'])
